@@ -1,0 +1,54 @@
+﻿<Page x:Class="TrebleToolkit4.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TrebleToolkit4"
+      mc:Ignorable="d"
+      d:DesignHeight="460" d:DesignWidth="290"
+      Title="HomePage" Background="#FFE4E4E4">
+
+    <Grid>
+        <Label Content="Treble Toolkit" Margin="10,10,10,0" FontFamily="/TrebleToolkit4;component/Fonts/#Bahnschrift Semibold" Foreground="#FF000000" FontSize="33" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Width="270" VerticalAlignment="Top" Height="54"/>
+        <Rectangle Fill="#FFC1C1C1" Height="50" Margin="10,69,10,341" Stroke="#FF0080FF" VerticalAlignment="Center" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2"/>
+        <Label Content="FLASH GSI" Margin="10,69,10,341" VerticalAlignment="Center" Height="50" FontFamily="/TrebleToolkit4;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="#FF000000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Rectangle Fill="#FFC1C1C1" Height="50" Margin="10,123,10,287" Stroke="#FF0080FF" VerticalAlignment="Center" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2"/>
+        <Label Content="FLASH/BOOT TWRP" Margin="10,123,10,287" VerticalAlignment="Center" Height="50" FontFamily="/TrebleToolkit4;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="#FF000000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Rectangle Fill="#FFC1C1C1" Height="50" Margin="10,179,10,231" Stroke="#FF0080FF" VerticalAlignment="Center" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2"/>
+        <Label Content="UNLOCK BOOTLOADER" Margin="10,179,10,231" VerticalAlignment="Center" Height="50" FontFamily="/TrebleToolkit4;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="#FF000000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Rectangle Fill="#FFC1C1C1" Height="50" Margin="10,233,10,177" Stroke="#FF0080FF" VerticalAlignment="Center" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2"/>
+        <Label Content="FLASH PERMISSIVER" Margin="10,233,10,177" VerticalAlignment="Center" Height="50" FontFamily="/TrebleToolkit4;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="#FF000000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Rectangle Fill="#FFC1C1C1" Height="50" Margin="10,289,10,121" Stroke="#FF0080FF" VerticalAlignment="Center" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2"/>
+        <Label Content="COMPATIBLE DEVICES" Margin="10,289,10,121" VerticalAlignment="Center" Height="50" FontFamily="/TrebleToolkit4;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="#FF000000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Rectangle Fill="#FFC1C1C1" Height="50" Margin="10,343,10,67" Stroke="#FF0080FF" VerticalAlignment="Center" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2"/>
+        <Label Content="FREECMD" Margin="10,343,10,67" VerticalAlignment="Center" Height="50" FontFamily="/TrebleToolkit4;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="#FF000000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button Content="Button" Margin="10,69,10,341" VerticalAlignment="Center" Height="50" Opacity="0" Click="Button_Click"/>
+        <Button Content="Button" Margin="10,123,10,287" VerticalAlignment="Center" Height="50" Opacity="0"/>
+        <Button Content="Button" Margin="10,179,10,231" VerticalAlignment="Center" Height="50" Opacity="0" Click="Button_Click_2"/>
+        <Button Content="Button" Margin="10,233,10,177" VerticalAlignment="Center" Height="50" Opacity="0" Click="Button_Click_1"/>
+        <Button Content="Button" Margin="10,289,10,121" VerticalAlignment="Center" Height="50" Opacity="0" Click="Button_Click_3"/>
+        <Button Content="Button" Margin="10,343,10,67" VerticalAlignment="Center" Height="50" Opacity="0" Click="Button_Click_4"/>
+        <Rectangle Fill="#FFC1C1C1" HorizontalAlignment="Center" Height="52" Margin="203,0,37,9" Stroke="#FF0080FF" VerticalAlignment="Bottom" Width="50" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2"/>
+        <Rectangle Fill="#FFC1C1C1" HorizontalAlignment="Center" Height="52" Margin="148,0,92,9" Stroke="#FF0080FF" VerticalAlignment="Bottom" Width="50" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2"/>
+        <Rectangle Fill="#FFC1C1C1" HorizontalAlignment="Center" Height="52" Margin="92,0,148,9" Stroke="#FF0080FF" VerticalAlignment="Bottom" Width="50" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2"/>
+        <Rectangle Fill="#FFC1C1C1" HorizontalAlignment="Center" Height="52" Margin="37,0,203,9" Stroke="#FF0080FF" VerticalAlignment="Bottom" Width="50" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2"/>
+        <Button Content="Button" Margin="10,123,10,287" VerticalAlignment="Center" Height="50" Opacity="0" Click="Button_Click1"/>
+        <Label Content="v4" Margin="255,39,10,0" FontFamily="/TrebleToolkit4;component/Fonts/#Bahnschrift Semibold" Foreground="#FF000000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Width="25" VerticalAlignment="Top" Height="25"/>
+        <Border BorderThickness="1" HorizontalAlignment="Center" Height="52" Margin="37,0,203,9" VerticalAlignment="Bottom" Width="50">
+            <Image Margin="9" Source="updateicon.png" Stretch="Fill"/>
+        </Border>
+        <Border BorderThickness="1" HorizontalAlignment="Center" Height="52" Margin="92,0,148,9" VerticalAlignment="Bottom" Width="50">
+            <Image Margin="10" Source="changethemeicon.png" Stretch="Fill"/>
+        </Border>
+        <Border BorderThickness="1" HorizontalAlignment="Center" Height="52" Margin="148,0,92,9" VerticalAlignment="Bottom" Width="50">
+            <Image Margin="8" Source="abouticon.png" Stretch="Fill"/>
+        </Border>
+        <Border BorderThickness="1" HorizontalAlignment="Center" Height="52" Margin="203,0,37,9" VerticalAlignment="Bottom" Width="50">
+            <Label Content="XDA" Margin="0,9,0,0" VerticalAlignment="Top" Height="32" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="#FF000000" FontFamily="/TrebleToolkit4;component/Fonts/#Bahnschrift Semibold"/>
+        </Border>
+        <Button Content="Button" Margin="37,0,203,9" VerticalAlignment="Bottom" Height="52" Opacity="0" Click="Button_Click_5" HorizontalAlignment="Center" Width="50"/>
+        <Button Content="Button" Margin="92,0,148,9" Height="52" Opacity="0" Click="Button_Click_6" HorizontalAlignment="Center" Width="50" VerticalContentAlignment="Bottom" VerticalAlignment="Bottom"/>
+        <Button Content="Button" Margin="148,0,93,9" VerticalAlignment="Bottom" Height="52" Opacity="0" Click="Button_Click_8" HorizontalAlignment="Center" Width="49"/>
+        <Button Content="Button" Margin="202,0,37,10" VerticalAlignment="Bottom" Height="51" Opacity="0" Click="Button_Click_7" HorizontalAlignment="Center" Width="51"/>
+    </Grid>
+</Page>

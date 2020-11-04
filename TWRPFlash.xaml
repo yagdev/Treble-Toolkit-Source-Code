@@ -1,0 +1,22 @@
+﻿<Page x:Class="TrebleToolkit4.TWRPFlash"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TrebleToolkit4"
+      mc:Ignorable="d" 
+      d:DesignHeight="460" d:DesignWidth="290"
+      Title="TWRPFlash" Background="#FFE4E4E4">
+
+    <Grid>
+        <Label Content="Flash TWRP" Margin="10,10,10,0" VerticalAlignment="Top" Height="50" FontFamily="/TrebleToolkit4;component/Fonts/#Bahnschrift Semibold" Foreground="#FF000000" FontSize="33" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Foreground="#FF000000" FontFamily="/Treble Toolkit;component/Fonts/#Bahnschrift"><Run Text="Make sure you followed the steps on the previous window and make sure your phone's partition scheme is A"/><Run Text=", then press Flash"/></TextBlock>
+        <Rectangle Fill="#FFC1C1C1" Height="50" Margin="10,0,10,65" Stroke="#FF0080FF" VerticalAlignment="Bottom" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2"/>
+        <Label Content="FLASH" Margin="10,0,10,65" VerticalAlignment="Bottom" Height="50" FontFamily="/TrebleToolkit4;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="#FF000000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button Content="Button" Margin="10,0,10,65" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click_5"/>
+        <Rectangle Fill="#FFC1C1C1" Height="50" Margin="10,0,10,10" Stroke="#FF0080FF" VerticalAlignment="Bottom" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2"/>
+        <Label Content="BACK" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="50" FontFamily="/TrebleToolkit4;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="#FF000000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button Content="Button" Margin="10,0,10,10" Opacity="0" Click="Button_Click" Height="50" VerticalAlignment="Bottom"/>
+
+    </Grid>
+</Page>
