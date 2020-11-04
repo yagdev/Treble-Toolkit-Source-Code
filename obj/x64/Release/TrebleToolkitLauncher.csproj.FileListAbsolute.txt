@@ -1,0 +1,32 @@
+C:\Users\dinis\source\repos\TrebleToolkitLauncher\bin\x64\Release\TrebleToolkitLauncher.exe.config
+C:\Users\dinis\source\repos\TrebleToolkitLauncher\bin\x64\Release\TrebleToolkitLauncher.exe
+C:\Users\dinis\source\repos\TrebleToolkitLauncher\bin\x64\Release\TrebleToolkitLauncher.pdb
+C:\Users\dinis\source\repos\TrebleToolkitLauncher\obj\x64\Release\TrebleToolkitLauncher.csprojAssemblyReference.cache
+C:\Users\dinis\source\repos\TrebleToolkitLauncher\obj\x64\Release\MainWindow.g.cs
+C:\Users\dinis\source\repos\TrebleToolkitLauncher\obj\x64\Release\App.g.cs
+C:\Users\dinis\source\repos\TrebleToolkitLauncher\obj\x64\Release\TrebleToolkitLauncher_MarkupCompile.cache
+C:\Users\dinis\source\repos\TrebleToolkitLauncher\obj\x64\Release\TrebleToolkitLauncher_MarkupCompile.lref
+C:\Users\dinis\source\repos\TrebleToolkitLauncher\obj\x64\Release\MainWindow.baml
+C:\Users\dinis\source\repos\TrebleToolkitLauncher\obj\x64\Release\TrebleToolkitLauncher.g.resources
+C:\Users\dinis\source\repos\TrebleToolkitLauncher\obj\x64\Release\TrebleToolkitLauncher.Properties.Resources.resources
+C:\Users\dinis\source\repos\TrebleToolkitLauncher\obj\x64\Release\TrebleToolkitLauncher.csproj.GenerateResource.cache
+C:\Users\dinis\source\repos\TrebleToolkitLauncher\obj\x64\Release\TrebleToolkitLauncher.csproj.CoreCompileInputs.cache
+C:\Users\dinis\source\repos\TrebleToolkitLauncher\obj\x64\Release\TrebleToolkitLauncher.exe
+C:\Users\dinis\source\repos\TrebleToolkitLauncher\obj\x64\Release\TrebleToolkitLauncher.pdb
+C:\Users\dinis\source\repos\TrebleToolkitLauncher\obj\x64\Release\App.baml
+D:\Treble Toolkit\TrebleToolkitLauncher\bin\x64\Release\TrebleToolkitLauncher.exe.config
+D:\Treble Toolkit\TrebleToolkitLauncher\bin\x64\Release\TrebleToolkitLauncher.exe
+D:\Treble Toolkit\TrebleToolkitLauncher\bin\x64\Release\TrebleToolkitLauncher.pdb
+D:\Treble Toolkit\TrebleToolkitLauncher\obj\x64\Release\TrebleToolkitLauncher.csprojAssemblyReference.cache
+D:\Treble Toolkit\TrebleToolkitLauncher\obj\x64\Release\MainWindow.g.cs
+D:\Treble Toolkit\TrebleToolkitLauncher\obj\x64\Release\App.g.cs
+D:\Treble Toolkit\TrebleToolkitLauncher\obj\x64\Release\TrebleToolkitLauncher_MarkupCompile.cache
+D:\Treble Toolkit\TrebleToolkitLauncher\obj\x64\Release\TrebleToolkitLauncher_MarkupCompile.lref
+D:\Treble Toolkit\TrebleToolkitLauncher\obj\x64\Release\App.baml
+D:\Treble Toolkit\TrebleToolkitLauncher\obj\x64\Release\MainWindow.baml
+D:\Treble Toolkit\TrebleToolkitLauncher\obj\x64\Release\TrebleToolkitLauncher.g.resources
+D:\Treble Toolkit\TrebleToolkitLauncher\obj\x64\Release\TrebleToolkitLauncher.Properties.Resources.resources
+D:\Treble Toolkit\TrebleToolkitLauncher\obj\x64\Release\TrebleToolkitLauncher.csproj.GenerateResource.cache
+D:\Treble Toolkit\TrebleToolkitLauncher\obj\x64\Release\TrebleToolkitLauncher.csproj.CoreCompileInputs.cache
+D:\Treble Toolkit\TrebleToolkitLauncher\obj\x64\Release\TrebleToolkitLauncher.exe
+D:\Treble Toolkit\TrebleToolkitLauncher\obj\x64\Release\TrebleToolkitLauncher.pdb

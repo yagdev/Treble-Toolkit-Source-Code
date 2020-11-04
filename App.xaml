@@ -1,11 +1,11 @@
-﻿<Application x:Class="TrebleToolkit4.App"
+﻿<Application x:Class="TrebleToolkitLauncher.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:TrebleToolkit4"
+             xmlns:local="clr-namespace:TrebleToolkitLauncher"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <Style x:Key="lblDesign" TargetType="Label">
-            <Setter Property="FontFamily" Value="fonts//Treble Toolkit;component/Fonts/#Bahnschrift.TTF #/Treble Toolkit;component/Fonts/#Bahnschrift"/>
+            <Setter Property="FontFamily" Value="fonts/BAHNSCHRIFT.TTF #font1"/>
         </Style>
     </Application.Resources>
 </Application>
