@@ -1,0 +1,27 @@
+﻿<Window x:Class="TrebleToolkitReloaded.CompatibleDevices"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TrebleToolkitReloaded"
+        mc:Ignorable="d"
+        Title="Compatible Devices" Height="370" Width="308" Background="#FF1D1D1D" MinWidth="308" MinHeight="370">
+    <Grid>
+        <Label Content="Compatible Devices" Margin="10,10,9,0" VerticalAlignment="Top" Height="50" FontFamily="/Treble Toolkit;component/Fonts/#Bahnschrift Semibold" Foreground="White" FontSize="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,9,230" Stroke="Red" VerticalAlignment="Bottom" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2"/>
+        <Label Content="OnePlus 6" Margin="10,0,10,230" VerticalAlignment="Bottom" Height="50" FontFamily="/Treble Toolkit;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,9,175" Stroke="Red" VerticalAlignment="Bottom" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2"/>
+        <Label Content="Sony Xperia XZ2" Margin="10,0,10,175" VerticalAlignment="Bottom" Height="50" FontFamily="/Treble Toolkit;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,9,120" Stroke="Red" VerticalAlignment="Bottom" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2"/>
+        <Label Content="Sony Xperia 5" Margin="10,0,10,120" VerticalAlignment="Bottom" Height="50" FontFamily="/Treble Toolkit;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button Content="Button" Margin="10,0,10,230" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click_5"/>
+        <Button Content="Button" Margin="10,0,10,175" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click_6"/>
+        <Button Content="Button" Margin="10,0,10,120" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click_7"/>
+        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,9,65" Stroke="Red" VerticalAlignment="Bottom" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2"/>
+        <Label Content="Alcatel 1 (2018)" Margin="10,0,10,65" FontFamily="/Treble Toolkit;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" VerticalAlignment="Bottom"/>
+        <Button Content="Button" Margin="10,0,10,65" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click"/>
+        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,9,10" Stroke="Red" VerticalAlignment="Bottom" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2"/>
+        <Label Content="Back" Margin="10,0,10,10" FontFamily="/Treble Toolkit;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" VerticalAlignment="Bottom"/>
+        <Button Content="Button" Margin="11,0,10,10" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click_1"/>
+    </Grid>
+</Window>
