@@ -10,14 +10,15 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TrebleToolkitReloaded
+namespace TrebleToolkit4
 {
     /// <summary>
     /// Interaction logic for CompatibleDevices.xaml
     /// </summary>
-    public partial class CompatibleDevices : Window
+    public partial class CompatibleDevices : Page
     {
         public CompatibleDevices()
         {
@@ -26,37 +27,32 @@ namespace TrebleToolkitReloaded
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-            var win2 = new OnePlus6();
-            win2.Show();
-            this.Close();
+            Uri uri = new Uri("OP6.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
         }
 
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
-            var win2 = new XZ2();
-            win2.Show();
-            this.Close();
+            Uri uri = new Uri("SXXZ2.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
         }
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
-            var win2 = new Xperia5();
-            win2.Show();
-            this.Close();
+            Uri uri = new Uri("SX5.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var win2 = new Alcatel1();
-            win2.Show();
-            this.Close();
+            Uri uri = new Uri("A12018.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            var win2 = new MainWindow();
-            win2.Show();
-            this.Close();
+            Uri uri = new Uri("HomePage.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
         }
     }
 }

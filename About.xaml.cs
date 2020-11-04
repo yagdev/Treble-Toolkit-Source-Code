@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace TrebleToolkitReloaded
+namespace TrebleToolkit4
 {
     /// <summary>
     /// Interaction logic for About.xaml
@@ -27,6 +27,17 @@ namespace TrebleToolkitReloaded
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/C start https://github.com/yag-dev-xda/Treble-Toolkit-4.0-Source-Code/releases";
+            process.StartInfo = startInfo;
+            process.Start();
         }
     }
 }

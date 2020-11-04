@@ -10,14 +10,15 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TrebleToolkitReloaded
+namespace TrebleToolkit4
 {
     /// <summary>
     /// Interaction logic for FlashGSI.xaml
     /// </summary>
-    public partial class FlashGSI : Window
+    public partial class FlashGSI : Page
     {
         public FlashGSI()
         {
@@ -26,23 +27,20 @@ namespace TrebleToolkitReloaded
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var win2 = new MainWindow();
-            win2.Show();
-            this.Close();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            var win2 = new A();
-            win2.Show();
-            this.Close();
+            Uri uri = new Uri("HomePage.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            var win2 = new A_B();
-            win2.Show();
-            this.Close();
+            Uri uri = new Uri("GSIFlashAB.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("GSIFlashA.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
         }
     }
 }

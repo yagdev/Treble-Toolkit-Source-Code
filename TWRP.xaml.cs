@@ -10,14 +10,15 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TrebleToolkitReloaded
+namespace TrebleToolkit4
 {
     /// <summary>
     /// Interaction logic for TWRP.xaml
     /// </summary>
-    public partial class TWRP : Window
+    public partial class TWRP : Page
     {
         public TWRP()
         {
@@ -26,23 +27,20 @@ namespace TrebleToolkitReloaded
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-            var win2 = new FlashTWRP();
-            win2.Show();
-            this.Close();
+            Uri uri = new Uri("TWRPFlash.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var win2 = new BootTWRP();
-            win2.Show();
-            this.Close();
+            Uri uri = new Uri("TWRPBoot.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            var win2 = new MainWindow();
-            win2.Show();
-            this.Close();
+            Uri uri = new Uri("HomePage.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
         }
     }
 }

@@ -8,12 +8,12 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Treble Toolkit")]
-[assembly: AssemblyDescription("Executable for Treble Toolkit (Dark)")]
+[assembly: AssemblyDescription("Executable for Treble Toolkit (Dark Mode)")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("YAG-dev")]
-[assembly: AssemblyProduct("Treble Toolkit (Windows)")]
+[assembly: AssemblyProduct("Treble Toolkit")]
 [assembly: AssemblyCopyright("Copyright ©2020 YAG-dev")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("Treble Toolkit")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -51,5 +51,6 @@ using System.Windows;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("3.3.0.0")]
-[assembly: AssemblyFileVersion("3.3.0.0")]
+[assembly: AssemblyVersion("4.0.0.0")]
+[assembly: AssemblyFileVersion("4.0.0.0")]
+[assembly: NeutralResourcesLanguage("en")]
