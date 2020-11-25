@@ -1,0 +1,15 @@
+﻿<Window x:Class="TrebleToolkitUpdaterLauncher.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TrebleToolkitUpdaterLauncher"
+        mc:Ignorable="d"
+        Title="Treble Toolkit Launcher" Height="450" Width="800" Background="#FF1D1D1D">
+    <Grid>
+        <Label x:Name="status_lbl" Content="Treble Toolkit is up to date" Margin="10,0,10,10" VerticalAlignment="Bottom" FontSize="20" Height="40" FontFamily="Bahnschrift" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label Content="Welcome to Treble Toolkit Launcher" Margin="10,10,10,0" VerticalAlignment="Top" Height="180" Foreground="White" FontSize="32" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold"/>
+        <Label Content="This will download the latest version of Treble Toolkit and launch it automatically." Margin="10,185,10,184" VerticalAlignment="Center" Height="50" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
+
+    </Grid>
+</Window>
