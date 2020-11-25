@@ -1,0 +1,156 @@
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\bin\Debug\TrebleToolkit4.exe.config
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\bin\Debug\TrebleToolkit4.exe
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\bin\Debug\TrebleToolkit4.pdb
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\TrebleToolkit4.csprojAssemblyReference.cache
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\FlashGSI.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\MainWindow.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\App.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\TrebleToolkit4_MarkupCompile.cache
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\TrebleToolkit4_MarkupCompile.lref
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\FlashGSI.baml
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\MainWindow.baml
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\TrebleToolkit4.g.resources
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\TrebleToolkit4.Properties.Resources.resources
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\TrebleToolkit4.csproj.GenerateResource.cache
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\TrebleToolkit4.csproj.CoreCompileInputs.cache
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\TrebleToolkit4.exe
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\TrebleToolkit4.pdb
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\HomePage.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\HomePage.baml
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\GSIFlashA.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\GSIFlashA.baml
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\FlashFinished.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\FlashFinished.baml
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\GSIFlashAB.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\GSIFlashAB.baml
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\TWRP.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\TWRP.baml
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\TWRPFlash.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\TWRPFlash.baml
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\TWRPBoot.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\TWRPBoot.baml
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\BLUnlocked.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\UnlockBL.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\BLUnlocked.baml
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\UnlockBL.baml
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\PMFlash.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\PMFlash.baml
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\A12018.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\CompatibleDevices.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\OP6.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\SX5.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\SXXZ2.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\A12018.baml
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\CompatibleDevices.baml
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\OP6.baml
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\SX5.baml
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\SXXZ2.baml
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\About.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\About.baml
+E:\Users\dinis\source\repos\TrebleToolkit4\TrebleToolkit4\obj\Debug\App.baml
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\bin\Debug\TrebleToolkit4.exe.config
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\bin\Debug\TrebleToolkit4.exe
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\bin\Debug\TrebleToolkit4.pdb
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\bin\Debug\CLUpdate.dll
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\bin\Debug\CLUpdate.xml
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TrebleToolkit4.csprojAssemblyReference.cache
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\A12018.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\About.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\BLUnlocked.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\CompatibleDevices.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\FlashFinished.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\FlashGSI.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\GSIFlashA.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\GSIFlashAB.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\HomePage.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\MainWindow.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\OP6.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\PMFlash.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\SX5.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\SXXZ2.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TWRP.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TWRPBoot.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TWRPFlash.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\UnlockBL.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\App.g.cs
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TrebleToolkit4_MarkupCompile.cache
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TrebleToolkit4_MarkupCompile.lref
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\App.baml
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\A12018.baml
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\About.baml
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\BLUnlocked.baml
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\CompatibleDevices.baml
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\FlashFinished.baml
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\FlashGSI.baml
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\GSIFlashA.baml
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\GSIFlashAB.baml
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\HomePage.baml
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\MainWindow.baml
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\OP6.baml
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\PMFlash.baml
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\SX5.baml
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\SXXZ2.baml
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TWRP.baml
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TWRPBoot.baml
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TWRPFlash.baml
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\UnlockBL.baml
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TrebleToolkit4.g.resources
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TrebleToolkit4.Properties.Resources.resources
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TrebleToolkit4.csproj.GenerateResource.cache
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TrebleToolkit4.csproj.CoreCompileInputs.cache
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TrebleToolkit4.csproj.CopyComplete
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TrebleToolkit4.exe
+E:\Users\dinis\source\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TrebleToolkit4.pdb
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\bin\Debug\TrebleToolkit4.exe.config
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\bin\Debug\TrebleToolkit4.exe
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\bin\Debug\TrebleToolkit4.pdb
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\bin\Debug\CLUpdate.dll
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\bin\Debug\CLUpdate.xml
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TrebleToolkit4.csprojAssemblyReference.cache
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\A12018.g.cs
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\About.g.cs
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\BLUnlocked.g.cs
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\CompatibleDevices.g.cs
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\FlashFinished.g.cs
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\FlashGSI.g.cs
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\GSIFlashA.g.cs
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\GSIFlashAB.g.cs
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\HomePage.g.cs
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\MainWindow.g.cs
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\OP6.g.cs
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\PMFlash.g.cs
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\SX5.g.cs
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\SXXZ2.g.cs
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TWRP.g.cs
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TWRPBoot.g.cs
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TWRPFlash.g.cs
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\UnlockBL.g.cs
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\App.g.cs
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TrebleToolkit4_MarkupCompile.cache
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TrebleToolkit4_MarkupCompile.lref
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\App.baml
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\A12018.baml
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\About.baml
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\BLUnlocked.baml
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\CompatibleDevices.baml
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\FlashFinished.baml
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\FlashGSI.baml
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\GSIFlashA.baml
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\GSIFlashAB.baml
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\HomePage.baml
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\MainWindow.baml
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\OP6.baml
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\PMFlash.baml
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\SX5.baml
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\SXXZ2.baml
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TWRP.baml
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TWRPBoot.baml
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TWRPFlash.baml
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\UnlockBL.baml
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TrebleToolkit4.g.resources
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TrebleToolkit4.Properties.Resources.resources
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TrebleToolkit4.csproj.GenerateResource.cache
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TrebleToolkit4.csproj.CoreCompileInputs.cache
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TrebleToolkit4.csproj.CopyComplete
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TrebleToolkit4.exe
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\Debug\TrebleToolkit4.pdb

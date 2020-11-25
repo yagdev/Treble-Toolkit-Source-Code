@@ -1,0 +1,18 @@
+﻿<Window x:Class="TrebleToolkit4.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TrebleToolkit4"
+        mc:Ignorable="d"
+        Title="About" Height="450" Width="800" Background="#FF1D1D1D">
+    <Grid>
+        <Label Content="Treble Toolkit" Margin="10,172,0,172" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="36" MaxHeight="75" MaxWidth="400" HorizontalAlignment="Left" Width="270" FontFamily="/TrebleToolkit4;component/Fonts/#Bahnschrift Semibold"/>
+        <TextBlock Margin="280,10,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="279" Foreground="White" FontSize="20" FontFamily="/TrebleToolkit4;component/Fonts/#Bahnschrift Semibold"><Run Text="Platform Tools: "/><Run Text="30.0."/><Run Text="5"/><Run Text=" ("/><Run Text="November"/><Run Text=" 2020)"/><LineBreak/><Run Text=".NET Framework Version: 4.7.2"/><LineBreak/><Run Text="Required Windows Version: 7 / Server 2008 R2 (x64)"/><LineBreak/><Run Text="Changelog:"/><Run Text=" New Update Client! It will check automatically for updates and download them (if available) at startup. "/><Run Text="Updated Platform Tools to r30.0.5 (November 2020)"/><LineBreak/><LineBreak/><Run Text="Note: Sorry for release delay, however a bug that didn't let Treble Toolkit launch processes (such as adb.exe and fastboot.exe) slowed down the process a lot."/></TextBlock>
+        <Rectangle Fill="#FF343434" Margin="0,0,10,10" RadiusY="3.5" RadiusX="3.5" Stroke="Red" StrokeThickness="2" HorizontalAlignment="Right" Width="250" Height="50" VerticalAlignment="Bottom"/>
+        <Label Content="CLOSE" Margin="0,0,10,10" VerticalAlignment="Bottom" Height="50" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Width="250" FontFamily="/TrebleToolkit4;component/Fonts/#Bahnschrift Semibold"/>
+        <Button Content="Button" Margin="0,0,10,10" Opacity="0" HorizontalAlignment="Right" Width="250" Height="50" VerticalAlignment="Bottom" Click="Button_Click"/>
+        <Label x:Name="status_lbl" Content="TREBLE TOOLKIT v5.0" HorizontalAlignment="Right" Margin="0,0,265,10" VerticalAlignment="Bottom" Width="247" Height="50" FontFamily="/TrebleToolkit4;component/Fonts/#Bahnschrift Semibold" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20"/>
+
+    </Grid>
+</Window>
