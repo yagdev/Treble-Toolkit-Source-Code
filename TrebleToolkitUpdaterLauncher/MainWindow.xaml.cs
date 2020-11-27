@@ -27,7 +27,6 @@ namespace TrebleToolkitUpdaterLauncher
         public MainWindow()
         {
             InitializeComponent();
-            Update();
         }
 
         void Update()
@@ -42,9 +41,9 @@ namespace TrebleToolkitUpdaterLauncher
                 string url = "https://www.dropbox.com/s/b064v1bhhomzxx0/release.zip?dl=1";
                 string remote_version_url = "https://www.dropbox.com/s/xowfvfnd8it4suw/version?dl=1";
                 string version_key = "application: ";
-                string update_path = System.IO.Path.Combine(Environment.CurrentDirectory, "Update");
-                string application_path = System.IO.Path.Combine(Environment.CurrentDirectory, "Application");
-                string local_version_path = System.IO.Path.Combine(Environment.CurrentDirectory, "Application", "UpdateService", "CurrentVersion");
+                string update_path = System.IO.Path.Combine(Environment.CurrentDirectory, "Update", "Download");
+                string application_path = System.IO.Path.Combine(Environment.CurrentDirectory);
+                string local_version_path = System.IO.Path.Combine(Environment.CurrentDirectory, "Update", "CurrentVersion");
                 string launch_exe = "TrebleToolkitLauncher.exe";
 
                 var update = Updater.Init(url, update_path, application_path, launch_exe);
@@ -96,7 +95,91 @@ namespace TrebleToolkitUpdaterLauncher
                 startInfo.Arguments = "/C cd Application & cd assets & gui.exe";
                 process.StartInfo = startInfo;
                 process.Start();
+                this.Close();
             });
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/C mkdir UpdateInfo & cd UpdateInfo & mkdir CurrentVersion & cd CurrentVersion";
+            process.StartInfo = startInfo;
+            process.Start();
+            Task.Run(() =>
+            {
+                dis.Invoke(() =>
+                {
+                    status_lbl.Content = "Preparing to Install...";
+                }, DispatcherPriority.Normal);
+
+                string url = "https://www.dropbox.com/s/b064v1bhhomzxx0/release.zip?dl=1";
+                string remote_version_url = "https://www.dropbox.com/s/xowfvfnd8it4suw/version?dl=1";
+                string version_key = "application: ";
+                string update_path = System.IO.Path.Combine(Environment.CurrentDirectory, "Update", "Download");
+                string application_path = System.IO.Path.Combine(Environment.CurrentDirectory, "Application");
+                string local_version_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "CurrentVersion", "VersionString");
+                string launch_exe = "TrebleToolkitLauncher.exe";
+
+                var update = Updater.Init(url, update_path, application_path, launch_exe);
+
+                if (UpdateManager.CheckForUpdate(version_key, local_version_path, remote_version_url))
+                {
+                    dis.Invoke(() =>
+                    {
+                        status_lbl.Content = "Initializing Download...";
+                    }, DispatcherPriority.Normal);
+
+                    update.Download();
+
+                    dis.Invoke(() =>
+                    {
+                        status_lbl.Content = "Downloading...";
+                    }, DispatcherPriority.Normal);
+
+                    update.Unzip();
+
+                    dis.Invoke(() =>
+                    {
+                        status_lbl.Content = "Unzipping...";
+                    }, DispatcherPriority.Normal);
+
+                    update.CleanUp();
+                    
+
+                    dis.Invoke(() =>
+                    {
+                        status_lbl.Content = "Cleaning Up...";
+                    }, DispatcherPriority.Normal);
+
+                    using (var client = new System.Net.WebClient())
+                    {
+                        client.DownloadFile(remote_version_url, local_version_path);
+                        client.Dispose();
+                    }
+
+                }
+
+                dis.Invoke(() =>
+                {
+                    status_lbl.Content = "Treble Toolkit is Up To Date. Launching...";
+                }, DispatcherPriority.Normal);
+                System.Diagnostics.Process process1 = new System.Diagnostics.Process();
+                System.Diagnostics.ProcessStartInfo startInfo1 = new System.Diagnostics.ProcessStartInfo();
+                startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                startInfo.FileName = "cmd.exe";
+                startInfo.Arguments = "/C cd Application & cd assets & gui.exe";
+                process.StartInfo = startInfo;
+                process.Start();
+                this.Close();
+            });
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

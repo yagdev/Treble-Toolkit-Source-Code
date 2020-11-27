@@ -7,9 +7,13 @@
         mc:Ignorable="d"
         Title="Treble Toolkit Launcher" Height="450" Width="800" Background="#FF1D1D1D">
     <Grid>
-        <Label x:Name="status_lbl" Content="Treble Toolkit is up to date" Margin="10,0,10,10" VerticalAlignment="Bottom" FontSize="20" Height="40" FontFamily="Bahnschrift" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <Label Content="Welcome to Treble Toolkit Launcher" Margin="10,10,10,0" VerticalAlignment="Top" Height="180" Foreground="White" FontSize="32" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold"/>
-        <Label Content="This will download the latest version of Treble Toolkit and launch it automatically." Margin="10,185,10,184" VerticalAlignment="Center" Height="50" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift"/>
+        <Label x:Name="status_lbl" Content="©2020 YAG-dev" Margin="10,0,10,10" VerticalAlignment="Bottom" FontSize="20" Height="40" FontFamily="Bahnschrift" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label Content="Welcome to Treble Toolkit Launcher" Margin="10,10,10,0" VerticalAlignment="Top" Height="180" Foreground="White" FontSize="32" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/TrebleToolkitUpdaterLauncher;component/Fonts/#Bahnschrift Semibold"/>
+        <Label Content="This will download the latest version of Treble Toolkit and launch it automatically." Margin="10,185,10,184" VerticalAlignment="Center" Height="50" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/TrebleToolkitUpdaterLauncher;component/Fonts/#Bahnschrift Semibold"/>
+        <Border BorderThickness="1" Height="50" Margin="10,0,10,74" VerticalAlignment="Bottom" Background="#FF343434">
+            <Label Content="LAUNCH" Margin="9" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/TrebleToolkitUpdaterLauncher;component/Fonts/#Bahnschrift Semibold"/>
+        </Border>
+        <Button Content="Button" Margin="10,0,10,74" VerticalAlignment="Bottom" Height="50" Background="#FFDDDDDD" Opacity="0" Click="Button_Click"/>
 
     </Grid>
 </Window>
