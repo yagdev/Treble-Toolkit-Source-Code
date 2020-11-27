@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TrebleToolkit4
+namespace TrebleToolkit5
 {
     /// <summary>
     /// Interaction logic for GSIFlashAB.xaml

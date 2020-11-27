@@ -29,10 +29,10 @@ using System.Windows.Media.TextFormatting;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Shell;
-using TrebleToolkit4;
+using TrebleToolkit5;
 
 
-namespace TrebleToolkit4 {
+namespace TrebleToolkit5 {
     
     
     /// <summary>
@@ -58,7 +58,7 @@ namespace TrebleToolkit4 {
             
             #line default
             #line hidden
-            System.Uri resourceLocater = new System.Uri("/TrebleToolkit4;component/app.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TrebleToolkit5;component/app.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\App.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
@@ -74,7 +74,7 @@ namespace TrebleToolkit4 {
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.0.0.0")]
         public static void Main() {
-            TrebleToolkit4.App app = new TrebleToolkit4.App();
+            TrebleToolkit5.App app = new TrebleToolkit5.App();
             app.InitializeComponent();
             app.Run();
         }
