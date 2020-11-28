@@ -38,8 +38,8 @@ namespace TrebleToolkitUpdaterLauncher
                     status_lbl.Content = "Preparing to Install...";
                 }, DispatcherPriority.Normal);
 
-                string url = "https://www.dropbox.com/s/b064v1bhhomzxx0/release.zip?dl=1";
-                string remote_version_url = "https://www.dropbox.com/s/xowfvfnd8it4suw/version?dl=1";
+                string url = "https://www.dropbox.com/s/nvjzz2lkab3nblo/release.zip?dl=1";
+                string remote_version_url = "https://www.dropbox.com/s/zyhkyqlljkyzb6n/version?dl=1";
                 string version_key = "application: ";
                 string update_path = System.IO.Path.Combine(Environment.CurrentDirectory, "Update", "Download");
                 string application_path = System.IO.Path.Combine(Environment.CurrentDirectory);
@@ -115,11 +115,11 @@ namespace TrebleToolkitUpdaterLauncher
                     status_lbl.Content = "Preparing to Install...";
                 }, DispatcherPriority.Normal);
 
-                string url = "https://www.dropbox.com/s/b064v1bhhomzxx0/release.zip?dl=1";
-                string remote_version_url = "https://www.dropbox.com/s/xowfvfnd8it4suw/version?dl=1";
+                string url = "https://www.dropbox.com/s/nvjzz2lkab3nblo/release.zip?dl=1";
+                string remote_version_url = "https://www.dropbox.com/s/zyhkyqlljkyzb6n/version?dl=1";
                 string version_key = "application: ";
                 string update_path = System.IO.Path.Combine(Environment.CurrentDirectory, "Update", "Download");
-                string application_path = System.IO.Path.Combine(Environment.CurrentDirectory, "Application");
+                string application_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateFiles");
                 string local_version_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "CurrentVersion", "VersionString");
                 string launch_exe = "TrebleToolkitLauncher.exe";
 
@@ -127,6 +127,21 @@ namespace TrebleToolkitUpdaterLauncher
 
                 if (UpdateManager.CheckForUpdate(version_key, local_version_path, remote_version_url))
                 {
+                    startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                    startInfo.FileName = "cmd.exe";
+                    startInfo.Arguments = "/C RD /s /q old & mkdir old";
+                    process.StartInfo = startInfo;
+                    process.Start();
+                    startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                    startInfo.FileName = "cmd.exe";
+                    startInfo.Arguments = "/C ren TrebleToolkitUpdaterLauncher.exe TrebleToolkitUpdaterLauncherOld.exe & move TrebleToolkitUpdaterLauncherOld.exe old & move CLConfiguration.dll old & move CLConfiguration.xml old & move CLUpdate.dll old & move CLUpdate.xml old";
+                    process.StartInfo = startInfo;
+                    process.Start();
+                    startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                    startInfo.FileName = "cmd.exe";
+                    startInfo.Arguments = "/C RD /s /q Application";
+                    process.StartInfo = startInfo;
+                    process.Start();
                     dis.Invoke(() =>
                     {
                         status_lbl.Content = "Initializing Download...";
@@ -170,10 +185,14 @@ namespace TrebleToolkitUpdaterLauncher
                 System.Diagnostics.ProcessStartInfo startInfo1 = new System.Diagnostics.ProcessStartInfo();
                 startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                 startInfo.FileName = "cmd.exe";
+                startInfo.Arguments = "/C cd UpdateFiles & move Application ../ & move CLUpdate.dll ../ & move CLUpdate.xml ../ & move TrebleToolkitUpdaterLauncher.exe ../";
+                process.StartInfo = startInfo;
+                process.Start();
+                startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                startInfo.FileName = "cmd.exe";
                 startInfo.Arguments = "/C cd Application & cd assets & gui.exe";
                 process.StartInfo = startInfo;
                 process.Start();
-                this.Close();
             });
         }
 

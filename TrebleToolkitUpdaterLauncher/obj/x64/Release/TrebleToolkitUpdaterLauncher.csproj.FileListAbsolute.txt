@@ -18,3 +18,10 @@ E:\repos\Updater\TrebleToolkitUpdaterLauncher\obj\x64\Release\TrebleToolkitUpdat
 E:\repos\Updater\TrebleToolkitUpdaterLauncher\obj\x64\Release\TrebleToolkitUpdaterLauncher.exe
 E:\repos\Updater\TrebleToolkitUpdaterLauncher\obj\x64\Release\TrebleToolkitUpdaterLauncher.pdb
 E:\repos\Updater\TrebleToolkitUpdaterLauncher\obj\x64\Release\TrebleToolkitUpdaterLauncher.csprojAssemblyReference.cache
+E:\repos\Updater\TrebleToolkitUpdaterLauncher\bin\x64\Release\en\TrebleToolkitUpdaterLauncher.resources.dll
+E:\repos\Updater\TrebleToolkitUpdaterLauncher\bin\x64\Release\pt\TrebleToolkitUpdaterLauncher.resources.dll
+E:\repos\Updater\TrebleToolkitUpdaterLauncher\obj\x64\Release\GeneratedInternalTypeHelper.g.cs
+E:\repos\Updater\TrebleToolkitUpdaterLauncher\obj\x64\Release\TrebleToolkitUpdaterLauncher.Properties.Resources.en.resources
+E:\repos\Updater\TrebleToolkitUpdaterLauncher\obj\x64\Release\TrebleToolkitUpdaterLauncher.Properties.Resources.pt.resources
+E:\repos\Updater\TrebleToolkitUpdaterLauncher\obj\x64\Release\en\TrebleToolkitUpdaterLauncher.resources.dll
+E:\repos\Updater\TrebleToolkitUpdaterLauncher\obj\x64\Release\pt\TrebleToolkitUpdaterLauncher.resources.dll
