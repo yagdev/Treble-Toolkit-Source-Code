@@ -6,16 +6,16 @@
       xmlns:local="clr-namespace:TrebleToolkit5"
       mc:Ignorable="d" 
       d:DesignHeight="460" d:DesignWidth="290"
-      Title="FlashFinished" Background="#FF1D1D1D">
+      Title="FlashFinished" Background="#FF1D1D1D" xmlns:m="clr-namespace:MultiLanguageMarkup">
 
     <Grid>
-        <Label Content="Process Finished" Margin="10,10,10,0" VerticalAlignment="Top" Height="50" Foreground="White" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="33" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Foreground="White" FontFamily="/Treble Toolkit;component/Fonts/#Bahnschrift"><Run Text="Your ROM"/><Run Text="/TWRP"/><Run Text="/PM"/><Run Text=" has been flashed"/><Run Text="/booted"/><Run Text=". If your phone bootloops, please try another ROM"/><Run Text="/TWRP image "/><Run Text=" before requesting a review."/></TextBlock>
-        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,10,65" Stroke="Red" VerticalAlignment="Bottom" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2"/>
-        <Label Content="MAIN MENU" Margin="10,0,10,65" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" VerticalAlignment="Bottom"/>
-        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,10,10" Stroke="Red" VerticalAlignment="Bottom" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2"/>
-        <Button Content="Button" Margin="10,0,10,65" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click"/>
-        <Label Content="PRESS ALT+F4 TO CLOSE" Margin="10,0,10,10" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" VerticalAlignment="Bottom"/>
+        <Label Content="{m:Lang Process_Finished}" Margin="10,10,10,0" VerticalAlignment="Top" Height="50" Foreground="White" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="33" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Foreground="White" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold"><Run Text="{m:Lang Your_ROM}" /><Run Text="/TWRP" /><Run Text="/PM" /><Run Text="{m:Lang _has_been_flashed}" /><Run Text="{m:Lang _booted}" /><Run Text="{m:Lang _If_your_phone_bootloops_pleas}" /><Run Text="{m:Lang _TWRP_image}" /><Run Text="{m:Lang _before_requesting_a_review}" /></TextBlock>
+        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,10,65" Stroke="Red" VerticalAlignment="Bottom" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2" />
+        <Label Content="{m:Lang MAIN_MENU}" Margin="10,0,10,65" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" VerticalAlignment="Bottom" />
+        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,10,10" Stroke="Red" VerticalAlignment="Bottom" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2" />
+        <Button Content="Button" Margin="10,0,10,65" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click" />
+        <Label Content="{m:Lang PRESS_ALT_F4_TO_CLOSE}" Margin="10,0,10,10" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" VerticalAlignment="Bottom" />
 
     </Grid>
 </Page>

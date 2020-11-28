@@ -6,20 +6,20 @@
       xmlns:local="clr-namespace:TrebleToolkit5"
       mc:Ignorable="d" 
       d:DesignHeight="460" d:DesignWidth="290"
-      Title="FlashGSI" Background="#FF1D1D1D">
+      Title="FlashGSI" Background="#FF1D1D1D" xmlns:m="clr-namespace:MultiLanguageMarkup">
 
     <Grid>
-        <Label Content="Flash GSI" VerticalAlignment="Top" Height="60" Foreground="White" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="33" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,10,0,0"/>
-        <Label Content="Please select your phone's partition style" Margin="10,70,10,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White" FontFamily="/Treble Toolkit;component/Fonts/#Bahnschrift"/>
-        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,10,120" Stroke="Red" VerticalAlignment="Bottom" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2"/>
-        <Label Content="A" Margin="10,0,10,120" VerticalAlignment="Bottom" Height="50" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,10,65" Stroke="Red" VerticalAlignment="Bottom" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2"/>
-        <Label Content="A/B" Margin="10,0,10,65" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" VerticalAlignment="Bottom"/>
-        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,10,10" Stroke="Red" VerticalAlignment="Bottom" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2"/>
-        <Label Content="BACK" Margin="10,0,10,10" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" VerticalAlignment="Bottom"/>
-        <Button Content="Button" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click"/>
-        <Button Content="Button" Margin="10,0,10,120" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click_1"/>
-        <Button Content="Button" Margin="10,0,10,65" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click_2"/>
+        <Label Content="{m:Lang Flash_GSI}" VerticalAlignment="Top" Height="60" Foreground="White" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="33" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,10,0,0" />
+        <Label Content="{m:Lang Please_select_your_phone_s_par}" Margin="10,70,10,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" />
+        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,10,120" Stroke="Red" VerticalAlignment="Bottom" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2" />
+        <Label Content="A" Margin="10,0,10,120" VerticalAlignment="Bottom" Height="50" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,10,65" Stroke="Red" VerticalAlignment="Bottom" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2" />
+        <Label Content="A/B" Margin="10,0,10,65" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" VerticalAlignment="Bottom" />
+        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,10,10" Stroke="Red" VerticalAlignment="Bottom" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2" />
+        <Label Content="{m:Lang BACK}" Margin="10,0,10,10" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" VerticalAlignment="Bottom" />
+        <Button Content="Button" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click" />
+        <Button Content="Button" Margin="10,0,10,120" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click_1" />
+        <Button Content="Button" Margin="10,0,10,65" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click_2" />
 
     </Grid>
 </Page>

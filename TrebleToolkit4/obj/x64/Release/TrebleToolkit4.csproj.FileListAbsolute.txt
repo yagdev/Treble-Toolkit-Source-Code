@@ -102,3 +102,14 @@ E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\x64\Release\TrebleToolkit4.csp
 E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\x64\Release\TrebleToolkit4.csproj.CopyComplete
 E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\x64\Release\TrebleToolkit5.exe
 E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\x64\Release\TrebleToolkit5.pdb
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\bin\x64\Release\en\TrebleToolkit5.resources.dll
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\bin\x64\Release\pt\TrebleToolkit5.resources.dll
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\x64\Release\TrebleToolkit4.csprojAssemblyReference.cache
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\x64\Release\GeneratedInternalTypeHelper.g.cs
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\x64\Release\TrebleToolkit5.Properties.Resources.en.resources
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\x64\Release\TrebleToolkit5.Properties.Resources.pt.resources
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\x64\Release\en\TrebleToolkit5.resources.dll
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\x64\Release\pt\TrebleToolkit5.resources.dll
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\x64\Release\TrebleToolkit5.MultiLang.resources
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\x64\Release\TrebleToolkit5.MultiLang.pt.resources
+E:\repos\TrebleToolkit4 - Dark\TrebleToolkit4\obj\x64\Release\TrebleToolkit5.MultiLang.en.resources

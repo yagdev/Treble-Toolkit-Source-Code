@@ -6,17 +6,17 @@
       xmlns:local="clr-namespace:TrebleToolkit5"
       mc:Ignorable="d" 
       d:DesignHeight="460" d:DesignWidth="290"
-      Title="GSIFlashA" Background="#FF1D1D1D">
+      Title="GSIFlashA" Background="#FF1D1D1D" xmlns:m="clr-namespace:MultiLanguageMarkup">
 
     <Grid>
-        <Label Content="A" Margin="10,10,10,0" VerticalAlignment="Top" Height="50" Foreground="White" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="33" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Foreground="White" FontFamily="/Treble Toolkit;component/Fonts/#Bahnschrift"><Run Text="Please "/><Run Text="place your ROM in Place_File"/><Run Text="s"/><Run Text="_Here/G"/><Run Text="S"/><Run Text="I/"/><Run Text=" "/><Run Text="and "/><Run Text="reboot to the bootloader (must be unlocked) and click &quot;Next&quot;"/></TextBlock>
-        <Rectangle Fill="#FF343434" Height="50" Margin="9,0,10,65" Stroke="Red" VerticalAlignment="Bottom" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2"/>
-        <Label Content="NEXT" Margin="9,0,10,65" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" VerticalAlignment="Bottom"/>
-        <Rectangle Fill="#FF343434" Height="50" Margin="9,0,10,10" Stroke="Red" VerticalAlignment="Bottom" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2"/>
-        <Label Content="BACK" Margin="9,0,10,10" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" VerticalAlignment="Bottom"/>
-        <Button Content="Button" Margin="8,0,10,10" Opacity="0" Click="Button_Click" Height="50" VerticalAlignment="Bottom"/>
-        <Button Content="Button" Margin="10,0,10,65" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click_1"/>
+        <Label Content="A" Margin="10,10,10,0" VerticalAlignment="Top" Height="50" Foreground="White" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="33" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Foreground="White" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold"><Run Text="{m:Lang Please}" /><Run Text="{m:Lang place_your_ROM_in_Place_File}" /><Run Text="s" /><Run Text="_Here/G" /><Run Text="S" /><Run Text="I/" /><Run Text=" " /><Run Text="{m:Lang _and}" /><Run Text="{m:Lang reboot_to_the_bootloader_must_}" /></TextBlock>
+        <Rectangle Fill="#FF343434" Height="50" Margin="9,0,10,65" Stroke="Red" VerticalAlignment="Bottom" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2" />
+        <Label Content="{m:Lang _NEXT}" Margin="9,0,10,65" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" VerticalAlignment="Bottom" />
+        <Rectangle Fill="#FF343434" Height="50" Margin="9,0,10,10" Stroke="Red" VerticalAlignment="Bottom" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2" />
+        <Label Content="{m:Lang BACK}" Margin="9,0,10,10" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" VerticalAlignment="Bottom" />
+        <Button Content="Button" Margin="8,0,10,10" Opacity="0" Click="Button_Click" Height="50" VerticalAlignment="Bottom" />
+        <Button Content="Button" Margin="10,0,10,65" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click_1" />
 
     </Grid>
 </Page>

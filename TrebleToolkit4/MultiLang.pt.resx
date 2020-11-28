@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="_1" xml:space="preserve">
+    <value>Dispositivos Compatíveis - Alcatel 1 (2018)</value>
+    <comment>2</comment>
+  </data>
+  <data name="_2" xml:space="preserve">
+    <value>Armazenamento: 8</value>
+    <comment>2</comment>
+  </data>
+  <data name="_3" xml:space="preserve">
+    <value>Ecrã: </value>
+    <comment>2</comment>
+  </data>
+  <data name="_4" xml:space="preserve">
+    <value>Câmeras: </value>
+    <comment>2</comment>
+  </data>
+  <data name="_5" xml:space="preserve">
+    <value>(Traseira) / </value>
+    <comment>2</comment>
+  </data>
+  <data name="_6" xml:space="preserve">
+    <value>MP (Frontal)</value>
+    <comment>2</comment>
+  </data>
+  <data name="_7" xml:space="preserve">
+    <value>Versão(ões) do Android: 8.</value>
+    <comment>2</comment>
+  </data>
+  <data name="_8" xml:space="preserve">
+    <value>1 (Edição Go)</value>
+    <comment>2</comment>
+  </data>
+  <data name="_9" xml:space="preserve">
+    <value>Versão do Kernel: 4.</value>
+    <comment>2</comment>
+  </data>
+  <data name="_10" xml:space="preserve">
+    <value>Data de lançamento: </value>
+    <comment>2</comment>
+  </data>
+  <data name="_11" xml:space="preserve">
+    <value>Junho</value>
+    <comment>2</comment>
+  </data>
+  <data name="_12" xml:space="preserve">
+    <value>VOLTAR</value>
+    <comment>2</comment>
+  </data>
+  <data name="_13" xml:space="preserve">
+    <value>Acerca</value>
+    <comment>2</comment>
+  </data>
+  <data name="_14" xml:space="preserve">
+    <value>Novembro</value>
+    <comment>2</comment>
+  </data>
+  <data name="_15" xml:space="preserve">
+    <value>Versão do .NET Framework requerida: 4.7.2</value>
+    <comment>2</comment>
+  </data>
+  <data name="_16" xml:space="preserve">
+    <value>Requer Versão do Windows: 7 / Server 2008 R2 (x64)</value>
+    <comment>4</comment>
+  </data>
+  <data name="_17" xml:space="preserve">
+    <value>FECHAR</value>
+    <comment>2</comment>
+  </data>
+  <data name="_19" xml:space="preserve">
+    <value>Processo Terminado</value>
+    <comment>2</comment>
+  </data>
+  <data name="_20" xml:space="preserve">
+    <value>O seu bootloader foi d</value>
+    <comment>2</comment>
+  </data>
+  <data name="_21" xml:space="preserve">
+    <value>esbl</value>
+    <comment>2</comment>
+  </data>
+  <data name="_22" xml:space="preserve">
+    <value>oq</value>
+    <comment>2</comment>
+  </data>
+  <data name="_23" xml:space="preserve">
+    <value>eado</value>
+    <comment>2</comment>
+  </data>
+  <data name="_24" xml:space="preserve">
+    <value>com sucesso.</value>
+    <comment>2</comment>
+  </data>
+  <data name="_25" xml:space="preserve">
+    <value>MENU PRINCIPAL</value>
+    <comment>2</comment>
+  </data>
+  <data name="_26" xml:space="preserve">
+    <value>PRESSIONE ALT+F4 PARA FECHAR</value>
+    <comment>2</comment>
+  </data>
+  <data name="_27" xml:space="preserve">
+    <value>Dispositivos Compatíveis</value>
+    <comment>2</comment>
+  </data>
+  <data name="_28" xml:space="preserve">
+    <value>Lista de dispositivos compatíveis com Treble Toolkit</value>
+    <comment>2</comment>
+  </data>
+  <data name="_29" xml:space="preserve">
+    <value>A sua ROM</value>
+    <comment>2</comment>
+  </data>
+  <data name="_30" xml:space="preserve">
+    <value>foi instalado</value>
+    <comment>2</comment>
+  </data>
+  <data name="_31" xml:space="preserve">
+    <value>/iniciado</value>
+    <comment>2</comment>
+  </data>
+  <data name="_32" xml:space="preserve">
+    <value>. Se ocorrer um bootloop, por favor experimente outra ROM</value>
+    <comment>2</comment>
+  </data>
+  <data name="_33" xml:space="preserve">
+    <value>/imagem TWRP </value>
+    <comment>2</comment>
+  </data>
+  <data name="_34" xml:space="preserve">
+    <value> antes de reportar como bug.</value>
+    <comment>2</comment>
+  </data>
+  <data name="_35" xml:space="preserve">
+    <value>Instalar GSI</value>
+    <comment>2</comment>
+  </data>
+  <data name="_36" xml:space="preserve">
+    <value>Por favor selecione o esquema de partições do seu dispositivo</value>
+    <comment>2</comment>
+  </data>
+  <data name="_37" xml:space="preserve">
+    <value>Por favor </value>
+    <comment>2</comment>
+  </data>
+  <data name="_38" xml:space="preserve">
+    <value>coloque a sua ROM na pasta Place_File</value>
+    <comment>2</comment>
+  </data>
+  <data name="_39" xml:space="preserve">
+    <value>e </value>
+    <comment>2</comment>
+  </data>
+  <data name="_40" xml:space="preserve">
+    <value>reinicie o dispositivo para o bootloader (precisa de estar desbloqueado) e pressione "Próximo"</value>
+    <comment>2</comment>
+  </data>
+  <data name="_41" xml:space="preserve">
+    <value>SEGUINTE</value>
+    <comment>2</comment>
+  </data>
+  <data name="_42" xml:space="preserve">
+    <value>INSTALAR GSI</value>
+    <comment>2</comment>
+  </data>
+  <data name="_43" xml:space="preserve">
+    <value>INSTALAR/INICIAR TWRP</value>
+    <comment>2</comment>
+  </data>
+  <data name="_44" xml:space="preserve">
+    <value>DESBLOQUEAR BOOTLOADER</value>
+    <comment>2</comment>
+  </data>
+  <data name="_45" xml:space="preserve">
+    <value>INSTALAR PERMISSIVER</value>
+    <comment>2</comment>
+  </data>
+  <data name="_46" xml:space="preserve">
+    <value>DISPOSITIVOS COMPATÍVEIS</value>
+    <comment>2</comment>
+  </data>
+  <data name="_47" xml:space="preserve">
+    <value>Dispositivos Compatíveis - OnePlus 6</value>
+    <comment>2</comment>
+  </data>
+  <data name="_48" xml:space="preserve">
+    <value>Armazenamento: 64GB / 128GB / 256GB</value>
+    <comment>2</comment>
+  </data>
+  <data name="_49" xml:space="preserve">
+    <value>Ecrã: 6.28" Optic AMOLED (2280x1080)</value>
+    <comment>2</comment>
+  </data>
+  <data name="_50" xml:space="preserve">
+    <value>Câmaras: 16MP + 20MP (Traseira) / 16MP (Frontal)</value>
+    <comment>2</comment>
+  </data>
+  <data name="_51" xml:space="preserve">
+    <value>Versão(ões) do Android: 8.1 / 9 / 10 / 11 (planeado)</value>
+    <comment>2</comment>
+  </data>
+  <data name="_52" xml:space="preserve">
+    <value>Versão do Kernel: 4.9</value>
+    <comment>2</comment>
+  </data>
+  <data name="_53" xml:space="preserve">
+    <value>Data de lançamento: Maio 22 2018</value>
+    <comment>2</comment>
+  </data>
+  <data name="_55" xml:space="preserve">
+    <value>Instalar Permissiver</value>
+    <comment>2</comment>
+  </data>
+  <data name="_56" xml:space="preserve">
+    <value>Por favor reinicie para o TWRP, selecione "Avançado" e selecione "ADB Sideload"</value>
+    <comment>2</comment>
+  </data>
+  <data name="_57" xml:space="preserve">
+    <value>, e selecione Instalar</value>
+    <comment>2</comment>
+  </data>
+  <data name="_58" xml:space="preserve">
+    <value>INSTALAR</value>
+    <comment>2</comment>
+  </data>
+  <data name="_59" xml:space="preserve">
+    <value>Dispositivos Compatíveis - Sony Xperia 5</value>
+    <comment>2</comment>
+  </data>
+  <data name="_60" xml:space="preserve">
+    <value>Armazenamento: 128GB</value>
+    <comment>2</comment>
+  </data>
+  <data name="_61" xml:space="preserve">
+    <value>Ecrã: 6.1" OLED (2520x1080)</value>
+    <comment>2</comment>
+  </data>
+  <data name="_62" xml:space="preserve">
+    <value>Câmaras: 12MP / 12MP / 12MP (Traseira) / 8MP (Frontal)</value>
+    <comment>2</comment>
+  </data>
+  <data name="_63" xml:space="preserve">
+    <value>Versão(ões) do Android: 8.1 / 9 / 10 / 11 (Planned)</value>
+    <comment>2</comment>
+  </data>
+  <data name="_64" xml:space="preserve">
+    <value>Data de lançamento: September 24 2019</value>
+    <comment>2</comment>
+  </data>
+  <data name="_65" xml:space="preserve">
+    <value>Dispositivos Compatíveis - Sony Xperia XZ2</value>
+    <comment>2</comment>
+  </data>
+  <data name="_66" xml:space="preserve">
+    <value>Armazenamento: 64GB</value>
+    <comment>2</comment>
+  </data>
+  <data name="_67" xml:space="preserve">
+    <value>Câmaras: </value>
+    <comment>2</comment>
+  </data>
+  <data name="_68" xml:space="preserve">
+    <value>Versão(ões) do Android: 8.1 / 9 / 10</value>
+    <comment>2</comment>
+  </data>
+  <data name="_69" xml:space="preserve">
+    <value>Abril</value>
+    <comment>2</comment>
+  </data>
+  <data name="_70" xml:space="preserve">
+    <value>Instalar/Iniciar TWRP</value>
+    <comment>2</comment>
+  </data>
+  <data name="_71" xml:space="preserve">
+    <value>Por favor insira a sua imagem TWRP em </value>
+    <comment>2</comment>
+  </data>
+  <data name="_72" xml:space="preserve">
+    <value>Place_Files_Here/TWRP e selecione Flash or Boot (dependendo da sua intenção</value>
+    <comment>2</comment>
+  </data>
+  <data name="_73" xml:space="preserve">
+    <value>INICIAR</value>
+    <comment>2</comment>
+  </data>
+  <data name="_75" xml:space="preserve">
+    <value>Iniciar TWRP</value>
+    <comment>2</comment>
+  </data>
+  <data name="_76" xml:space="preserve">
+    <value>Verifique se seguiu os passos na janela anterior</value>
+    <comment>2</comment>
+  </data>
+  <data name="_77" xml:space="preserve">
+    <value>e selecione </value>
+    <comment>2</comment>
+  </data>
+  <data name="_78" xml:space="preserve">
+    <value>Iniciar</value>
+    <comment>2</comment>
+  </data>
+  <data name="_79" xml:space="preserve">
+    <value>Instalar TWRP</value>
+    <comment>2</comment>
+  </data>
+  <data name="_80" xml:space="preserve">
+    <value>Verifique se seguiu os passos anteriores e que o esquema de partições do seu dispositivo é A</value>
+    <comment>2</comment>
+  </data>
+  <data name="_81" xml:space="preserve">
+    <value>, e selecione Instalar</value>
+    <comment>2</comment>
+  </data>
+  <data name="_82" xml:space="preserve">
+    <value>Desbloquear Bootloader</value>
+    <comment>2</comment>
+  </data>
+  <data name="_83" xml:space="preserve">
+    <value>Por favor, ative "Permitir Desbloqueio OEM" e ative "Ativar Depuração USB" e pressione Desbloquear.</value>
+    <comment>2</comment>
+  </data>
+  <data name="_84" xml:space="preserve">
+    <value>AVISO: Todos os seus dados serão ELIMINADOS neste processo</value>
+    <comment>2</comment>
+  </data>
+  <data name="_85" xml:space="preserve">
+    <value>DESBLOQUEAR</value>
+    <comment>2</comment>
+  </data>
+  <data name="_86" xml:space="preserve">
+    <value>Adicionado Português.</value>
+    <comment>2</comment>
+  </data>
+  <data name="_87" xml:space="preserve">
+    <value>Platform Tools: r30.0.5 (Novembro 2020)</value>
+    <comment>2</comment>
+  </data>
+  <data name="_88" xml:space="preserve">
+    <value>Versão do .NET Framework Requerida: 4.7.2</value>
+    <comment>2</comment>
+  </data>
+  <data name="_89" xml:space="preserve">
+    <value>Versão do Windows requerida: 7 / Server 2008 R2</value>
+    <comment>2</comment>
+  </data>
+  <data name="_90" xml:space="preserve">
+    <value>Changelog: Adicionado Português, Correção de Bugs.</value>
+    <comment>2</comment>
+  </data>
+</root>
