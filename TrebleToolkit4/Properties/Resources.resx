@@ -208,8 +208,7 @@
     <value>Cameras: </value>
   </data>
   <data name="Changelog_Added_Portuguese" xml:space="preserve">
-    <value>Changelog: New "Force Reinstall" button in the Launcher (only applicable when updating from Launcher 5.2 or later), fixed dormant adb.exe process, making it impossible to remove Treble Toolkit.</value>
-    <comment>Previous text: Changelog: New "Force Reinstall" button in the Launcher (only applicable when updating from Launcher 5.2 or later), fixed dormant adb.exe process.</comment>
+    <value>Changelog: Update button now opens up the Updater app instead of the website, migratory update to Launcher 5.4 (only applies to Launcher 5.0 and 5.1 users), Launcher now closes after launching Treble Toolkit.</value>
   </data>
   <data name="CLOSE" xml:space="preserve">
     <value>CLOSE</value>

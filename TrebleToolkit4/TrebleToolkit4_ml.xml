@@ -1336,14 +1336,14 @@
   <GeneralTexts>
     <StringID>90</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>Changelog: New "Force Reinstall" button in the Launcher (only applicable when updating from Launcher 5.2 or later), fixed dormant adb.exe process, making it impossible to remove Treble Toolkit.</LanguageText>
-    <Status>2</Status>
+    <LanguageText>Changelog: Update button now opens up the Updater app instead of the website, migratory update to Launcher 5.4 (only applies to Launcher 5.0 and 5.1 users), Launcher now closes after launching Treble Toolkit.</LanguageText>
+    <Status>4</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>90</StringID>
     <LanguageID>22</LanguageID>
-    <LanguageText>Changelog: Nova opção "Forçar Reinstalação" no Launcher (apenas quando atualizando do Launcher versão 5.2 ou posterior), corrigido bug onde o processo adb.exe fica ativo mesmo após a sua função, impossibilitando a remoção do Treble Toolkit.</LanguageText>
-    <Status>2</Status>
+    <LanguageText>Changelog: Botão "Atualizar" agora abre o Updater em vez de abrir o site, atualização migratória para o Launcher 5.4 (apenas aplicável para utilizadores do Launcher 5.0 e 5.1), agora o Launcher fecha depois de iniciar o Treble Toolkit.</LanguageText>
+    <Status>4</Status>
   </GeneralTexts>
   <Properties>
     <Component>Resources.resx</Component>

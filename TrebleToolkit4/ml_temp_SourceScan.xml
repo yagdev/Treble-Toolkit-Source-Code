@@ -556,7 +556,7 @@
     <ModuleName>HomePage.xaml.cs</ModuleName>
     <LineNumber>71</LineNumber>
     <ColumnNumber>36</ColumnNumber>
-    <OriginalText>/C start https://github.com/yag-dev-xda/Treble-Toolkit-4.0-Source-Code/releases</OriginalText>
+    <OriginalText>/C cd .. &amp; cd .. &amp; start TrebleToolkitUpdaterLauncher.exe</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
     <StartOfStatement>71</StartOfStatement>
@@ -573,13 +573,13 @@
   <SourceScanResults>
     <SourceScanID>31</SourceScanID>
     <ModuleName>HomePage.xaml.cs</ModuleName>
-    <LineNumber>81</LineNumber>
+    <LineNumber>82</LineNumber>
     <ColumnNumber>35</ColumnNumber>
     <OriginalText>cmd.exe</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>81</StartOfStatement>
-    <EndOfStatement>81</EndOfStatement>
+    <StartOfStatement>82</StartOfStatement>
+    <EndOfStatement>82</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click_6</CodeElement>
@@ -592,13 +592,13 @@
   <SourceScanResults>
     <SourceScanID>32</SourceScanID>
     <ModuleName>HomePage.xaml.cs</ModuleName>
-    <LineNumber>82</LineNumber>
+    <LineNumber>83</LineNumber>
     <ColumnNumber>36</ColumnNumber>
     <OriginalText>/C ren gui.exe gui3.exe &amp; ren gui2.exe gui.exe &amp; ren gui3.exe gui2.exe</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>82</StartOfStatement>
-    <EndOfStatement>82</EndOfStatement>
+    <StartOfStatement>83</StartOfStatement>
+    <EndOfStatement>83</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click_6</CodeElement>
@@ -611,13 +611,13 @@
   <SourceScanResults>
     <SourceScanID>33</SourceScanID>
     <ModuleName>HomePage.xaml.cs</ModuleName>
-    <LineNumber>89</LineNumber>
+    <LineNumber>90</LineNumber>
     <ColumnNumber>35</ColumnNumber>
     <OriginalText>cmd.exe</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>89</StartOfStatement>
-    <EndOfStatement>89</EndOfStatement>
+    <StartOfStatement>90</StartOfStatement>
+    <EndOfStatement>90</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click_6</CodeElement>
@@ -630,13 +630,13 @@
   <SourceScanResults>
     <SourceScanID>34</SourceScanID>
     <ModuleName>HomePage.xaml.cs</ModuleName>
-    <LineNumber>90</LineNumber>
+    <LineNumber>91</LineNumber>
     <ColumnNumber>36</ColumnNumber>
     <OriginalText>/C start gui.exe</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>90</StartOfStatement>
-    <EndOfStatement>90</EndOfStatement>
+    <StartOfStatement>91</StartOfStatement>
+    <EndOfStatement>91</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click_6</CodeElement>
@@ -649,13 +649,13 @@
   <SourceScanResults>
     <SourceScanID>35</SourceScanID>
     <ModuleName>HomePage.xaml.cs</ModuleName>
-    <LineNumber>100</LineNumber>
+    <LineNumber>101</LineNumber>
     <ColumnNumber>35</ColumnNumber>
     <OriginalText>cmd.exe</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>100</StartOfStatement>
-    <EndOfStatement>100</EndOfStatement>
+    <StartOfStatement>101</StartOfStatement>
+    <EndOfStatement>101</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click_7</CodeElement>
@@ -668,13 +668,13 @@
   <SourceScanResults>
     <SourceScanID>36</SourceScanID>
     <ModuleName>HomePage.xaml.cs</ModuleName>
-    <LineNumber>101</LineNumber>
+    <LineNumber>102</LineNumber>
     <ColumnNumber>36</ColumnNumber>
     <OriginalText>/C start https://forum.xda-developers.com/project-treble/trebleenabled-device-development/treble-gsi-flashing-tool-b-t4040435</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>101</StartOfStatement>
-    <EndOfStatement>101</EndOfStatement>
+    <StartOfStatement>102</StartOfStatement>
+    <EndOfStatement>102</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click_7</CodeElement>
@@ -687,17 +687,17 @@
   <SourceScanResults>
     <SourceScanID>37</SourceScanID>
     <ModuleName>MLExtension.cs</ModuleName>
-    <LineNumber>34</LineNumber>
+    <LineNumber>36</LineNumber>
     <ColumnNumber>44</ColumnNumber>
     <OriginalText>TrebleToolkit5</OriginalText>
     <IsHidden>true</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>34</StartOfStatement>
-    <EndOfStatement>34</EndOfStatement>
+    <StartOfStatement>36</StartOfStatement>
+    <EndOfStatement>36</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement />
-    <RelativeLineNumber>34</RelativeLineNumber>
+    <RelativeLineNumber>36</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
     <ClassName>MultiLanguageMarkup.LangExtension</ClassName>
@@ -706,17 +706,17 @@
   <SourceScanResults>
     <SourceScanID>38</SourceScanID>
     <ModuleName>MLExtension.cs</ModuleName>
-    <LineNumber>52</LineNumber>
-    <ColumnNumber>55</ColumnNumber>
+    <LineNumber>40</LineNumber>
+    <ColumnNumber>85</ColumnNumber>
     <OriginalText>.Properties.Resources</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>52</StartOfStatement>
-    <EndOfStatement>52</EndOfStatement>
+    <StartOfStatement>40</StartOfStatement>
+    <EndOfStatement>40</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement />
-    <RelativeLineNumber>52</RelativeLineNumber>
+    <RelativeLineNumber>40</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
     <ClassName>MultiLanguageMarkup.LangExtension</ClassName>
@@ -725,17 +725,17 @@
   <SourceScanResults>
     <SourceScanID>39</SourceScanID>
     <ModuleName>MLExtension.cs</ModuleName>
-    <LineNumber>106</LineNumber>
+    <LineNumber>104</LineNumber>
     <ColumnNumber>62</ColumnNumber>
     <OriginalText>System.Windows.SharedDp</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>106</StartOfStatement>
-    <EndOfStatement>116</EndOfStatement>
+    <StartOfStatement>104</StartOfStatement>
+    <EndOfStatement>104</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>ProvideValue</CodeElement>
-    <RelativeLineNumber>27</RelativeLineNumber>
+    <RelativeLineNumber>28</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
     <ClassName>MultiLanguageMarkup.LangExtension</ClassName>

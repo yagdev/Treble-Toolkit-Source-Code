@@ -68,9 +68,10 @@ namespace TrebleToolkit5
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
             startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = "/C start https://github.com/yag-dev-xda/Treble-Toolkit-4.0-Source-Code/releases";
+            startInfo.Arguments = "/C cd .. & cd .. & start TrebleToolkitUpdaterLauncher.exe";
             process.StartInfo = startInfo;
             process.Start();
+            Application.Current.Shutdown();
         }
 
         private void Button_Click_6(object sender, RoutedEventArgs e)

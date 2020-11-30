@@ -331,7 +331,7 @@ namespace TrebleToolkit5.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Changelog: New &quot;Force Reinstall&quot; button in the Launcher (only applicable when updating from Launcher 5.2 or later), fixed dormant adb.exe process, making it impossible to remove Treble Toolkit..
+        ///   Looks up a localized string similar to Changelog: Update button now opens up the Updater app instead of the website, migratory update to Launcher 5.4 (only applies to Launcher 5.0 and 5.1 users), Launcher now closes after launching Treble Toolkit..
         /// </summary>
         public static string Changelog_Added_Portuguese {
             get {

@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TrebleToolkit5"
       mc:Ignorable="d"
-      d:DesignHeight="460" d:DesignWidth="290"
+      d:DesignHeight="500" d:DesignWidth="500"
       Title="HomePage" Background="#FF1D1D1D" xmlns:m="clr-namespace:MultiLanguageMarkup">
 
     <Grid>

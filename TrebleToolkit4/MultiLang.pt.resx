@@ -462,7 +462,7 @@
     <comment>2</comment>
   </data>
   <data name="_90" xml:space="preserve">
-    <value>Changelog: Nova opção "Forçar Reinstalação" no Launcher (apenas quando atualizando do Launcher versão 5.2 ou posterior), corrigido bug onde o processo adb.exe fica ativo mesmo após a sua função, impossibilitando a remoção do Treble Toolkit.</value>
-    <comment>2</comment>
+    <value>Changelog: Botão "Atualizar" agora abre o Updater em vez de abrir o site, atualização migratória para o Launcher 5.4 (apenas aplicável para utilizadores do Launcher 5.0 e 5.1), agora o Launcher fecha depois de iniciar o Treble Toolkit.</value>
+    <comment>4</comment>
   </data>
 </root>
