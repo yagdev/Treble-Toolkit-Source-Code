@@ -61,6 +61,15 @@ namespace TrebleToolkitUpdaterLauncher.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to FORCE REINSTALL.
+        /// </summary>
+        public static string FORCE_REINSTALL {
+            get {
+                return ResourceManager.GetString("FORCE_REINSTALL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to LAUNCH.
         /// </summary>
         public static string LAUNCH {

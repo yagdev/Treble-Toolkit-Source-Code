@@ -105,6 +105,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MLExtension.cs" />
+    <Compile Include="MlString.cs" />
+    <Compile Include="MultiLang.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MultiLang.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -118,6 +124,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="MultiLang.en.resx" />
+    <EmbeddedResource Include="MultiLang.pt.resx" />
+    <EmbeddedResource Include="MultiLang.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MultiLang.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>TrebleToolkitUpdaterLauncher.ml_resources</CustomToolNamespace>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.en.resx">
       <DependentUpon>Resources.resx</DependentUpon>
     </EmbeddedResource>

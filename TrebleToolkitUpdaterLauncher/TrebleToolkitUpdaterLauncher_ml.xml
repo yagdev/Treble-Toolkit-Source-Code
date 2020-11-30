@@ -12,6 +12,9 @@
   <GeneralIds>
     <StringID>4</StringID>
   </GeneralIds>
+  <GeneralIds>
+    <StringID>5</StringID>
+  </GeneralIds>
   <Languages>
     <LanguageID>9</LanguageID>
     <LanguageName>English</LanguageName>
@@ -72,6 +75,18 @@
     <LanguageText>INICIAR</LanguageText>
     <Status>2</Status>
   </GeneralTexts>
+  <GeneralTexts>
+    <StringID>5</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>FORCE REINSTALL</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>5</StringID>
+    <LanguageID>22</LanguageID>
+    <LanguageText>FORÇAR REINSTALAÇÃO</LanguageText>
+    <Status>2</Status>
+  </GeneralTexts>
   <Properties>
     <Component>Resources.resx</Component>
     <Name>Treble_Toolkit_Launcher</Name>
@@ -102,6 +117,14 @@
     <StringID>4</StringID>
     <Selected>true</Selected>
     <ResourceName>LAUNCH</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>FORCE_REINSTALL</Name>
+    <StringID>5</StringID>
+    <Selected>true</Selected>
+    <ResourceName>FORCE_REINSTALL</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
   <GeneralAttributes>

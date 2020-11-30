@@ -25,3 +25,6 @@ E:\repos\Updater\TrebleToolkitUpdaterLauncher\obj\x64\Release\TrebleToolkitUpdat
 E:\repos\Updater\TrebleToolkitUpdaterLauncher\obj\x64\Release\TrebleToolkitUpdaterLauncher.Properties.Resources.pt.resources
 E:\repos\Updater\TrebleToolkitUpdaterLauncher\obj\x64\Release\en\TrebleToolkitUpdaterLauncher.resources.dll
 E:\repos\Updater\TrebleToolkitUpdaterLauncher\obj\x64\Release\pt\TrebleToolkitUpdaterLauncher.resources.dll
+E:\repos\Updater\TrebleToolkitUpdaterLauncher\obj\x64\Release\TrebleToolkitUpdaterLauncher.MultiLang.resources
+E:\repos\Updater\TrebleToolkitUpdaterLauncher\obj\x64\Release\TrebleToolkitUpdaterLauncher.MultiLang.en.resources
+E:\repos\Updater\TrebleToolkitUpdaterLauncher\obj\x64\Release\TrebleToolkitUpdaterLauncher.MultiLang.pt.resources
