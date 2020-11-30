@@ -474,7 +474,7 @@
     <comment>1</comment>
   </data>
   <data name="_90" xml:space="preserve">
-    <value>Changelog: Added Portuguese, Bugfixes.</value>
+    <value>Changelog: New "Force Reinstall" button in the Launcher (only applicable when updating from Launcher 5.2 or later), fixed dormant adb.exe process, making it impossible to remove Treble Toolkit.</value>
     <comment>2</comment>
   </data>
 </root>

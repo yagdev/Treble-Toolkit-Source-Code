@@ -208,8 +208,8 @@
     <value>Cameras: </value>
   </data>
   <data name="Changelog_Added_Portuguese" xml:space="preserve">
-    <value>Changelog: Added Portuguese, Bugfixes.</value>
-    <comment>Previous text: Changelog: Added Portuguese.</comment>
+    <value>Changelog: New "Force Reinstall" button in the Launcher (only applicable when updating from Launcher 5.2 or later), fixed dormant adb.exe process, making it impossible to remove Treble Toolkit.</value>
+    <comment>Previous text: Changelog: New "Force Reinstall" button in the Launcher (only applicable when updating from Launcher 5.2 or later), fixed dormant adb.exe process.</comment>
   </data>
   <data name="CLOSE" xml:space="preserve">
     <value>CLOSE</value>

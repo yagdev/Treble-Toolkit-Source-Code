@@ -28,7 +28,7 @@ namespace TrebleToolkit5
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-            const string strCmdText = "/C cd pt & start adb.exe reboot-bootloader & start fastboot.exe oem unlock";
+            const string strCmdText = "/C cd pt & start adb.exe reboot-bootloader & start fastboot.exe oem unlock & taskkill /f /im adb.exe";
             Process.Start("CMD.exe", strCmdText);
             Uri uri = new Uri("BLUnlocked.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);

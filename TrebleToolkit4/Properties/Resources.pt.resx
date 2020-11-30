@@ -202,7 +202,7 @@
     <value>Câmaras: </value>
   </data>
   <data name="Changelog_Added_Portuguese" xml:space="preserve">
-    <value>Changelog: Adicionado Português, Correção de Bugs.</value>
+    <value>Changelog: Nova opção "Forçar Reinstalação" no Launcher (apenas quando atualizando do Launcher versão 5.2 ou posterior), corrigido bug onde o processo adb.exe fica ativo mesmo após a sua função, impossibilitando a remoção do Treble Toolkit.</value>
   </data>
   <data name="CLOSE" xml:space="preserve">
     <value>FECHAR</value>

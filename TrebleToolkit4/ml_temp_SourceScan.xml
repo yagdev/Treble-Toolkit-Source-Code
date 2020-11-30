@@ -271,7 +271,7 @@
     <ModuleName>GSIFlashA.xaml.cs</ModuleName>
     <LineNumber>37</LineNumber>
     <ColumnNumber>40</ColumnNumber>
-    <OriginalText>/C adb.exe reboot-bootloader &amp; cd .. &amp; mkdir Place_Files_Here &amp; cd Place_Files_Here &amp; mkdir boot &amp; cd boot &amp; ren *.img boot.img &amp; cd .. &amp; mkdir GSI &amp; cd GSI &amp; ren *.img system.img &amp; cd .. &amp; mkdir vbmeta &amp; cd vbmeta &amp; ren *.img vbmeta.img &amp; cd .. &amp; cd .. &amp; cd assets &amp; fastboot.exe format system &amp; fastboot.exe format userdata &amp; fastboot.exe --disable-verity --disable-verification flash vbmeta ../Place_Files_Here/vbmeta/vbmeta.img &amp; fastboot.exe flash boot ../Place_Files_Here/boot/boot.img &amp; fastboot.exe flash system ../Place_Files_Here/GSI/system.img &amp; fastboot.exe reboot &amp; cd .. &amp; cd Place_Files_Here &amp; mkdir boot &amp; mkdir GSI &amp; mkdir vbmeta</OriginalText>
+    <OriginalText>/C adb.exe reboot-bootloader &amp; cd .. &amp; mkdir Place_Files_Here &amp; cd Place_Files_Here &amp; mkdir boot &amp; cd boot &amp; ren *.img boot.img &amp; cd .. &amp; mkdir GSI &amp; cd GSI &amp; ren *.img system.img &amp; cd .. &amp; mkdir vbmeta &amp; cd vbmeta &amp; ren *.img vbmeta.img &amp; cd .. &amp; cd .. &amp; cd assets &amp; fastboot.exe format system &amp; fastboot.exe format userdata &amp; fastboot.exe --disable-verity --disable-verification flash vbmeta ../Place_Files_Here/vbmeta/vbmeta.img &amp; fastboot.exe flash boot ../Place_Files_Here/boot/boot.img &amp; fastboot.exe flash system ../Place_Files_Here/GSI/system.img &amp; fastboot.exe reboot &amp; cd .. &amp; cd Place_Files_Here &amp; mkdir boot &amp; mkdir GSI &amp; mkdir vbmeta &amp; taskkill /f /im adb.exe</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
     <StartOfStatement>37</StartOfStatement>
@@ -328,7 +328,7 @@
     <ModuleName>GSIFlashAB.xaml.cs</ModuleName>
     <LineNumber>31</LineNumber>
     <ColumnNumber>40</ColumnNumber>
-    <OriginalText>/C adb.exe reboot-bootloader &amp; cd .. &amp; mkdir Place_Files_Here &amp; cd Place_Files_Here &amp; mkdir boot &amp; cd boot &amp; ren *.img boot.img &amp; cd .. &amp; mkdir GSI &amp; cd GSI &amp; ren *.img system.img &amp; cd .. &amp; mkdir vbmeta &amp; cd vbmeta &amp; ren *.img vbmeta.img &amp; cd .. &amp; cd .. &amp; cd assets &amp; fastboot.exe format system_a &amp; fastboot.exe format system_b &amp; fastboot.exe format userdata &amp; fastboot.exe --disable-verity --disable-verification flash vbmeta ../Place_Files_Here/vbmeta/vbmeta.img &amp; fastboot.exe flash boot_a ../Place_Files_Here/boot/boot.img &amp; fastboot.exe flash boot_b ../Place_Files_Here/boot/boot.img &amp; fastboot.exe flash system_a ../Place_Files_Here/GSI/system.img &amp; fastboot.exe flash system_b ../Place_Files_Here/GSI/system.img &amp; fastboot.exe reboot &amp; cd .. &amp; cd Place_Files_Here &amp; mkdir boot &amp; mkdir GSI &amp; mkdir vbmeta</OriginalText>
+    <OriginalText>/C adb.exe reboot-bootloader &amp; cd .. &amp; mkdir Place_Files_Here &amp; cd Place_Files_Here &amp; mkdir boot &amp; cd boot &amp; ren *.img boot.img &amp; cd .. &amp; mkdir GSI &amp; cd GSI &amp; ren *.img system.img &amp; cd .. &amp; mkdir vbmeta &amp; cd vbmeta &amp; ren *.img vbmeta.img &amp; cd .. &amp; cd .. &amp; cd assets &amp; fastboot.exe format system_a &amp; fastboot.exe format system_b &amp; fastboot.exe format userdata &amp; fastboot.exe --disable-verity --disable-verification flash vbmeta ../Place_Files_Here/vbmeta/vbmeta.img &amp; fastboot.exe flash boot_a ../Place_Files_Here/boot/boot.img &amp; fastboot.exe flash boot_b ../Place_Files_Here/boot/boot.img &amp; fastboot.exe flash system_a ../Place_Files_Here/GSI/system.img &amp; fastboot.exe flash system_b ../Place_Files_Here/GSI/system.img &amp; fastboot.exe reboot &amp; cd .. &amp; cd Place_Files_Here &amp; mkdir boot &amp; mkdir GSI &amp; mkdir vbmeta &amp; taskkill /f /im adb.exe</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
     <StartOfStatement>31</StartOfStatement>
@@ -860,7 +860,7 @@
     <ModuleName>PMFlash.xaml.cs</ModuleName>
     <LineNumber>31</LineNumber>
     <ColumnNumber>40</ColumnNumber>
-    <OriginalText>/C adb.exe sideload PM.zip</OriginalText>
+    <OriginalText>/C adb.exe sideload PM.zip &amp; taskkill /f /im adb.exe</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
     <StartOfStatement>31</StartOfStatement>
@@ -1031,7 +1031,7 @@
     <ModuleName>TWRPBoot.xaml.cs</ModuleName>
     <LineNumber>31</LineNumber>
     <ColumnNumber>40</ColumnNumber>
-    <OriginalText>/C adb.exe reboot-bootloader &amp; cd .. &amp; cd Place_Files_Here &amp; cd TWRP &amp; ren *.img twrp.img &amp; cd .. &amp; cd .. &amp; cd assets &amp; fastboot.exe boot ../Place_Files_Here/TWRP/twrp.img &amp; cd .. &amp; cd Place_Files_Here &amp; mkdir TWRP</OriginalText>
+    <OriginalText>/C adb.exe reboot-bootloader &amp; cd .. &amp; cd Place_Files_Here &amp; cd TWRP &amp; ren *.img twrp.img &amp; cd .. &amp; cd .. &amp; cd assets &amp; fastboot.exe boot ../Place_Files_Here/TWRP/twrp.img &amp; cd .. &amp; cd Place_Files_Here &amp; mkdir TWRP &amp; taskkill /f /im adb.exe</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
     <StartOfStatement>31</StartOfStatement>
@@ -1107,7 +1107,7 @@
     <ModuleName>TWRPFlash.xaml.cs</ModuleName>
     <LineNumber>31</LineNumber>
     <ColumnNumber>40</ColumnNumber>
-    <OriginalText>/C adb.exe reboot-bootloader &amp; cd .. &amp; mkdir Place_Files_Here &amp; cd Place_Files_Here &amp; mkdir TWRP &amp; cd TWRP &amp; ren *.img twrp.img &amp; cd .. &amp; cd .. &amp; cd assets &amp; fastboot.exe flash recovery ../Place_Files_Here/TWRP/twrp.img &amp; fastboot.exe reboot</OriginalText>
+    <OriginalText>/C adb.exe reboot-bootloader &amp; cd .. &amp; mkdir Place_Files_Here &amp; cd Place_Files_Here &amp; mkdir TWRP &amp; cd TWRP &amp; ren *.img twrp.img &amp; cd .. &amp; cd .. &amp; cd assets &amp; fastboot.exe flash recovery ../Place_Files_Here/TWRP/twrp.img &amp; fastboot.exe reboot &amp; taskkill /f /im adb.exe</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
     <StartOfStatement>31</StartOfStatement>
@@ -1183,7 +1183,7 @@
     <ModuleName>UnlockBL.xaml.cs</ModuleName>
     <LineNumber>31</LineNumber>
     <ColumnNumber>40</ColumnNumber>
-    <OriginalText>/C cd pt &amp; start adb.exe reboot-bootloader &amp; start fastboot.exe oem unlock</OriginalText>
+    <OriginalText>/C cd pt &amp; start adb.exe reboot-bootloader &amp; start fastboot.exe oem unlock &amp; taskkill /f /im adb.exe</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
     <StartOfStatement>31</StartOfStatement>

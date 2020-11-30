@@ -1336,13 +1336,13 @@
   <GeneralTexts>
     <StringID>90</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>Changelog: Added Portuguese, Bugfixes.</LanguageText>
+    <LanguageText>Changelog: New "Force Reinstall" button in the Launcher (only applicable when updating from Launcher 5.2 or later), fixed dormant adb.exe process, making it impossible to remove Treble Toolkit.</LanguageText>
     <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>90</StringID>
     <LanguageID>22</LanguageID>
-    <LanguageText>Changelog: Adicionado Português, Correção de Bugs.</LanguageText>
+    <LanguageText>Changelog: Nova opção "Forçar Reinstalação" no Launcher (apenas quando atualizando do Launcher versão 5.2 ou posterior), corrigido bug onde o processo adb.exe fica ativo mesmo após a sua função, impossibilitando a remoção do Treble Toolkit.</LanguageText>
     <Status>2</Status>
   </GeneralTexts>
   <Properties>

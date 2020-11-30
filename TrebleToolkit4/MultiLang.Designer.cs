@@ -862,7 +862,7 @@ namespace TrebleToolkit5.ml_resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Changelog: Added Portuguese, Bugfixes..
+        ///   Looks up a localized string similar to Changelog: New &quot;Force Reinstall&quot; button in the Launcher (only applicable when updating from Launcher 5.2 or later), fixed dormant adb.exe process, making it impossible to remove Treble Toolkit..
         /// </summary>
         public static string _90 {
             get {

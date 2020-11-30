@@ -28,7 +28,7 @@ namespace TrebleToolkit5
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-            const string strCmdText = "/C adb.exe reboot-bootloader & cd .. & mkdir Place_Files_Here & cd Place_Files_Here & mkdir TWRP & cd TWRP & ren *.img twrp.img & cd .. & cd .. & cd assets & fastboot.exe flash recovery ../Place_Files_Here/TWRP/twrp.img & fastboot.exe reboot";
+            const string strCmdText = "/C adb.exe reboot-bootloader & cd .. & mkdir Place_Files_Here & cd Place_Files_Here & mkdir TWRP & cd TWRP & ren *.img twrp.img & cd .. & cd .. & cd assets & fastboot.exe flash recovery ../Place_Files_Here/TWRP/twrp.img & fastboot.exe reboot & taskkill /f /im adb.exe";
             Process.Start("CMD.exe", strCmdText);
             Uri uri = new Uri("FlashFinished.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);

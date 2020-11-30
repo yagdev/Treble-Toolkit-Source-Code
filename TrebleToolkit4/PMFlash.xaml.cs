@@ -28,7 +28,7 @@ namespace TrebleToolkit5
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-            const string strCmdText = "/C adb.exe sideload PM.zip";
+            const string strCmdText = "/C adb.exe sideload PM.zip & taskkill /f /im adb.exe";
             Process.Start("CMD.exe", strCmdText);
             Uri uri = new Uri("FlashFinished.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);
