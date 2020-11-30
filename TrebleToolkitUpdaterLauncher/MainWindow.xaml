@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TrebleToolkitUpdaterLauncher"
         mc:Ignorable="d"
-        Title="{m:Lang Treble_Toolkit_Launcher}" Height="450" Width="800" Background="#FF1D1D1D" xmlns:m="clr-namespace:MultiLanguageMarkup">
+        Title="{m:Lang Treble_Toolkit_Launcher}" Height="450" Width="800" Background="#FF1D1D1D" xmlns:m="clr-namespace:MultiLanguageMarkup" MinWidth="800" MinHeight="450">
     <Grid>
         <Label x:Name="status_lbl" Content="©2020 YAG-dev" Margin="10,0,10,10" VerticalAlignment="Bottom" FontSize="20" Height="40" FontFamily="Bahnschrift" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
         <Label Content="{m:Lang Welcome_to_Treble_Toolkit_Laun}" Margin="10,10,10,0" VerticalAlignment="Top" Height="180" Foreground="White" FontSize="32" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/TrebleToolkitUpdaterLauncher;component/Fonts/#Bahnschrift Semibold" />
