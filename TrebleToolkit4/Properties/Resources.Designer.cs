@@ -511,6 +511,15 @@ namespace TrebleToolkit5.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to GB.
+        /// </summary>
+        public static string GB {
+            get {
+                return ResourceManager.GetString("GB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to June.
         /// </summary>
         public static string June {
@@ -597,6 +606,15 @@ namespace TrebleToolkit5.Properties {
         public static string November {
             get {
                 return ResourceManager.GetString("November", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OnePlus 6.
+        /// </summary>
+        public static string OnePlus_6 {
+            get {
+                return ResourceManager.GetString("OnePlus_6", resourceCulture);
             }
         }
         
@@ -849,6 +867,15 @@ namespace TrebleToolkit5.Properties {
         public static string window_then_press {
             get {
                 return ResourceManager.GetString("window_then_press", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to x1080).
+        /// </summary>
+        public static string x1080 {
+            get {
+                return ResourceManager.GetString("x1080", resourceCulture);
             }
         }
         

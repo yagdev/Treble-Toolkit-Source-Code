@@ -99,6 +99,18 @@
     <Compile Include="CompatibleDevices.xaml.cs">
       <DependentUpon>CompatibleDevices.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FlashABConfirmation.xaml.cs">
+      <DependentUpon>FlashABConfirmation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FlashABFileSetup.xaml.cs">
+      <DependentUpon>FlashABFileSetup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FlashAConfirmation.xaml.cs">
+      <DependentUpon>FlashAConfirmation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FlashAFileSetup.xaml.cs">
+      <DependentUpon>FlashAFileSetup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MLExtension.cs" />
     <Compile Include="MlString.cs" />
     <Compile Include="MultiLang.Designer.cs">
@@ -124,8 +136,20 @@
     <Compile Include="TWRPBoot.xaml.cs">
       <DependentUpon>TWRPBoot.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TWRPBootConfirmation.xaml.cs">
+      <DependentUpon>TWRPBootConfirmation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TWRPBootFileSetup.xaml.cs">
+      <DependentUpon>TWRPBootFileSetup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TWRPFlash.xaml.cs">
       <DependentUpon>TWRPFlash.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TWRPFlashConfirmation.xaml.cs">
+      <DependentUpon>TWRPFlashConfirmation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TWRPFlashFileSetup.xaml.cs">
+      <DependentUpon>TWRPFlashFileSetup.xaml</DependentUpon>
     </Compile>
     <Compile Include="UnlockBL.xaml.cs">
       <DependentUpon>UnlockBL.xaml</DependentUpon>
@@ -143,6 +167,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CompatibleDevices.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FlashABConfirmation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FlashABFileSetup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FlashAConfirmation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FlashAFileSetup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -217,7 +257,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="TWRPBootConfirmation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TWRPBootFileSetup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TWRPFlash.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TWRPFlashConfirmation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TWRPFlashFileSetup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

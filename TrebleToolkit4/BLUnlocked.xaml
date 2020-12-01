@@ -9,12 +9,12 @@
       Title="BLUnlocked" Background="#FF1D1D1D" xmlns:m="clr-namespace:MultiLanguageMarkup">
 
     <Grid>
-        <Label Content="{m:Lang Process_Finished}" Margin="10,10,10,0" VerticalAlignment="Top" Height="50" Foreground="White" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-        <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Foreground="White" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold"><Run Text="{m:Lang Your_bootloader_has_been_s}" /><Run Text="{m:Lang ucce}" /><Run Text="{m:Lang ss}" /><Run Text="{m:Lang fully}" /><Run Text="{m:Lang unlocked}" /></TextBlock>
-        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,10,65" Stroke="Red" VerticalAlignment="Bottom" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2" />
-        <Label Content="{m:Lang MAIN_MENU}" Margin="10,0,10,65" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" VerticalAlignment="Bottom" />
-        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,10,10" Stroke="Red" VerticalAlignment="Bottom" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2" />
-        <Label Content="{m:Lang PRESS_ALT_F4_TO_CLOSE}" Margin="10,0,10,10" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" VerticalAlignment="Bottom" />
+        <Label Content="Process Finished" Margin="10,10,10,0" VerticalAlignment="Top" Height="50" Foreground="#FFE4E4E4" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Foreground="#FFE4E4E4" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold"><Run Text="Your bootloader has been s" /><Run Text="ucce" /><Run Text="ss" /><Run Text="fully " /><Run Text="unlocked." /></TextBlock>
+        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,10,65" Stroke="#FF402EA4" VerticalAlignment="Bottom" RadiusY="23.5" RadiusX="23.5" StrokeThickness="3" />
+        <Label Content="MAIN MENU" Margin="10,0,10,65" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="#FFE4E4E4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" VerticalAlignment="Bottom" />
+        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,10,10" Stroke="#FF402EA4" VerticalAlignment="Bottom" RadiusY="23.5" RadiusX="23.5" StrokeThickness="3" />
+        <Label Content="PRESS ALT+F4 TO CLOSE" Margin="10,0,10,10" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="#FFE4E4E4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" VerticalAlignment="Bottom" />
         <Button Content="Button" Margin="10,0,10,65" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click" />
 
     </Grid>

@@ -9,13 +9,13 @@
       Title="TWRPFlash" Background="#FF1D1D1D" xmlns:m="clr-namespace:MultiLanguageMarkup">
 
     <Grid>
-        <Label Content="{m:Lang Flash_TWRP}" Margin="10,10,10,0" VerticalAlignment="Top" Height="50" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" Foreground="White" FontSize="33" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-        <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Foreground="White" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold"><Run Text="{m:Lang Make_sure_you_followed_the_ste0}" /><Run Text="{m:Lang _then_press_Flash}" /></TextBlock>
-        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,10,65" Stroke="Red" VerticalAlignment="Bottom" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2" />
-        <Label Content="{m:Lang FLASH}" Margin="10,0,10,65" VerticalAlignment="Bottom" Height="50" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <Label Content="Flash TWRP" Margin="10,10,10,0" VerticalAlignment="Top" Height="50" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" Foreground="#FFE4E4E4" FontSize="33" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Foreground="#FFE4E4E4" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold"><Run Text="Make sure you followed the steps on the previous window and make sure your phone's partition scheme is A" /><Run Text=", then press Flash" /></TextBlock>
+        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,10,65" Stroke="#FF402EA4" VerticalAlignment="Bottom" RadiusY="23.5" RadiusX="23.5" StrokeThickness="3" />
+        <Label Content="FLASH" Margin="10,0,10,65" VerticalAlignment="Bottom" Height="50" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="#FFE4E4E4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
         <Button Content="Button" Margin="10,0,10,65" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click_5" />
-        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,10,10" Stroke="Red" VerticalAlignment="Bottom" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2" />
-        <Label Content="{m:Lang BACK}" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="50" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,10,10" Stroke="#FF402EA4" VerticalAlignment="Bottom" RadiusY="23.5" RadiusX="23.5" StrokeThickness="3" />
+        <Label Content="BACK" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="50" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="#FFE4E4E4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
         <Button Content="Button" Margin="10,0,10,10" Opacity="0" Click="Button_Click" Height="50" VerticalAlignment="Bottom" />
 
     </Grid>

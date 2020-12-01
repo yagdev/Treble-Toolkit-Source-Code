@@ -9,15 +9,15 @@
       Title="TWRP" Background="#FF1D1D1D" xmlns:m="clr-namespace:MultiLanguageMarkup">
 
     <Grid>
-        <Label Content="{m:Lang Flash_Boot_TWRP0}" Margin="10,10,10,0" VerticalAlignment="Top" Height="50" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" Foreground="White" FontSize="33" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-        <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Foreground="White" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold"><Run Text="{m:Lang Please_place_your_TWRP_image_i}" /><Run Text="{m:Lang Place_Files_Here_TWRP_and_sele}" /></TextBlock>
-        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,10,120" Stroke="Red" VerticalAlignment="Bottom" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2" />
-        <Label Content="{m:Lang FLASH}" Margin="10,0,10,120" VerticalAlignment="Bottom" Height="50" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <Label Content="Flash/Boot TWRP" Margin="10,10,10,0" VerticalAlignment="Top" Height="50" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" Foreground="#FFE4E4E4" FontSize="33" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Foreground="#FFE4E4E4" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold"><Run Text="Please place your TWRP image in " /><Run Text="Place_Files_Here/TWRP and select Flash or Boot (depending on your intention" /></TextBlock>
+        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,10,120" Stroke="#FF402EA4" VerticalAlignment="Bottom" RadiusY="23.5" RadiusX="23.5" StrokeThickness="3" />
+        <Label Content="FLASH" Margin="10,0,10,120" VerticalAlignment="Bottom" Height="50" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="#FFE4E4E4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
         <Button Content="Button" Margin="10,0,10,120" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click_5" />
-        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,10,65" Stroke="Red" VerticalAlignment="Bottom" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2" />
-        <Label Content="{m:Lang BOOT}" Margin="10,0,10,65" VerticalAlignment="Bottom" Height="50" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,10,10" Stroke="Red" VerticalAlignment="Bottom" RadiusY="3.5" RadiusX="3.5" StrokeThickness="2" />
-        <Label Content="{m:Lang BACK}" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="50" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,10,65" Stroke="#FF402EA4" VerticalAlignment="Bottom" RadiusY="23.5" RadiusX="23.5" StrokeThickness="3" />
+        <Label Content="BOOT" Margin="10,0,10,65" VerticalAlignment="Bottom" Height="50" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="#FFE4E4E4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,10,10" Stroke="#FF402EA4" VerticalAlignment="Bottom" RadiusY="23.5" RadiusX="23.5" StrokeThickness="3" />
+        <Label Content="BACK" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="50" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="#FFE4E4E4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
         <Button Content="Button" Margin="10,0,10,65" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click" />
         <Button Content="Button" Margin="10,0,10,10" Opacity="0" Click="Button_Click_1" Height="50" VerticalAlignment="Bottom" />
     </Grid>

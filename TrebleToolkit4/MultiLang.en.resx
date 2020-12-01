@@ -477,4 +477,16 @@
     <value>Changelog: Update button now opens up the Updater app instead of the website, migratory update to Launcher 5.4 (only applies to Launcher 5.0 and 5.1 users), Launcher now closes after launching Treble Toolkit.</value>
     <comment>4</comment>
   </data>
+  <data name="_91" xml:space="preserve">
+    <value>GB</value>
+    <comment>1</comment>
+  </data>
+  <data name="_92" xml:space="preserve">
+    <value>OnePlus 6</value>
+    <comment>1</comment>
+  </data>
+  <data name="_93" xml:space="preserve">
+    <value>x1080)</value>
+    <comment>1</comment>
+  </data>
 </root>

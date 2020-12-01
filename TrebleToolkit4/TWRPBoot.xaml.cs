@@ -28,9 +28,7 @@ namespace TrebleToolkit5
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-            const string strCmdText = "/C adb.exe reboot-bootloader & cd .. & cd Place_Files_Here & cd TWRP & ren *.img twrp.img & cd .. & cd .. & cd assets & fastboot.exe boot ../Place_Files_Here/TWRP/twrp.img & cd .. & cd Place_Files_Here & mkdir TWRP & taskkill /f /im adb.exe";
-            Process.Start("CMD.exe", strCmdText);
-            Uri uri = new Uri("FlashFinished.xaml", UriKind.Relative);
+            Uri uri = new Uri("TWRPBootFileSetup.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);
         }
 

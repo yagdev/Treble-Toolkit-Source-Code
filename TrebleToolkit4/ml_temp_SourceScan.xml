@@ -173,6 +173,310 @@
   </SourceScanResults>
   <SourceScanResults>
     <SourceScanID>10</SourceScanID>
+    <ModuleName>FlashABConfirmation.xaml.cs</ModuleName>
+    <LineNumber>33</LineNumber>
+    <ColumnNumber>40</ColumnNumber>
+    <OriginalText>/C adb.exe reboot-bootloader &amp; cd .. &amp; mkdir Place_Files_Here &amp; cd Place_Files_Here &amp; mkdir boot &amp; cd boot &amp; ren *.img boot.img &amp; cd .. &amp; mkdir GSI &amp; cd GSI &amp; ren *.img system.img &amp; cd .. &amp; mkdir vbmeta &amp; cd vbmeta &amp; ren *.img vbmeta.img &amp; cd .. &amp; cd .. &amp; cd assets &amp; fastboot.exe format system_a &amp; fastboot.exe format system_b &amp; fastboot.exe format userdata &amp; fastboot.exe --disable-verity --disable-verification flash vbmeta ../Place_Files_Here/vbmeta/vbmeta.img &amp; fastboot.exe flash boot_a ../Place_Files_Here/boot/boot.img &amp; fastboot.exe flash boot_b ../Place_Files_Here/boot/boot.img &amp; fastboot.exe flash system_a ../Place_Files_Here/GSI/system.img &amp; fastboot.exe flash system_b ../Place_Files_Here/GSI/system.img &amp; fastboot.exe reboot &amp; cd .. &amp; cd Place_Files_Here &amp; mkdir boot &amp; mkdir GSI &amp; mkdir vbmeta &amp; taskkill /f /im adb.exe</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>33</StartOfStatement>
+    <EndOfStatement>33</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click</CodeElement>
+    <RelativeLineNumber>4</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkit5.FlashABConfirmation</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>11</SourceScanID>
+    <ModuleName>FlashABConfirmation.xaml.cs</ModuleName>
+    <LineNumber>34</LineNumber>
+    <ColumnNumber>28</ColumnNumber>
+    <OriginalText>CMD.exe</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>34</StartOfStatement>
+    <EndOfStatement>34</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click</CodeElement>
+    <RelativeLineNumber>5</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkit5.FlashABConfirmation</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>12</SourceScanID>
+    <ModuleName>FlashABConfirmation.xaml.cs</ModuleName>
+    <LineNumber>35</LineNumber>
+    <ColumnNumber>32</ColumnNumber>
+    <OriginalText>FlashFinished.xaml</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>35</StartOfStatement>
+    <EndOfStatement>35</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click</CodeElement>
+    <RelativeLineNumber>6</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkit5.FlashABConfirmation</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>13</SourceScanID>
+    <ModuleName>FlashABConfirmation.xaml.cs</ModuleName>
+    <LineNumber>41</LineNumber>
+    <ColumnNumber>32</ColumnNumber>
+    <OriginalText>FlashABFileSetup.xaml</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>41</StartOfStatement>
+    <EndOfStatement>41</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click_1</CodeElement>
+    <RelativeLineNumber>2</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkit5.FlashABConfirmation</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>14</SourceScanID>
+    <ModuleName>FlashABFileSetup.xaml.cs</ModuleName>
+    <LineNumber>33</LineNumber>
+    <ColumnNumber>35</ColumnNumber>
+    <OriginalText>cmd.exe</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>33</StartOfStatement>
+    <EndOfStatement>33</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click</CodeElement>
+    <RelativeLineNumber>5</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkit5.FlashABFileSetup</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>15</SourceScanID>
+    <ModuleName>FlashABFileSetup.xaml.cs</ModuleName>
+    <LineNumber>34</LineNumber>
+    <ColumnNumber>36</ColumnNumber>
+    <OriginalText>/C cd .. &amp; cd Place_Files_Here &amp; cd GSI &amp; start .</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>34</StartOfStatement>
+    <EndOfStatement>34</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click</CodeElement>
+    <RelativeLineNumber>6</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkit5.FlashABFileSetup</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>16</SourceScanID>
+    <ModuleName>FlashABFileSetup.xaml.cs</ModuleName>
+    <LineNumber>37</LineNumber>
+    <ColumnNumber>32</ColumnNumber>
+    <OriginalText>FlashABConfirmation.xaml</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>37</StartOfStatement>
+    <EndOfStatement>37</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click</CodeElement>
+    <RelativeLineNumber>9</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkit5.FlashABFileSetup</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>17</SourceScanID>
+    <ModuleName>FlashABFileSetup.xaml.cs</ModuleName>
+    <LineNumber>43</LineNumber>
+    <ColumnNumber>32</ColumnNumber>
+    <OriginalText>GSIFlashAB.xaml</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>43</StartOfStatement>
+    <EndOfStatement>43</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click_1</CodeElement>
+    <RelativeLineNumber>2</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkit5.FlashABFileSetup</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>18</SourceScanID>
+    <ModuleName>FlashAConfirmation.xaml.cs</ModuleName>
+    <LineNumber>33</LineNumber>
+    <ColumnNumber>40</ColumnNumber>
+    <OriginalText>/C adb.exe reboot-bootloader &amp; cd .. &amp; mkdir Place_Files_Here &amp; cd Place_Files_Here &amp; mkdir boot &amp; cd boot &amp; ren *.img boot.img &amp; cd .. &amp; mkdir GSI &amp; cd GSI &amp; ren *.img system.img &amp; cd .. &amp; mkdir vbmeta &amp; cd vbmeta &amp; ren *.img vbmeta.img &amp; cd .. &amp; cd .. &amp; cd assets &amp; fastboot.exe format system &amp; fastboot.exe format userdata &amp; fastboot.exe --disable-verity --disable-verification flash vbmeta ../Place_Files_Here/vbmeta/vbmeta.img &amp; fastboot.exe flash boot ../Place_Files_Here/boot/boot.img &amp; fastboot.exe flash system ../Place_Files_Here/GSI/system.img &amp; fastboot.exe reboot &amp; cd .. &amp; cd Place_Files_Here &amp; mkdir boot &amp; mkdir GSI &amp; mkdir vbmeta &amp; taskkill /f /im adb.exe</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>33</StartOfStatement>
+    <EndOfStatement>33</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click</CodeElement>
+    <RelativeLineNumber>4</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkit5.FlashAConfirmation</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>19</SourceScanID>
+    <ModuleName>FlashAConfirmation.xaml.cs</ModuleName>
+    <LineNumber>34</LineNumber>
+    <ColumnNumber>28</ColumnNumber>
+    <OriginalText>CMD.exe</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>34</StartOfStatement>
+    <EndOfStatement>34</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click</CodeElement>
+    <RelativeLineNumber>5</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkit5.FlashAConfirmation</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>20</SourceScanID>
+    <ModuleName>FlashAConfirmation.xaml.cs</ModuleName>
+    <LineNumber>35</LineNumber>
+    <ColumnNumber>32</ColumnNumber>
+    <OriginalText>FlashFinished.xaml</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>35</StartOfStatement>
+    <EndOfStatement>35</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click</CodeElement>
+    <RelativeLineNumber>6</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkit5.FlashAConfirmation</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>21</SourceScanID>
+    <ModuleName>FlashAConfirmation.xaml.cs</ModuleName>
+    <LineNumber>41</LineNumber>
+    <ColumnNumber>32</ColumnNumber>
+    <OriginalText>FlashAFileSetup.xaml</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>41</StartOfStatement>
+    <EndOfStatement>41</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click_1</CodeElement>
+    <RelativeLineNumber>2</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkit5.FlashAConfirmation</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>22</SourceScanID>
+    <ModuleName>FlashAFileSetup.xaml.cs</ModuleName>
+    <LineNumber>33</LineNumber>
+    <ColumnNumber>35</ColumnNumber>
+    <OriginalText>cmd.exe</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>33</StartOfStatement>
+    <EndOfStatement>33</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click</CodeElement>
+    <RelativeLineNumber>5</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkit5.FlashAFileSetup</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>23</SourceScanID>
+    <ModuleName>FlashAFileSetup.xaml.cs</ModuleName>
+    <LineNumber>34</LineNumber>
+    <ColumnNumber>36</ColumnNumber>
+    <OriginalText>/C cd .. &amp; cd Place_Files_Here &amp; cd GSI &amp; start .</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>34</StartOfStatement>
+    <EndOfStatement>34</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click</CodeElement>
+    <RelativeLineNumber>6</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkit5.FlashAFileSetup</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>24</SourceScanID>
+    <ModuleName>FlashAFileSetup.xaml.cs</ModuleName>
+    <LineNumber>37</LineNumber>
+    <ColumnNumber>32</ColumnNumber>
+    <OriginalText>FlashAConfirmation.xaml</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>37</StartOfStatement>
+    <EndOfStatement>37</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click</CodeElement>
+    <RelativeLineNumber>9</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkit5.FlashAFileSetup</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>25</SourceScanID>
+    <ModuleName>FlashAFileSetup.xaml.cs</ModuleName>
+    <LineNumber>43</LineNumber>
+    <ColumnNumber>32</ColumnNumber>
+    <OriginalText>GSIFlashA.xaml</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>43</StartOfStatement>
+    <EndOfStatement>43</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click_1</CodeElement>
+    <RelativeLineNumber>2</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkit5.FlashAFileSetup</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>26</SourceScanID>
     <ModuleName>FlashFinished.xaml.cs</ModuleName>
     <LineNumber>30</LineNumber>
     <ColumnNumber>32</ColumnNumber>
@@ -191,7 +495,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>11</SourceScanID>
+    <SourceScanID>27</SourceScanID>
     <ModuleName>FlashGSI.xaml.cs</ModuleName>
     <LineNumber>30</LineNumber>
     <ColumnNumber>32</ColumnNumber>
@@ -210,7 +514,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>12</SourceScanID>
+    <SourceScanID>28</SourceScanID>
     <ModuleName>FlashGSI.xaml.cs</ModuleName>
     <LineNumber>36</LineNumber>
     <ColumnNumber>32</ColumnNumber>
@@ -229,7 +533,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>13</SourceScanID>
+    <SourceScanID>29</SourceScanID>
     <ModuleName>FlashGSI.xaml.cs</ModuleName>
     <LineNumber>42</LineNumber>
     <ColumnNumber>32</ColumnNumber>
@@ -248,7 +552,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>14</SourceScanID>
+    <SourceScanID>30</SourceScanID>
     <ModuleName>GSIFlashA.xaml.cs</ModuleName>
     <LineNumber>31</LineNumber>
     <ColumnNumber>32</ColumnNumber>
@@ -267,11 +571,11 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>15</SourceScanID>
+    <SourceScanID>31</SourceScanID>
     <ModuleName>GSIFlashA.xaml.cs</ModuleName>
     <LineNumber>37</LineNumber>
-    <ColumnNumber>40</ColumnNumber>
-    <OriginalText>/C adb.exe reboot-bootloader &amp; cd .. &amp; mkdir Place_Files_Here &amp; cd Place_Files_Here &amp; mkdir boot &amp; cd boot &amp; ren *.img boot.img &amp; cd .. &amp; mkdir GSI &amp; cd GSI &amp; ren *.img system.img &amp; cd .. &amp; mkdir vbmeta &amp; cd vbmeta &amp; ren *.img vbmeta.img &amp; cd .. &amp; cd .. &amp; cd assets &amp; fastboot.exe format system &amp; fastboot.exe format userdata &amp; fastboot.exe --disable-verity --disable-verification flash vbmeta ../Place_Files_Here/vbmeta/vbmeta.img &amp; fastboot.exe flash boot ../Place_Files_Here/boot/boot.img &amp; fastboot.exe flash system ../Place_Files_Here/GSI/system.img &amp; fastboot.exe reboot &amp; cd .. &amp; cd Place_Files_Here &amp; mkdir boot &amp; mkdir GSI &amp; mkdir vbmeta &amp; taskkill /f /im adb.exe</OriginalText>
+    <ColumnNumber>32</ColumnNumber>
+    <OriginalText>FlashAFileSetup.xaml</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
     <StartOfStatement>37</StartOfStatement>
@@ -286,49 +590,11 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>16</SourceScanID>
-    <ModuleName>GSIFlashA.xaml.cs</ModuleName>
-    <LineNumber>38</LineNumber>
-    <ColumnNumber>28</ColumnNumber>
-    <OriginalText>CMD.exe</OriginalText>
-    <IsHidden>false</IsHidden>
-    <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>38</StartOfStatement>
-    <EndOfStatement>38</EndOfStatement>
-    <IsVerbatim>false</IsVerbatim>
-    <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>Button_Click_1</CodeElement>
-    <RelativeLineNumber>3</RelativeLineNumber>
-    <IsHiddenString>false</IsHiddenString>
-    <IsInterpolatedString>false</IsInterpolatedString>
-    <ClassName>TrebleToolkit5.GSIFlashA</ClassName>
-    <IsController>false</IsController>
-  </SourceScanResults>
-  <SourceScanResults>
-    <SourceScanID>17</SourceScanID>
-    <ModuleName>GSIFlashA.xaml.cs</ModuleName>
-    <LineNumber>39</LineNumber>
-    <ColumnNumber>32</ColumnNumber>
-    <OriginalText>FlashFinished.xaml</OriginalText>
-    <IsHidden>false</IsHidden>
-    <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>39</StartOfStatement>
-    <EndOfStatement>39</EndOfStatement>
-    <IsVerbatim>false</IsVerbatim>
-    <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>Button_Click_1</CodeElement>
-    <RelativeLineNumber>4</RelativeLineNumber>
-    <IsHiddenString>false</IsHiddenString>
-    <IsInterpolatedString>false</IsInterpolatedString>
-    <ClassName>TrebleToolkit5.GSIFlashA</ClassName>
-    <IsController>false</IsController>
-  </SourceScanResults>
-  <SourceScanResults>
-    <SourceScanID>18</SourceScanID>
+    <SourceScanID>32</SourceScanID>
     <ModuleName>GSIFlashAB.xaml.cs</ModuleName>
     <LineNumber>31</LineNumber>
-    <ColumnNumber>40</ColumnNumber>
-    <OriginalText>/C adb.exe reboot-bootloader &amp; cd .. &amp; mkdir Place_Files_Here &amp; cd Place_Files_Here &amp; mkdir boot &amp; cd boot &amp; ren *.img boot.img &amp; cd .. &amp; mkdir GSI &amp; cd GSI &amp; ren *.img system.img &amp; cd .. &amp; mkdir vbmeta &amp; cd vbmeta &amp; ren *.img vbmeta.img &amp; cd .. &amp; cd .. &amp; cd assets &amp; fastboot.exe format system_a &amp; fastboot.exe format system_b &amp; fastboot.exe format userdata &amp; fastboot.exe --disable-verity --disable-verification flash vbmeta ../Place_Files_Here/vbmeta/vbmeta.img &amp; fastboot.exe flash boot_a ../Place_Files_Here/boot/boot.img &amp; fastboot.exe flash boot_b ../Place_Files_Here/boot/boot.img &amp; fastboot.exe flash system_a ../Place_Files_Here/GSI/system.img &amp; fastboot.exe flash system_b ../Place_Files_Here/GSI/system.img &amp; fastboot.exe reboot &amp; cd .. &amp; cd Place_Files_Here &amp; mkdir boot &amp; mkdir GSI &amp; mkdir vbmeta &amp; taskkill /f /im adb.exe</OriginalText>
+    <ColumnNumber>32</ColumnNumber>
+    <OriginalText>FlashABFileSetup.xaml</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
     <StartOfStatement>31</StartOfStatement>
@@ -343,53 +609,15 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>19</SourceScanID>
+    <SourceScanID>33</SourceScanID>
     <ModuleName>GSIFlashAB.xaml.cs</ModuleName>
-    <LineNumber>32</LineNumber>
-    <ColumnNumber>28</ColumnNumber>
-    <OriginalText>CMD.exe</OriginalText>
-    <IsHidden>false</IsHidden>
-    <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>32</StartOfStatement>
-    <EndOfStatement>32</EndOfStatement>
-    <IsVerbatim>false</IsVerbatim>
-    <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>Button_Click_1</CodeElement>
-    <RelativeLineNumber>3</RelativeLineNumber>
-    <IsHiddenString>false</IsHiddenString>
-    <IsInterpolatedString>false</IsInterpolatedString>
-    <ClassName>TrebleToolkit5.GSIFlashAB</ClassName>
-    <IsController>false</IsController>
-  </SourceScanResults>
-  <SourceScanResults>
-    <SourceScanID>20</SourceScanID>
-    <ModuleName>GSIFlashAB.xaml.cs</ModuleName>
-    <LineNumber>33</LineNumber>
-    <ColumnNumber>32</ColumnNumber>
-    <OriginalText>FlashFinished.xaml</OriginalText>
-    <IsHidden>false</IsHidden>
-    <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>33</StartOfStatement>
-    <EndOfStatement>33</EndOfStatement>
-    <IsVerbatim>false</IsVerbatim>
-    <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>Button_Click_1</CodeElement>
-    <RelativeLineNumber>4</RelativeLineNumber>
-    <IsHiddenString>false</IsHiddenString>
-    <IsInterpolatedString>false</IsInterpolatedString>
-    <ClassName>TrebleToolkit5.GSIFlashAB</ClassName>
-    <IsController>false</IsController>
-  </SourceScanResults>
-  <SourceScanResults>
-    <SourceScanID>21</SourceScanID>
-    <ModuleName>GSIFlashAB.xaml.cs</ModuleName>
-    <LineNumber>39</LineNumber>
+    <LineNumber>37</LineNumber>
     <ColumnNumber>32</ColumnNumber>
     <OriginalText>FlashGSI.xaml</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>39</StartOfStatement>
-    <EndOfStatement>39</EndOfStatement>
+    <StartOfStatement>37</StartOfStatement>
+    <EndOfStatement>37</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click</CodeElement>
@@ -400,7 +628,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>22</SourceScanID>
+    <SourceScanID>34</SourceScanID>
     <ModuleName>HomePage.xaml.cs</ModuleName>
     <LineNumber>31</LineNumber>
     <ColumnNumber>32</ColumnNumber>
@@ -419,7 +647,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>23</SourceScanID>
+    <SourceScanID>35</SourceScanID>
     <ModuleName>HomePage.xaml.cs</ModuleName>
     <LineNumber>37</LineNumber>
     <ColumnNumber>32</ColumnNumber>
@@ -438,7 +666,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>24</SourceScanID>
+    <SourceScanID>36</SourceScanID>
     <ModuleName>HomePage.xaml.cs</ModuleName>
     <LineNumber>43</LineNumber>
     <ColumnNumber>32</ColumnNumber>
@@ -457,7 +685,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>25</SourceScanID>
+    <SourceScanID>37</SourceScanID>
     <ModuleName>HomePage.xaml.cs</ModuleName>
     <LineNumber>49</LineNumber>
     <ColumnNumber>32</ColumnNumber>
@@ -476,7 +704,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>26</SourceScanID>
+    <SourceScanID>38</SourceScanID>
     <ModuleName>HomePage.xaml.cs</ModuleName>
     <LineNumber>55</LineNumber>
     <ColumnNumber>32</ColumnNumber>
@@ -495,7 +723,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>27</SourceScanID>
+    <SourceScanID>39</SourceScanID>
     <ModuleName>HomePage.xaml.cs</ModuleName>
     <LineNumber>61</LineNumber>
     <ColumnNumber>40</ColumnNumber>
@@ -514,7 +742,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>28</SourceScanID>
+    <SourceScanID>40</SourceScanID>
     <ModuleName>HomePage.xaml.cs</ModuleName>
     <LineNumber>62</LineNumber>
     <ColumnNumber>28</ColumnNumber>
@@ -533,7 +761,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>29</SourceScanID>
+    <SourceScanID>41</SourceScanID>
     <ModuleName>HomePage.xaml.cs</ModuleName>
     <LineNumber>70</LineNumber>
     <ColumnNumber>35</ColumnNumber>
@@ -552,7 +780,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>30</SourceScanID>
+    <SourceScanID>42</SourceScanID>
     <ModuleName>HomePage.xaml.cs</ModuleName>
     <LineNumber>71</LineNumber>
     <ColumnNumber>36</ColumnNumber>
@@ -571,7 +799,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>31</SourceScanID>
+    <SourceScanID>43</SourceScanID>
     <ModuleName>HomePage.xaml.cs</ModuleName>
     <LineNumber>82</LineNumber>
     <ColumnNumber>35</ColumnNumber>
@@ -590,7 +818,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>32</SourceScanID>
+    <SourceScanID>44</SourceScanID>
     <ModuleName>HomePage.xaml.cs</ModuleName>
     <LineNumber>83</LineNumber>
     <ColumnNumber>36</ColumnNumber>
@@ -609,7 +837,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>33</SourceScanID>
+    <SourceScanID>45</SourceScanID>
     <ModuleName>HomePage.xaml.cs</ModuleName>
     <LineNumber>90</LineNumber>
     <ColumnNumber>35</ColumnNumber>
@@ -628,7 +856,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>34</SourceScanID>
+    <SourceScanID>46</SourceScanID>
     <ModuleName>HomePage.xaml.cs</ModuleName>
     <LineNumber>91</LineNumber>
     <ColumnNumber>36</ColumnNumber>
@@ -647,7 +875,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>35</SourceScanID>
+    <SourceScanID>47</SourceScanID>
     <ModuleName>HomePage.xaml.cs</ModuleName>
     <LineNumber>101</LineNumber>
     <ColumnNumber>35</ColumnNumber>
@@ -666,7 +894,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>36</SourceScanID>
+    <SourceScanID>48</SourceScanID>
     <ModuleName>HomePage.xaml.cs</ModuleName>
     <LineNumber>102</LineNumber>
     <ColumnNumber>36</ColumnNumber>
@@ -685,7 +913,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>37</SourceScanID>
+    <SourceScanID>49</SourceScanID>
     <ModuleName>MLExtension.cs</ModuleName>
     <LineNumber>36</LineNumber>
     <ColumnNumber>44</ColumnNumber>
@@ -704,7 +932,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>38</SourceScanID>
+    <SourceScanID>50</SourceScanID>
     <ModuleName>MLExtension.cs</ModuleName>
     <LineNumber>40</LineNumber>
     <ColumnNumber>85</ColumnNumber>
@@ -723,7 +951,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>39</SourceScanID>
+    <SourceScanID>51</SourceScanID>
     <ModuleName>MLExtension.cs</ModuleName>
     <LineNumber>104</LineNumber>
     <ColumnNumber>62</ColumnNumber>
@@ -742,7 +970,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>40</SourceScanID>
+    <SourceScanID>52</SourceScanID>
     <ModuleName>MlString.cs</ModuleName>
     <LineNumber>11</LineNumber>
     <ColumnNumber>55</ColumnNumber>
@@ -761,7 +989,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>41</SourceScanID>
+    <SourceScanID>53</SourceScanID>
     <ModuleName>MlString.cs</ModuleName>
     <LineNumber>11</LineNumber>
     <ColumnNumber>61</ColumnNumber>
@@ -780,7 +1008,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>42</SourceScanID>
+    <SourceScanID>54</SourceScanID>
     <ModuleName>MlString.cs</ModuleName>
     <LineNumber>12</LineNumber>
     <ColumnNumber>48</ColumnNumber>
@@ -799,7 +1027,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>43</SourceScanID>
+    <SourceScanID>55</SourceScanID>
     <ModuleName>MlString.cs</ModuleName>
     <LineNumber>18</LineNumber>
     <ColumnNumber>57</ColumnNumber>
@@ -818,7 +1046,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>44</SourceScanID>
+    <SourceScanID>56</SourceScanID>
     <ModuleName>MlString.cs</ModuleName>
     <LineNumber>20</LineNumber>
     <ColumnNumber>41</ColumnNumber>
@@ -837,7 +1065,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>45</SourceScanID>
+    <SourceScanID>57</SourceScanID>
     <ModuleName>OP6.xaml.cs</ModuleName>
     <LineNumber>30</LineNumber>
     <ColumnNumber>32</ColumnNumber>
@@ -856,7 +1084,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>46</SourceScanID>
+    <SourceScanID>58</SourceScanID>
     <ModuleName>PMFlash.xaml.cs</ModuleName>
     <LineNumber>31</LineNumber>
     <ColumnNumber>40</ColumnNumber>
@@ -875,7 +1103,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>47</SourceScanID>
+    <SourceScanID>59</SourceScanID>
     <ModuleName>PMFlash.xaml.cs</ModuleName>
     <LineNumber>32</LineNumber>
     <ColumnNumber>28</ColumnNumber>
@@ -894,7 +1122,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>48</SourceScanID>
+    <SourceScanID>60</SourceScanID>
     <ModuleName>PMFlash.xaml.cs</ModuleName>
     <LineNumber>33</LineNumber>
     <ColumnNumber>32</ColumnNumber>
@@ -913,7 +1141,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>49</SourceScanID>
+    <SourceScanID>61</SourceScanID>
     <ModuleName>PMFlash.xaml.cs</ModuleName>
     <LineNumber>39</LineNumber>
     <ColumnNumber>32</ColumnNumber>
@@ -932,7 +1160,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>50</SourceScanID>
+    <SourceScanID>62</SourceScanID>
     <ModuleName>SX5.xaml.cs</ModuleName>
     <LineNumber>30</LineNumber>
     <ColumnNumber>32</ColumnNumber>
@@ -951,7 +1179,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>51</SourceScanID>
+    <SourceScanID>63</SourceScanID>
     <ModuleName>SXXZ2.xaml.cs</ModuleName>
     <LineNumber>30</LineNumber>
     <ColumnNumber>32</ColumnNumber>
@@ -970,7 +1198,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>52</SourceScanID>
+    <SourceScanID>64</SourceScanID>
     <ModuleName>TWRP.xaml.cs</ModuleName>
     <LineNumber>30</LineNumber>
     <ColumnNumber>32</ColumnNumber>
@@ -989,7 +1217,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>53</SourceScanID>
+    <SourceScanID>65</SourceScanID>
     <ModuleName>TWRP.xaml.cs</ModuleName>
     <LineNumber>36</LineNumber>
     <ColumnNumber>32</ColumnNumber>
@@ -1008,7 +1236,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>54</SourceScanID>
+    <SourceScanID>66</SourceScanID>
     <ModuleName>TWRP.xaml.cs</ModuleName>
     <LineNumber>42</LineNumber>
     <ColumnNumber>32</ColumnNumber>
@@ -1027,8 +1255,46 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>55</SourceScanID>
+    <SourceScanID>67</SourceScanID>
     <ModuleName>TWRPBoot.xaml.cs</ModuleName>
+    <LineNumber>31</LineNumber>
+    <ColumnNumber>32</ColumnNumber>
+    <OriginalText>TWRPBootFileSetup.xaml</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>31</StartOfStatement>
+    <EndOfStatement>31</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click_5</CodeElement>
+    <RelativeLineNumber>2</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkit5.TWRPBoot</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>68</SourceScanID>
+    <ModuleName>TWRPBoot.xaml.cs</ModuleName>
+    <LineNumber>37</LineNumber>
+    <ColumnNumber>32</ColumnNumber>
+    <OriginalText>TWRP.xaml</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>37</StartOfStatement>
+    <EndOfStatement>37</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click</CodeElement>
+    <RelativeLineNumber>2</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkit5.TWRPBoot</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>69</SourceScanID>
+    <ModuleName>TWRPBootConfirmation.xaml.cs</ModuleName>
     <LineNumber>31</LineNumber>
     <ColumnNumber>40</ColumnNumber>
     <OriginalText>/C adb.exe reboot-bootloader &amp; cd .. &amp; cd Place_Files_Here &amp; cd TWRP &amp; ren *.img twrp.img &amp; cd .. &amp; cd .. &amp; cd assets &amp; fastboot.exe boot ../Place_Files_Here/TWRP/twrp.img &amp; cd .. &amp; cd Place_Files_Here &amp; mkdir TWRP &amp; taskkill /f /im adb.exe</OriginalText>
@@ -1038,16 +1304,16 @@
     <EndOfStatement>31</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>Button_Click_5</CodeElement>
+    <CodeElement>Button_Click</CodeElement>
     <RelativeLineNumber>2</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
-    <ClassName>TrebleToolkit5.TWRPBoot</ClassName>
+    <ClassName>TrebleToolkit5.TWRPBootConfirmation</ClassName>
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>56</SourceScanID>
-    <ModuleName>TWRPBoot.xaml.cs</ModuleName>
+    <SourceScanID>70</SourceScanID>
+    <ModuleName>TWRPBootConfirmation.xaml.cs</ModuleName>
     <LineNumber>32</LineNumber>
     <ColumnNumber>28</ColumnNumber>
     <OriginalText>CMD.exe</OriginalText>
@@ -1057,16 +1323,16 @@
     <EndOfStatement>32</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>Button_Click_5</CodeElement>
+    <CodeElement>Button_Click</CodeElement>
     <RelativeLineNumber>3</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
-    <ClassName>TrebleToolkit5.TWRPBoot</ClassName>
+    <ClassName>TrebleToolkit5.TWRPBootConfirmation</ClassName>
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>57</SourceScanID>
-    <ModuleName>TWRPBoot.xaml.cs</ModuleName>
+    <SourceScanID>71</SourceScanID>
+    <ModuleName>TWRPBootConfirmation.xaml.cs</ModuleName>
     <LineNumber>33</LineNumber>
     <ColumnNumber>32</ColumnNumber>
     <OriginalText>FlashFinished.xaml</OriginalText>
@@ -1076,38 +1342,114 @@
     <EndOfStatement>33</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>Button_Click_5</CodeElement>
+    <CodeElement>Button_Click</CodeElement>
     <RelativeLineNumber>4</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
-    <ClassName>TrebleToolkit5.TWRPBoot</ClassName>
+    <ClassName>TrebleToolkit5.TWRPBootConfirmation</ClassName>
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>58</SourceScanID>
-    <ModuleName>TWRPBoot.xaml.cs</ModuleName>
+    <SourceScanID>72</SourceScanID>
+    <ModuleName>TWRPBootConfirmation.xaml.cs</ModuleName>
     <LineNumber>39</LineNumber>
     <ColumnNumber>32</ColumnNumber>
-    <OriginalText>TWRP.xaml</OriginalText>
+    <OriginalText>TWRPBootFileSetup.xaml</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
     <StartOfStatement>39</StartOfStatement>
     <EndOfStatement>39</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>Button_Click</CodeElement>
+    <CodeElement>Button_Click_1</CodeElement>
     <RelativeLineNumber>2</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
-    <ClassName>TrebleToolkit5.TWRPBoot</ClassName>
+    <ClassName>TrebleToolkit5.TWRPBootConfirmation</ClassName>
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>59</SourceScanID>
+    <SourceScanID>73</SourceScanID>
+    <ModuleName>TWRPBootFileSetup.xaml.cs</ModuleName>
+    <LineNumber>33</LineNumber>
+    <ColumnNumber>35</ColumnNumber>
+    <OriginalText>cmd.exe</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>33</StartOfStatement>
+    <EndOfStatement>33</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click</CodeElement>
+    <RelativeLineNumber>5</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkit5.TWRPBootFileSetup</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>74</SourceScanID>
+    <ModuleName>TWRPBootFileSetup.xaml.cs</ModuleName>
+    <LineNumber>34</LineNumber>
+    <ColumnNumber>36</ColumnNumber>
+    <OriginalText>/C cd .. &amp; cd Place_Files_Here &amp; cd TWRP &amp; start .</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>34</StartOfStatement>
+    <EndOfStatement>34</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click</CodeElement>
+    <RelativeLineNumber>6</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkit5.TWRPBootFileSetup</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>75</SourceScanID>
+    <ModuleName>TWRPBootFileSetup.xaml.cs</ModuleName>
+    <LineNumber>37</LineNumber>
+    <ColumnNumber>32</ColumnNumber>
+    <OriginalText>TWRPBootConfirmation.xaml</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>37</StartOfStatement>
+    <EndOfStatement>37</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click</CodeElement>
+    <RelativeLineNumber>9</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkit5.TWRPBootFileSetup</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>76</SourceScanID>
+    <ModuleName>TWRPBootFileSetup.xaml.cs</ModuleName>
+    <LineNumber>43</LineNumber>
+    <ColumnNumber>32</ColumnNumber>
+    <OriginalText>TWRPBoot.xaml</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>43</StartOfStatement>
+    <EndOfStatement>43</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click_1</CodeElement>
+    <RelativeLineNumber>2</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkit5.TWRPBootFileSetup</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>77</SourceScanID>
     <ModuleName>TWRPFlash.xaml.cs</ModuleName>
     <LineNumber>31</LineNumber>
-    <ColumnNumber>40</ColumnNumber>
-    <OriginalText>/C adb.exe reboot-bootloader &amp; cd .. &amp; mkdir Place_Files_Here &amp; cd Place_Files_Here &amp; mkdir TWRP &amp; cd TWRP &amp; ren *.img twrp.img &amp; cd .. &amp; cd .. &amp; cd assets &amp; fastboot.exe flash recovery ../Place_Files_Here/TWRP/twrp.img &amp; fastboot.exe reboot &amp; taskkill /f /im adb.exe</OriginalText>
+    <ColumnNumber>32</ColumnNumber>
+    <OriginalText>TWRPFlashFileSetup.xaml</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
     <StartOfStatement>31</StartOfStatement>
@@ -1122,53 +1464,15 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>60</SourceScanID>
+    <SourceScanID>78</SourceScanID>
     <ModuleName>TWRPFlash.xaml.cs</ModuleName>
-    <LineNumber>32</LineNumber>
-    <ColumnNumber>28</ColumnNumber>
-    <OriginalText>CMD.exe</OriginalText>
-    <IsHidden>false</IsHidden>
-    <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>32</StartOfStatement>
-    <EndOfStatement>32</EndOfStatement>
-    <IsVerbatim>false</IsVerbatim>
-    <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>Button_Click_5</CodeElement>
-    <RelativeLineNumber>3</RelativeLineNumber>
-    <IsHiddenString>false</IsHiddenString>
-    <IsInterpolatedString>false</IsInterpolatedString>
-    <ClassName>TrebleToolkit5.TWRPFlash</ClassName>
-    <IsController>false</IsController>
-  </SourceScanResults>
-  <SourceScanResults>
-    <SourceScanID>61</SourceScanID>
-    <ModuleName>TWRPFlash.xaml.cs</ModuleName>
-    <LineNumber>33</LineNumber>
-    <ColumnNumber>32</ColumnNumber>
-    <OriginalText>FlashFinished.xaml</OriginalText>
-    <IsHidden>false</IsHidden>
-    <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>33</StartOfStatement>
-    <EndOfStatement>33</EndOfStatement>
-    <IsVerbatim>false</IsVerbatim>
-    <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>Button_Click_5</CodeElement>
-    <RelativeLineNumber>4</RelativeLineNumber>
-    <IsHiddenString>false</IsHiddenString>
-    <IsInterpolatedString>false</IsInterpolatedString>
-    <ClassName>TrebleToolkit5.TWRPFlash</ClassName>
-    <IsController>false</IsController>
-  </SourceScanResults>
-  <SourceScanResults>
-    <SourceScanID>62</SourceScanID>
-    <ModuleName>TWRPFlash.xaml.cs</ModuleName>
-    <LineNumber>39</LineNumber>
+    <LineNumber>37</LineNumber>
     <ColumnNumber>32</ColumnNumber>
     <OriginalText>TWRP.xaml</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>39</StartOfStatement>
-    <EndOfStatement>39</EndOfStatement>
+    <StartOfStatement>37</StartOfStatement>
+    <EndOfStatement>37</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click</CodeElement>
@@ -1179,7 +1483,159 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>63</SourceScanID>
+    <SourceScanID>79</SourceScanID>
+    <ModuleName>TWRPFlashConfirmation.xaml.cs</ModuleName>
+    <LineNumber>31</LineNumber>
+    <ColumnNumber>40</ColumnNumber>
+    <OriginalText>/C adb.exe reboot-bootloader &amp; cd .. &amp; mkdir Place_Files_Here &amp; cd Place_Files_Here &amp; mkdir TWRP &amp; cd TWRP &amp; ren *.img twrp.img &amp; cd .. &amp; cd .. &amp; cd assets &amp; fastboot.exe flash recovery ../Place_Files_Here/TWRP/twrp.img &amp; fastboot.exe reboot &amp; taskkill /f /im adb.exe</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>31</StartOfStatement>
+    <EndOfStatement>31</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click</CodeElement>
+    <RelativeLineNumber>2</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkit5.TWRPFlashConfirmation</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>80</SourceScanID>
+    <ModuleName>TWRPFlashConfirmation.xaml.cs</ModuleName>
+    <LineNumber>32</LineNumber>
+    <ColumnNumber>28</ColumnNumber>
+    <OriginalText>CMD.exe</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>32</StartOfStatement>
+    <EndOfStatement>32</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click</CodeElement>
+    <RelativeLineNumber>3</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkit5.TWRPFlashConfirmation</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>81</SourceScanID>
+    <ModuleName>TWRPFlashConfirmation.xaml.cs</ModuleName>
+    <LineNumber>33</LineNumber>
+    <ColumnNumber>32</ColumnNumber>
+    <OriginalText>FlashFinished.xaml</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>33</StartOfStatement>
+    <EndOfStatement>33</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click</CodeElement>
+    <RelativeLineNumber>4</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkit5.TWRPFlashConfirmation</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>82</SourceScanID>
+    <ModuleName>TWRPFlashConfirmation.xaml.cs</ModuleName>
+    <LineNumber>39</LineNumber>
+    <ColumnNumber>32</ColumnNumber>
+    <OriginalText>TWRPFlashFileSetup.xaml</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>39</StartOfStatement>
+    <EndOfStatement>39</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click_1</CodeElement>
+    <RelativeLineNumber>2</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkit5.TWRPFlashConfirmation</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>83</SourceScanID>
+    <ModuleName>TWRPFlashFileSetup.xaml.cs</ModuleName>
+    <LineNumber>33</LineNumber>
+    <ColumnNumber>35</ColumnNumber>
+    <OriginalText>cmd.exe</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>33</StartOfStatement>
+    <EndOfStatement>33</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click</CodeElement>
+    <RelativeLineNumber>5</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkit5.TWRPFlashFileSetup</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>84</SourceScanID>
+    <ModuleName>TWRPFlashFileSetup.xaml.cs</ModuleName>
+    <LineNumber>34</LineNumber>
+    <ColumnNumber>36</ColumnNumber>
+    <OriginalText>/C cd .. &amp; cd Place_Files_Here &amp; cd TWRP &amp; start .</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>34</StartOfStatement>
+    <EndOfStatement>34</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click</CodeElement>
+    <RelativeLineNumber>6</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkit5.TWRPFlashFileSetup</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>85</SourceScanID>
+    <ModuleName>TWRPFlashFileSetup.xaml.cs</ModuleName>
+    <LineNumber>37</LineNumber>
+    <ColumnNumber>32</ColumnNumber>
+    <OriginalText>TWRPFlashConfirmation.xaml</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>37</StartOfStatement>
+    <EndOfStatement>37</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click</CodeElement>
+    <RelativeLineNumber>9</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkit5.TWRPFlashFileSetup</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>86</SourceScanID>
+    <ModuleName>TWRPFlashFileSetup.xaml.cs</ModuleName>
+    <LineNumber>43</LineNumber>
+    <ColumnNumber>32</ColumnNumber>
+    <OriginalText>TWRPFlash.xaml</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>43</StartOfStatement>
+    <EndOfStatement>43</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click_1</CodeElement>
+    <RelativeLineNumber>2</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkit5.TWRPFlashFileSetup</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>87</SourceScanID>
     <ModuleName>UnlockBL.xaml.cs</ModuleName>
     <LineNumber>31</LineNumber>
     <ColumnNumber>40</ColumnNumber>
@@ -1198,7 +1654,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>64</SourceScanID>
+    <SourceScanID>88</SourceScanID>
     <ModuleName>UnlockBL.xaml.cs</ModuleName>
     <LineNumber>32</LineNumber>
     <ColumnNumber>28</ColumnNumber>
@@ -1217,7 +1673,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>65</SourceScanID>
+    <SourceScanID>89</SourceScanID>
     <ModuleName>UnlockBL.xaml.cs</ModuleName>
     <LineNumber>33</LineNumber>
     <ColumnNumber>32</ColumnNumber>
@@ -1236,7 +1692,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>66</SourceScanID>
+    <SourceScanID>90</SourceScanID>
     <ModuleName>UnlockBL.xaml.cs</ModuleName>
     <LineNumber>39</LineNumber>
     <ColumnNumber>32</ColumnNumber>

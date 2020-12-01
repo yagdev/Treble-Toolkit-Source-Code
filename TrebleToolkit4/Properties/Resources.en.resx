@@ -267,6 +267,9 @@
   <data name="fully" xml:space="preserve">
     <value>fully </value>
   </data>
+  <data name="GB" xml:space="preserve">
+    <value>GB</value>
+  </data>
   <data name="June" xml:space="preserve">
     <value>June</value>
   </data>
@@ -296,6 +299,9 @@
   </data>
   <data name="November" xml:space="preserve">
     <value>November</value>
+  </data>
+  <data name="OnePlus_6" xml:space="preserve">
+    <value>OnePlus 6</value>
   </data>
   <data name="Place_Files_Here_TWRP_and_sele" xml:space="preserve">
     <value>Place_Files_Here/TWRP and select Flash or Boot (depending on your intention</value>
@@ -380,6 +386,9 @@
   </data>
   <data name="window_then_press" xml:space="preserve">
     <value>window, then press </value>
+  </data>
+  <data name="x1080" xml:space="preserve">
+    <value>x1080)</value>
   </data>
   <data name="Your_bootloader_has_been_s" xml:space="preserve">
     <value>Your bootloader has been s</value>

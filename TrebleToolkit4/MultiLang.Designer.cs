@@ -869,5 +869,32 @@ namespace TrebleToolkit5.ml_resources {
                 return ResourceManager.GetString("_90", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GB.
+        /// </summary>
+        public static string _91 {
+            get {
+                return ResourceManager.GetString("_91", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OnePlus 6.
+        /// </summary>
+        public static string _92 {
+            get {
+                return ResourceManager.GetString("_92", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to x1080).
+        /// </summary>
+        public static string _93 {
+            get {
+                return ResourceManager.GetString("_93", resourceCulture);
+            }
+        }
     }
 }

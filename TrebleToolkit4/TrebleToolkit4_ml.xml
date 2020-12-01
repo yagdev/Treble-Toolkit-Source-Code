@@ -271,6 +271,15 @@
   <GeneralIds>
     <StringID>90</StringID>
   </GeneralIds>
+  <GeneralIds>
+    <StringID>91</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>92</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>93</StringID>
+  </GeneralIds>
   <Languages>
     <LanguageID>9</LanguageID>
     <LanguageName>English</LanguageName>
@@ -1345,6 +1354,24 @@
     <LanguageText>Changelog: Botão "Atualizar" agora abre o Updater em vez de abrir o site, atualização migratória para o Launcher 5.4 (apenas aplicável para utilizadores do Launcher 5.0 e 5.1), agora o Launcher fecha depois de iniciar o Treble Toolkit.</LanguageText>
     <Status>4</Status>
   </GeneralTexts>
+  <GeneralTexts>
+    <StringID>91</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>GB</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>92</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>OnePlus 6</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>93</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>x1080)</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
   <Properties>
     <Component>Resources.resx</Component>
     <Name>Compatible_Devices_Alcatel_1_2</Name>
@@ -2071,6 +2098,30 @@
     <StringID>90</StringID>
     <Selected>true</Selected>
     <ResourceName>Changelog_Added_Portuguese</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>GB</Name>
+    <StringID>91</StringID>
+    <Selected>true</Selected>
+    <ResourceName>GB</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>OnePlus_6</Name>
+    <StringID>92</StringID>
+    <Selected>true</Selected>
+    <ResourceName>OnePlus_6</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>x1080</Name>
+    <StringID>93</StringID>
+    <Selected>true</Selected>
+    <ResourceName>x1080</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
   <GeneralAttributes>
