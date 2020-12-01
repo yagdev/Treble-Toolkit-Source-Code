@@ -839,13 +839,51 @@
   <SourceScanResults>
     <SourceScanID>45</SourceScanID>
     <ModuleName>MainWindow.xaml.cs</ModuleName>
-    <LineNumber>209</LineNumber>
+    <LineNumber>197</LineNumber>
+    <ColumnNumber>39</ColumnNumber>
+    <OriginalText>cmd.exe</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>197</StartOfStatement>
+    <EndOfStatement>197</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click</CodeElement>
+    <RelativeLineNumber>95</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkitUpdaterLauncher.MainWindow</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>46</SourceScanID>
+    <ModuleName>MainWindow.xaml.cs</ModuleName>
+    <LineNumber>198</LineNumber>
+    <ColumnNumber>40</ColumnNumber>
+    <OriginalText>/C taskkill /im TrebleToolkitUpdaterLauncher.exe</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>198</StartOfStatement>
+    <EndOfStatement>198</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click</CodeElement>
+    <RelativeLineNumber>96</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkitUpdaterLauncher.MainWindow</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>47</SourceScanID>
+    <ModuleName>MainWindow.xaml.cs</ModuleName>
+    <LineNumber>214</LineNumber>
     <ColumnNumber>35</ColumnNumber>
     <OriginalText>cmd.exe</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>209</StartOfStatement>
-    <EndOfStatement>209</EndOfStatement>
+    <StartOfStatement>214</StartOfStatement>
+    <EndOfStatement>214</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
@@ -856,15 +894,15 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>46</SourceScanID>
+    <SourceScanID>48</SourceScanID>
     <ModuleName>MainWindow.xaml.cs</ModuleName>
-    <LineNumber>210</LineNumber>
+    <LineNumber>215</LineNumber>
     <ColumnNumber>36</ColumnNumber>
     <OriginalText>/C mkdir UpdateInfo &amp; cd UpdateInfo &amp; mkdir CurrentVersion &amp; cd CurrentVersion &amp; ren VersionString VersionString2 &amp; del VersionString</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>210</StartOfStatement>
-    <EndOfStatement>210</EndOfStatement>
+    <StartOfStatement>215</StartOfStatement>
+    <EndOfStatement>215</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
@@ -875,15 +913,15 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>47</SourceScanID>
+    <SourceScanID>49</SourceScanID>
     <ModuleName>MainWindow.xaml.cs</ModuleName>
-    <LineNumber>217</LineNumber>
+    <LineNumber>222</LineNumber>
     <ColumnNumber>43</ColumnNumber>
     <OriginalText>Preparing to Install...</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>217</StartOfStatement>
-    <EndOfStatement>217</EndOfStatement>
+    <StartOfStatement>222</StartOfStatement>
+    <EndOfStatement>222</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
@@ -894,15 +932,15 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>48</SourceScanID>
+    <SourceScanID>50</SourceScanID>
     <ModuleName>MainWindow.xaml.cs</ModuleName>
-    <LineNumber>220</LineNumber>
+    <LineNumber>225</LineNumber>
     <ColumnNumber>31</ColumnNumber>
     <OriginalText>https://www.dropbox.com/s/nvjzz2lkab3nblo/release.zip?dl=1</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>220</StartOfStatement>
-    <EndOfStatement>220</EndOfStatement>
+    <StartOfStatement>225</StartOfStatement>
+    <EndOfStatement>225</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
@@ -913,15 +951,15 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>49</SourceScanID>
+    <SourceScanID>51</SourceScanID>
     <ModuleName>MainWindow.xaml.cs</ModuleName>
-    <LineNumber>221</LineNumber>
+    <LineNumber>226</LineNumber>
     <ColumnNumber>46</ColumnNumber>
     <OriginalText>https://www.dropbox.com/s/zyhkyqlljkyzb6n/version?dl=1</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>221</StartOfStatement>
-    <EndOfStatement>221</EndOfStatement>
+    <StartOfStatement>226</StartOfStatement>
+    <EndOfStatement>226</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
@@ -932,15 +970,15 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>50</SourceScanID>
+    <SourceScanID>52</SourceScanID>
     <ModuleName>MainWindow.xaml.cs</ModuleName>
-    <LineNumber>222</LineNumber>
+    <LineNumber>227</LineNumber>
     <ColumnNumber>39</ColumnNumber>
     <OriginalText>application: </OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>222</StartOfStatement>
-    <EndOfStatement>222</EndOfStatement>
+    <StartOfStatement>227</StartOfStatement>
+    <EndOfStatement>227</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
@@ -951,15 +989,15 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>51</SourceScanID>
+    <SourceScanID>53</SourceScanID>
     <ModuleName>MainWindow.xaml.cs</ModuleName>
-    <LineNumber>223</LineNumber>
+    <LineNumber>228</LineNumber>
     <ColumnNumber>92</ColumnNumber>
     <OriginalText>Update</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>223</StartOfStatement>
-    <EndOfStatement>223</EndOfStatement>
+    <StartOfStatement>228</StartOfStatement>
+    <EndOfStatement>228</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
@@ -970,15 +1008,15 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>52</SourceScanID>
+    <SourceScanID>54</SourceScanID>
     <ModuleName>MainWindow.xaml.cs</ModuleName>
-    <LineNumber>223</LineNumber>
+    <LineNumber>228</LineNumber>
     <ColumnNumber>102</ColumnNumber>
     <OriginalText>Download</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>1</IndexOnLine>
-    <StartOfStatement>223</StartOfStatement>
-    <EndOfStatement>223</EndOfStatement>
+    <StartOfStatement>228</StartOfStatement>
+    <EndOfStatement>228</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
@@ -989,15 +1027,15 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>53</SourceScanID>
+    <SourceScanID>55</SourceScanID>
     <ModuleName>MainWindow.xaml.cs</ModuleName>
-    <LineNumber>224</LineNumber>
+    <LineNumber>229</LineNumber>
     <ColumnNumber>97</ColumnNumber>
     <OriginalText>UpdateFiles</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>224</StartOfStatement>
-    <EndOfStatement>224</EndOfStatement>
+    <StartOfStatement>229</StartOfStatement>
+    <EndOfStatement>229</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
@@ -1008,53 +1046,15 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>54</SourceScanID>
+    <SourceScanID>56</SourceScanID>
     <ModuleName>MainWindow.xaml.cs</ModuleName>
-    <LineNumber>225</LineNumber>
+    <LineNumber>230</LineNumber>
     <ColumnNumber>99</ColumnNumber>
     <OriginalText>UpdateInfo</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>225</StartOfStatement>
-    <EndOfStatement>225</EndOfStatement>
-    <IsVerbatim>false</IsVerbatim>
-    <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>Button_Click1</CodeElement>
-    <RelativeLineNumber>21</RelativeLineNumber>
-    <IsHiddenString>false</IsHiddenString>
-    <IsInterpolatedString>false</IsInterpolatedString>
-    <ClassName>TrebleToolkitUpdaterLauncher.MainWindow</ClassName>
-    <IsController>false</IsController>
-  </SourceScanResults>
-  <SourceScanResults>
-    <SourceScanID>55</SourceScanID>
-    <ModuleName>MainWindow.xaml.cs</ModuleName>
-    <LineNumber>225</LineNumber>
-    <ColumnNumber>113</ColumnNumber>
-    <OriginalText>CurrentVersion</OriginalText>
-    <IsHidden>false</IsHidden>
-    <IndexOnLine>1</IndexOnLine>
-    <StartOfStatement>225</StartOfStatement>
-    <EndOfStatement>225</EndOfStatement>
-    <IsVerbatim>false</IsVerbatim>
-    <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>Button_Click1</CodeElement>
-    <RelativeLineNumber>21</RelativeLineNumber>
-    <IsHiddenString>false</IsHiddenString>
-    <IsInterpolatedString>false</IsInterpolatedString>
-    <ClassName>TrebleToolkitUpdaterLauncher.MainWindow</ClassName>
-    <IsController>false</IsController>
-  </SourceScanResults>
-  <SourceScanResults>
-    <SourceScanID>56</SourceScanID>
-    <ModuleName>MainWindow.xaml.cs</ModuleName>
-    <LineNumber>225</LineNumber>
-    <ColumnNumber>131</ColumnNumber>
-    <OriginalText>VersionString</OriginalText>
-    <IsHidden>false</IsHidden>
-    <IndexOnLine>2</IndexOnLine>
-    <StartOfStatement>225</StartOfStatement>
-    <EndOfStatement>225</EndOfStatement>
+    <StartOfStatement>230</StartOfStatement>
+    <EndOfStatement>230</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
@@ -1067,17 +1067,17 @@
   <SourceScanResults>
     <SourceScanID>57</SourceScanID>
     <ModuleName>MainWindow.xaml.cs</ModuleName>
-    <LineNumber>226</LineNumber>
-    <ColumnNumber>38</ColumnNumber>
-    <OriginalText>TrebleToolkitLauncher.exe</OriginalText>
+    <LineNumber>230</LineNumber>
+    <ColumnNumber>113</ColumnNumber>
+    <OriginalText>CurrentVersion</OriginalText>
     <IsHidden>false</IsHidden>
-    <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>226</StartOfStatement>
-    <EndOfStatement>226</EndOfStatement>
+    <IndexOnLine>1</IndexOnLine>
+    <StartOfStatement>230</StartOfStatement>
+    <EndOfStatement>230</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
-    <RelativeLineNumber>22</RelativeLineNumber>
+    <RelativeLineNumber>21</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
     <ClassName>TrebleToolkitUpdaterLauncher.MainWindow</ClassName>
@@ -1086,17 +1086,17 @@
   <SourceScanResults>
     <SourceScanID>58</SourceScanID>
     <ModuleName>MainWindow.xaml.cs</ModuleName>
-    <LineNumber>233</LineNumber>
-    <ColumnNumber>43</ColumnNumber>
-    <OriginalText>cmd.exe</OriginalText>
+    <LineNumber>230</LineNumber>
+    <ColumnNumber>131</ColumnNumber>
+    <OriginalText>VersionString</OriginalText>
     <IsHidden>false</IsHidden>
-    <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>233</StartOfStatement>
-    <EndOfStatement>233</EndOfStatement>
+    <IndexOnLine>2</IndexOnLine>
+    <StartOfStatement>230</StartOfStatement>
+    <EndOfStatement>230</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
-    <RelativeLineNumber>29</RelativeLineNumber>
+    <RelativeLineNumber>21</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
     <ClassName>TrebleToolkitUpdaterLauncher.MainWindow</ClassName>
@@ -1105,17 +1105,17 @@
   <SourceScanResults>
     <SourceScanID>59</SourceScanID>
     <ModuleName>MainWindow.xaml.cs</ModuleName>
-    <LineNumber>234</LineNumber>
-    <ColumnNumber>44</ColumnNumber>
-    <OriginalText>/C RD /s /q old &amp; mkdir old</OriginalText>
+    <LineNumber>231</LineNumber>
+    <ColumnNumber>38</ColumnNumber>
+    <OriginalText>TrebleToolkitLauncher.exe</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>234</StartOfStatement>
-    <EndOfStatement>234</EndOfStatement>
+    <StartOfStatement>231</StartOfStatement>
+    <EndOfStatement>231</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
-    <RelativeLineNumber>30</RelativeLineNumber>
+    <RelativeLineNumber>22</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
     <ClassName>TrebleToolkitUpdaterLauncher.MainWindow</ClassName>
@@ -1134,7 +1134,7 @@
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
-    <RelativeLineNumber>34</RelativeLineNumber>
+    <RelativeLineNumber>29</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
     <ClassName>TrebleToolkitUpdaterLauncher.MainWindow</ClassName>
@@ -1145,7 +1145,7 @@
     <ModuleName>MainWindow.xaml.cs</ModuleName>
     <LineNumber>239</LineNumber>
     <ColumnNumber>44</ColumnNumber>
-    <OriginalText>/C ren TrebleToolkitUpdaterLauncher.exe TrebleToolkitUpdaterLauncherOld.exe &amp; move TrebleToolkitUpdaterLauncherOld.exe old &amp; move CLConfiguration.dll old &amp; move CLConfiguration.xml old &amp; move CLUpdate.dll old &amp; move CLUpdate.xml old</OriginalText>
+    <OriginalText>/C RD /s /q old &amp; mkdir old</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
     <StartOfStatement>239</StartOfStatement>
@@ -1153,7 +1153,7 @@
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
-    <RelativeLineNumber>35</RelativeLineNumber>
+    <RelativeLineNumber>30</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
     <ClassName>TrebleToolkitUpdaterLauncher.MainWindow</ClassName>
@@ -1172,7 +1172,7 @@
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
-    <RelativeLineNumber>39</RelativeLineNumber>
+    <RelativeLineNumber>34</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
     <ClassName>TrebleToolkitUpdaterLauncher.MainWindow</ClassName>
@@ -1183,11 +1183,49 @@
     <ModuleName>MainWindow.xaml.cs</ModuleName>
     <LineNumber>244</LineNumber>
     <ColumnNumber>44</ColumnNumber>
-    <OriginalText>/C RD /s /q Application</OriginalText>
+    <OriginalText>/C ren TrebleToolkitUpdaterLauncher.exe TrebleToolkitUpdaterLauncherOld.exe &amp; move TrebleToolkitUpdaterLauncherOld.exe old &amp; move CLConfiguration.dll old &amp; move CLConfiguration.xml old &amp; move CLUpdate.dll old &amp; move CLUpdate.xml old</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
     <StartOfStatement>244</StartOfStatement>
     <EndOfStatement>244</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click1</CodeElement>
+    <RelativeLineNumber>35</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkitUpdaterLauncher.MainWindow</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>64</SourceScanID>
+    <ModuleName>MainWindow.xaml.cs</ModuleName>
+    <LineNumber>248</LineNumber>
+    <ColumnNumber>43</ColumnNumber>
+    <OriginalText>cmd.exe</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>248</StartOfStatement>
+    <EndOfStatement>248</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click1</CodeElement>
+    <RelativeLineNumber>39</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkitUpdaterLauncher.MainWindow</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>65</SourceScanID>
+    <ModuleName>MainWindow.xaml.cs</ModuleName>
+    <LineNumber>249</LineNumber>
+    <ColumnNumber>44</ColumnNumber>
+    <OriginalText>/C RD /s /q Application</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>249</StartOfStatement>
+    <EndOfStatement>249</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
@@ -1198,15 +1236,15 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>64</SourceScanID>
+    <SourceScanID>66</SourceScanID>
     <ModuleName>MainWindow.xaml.cs</ModuleName>
-    <LineNumber>249</LineNumber>
+    <LineNumber>254</LineNumber>
     <ColumnNumber>47</ColumnNumber>
     <OriginalText>Initializing Download...</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>249</StartOfStatement>
-    <EndOfStatement>249</EndOfStatement>
+    <StartOfStatement>254</StartOfStatement>
+    <EndOfStatement>254</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
@@ -1217,15 +1255,15 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>65</SourceScanID>
+    <SourceScanID>67</SourceScanID>
     <ModuleName>MainWindow.xaml.cs</ModuleName>
-    <LineNumber>256</LineNumber>
+    <LineNumber>261</LineNumber>
     <ColumnNumber>47</ColumnNumber>
     <OriginalText>Downloading...</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>256</StartOfStatement>
-    <EndOfStatement>256</EndOfStatement>
+    <StartOfStatement>261</StartOfStatement>
+    <EndOfStatement>261</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
@@ -1236,15 +1274,15 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>66</SourceScanID>
+    <SourceScanID>68</SourceScanID>
     <ModuleName>MainWindow.xaml.cs</ModuleName>
-    <LineNumber>263</LineNumber>
+    <LineNumber>268</LineNumber>
     <ColumnNumber>47</ColumnNumber>
     <OriginalText>Unzipping...</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>263</StartOfStatement>
-    <EndOfStatement>263</EndOfStatement>
+    <StartOfStatement>268</StartOfStatement>
+    <EndOfStatement>268</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
@@ -1255,15 +1293,15 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>67</SourceScanID>
+    <SourceScanID>69</SourceScanID>
     <ModuleName>MainWindow.xaml.cs</ModuleName>
-    <LineNumber>271</LineNumber>
+    <LineNumber>276</LineNumber>
     <ColumnNumber>47</ColumnNumber>
     <OriginalText>Cleaning Up...</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>271</StartOfStatement>
-    <EndOfStatement>271</EndOfStatement>
+    <StartOfStatement>276</StartOfStatement>
+    <EndOfStatement>276</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
@@ -1274,15 +1312,15 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>68</SourceScanID>
+    <SourceScanID>70</SourceScanID>
     <ModuleName>MainWindow.xaml.cs</ModuleName>
-    <LineNumber>284</LineNumber>
+    <LineNumber>289</LineNumber>
     <ColumnNumber>43</ColumnNumber>
     <OriginalText>Treble Toolkit is Up To Date. Launching...</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>284</StartOfStatement>
-    <EndOfStatement>284</EndOfStatement>
+    <StartOfStatement>289</StartOfStatement>
+    <EndOfStatement>289</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
@@ -1293,15 +1331,15 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>69</SourceScanID>
+    <SourceScanID>71</SourceScanID>
     <ModuleName>MainWindow.xaml.cs</ModuleName>
-    <LineNumber>289</LineNumber>
+    <LineNumber>294</LineNumber>
     <ColumnNumber>39</ColumnNumber>
     <OriginalText>cmd.exe</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>289</StartOfStatement>
-    <EndOfStatement>289</EndOfStatement>
+    <StartOfStatement>294</StartOfStatement>
+    <EndOfStatement>294</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
@@ -1312,57 +1350,19 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>70</SourceScanID>
+    <SourceScanID>72</SourceScanID>
     <ModuleName>MainWindow.xaml.cs</ModuleName>
-    <LineNumber>290</LineNumber>
+    <LineNumber>295</LineNumber>
     <ColumnNumber>40</ColumnNumber>
     <OriginalText>/C cd UpdateFiles &amp; move Application ../ &amp; move CLUpdate.dll ../ &amp; move CLUpdate.xml ../ &amp; move TrebleToolkitUpdaterLauncher.exe ../</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>290</StartOfStatement>
-    <EndOfStatement>290</EndOfStatement>
+    <StartOfStatement>295</StartOfStatement>
+    <EndOfStatement>295</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
     <RelativeLineNumber>86</RelativeLineNumber>
-    <IsHiddenString>false</IsHiddenString>
-    <IsInterpolatedString>false</IsInterpolatedString>
-    <ClassName>TrebleToolkitUpdaterLauncher.MainWindow</ClassName>
-    <IsController>false</IsController>
-  </SourceScanResults>
-  <SourceScanResults>
-    <SourceScanID>71</SourceScanID>
-    <ModuleName>MainWindow.xaml.cs</ModuleName>
-    <LineNumber>296</LineNumber>
-    <ColumnNumber>43</ColumnNumber>
-    <OriginalText>cmd.exe</OriginalText>
-    <IsHidden>false</IsHidden>
-    <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>296</StartOfStatement>
-    <EndOfStatement>296</EndOfStatement>
-    <IsVerbatim>false</IsVerbatim>
-    <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>Button_Click1</CodeElement>
-    <RelativeLineNumber>92</RelativeLineNumber>
-    <IsHiddenString>false</IsHiddenString>
-    <IsInterpolatedString>false</IsInterpolatedString>
-    <ClassName>TrebleToolkitUpdaterLauncher.MainWindow</ClassName>
-    <IsController>false</IsController>
-  </SourceScanResults>
-  <SourceScanResults>
-    <SourceScanID>72</SourceScanID>
-    <ModuleName>MainWindow.xaml.cs</ModuleName>
-    <LineNumber>297</LineNumber>
-    <ColumnNumber>44</ColumnNumber>
-    <OriginalText>/C RD /s /q old &amp; mkdir old</OriginalText>
-    <IsHidden>false</IsHidden>
-    <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>297</StartOfStatement>
-    <EndOfStatement>297</EndOfStatement>
-    <IsVerbatim>false</IsVerbatim>
-    <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>Button_Click1</CodeElement>
-    <RelativeLineNumber>93</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
     <ClassName>TrebleToolkitUpdaterLauncher.MainWindow</ClassName>
@@ -1381,7 +1381,7 @@
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
-    <RelativeLineNumber>97</RelativeLineNumber>
+    <RelativeLineNumber>92</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
     <ClassName>TrebleToolkitUpdaterLauncher.MainWindow</ClassName>
@@ -1392,7 +1392,7 @@
     <ModuleName>MainWindow.xaml.cs</ModuleName>
     <LineNumber>302</LineNumber>
     <ColumnNumber>44</ColumnNumber>
-    <OriginalText>/C ren TrebleToolkitUpdaterLauncher.exe TrebleToolkitUpdaterLauncherOld.exe &amp; move TrebleToolkitUpdaterLauncherOld.exe old &amp; move CLConfiguration.dll old &amp; move CLConfiguration.xml old &amp; move CLUpdate.dll old &amp; move CLUpdate.xml old</OriginalText>
+    <OriginalText>/C RD /s /q old &amp; mkdir old</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
     <StartOfStatement>302</StartOfStatement>
@@ -1400,7 +1400,7 @@
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
-    <RelativeLineNumber>98</RelativeLineNumber>
+    <RelativeLineNumber>93</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
     <ClassName>TrebleToolkitUpdaterLauncher.MainWindow</ClassName>
@@ -1419,7 +1419,7 @@
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
-    <RelativeLineNumber>102</RelativeLineNumber>
+    <RelativeLineNumber>97</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
     <ClassName>TrebleToolkitUpdaterLauncher.MainWindow</ClassName>
@@ -1430,11 +1430,49 @@
     <ModuleName>MainWindow.xaml.cs</ModuleName>
     <LineNumber>307</LineNumber>
     <ColumnNumber>44</ColumnNumber>
-    <OriginalText>/C RD /s /q Application</OriginalText>
+    <OriginalText>/C ren TrebleToolkitUpdaterLauncher.exe TrebleToolkitUpdaterLauncherOld.exe &amp; move TrebleToolkitUpdaterLauncherOld.exe old &amp; move CLConfiguration.dll old &amp; move CLConfiguration.xml old &amp; move CLUpdate.dll old &amp; move CLUpdate.xml old</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
     <StartOfStatement>307</StartOfStatement>
     <EndOfStatement>307</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click1</CodeElement>
+    <RelativeLineNumber>98</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkitUpdaterLauncher.MainWindow</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>77</SourceScanID>
+    <ModuleName>MainWindow.xaml.cs</ModuleName>
+    <LineNumber>311</LineNumber>
+    <ColumnNumber>43</ColumnNumber>
+    <OriginalText>cmd.exe</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>311</StartOfStatement>
+    <EndOfStatement>311</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click1</CodeElement>
+    <RelativeLineNumber>102</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkitUpdaterLauncher.MainWindow</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>78</SourceScanID>
+    <ModuleName>MainWindow.xaml.cs</ModuleName>
+    <LineNumber>312</LineNumber>
+    <ColumnNumber>44</ColumnNumber>
+    <OriginalText>/C RD /s /q Application</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>312</StartOfStatement>
+    <EndOfStatement>312</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
@@ -1445,15 +1483,15 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>77</SourceScanID>
+    <SourceScanID>79</SourceScanID>
     <ModuleName>MainWindow.xaml.cs</ModuleName>
-    <LineNumber>312</LineNumber>
+    <LineNumber>317</LineNumber>
     <ColumnNumber>47</ColumnNumber>
     <OriginalText>Initializing Download...</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>312</StartOfStatement>
-    <EndOfStatement>312</EndOfStatement>
+    <StartOfStatement>317</StartOfStatement>
+    <EndOfStatement>317</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
@@ -1464,15 +1502,15 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>78</SourceScanID>
+    <SourceScanID>80</SourceScanID>
     <ModuleName>MainWindow.xaml.cs</ModuleName>
-    <LineNumber>319</LineNumber>
+    <LineNumber>324</LineNumber>
     <ColumnNumber>47</ColumnNumber>
     <OriginalText>Downloading...</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>319</StartOfStatement>
-    <EndOfStatement>319</EndOfStatement>
+    <StartOfStatement>324</StartOfStatement>
+    <EndOfStatement>324</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
@@ -1483,15 +1521,15 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>79</SourceScanID>
+    <SourceScanID>81</SourceScanID>
     <ModuleName>MainWindow.xaml.cs</ModuleName>
-    <LineNumber>326</LineNumber>
+    <LineNumber>331</LineNumber>
     <ColumnNumber>47</ColumnNumber>
     <OriginalText>Unzipping...</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>326</StartOfStatement>
-    <EndOfStatement>326</EndOfStatement>
+    <StartOfStatement>331</StartOfStatement>
+    <EndOfStatement>331</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
@@ -1502,15 +1540,15 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>80</SourceScanID>
+    <SourceScanID>82</SourceScanID>
     <ModuleName>MainWindow.xaml.cs</ModuleName>
-    <LineNumber>334</LineNumber>
+    <LineNumber>339</LineNumber>
     <ColumnNumber>47</ColumnNumber>
     <OriginalText>Cleaning Up...</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>334</StartOfStatement>
-    <EndOfStatement>334</EndOfStatement>
+    <StartOfStatement>339</StartOfStatement>
+    <EndOfStatement>339</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
@@ -1521,30 +1559,11 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>81</SourceScanID>
-    <ModuleName>MainWindow.xaml.cs</ModuleName>
-    <LineNumber>347</LineNumber>
-    <ColumnNumber>43</ColumnNumber>
-    <OriginalText>Treble Toolkit is Up To Date. Launching...</OriginalText>
-    <IsHidden>false</IsHidden>
-    <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>347</StartOfStatement>
-    <EndOfStatement>347</EndOfStatement>
-    <IsVerbatim>false</IsVerbatim>
-    <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>Button_Click1</CodeElement>
-    <RelativeLineNumber>143</RelativeLineNumber>
-    <IsHiddenString>false</IsHiddenString>
-    <IsInterpolatedString>false</IsInterpolatedString>
-    <ClassName>TrebleToolkitUpdaterLauncher.MainWindow</ClassName>
-    <IsController>false</IsController>
-  </SourceScanResults>
-  <SourceScanResults>
-    <SourceScanID>82</SourceScanID>
+    <SourceScanID>83</SourceScanID>
     <ModuleName>MainWindow.xaml.cs</ModuleName>
     <LineNumber>352</LineNumber>
-    <ColumnNumber>39</ColumnNumber>
-    <OriginalText>cmd.exe</OriginalText>
+    <ColumnNumber>43</ColumnNumber>
+    <OriginalText>Treble Toolkit is Up To Date. Launching...</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
     <StartOfStatement>352</StartOfStatement>
@@ -1552,26 +1571,7 @@
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
-    <RelativeLineNumber>148</RelativeLineNumber>
-    <IsHiddenString>false</IsHiddenString>
-    <IsInterpolatedString>false</IsInterpolatedString>
-    <ClassName>TrebleToolkitUpdaterLauncher.MainWindow</ClassName>
-    <IsController>false</IsController>
-  </SourceScanResults>
-  <SourceScanResults>
-    <SourceScanID>83</SourceScanID>
-    <ModuleName>MainWindow.xaml.cs</ModuleName>
-    <LineNumber>353</LineNumber>
-    <ColumnNumber>40</ColumnNumber>
-    <OriginalText>/C cd UpdateFiles &amp; move Application ../ &amp; move CLUpdate.dll ../ &amp; move CLUpdate.xml ../ &amp; move TrebleToolkitUpdaterLauncher.exe ../</OriginalText>
-    <IsHidden>false</IsHidden>
-    <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>353</StartOfStatement>
-    <EndOfStatement>353</EndOfStatement>
-    <IsVerbatim>false</IsVerbatim>
-    <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>Button_Click1</CodeElement>
-    <RelativeLineNumber>149</RelativeLineNumber>
+    <RelativeLineNumber>143</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
     <ClassName>TrebleToolkitUpdaterLauncher.MainWindow</ClassName>
@@ -1590,7 +1590,7 @@
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
-    <RelativeLineNumber>153</RelativeLineNumber>
+    <RelativeLineNumber>148</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
     <ClassName>TrebleToolkitUpdaterLauncher.MainWindow</ClassName>
@@ -1601,11 +1601,49 @@
     <ModuleName>MainWindow.xaml.cs</ModuleName>
     <LineNumber>358</LineNumber>
     <ColumnNumber>40</ColumnNumber>
-    <OriginalText>/C cd Application &amp; cd assets &amp; gui.exe</OriginalText>
+    <OriginalText>/C cd UpdateFiles &amp; move Application ../ &amp; move CLUpdate.dll ../ &amp; move CLUpdate.xml ../ &amp; move TrebleToolkitUpdaterLauncher.exe ../</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
     <StartOfStatement>358</StartOfStatement>
     <EndOfStatement>358</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click1</CodeElement>
+    <RelativeLineNumber>149</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkitUpdaterLauncher.MainWindow</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>86</SourceScanID>
+    <ModuleName>MainWindow.xaml.cs</ModuleName>
+    <LineNumber>362</LineNumber>
+    <ColumnNumber>39</ColumnNumber>
+    <OriginalText>cmd.exe</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>362</StartOfStatement>
+    <EndOfStatement>362</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click1</CodeElement>
+    <RelativeLineNumber>153</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkitUpdaterLauncher.MainWindow</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>87</SourceScanID>
+    <ModuleName>MainWindow.xaml.cs</ModuleName>
+    <LineNumber>363</LineNumber>
+    <ColumnNumber>40</ColumnNumber>
+    <OriginalText>/C cd Application &amp; cd assets &amp; gui.exe</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>363</StartOfStatement>
+    <EndOfStatement>363</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
     <CodeElement>Button_Click1</CodeElement>
@@ -1616,64 +1654,102 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>86</SourceScanID>
-    <ModuleName>MLExtension.cs</ModuleName>
-    <LineNumber>34</LineNumber>
-    <ColumnNumber>44</ColumnNumber>
-    <OriginalText>TrebleToolkitUpdaterLauncher</OriginalText>
-    <IsHidden>true</IsHidden>
-    <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>34</StartOfStatement>
-    <EndOfStatement>34</EndOfStatement>
-    <IsVerbatim>false</IsVerbatim>
-    <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement />
-    <RelativeLineNumber>34</RelativeLineNumber>
-    <IsHiddenString>false</IsHiddenString>
-    <IsInterpolatedString>false</IsInterpolatedString>
-    <ClassName>MultiLanguageMarkup.LangExtension</ClassName>
-    <IsController>false</IsController>
-  </SourceScanResults>
-  <SourceScanResults>
-    <SourceScanID>87</SourceScanID>
-    <ModuleName>MLExtension.cs</ModuleName>
-    <LineNumber>52</LineNumber>
-    <ColumnNumber>55</ColumnNumber>
-    <OriginalText>.Properties.Resources</OriginalText>
-    <IsHidden>false</IsHidden>
-    <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>52</StartOfStatement>
-    <EndOfStatement>52</EndOfStatement>
-    <IsVerbatim>false</IsVerbatim>
-    <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement />
-    <RelativeLineNumber>52</RelativeLineNumber>
-    <IsHiddenString>false</IsHiddenString>
-    <IsInterpolatedString>false</IsInterpolatedString>
-    <ClassName>MultiLanguageMarkup.LangExtension</ClassName>
-    <IsController>false</IsController>
-  </SourceScanResults>
-  <SourceScanResults>
     <SourceScanID>88</SourceScanID>
-    <ModuleName>MLExtension.cs</ModuleName>
-    <LineNumber>106</LineNumber>
-    <ColumnNumber>62</ColumnNumber>
-    <OriginalText>System.Windows.SharedDp</OriginalText>
+    <ModuleName>MainWindow.xaml.cs</ModuleName>
+    <LineNumber>367</LineNumber>
+    <ColumnNumber>39</ColumnNumber>
+    <OriginalText>cmd.exe</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>106</StartOfStatement>
-    <EndOfStatement>116</EndOfStatement>
+    <StartOfStatement>367</StartOfStatement>
+    <EndOfStatement>367</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>ProvideValue</CodeElement>
-    <RelativeLineNumber>27</RelativeLineNumber>
+    <CodeElement>Button_Click1</CodeElement>
+    <RelativeLineNumber>158</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
-    <ClassName>MultiLanguageMarkup.LangExtension</ClassName>
+    <ClassName>TrebleToolkitUpdaterLauncher.MainWindow</ClassName>
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
     <SourceScanID>89</SourceScanID>
+    <ModuleName>MainWindow.xaml.cs</ModuleName>
+    <LineNumber>368</LineNumber>
+    <ColumnNumber>40</ColumnNumber>
+    <OriginalText>/C taskkill /im TrebleToolkitUpdaterLauncher.exe</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>368</StartOfStatement>
+    <EndOfStatement>368</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Button_Click1</CodeElement>
+    <RelativeLineNumber>159</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>TrebleToolkitUpdaterLauncher.MainWindow</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>90</SourceScanID>
+    <ModuleName>MLExtension.cs</ModuleName>
+    <LineNumber>36</LineNumber>
+    <ColumnNumber>44</ColumnNumber>
+    <OriginalText>TrebleToolkitUpdaterLauncher</OriginalText>
+    <IsHidden>true</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>36</StartOfStatement>
+    <EndOfStatement>36</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement />
+    <RelativeLineNumber>36</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>MultiLanguageMarkup.LangExtension</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>91</SourceScanID>
+    <ModuleName>MLExtension.cs</ModuleName>
+    <LineNumber>40</LineNumber>
+    <ColumnNumber>85</ColumnNumber>
+    <OriginalText>.Properties.Resources</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>40</StartOfStatement>
+    <EndOfStatement>40</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement />
+    <RelativeLineNumber>40</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>MultiLanguageMarkup.LangExtension</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>92</SourceScanID>
+    <ModuleName>MLExtension.cs</ModuleName>
+    <LineNumber>104</LineNumber>
+    <ColumnNumber>62</ColumnNumber>
+    <OriginalText>System.Windows.SharedDp</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>104</StartOfStatement>
+    <EndOfStatement>104</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>ProvideValue</CodeElement>
+    <RelativeLineNumber>28</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+    <ClassName>MultiLanguageMarkup.LangExtension</ClassName>
+    <IsController>false</IsController>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>93</SourceScanID>
     <ModuleName>MlString.cs</ModuleName>
     <LineNumber>11</LineNumber>
     <ColumnNumber>55</ColumnNumber>
@@ -1692,7 +1768,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>90</SourceScanID>
+    <SourceScanID>94</SourceScanID>
     <ModuleName>MlString.cs</ModuleName>
     <LineNumber>11</LineNumber>
     <ColumnNumber>61</ColumnNumber>
@@ -1711,7 +1787,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>91</SourceScanID>
+    <SourceScanID>95</SourceScanID>
     <ModuleName>MlString.cs</ModuleName>
     <LineNumber>12</LineNumber>
     <ColumnNumber>48</ColumnNumber>
@@ -1730,7 +1806,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>92</SourceScanID>
+    <SourceScanID>96</SourceScanID>
     <ModuleName>MlString.cs</ModuleName>
     <LineNumber>18</LineNumber>
     <ColumnNumber>57</ColumnNumber>
@@ -1749,7 +1825,7 @@
     <IsController>false</IsController>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>93</SourceScanID>
+    <SourceScanID>97</SourceScanID>
     <ModuleName>MlString.cs</ModuleName>
     <LineNumber>20</LineNumber>
     <ColumnNumber>41</ColumnNumber>

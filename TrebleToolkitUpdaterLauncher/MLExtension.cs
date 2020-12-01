@@ -1,6 +1,6 @@
 ﻿// New versions of Multi-Language may include updated versions of this file.
 // The following definition will be used to detect if the file must be updated.
-// ML_EXTENSION_VERSION=3
+// ML_EXTENSION_VERSION=4
 
 // Multi-Language may add the project MLRuntime to your solution and add a reference
 // to MLRuntime to your project. This supports language switching across multiple DLLs.
@@ -19,7 +19,9 @@ using System.Windows;
 
 namespace MultiLanguageMarkup
 {
-  class LangExtension : MarkupExtension
+  [System.Diagnostics.CodeAnalysis.SuppressMessage( "Globalization", "CA1304:Specify CultureInfo", Justification = "We want the localized string." )]
+  [System.Diagnostics.CodeAnalysis.SuppressMessage( "Microsoft.Performance", "CA1812", Justification="FXCop doesn't detect usage in XAML !!!" )]
+  internal class LangExtension : MarkupExtension
   {
     private class target
     {
@@ -33,8 +35,9 @@ namespace MultiLanguageMarkup
     // This will be updated by Multi-Language
     private static string RootNamespace = "TrebleToolkitUpdaterLauncher";     //MLHIDE
 
-    // We only need one resource manager object. We can create it in a static constructor.
-    private static ResourceManager  ResMgr ;
+    // We only need one resource manager object.
+    // Create it here, because using a static constructor generates warning CA1810.
+    private static ResourceManager  ResMgr = new ResourceManager ( RootNamespace + ".Properties.Resources", Assembly.GetExecutingAssembly() ) ;
 
     // The resource key will be provided as a parameter to the constructor,
     // using markup in the format
@@ -45,12 +48,6 @@ namespace MultiLanguageMarkup
     // FrameworkElement objects referring to a single MarkupExtension object.
     // To change the language at runtime, we must keep a list of all of them.
     private List<target>            _Targets ;
-
-    // Create the ResourceManager once only in the static constructor
-    static LangExtension()
-    {
-      ResMgr = new ResourceManager ( RootNamespace + ".Properties.Resources", Assembly.GetExecutingAssembly() ) ;
-    }
 
     // Class constructor.
     // When you use markup in the format Text="{m:Lang MyResourceName}"
@@ -80,6 +77,7 @@ namespace MultiLanguageMarkup
     {
       // Save the FrameworkElement and the Property so that we can change the language on the fly.
 	  var provider = serviceProvider.GetService(typeof(IProvideValueTarget)) as IProvideValueTarget ;
+      if ( provider == null ) return null ;     // For warning VSSDK006
 	  var dp       = provider.TargetProperty as DependencyProperty ;
 
       if ( provider.TargetObject is FrameworkElement )
@@ -217,6 +215,7 @@ namespace MultiLanguageMarkup
     none
   }
 
+  [System.Diagnostics.CodeAnalysis.SuppressMessage ( "Usage", "CA1801:Review unused parameters", Justification = "The parameters are not used. This dummy class is used to annotate objects in XAML code.") ]
   internal static class Hide
   {
     public static HideOption GetOption ( Object obj )
