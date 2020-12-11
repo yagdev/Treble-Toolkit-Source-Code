@@ -370,5 +370,22 @@ namespace TrebleToolkitUpdaterLauncher
                 process.Start();
             });
         }
+
+        private void Button_Click2(object sender, RoutedEventArgs e)
+        {
+            status_lbl.Content = "Starting Treble Toolkit without updating...";
+            System.Diagnostics.Process process2 = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo2 = new System.Diagnostics.ProcessStartInfo();
+            startInfo2.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo2.FileName = "cmd.exe";
+            startInfo2.Arguments = "/C cd Application & cd assets & gui.exe";
+            process2.StartInfo = startInfo2;
+            process2.Start();
+            startInfo2.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo2.FileName = "cmd.exe";
+            startInfo2.Arguments = "/C taskkill /im TrebleToolkitUpdaterLauncher.exe";
+            process2.StartInfo = startInfo2;
+            process2.Start();
+        }
     }
 }
