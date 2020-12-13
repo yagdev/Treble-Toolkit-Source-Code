@@ -74,7 +74,7 @@ namespace TrebleToolkit5
             Application.Current.Shutdown();
         }
 
-        private void Button_Click_6(object sender, RoutedEventArgs e)
+        private void ObsoleteThemeChanger(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
@@ -99,7 +99,7 @@ namespace TrebleToolkit5
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
             startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = "/C start https://forum.xda-developers.com/project-treble/trebleenabled-device-development/treble-gsi-flashing-tool-b-t4040435";
+            startInfo.Arguments = "/C start https://youraveragegamer.wixsite.com/treble-toolkit";
             process.StartInfo = startInfo;
             process.Start();
         }
@@ -108,6 +108,12 @@ namespace TrebleToolkit5
         {
             var win2 = new About();
             win2.Show();
+        }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("ChangeTheme.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
         }
     }
 }

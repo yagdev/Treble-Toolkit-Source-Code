@@ -96,6 +96,9 @@
     <Compile Include="BLUnlocked.xaml.cs">
       <DependentUpon>BLUnlocked.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ChangeTheme.xaml.cs">
+      <DependentUpon>ChangeTheme.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CompatibleDevices.xaml.cs">
       <DependentUpon>CompatibleDevices.xaml</DependentUpon>
     </Compile>
@@ -163,6 +166,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="BLUnlocked.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChangeTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

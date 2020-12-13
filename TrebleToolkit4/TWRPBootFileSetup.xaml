@@ -7,16 +7,16 @@
       xmlns:MultiLanguageMarkup="clr-namespace:MultiLanguageMarkup" x:Class="TrebleToolkit5.TWRPBootFileSetup"
       mc:Ignorable="d" 
       d:DesignHeight="460" d:DesignWidth="500"
-      Title="FlashAFileSetup" Background="#FF1D1D1D">
+      Title="FlashAFileSetup" Background="#FF171717">
 
     <Grid>
 
-        <Label Content="First, let's add your TWRP" Margin="10,10,10,0" VerticalAlignment="Top" Height="50" Foreground="#FFE4E4E4" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-        <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Foreground="#FFE4E4E4" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold"><Run Text="This will open a Windows Explorer window where you can drop your "/><Run Text="TWRP image"/><Run Text="."/></TextBlock>
-        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,10,65" Stroke="#FF402EA4" VerticalAlignment="Bottom" RadiusY="23.5" RadiusX="23.5" StrokeThickness="3" />
-        <Label Content="NEXT" Margin="10,0,10,65" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="#FFE4E4E4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" VerticalAlignment="Bottom" />
-        <Rectangle Fill="#FF343434" Height="50" Margin="10,0,10,10" Stroke="#FF402EA4" VerticalAlignment="Bottom" RadiusY="23.5" RadiusX="23.5" StrokeThickness="3" />
-        <Label Content="BACK" Margin="10,0,10,10" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="#FFE4E4E4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" VerticalAlignment="Bottom" />
+        <Label Content="First, let's add your TWRP" Margin="10,10,10,0" VerticalAlignment="Top" Height="50" Foreground="White" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Foreground="White" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold"><Run Text="This will open a Windows Explorer window where you can drop your "/><Run Text="TWRP image"/><Run Text="."/></TextBlock>
+        <Rectangle Fill="#FF4C4C4C" Height="50" Margin="10,0,10,65" Stroke="#FF298ACC" VerticalAlignment="Bottom" RadiusY="23.5" RadiusX="23.5" StrokeThickness="3" />
+        <Label Content="NEXT" Margin="10,0,10,65" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" VerticalAlignment="Bottom" />
+        <Rectangle Fill="#FF4C4C4C" Height="50" Margin="10,0,10,10" Stroke="#FF298ACC" VerticalAlignment="Bottom" RadiusY="23.5" RadiusX="23.5" StrokeThickness="3" />
+        <Label Content="BACK" Margin="10,0,10,10" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" VerticalAlignment="Bottom" />
         <Button Content="Button" Margin="10,0,10,65" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click" />
         <Button Content="Button" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="50" Background="#FFDDDDDD" Opacity="0" Click="Button_Click_1"/>
 
