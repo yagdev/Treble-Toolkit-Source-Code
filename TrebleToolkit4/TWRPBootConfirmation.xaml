@@ -13,9 +13,9 @@
 
         <Label Content="Great. Now Let's Continue" Margin="10,10,10,0" VerticalAlignment="Top" Height="50" Foreground="White" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
         <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Foreground="White" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold"><Run Text="Press &quot;Next&quot; to "/><Run Text="continue"/><Run Text="."/></TextBlock>
-        <Rectangle Fill="#FF4C4C4C" Height="50" Margin="10,0,10,65" Stroke="#FF298ACC" VerticalAlignment="Bottom" RadiusY="23.5" RadiusX="23.5" StrokeThickness="3" />
+        <Rectangle Fill="#FF4C4C4C" Height="50" Margin="10,0,10,65" Stroke="#FF0063B1" VerticalAlignment="Bottom" RadiusY="23.5" RadiusX="23.5" StrokeThickness="3" />
         <Label Content="NEXT" Margin="10,0,10,65" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" VerticalAlignment="Bottom" />
-        <Rectangle Fill="#FF4C4C4C" Height="50" Margin="10,0,10,10" Stroke="#FF298ACC" VerticalAlignment="Bottom" RadiusY="23.5" RadiusX="23.5" StrokeThickness="3" />
+        <Rectangle Fill="#FF4C4C4C" Height="50" Margin="10,0,10,10" Stroke="#FF0063B1" VerticalAlignment="Bottom" RadiusY="23.5" RadiusX="23.5" StrokeThickness="3" />
         <Label Content="BACK" Margin="10,0,10,10" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" VerticalAlignment="Bottom" />
         <Button Content="Button" Margin="10,0,10,65" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click" />
         <Button Content="Button" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="50" Background="#FFDDDDDD" Opacity="0" Click="Button_Click_1"/>

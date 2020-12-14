@@ -68,5 +68,24 @@ namespace TrebleToolkit5
             process.StartInfo = startInfo;
             process.Start();
         }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/C ren gui.exe dark.exe & ren contrastwhite.exe gui.exe";
+            process.StartInfo = startInfo;
+            process.Start();
+            Application.Current.Shutdown();
+            System.Diagnostics.Process process1 = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo1 = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/C start gui.exe";
+            process.StartInfo = startInfo;
+            process.Start();
+        }
     }
 }
