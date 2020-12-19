@@ -114,6 +114,9 @@
     <Compile Include="FlashAFileSetup.xaml.cs">
       <DependentUpon>FlashAFileSetup.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FormatPartitions.xaml.cs">
+      <DependentUpon>FormatPartitions.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MLExtension.cs" />
     <Compile Include="MlString.cs" />
     <Compile Include="MultiLang.Designer.cs">
@@ -198,6 +201,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FlashGSI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormatPartitions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -341,9 +348,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="TrebleToolkit4_ml.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

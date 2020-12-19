@@ -115,5 +115,11 @@ namespace TrebleToolkit5
             Uri uri = new Uri("ChangeTheme.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);
         }
+
+        private void Button_Click_Format(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("FormatPartitions.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
     }
 }
