@@ -115,12 +115,12 @@ namespace TrebleToolkitUpdaterLauncher
                     status_lbl.Content = "Checking for Updates...";
                 }, DispatcherPriority.Normal);
 
-                string url = "https://www.dropbox.com/s/nvjzz2lkab3nblo/release.zip?dl=1";
-                string remote_version_url = "https://www.dropbox.com/s/zyhkyqlljkyzb6n/version?dl=1";
+                string url = "https://www.dropbox.com/s/pqnwsjlw8e6tdcv/update.zip?dl=1";
+                string remote_version_url = "https://www.dropbox.com/s/2iio6h7fe1xlje8/version.txt?dl=1";
                 string version_key = "application: ";
                 string update_path = System.IO.Path.Combine(Environment.CurrentDirectory, "Update", "Download");
                 string application_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateFiles");
-                string local_version_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "CurrentVersion", "VersionString");
+                string local_version_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "CurrentVersion", "VersionString.txt");
                 string launch_exe = "TrebleToolkitLauncher.exe";
 
                 var update = Updater.Init(url, update_path, application_path, launch_exe);
@@ -134,7 +134,7 @@ namespace TrebleToolkitUpdaterLauncher
                     process.Start();
                     startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                     startInfo.FileName = "cmd.exe";
-                    startInfo.Arguments = "/C ren TrebleToolkitUpdaterLauncher.exe TrebleToolkitUpdaterLauncherOld.exe & move TrebleToolkitUpdaterLauncherOld.exe old & move CLConfiguration.dll old & move CLConfiguration.xml old & move CLUpdate.dll old & move CLUpdate.xml old";
+                    startInfo.Arguments = "/C ren TrebleToolkitLauncher.exe TrebleToolkitLauncherOld.exe & move TrebleToolkitLauncherOld.exe old & move CLConfiguration.dll old & move CLConfiguration.xml old & move CLUpdate.dll old & move CLUpdate.xml old";
                     process.StartInfo = startInfo;
                     process.Start();
                     startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
@@ -185,7 +185,7 @@ namespace TrebleToolkitUpdaterLauncher
                 System.Diagnostics.ProcessStartInfo startInfo1 = new System.Diagnostics.ProcessStartInfo();
                 startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                 startInfo.FileName = "cmd.exe";
-                startInfo.Arguments = "/C cd UpdateFiles & move Application ../ & move CLUpdate.dll ../ & move CLUpdate.xml ../ & move TrebleToolkitUpdaterLauncher.exe ../";
+                startInfo.Arguments = "/C cd UpdateFiles & move Application ../ & move CLUpdate.dll ../ & move FluentWPF.dll ../ & move CLUpdate.xml ../ & move TrebleToolkitLauncher.exe ../";
                 process.StartInfo = startInfo;
                 process.Start();
                 startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
@@ -195,7 +195,7 @@ namespace TrebleToolkitUpdaterLauncher
                 process.Start();
                 startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                 startInfo.FileName = "cmd.exe";
-                startInfo.Arguments = "/C taskkill /im TrebleToolkitUpdaterLauncher.exe";
+                startInfo.Arguments = "/C taskkill /im TrebleToolkitLauncher.exe";
                 process.StartInfo = startInfo;
                 process.Start();
             });
