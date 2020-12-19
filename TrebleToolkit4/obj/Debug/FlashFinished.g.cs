@@ -53,7 +53,7 @@ namespace TrebleToolkit5 {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TrebleToolkit5;component/flashfinished.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TrebleToolkit;component/flashfinished.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\FlashFinished.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

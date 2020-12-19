@@ -53,7 +53,7 @@ namespace TrebleToolkit5 {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TrebleToolkit5;component/compatibledevices.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TrebleToolkit;component/compatibledevices.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\CompatibleDevices.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

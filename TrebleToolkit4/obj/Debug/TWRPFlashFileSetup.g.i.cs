@@ -53,7 +53,7 @@ namespace TrebleToolkit5 {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TrebleToolkit5;component/twrpflashfilesetup.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TrebleToolkit;component/twrpflashfilesetup.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\TWRPFlashFileSetup.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

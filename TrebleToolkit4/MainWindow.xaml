@@ -4,8 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TrebleToolkit5"
+        xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
         mc:Ignorable="d"
-        Title="Treble Toolkit v5" Height="600" Width="600" MinWidth="600" MinHeight="600">
+        Title="Treble Toolkit v6" Height="600" Width="600" MinWidth="600" MinHeight="600"
+        fw:AcrylicWindow.Enabled="True" Background="{x:Null}" >
     <Grid>
         <Frame Source="HomePage.xaml" NavigationUIVisibility="Hidden">
         </Frame>

@@ -53,7 +53,7 @@ namespace TrebleToolkit5 {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TrebleToolkit5;component/flashaconfirmation.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TrebleToolkit;component/flashaconfirmation.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\FlashAConfirmation.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

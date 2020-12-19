@@ -4,29 +4,30 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TrebleToolkit5"
+      xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
       mc:Ignorable="d" 
       d:DesignHeight="550" d:DesignWidth="550"
-      Title="FormatPartitions" Background="#FF171717">
+      Title="FormatPartitions" Background="{DynamicResource SystemAltMediumHighColorBrush}">
 
     <Grid>
-        <Label Content="Format Partitions" Margin="10,10,10,0" VerticalAlignment="Top" Height="50" Foreground="White" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="33" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-        <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Foreground="White" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" Text="Please select the partition to erase. Your device must be in the bootloader." />
-        <Rectangle Fill="#FF4C4C4C" Height="50" Margin="10,326,10,174" Stroke="#FF0063B1" VerticalAlignment="Center" RadiusY="23.5" RadiusX="23.5" StrokeThickness="3" />
-        <Label Content="USERDATA" Margin="10,326,10,174" VerticalAlignment="Center" Height="50" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-        <Rectangle Fill="#FF4C4C4C" Height="50" Margin="10,380,10,120" Stroke="#FF0063B1" VerticalAlignment="Center" RadiusY="23.5" RadiusX="23.5" StrokeThickness="3" />
-        <Label Content="SYSTEM" Margin="10,380,10,120" VerticalAlignment="Center" Height="50" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-        <Rectangle Fill="#FF4C4C4C" Height="50" Margin="10,436,10,64" Stroke="#FF0063B1" VerticalAlignment="Center" RadiusY="23.5" RadiusX="23.5" StrokeThickness="3" />
-        <Label Content="CACHE" Margin="10,436,10,64" VerticalAlignment="Center" Height="50" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-        <Rectangle Fill="#FF4C4C4C" Height="50" Margin="10,490,10,10" Stroke="#FF0063B1" VerticalAlignment="Center" RadiusY="23.5" RadiusX="23.5" StrokeThickness="3" />
-        <Label Content="BACK" Margin="10,490,10,10" VerticalAlignment="Center" Height="50" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-        <Button Content="Button" Margin="10,326,10,174" VerticalAlignment="Center" Height="50" Opacity="0" Click="Button_Click8" />
-        <Button Content="Button" Margin="10,380,10,120" VerticalAlignment="Center" Height="50" Opacity="0" />
-        <Button Content="Button" Margin="10,436,10,64" VerticalAlignment="Center" Height="50" Opacity="0" Click="Button_Click_2" />
-        <Button Content="Button" Margin="10,490,10,10" VerticalAlignment="Center" Height="50" Opacity="0" Click="Button_Click_1" />
-        <Button Content="Button" Margin="10,380,10,120" VerticalAlignment="Center" Height="50" Opacity="0" Click="Button_Click1" />
-        <Rectangle Fill="#FF4C4C4C" Height="50" Margin="10,271,10,229" Stroke="#FF0063B1" VerticalAlignment="Center" RadiusY="23.5" RadiusX="23.5" StrokeThickness="3" />
-        <Label Content="BOOT" Margin="10,271,10,229" VerticalAlignment="Center" Height="50" FontFamily="/TrebleToolkit5;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-        <Button Content="Button" Margin="10,271,10,229" VerticalAlignment="Center" Height="50" Opacity="0" Click="Button_Click" />
+        <Label Content="Format Partitions" Margin="10,10,10,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/TrebleToolkit;component/Fonts/#Bahnschrift Semibold" FontSize="33" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" VerticalAlignment="Top" />
+        <TextBlock Margin="10,60,10,440" TextWrapping="Wrap" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/TrebleToolkit;component/Fonts/#Bahnschrift Semibold" Text="Please select the partition to erase. Your device must be in the bootloader." />
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="10,0,10,174" Stroke="{Binding Path=(fw:AccentColors.ImmersiveSystemAccentBrush)}" VerticalAlignment="Bottom" RadiusY="23.5" RadiusX="23.5" StrokeThickness="3" />
+        <Label Content="USERDATA" Margin="10,0,10,174" VerticalAlignment="Bottom" Height="50" FontFamily="/TrebleToolkit;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="{DynamicResource SystemBaseHighColorBrush}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="10,0,10,120" Stroke="{Binding Path=(fw:AccentColors.ImmersiveSystemAccentBrush)}" VerticalAlignment="Bottom" RadiusY="23.5" RadiusX="23.5" StrokeThickness="3" />
+        <Label Content="SYSTEM" Margin="10,0,10,120" VerticalAlignment="Bottom" Height="50" FontFamily="/TrebleToolkit;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="{DynamicResource SystemBaseHighColorBrush}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="10,0,10,64" Stroke="{Binding Path=(fw:AccentColors.ImmersiveSystemAccentBrush)}" VerticalAlignment="Bottom" RadiusY="23.5" RadiusX="23.5" StrokeThickness="3" />
+        <Label Content="CACHE" Margin="10,0,10,64" VerticalAlignment="Bottom" Height="50" FontFamily="/TrebleToolkit;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="{DynamicResource SystemBaseHighColorBrush}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="10,0,10,10" Stroke="{Binding Path=(fw:AccentColors.ImmersiveSystemAccentBrush)}" VerticalAlignment="Bottom" RadiusY="23.5" RadiusX="23.5" StrokeThickness="3" />
+        <Label Content="BACK" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="50" FontFamily="/TrebleToolkit;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="{DynamicResource SystemBaseHighColorBrush}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <Button Content="Button" Margin="10,0,10,174" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click8" />
+        <Button Content="Button" Margin="10,0,10,120" VerticalAlignment="Bottom" Height="50" Opacity="0" />
+        <Button Content="Button" Margin="10,0,10,64" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click_2" />
+        <Button Content="Button" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click_1" />
+        <Button Content="Button" Margin="10,0,10,120" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click1" />
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="10,0,10,229" Stroke="{Binding Path=(fw:AccentColors.ImmersiveSystemAccentBrush)}" VerticalAlignment="Bottom" RadiusY="23.5" RadiusX="23.5" StrokeThickness="3" />
+        <Label Content="BOOT" Margin="10,0,10,229" VerticalAlignment="Bottom" Height="50" FontFamily="/TrebleToolkit;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="{DynamicResource SystemBaseHighColorBrush}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <Button Content="Button" Margin="10,0,10,229" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click" />
 
     </Grid>
 </Page>
