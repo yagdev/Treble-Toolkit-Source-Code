@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TrebleToolkitUpdaterLauncher.Properties {
+namespace TrebleToolkitLauncher.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace TrebleToolkitUpdaterLauncher.Properties {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TrebleToolkitUpdaterLauncher.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TrebleToolkitLauncher.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,51 +57,6 @@ namespace TrebleToolkitUpdaterLauncher.Properties {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to FORCE REINSTALL.
-        /// </summary>
-        public static string FORCE_REINSTALL {
-            get {
-                return ResourceManager.GetString("FORCE_REINSTALL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to LAUNCH.
-        /// </summary>
-        public static string LAUNCH {
-            get {
-                return ResourceManager.GetString("LAUNCH", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to This will download the latest version of Treble Toolkit and launch it automatically..
-        /// </summary>
-        public static string This_will_download_the_latest_ {
-            get {
-                return ResourceManager.GetString("This_will_download_the_latest_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Treble Toolkit Launcher.
-        /// </summary>
-        public static string Treble_Toolkit_Launcher {
-            get {
-                return ResourceManager.GetString("Treble_Toolkit_Launcher", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Welcome to Treble Toolkit Launcher.
-        /// </summary>
-        public static string Welcome_to_Treble_Toolkit_Laun {
-            get {
-                return ResourceManager.GetString("Welcome_to_Treble_Toolkit_Laun", resourceCulture);
             }
         }
     }

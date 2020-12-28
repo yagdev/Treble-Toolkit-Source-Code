@@ -8,12 +8,12 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Treble Toolkit Updater")]
-[assembly: AssemblyDescription("Updater for Treble Toolkit")]
+[assembly: AssemblyDescription("Updater for Treble Toolkit. Always download from https://youraveragegamer.wixsite.com/treble-toolkit for guaranteed support.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("YAG-dev")]
 [assembly: AssemblyProduct("Treble Toolkit Updater")]
-[assembly: AssemblyCopyright("Copyright ©  2020 YAG-dev")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCopyright("Copyright ©2021 YAG-dev")]
+[assembly: AssemblyTrademark("Treble Toolkit (Launcher")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -51,5 +51,5 @@ using System.Windows;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("6.0.0.0")]
-[assembly: AssemblyFileVersion("6.0.0.0")]
+[assembly: AssemblyVersion("20.12.1.0")]
+[assembly: AssemblyFileVersion("20.12.1.0")]

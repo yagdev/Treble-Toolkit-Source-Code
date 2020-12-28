@@ -117,19 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="FORCE_REINSTALL" xml:space="preserve">
-    <value>FORCE REINSTALL</value>
-  </data>
-  <data name="LAUNCH" xml:space="preserve">
-    <value>LAUNCH</value>
-  </data>
-  <data name="This_will_download_the_latest_" xml:space="preserve">
-    <value>This will download the latest version of Treble Toolkit and launch it automatically.</value>
-  </data>
-  <data name="Treble_Toolkit_Launcher" xml:space="preserve">
-    <value>Treble Toolkit Launcher</value>
-  </data>
-  <data name="Welcome_to_Treble_Toolkit_Laun" xml:space="preserve">
-    <value>Welcome to Treble Toolkit Launcher</value>
-  </data>
 </root>

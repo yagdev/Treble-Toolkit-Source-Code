@@ -1,11 +1,11 @@
-﻿TrebleToolkitUpdaterLauncher
+﻿TrebleToolkitLauncher
 
 
 winexe
 C#
 .cs
 C:\Users\dinis\Downloads\Treble-Toolkit-Source-Code-launcher\Treble-Toolkit-Source-Code-launcher\TrebleToolkitUpdaterLauncher\obj\Release\
-TrebleToolkitUpdaterLauncher
+TrebleToolkitLauncher
 none
 false
 TRACE
@@ -16,5 +16,5 @@ C:\Users\dinis\Downloads\Treble-Toolkit-Source-Code-launcher\Treble-Toolkit-Sour
 171434887658
 MainWindow.xaml;
 
-True
+False
 
