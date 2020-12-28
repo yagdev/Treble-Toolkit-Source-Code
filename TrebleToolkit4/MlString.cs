@@ -9,7 +9,7 @@ namespace MultiLang
   internal class ml
   {
         public static string[] SupportedCultures = { "en", "pt" };  //MLHIDE
-        private static string RootNamespace = "TrebleToolkit5"; //MLHIDE
+        private static string RootNamespace = "TrebleToolkitUpdaterLauncher"; //MLHIDE
     private static ResourceManager   ResMgr ;
 
     static ml()

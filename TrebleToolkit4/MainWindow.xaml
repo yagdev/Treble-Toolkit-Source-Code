@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TrebleToolkit5"
         xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
         mc:Ignorable="d"
-        Title="Treble Toolkit v6" Height="600" Width="600" MinWidth="600" MinHeight="600"
+        Title="Treble Toolkit" Height="600" Width="600" MinWidth="600" MinHeight="600"
         fw:AcrylicWindow.Enabled="True" Background="{x:Null}" >
     <Grid>
         <Frame Source="HomePage.xaml" NavigationUIVisibility="Hidden">

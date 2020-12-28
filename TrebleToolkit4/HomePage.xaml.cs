@@ -68,29 +68,10 @@ namespace TrebleToolkit5
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
             startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = "/C cd .. & cd .. & start TrebleToolkitUpdaterLauncher.exe";
+            startInfo.Arguments = "/C cd .. & cd .. & start TrebleToolkitLauncher.exe";
             process.StartInfo = startInfo;
             process.Start();
             Application.Current.Shutdown();
-        }
-
-        private void ObsoleteThemeChanger(object sender, RoutedEventArgs e)
-        {
-            System.Diagnostics.Process process = new System.Diagnostics.Process();
-            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = "/C ren gui.exe gui3.exe & ren gui2.exe gui.exe & ren gui3.exe gui2.exe";
-            process.StartInfo = startInfo;
-            process.Start();
-            Application.Current.Shutdown();
-            System.Diagnostics.Process process1 = new System.Diagnostics.Process();
-            System.Diagnostics.ProcessStartInfo startInfo1 = new System.Diagnostics.ProcessStartInfo();
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = "/C start gui.exe";
-            process.StartInfo = startInfo;
-            process.Start();
         }
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
@@ -108,12 +89,6 @@ namespace TrebleToolkit5
         {
             var win2 = new About();
             win2.Show();
-        }
-
-        private void Button_Click_6(object sender, RoutedEventArgs e)
-        {
-            Uri uri = new Uri("ChangeTheme.xaml", UriKind.Relative);
-            this.NavigationService.Navigate(uri);
         }
 
         private void Button_Click_Format(object sender, RoutedEventArgs e)

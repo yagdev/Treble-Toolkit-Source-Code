@@ -30,7 +30,7 @@ namespace TrebleToolkit5
             System.Diagnostics.ProcessStartInfo startInfo2 = new System.Diagnostics.ProcessStartInfo();
             startInfo2.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
             startInfo2.FileName = "cmd.exe";
-            startInfo2.Arguments = "/C cd .. & cd .. & TrebleToolkitUpdaterLauncher.exe";
+            startInfo2.Arguments = "/C cd .. & cd .. & TrebleToolkitLauncher.exe";
             process2.StartInfo = startInfo2;
             process2.Start();
             startInfo2.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
@@ -38,17 +38,6 @@ namespace TrebleToolkit5
             startInfo2.Arguments = "/C taskkill /im gui.exe & taskkill /im gui.exe";
             process2.StartInfo = startInfo2;
             process2.Start();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            System.Diagnostics.Process process = new System.Diagnostics.Process();
-            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = "/C start updater.exe";
-            process.StartInfo = startInfo;
-            process.Start();
         }
 
         private void Button_Click2(object sender, RoutedEventArgs e)

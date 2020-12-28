@@ -33,7 +33,7 @@ namespace MultiLanguageMarkup
 
 
     // This will be updated by Multi-Language
-    private static string RootNamespace = "TrebleToolkit5";     //MLHIDE
+    private static string RootNamespace = "TrebleToolkitUpdaterLauncher";     //MLHIDE
 
     // We only need one resource manager object.
     // Create it here, because using a static constructor generates warning CA1810.
