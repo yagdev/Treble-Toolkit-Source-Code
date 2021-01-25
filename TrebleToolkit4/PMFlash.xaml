@@ -10,13 +10,13 @@
       Title="PMFlash" Background="{DynamicResource SystemAltMediumHighColorBrush}" xmlns:m="clr-namespace:MultiLanguageMarkup">
 
     <Grid>
-        <Label Content="Flash Permissiver" Margin="10,10,10,0" VerticalAlignment="Top" Height="50" FontFamily="/TrebleToolkit;component/Fonts/#Bahnschrift Semibold" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontSize="32" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-        <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/TrebleToolkit;component/Fonts/#Bahnschrift Semibold"><Run Text="Please reboot to TWRP, and select &quot;ADB Sideload&quot; under &quot;Advanced&quot;" /><Run Text=", and press Flash" /><Run Text="." /></TextBlock>
+        <Label Content="Flash Permissiver" Margin="10,10,10,0" VerticalAlignment="Top" Height="50" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontSize="32" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold"><Run Text="Please reboot to TWRP, and select &quot;ADB Sideload&quot; under &quot;Advanced&quot;" /><Run Text=", and press Flash" /><Run Text="." /></TextBlock>
         <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="9,0,10,64" Stroke="{Binding Path=(fw:AccentColors.ImmersiveSystemAccentBrush)}" VerticalAlignment="Bottom" RadiusY="23.5" RadiusX="23.5" StrokeThickness="3" />
-        <Label Content="FLASH" Margin="9,0,10,64" VerticalAlignment="Bottom" Height="50" FontFamily="/TrebleToolkit;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="{DynamicResource SystemBaseHighColorBrush}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <Label Content="FLASH" Margin="9,0,10,64" VerticalAlignment="Bottom" Height="50" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="{DynamicResource SystemBaseHighColorBrush}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
         <Button Content="Button" Margin="10,0,10,65" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click_5" />
         <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="9,0,10,10" Stroke="{Binding Path=(fw:AccentColors.ImmersiveSystemAccentBrush)}" VerticalAlignment="Bottom" RadiusY="23.5" RadiusX="23.5" StrokeThickness="3" />
-        <Label Content="BACK" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="50" FontFamily="/TrebleToolkit;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="{DynamicResource SystemBaseHighColorBrush}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <Label Content="BACK" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="50" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="{DynamicResource SystemBaseHighColorBrush}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
         <Button Content="Button" Margin="10,0,10,10" Opacity="0" Click="Button_Click" Height="50" VerticalAlignment="Bottom" />
 
     </Grid>

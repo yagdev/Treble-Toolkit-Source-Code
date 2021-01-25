@@ -1,0 +1,38 @@
+﻿<Window x:Class="TrebleToolkitUpdaterLauncher.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+        xmlns:local="clr-namespace:TrebleToolkitUpdaterLauncher"
+        mc:Ignorable="d"
+        Title="Treble Toolkit Launcher" Height="650" Width="850" Background="{DynamicResource SystemAltMediumHighColorBrush}" xmlns:m="clr-namespace:MultiLanguageMarkup" MinWidth="850" MinHeight="650"
+        fw:AcrylicWindow.Enabled="True" >
+    <Grid>
+        <Label x:Name="status_lbl" Content="©2021 YAG-dev" Margin="10,0,10,10" VerticalAlignment="Bottom" FontSize="20" Height="40" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+        <Label Content="Welcome to Treble Toolkit Launcher" Margin="10,10,10,0" VerticalAlignment="Top" Height="180" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontSize="32" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" />
+        <Label Content="This will download the latest version of Treble Toolkit and launch it automatically." Margin="10,190,10,379" VerticalAlignment="Center" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" />
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="35,308,35,215" Stroke="{Binding Path=(fw:AccentColors.ImmersiveSystemAccentBrush)}" StrokeThickness="3" VerticalAlignment="Center" RadiusY="23.5" RadiusX="23.5" />
+        <Border BorderThickness="1" Height="50" Margin="35,308,35,215" VerticalAlignment="Center">
+            <Label Content="LAUNCH" Margin="9" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        </Border>
+        <Button Content="Button" Margin="35,308,35,215" VerticalAlignment="Center" Height="50" Background="#FFDDDDDD" Opacity="0" Click="Button_Click" />
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="35,418,35,105" Stroke="{Binding Path=(fw:AccentColors.ImmersiveSystemAccentBrush)}" StrokeThickness="3" VerticalAlignment="Center" RadiusY="23.5" RadiusX="23.5" />
+        <Border BorderThickness="1" Height="50" Margin="35,418,35,105" VerticalAlignment="Center">
+            <Label Content="FORCE REINSTALL" HorizontalAlignment="Center" VerticalAlignment="Center" Width="356" Margin="-5,9,-1,9" Height="30" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+        </Border>
+        <Button Content="Button" Margin="35,418,35,105" VerticalAlignment="Center" Height="50" Background="#FFDDDDDD" Opacity="0" Click="Button_Click1" />
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="35,363,35,160" Stroke="{Binding Path=(fw:AccentColors.ImmersiveSystemAccentBrush)}" StrokeThickness="3" VerticalAlignment="Center" RadiusY="23.5" RadiusX="23.5" />
+        <Border BorderThickness="1" Height="50" Margin="35,363,35,160" VerticalAlignment="Center">
+            <Label Content="LAUNCH WITHOUT UPDATING (OFFLINE)" VerticalAlignment="Center" Height="30" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="9" HorizontalAlignment="Center" Width="752" />
+        </Border>
+        <Button Content="Button" Margin="35,363,35,160" VerticalAlignment="Center" Height="50" Background="#FFDDDDDD" Opacity="0" Click="Button_Click2" />
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="35,473,35,50" Stroke="{Binding Path=(fw:AccentColors.ImmersiveSystemAccentBrush)}" StrokeThickness="3" VerticalAlignment="Center" RadiusY="23.5" RadiusX="23.5" />
+        <Border BorderThickness="1" Height="50" Margin="35,473,35,50" VerticalAlignment="Center">
+            <Label Content="UPDATE LAUNCHER" HorizontalAlignment="Center" VerticalAlignment="Center" Width="356" Margin="-5,9,-1,9" Height="30" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+        </Border>
+        <Button Content="Button" Margin="35,473,35,50" VerticalAlignment="Center" Height="50" Background="#FFDDDDDD" Opacity="0" Click="Button_ClickL" />
+        <ProgressBar x:Name="status_pgr" Height="20" Margin="35,266,35,333" VerticalAlignment="Center" Background="{x:Null}" Foreground="{DynamicResource SystemBaseHighColorBrush}" BorderBrush="{DynamicResource SystemBaseHighColorBrush}" RenderTransformOrigin="0.5,0.5" BorderThickness="3"/>
+
+    </Grid>
+</Window>
