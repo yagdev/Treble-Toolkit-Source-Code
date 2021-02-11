@@ -6,12 +6,12 @@
       xmlns:local="clr-namespace:TrebleToolkit5"
       xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
       mc:Ignorable="d" 
-      d:DesignHeight="460" d:DesignWidth="290"
+      d:DesignHeight="460" d:DesignWidth="550"
       Title="Compatible Devices - OnePlus 6" Background="{DynamicResource SystemAltMediumHighColorBrush}" xmlns:m="clr-namespace:MultiLanguageMarkup">
 
     <Grid>
         <Label Content="OnePlus 6" Margin="10,10,12,0" VerticalAlignment="Top" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="33" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-        <TextBlock Margin="10,65,12,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="120" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold"><Run Text="CPU: Qualcomm Snapdragon 845" /><LineBreak /><Run Text="RAM: 6GB / 8GB LPDDR4X" /><LineBreak /><Run Text="Storage: 64GB / 128GB / 256GB" /><LineBreak /><Run Text="Display: 6.28&quot; Optic AMOLED (2280x1080)" /><LineBreak /><Run Text="Cameras: 16MP + 20MP (Back) / 16MP (Front)" /><LineBreak /><Run Text="Android Versions: 8.1 / 9 / 10 / 11 (planned)" /><LineBreak /><Run Text="Kernel Version: 4.9" /><LineBreak /><Run Text="Release Date: May 22 2018" /></TextBlock>
+        <TextBlock Margin="10,65,12,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="330" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold"><Run Text="CPU: Qualcomm Snapdragon 845"/><LineBreak/><Run Text="RAM: 6GB / 8GB LPDDR4X"/><LineBreak/><Run Text="Storage: 64GB / 128GB / 256GB"/><LineBreak/><Run Text="Display: 6.28&quot; Optic AMOLED (2280x1080)"/><LineBreak/><Run Text="Cameras: 16MP + 20MP (Back) / 16MP (Front)"/><LineBreak/><Run Text="Android Versions: 8.1 "/><Run Text="(Oxygen OS 5.1)"/><Run Text=" "/><Run Text="/ 9 "/><Run Text="(OxygenOS 9.0)"/><Run Text=" "/><Run Text="/ 10"/><Run Text=" OxygenOS 10)"/><Run Text=" / 11 "/><Run Text="(OxygenOS 11)"/><Run Text="(planned)"/><LineBreak/><Run Text="Kernel Version: 4.9"/><LineBreak/><Run Text="Release Date: May 22 2018"/></TextBlock>
         <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="10,0,10,10" Stroke="{Binding Path=(fw:AccentColors.ImmersiveSystemAccentBrush)}" VerticalAlignment="Bottom" RadiusY="23.5" RadiusX="23.5" StrokeThickness="3" />
         <Label Content="BACK" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="50" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="{DynamicResource SystemBaseHighColorBrush}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
         <Button Content="Button" Margin="10,0,10,10" Opacity="0" Click="Button_Click" Height="50" VerticalAlignment="Bottom" />

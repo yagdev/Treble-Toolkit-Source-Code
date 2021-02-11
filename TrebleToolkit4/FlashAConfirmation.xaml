@@ -18,8 +18,10 @@
         <Label Content="NEXT" Margin="10,0,10,65" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="{DynamicResource SystemBaseHighColorBrush}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" VerticalAlignment="Bottom" />
         <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="10,0,10,10" Stroke="{Binding Path=(fw:AccentColors.ImmersiveSystemAccentBrush)}" VerticalAlignment="Bottom" RadiusY="23.5" RadiusX="23.5" StrokeThickness="3" />
         <Label Content="BACK" Margin="10,0,10,10" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="{DynamicResource SystemBaseHighColorBrush}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" VerticalAlignment="Bottom" />
-        <Button Content="Button" Margin="10,0,10,65" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click" />
+        <Button x:Name="Flash1" Content="Button" Margin="10,0,10,65" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click" />
+        <Button x:Name="Flash2" Content="Button" Margin="10,0,10,65" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click_2" />
         <Button Content="Button" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="50" Background="#FFDDDDDD" Opacity="0" Click="Button_Click_1"/>
+        <CheckBox Content="Format Boot Partition" Margin="10,0,10,120" VerticalAlignment="Bottom" Height="40" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Foreground="{DynamicResource SystemBaseHighColorBrush}" Checked="CheckBox_Checked" Background="{DynamicResource SystemBaseHighColorBrush}" BorderBrush="{x:Null}" VerticalContentAlignment="Center" Padding="4,2,0,0" HorizontalContentAlignment="Center" Unchecked="CheckBox_Unchecked"/>
 
     </Grid>
 </Page>

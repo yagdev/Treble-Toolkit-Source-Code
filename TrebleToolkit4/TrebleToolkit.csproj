@@ -141,6 +141,9 @@
     <Compile Include="FormatPartitions.xaml.cs">
       <DependentUpon>FormatPartitions.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HuaweiMate10Lite.xaml.cs">
+      <DependentUpon>HuaweiMate10Lite.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MLExtension.cs" />
     <Compile Include="MlString.cs" />
     <Compile Include="OP6.xaml.cs">
@@ -232,6 +235,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HuaweiMate10Lite.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

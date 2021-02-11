@@ -37,7 +37,7 @@ namespace TrebleToolkit5
             {
                 dis.Invoke(() =>
                 {
-                    /// status_lbl.Content = "Checking for Updates...";
+                    status_lbl.Content = "Checking for Updates...";
                 }, DispatcherPriority.Normal);
 
                 string url = "https://www.dropbox.com/s/pqnwsjlw8e6tdcv/update.zip?dl=1";
@@ -52,9 +52,8 @@ namespace TrebleToolkit5
 
                 if (UpdateManager.CheckForUpdate(version_key, local_version_path, remote_version_url))
                 {
-
+                    status_lbl.Content = "There is an update available to Treble Toolkit.";
                 }
-                /// End of abandoned code - YAG-dev on 25/1/2021
             });
         }
 

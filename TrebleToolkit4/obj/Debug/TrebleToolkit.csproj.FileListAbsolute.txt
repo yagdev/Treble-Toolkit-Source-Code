@@ -71,3 +71,6 @@ C:\Users\dinis\source\repos\Treble-Toolkit-Source-Code-master\TrebleToolkit4\obj
 C:\Users\dinis\source\repos\Treble-Toolkit-Source-Code-master\TrebleToolkit4\obj\Debug\TrebleToolkit.csproj.CopyComplete
 C:\Users\dinis\source\repos\Treble-Toolkit-Source-Code-master\TrebleToolkit4\obj\Debug\gui.exe
 C:\Users\dinis\source\repos\Treble-Toolkit-Source-Code-master\TrebleToolkit4\obj\Debug\gui.pdb
+C:\Users\dinis\source\repos\Treble-Toolkit-Source-Code-master\TrebleToolkit4\obj\Debug\TrebleToolkit.csprojAssemblyReference.cache
+C:\Users\dinis\source\repos\Treble-Toolkit-Source-Code-master\TrebleToolkit4\obj\Debug\HuaweiMate10Lite.g.cs
+C:\Users\dinis\source\repos\Treble-Toolkit-Source-Code-master\TrebleToolkit4\obj\Debug\HuaweiMate10Lite.baml

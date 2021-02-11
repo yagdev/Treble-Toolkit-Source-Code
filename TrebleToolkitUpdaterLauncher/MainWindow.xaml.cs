@@ -31,6 +31,15 @@ namespace TrebleToolkitUpdaterLauncher
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            Launch2.Visibility = Visibility.Hidden;
+            Reinstall.Visibility = Visibility.Hidden;
+            UpdateLauncher.Visibility = Visibility.Hidden;
+            Launch2Rectangle.Visibility = Visibility.Hidden;
+            ReinstallRectangle.Visibility = Visibility.Hidden;
+            UpdateRectangle.Visibility = Visibility.Hidden;
+            Launch2Label.Visibility = Visibility.Hidden;
+            ReinstallLabel.Visibility = Visibility.Hidden;
+            UpdateLabel.Visibility = Visibility.Hidden;
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
@@ -43,6 +52,7 @@ namespace TrebleToolkitUpdaterLauncher
                 dis.Invoke(() =>
                 {
                     status_lbl.Content = "Checking for Updates...";
+                    status_pgr.Visibility = Visibility.Visible;
                     status_pgr.Value = 0;
                     status_pgr.Value += 0;
                 }, DispatcherPriority.Normal);
@@ -135,6 +145,7 @@ namespace TrebleToolkitUpdaterLauncher
                 startInfo.Arguments = "/C taskkill /im TrebleToolkitLauncher.exe";
                 process.StartInfo = startInfo;
                 process.Start();
+                status_pgr.Visibility = Visibility.Hidden;
             });
         }
 
@@ -145,6 +156,15 @@ namespace TrebleToolkitUpdaterLauncher
 
         private void Button_Click1(object sender, RoutedEventArgs e)
         {
+            Launch.Visibility = Visibility.Hidden;
+            Launch2.Visibility = Visibility.Hidden;
+            UpdateLauncher.Visibility = Visibility.Hidden;
+            LaunchRectangle.Visibility = Visibility.Hidden;
+            Launch2Rectangle.Visibility = Visibility.Hidden;
+            UpdateRectangle.Visibility = Visibility.Hidden;
+            LaunchLabel.Visibility = Visibility.Hidden;
+            Launch2Label.Visibility = Visibility.Hidden;
+            UpdateLabel.Visibility = Visibility.Hidden;
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
@@ -157,7 +177,8 @@ namespace TrebleToolkitUpdaterLauncher
                 dis.Invoke(() =>
                 {
                     status_lbl.Content = "Reinstalling...";
-                    status_pgr.Value += 0;
+                    status_pgr.Visibility = Visibility.Visible;
+                    status_pgr.Value = 0;
                 }, DispatcherPriority.Normal);
 
                 string url = "https://www.dropbox.com/s/pqnwsjlw8e6tdcv/update.zip?dl=1";
@@ -239,8 +260,10 @@ namespace TrebleToolkitUpdaterLauncher
                 startInfo.Arguments = "/C cd UpdateFiles & move Application ../ & move CLUpdate.dll ../ & move CLUpdate.xml ../ & move TrebleToolkitLauncher.exe ../ & move FluentWPF.dll ../";
                 process.StartInfo = startInfo;
                 process.Start();
+                status_pgr.Visibility = Visibility.Hidden;
                 if (UpdateManager.CheckForUpdate(version_key, local_version_path, remote_version_url))
                 {
+                    status_pgr.Visibility = Visibility.Visible;
                     startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                     startInfo.FileName = "cmd.exe";
                     startInfo.Arguments = "/C RD /s /q old & mkdir old";
@@ -318,11 +341,22 @@ namespace TrebleToolkitUpdaterLauncher
                 startInfo.Arguments = "/C taskkill /im TrebleToolkitLauncher.exe";
                 process.StartInfo = startInfo;
                 process.Start();
+                status_pgr.Visibility = Visibility.Visible;
             });
         }
 
         private void Button_Click2(object sender, RoutedEventArgs e)
         {
+            Launch.Visibility = Visibility.Hidden;
+            Reinstall.Visibility = Visibility.Hidden;
+            UpdateLauncher.Visibility = Visibility.Hidden;
+            LaunchRectangle.Visibility = Visibility.Hidden;
+            ReinstallRectangle.Visibility = Visibility.Hidden;
+            UpdateRectangle.Visibility = Visibility.Hidden;
+            LaunchLabel.Visibility = Visibility.Hidden;
+            ReinstallLabel.Visibility = Visibility.Hidden;
+            UpdateLabel.Visibility = Visibility.Hidden;
+            status_pgr.Visibility = Visibility.Visible;
             status_pgr.Value = 0;
             status_lbl.Content = "Launching Treble Toolkit without updating...";
             status_pgr.Value += 100;
@@ -338,10 +372,21 @@ namespace TrebleToolkitUpdaterLauncher
             startInfo2.Arguments = "/C taskkill /im TrebleToolkitLauncher.exe";
             process2.StartInfo = startInfo2;
             process2.Start();
+            status_pgr.Visibility = Visibility.Hidden;
         }
 
         private void Button_ClickL(object sender, RoutedEventArgs e)
         {
+            Launch.Visibility = Visibility.Hidden;
+            Reinstall.Visibility = Visibility.Hidden;
+            Launch2.Visibility = Visibility.Hidden;
+            LaunchRectangle.Visibility = Visibility.Hidden;
+            ReinstallRectangle.Visibility = Visibility.Hidden;
+            Launch2Rectangle.Visibility = Visibility.Hidden;
+            LaunchLabel.Visibility = Visibility.Hidden;
+            ReinstallLabel.Visibility = Visibility.Hidden;
+            Launch2Label.Visibility = Visibility.Hidden;
+            status_pgr.Visibility = Visibility.Visible;
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
@@ -353,6 +398,7 @@ namespace TrebleToolkitUpdaterLauncher
             {
                 dis.Invoke(() =>
                 {
+                    status_pgr.Visibility = Visibility.Visible;
                     status_pgr.Value = 0;
                     status_lbl.Content = "Checking for Launcher updates...";
                 }, DispatcherPriority.Normal);
@@ -435,6 +481,7 @@ namespace TrebleToolkitUpdaterLauncher
                 startInfo.Arguments = "/C taskkill /im TrebleToolkitLauncher.exe & start TrebleToolkitLauncher.exe";
                 process.StartInfo = startInfo;
                 process.Start();
+                status_pgr.Visibility = Visibility.Hidden;
             });
         }
     }

@@ -54,5 +54,11 @@ namespace TrebleToolkit5
             Uri uri = new Uri("HomePage.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("HuaweiMate10Lite.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
     }
 }

@@ -27,6 +27,8 @@
         <Label Content="BACK" Margin="10,0,10,10" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="{DynamicResource SystemBaseHighColorBrush}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" VerticalAlignment="Bottom" />
         <Button Content="Button" Margin="11,0,10,10" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click_1" />
         <TextBlock Margin="11,60,10,0" TextWrapping="Wrap" Text="This is a list of all devices compatible with Treble Toolkit" VerticalAlignment="Top" Height="40" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" />
-
+        <Label Content="Huawei Mate 10 Lite" Margin="10,0,10,285" VerticalAlignment="Bottom" Height="50" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Foreground="{DynamicResource SystemBaseHighColorBrush}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="11,0,9,285" Stroke="{Binding Path=(fw:AccentColors.ImmersiveSystemAccentBrush)}" VerticalAlignment="Bottom" RadiusY="23.5" RadiusX="23.5" StrokeThickness="3" />
+        <Button Content="Button" Margin="10,0,10,285" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click_2" />
     </Grid>
 </Page>
