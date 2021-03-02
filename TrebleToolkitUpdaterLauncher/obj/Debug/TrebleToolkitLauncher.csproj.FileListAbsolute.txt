@@ -36,7 +36,6 @@ C:\Users\dinis\source\repos\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdat
 C:\Users\dinis\source\repos\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\Release\FluentWPF.dll
 C:\Users\dinis\source\repos\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\Release\CLConfiguration.xml
 C:\Users\dinis\source\repos\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\Release\CLUpdate.xml
-C:\Users\dinis\source\repos\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\obj\Debug\TrebleToolkitLauncher.csprojAssemblyReference.cache
 C:\Users\dinis\source\repos\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\obj\Debug\MainWindow.g.cs
 C:\Users\dinis\source\repos\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\obj\Debug\App.g.cs
 C:\Users\dinis\source\repos\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\obj\Debug\TrebleToolkitLauncher_MarkupCompile.cache
@@ -54,3 +53,4 @@ C:\Users\dinis\source\repos\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdat
 C:\Users\dinis\source\repos\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\obj\Debug\TrebleToolkitLauncher.csproj.CopyComplete
 C:\Users\dinis\source\repos\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\obj\Debug\TrebleToolkitLauncher.exe
 C:\Users\dinis\source\repos\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\obj\Debug\TrebleToolkitLauncher.pdb
+C:\Users\dinis\source\repos\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\obj\Debug\TrebleToolkitLauncher.csprojAssemblyReference.cache

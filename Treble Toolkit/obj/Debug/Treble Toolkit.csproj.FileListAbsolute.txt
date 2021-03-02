@@ -1,0 +1,84 @@
+C:\Users\dinis\source\repos\gui\Treble Toolkit\obj\Debug\AboutScreen.g.cs
+C:\Users\dinis\source\repos\gui\Treble Toolkit\obj\Debug\GSIABFlash.g.cs
+C:\Users\dinis\source\repos\gui\Treble Toolkit\obj\Debug\GSIABPickAFile.g.cs
+C:\Users\dinis\source\repos\gui\Treble Toolkit\obj\Debug\GSIAFlash.g.cs
+C:\Users\dinis\source\repos\gui\Treble Toolkit\obj\Debug\GSIAPickAFile.g.cs
+C:\Users\dinis\source\repos\gui\Treble Toolkit\obj\Debug\GSIFlashTerminated.g.cs
+C:\Users\dinis\source\repos\gui\Treble Toolkit\obj\Debug\GSIFlashTerminatedAB.g.cs
+C:\Users\dinis\source\repos\gui\Treble Toolkit\obj\Debug\HomeScreen.g.cs
+C:\Users\dinis\source\repos\gui\Treble Toolkit\obj\Debug\MainWindow.g.cs
+C:\Users\dinis\source\repos\gui\Treble Toolkit\obj\Debug\TWRPBoot.g.cs
+C:\Users\dinis\source\repos\gui\Treble Toolkit\obj\Debug\TWRPBootPickFile.g.cs
+C:\Users\dinis\source\repos\gui\Treble Toolkit\obj\Debug\TWRPFlash.g.cs
+C:\Users\dinis\source\repos\gui\Treble Toolkit\obj\Debug\App.g.cs
+C:\Users\dinis\source\repos\gui\Treble Toolkit\obj\Debug\Treble Toolkit_MarkupCompile.cache
+C:\Users\dinis\source\repos\gui\Treble Toolkit\obj\Debug\Treble Toolkit_MarkupCompile.lref
+C:\Users\dinis\source\repos\gui\Treble Toolkit\obj\Debug\Treble Toolkit.csprojAssemblyReference.cache
+C:\Users\dinis\source\gui\Treble Toolkit\bin\Debug\Treble Toolkit.exe.config
+C:\Users\dinis\source\gui\Treble Toolkit\bin\Debug\Treble Toolkit.exe
+C:\Users\dinis\source\gui\Treble Toolkit\bin\Debug\Treble Toolkit.pdb
+C:\Users\dinis\source\gui\Treble Toolkit\bin\Debug\FluentWPF.dll
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\Treble Toolkit.csprojAssemblyReference.cache
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\AboutScreen.g.cs
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\GSIABFlash.g.cs
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\GSIABPickAFile.g.cs
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\GSIAFlash.g.cs
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\GSIAPickAFile.g.cs
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\GSIFlashTerminated.g.cs
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\GSIFlashTerminatedAB.g.cs
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\HomeScreen.g.cs
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\MainWindow.g.cs
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\TWRPBoot.g.cs
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\TWRPBootPickFile.g.cs
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\TWRPFlash.g.cs
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\App.g.cs
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\Treble Toolkit_MarkupCompile.cache
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\Treble Toolkit_MarkupCompile.lref
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\App.baml
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\AboutScreen.baml
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\GSIABFlash.baml
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\GSIABPickAFile.baml
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\GSIAFlash.baml
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\GSIAPickAFile.baml
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\GSIFlashTerminated.baml
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\GSIFlashTerminatedAB.baml
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\HomeScreen.baml
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\MainWindow.baml
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\TWRPBoot.baml
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\TWRPBootPickFile.baml
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\TWRPFlash.baml
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\Treble Toolkit.g.resources
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\Treble_Toolkit.Properties.Resources.resources
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\Treble Toolkit.csproj.GenerateResource.cache
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\Treble Toolkit.csproj.CoreCompileInputs.cache
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\Treble Toolkit.csproj.CopyComplete
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\Treble Toolkit.exe
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\Treble Toolkit.pdb
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\TWRPBootFinished.g.cs
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\TWRPFlashFinished.g.cs
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\TWRPFlashPickFile.g.cs
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\TWRPBootFinished.baml
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\TWRPFlashFinished.baml
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\TWRPFlashPickFile.baml
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\Alcatel1.g.cs
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\CompatibleDevices.g.cs
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\HuaweiMate10Lite.g.cs
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\OnePlus6.g.cs
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\OnePlus8.g.cs
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\SonyXperia1.g.cs
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\SonyXperia5.g.cs
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\SonyXperiaXZ2.g.cs
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\UnlockBootloader.g.cs
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\UnlockedBootloader.g.cs
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\CompatibleDevices.baml
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\OnePlus6.baml
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\OnePlus8.baml
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\SonyXperia1.baml
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\SonyXperia5.baml
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\Alcatel1.baml
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\HuaweiMate10Lite.baml
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\SonyXperiaXZ2.baml
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\UnlockBootloader.baml
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\UnlockedBootloader.baml
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\FormatPartitions.g.cs
+C:\Users\dinis\source\gui\Treble Toolkit\obj\Debug\FormatPartitions.baml

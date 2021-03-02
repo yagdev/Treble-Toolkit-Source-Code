@@ -1,0 +1,32 @@
+﻿<Page x:Class="Treble_Toolkit.HuaweiMate10Lite"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Treble_Toolkit"
+      xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+      mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight="565"
+      Title="AboutScreen"
+      fw:AcrylicWindow.Enabled="True" Background="{DynamicResource SystemAltMediumHighColorBrush}" >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="99*"/>
+            <RowDefinition Height="14*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="Title" Content="Huawei Mate 10 Lite" Margin="10,10,10,0" VerticalAlignment="Top" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="24" Grid.ColumnSpan="2"/>
+        <Label x:Name="VersionString" Content="Android 7.0/8.0 (A) (Treble - 8.0)" Margin="10,60,10,0" VerticalAlignment="Top" Height="25" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="16" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="Changelog" Margin="10,90,10,0" TextWrapping="Wrap" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="Bahnschrift Semibold" Grid.ColumnSpan="2"><Run Foreground="White" FontSize="12" Text="SoC: "/><Run Foreground="White" FontSize="12" Text="Hisilicon Kirin 659"/><Run Foreground="White" FontSize="12" Text=" (8C/8T)"/><LineBreak/><Run Foreground="White" FontSize="12" Text="Storage + RAM Configuration: 64G/"/><Run Foreground="White" FontSize="12" Text="4"/><Run Foreground="White" FontSize="12" Text="G"/><LineBreak/><Run Foreground="White" FontSize="12" Text="Back Cameras: 16MP (Main) + 2MP (Auxiliary)"/><LineBreak/><Run Foreground="White" FontSize="12" Text="Front Camera: 1"/><Run Foreground="White" FontSize="12" Text="3"/><Run Foreground="White" FontSize="12" Text="MP"/><LineBreak/><Run Foreground="White" FontSize="12" Text="Display: "/><Run Foreground="White" FontSize="12" Text="IPS LCD"/><Run Foreground="White" FontSize="12" Text=" (2"/><Run Foreground="White" FontSize="12" Text="16"/><Run Foreground="White" FontSize="12" Text="0*1080 @ 60Hz) ("/><Run Foreground="White" FontSize="12" Text="5"/><Run Foreground="White" FontSize="12" Text=","/><Run Foreground="White" FontSize="12" Text="9"/><Run Foreground="White" FontSize="12" Text="&quot;)"/><LineBreak/><Run Foreground="White" FontSize="12" Text="Battery: "/><Run Foreground="White" FontSize="12" Text="334"/><Run Foreground="White" FontSize="12" Text="0MAh (Non-Removable)"/><LineBreak/><Run Foreground="White" FontSize="12" Text="Misc: USB"/><Run Foreground="White" FontSize="12" Text=" Micro-B"/><Run Foreground="White" FontSize="12" Text=","/><Run Foreground="White" FontSize="12" Text=" "/><Run Foreground="White" FontSize="12" Text="FP Sensor"/><LineBreak/><Run Foreground="White" FontSize="12"/><LineBreak/><Run Foreground="White" FontSize="12" Text="Notes: Bootloader Unlocking in Huawei devices is not supported because they need a special code to be unlocked."/></TextBlock>
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="2,0,10,10" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Bottom" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="1" Grid.Row="1"/>
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="10,0,2,10" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Bottom" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Row="1"/>
+        <Label Content="More" Margin="2,0,10,10" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="16" Grid.Column="1" Grid.Row="1"/>
+        <Label Content="Back" Margin="10,0,2,10" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="16" Grid.Row="1"/>
+        <Button x:Name="BackAbout" Content="Button" Margin="10,0,2,10" VerticalAlignment="Bottom" Height="50" Opacity="0" Grid.Row="1" Click="BackAbout_Click"/>
+        <Button x:Name="UpdateAbout" Content="Button" Margin="2,10,10,10" VerticalAlignment="Center" Height="50" Opacity="0" Grid.Column="1" Grid.Row="1" Click="UpdateAbout_Click"/>
+
+    </Grid>
+</Page>

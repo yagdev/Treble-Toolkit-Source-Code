@@ -1,0 +1,5 @@
+The components behind FreeCMD have moved to the assets folder.
+This folder is now just used for you to store your stuff.
+Enjoy ;)
+
+Updated 19/12/2020
