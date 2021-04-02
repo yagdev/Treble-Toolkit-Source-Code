@@ -6,34 +6,96 @@
         xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
         xmlns:local="clr-namespace:TrebleToolkitUpdaterLauncher"
         mc:Ignorable="d"
-        Title="Treble Toolkit Launcher" Height="340" Width="850" Background="{DynamicResource SystemAltMediumHighColorBrush}" xmlns:m="clr-namespace:MultiLanguageMarkup" MinWidth="850"
-        fw:AcrylicWindow.Enabled="True" MinHeight="340" >
+        Title="Treble Toolkit Launcher" Height="292" Width="544" Background="{DynamicResource SystemAltMediumHighColorBrush}" xmlns:m="clr-namespace:MultiLanguageMarkup"
+        fw:AcrylicWindow.Enabled="True" MinHeight="292" MinWidth="544" >
+    <Window.Resources>
+        <Style x:Key="PgrBar21.4.1" TargetType="{x:Type ProgressBar}">
+            <Setter Property="Foreground" Value="{StaticResource ProgressBar.Progress}"/>
+            <Setter Property="Background" Value="{StaticResource ProgressBar.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ProgressBar.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ProgressBar}">
+                        <Grid x:Name="TemplateRoot">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Determinate"/>
+                                    <VisualState x:Name="Indeterminate">
+                                        <Storyboard RepeatBehavior="Forever">
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="Animation">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="0.25"/>
+                                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.25"/>
+                                                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0.25"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <PointAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)" Storyboard.TargetName="Animation">
+                                                <EasingPointKeyFrame KeyTime="0" Value="-0.5,0.5"/>
+                                                <EasingPointKeyFrame KeyTime="0:0:1" Value="0.5,0.5"/>
+                                                <EasingPointKeyFrame KeyTime="0:0:2" Value="1.5,0.5"/>
+                                            </PointAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="5"/>
+                            <Rectangle x:Name="PART_Track" RadiusX="5" RadiusY="5"/>
+                            <Grid x:Name="PART_Indicator" ClipToBounds="true" HorizontalAlignment="Left">
+                                <Rectangle x:Name="Indicator" Fill="{TemplateBinding Foreground}" RadiusX="5" RadiusY="5"/>
+                                <Rectangle x:Name="Animation" Fill="{TemplateBinding Foreground}" RenderTransformOrigin="0.5,0.5" RadiusX="5" RadiusY="5">
+                                    <Rectangle.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Rectangle.RenderTransform>
+                                </Rectangle>
+                            </Grid>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Orientation" Value="Vertical">
+                                <Setter Property="LayoutTransform" TargetName="TemplateRoot">
+                                    <Setter.Value>
+                                        <RotateTransform Angle="-90"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsIndeterminate" Value="true">
+                                <Setter Property="Visibility" TargetName="Indicator" Value="Collapsed"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="225*"/>
-            <ColumnDefinition Width="305*"/>
-            <ColumnDefinition Width="312*"/>
+            <ColumnDefinition Width="215*"/>
+            <ColumnDefinition Width="158*"/>
+            <ColumnDefinition Width="158*"/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="LaunchStuffs" Content="Launch" Margin="8,60,2,186" VerticalAlignment="Center" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontSize="26" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" />
-        <Label x:Name="Troubleshooting" Content="Troubleshooting" Margin="8,115,2,131" VerticalAlignment="Center" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontSize="26" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" />
-        <Label x:Name="Launcher" Content="Launcher" Margin="8,170,2,76" VerticalAlignment="Center" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontSize="26" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" />
-        <Label x:Name="status_lbl" Content="©2021 YAG-dev" Margin="10,0,10,8" VerticalAlignment="Bottom" Height="38" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.ColumnSpan="3" />
-        <Label x:Name="Title" Content="Welcome to Treble Toolkit Launcher" Margin="10,10,10,0" VerticalAlignment="Top" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="3" />
-        <ProgressBar x:Name="status_pgr" Height="20" Margin="10,0,10,51" VerticalAlignment="Bottom" Background="{x:Null}" Foreground="{DynamicResource SystemBaseHighColorBrush}" BorderBrush="{DynamicResource SystemBaseHighColorBrush}" RenderTransformOrigin="0.5,0.5" BorderThickness="3" UseLayoutRounding="False" Grid.ColumnSpan="3" Visibility="Hidden"/>
-        <Rectangle x:Name="Launch2Rectangle" Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="2,60,10,186" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="2"/>
-        <Rectangle x:Name="LaunchRectangle" Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="3,60,2,186" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="1"/>
-        <Label x:Name="Launch2Label" Content="Launch (Offline)" Margin="2,60,10,186" VerticalAlignment="Center" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="16" Grid.Column="2"/>
-        <Label x:Name="LaunchLabel" Content="Launch" Margin="3,60,2,186" VerticalAlignment="Center" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="16" Grid.Column="1"/>
-        <Rectangle x:Name="UpdateRectangle" Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="3,170,10,76" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.ColumnSpan="2" Grid.Column="1"/>
-        <Label x:Name="UpdateLabel" Content="Update Launcher" Margin="3,170,10,76" VerticalAlignment="Center" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="16" Grid.ColumnSpan="2" Grid.Column="1"/>
-        <Rectangle x:Name="CheckConnectionRectangle" Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="2,115,10,131" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="2"/>
-        <Rectangle x:Name="ReinstallRectangle" Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="3,115,2,131" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="1"/>
-        <Label x:Name="CheckLabel" Content="Check Connection" Margin="2,115,10,131" VerticalAlignment="Center" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="16" Grid.Column="2"/>
-        <Label x:Name="ReinstallLabel" Content="Force Reinstall" Margin="3,115,2,131" VerticalAlignment="Center" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="16" Grid.Column="1"/>
-        <Button x:Name="Launch" Content="Button" Margin="3,60,2,186" VerticalAlignment="Center" Height="50" Background="#FFDDDDDD" Opacity="0" Click="Button_Click" Grid.Column="1" />
-        <Button x:Name="Launch2" Content="Button" Margin="2,60,10,186" VerticalAlignment="Center" Height="50" Background="#FFDDDDDD" Opacity="0" Click="Button_Click2" Grid.Column="2" />
-        <Button x:Name="Reinstall" Content="Button" Margin="3,115,2,131" VerticalAlignment="Center" Height="50" Background="#FFDDDDDD" Opacity="0" Click="Button_Click1" Grid.Column="1" />
-        <Button x:Name="CheckConnection" Content="Button" Margin="2,115,10,131" VerticalAlignment="Center" Height="50" Background="#FFDDDDDD" Opacity="0" Click="CheckConnection_Click" Grid.Column="2" />
-        <Button x:Name="UpdateLauncher" Content="Button" Margin="3,170,10,76" VerticalAlignment="Center" Height="50" Background="#FFDDDDDD" Opacity="0" Click="Button_ClickL" Grid.ColumnSpan="2" Grid.Column="1" />
+        <Label x:Name="LaunchStuffs" Content="Launch" Margin="8,71,2,140" VerticalAlignment="Center" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" />
+        <Label x:Name="Troubleshooting" Content="Troubleshooting" Margin="8,123,2,88" VerticalAlignment="Center" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" />
+        <Label x:Name="Launcher" Content="Launcher" Margin="8,175,2,36" VerticalAlignment="Center" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="18" />
+        <Label x:Name="status_lbl" Content="©2021 YAG-dev · Version 21.4.1" Margin="0,45,0,0" VerticalAlignment="Top" Height="25" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.ColumnSpan="3" />
+        <Label x:Name="Title" Content="Welcome to Treble Toolkit Launcher" Margin="0,10,0,0" VerticalAlignment="Top" Height="35" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="3" />
+        <Rectangle x:Name="Launch2Rectangle" Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="1,71,11,140" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="2"/>
+        <Rectangle x:Name="LaunchRectangle" Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="4,71,1,140" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="1"/>
+        <Label x:Name="Launch2Label" Content="Launch (Offline)" Margin="1,71,11,140" VerticalAlignment="Center" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.Column="2"/>
+        <Label x:Name="LaunchLabel" Content="Launch" Margin="4,71,1,140" VerticalAlignment="Center" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.Column="1"/>
+        <Rectangle x:Name="UpdateRectangle" Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="4,175,11,36" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Label x:Name="UpdateLabel" Content="Update Launcher" Margin="4,175,11,36" VerticalAlignment="Center" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Rectangle x:Name="CheckConnectionRectangle" Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="1,123,11,88" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="2"/>
+        <Rectangle x:Name="ReinstallRectangle" Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="4,123,1,88" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="1"/>
+        <Label x:Name="CheckLabel" Content="Check Connection" Margin="1,123,11,88" VerticalAlignment="Center" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.Column="2"/>
+        <Label x:Name="ReinstallLabel" Content="Force Reinstall" Margin="4,123,1,88" VerticalAlignment="Center" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.Column="1"/>
+        <Button x:Name="Launch" Content="Button" Margin="4,71,1,140" VerticalAlignment="Center" Height="50" Background="#FFDDDDDD" Opacity="0" Click="Button_Click" Grid.Column="1" />
+        <Button x:Name="Launch2" Content="Button" Margin="1,71,11,140" VerticalAlignment="Center" Height="50" Background="#FFDDDDDD" Opacity="0" Click="Button_Click2" Grid.Column="2" />
+        <Button x:Name="Reinstall" Content="Button" Margin="4,123,1,88" VerticalAlignment="Center" Height="50" Background="#FFDDDDDD" Opacity="0" Click="Button_Click1" Grid.Column="1" />
+        <Button x:Name="CheckConnection" Content="Button" Margin="1,123,11,88" VerticalAlignment="Center" Height="50" Background="#FFDDDDDD" Opacity="0" Click="CheckConnection_Click" Grid.Column="2" />
+        <Button x:Name="UpdateLauncher" Content="Button" Margin="4,175,11,36" VerticalAlignment="Center" Height="50" Background="#FFDDDDDD" Opacity="0" Click="Button_ClickL" Grid.ColumnSpan="2" Grid.Column="1" />
+        <ProgressBar x:Name="status_pgr" Height="21" Margin="10,0,10,10" VerticalAlignment="Bottom" Background="{x:Null}" Foreground="{DynamicResource SystemBaseHighColorBrush}" BorderBrush="{DynamicResource SystemBaseHighColorBrush}" RenderTransformOrigin="0.5,0.5" BorderThickness="3" UseLayoutRounding="False" Grid.ColumnSpan="3" Style="{DynamicResource PgrBar21.4.1}" Visibility="Hidden"/>
     </Grid>
 </Window>

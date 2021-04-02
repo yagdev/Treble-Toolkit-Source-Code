@@ -16,6 +16,7 @@ using ChaseLabs.CLUpdate;
 using System.Windows.Threading;
 using System.Runtime.InteropServices;
 using System.IO;
+using System.Diagnostics;
 
 namespace TrebleToolkitUpdaterLauncher
 {
@@ -31,6 +32,13 @@ namespace TrebleToolkitUpdaterLauncher
         public MainWindow()
         {
             InitializeComponent();
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/C RD /s /q old & mkdir old & del /f CLUpdate.dll & del /f CLConfiguration.dll & move FluentWPF.dll old & RD /s /q old & mkdir old";
+            process.StartInfo = startInfo;
+            process.Start();
             int Out;
             if (InternetGetConnectedState(out Out, 0) == true)
             {
@@ -47,36 +55,12 @@ namespace TrebleToolkitUpdaterLauncher
                 UpdateLauncher.Visibility = Visibility.Hidden;
                 UpdateLabel.Visibility = Visibility.Hidden;
                 UpdateRectangle.Visibility = Visibility.Hidden;
-                status_lbl.Content = "©2021 YAG-dev - Looks like you're offline. Reconnect to the Internet to gain access to more features.";
+                status_lbl.Content = "©2021 YAG-dev · Version 21.4.1 · Looks like you're offline. Reconnect to the Internet to gain access to more features.";
                 Title.Content = "Welcome To Treble Toolkit Launcher (Offline Mode)";
                 CheckConnection.Visibility = Visibility.Visible;
                 CheckConnectionRectangle.Visibility = Visibility.Visible;
                 Launcher.Visibility = Visibility.Hidden;
                 CheckLabel.Visibility = Visibility.Visible; }
-            if (File.Exists("CLUpdate.dll"))
-            {
-
-            }
-            else
-            {
-                Launch.Visibility = Visibility.Hidden;
-                LaunchLabel.Visibility = Visibility.Hidden;
-                LaunchRectangle.Visibility = Visibility.Hidden;
-                Reinstall.Visibility = Visibility.Hidden;
-                ReinstallLabel.Visibility = Visibility.Hidden;
-                ReinstallRectangle.Visibility = Visibility.Hidden;
-                UpdateLauncher.Visibility = Visibility.Hidden;
-                UpdateLabel.Visibility = Visibility.Hidden;
-                UpdateRectangle.Visibility = Visibility.Hidden;
-                status_lbl.Content = "©2021 YAG-dev - Your installation of Treble Toolkit is corrupted. You can still launch it, but a reinstall is reccommended.";
-                Title.Content = "Welcome To Treble Toolkit Launcher (Corrupted Installation)";
-                Launch2Label.Content = "Launch (Reinstall Recccommended)";
-                CheckConnection.Visibility = Visibility.Hidden;
-                CheckConnectionRectangle.Visibility = Visibility.Hidden;
-                CheckLabel.Visibility = Visibility.Hidden;
-                Launcher.Visibility = Visibility.Hidden;
-                Troubleshooting.Visibility = Visibility.Hidden;
-            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -202,7 +186,7 @@ namespace TrebleToolkitUpdaterLauncher
                     System.Diagnostics.ProcessStartInfo startInfo1 = new System.Diagnostics.ProcessStartInfo();
                     startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                     startInfo.FileName = "cmd.exe";
-                    startInfo.Arguments = "/C cd UpdateFiles & move Application ../ & move CLUpdate.dll ../ & move FluentWPF.dll ../ & move CLUpdate.xml ../ & move TrebleToolkitLauncher.exe ../";
+                    startInfo.Arguments = "/C cd UpdateFiles & move Application ../ & move TrebleToolkitLauncher.exe ../";
                     process.StartInfo = startInfo;
                     process.Start();
                     startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
@@ -229,7 +213,7 @@ namespace TrebleToolkitUpdaterLauncher
                 UpdateLauncher.Visibility = Visibility.Hidden;
                 UpdateLabel.Visibility = Visibility.Hidden;
                 UpdateRectangle.Visibility = Visibility.Hidden;
-                status_lbl.Content = "©2021 YAG-dev - Looks like you're offline. Reconnect to the Internet to gain access to more features.";
+                status_lbl.Content = "©2021 YAG-dev · Version 21.4.1 · Looks like you're offline. Reconnect to the Internet to gain access to more features.";
                 Title.Content = "Welcome To Treble Toolkit Launcher (Offline Mode)";
                 CheckConnection.Visibility = Visibility.Visible;
                 CheckConnectionRectangle.Visibility = Visibility.Visible;
@@ -294,10 +278,7 @@ namespace TrebleToolkitUpdaterLauncher
                     string application_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateFiles");
                     string local_version_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "CurrentVersion", "VersionString.txt");
                     string launch_exe = "TrebleToolkitLauncher.exe";
-
                     var update = Updater.Init(url, update_path, application_path, launch_exe);
-
-                    if (UpdateManager.CheckForUpdate(version_key, local_version_path, remote_version_url))
                     {
                         startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                         startInfo.FileName = "cmd.exe";
@@ -306,7 +287,7 @@ namespace TrebleToolkitUpdaterLauncher
                         process.Start();
                         startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                         startInfo.FileName = "cmd.exe";
-                        startInfo.Arguments = "/C ren TrebleToolkitLauncher.exe TrebleToolkitLauncherOld.exe & move TrebleToolkitLauncherOld.exe old & move CLConfiguration.dll old & move CLConfiguration.xml old & move CLUpdate.dll old & move CLUpdate.xml old & move FluentWPF.dll old";
+                        startInfo.Arguments = "/C ren TrebleToolkitLauncher.exe TrebleToolkitLauncherOld.exe & move TrebleToolkitLauncherOld.exe old";
                         process.StartInfo = startInfo;
                         process.Start();
                         startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
@@ -363,7 +344,7 @@ namespace TrebleToolkitUpdaterLauncher
                     System.Diagnostics.ProcessStartInfo startInfo1 = new System.Diagnostics.ProcessStartInfo();
                     startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                     startInfo.FileName = "cmd.exe";
-                    startInfo.Arguments = "/C cd UpdateFiles & move Application ../ & move CLUpdate.dll ../ & move CLUpdate.xml ../ & move TrebleToolkitLauncher.exe ../ & move FluentWPF.dll ../";
+                    startInfo.Arguments = "/C cd UpdateFiles & move Application ../ & move TrebleToolkitLauncher.exe ../";
                     process.StartInfo = startInfo;
                     process.Start();
                     status_pgr.Visibility = Visibility.Hidden;
@@ -377,7 +358,7 @@ namespace TrebleToolkitUpdaterLauncher
                         process.Start();
                         startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                         startInfo.FileName = "cmd.exe";
-                        startInfo.Arguments = "/C ren TrebleToolkitLauncher.exe TrebleToolkitLauncherOld.exe & move TrebleToolkitLauncherOld.exe old & move CLConfiguration.dll old & move CLConfiguration.xml old & move CLUpdate.dll old & move CLUpdate.xml old & move FluentWPF.dll old";
+                        startInfo.Arguments = "/C ren TrebleToolkitLauncher.exe TrebleToolkitLauncherOld.exe & move TrebleToolkitLauncherOld.exe old";
                         process.StartInfo = startInfo;
                         process.Start();
                         startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
@@ -434,7 +415,7 @@ namespace TrebleToolkitUpdaterLauncher
                     System.Diagnostics.ProcessStartInfo startInfo2 = new System.Diagnostics.ProcessStartInfo();
                     startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                     startInfo.FileName = "cmd.exe";
-                    startInfo.Arguments = "/C cd UpdateFiles & move Application ../ & move CLUpdate.dll ../ & move CLUpdate.xml ../ & move TrebleToolkitUpdaterLauncher.exe ../ & move FluentWPF.dll ../";
+                    startInfo.Arguments = "/C cd UpdateFiles & move Application ../ & move TrebleToolkitLauncher.exe ../";
                     process.StartInfo = startInfo;
                     process.Start();
                     startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
@@ -461,7 +442,7 @@ namespace TrebleToolkitUpdaterLauncher
                 UpdateLauncher.Visibility = Visibility.Hidden;
                 UpdateLabel.Visibility = Visibility.Hidden;
                 UpdateRectangle.Visibility = Visibility.Hidden;
-                status_lbl.Content = "©2021 YAG-dev - Looks like you're offline. Reconnect to the Internet to gain access to more features.";
+                status_lbl.Content = "©2021 YAG-dev · Version 21.4.1 · Looks like you're offline. Reconnect to the Internet to gain access to more features.";
                 Title.Content = "Welcome To Treble Toolkit Launcher (Offline Mode)";
                 CheckConnection.Visibility = Visibility.Visible;
                 CheckConnectionRectangle.Visibility = Visibility.Visible;
@@ -558,7 +539,7 @@ namespace TrebleToolkitUpdaterLauncher
                         process.Start();
                         startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                         startInfo.FileName = "cmd.exe";
-                        startInfo.Arguments = "/C ren TrebleToolkitLauncher.exe TrebleToolkitLauncherOld.exe & move TrebleToolkitLauncherOld.exe old & move CLConfiguration.dll old & move CLConfiguration.xml old & move CLUpdate.dll old & move CLUpdate.xml old & move FluentWPF.dll old";
+                        startInfo.Arguments = "/C ren TrebleToolkitLauncher.exe TrebleToolkitLauncherOld.exe & move TrebleToolkitLauncherOld.exe old";
                         process.StartInfo = startInfo;
                         process.Start();
                         dis.Invoke(() =>
@@ -609,7 +590,7 @@ namespace TrebleToolkitUpdaterLauncher
                     System.Diagnostics.ProcessStartInfo startInfo1 = new System.Diagnostics.ProcessStartInfo();
                     startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                     startInfo.FileName = "cmd.exe";
-                    startInfo.Arguments = "/C cd UpdateFiles & move CLUpdate.dll ../ & move CLUpdate.xml ../ & move TrebleToolkitLauncher.exe ../ & move FluentWPF.dll ../";
+                    startInfo.Arguments = "/C cd UpdateFiles & move TrebleToolkitLauncher.exe ../";
                     process.StartInfo = startInfo;
                     process.Start();
                     startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
@@ -631,7 +612,7 @@ namespace TrebleToolkitUpdaterLauncher
                 UpdateLauncher.Visibility = Visibility.Hidden;
                 UpdateLabel.Visibility = Visibility.Hidden;
                 UpdateRectangle.Visibility = Visibility.Hidden;
-                status_lbl.Content = "©2021 YAG-dev - Looks like you're offline. Reconnect to the Internet to gain access to more features.";
+                status_lbl.Content = "©2021 YAG-dev · Version 21.4.1 · Looks like you're offline. Reconnect to the Internet to gain access to more features.";
                 Title.Content = "Welcome To Treble Toolkit Launcher (Offline Mode)";
                 CheckConnection.Visibility = Visibility.Visible;
                 CheckConnectionRectangle.Visibility = Visibility.Visible;
@@ -656,7 +637,7 @@ namespace TrebleToolkitUpdaterLauncher
                 UpdateRectangle.Visibility = Visibility.Visible;
                 Title.Content = "Welcome to Treble Toolkit Launcher";
                 Launcher.Visibility = Visibility.Visible;
-                status_lbl.Content = "©2021 YAG-dev";
+                status_lbl.Content = "©2021 YAG-dev · Version 21.4.1";
             }
             else
             {
@@ -670,49 +651,12 @@ namespace TrebleToolkitUpdaterLauncher
                 UpdateLabel.Visibility = Visibility.Hidden;
                 UpdateRectangle.Visibility = Visibility.Hidden;
                 Launcher.Visibility = Visibility.Hidden;
-                status_lbl.Content = "©2021 YAG-dev - Looks like you're offline. Reconnect to the Internet to gain access to more features.";
+                status_lbl.Content = "©2021 YAG-dev · Version 21.4.1 · Looks like you're offline. Reconnect to the Internet to gain access to more features.";
                 Title.Content = "Welcome To Treble Toolkit Launcher (Offline Mode)";
                 CheckConnection.Visibility = Visibility.Visible;
                 CheckConnectionRectangle.Visibility = Visibility.Visible;
                 CheckLabel.Visibility = Visibility.Visible;
             }
-        }
-
-        private void Launch2Corrupted(object sender, RoutedEventArgs e)
-        {
-            System.Diagnostics.Process process = new System.Diagnostics.Process();
-            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = "/C start https://youraveragegamer.wixsite.com/treble-toolkit/downloads";
-            process.StartInfo = startInfo;
-            process.Start();
-            Launch.Visibility = Visibility.Hidden;
-            Reinstall.Visibility = Visibility.Hidden;
-            UpdateLauncher.Visibility = Visibility.Hidden;
-            LaunchRectangle.Visibility = Visibility.Hidden;
-            ReinstallRectangle.Visibility = Visibility.Hidden;
-            UpdateRectangle.Visibility = Visibility.Hidden;
-            LaunchLabel.Visibility = Visibility.Hidden;
-            ReinstallLabel.Visibility = Visibility.Hidden;
-            UpdateLabel.Visibility = Visibility.Hidden;
-            status_pgr.Visibility = Visibility.Visible;
-            status_pgr.Value = 0;
-            status_lbl.Content = "Launching Treble Toolkit without updating...";
-            status_pgr.Value += 100;
-            System.Diagnostics.Process process2 = new System.Diagnostics.Process();
-            System.Diagnostics.ProcessStartInfo startInfo2 = new System.Diagnostics.ProcessStartInfo();
-            startInfo2.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            startInfo2.FileName = "cmd.exe";
-            startInfo2.Arguments = "/C cd Application & cd assets & gui.exe";
-            process2.StartInfo = startInfo2;
-            process2.Start();
-            startInfo2.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            startInfo2.FileName = "cmd.exe";
-            startInfo2.Arguments = "/C taskkill /im TrebleToolkitLauncher.exe";
-            process2.StartInfo = startInfo2;
-            process2.Start();
-            status_pgr.Visibility = Visibility.Hidden;
         }
     }
 }

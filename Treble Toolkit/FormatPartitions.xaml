@@ -5,48 +5,50 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Treble_Toolkit"
       xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
-      mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight="329"
+      mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight="326"
       Title="HomeScreen"
       fw:AcrylicWindow.Enabled="True" Background="{DynamicResource SystemAltMediumHighColorBrush}" >
 
     <Grid x:Name="grid">
         <Grid.RowDefinitions>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="269*"/>
+            <RowDefinition Height="59*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="250*"/>
+            <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="14*" MaxWidth="300"/>
             <ColumnDefinition Width="10*"/>
             <ColumnDefinition Width="10*"/>
-            <ColumnDefinition/>
+            <ColumnDefinition FrameworkElement.FlowDirection="RightToLeft" MaxWidth="10"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Format Partitions" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="24" Grid.ColumnSpan="4"/>
-        <Label Content="System" Margin="10,6,5,214" VerticalAlignment="Center" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="20" Grid.Row="1"/>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="49" Margin="2,6,0,214" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="2" Grid.Row="1"/>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="49" Margin="0,6,2,214" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="1" Grid.Row="1"/>
-        <Label Content="B" Margin="2,6,0,214" VerticalAlignment="Center" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="16" Grid.Column="2" Grid.Row="1"/>
-        <Label Content="A" Margin="0,6,2,214" VerticalAlignment="Center" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="16" Grid.Column="1" Grid.Row="1"/>
-        <Label Content="Boot" Margin="10,58,5,162" VerticalAlignment="Center" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="20" Grid.Row="1"/>
-        <Label Content="Userdata" Margin="10,110,5,111" VerticalAlignment="Center" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="20" Grid.Row="1"/>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="48" Margin="0,110,0,111" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1"/>
-        <Label Content="Userdata" Margin="0,110,0,111" VerticalAlignment="Center" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="16" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1"/>
-        <Label Content="Cache" Margin="0,160,0,61" VerticalAlignment="Center" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="20" Grid.Row="1"/>
-        <Label Content="Back" Margin="10,211,5,10" VerticalAlignment="Center" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="20" Grid.Row="1"/>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="49" Margin="2,58,0,162" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="2" Grid.Row="1"/>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="49" Margin="0,58,2,162" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="1" Grid.Row="1"/>
-        <Label Content="B" Margin="2,58,0,162" VerticalAlignment="Center" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="16" Grid.Column="2" Grid.Row="1"/>
-        <Label Content="A" Margin="0,58,2,162" VerticalAlignment="Center" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="16" Grid.Column="1" Grid.Row="1"/>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="48" Margin="0,160,0,61" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1"/>
-        <Label Content="Cache" Margin="0,160,0,61" VerticalAlignment="Center" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="16" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1"/>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="48" Margin="0,211,0,10" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1"/>
-        <Label Content="Go Back" Margin="0,211,0,10" VerticalAlignment="Center" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="16" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1"/>
-        <Button Content="Button" Margin="0,6,2,214" Grid.Row="1" VerticalAlignment="Center" Height="49" Opacity="0" Click="AButton_Click" Grid.Column="1"/>
-        <Button Content="Button" Margin="0,211,0,10" Grid.Row="1" VerticalAlignment="Center" Height="48" Opacity="0" Click="BackButton_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <Button Content="Button" Margin="2,6,0,214" Grid.Row="1" VerticalAlignment="Center" Height="49" Opacity="0" Click="BButton_Click" Grid.Column="2"/>
-        <Button Content="Button" Margin="0,58,2,162" Grid.Row="1" VerticalAlignment="Center" Height="49" Opacity="0" Click="A2Button_Click" Grid.Column="1"/>
-        <Button Content="Button" Margin="2,58,0,162" Grid.Row="1" VerticalAlignment="Center" Height="49" Opacity="0" Click="B2Button_Click" Grid.Column="2"/>
-        <Button Content="Button" Margin="0,110,0,111" Grid.Row="1" VerticalAlignment="Center" Height="48" Opacity="0" Click="UButton_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <Button Content="Button" Margin="0,160,0,61" Grid.Row="1" VerticalAlignment="Center" Height="48" Opacity="0" Click="CButton_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Label Content="Format Partitions" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.ColumnSpan="4" Height="40" VerticalAlignment="Top" Margin="0,5,0,0"/>
+        <Label Content="System" Margin="10,0,5,201" VerticalAlignment="Center" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.Row="2"/>
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="49" Margin="1,0.438,0,201" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="2" Grid.Row="2"/>
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="49" Margin="0,0.438,1,201" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="1" Grid.Row="2"/>
+        <Label Content="B" Margin="1,0.438,0,201" VerticalAlignment="Center" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.Column="2" Grid.Row="2"/>
+        <Label Content="A" Margin="0,0.438,1,201" VerticalAlignment="Center" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.Column="1" Grid.Row="2"/>
+        <Label Content="Boot" Margin="10,51,5,150" VerticalAlignment="Center" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.Row="2"/>
+        <Label Content="Userdata" Margin="10,102,5,100" VerticalAlignment="Center" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.Row="2"/>
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="48" Margin="0,102.438,0,100" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2"/>
+        <Label Content="Userdata" Margin="0,102.438,0,100" VerticalAlignment="Center" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2"/>
+        <Label Content="Cache" Margin="0,152,0,50" VerticalAlignment="Center" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.Row="2"/>
+        <Label Content="Back" Margin="10,202,5,0" VerticalAlignment="Center" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.Row="2"/>
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="49" Margin="1,51.438,0,150" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="2" Grid.Row="2"/>
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="49" Margin="0,51.438,1,150" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="1" Grid.Row="2"/>
+        <Label Content="B" Margin="1,51.438,0,150" VerticalAlignment="Center" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.Column="2" Grid.Row="2"/>
+        <Label Content="A" Margin="0,51.438,1,150" VerticalAlignment="Center" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.Column="1" Grid.Row="2"/>
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="48" Margin="0,152.438,0,50" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2"/>
+        <Label Content="Cache" Margin="0,152.438,0,50" VerticalAlignment="Center" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2"/>
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="48" Margin="0,202.438,0,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2"/>
+        <Label Content="Back" Margin="0,202.438,0,0" VerticalAlignment="Center" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2"/>
+        <Button Content="Button" Margin="0,0.438,1,201" Grid.Row="2" VerticalAlignment="Center" Height="49" Opacity="0" Click="AButton_Click" Grid.Column="1"/>
+        <Button Content="Button" Margin="0,202.438,0,0" Grid.Row="2" VerticalAlignment="Center" Height="48" Opacity="0" Click="BackButton_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Button Content="Button" Margin="1,0.438,0,201" Grid.Row="2" VerticalAlignment="Center" Height="49" Opacity="0" Click="BButton_Click" Grid.Column="2"/>
+        <Button Content="Button" Margin="0,51.438,1,150" Grid.Row="2" VerticalAlignment="Center" Height="49" Opacity="0" Click="A2Button_Click" Grid.Column="1"/>
+        <Button Content="Button" Margin="1,51.438,0,150" Grid.Row="2" VerticalAlignment="Center" Height="49" Opacity="0" Click="B2Button_Click" Grid.Column="2"/>
+        <Button Content="Button" Margin="0,102.438,0,100" Grid.Row="2" VerticalAlignment="Center" Height="48" Opacity="0" Click="UButton_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Button Content="Button" Margin="0,152.438,0,50" Grid.Row="2" VerticalAlignment="Center" Height="48" Opacity="0" Click="CButton_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Page>

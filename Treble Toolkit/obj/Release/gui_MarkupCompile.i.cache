@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\dinis\source\gui\Treble Toolkit\obj\Release\
+C:\Users\dinis\source\repos\Treble-Toolkit-Source-Code-master\Treble Toolkit\obj\Release\
 Treble_Toolkit
 none
 false
 TRACE
-C:\Users\dinis\source\gui\Treble Toolkit\App.xaml
+C:\Users\dinis\source\repos\Treble-Toolkit-Source-Code-master\Treble Toolkit\App.xaml
 26-1684339463
 
 31-808415046
-14402113799
+129-1551848744
 AboutScreen.xaml;Alcatel1.xaml;CompatibleDevices.xaml;FormatPartitions.xaml;GSIABFlash.xaml;GSIABPickAFile.xaml;GSIAFlash.xaml;GSIAPickAFile.xaml;GSIFlashTerminated.xaml;GSIFlashTerminatedAB.xaml;HomeScreen.xaml;HuaweiMate10Lite.xaml;MainWindow.xaml;OnePlus6.xaml;OnePlus8.xaml;SonyXperia1.xaml;SonyXperia5.xaml;SonyXperiaXZ2.xaml;TWRPBoot.xaml;TWRPBootFinished.xaml;TWRPBootPickFile.xaml;TWRPFlash.xaml;TWRPFlashFinished.xaml;TWRPFlashPickFile.xaml;UnlockBootloader.xaml;UnlockedBootloader.xaml;
 
 True

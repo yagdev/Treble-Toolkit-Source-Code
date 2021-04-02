@@ -5,51 +5,53 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Treble_Toolkit"
       xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
-      mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight="381"
+      mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight="376"
       Title="HomeScreen"
       fw:AcrylicWindow.Enabled="True" Background="{DynamicResource SystemAltMediumHighColorBrush}" >
 
     <Grid x:Name="grid">
         <Grid.RowDefinitions>
-            <RowDefinition Height="50*"/>
-            <RowDefinition Height="331*"/>
+            <RowDefinition Height="49*"/>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="300*"/>
+            <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="14*" MaxWidth="300"/>
             <ColumnDefinition Width="10*"/>
             <ColumnDefinition Width="10*"/>
-            <ColumnDefinition/>
+            <ColumnDefinition FrameworkElement.FlowDirection="RightToLeft" MaxWidth="10"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Compatible Devices" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="24" Grid.ColumnSpan="4"/>
-        <Label Content="OnePlus" Margin="10,16,5,266" VerticalAlignment="Center" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="20" Grid.Row="1"/>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="49" Margin="2,16,0,266" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="2" Grid.Row="1"/>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="49" Margin="0,16,2,266" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="1" Grid.Row="1"/>
-        <Label Content="8" Margin="2,16,0,266" VerticalAlignment="Center" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="16" Grid.Column="2" Grid.Row="1"/>
-        <Label Content="6" Margin="0,16,2,266" VerticalAlignment="Center" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="16" Grid.Column="1" Grid.Row="1"/>
-        <Label Content="Sony" Margin="10,68,5,163" VerticalAlignment="Center" Height="100" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="20" Grid.Row="1"/>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="48" Margin="0,120,0,163" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1"/>
-        <Label Content="Xperia XZ2" Margin="0,120,0,163" VerticalAlignment="Center" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="16" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1"/>
-        <Label Content="Alcatel" Margin="10,171,5,112" VerticalAlignment="Center" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="20" Grid.Row="1"/>
-        <Label Content="Huawei" Margin="0,222,0,61" VerticalAlignment="Center" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="20" Grid.Row="1"/>
-        <Label Content="Go Back" Margin="9,273,6,10" VerticalAlignment="Center" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="20" Grid.Row="1"/>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="49" Margin="2,68,0,214" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="2" Grid.Row="1"/>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="49" Margin="0,68,2,214" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="1" Grid.Row="1"/>
-        <Label Content="Xperia 1" Margin="2,68,0,214" VerticalAlignment="Center" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="16" Grid.Column="2" Grid.Row="1"/>
-        <Label Content="Xperia 5" Margin="0,68,2,214" VerticalAlignment="Center" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="16" Grid.Column="1" Grid.Row="1"/>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="48" Margin="0,171,0,112" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1"/>
-        <Label Content="1 (2018)" Margin="0,171,0,112" VerticalAlignment="Center" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="16" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1"/>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="48" Margin="0,222,0,61" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1"/>
-        <Label Content="Mate 10 Lite" Margin="0,222,0,61" VerticalAlignment="Center" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="16" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1"/>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="48" Margin="0,273,1,10" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.ColumnSpan="2" Grid.Row="1" Grid.Column="1"/>
-        <Label Content="Back" Margin="0,273,1,10" VerticalAlignment="Center" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="16" Grid.ColumnSpan="2" Grid.Row="1" Grid.Column="1"/>
-        <Button Content="Button" Margin="139,16,3,266" Grid.Row="1" VerticalAlignment="Center" Height="49" Opacity="0" Click="AButton_Click" Grid.ColumnSpan="2"/>
-        <Button x:Name="OP8" Content="Button" Margin="3,16,0,266" Grid.Row="1" VerticalAlignment="Center" Height="49" Opacity="0" Click="OP8_Click" Grid.Column="2"/>
-        <Button x:Name="OP8_Copy" Content="Button" Margin="2,68,2,214" Grid.Row="1" VerticalAlignment="Center" Height="49" Opacity="0" Click="XP5_Click" Grid.Column="1"/>
-        <Button x:Name="OP8_Copy1" Content="Button" Margin="3,68,1,214" Grid.Row="1" VerticalAlignment="Center" Height="49" Opacity="0" Click="XP1_Click" Grid.Column="2"/>
-        <Button x:Name="OP8_Copy2" Content="Button" Margin="2,120,0,162" Grid.Row="1" VerticalAlignment="Center" Height="49" Opacity="0" Click="XZ2_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <Button x:Name="OP8_Copy3" Content="Button" Margin="1,171,0,112" Grid.Row="1" VerticalAlignment="Center" Height="48" Opacity="0" Click="A1_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <Button x:Name="OP8_Copy4" Content="Button" Margin="1,222,0,61" Grid.Row="1" VerticalAlignment="Center" Height="48" Opacity="0" Click="HM10L_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <Button x:Name="OP8_Copy5" Content="Button" Margin="0,273,0,10" Grid.Row="1" VerticalAlignment="Center" Height="48" Opacity="0" Click="BACK_Click" Grid.Column="1" Grid.ColumnSpan="3"/>
+        <Label Content="Compatible Devices" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="24" Grid.ColumnSpan="4"/>
+        <Label Content="OnePlus" Margin="10,0.417,5,251" VerticalAlignment="Center" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.Row="2"/>
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="49" Margin="1,0.417,0,251" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="2" Grid.Row="2"/>
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="49" Margin="0,0.417,1,251" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="1" Grid.Row="2"/>
+        <Label Content="8" Margin="1,0.417,0,251" VerticalAlignment="Center" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.Column="2" Grid.Row="2"/>
+        <Label Content="6" Margin="0,0.417,1,251" VerticalAlignment="Center" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.Column="1" Grid.Row="2"/>
+        <Label Content="Sony" Margin="10,51.417,5,150" VerticalAlignment="Center" Height="99" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.Row="2"/>
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="48" Margin="0,102.417,0,150" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2"/>
+        <Label Content="Xperia XZ2" Margin="0,102.417,0,150" VerticalAlignment="Center" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2"/>
+        <Label Content="Alcatel" Margin="10,152.417,5,100" VerticalAlignment="Center" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.Row="2"/>
+        <Label Content="Huawei" Margin="0,202.417,0,50" VerticalAlignment="Center" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.Row="2"/>
+        <Label Content="Go Back" Margin="10,252.417,5,0" VerticalAlignment="Center" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.Row="2"/>
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="49" Margin="1,51.417,0,200" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="2" Grid.Row="2"/>
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="49" Margin="0,51.417,1,200" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="1" Grid.Row="2"/>
+        <Label Content="Xperia 1" Margin="1,51.417,0,200" VerticalAlignment="Center" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.Column="2" Grid.Row="2"/>
+        <Label Content="Xperia 5" Margin="0,51.417,1,200" VerticalAlignment="Center" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.Column="1" Grid.Row="2"/>
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="48" Margin="0,152.417,0,100" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2"/>
+        <Label Content="1 (2018)" Margin="0,152.417,0,100" VerticalAlignment="Center" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2"/>
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="48" Margin="0,202.417,0,50" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2"/>
+        <Label Content="Mate 10 Lite" Margin="0,202.417,0,50" VerticalAlignment="Center" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2"/>
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="48" Margin="0,252.417,0,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Center" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="1"/>
+        <Label Content="Back" Margin="0,252.417,0,0" VerticalAlignment="Center" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="1"/>
+        <Button Content="Button" Margin="139,0.417,1,251" Grid.Row="2" VerticalAlignment="Center" Height="49" Opacity="0" Click="AButton_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="OP8" Content="Button" Margin="1,0.417,0,251" Grid.Row="2" VerticalAlignment="Center" Height="49" Opacity="0" Click="OP8_Click" Grid.Column="2"/>
+        <Button x:Name="OP8_Copy" Content="Button" Margin="2,51.417,1,200" Grid.Row="2" VerticalAlignment="Center" Height="49" Opacity="0" Click="XP5_Click" Grid.Column="1"/>
+        <Button x:Name="OP8_Copy1" Content="Button" Margin="1,51.417,1,200" Grid.Row="2" VerticalAlignment="Center" Height="49" Opacity="0" Click="XP1_Click" Grid.Column="2"/>
+        <Button x:Name="OP8_Copy2" Content="Button" Margin="2,102.417,0,149" Grid.Row="2" VerticalAlignment="Center" Height="49" Opacity="0" Click="XZ2_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Button x:Name="OP8_Copy3" Content="Button" Margin="1,152.417,0,100" Grid.Row="2" VerticalAlignment="Center" Height="48" Opacity="0" Click="A1_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Button x:Name="OP8_Copy4" Content="Button" Margin="1,202.417,0,50" Grid.Row="2" VerticalAlignment="Center" Height="48" Opacity="0" Click="HM10L_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Button x:Name="OP8_Copy5" Content="Button" Margin="0,252.417,0,0" Grid.Row="2" VerticalAlignment="Center" Height="48" Opacity="0" Click="BACK_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Page>

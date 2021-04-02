@@ -9,7 +9,9 @@
         Title="Treble Toolkit" Height="515" Width="350" 
         fw:AcrylicWindow.Enabled="True" MinWidth="350" MinHeight="515" >
     <Grid>
-        <Frame Source="HomeScreen.xaml" NavigationUIVisibility="Hidden">
-        </Frame>
+        <ScrollViewer x:Name="scrollviewer" ClipToBounds="True" VerticalScrollBarVisibility="Hidden">
+            <Frame Source="HomeScreen.xaml" NavigationUIVisibility="Hidden" ScrollViewer.CanContentScroll="True">
+            </Frame>
+        </ScrollViewer>
     </Grid>
 </Window>

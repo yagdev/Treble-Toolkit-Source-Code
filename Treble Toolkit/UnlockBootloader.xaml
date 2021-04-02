@@ -11,25 +11,26 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="139*"/>
-            <ColumnDefinition Width="103*"/>
-            <ColumnDefinition Width="108*"/>
+            <ColumnDefinition Width="14*" MaxWidth="300"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition MaxWidth="10" FrameworkElement.FlowDirection="RightToLeft"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Unlock Bootloader" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="24" Grid.ColumnSpan="3" Height="35" VerticalAlignment="Top"/>
-        <Label Content="Make sure your phone is in fastboot mode or has ADB enabled." Margin="0,35,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" Grid.ColumnSpan="3" FontSize="10" Height="23" VerticalAlignment="Top"/>
-        <Label Content="Continue?" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="20"/>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="49" Margin="2,0,10,10" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Bottom" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="2"/>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="49" Margin="5,0,2,10" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Bottom" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="1"/>
-        <Label Content="Next" Margin="2,0,10,10" VerticalAlignment="Bottom" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="16" Grid.Column="2"/>
-        <Label Content="Back" Margin="5,0,2,10" VerticalAlignment="Bottom" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="16" Grid.Column="1"/>
-        <Label Content="Troubleshooting" Margin="9,0,10,61" VerticalAlignment="Bottom" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="14"/>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="49" Margin="5,0,10,61" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Bottom" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <Label Content="Report Bug" Margin="5,0,10,61" VerticalAlignment="Bottom" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="16" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <Label Content="This also works in non-treble devices." Margin="0,58,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" Grid.ColumnSpan="3" FontSize="10" Height="23" VerticalAlignment="Top"/>
-        <Label Content="Got issues? Please leave them in the feedback section of the Website." Margin="0,81,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" Grid.ColumnSpan="3" FontSize="10" Height="23" VerticalAlignment="Top"/>
-        <Button Content="Button" Margin="5,0,10,61" VerticalAlignment="Bottom" Height="49" Opacity="0" Click="ReportBug_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <Button Content="Button" Margin="5,0,2,10" VerticalAlignment="Bottom" Height="49" Opacity="0" Click="Back_Click" Grid.Column="1"/>
-        <Button Content="Button" Margin="2,0,10,10" VerticalAlignment="Bottom" Height="49" Opacity="0" Click="Next_Click" Grid.Column="2"/>
+        <Label Content="Unlock Bootloader" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="24" Grid.ColumnSpan="4" Height="35" VerticalAlignment="Top"/>
+        <Label Content="Make sure your phone is in fastboot mode or has ADB enabled." Margin="0,35,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="4" FontSize="10" Height="23" VerticalAlignment="Top"/>
+        <Label Content="Continue?" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20"/>
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="49" Margin="1,0,0,10" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Bottom" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="2"/>
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="49" Margin="5,0,1,10" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Bottom" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="1"/>
+        <Label Content="Next" Margin="1,0,0,10" VerticalAlignment="Bottom" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.Column="2"/>
+        <Label Content="Back" Margin="5,0,1,10" VerticalAlignment="Bottom" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.Column="1"/>
+        <Label Content="Troubleshooting" Margin="9,0,10,61" VerticalAlignment="Bottom" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="14"/>
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="49" Margin="5,0,0,61" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Bottom" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Label Content="Report Bug" Margin="5,0,0,61" VerticalAlignment="Bottom" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Label Content="This also works in non-treble devices." Margin="0,58,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="4" FontSize="10" Height="23" VerticalAlignment="Top"/>
+        <Label Content="Got issues? Please leave them in the feedback section of the Website." Margin="0,81,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="4" FontSize="10" Height="23" VerticalAlignment="Top"/>
+        <Button Content="Button" Margin="5,0,0,61" VerticalAlignment="Bottom" Height="49" Opacity="0" Click="ReportBug_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Button Content="Button" Margin="5,0,1,10" VerticalAlignment="Bottom" Height="49" Opacity="0" Click="Back_Click" Grid.Column="1"/>
+        <Button Content="Button" Margin="1,0,0,10" VerticalAlignment="Bottom" Height="49" Opacity="0" Click="Next_Click" Grid.Column="2"/>
 
     </Grid>
 </Page>
