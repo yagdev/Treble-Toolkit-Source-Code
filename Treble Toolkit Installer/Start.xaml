@@ -1,0 +1,34 @@
+﻿<Page x:Class="Treble_Toolkit_Installer.Start"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Treble_Toolkit_Installer"
+      xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="419" d:DesignWidth="442"
+      Title="Start" Background="{DynamicResource SystemAltMediumHighColorBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="95*"/>
+            <RowDefinition Height="100*" MaxHeight="1000"/>
+            <RowDefinition Height="224*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="71*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle x:Name="CR" Fill="{DynamicResource SystemBaseLowColorBrush}" Margin="10,0,10,10" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" RadiusY="9.5" RadiusX="9.5" Height="50" VerticalAlignment="Bottom" StrokeThickness="2" Grid.ColumnSpan="3" Grid.Row="2"/>
+        <Label x:Name="TT" Content="Welcome To Treble Toolkit Installer." Margin="10,10,10,0" VerticalAlignment="Top" Height="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="18" Foreground="{DynamicResource SystemBaseHighColorBrush}" Grid.ColumnSpan="3"/>
+        <Label Content="Version 2021.4.1" Margin="10,60,10,0" VerticalAlignment="Top" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="14" Foreground="{DynamicResource SystemBaseHighColorBrush}" Grid.ColumnSpan="3"/>
+        <Label x:Name="CL" Content="Continue &gt;" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="20" Foreground="{DynamicResource SystemBaseHighColorBrush}" Grid.ColumnSpan="3" Grid.Row="2"/>
+        <Label x:Name="Lbl" Content="To continue, press the &quot;Continue&quot; button." Margin="10,0,10,60" VerticalAlignment="Bottom" Height="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="14" Foreground="{DynamicResource SystemBaseHighColorBrush}" Grid.ColumnSpan="3" Grid.Row="2"/>
+        <Button x:Name="C" Content="Button" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="50" Opacity="0" Grid.ColumnSpan="3" Grid.Row="2" Click="Button_Click"/>
+        <Image Margin="40,10" Grid.Row="1" Source="TTo.png" Stretch="UniformToFill" Grid.Column="1"/>
+        <Rectangle x:Name="RUR" Fill="{DynamicResource SystemBaseLowColorBrush}" Margin="10,0,10,10" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" RadiusY="9.5" RadiusX="9.5" Height="50" VerticalAlignment="Bottom" StrokeThickness="2" Grid.ColumnSpan="3" Grid.Row="2" Visibility="Hidden"/>
+        <Label x:Name="RUL" Content="Repair Installation &amp; Uninstall &gt;" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="20" Foreground="{DynamicResource SystemBaseHighColorBrush}" Grid.ColumnSpan="3" Grid.Row="2" Visibility="Hidden"/>
+        <Button x:Name="RU" Content="Button" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="50" Opacity="0" Grid.ColumnSpan="3" Grid.Row="2" Click="Reinstall" Visibility="Hidden"/>
+    </Grid>
+</Page>

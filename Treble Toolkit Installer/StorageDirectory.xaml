@@ -1,0 +1,32 @@
+﻿<Page x:Class="Treble_Toolkit_Installer.StorageDirectory"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Treble_Toolkit_Installer"
+      xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="419" d:DesignWidth="442"
+      Title="Start" Background="{DynamicResource SystemAltMediumHighColorBrush}">
+
+    <Grid>
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Margin="10,0,10,10" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" RadiusY="9.5" RadiusX="9.5" Height="50" VerticalAlignment="Bottom" StrokeThickness="2"/>
+        <Label Content="Choose the Install Location..." Margin="10,10,10,0" VerticalAlignment="Top" Height="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="20" Foreground="{DynamicResource SystemBaseHighColorBrush}"/>
+        <Label Content="Version 2021.4.1" Margin="10,60,10,0" VerticalAlignment="Top" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="14" Foreground="{DynamicResource SystemBaseHighColorBrush}"/>
+        <Label Content="&lt; Back" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="20" Foreground="{DynamicResource SystemBaseHighColorBrush}"/>
+        <Label x:Name="Lbl" Content="To install, press the button that matches your directory choice." Margin="10,0,10,221" VerticalAlignment="Bottom" Height="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="14" Foreground="{DynamicResource SystemBaseHighColorBrush}"/>
+        <Button Content="Button" Margin="10,0,10,62" VerticalAlignment="Bottom" Height="50" Opacity="0"/>
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Margin="10,0,10,62" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" RadiusY="9.5" RadiusX="9.5" Height="50" VerticalAlignment="Bottom" StrokeThickness="2"/>
+        <Label Content="Current Directory + Treble Toolkit Folder &gt;" Margin="10,0,10,62" VerticalAlignment="Bottom" Height="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="20" Foreground="{DynamicResource SystemBaseHighColorBrush}"/>
+        <Button Content="Button" Margin="10,0,10,114" VerticalAlignment="Bottom" Height="50" Opacity="0"/>
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Margin="10,0,10,114" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" RadiusY="9.5" RadiusX="9.5" Height="50" VerticalAlignment="Bottom" StrokeThickness="2"/>
+        <Label Content="AppData &gt;" Margin="10,0,10,114" VerticalAlignment="Bottom" Height="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="20" Foreground="{DynamicResource SystemBaseHighColorBrush}"/>
+        <Button Content="Button" Margin="10,0,10,166" VerticalAlignment="Bottom" Height="50" Opacity="0"/>
+        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Margin="10,0,10,166" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" RadiusY="9.5" RadiusX="9.5" Height="50" VerticalAlignment="Bottom" StrokeThickness="2"/>
+        <Label Content="Program Files &gt;" Margin="10,0,10,166" VerticalAlignment="Bottom" Height="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="20" Foreground="{DynamicResource SystemBaseHighColorBrush}"/>
+        <Button Content="Button" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click"/>
+        <Button Content="Button" Margin="10,0,10,62" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click_1"/>
+        <Button Content="Button" Margin="10,0,10,114" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click_2"/>
+        <Button Content="Button" Margin="10,0,10,166" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click_3"/>
+    </Grid>
+</Page>
