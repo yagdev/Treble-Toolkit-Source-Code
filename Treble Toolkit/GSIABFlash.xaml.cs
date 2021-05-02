@@ -13,6 +13,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Diagnostics;
 using System.IO;
+using System.Windows.Media.Animation;
 
 namespace Treble_Toolkit
 {
@@ -24,10 +25,15 @@ namespace Treble_Toolkit
         public GSIABFlash()
         {
             InitializeComponent();
-            System.Diagnostics.Process cmd = new System.Diagnostics.Process();
-            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            const string strCmdText = "/C cd .. & cd Place_Files_Here & cd GSI & ren * system.img & cd .. & cd boot & ren *.img boot.img & cd .. & cd vbmeta & ren * vbmeta.img";
-            Process.Start("CMD.exe", strCmdText);
+            grid.Opacity = 0;
+            Grid r = (Grid)grid;
+            DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
+            r.BeginAnimation(Grid.OpacityProperty, animation);
+            String command = @"/C cd .. & cd Place_Files_Here & cd GSI & ren * system.img & cd .. & cd boot & ren *.img boot.img & cd .. & cd vbmeta & ren * vbmeta.img";
+            ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
+            cmdsi.Arguments = command;
+            cmdsi.WindowStyle = ProcessWindowStyle.Hidden;
+            Process cmd = Process.Start(cmdsi);
             if (File.Exists("../Place_Files_Here/vbmeta/vbmeta.img"))
             {
                 VbmetaLbl.Visibility = Visibility.Hidden;
@@ -70,12 +76,27 @@ namespace Treble_Toolkit
         {
             if (File.Exists("../Place_Files_Here/GSI/system.img"))
             {
-                System.Diagnostics.Process cmd = new System.Diagnostics.Process();
-                System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-                const string strCmdText = "/C adb.exe reboot-bootloader & cd .. & mkdir Place_Files_Here & cd Place_Files_Here & mkdir boot & cd boot & ren *.img boot.img & cd .. & mkdir GSI & cd GSI & ren *.img system.img & cd .. & mkdir vbmeta & cd vbmeta & ren *.img vbmeta.img & cd .. & cd .. & cd assets & fastboot.exe format system_a & fastboot.exe format system_b & fastboot.exe format userdata & fastboot.exe --disable-verity --disable-verification flash vbmeta ../Place_Files_Here/vbmeta/vbmeta.img & fastboot.exe flash boot_a ../Place_Files_Here/boot/boot.img & fastboot.exe flash boot_b ../Place_Files_Here/boot/boot.img & fastboot.exe flash system_a ../Place_Files_Here/GSI/system.img & fastboot.exe flash system_b ../Place_Files_Here/GSI/system.img & fastboot.exe reboot & cd .. & cd Place_Files_Here & mkdir boot & mkdir GSI & mkdir vbmeta & taskkill /f /im adb.exe";
-                Process.Start("CMD.exe", strCmdText);
-                Uri uri = new Uri("GSIFlashTerminatedAB.xaml", UriKind.Relative);
-                this.NavigationService.Navigate(uri);
+                FileInfo fInfo = new FileInfo(@"..\Place_Files_Here\GSI\system.img");
+                if (fInfo.Length < 500000000)
+                {
+                    Title.Content = "This is not the correct file...";
+                    FileSize.Visibility = Visibility.Visible;
+                    String command = @"/C cd .. & cd Place_Files_Here & cd GSI & cd .";
+                    ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
+                    cmdsi.Arguments = command;
+                    Process cmd = Process.Start(cmdsi);
+                    cmd.WaitForExit();
+                }
+                else
+                {
+                    String command = @"/C adb.exe reboot-bootloader & cd .. & mkdir Place_Files_Here & cd Place_Files_Here & mkdir boot & cd boot & ren *.img boot.img & cd .. & mkdir GSI & cd GSI & ren *.img system.img & cd .. & mkdir vbmeta & cd vbmeta & ren *.img vbmeta.img & cd .. & cd .. & cd assets & fastboot.exe format system_a & fastboot.exe format system_b & fastboot.exe format userdata & fastboot.exe --disable-verity --disable-verification flash vbmeta ../Place_Files_Here/vbmeta/vbmeta.img & fastboot.exe flash boot_a ../Place_Files_Here/boot/boot.img & fastboot.exe flash boot_b ../Place_Files_Here/boot/boot.img & fastboot.exe flash system_a ../Place_Files_Here/GSI/system.img & fastboot.exe flash system_b ../Place_Files_Here/GSI/system.img & fastboot.exe reboot & cd .. & cd Place_Files_Here & mkdir boot & mkdir GSI & mkdir vbmeta & taskkill /f /im adb.exe";
+                    ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
+                    cmdsi.Arguments = command;
+                    Process cmd = Process.Start(cmdsi);
+                    cmd.WaitForExit();
+                    Uri uri = new Uri("GSIFlashTerminatedAB.xaml", UriKind.Relative);
+                    this.NavigationService.Navigate(uri);
+                }
             }
             else
             {

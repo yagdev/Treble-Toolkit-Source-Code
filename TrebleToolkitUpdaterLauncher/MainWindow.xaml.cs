@@ -32,6 +32,14 @@ namespace TrebleToolkitUpdaterLauncher
         public MainWindow()
         {
             InitializeComponent();
+            if (Environment.Is64BitOperatingSystem)
+            {
+
+            }
+            else
+            {
+                status_lbl.Content = "©2021 YAG-dev · Version 21.5.1 · Version 21.8.1 will not support 32 Bit computers.";
+            }
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
@@ -651,7 +659,7 @@ namespace TrebleToolkitUpdaterLauncher
                 UpdateLabel.Visibility = Visibility.Hidden;
                 UpdateRectangle.Visibility = Visibility.Hidden;
                 Launcher.Visibility = Visibility.Hidden;
-                status_lbl.Content = "©2021 YAG-dev · Version 21.4.1 · Looks like you're offline. Reconnect to the Internet to gain access to more features.";
+                status_lbl.Content = "©2021 YAG-dev · Version 21.4.1 · Still couldn't connect to the internet :(";
                 Title.Content = "Welcome To Treble Toolkit Launcher (Offline Mode)";
                 CheckConnection.Visibility = Visibility.Visible;
                 CheckConnectionRectangle.Visibility = Visibility.Visible;

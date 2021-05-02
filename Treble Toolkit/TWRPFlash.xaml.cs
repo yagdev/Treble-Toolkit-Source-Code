@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Threading;
 using System.IO;
 using System.Diagnostics;
+using System.Windows.Media.Animation;
 
 namespace Treble_Toolkit
 {
@@ -26,10 +27,15 @@ namespace Treble_Toolkit
         public TWRPFlash()
         {
             InitializeComponent();
-            System.Diagnostics.Process cmd = new System.Diagnostics.Process();
-            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            const string strCmdText = "/C cd .. & cd Place_Files_Here & cd TWRP & ren *.img twrp.img";
-            Process.Start("CMD.exe", strCmdText);
+            grid.Opacity = 0;
+            Grid r = (Grid)grid;
+            DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
+            r.BeginAnimation(Grid.OpacityProperty, animation);
+            String command = @"/C cd .. & cd Place_Files_Here & cd TWRP & ren *.img twrp.img";
+            ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
+            cmdsi.WindowStyle = ProcessWindowStyle.Hidden;
+            cmdsi.Arguments = command;
+            Process cmd = Process.Start(cmdsi);
         }
 
         private void ReportBug_Click(object sender, RoutedEventArgs e)
@@ -50,12 +56,22 @@ namespace Treble_Toolkit
         {
             if (File.Exists("../Place_Files_Here/TWRP/twrp.img"))
             {
-                System.Diagnostics.Process cmd = new System.Diagnostics.Process();
-                System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-                const string strCmdText = "/C adb.exe reboot-bootloader & cd .. & cd Place_Files_Here & cd TWRP & ren *.img twrp.img & cd .. & cd .. & cd assets & fastboot.exe flash recovery ../Place_Files_Here/TWRP/twrp.img & cd .. & cd Place_Files_Here & mkdir TWRP & taskkill /f /im adb.exe";
-                Process.Start("CMD.exe", strCmdText);
-                Uri uri = new Uri("TWRPFlashFinished.xaml", UriKind.Relative);
-                this.NavigationService.Navigate(uri);
+                FileInfo fInfo = new FileInfo(@"..\Place_Files_Here\TWRP\twrp.img");
+                if (fInfo.Length > 100000000)
+                {
+                    Title.Content = "This is not the correct file...";
+                    FileSize.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    String command = @"/C adb.exe reboot-bootloader & cd .. & cd Place_Files_Here & cd TWRP & ren *.img twrp.img & cd .. & cd .. & cd assets & fastboot.exe flash recovery ../Place_Files_Here/TWRP/twrp.img & cd .. & cd Place_Files_Here & mkdir TWRP & taskkill /f /im adb.exe";
+                    ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
+                    cmdsi.Arguments = command;
+                    Process cmd = Process.Start(cmdsi);
+                    cmd.WaitForExit();
+                    Uri uri = new Uri("TWRPFlashFinished.xaml", UriKind.Relative);
+                    this.NavigationService.Navigate(uri);
+                }
             }
             else
             {

@@ -6,10 +6,9 @@
       xmlns:local="clr-namespace:Treble_Toolkit"
       xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
       mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight="565"
-      Title="AboutScreen"
       fw:AcrylicWindow.Enabled="True" Background="{DynamicResource SystemAltMediumHighColorBrush}" >
 
-    <Grid>
+    <Grid x:Name="grid">
         <Grid.RowDefinitions>
             <RowDefinition Height="99*"/>
             <RowDefinition Height="14*"/>

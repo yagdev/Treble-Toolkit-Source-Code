@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.IO;
 using System.Threading;
 using System.Diagnostics;
+using System.Windows.Media.Animation;
 
 namespace Treble_Toolkit
 {
@@ -26,10 +27,16 @@ namespace Treble_Toolkit
         public TWRPFlashPickFile()
         {
             InitializeComponent();
-            System.Diagnostics.Process cmd = new System.Diagnostics.Process();
-            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            const string strCmdText = "/C cd .. & cd Place_Files_Here & cd TWRP & ren * twrp.img";
-            Process.Start("CMD.exe", strCmdText);
+            grid.Opacity = 0;
+            Grid r = (Grid)grid;
+            DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
+            r.BeginAnimation(Grid.OpacityProperty, animation);
+            String command = @"/C cd .. & cd Place_Files_Here & cd TWRP & ren * twrp.img";
+            ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
+            cmdsi.WindowStyle = ProcessWindowStyle.Hidden;
+            cmdsi.Arguments = command;
+            Process cmd = Process.Start(cmdsi);
+            cmd.WaitForExit();
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -41,23 +48,44 @@ namespace Treble_Toolkit
         private void Next_Click(object sender, RoutedEventArgs e)
         {
             ContinueLbl.Content = "Checking...";
-            System.Diagnostics.Process cmd = new System.Diagnostics.Process();
-            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            const string strCmdText = "/C cd .. & cd Place_Files_Here & cd GSI & ren * twrp.img";
-            Process.Start("CMD.exe", strCmdText);
-            Thread.Sleep(5000);
-            if (File.Exists("../Place_Files_Here/GSI/twrp.img"))
+            String command = @"/C cd .. & cd Place_Files_Here & cd TWRP & ren * twrp.img";
+            ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
+            cmdsi.Arguments = command;
+            Process cmd = Process.Start(cmdsi);
+            cmd.WaitForExit();
+            if (File.Exists("../Place_Files_Here/TWRP/twrp.img"))
             {
-                const string str2CmdText = "/C adb.exe reboot-bootloader & cd .. & cd Place_Files_Here & cd TWRP & ren *.img twrp.img & cd .. & cd .. & cd assets & fastboot.exe flash recovery ../Place_Files_Here/TWRP/twrp.img & cd .. & cd Place_Files_Here & mkdir TWRP & taskkill /f /im adb.exe";
-                Process.Start("CMD.exe", str2CmdText);
-                Uri uri = new Uri("TWRPFlashFinished.xaml", UriKind.Relative);
-                this.NavigationService.Navigate(uri);
+                NotFound.Visibility = Visibility.Hidden;
+                FileInfo fInfo = new FileInfo(@"..\Place_Files_Here\TWRP\twrp.img");
+                if (fInfo.Length > 100000000)
+                {
+                    Title.Content = "Holy crap, that's a big file!";
+                    FileSize.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    String command2 = @"/C adb.exe reboot-bootloader & cd .. & cd Place_Files_Here & cd TWRP & ren *.img twrp.img & cd .. & cd .. & cd assets & fastboot.exe flash recovery ../Place_Files_Here/TWRP/twrp.img & cd .. & cd Place_Files_Here & mkdir TWRP & taskkill /f /im adb.exe";
+                    ProcessStartInfo cmdsi2 = new ProcessStartInfo("cmd.exe");
+                    cmdsi2.Arguments = command2;
+                    Process cmd2 = Process.Start(cmdsi);
+                    cmd2.WaitForExit();
+                    Uri uri = new Uri("TWRPFlashFinished.xaml", UriKind.Relative);
+                    this.NavigationService.Navigate(uri);
+                }
             }
             else
             {
                 NotFound.Visibility = Visibility.Visible;
-                const string strCmdText2 = "/C cd .. & cd Place_Files_Here & cd TWRP & start .";
-                Process.Start("CMD.exe", strCmdText2);
+                String command3 = @"/C cd .. & cd Place_Files_Here & cd TWRP & start .";
+                ProcessStartInfo cmdsi3 = new ProcessStartInfo("cmd.exe");
+                cmdsi3.Arguments = command3;
+                Process cmd3 = Process.Start(cmdsi3);
+                cmd3.WaitForExit();
+                String command4 = @"/C cd .. & cd Place_Files_Here & cd TWRP & ren * twrp.img";
+                ProcessStartInfo cmdsi4 = new ProcessStartInfo("cmd.exe");
+                cmdsi4.Arguments = command4;
+                Process cmd4 = Process.Start(cmdsi4);
+                cmd4.WaitForExit();
             }
         }
     }

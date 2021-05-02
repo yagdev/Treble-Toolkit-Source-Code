@@ -11,8 +11,8 @@ using System.Windows;
 [assembly: AssemblyDescription("Launcher for Treble Toolkit. Always download from https://youraveragegamer.wixsite.com/treble-toolkit for guaranteed support.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("YAG-dev")]
-[assembly: AssemblyProduct("Treble Toolkit Updater")]
-[assembly: AssemblyCopyright("Copyright ©2020-2021 YAG-dev")]
+[assembly: AssemblyProduct("Treble Toolkit Launcher")]
+[assembly: AssemblyCopyright("Copyright ©2020-21 YAG-dev · Launcher for Treble Toolkit. Always download from https://youraveragegamer.wixsite.com/treble-toolkit for guaranteed support.")]
 [assembly: AssemblyTrademark("Treble Toolkit (Launcher)")]
 [assembly: AssemblyCulture("")]
 
@@ -51,5 +51,5 @@ using System.Windows;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("21.4.1")]
-[assembly: AssemblyFileVersion("21.4.1")]
+[assembly: AssemblyVersion("21.5.1")]
+[assembly: AssemblyFileVersion("21.5.1")]

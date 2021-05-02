@@ -9,7 +9,7 @@
       Title="GSIAFlash"
       fw:AcrylicWindow.Enabled="True" Background="{DynamicResource SystemAltMediumHighColorBrush}" >
 
-    <Grid>
+    <Grid x:Name="grid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="14*" MaxWidth="300"/>
             <ColumnDefinition Width="10*"/>

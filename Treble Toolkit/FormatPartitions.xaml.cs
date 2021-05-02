@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Diagnostics;
+using System.Windows.Media.Animation;
 
 namespace Treble_Toolkit
 {
@@ -24,6 +25,10 @@ namespace Treble_Toolkit
         public FormatPartitions()
         {
             InitializeComponent();
+            grid.Opacity = 0;
+            Grid r = (Grid)grid;
+            DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
+            r.BeginAnimation(Grid.OpacityProperty, animation);
         }
 
         private void AButton_Click(object sender, RoutedEventArgs e)
@@ -78,6 +83,14 @@ namespace Treble_Toolkit
         {
             Uri uri = new Uri("HomeScreen.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);
+        }
+
+        private void VendorButton_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            const string strCmdText = "/C adb.exe reboot-bootloader & fastboot.exe format vendor";
+            Process.Start("CMD.exe", strCmdText);
         }
     }
 }

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Media.Animation;
 
 namespace Treble_Toolkit
 {
@@ -23,6 +24,10 @@ namespace Treble_Toolkit
         public Alcatel1()
         {
             InitializeComponent();
+            GridMain.Opacity = 0;
+            Grid r = (Grid)GridMain;
+            DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
+            r.BeginAnimation(Grid.OpacityProperty, animation);
         }
 
         private void BackAbout_Click(object sender, RoutedEventArgs e)

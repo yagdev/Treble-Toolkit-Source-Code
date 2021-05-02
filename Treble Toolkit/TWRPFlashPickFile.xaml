@@ -6,17 +6,16 @@
       xmlns:local="clr-namespace:Treble_Toolkit"
       xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
       mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight="565"
-      Title="GSIAFlash"
       fw:AcrylicWindow.Enabled="True" Background="{DynamicResource SystemAltMediumHighColorBrush}" >
 
-    <Grid>
+    <Grid x:Name="grid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="14*" MaxWidth="300"/>
             <ColumnDefinition Width="10*"/>
             <ColumnDefinition Width="10*"/>
             <ColumnDefinition MaxWidth="10" FrameworkElement.FlowDirection="RightToLeft"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Flash TWRP" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="24" Grid.ColumnSpan="4" Height="35" VerticalAlignment="Top"/>
+        <Label x:Name="Title" Content="Flash TWRP" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="24" Grid.ColumnSpan="4" Height="35" VerticalAlignment="Top"/>
         <Label Content="We've noticed you haven't added your TWRP file." Margin="0,35,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="4" FontSize="10" Height="23" VerticalAlignment="Top"/>
         <Label x:Name="ContinueLbl" Content="Continue?" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20"/>
         <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="49" Margin="1,0,0,10" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Bottom" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="2"/>
@@ -27,7 +26,7 @@
         <Button Content="Button" Margin="5,0,1,10" VerticalAlignment="Bottom" Height="49" Opacity="0" Click="Back_Click" Grid.Column="1"/>
         <Button Content="Button" Margin="1,0,0,10" VerticalAlignment="Bottom" Height="49" Opacity="0" Click="Next_Click" Grid.Column="2"/>
         <Label x:Name="NotFound" Content="Your TWRP was not found. Please try again :/" Margin="0,81,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="4" FontSize="10" Height="23" VerticalAlignment="Top" Visibility="Hidden"/>
-
+        <Label x:Name="FileSize" Content="Your TWRP file is bigger than 100 MB and is likely not the correct file. Try again" Margin="0,81,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="4" FontSize="9" Height="23" VerticalAlignment="Top" Visibility="Hidden"/>
 
     </Grid>
 </Page>

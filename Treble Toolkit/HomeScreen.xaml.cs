@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Diagnostics;
+using System.Windows.Media.Animation;
 
 namespace Treble_Toolkit
 {
@@ -24,6 +25,19 @@ namespace Treble_Toolkit
         public HomeScreen()
         {
             InitializeComponent();
+            grid.Opacity = 0;
+            Grid r = (Grid)grid;
+            DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
+            r.BeginAnimation(Grid.OpacityProperty, animation);
+            if (Environment.Is64BitOperatingSystem)
+            {
+                
+            }
+            else
+            {
+                copyright.FontSize = 10;
+                copyright.Content = "©2021 YAG-dev · 32 Bit OSes will stop receiving updates in 2021.8.1";
+            }
         }
         private void AboutButton_Click(object sender, RoutedEventArgs e)
         {
@@ -100,6 +114,12 @@ namespace Treble_Toolkit
             startInfo.Arguments = "/C start https://youraveragegamer.wixsite.com/treble-toolkit";
             process.StartInfo = startInfo;
             process.Start();
+        }
+
+        private void More_Click(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("More.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
         }
     }
 }

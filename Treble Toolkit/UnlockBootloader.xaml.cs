@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Diagnostics;
+using System.Windows.Media.Animation;
 
 namespace Treble_Toolkit
 {
@@ -24,6 +25,10 @@ namespace Treble_Toolkit
         public UnlockBootloader()
         {
             InitializeComponent();
+            grid.Opacity = 0;
+            Grid r = (Grid)grid;
+            DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
+            r.BeginAnimation(Grid.OpacityProperty, animation);
         }
 
         private void ReportBug_Click(object sender, RoutedEventArgs e)
@@ -42,10 +47,11 @@ namespace Treble_Toolkit
 
         private void Next_Click(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process process = new System.Diagnostics.Process();
-            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            const string strCmdText = "/C adb.exe reboot-bootloader & fastboot.exe oem unlock & taskkill /f /im adb.exe";
-            Process.Start("CMD.exe", strCmdText);
+            String command = @"/C adb.exe reboot-bootloader & fastboot.exe oem unlock & taskkill /f /im adb.exe";
+            ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
+            cmdsi.Arguments = command;
+            Process cmd = Process.Start(cmdsi);
+            cmd.WaitForExit();
             Uri uri = new Uri("UnlockedBootloader.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);
         }
