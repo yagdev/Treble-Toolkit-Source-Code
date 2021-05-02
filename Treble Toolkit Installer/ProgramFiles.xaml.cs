@@ -19,6 +19,7 @@ using System.IO;
 using System.Diagnostics;
 using IWshRuntimeLibrary;
 using Microsoft.CSharp;
+using System.Windows.Media.Animation;
 
 namespace Treble_Toolkit_Installer
 {
@@ -33,6 +34,10 @@ namespace Treble_Toolkit_Installer
         public ProgramFiles()
         {
             InitializeComponent();
+            GridMain.Opacity = 0;
+            Grid r = (Grid)GridMain;
+            DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
+            r.BeginAnimation(Grid.OpacityProperty, animation);
             int Out;
             if (InternetGetConnectedState(out Out, 0) == true)
             {
@@ -119,7 +124,13 @@ namespace Treble_Toolkit_Installer
                     shortcut.Description = "Executable for Treble Toolkit";
                     shortcut.Hotkey = "Ctrl+Shift+N";
                     shortcut.TargetPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), "Treble_Toolkit") + @"\TrebleToolkitLauncher.exe";
+                    shortcut.WorkingDirectory = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), "Treble_Toolkit");
                     shortcut.Save();
+                    using (var fs = new FileStream(shortcutAddress, FileMode.Open, FileAccess.ReadWrite))
+                    {
+                        fs.Seek(21, SeekOrigin.Begin);
+                        fs.WriteByte(0x22);
+                    }
                     System.Diagnostics.Process process1 = new System.Diagnostics.Process();
                     System.Diagnostics.ProcessStartInfo startInfo1 = new System.Diagnostics.ProcessStartInfo();
                     startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;

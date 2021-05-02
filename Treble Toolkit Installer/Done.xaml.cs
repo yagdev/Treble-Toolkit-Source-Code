@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using IWshRuntimeLibrary;
 using System.Diagnostics;
+using System.Windows.Media.Animation;
 
 namespace Treble_Toolkit_Installer
 {
@@ -25,6 +26,10 @@ namespace Treble_Toolkit_Installer
         public Done()
         {
             InitializeComponent();
+            GridMain.Opacity = 0;
+            Grid r = (Grid)GridMain;
+            DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
+            r.BeginAnimation(Grid.OpacityProperty, animation);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

@@ -9,7 +9,7 @@
       d:DesignHeight="419" d:DesignWidth="442"
       Title="Start" Background="{DynamicResource SystemAltMediumHighColorBrush}">
 
-    <Grid>
+    <Grid x:Name="GridMain">
         <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Margin="10,0,10,10" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" RadiusY="9.5" RadiusX="9.5" Height="50" VerticalAlignment="Bottom" StrokeThickness="2"/>
         <Label Content="Choose the Install Location..." Margin="10,10,10,0" VerticalAlignment="Top" Height="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="20" Foreground="{DynamicResource SystemBaseHighColorBrush}"/>
         <Label Content="Version 2021.4.1" Margin="10,60,10,0" VerticalAlignment="Top" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="14" Foreground="{DynamicResource SystemBaseHighColorBrush}"/>

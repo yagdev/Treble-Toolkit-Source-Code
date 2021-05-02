@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Media.Animation;
 
 namespace Treble_Toolkit_Installer
 {
@@ -23,6 +24,10 @@ namespace Treble_Toolkit_Installer
         public Uninstall()
         {
             InitializeComponent();
+            GridMain.Opacity = 0;
+            Grid r = (Grid)GridMain;
+            DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
+            r.BeginAnimation(Grid.OpacityProperty, animation);
             status_lbl.Content = "Removing directories...";
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();

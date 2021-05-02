@@ -9,7 +9,7 @@
       d:DesignHeight="419" d:DesignWidth="442"
       Title="Start" Background="{DynamicResource SystemAltMediumHighColorBrush}">
 
-    <Grid>
+    <Grid x:Name="GridMain">
         <Grid.RowDefinitions>
             <RowDefinition Height="155*"/>
             <RowDefinition Height="100*" MaxHeight="1000"/>
@@ -23,9 +23,9 @@
         <Button Content="Button" Margin="10,0,17,10" VerticalAlignment="Bottom" Height="50" Opacity="0" Grid.Row="2" Grid.ColumnSpan="3"/>
         <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Margin="10,0,10,10" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" RadiusY="9.5" RadiusX="9.5" Height="50" VerticalAlignment="Bottom" StrokeThickness="2" Grid.Row="2" Grid.ColumnSpan="3"/>
         <Label Content="Done! You can now enjoy Treble Toolkit." Margin="10,10,10,0" VerticalAlignment="Top" Height="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="20" Foreground="{DynamicResource SystemBaseHighColorBrush}" Grid.ColumnSpan="3"/>
-        <Label Content="Thank you for choosing me for your next flashing project." Margin="10,17,10,0" VerticalAlignment="Top" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="14" Foreground="{DynamicResource SystemBaseHighColorBrush}" Grid.Row="2" Grid.ColumnSpan="3"/>
+        <Label Content="Thank you for choosing me for your next flashing project." Margin="10,0,10,117" VerticalAlignment="Bottom" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="14" Foreground="{DynamicResource SystemBaseHighColorBrush}" Grid.Row="2" Grid.ColumnSpan="3"/>
         <Label Content="Launch Treble Toolkit" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="20" Foreground="{DynamicResource SystemBaseHighColorBrush}" Grid.Row="2" Grid.ColumnSpan="3"/>
-        <Label Content="To launch Treble Toolkit, press the &quot;Launch&quot; button." Margin="10,0,10,55" VerticalAlignment="Bottom" Height="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="14" Foreground="{DynamicResource SystemBaseHighColorBrush}" Grid.ColumnSpan="3"/>
+        <Label Content="To launch Treble Toolkit, press the &quot;Launch&quot; button." Margin="10,60,10,0" VerticalAlignment="Top" Height="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="14" Foreground="{DynamicResource SystemBaseHighColorBrush}" Grid.ColumnSpan="3"/>
         <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Margin="10,0,10,62" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" RadiusY="9.5" RadiusX="9.5" Height="50" VerticalAlignment="Bottom" StrokeThickness="2" Grid.Row="2" Grid.ColumnSpan="3"/>
         <Label Content="If Something Went Wrong, Press This Button." Margin="10,0,10,62" VerticalAlignment="Bottom" Height="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="20" Foreground="{DynamicResource SystemBaseHighColorBrush}" Grid.Row="2" Grid.ColumnSpan="3"/>
         <Button Content="Button" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="Button_Click" Grid.Row="2" Grid.ColumnSpan="3"/>

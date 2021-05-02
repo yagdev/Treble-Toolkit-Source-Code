@@ -9,7 +9,7 @@
       d:DesignHeight="419" d:DesignWidth="442"
       Title="Start" Background="{DynamicResource SystemAltMediumHighColorBrush}">
 
-    <Grid>
+    <Grid x:Name="GridMain">
         <Grid.RowDefinitions>
             <RowDefinition Height="155*"/>
             <RowDefinition Height="100*" MaxHeight="1000"/>

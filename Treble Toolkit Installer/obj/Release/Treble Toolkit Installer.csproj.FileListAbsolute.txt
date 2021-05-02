@@ -41,3 +41,46 @@ C:\Users\dinis\source\repos\Treble Toolkit Installer\Treble Toolkit Installer\ob
 C:\Users\dinis\source\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\Treble Toolkit Installer.csproj.CopyComplete
 C:\Users\dinis\source\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\Treble Toolkit Installer.exe
 C:\Users\dinis\source\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\Treble Toolkit Installer.pdb
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\Release\Treble Toolkit Installer.exe.config
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\Release\Treble Toolkit Installer.exe
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\Release\Treble Toolkit Installer.pdb
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\Release\CLConfiguration.xml
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\Release\CLUpdate.xml
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\Release\System.Diagnostics.DiagnosticSource.xml
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\Treble Toolkit Installer.csprojAssemblyReference.cache
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\Interop.IWshRuntimeLibrary.dll
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\Treble Toolkit Installer.csproj.ResolveComReference.cache
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\AppData.g.cs
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\CurrentDirectory.g.cs
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\Done.g.cs
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\DoneAD.g.cs
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\DonePF.g.cs
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\MainWindow.g.cs
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\ProgramFiles.g.cs
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\Start.g.cs
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\StorageDirectory.g.cs
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\Uninstall,Repair.g.cs
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\Uninstall.g.cs
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\App.g.cs
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\Treble Toolkit Installer_MarkupCompile.cache
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\Treble Toolkit Installer_MarkupCompile.lref
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\App.baml
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\AppData.baml
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\CurrentDirectory.baml
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\Done.baml
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\DoneAD.baml
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\DonePF.baml
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\MainWindow.baml
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\ProgramFiles.baml
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\Start.baml
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\StorageDirectory.baml
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\Uninstall,Repair.baml
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\Uninstall.baml
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\Treble Toolkit Installer.g.resources
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\Treble_Toolkit_Installer.Properties.Resources.resources
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\Treble Toolkit Installer.csproj.GenerateResource.cache
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\Treble Toolkit Installer.csproj.CoreCompileInputs.cache
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\Treble Toolkit Installer.csproj.Fody.CopyLocal.cache
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\Treble Toolkit Installer.csproj.CopyComplete
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\Treble Toolkit Installer.exe
+C:\Users\dinis\Documents\repos\Treble Toolkit Installer\Treble Toolkit Installer\obj\Release\Treble Toolkit Installer.pdb

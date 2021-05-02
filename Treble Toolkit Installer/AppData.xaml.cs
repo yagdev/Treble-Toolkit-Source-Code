@@ -19,6 +19,7 @@ using System.IO;
 using System.Diagnostics;
 using IWshRuntimeLibrary;
 using Microsoft.CSharp;
+using System.Windows.Media.Animation;
 
 namespace Treble_Toolkit_Installer
 {
@@ -33,6 +34,10 @@ namespace Treble_Toolkit_Installer
         public AppData()
         {
             InitializeComponent();
+            GridMain.Opacity = 0;
+            Grid r = (Grid)GridMain;
+            DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
+            r.BeginAnimation(Grid.OpacityProperty, animation);
             int Out;
             if (InternetGetConnectedState(out Out, 0) == true)
             {
@@ -116,10 +121,12 @@ namespace Treble_Toolkit_Installer
                         shortcut.Description = "Executable for Treble Toolkit";
                         shortcut.Hotkey = "Ctrl+Shift+N";
                         shortcut.TargetPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Treble_Toolkit") + @"\TrebleToolkitLauncher.exe";
+                        shortcut.WorkingDirectory = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Treble_Toolkit");
                         shortcut.Save();
                         shortcut2.Description = "Executable for Treble Toolkit";
                         shortcut2.Hotkey = "Ctrl+Shift+N";
                         shortcut2.TargetPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Treble_Toolkit") + @"\TrebleToolkitLauncher.exe";
+                        shortcut2.WorkingDirectory = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Treble_Toolkit");
                         shortcut2.Save();
                         Uri uri = new Uri("DoneAD.xaml", UriKind.Relative);
                         this.NavigationService.Navigate(uri);

@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using IWshRuntimeLibrary;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Windows.Media.Animation;
 
 
 namespace Treble_Toolkit_Installer
@@ -29,6 +30,10 @@ namespace Treble_Toolkit_Installer
         public Start()
         {
             InitializeComponent();
+            GridMain.Opacity = 0;
+            Grid r = (Grid)GridMain;
+            DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
+            r.BeginAnimation(Grid.OpacityProperty, animation);
             if (System.IO.File.Exists(System.IO.Path.Combine(Environment.CurrentDirectory, "Treble_Toolkit", "TrebleToolkitLauncher.exe")))
             {
                 TT.Content = "We detected that Treble Toolkit is already installed.";
