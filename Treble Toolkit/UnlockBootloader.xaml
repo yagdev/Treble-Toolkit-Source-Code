@@ -16,7 +16,7 @@
             <ColumnDefinition Width="10*"/>
             <ColumnDefinition MaxWidth="10" FrameworkElement.FlowDirection="RightToLeft"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Unlock Bootloader" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="24" Grid.ColumnSpan="4" Height="35" VerticalAlignment="Top"/>
+        <Label Content="Unlock Bootloader" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.ColumnSpan="4" Height="35" VerticalAlignment="Top"/>
         <Label Content="Make sure your phone is in fastboot mode or has ADB enabled." Margin="0,35,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="4" FontSize="10" Height="23" VerticalAlignment="Top"/>
         <Label Content="Continue?" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20"/>
         <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="49" Margin="1,0,0,10" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Bottom" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="2"/>
@@ -31,6 +31,7 @@
         <Button Content="Button" Margin="5,0,0,61" VerticalAlignment="Bottom" Height="49" Opacity="0" Click="ReportBug_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
         <Button Content="Button" Margin="5,0,1,10" VerticalAlignment="Bottom" Height="49" Opacity="0" Click="Back_Click" Grid.Column="1"/>
         <Button Content="Button" Margin="1,0,0,10" VerticalAlignment="Bottom" Height="49" Opacity="0" Click="Next_Click" Grid.Column="2"/>
+        <Label x:Name="ReportLabel" Content="A device report has been created. Please attach it to your report." Margin="0,0,0,110" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="4" FontSize="10" Height="23" VerticalAlignment="Bottom"/>
 
     </Grid>
 </Page>

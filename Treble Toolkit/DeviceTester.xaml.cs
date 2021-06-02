@@ -25,6 +25,7 @@ namespace Treble_Toolkit
         public DeviceTester()
         {
             InitializeComponent();
+            NotDetected.Visibility = Visibility.Hidden;
             grid.Opacity = 0;
             Grid r = (Grid)grid;
             DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
@@ -35,7 +36,7 @@ namespace Treble_Toolkit
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
             startInfo.Arguments = "/C adb.exe shell getprop ro.product.system.brand";
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.CreateNoWindow = true;
             process.StartInfo = startInfo;
             process.Start();
             string output = process.StandardOutput.ReadToEnd();
@@ -45,7 +46,7 @@ namespace Treble_Toolkit
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
             startInfo.Arguments = "/C adb.exe shell getprop ro.product.model";
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.CreateNoWindow = true;
             process.StartInfo = startInfo;
             process.Start();
             string output2 = process.StandardOutput.ReadToEnd();
@@ -55,7 +56,7 @@ namespace Treble_Toolkit
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
             startInfo.Arguments = "/C adb.exe shell getprop ro.treble.enabled";
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.CreateNoWindow = true;
             process.StartInfo = startInfo;
             process.Start();
             string output3 = process.StandardOutput.ReadToEnd();
@@ -65,7 +66,7 @@ namespace Treble_Toolkit
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
             startInfo.Arguments = "/C adb.exe shell getprop ro.system.build.version.release";
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.CreateNoWindow = true;
             process.StartInfo = startInfo;
             process.Start();
             string output4 = process.StandardOutput.ReadToEnd();
@@ -75,7 +76,7 @@ namespace Treble_Toolkit
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
             startInfo.Arguments = "/C adb.exe shell getprop ro.system.build.version.sdk";
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.CreateNoWindow = true;
             process.StartInfo = startInfo;
             process.Start();
             string output5 = process.StandardOutput.ReadToEnd();
@@ -85,7 +86,7 @@ namespace Treble_Toolkit
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
             startInfo.Arguments = "/C adb.exe shell getprop ro.build.version.security_patch";
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.CreateNoWindow = true;
             process.StartInfo = startInfo;
             process.Start();
             string output6 = process.StandardOutput.ReadToEnd();
@@ -95,7 +96,7 @@ namespace Treble_Toolkit
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
             startInfo.Arguments = "/C adb.exe shell getprop ro.product.build.date";
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.CreateNoWindow = true;
             process.StartInfo = startInfo;
             process.Start();
             string output7 = process.StandardOutput.ReadToEnd();
@@ -105,7 +106,7 @@ namespace Treble_Toolkit
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
             startInfo.Arguments = "/C adb.exe shell getprop ro.crypto.state";
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.CreateNoWindow = true;
             process.StartInfo = startInfo;
             process.Start();
             string output8 = process.StandardOutput.ReadToEnd();
@@ -115,7 +116,7 @@ namespace Treble_Toolkit
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
             startInfo.Arguments = "/C adb.exe shell getprop ro.serialno";
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.CreateNoWindow = true;
             process.StartInfo = startInfo;
             process.Start();
             string output9 = process.StandardOutput.ReadToEnd();
@@ -125,7 +126,7 @@ namespace Treble_Toolkit
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
             startInfo.Arguments = "/C adb.exe shell getprop ro.vendor.build.version.sdk";
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.CreateNoWindow = true;
             process.StartInfo = startInfo;
             process.Start();
             string output10 = process.StandardOutput.ReadToEnd();
@@ -135,7 +136,7 @@ namespace Treble_Toolkit
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
             startInfo.Arguments = "/C adb.exe shell getprop ro.vendor.build.security_patch";
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.CreateNoWindow = true;
             process.StartInfo = startInfo;
             process.Start();
             string output11 = process.StandardOutput.ReadToEnd();
@@ -145,12 +146,136 @@ namespace Treble_Toolkit
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
             startInfo.Arguments = "/C adb.exe shell getprop ro.product.board";
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.CreateNoWindow = true;
             process.StartInfo = startInfo;
             process.Start();
             string output12 = process.StandardOutput.ReadToEnd();
             process.WaitForExit();
             BoardName.Content = output12;
+            if (output3.Contains("true") == true)
+            {
+                SupportsTreble.Content = "Yes";
+            }
+            else
+            {
+                SupportsTreble.Content = "No";
+            }
+            if (output8.Contains("encrypted") == true)
+            {
+                IsEncrypted.Content = "Yes";
+            }
+            else
+            {
+                IsEncrypted.Content = "No";
+            }
+            if (output.Length == 0)
+            {
+                Brand.Content = "Unable to retrieve";
+                NotDetected.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Warning.Visibility = Visibility.Hidden;
+            }
+            if (output2.Length == 0)
+            {
+                Model.Content = "Unable to retrieve";
+                NotDetected.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Warning.Visibility = Visibility.Hidden;
+            }
+            if (output3.Length == 0)
+            {
+                SupportsTreble.Content = "Unable to retrieve";
+                NotDetected.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Warning.Visibility = Visibility.Hidden;
+            }
+            if (output4.Length == 0)
+            {
+                AndroidVersion.Content = "Unable to retrieve";
+                NotDetected.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Warning.Visibility = Visibility.Hidden;
+            }
+            if (output5.Length == 0)
+            {
+                SDKVersion.Content = "Unable to retrieve";
+                NotDetected.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Warning.Visibility = Visibility.Hidden;
+            }
+            if (output6.Length == 0)
+            {
+                SecurityPatch.Content = "Unable to retrieve";
+                NotDetected.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Warning.Visibility = Visibility.Hidden;
+            }
+            if (output7.Length == 0)
+            {
+                BuildDate.Content = "Unable to retrieve";
+                NotDetected.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Warning.Visibility = Visibility.Hidden;
+            }
+            if (output8.Length == 0)
+            {
+                IsEncrypted.Content = "Unable to retrieve";
+                NotDetected.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Warning.Visibility = Visibility.Hidden;
+            }
+            if (output9.Length == 0)
+            {
+                SN.Content = "Unable to retrieve";
+                NotDetected.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Warning.Visibility = Visibility.Hidden;
+            }
+            if (output10.Length == 0)
+            {
+                VendorSDK.Content = "Unable to retrieve";
+                NotDetected.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Warning.Visibility = Visibility.Hidden;
+            }
+            if (output11.Length == 0)
+            {
+                VendorPatch.Content = "Unable to retrieve";
+                NotDetected.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Warning.Visibility = Visibility.Hidden;
+            }
+            if (output12.Length == 0)
+            {
+                BoardName.Content = "Unable to retrieve";
+                NotDetected.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Warning.Visibility = Visibility.Hidden;
+            }
         }
 
         private void BackAbout_Click(object sender, RoutedEventArgs e)
@@ -161,13 +286,15 @@ namespace Treble_Toolkit
 
         private void UpdateAbout_Click(object sender, RoutedEventArgs e)
         {
+            NotDetected.Visibility = Visibility.Hidden;
+            Warning.Visibility = Visibility.Visible;
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.UseShellExecute = false;
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
             startInfo.Arguments = "/C adb.exe shell getprop ro.product.system.brand";
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.CreateNoWindow = true;
             process.StartInfo = startInfo;
             process.Start();
             string output = process.StandardOutput.ReadToEnd();
@@ -177,7 +304,7 @@ namespace Treble_Toolkit
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
             startInfo.Arguments = "/C adb.exe shell getprop ro.product.model";
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.CreateNoWindow = true;
             process.StartInfo = startInfo;
             process.Start();
             string output2 = process.StandardOutput.ReadToEnd();
@@ -187,17 +314,16 @@ namespace Treble_Toolkit
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
             startInfo.Arguments = "/C adb.exe shell getprop ro.treble.enabled";
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.CreateNoWindow = true;
             process.StartInfo = startInfo;
             process.Start();
             string output3 = process.StandardOutput.ReadToEnd();
             process.WaitForExit();
-            SupportsTreble.Content = output3;
             startInfo.UseShellExecute = false;
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
             startInfo.Arguments = "/C adb.exe shell getprop ro.system.build.version.release";
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.CreateNoWindow = true;
             process.StartInfo = startInfo;
             process.Start();
             string output4 = process.StandardOutput.ReadToEnd();
@@ -207,7 +333,7 @@ namespace Treble_Toolkit
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
             startInfo.Arguments = "/C adb.exe shell getprop ro.system.build.version.sdk";
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.CreateNoWindow = true;
             process.StartInfo = startInfo;
             process.Start();
             string output5 = process.StandardOutput.ReadToEnd();
@@ -217,7 +343,7 @@ namespace Treble_Toolkit
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
             startInfo.Arguments = "/C adb.exe shell getprop ro.build.version.security_patch";
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.CreateNoWindow = true;
             process.StartInfo = startInfo;
             process.Start();
             string output6 = process.StandardOutput.ReadToEnd();
@@ -227,7 +353,7 @@ namespace Treble_Toolkit
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
             startInfo.Arguments = "/C adb.exe shell getprop ro.product.build.date";
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.CreateNoWindow = true;
             process.StartInfo = startInfo;
             process.Start();
             string output7 = process.StandardOutput.ReadToEnd();
@@ -237,7 +363,7 @@ namespace Treble_Toolkit
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
             startInfo.Arguments = "/C adb.exe shell getprop ro.crypto.state";
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.CreateNoWindow = true;
             process.StartInfo = startInfo;
             process.Start();
             string output8 = process.StandardOutput.ReadToEnd();
@@ -247,7 +373,7 @@ namespace Treble_Toolkit
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
             startInfo.Arguments = "/C adb.exe shell getprop ro.serialno";
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.CreateNoWindow = true;
             process.StartInfo = startInfo;
             process.Start();
             string output9 = process.StandardOutput.ReadToEnd();
@@ -257,7 +383,7 @@ namespace Treble_Toolkit
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
             startInfo.Arguments = "/C adb.exe shell getprop ro.vendor.build.version.sdk";
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.CreateNoWindow = true;
             process.StartInfo = startInfo;
             process.Start();
             string output10 = process.StandardOutput.ReadToEnd();
@@ -267,7 +393,7 @@ namespace Treble_Toolkit
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
             startInfo.Arguments = "/C adb.exe shell getprop ro.vendor.build.security_patch";
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.CreateNoWindow = true;
             process.StartInfo = startInfo;
             process.Start();
             string output11 = process.StandardOutput.ReadToEnd();
@@ -277,12 +403,146 @@ namespace Treble_Toolkit
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
             startInfo.Arguments = "/C adb.exe shell getprop ro.product.board";
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.CreateNoWindow = true;
             process.StartInfo = startInfo;
             process.Start();
             string output12 = process.StandardOutput.ReadToEnd();
             process.WaitForExit();
             BoardName.Content = output12;
+            if (output3.Contains("true") == true)
+            {
+                SupportsTreble.Content = "Yes";
+            }
+            else
+            {
+                SupportsTreble.Content = "No";
+            }
+            if (output8.Contains("encrypted") == true)
+            {
+                IsEncrypted.Content = "Yes";
+            }
+            else
+            {
+                IsEncrypted.Content = "No";
+            }
+            if (output.Length == 0)
+            {
+                Brand.Content = "Unable to retrieve";
+                NotDetected.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Warning.Visibility = Visibility.Hidden;
+            }
+            if (output2.Length == 0)
+            {
+                Model.Content = "Unable to retrieve";
+                NotDetected.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Warning.Visibility = Visibility.Hidden;
+            }
+            if (output3.Length == 0)
+            {
+                SupportsTreble.Content = "Unable to retrieve";
+                NotDetected.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Warning.Visibility = Visibility.Hidden;
+            }
+            if (output4.Length == 0)
+            {
+                AndroidVersion.Content = "Unable to retrieve";
+                NotDetected.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Warning.Visibility = Visibility.Hidden;
+            }
+            if (output5.Length == 0)
+            {
+                SDKVersion.Content = "Unable to retrieve";
+                NotDetected.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Warning.Visibility = Visibility.Hidden;
+            }
+            if (output6.Length == 0)
+            {
+                SecurityPatch.Content = "Unable to retrieve";
+                NotDetected.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Warning.Visibility = Visibility.Hidden;
+            }
+            if (output7.Length == 0)
+            {
+                BuildDate.Content = "Unable to retrieve";
+                NotDetected.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Warning.Visibility = Visibility.Hidden;
+            }
+            if (output8.Length == 0)
+            {
+                IsEncrypted.Content = "Unable to retrieve";
+                NotDetected.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Warning.Visibility = Visibility.Hidden;
+            }
+            if (output9.Length == 0)
+            {
+                SN.Content = "Unable to retrieve";
+                NotDetected.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Warning.Visibility = Visibility.Hidden;
+            }
+            if (output10.Length == 0)
+            {
+                VendorSDK.Content = "Unable to retrieve";
+                NotDetected.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Warning.Visibility = Visibility.Hidden;
+            }
+            if (output11.Length == 0)
+            {
+                VendorPatch.Content = "Unable to retrieve";
+                NotDetected.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Warning.Visibility = Visibility.Hidden;
+            }
+            if (output12.Length == 0)
+            {
+                BoardName.Content = "Unable to retrieve";
+                NotDetected.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Warning.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void grid_Initialized(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void SupportsTreble_Loaded(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

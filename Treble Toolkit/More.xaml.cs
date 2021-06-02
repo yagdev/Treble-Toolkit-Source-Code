@@ -50,7 +50,14 @@ namespace Treble_Toolkit
 
         private void APButton_Click(object sender, RoutedEventArgs e)
         {
+            AD.Content = "Testing...";
             Uri uri = new Uri("DeviceTester.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
+
+        private void FVButton_Click(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("CompatibleDevices.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);
         }
     }

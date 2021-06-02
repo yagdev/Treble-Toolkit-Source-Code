@@ -46,5 +46,11 @@ namespace Treble_Toolkit
             process.StartInfo = startInfo;
             process.Start();
         }
+
+        private void DSF_Click(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("XP1DSF.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
     }
 }

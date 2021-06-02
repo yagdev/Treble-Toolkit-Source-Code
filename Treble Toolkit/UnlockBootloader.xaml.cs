@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Diagnostics;
 using System.Windows.Media.Animation;
+using System.IO;
 
 namespace Treble_Toolkit
 {
@@ -25,6 +26,7 @@ namespace Treble_Toolkit
         public UnlockBootloader()
         {
             InitializeComponent();
+            ReportLabel.Visibility = Visibility.Hidden;
             grid.Opacity = 0;
             Grid r = (Grid)grid;
             DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
@@ -33,10 +35,34 @@ namespace Treble_Toolkit
 
         private void ReportBug_Click(object sender, RoutedEventArgs e)
         {
+            ReportLabel.Visibility = Visibility.Visible;
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            const string strCmdText = "/C start https://github.com/yagdev/Treble-Toolkit-Source-Code/issues";
-            Process.Start("CMD.exe", strCmdText);
+            startInfo.UseShellExecute = false;
+            startInfo.RedirectStandardOutput = true;
+            startInfo.FileName = "CMD.exe";
+            startInfo.Arguments = "/C systeminfo & adb shell getprop & wmic process where name='adb.exe' delete & mkdir BugReports & cd BugReports & mkdir SystemInfo";
+            startInfo.CreateNoWindow = true;
+            process.StartInfo = startInfo;
+            process.Start();
+            string output = process.StandardOutput.ReadToEnd();
+            process.WaitForExit();
+            using (StreamReader reader = process.StandardOutput)
+            {
+                string system_info_path = System.IO.Path.Combine(Environment.CurrentDirectory, "BugReports", "SystemInfo", "SystemReport.txt");
+                using (StreamWriter sw = File.CreateText(system_info_path))
+                {
+                    sw.WriteLine("Treble Toolkit System Report");
+                    sw.WriteLine("©2021 YAG-dev");
+                    sw.WriteLine(output);
+                }
+            }
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/C start https://github.com/yagdev/Treble-Toolkit-Source-Code/issues";
+            startInfo.CreateNoWindow = true;
+            process.StartInfo = startInfo;
+            process.Start();
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -47,7 +73,7 @@ namespace Treble_Toolkit
 
         private void Next_Click(object sender, RoutedEventArgs e)
         {
-            String command = @"/C adb.exe reboot-bootloader & fastboot.exe oem unlock & taskkill /f /im adb.exe";
+            String command = @"/C adb.exe reboot-bootloader & fastboot.exe oem unlock & wmic process where name='adb.exe' delete";
             ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
             cmdsi.Arguments = command;
             Process cmd = Process.Start(cmdsi);

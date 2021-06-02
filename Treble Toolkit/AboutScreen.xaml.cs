@@ -66,7 +66,7 @@ namespace Treble_Toolkit
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
             startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = "/C start https://youraveragegamer.wixsite.com/treble-toolkit/21-5-1";
+            startInfo.Arguments = "/C start https://youraveragegamer.wixsite.com/treble-toolkit/21-6-1";
             process.StartInfo = startInfo;
             process.Start();
         }

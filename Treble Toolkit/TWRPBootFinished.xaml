@@ -16,7 +16,7 @@
             <ColumnDefinition Width="10*"/>
             <ColumnDefinition MaxWidth="10" FrameworkElement.FlowDirection="RightToLeft"/>
         </Grid.ColumnDefinitions>
-        <Label Content="TWRP is booting..." Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="24" Grid.ColumnSpan="4" Height="41" VerticalAlignment="Top"/>
+        <Label Content="TWRP is booting..." Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.ColumnSpan="4" Height="41" VerticalAlignment="Top"/>
         <Label Content="If TWRP failed to boot, try again or use another image." Margin="0,42,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="4" FontSize="10" Height="23" VerticalAlignment="Top"/>
         <Label Content="Post-Flash" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="49" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20"/>
         <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="49" Margin="1,0,0,10" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Bottom" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="2"/>

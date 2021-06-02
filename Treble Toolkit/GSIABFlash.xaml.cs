@@ -25,6 +25,7 @@ namespace Treble_Toolkit
         public GSIABFlash()
         {
             InitializeComponent();
+            ReportLabel.Visibility = Visibility.Hidden;
             grid.Opacity = 0;
             Grid r = (Grid)grid;
             DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
@@ -60,10 +61,34 @@ namespace Treble_Toolkit
 
         private void ReportBug_Click(object sender, RoutedEventArgs e)
         {
+            ReportLabel.Visibility = Visibility.Visible;
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            const string strCmdText = "/C start https://github.com/yagdev/Treble-Toolkit-Source-Code/issues";
-            Process.Start("CMD.exe", strCmdText);
+            startInfo.UseShellExecute = false;
+            startInfo.RedirectStandardOutput = true;
+            startInfo.FileName = "CMD.exe";
+            startInfo.Arguments = "/C systeminfo & adb shell getprop & wmic process where name='adb.exe' delete & mkdir BugReports & cd BugReports & mkdir SystemInfo";
+            startInfo.CreateNoWindow = true;
+            process.StartInfo = startInfo;
+            process.Start();
+            string output = process.StandardOutput.ReadToEnd();
+            process.WaitForExit();
+            using (StreamReader reader = process.StandardOutput)
+            {
+                string system_info_path = System.IO.Path.Combine(Environment.CurrentDirectory, "BugReports", "SystemInfo", "SystemReport.txt");
+                using (StreamWriter sw = File.CreateText(system_info_path))
+                {
+                    sw.WriteLine("Treble Toolkit System Report");
+                    sw.WriteLine("©2021 YAG-dev");
+                    sw.WriteLine(output);
+                }
+            }
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/C start https://github.com/yagdev/Treble-Toolkit-Source-Code/issues";
+            startInfo.CreateNoWindow = true;
+            process.StartInfo = startInfo;
+            process.Start();
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -89,7 +114,7 @@ namespace Treble_Toolkit
                 }
                 else
                 {
-                    String command = @"/C adb.exe reboot-bootloader & cd .. & mkdir Place_Files_Here & cd Place_Files_Here & mkdir boot & cd boot & ren *.img boot.img & cd .. & mkdir GSI & cd GSI & ren *.img system.img & cd .. & mkdir vbmeta & cd vbmeta & ren *.img vbmeta.img & cd .. & cd .. & cd assets & fastboot.exe format system_a & fastboot.exe format system_b & fastboot.exe format userdata & fastboot.exe --disable-verity --disable-verification flash vbmeta ../Place_Files_Here/vbmeta/vbmeta.img & fastboot.exe flash boot_a ../Place_Files_Here/boot/boot.img & fastboot.exe flash boot_b ../Place_Files_Here/boot/boot.img & fastboot.exe flash system_a ../Place_Files_Here/GSI/system.img & fastboot.exe flash system_b ../Place_Files_Here/GSI/system.img & fastboot.exe reboot & cd .. & cd Place_Files_Here & mkdir boot & mkdir GSI & mkdir vbmeta & taskkill /f /im adb.exe";
+                    String command = @"/C adb.exe reboot-bootloader & cd .. & mkdir Place_Files_Here & cd Place_Files_Here & mkdir boot & cd boot & ren *.img boot.img & cd .. & mkdir GSI & cd GSI & ren *.img system.img & cd .. & mkdir vbmeta & cd vbmeta & ren *.img vbmeta.img & cd .. & cd .. & cd assets & fastboot.exe format system_a & fastboot.exe format system_b & fastboot.exe format userdata & fastboot.exe --disable-verity --disable-verification flash vbmeta ../Place_Files_Here/vbmeta/vbmeta.img & fastboot.exe flash boot_a ../Place_Files_Here/boot/boot.img & fastboot.exe flash boot_b ../Place_Files_Here/boot/boot.img & fastboot.exe flash system_a ../Place_Files_Here/GSI/system.img & fastboot.exe flash system_b ../Place_Files_Here/GSI/system.img & fastboot.exe reboot & cd .. & cd Place_Files_Here & mkdir boot & mkdir GSI & mkdir vbmeta & wmic process where name='adb.exe' delete";
                     ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
                     cmdsi.Arguments = command;
                     Process cmd = Process.Start(cmdsi);

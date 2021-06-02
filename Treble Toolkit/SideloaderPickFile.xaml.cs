@@ -54,7 +54,7 @@ namespace Treble_Toolkit
             cmd5.WaitForExit();
             if (File.Exists("../Place_Files_Here/Sideload/sideload.zip"))
             {
-                String command = @"/C cd .. & mkdir Place_Files_Here & cd Place_Files_Here & mkdir Sideload & cd Sideload & ren *.zip sideload.zip & cd .. & cd .. & cd assets & adb.exe sideload ../Place_Files_Here/Sideload/sideload.zip";
+                String command = @"/C cd .. & mkdir Place_Files_Here & cd Place_Files_Here & mkdir Sideload & cd Sideload & ren *.zip sideload.zip & cd .. & cd .. & cd assets & adb.exe sideload ../Place_Files_Here/Sideload/sideload.zip & wmic process where name='adb.exe' delete";
                 ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
                 cmdsi.Arguments = command;
                 Process cmd = Process.Start(cmdsi);

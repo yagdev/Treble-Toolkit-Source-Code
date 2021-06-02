@@ -78,7 +78,7 @@ namespace Treble_Toolkit
                     cmdsi3.Arguments = command3;
                     Process cmd3 = Process.Start(cmdsi3);
                     cmd3.WaitForExit();
-                    String command4 = @"/C cd .. & cd Place_Files_Here & mkdir boot & mkdir GSI & mkdir vbmeta & taskkill /f /im adb.exe";
+                    String command4 = @"/C cd .. & cd Place_Files_Here & mkdir boot & mkdir GSI & mkdir vbmeta & wmic process where name='adb.exe' delete";
                     ProcessStartInfo cmdsi4 = new ProcessStartInfo("cmd.exe");
                     cmdsi4.Arguments = command4;
                     Process cmd4 = Process.Start(cmdsi4);

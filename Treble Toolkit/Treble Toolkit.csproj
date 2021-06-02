@@ -224,8 +224,14 @@
     <Compile Include="DeviceTester.xaml.cs">
       <DependentUpon>DeviceTester.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FlashVendorFinished.xaml.cs">
+      <DependentUpon>FlashVendorFinished.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FormatPartitions.xaml.cs">
       <DependentUpon>FormatPartitions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HM10LDSF.xaml.cs">
+      <DependentUpon>HM10LDSF.xaml</DependentUpon>
     </Compile>
     <Compile Include="HuaweiMate10Lite.xaml.cs">
       <DependentUpon>HuaweiMate10Lite.xaml</DependentUpon>
@@ -236,8 +242,14 @@
     <Compile Include="OnePlus6.xaml.cs">
       <DependentUpon>OnePlus6.xaml</DependentUpon>
     </Compile>
+    <Compile Include="OnePlus6DSF.xaml.cs">
+      <DependentUpon>OnePlus6DSF.xaml</DependentUpon>
+    </Compile>
     <Compile Include="OnePlus8.xaml.cs">
       <DependentUpon>OnePlus8.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OnePlus8DSF.xaml.cs">
+      <DependentUpon>OnePlus8DSF.xaml</DependentUpon>
     </Compile>
     <Compile Include="PMFinished.xaml.cs">
       <DependentUpon>PMFinished.xaml</DependentUpon>
@@ -263,6 +275,9 @@
     <Compile Include="SonyXperiaXZ2.xaml.cs">
       <DependentUpon>SonyXperiaXZ2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SXXZ2DSF.xaml.cs">
+      <DependentUpon>SXXZ2DSF.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TWRPBoot.xaml.cs">
       <DependentUpon>TWRPBoot.xaml</DependentUpon>
     </Compile>
@@ -287,6 +302,21 @@
     <Compile Include="UnlockedBootloader.xaml.cs">
       <DependentUpon>UnlockedBootloader.xaml</DependentUpon>
     </Compile>
+    <Compile Include="VendorFinished.xaml.cs">
+      <DependentUpon>VendorFinished.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VendorFlash.xaml.cs">
+      <DependentUpon>VendorFlash.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VendorPickFile.xaml.cs">
+      <DependentUpon>VendorPickFile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XP1DSF.xaml.cs">
+      <DependentUpon>XP1DSF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XP5DSF.xaml.cs">
+      <DependentUpon>XP5DSF.xaml</DependentUpon>
+    </Compile>
     <Page Include="AboutScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -300,6 +330,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DeviceTester.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FlashVendorFinished.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -328,6 +362,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GSIFlashTerminatedAB.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HM10LDSF.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -383,7 +421,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="OnePlus6DSF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="OnePlus8.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OnePlus8DSF.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -419,6 +465,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SXXZ2DSF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TWRPBoot.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -448,6 +498,26 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UnlockedBootloader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VendorFinished.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VendorFlash.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VendorPickFile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XP1DSF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XP5DSF.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

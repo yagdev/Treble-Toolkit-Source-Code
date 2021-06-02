@@ -1,0 +1,69 @@
+Treble Toolkit System Report
+©2021 YAG-dev
+
+Host Name:                 DESKTOP-J9B59TJ
+OS Name:                   Microsoft Windows 10 Pro
+OS Version:                10.0.19042 N/A Build 19042
+OS Manufacturer:           Microsoft Corporation
+OS Configuration:          Standalone Workstation
+OS Build Type:             Multiprocessor Free
+Registered Owner:          dinisp25@gmail.com
+Registered Organization:   
+Product ID:                00331-10000-00001-AA158
+Original Install Date:     31/12/2020, 14:18:53
+System Boot Time:          02/06/2021, 18:34:11
+System Manufacturer:       Acidanthera
+System Model:              MacPro7,1
+System Type:               x64-based PC
+Processor(s):              1 Processor(s) Installed.
+                           [01]: AMD64 Family 23 Model 113 Stepping 0 AuthenticAMD ~3593 Mhz
+BIOS Version:              Acidanthera 1554.100.64.0.0, 10/03/2021
+Windows Directory:         C:\Windows
+System Directory:          C:\Windows\system32
+Boot Device:               \Device\HarddiskVolume5
+System Locale:             pt;Portuguˆs (Portugal)
+Input Locale:              pt;Portuguˆs (Portugal)
+Time Zone:                 (UTC+00:00) Dublin, Edimburgo, Lisboa, Londres
+Total Physical Memory:     16ÿ329 MB
+Available Physical Memory: 9ÿ627 MB
+Virtual Memory: Max Size:  26ÿ329 MB
+Virtual Memory: Available: 13ÿ463 MB
+Virtual Memory: In Use:    12ÿ866 MB
+Page File Location(s):     E:\pagefile.sys
+Domain:                    WORKGROUP
+Logon Server:              \\DESKTOP-J9B59TJ
+Hotfix(s):                 10 Hotfix(s) Installed.
+                           [01]: KB4601554
+                           [02]: KB4562830
+                           [03]: KB4570334
+                           [04]: KB4577586
+                           [05]: KB4580325
+                           [06]: KB4586864
+                           [07]: KB4593175
+                           [08]: KB4598481
+                           [09]: KB5003173
+                           [10]: KB5003242
+Network Card(s):           4 NIC(s) Installed.
+                           [01]: Realtek PCIe GbE Family Controller
+                                 Connection Name: Ethernet
+                                 DHCP Enabled:    Yes
+                                 DHCP Server:     192.168.1.254
+                                 IP address(es)
+                                 [01]: 192.168.1.64
+                                 [02]: fe80::6112:d7b8:c814:3744
+                                 [03]: 2001:8a0:6104:9b01:c0dc:a10c:838:74bb
+                                 [04]: 2001:8a0:6104:9b01:6112:d7b8:c814:3744
+                           [02]: Bluetooth Device (Personal Area Network)
+                                 Connection Name: Liga‡Æo de Rede Bluetooth 2
+                                 Status:          Media disconnected
+                           [03]: D-Link DWA-140 Wireless N USB Adapter(rev.B3)
+                                 Connection Name: Wi-Fi
+                                 Status:          Media disconnected
+                           [04]: TAP-Windows Adapter V9
+                                 Connection Name: Liga‡Æo de µrea Local
+                                 Status:          Media disconnected
+Hyper-V Requirements:      VM Monitor Mode Extensions: Yes
+                           Virtualization Enabled In Firmware: Yes
+                           Second Level Address Translation: Yes
+                           Data Execution Prevention Available: Yes
+

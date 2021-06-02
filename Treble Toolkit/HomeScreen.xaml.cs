@@ -36,7 +36,7 @@ namespace Treble_Toolkit
             else
             {
                 copyright.FontSize = 10;
-                copyright.Content = "©2021 YAG-dev · 32 Bit OSes will stop receiving updates in 2021.8.1";
+                copyright.Content = "©2021 YAG-dev · 32 Bit PCs will stop receiving updates in 2021.8.1";
             }
         }
         private void AboutButton_Click(object sender, RoutedEventArgs e)
@@ -53,7 +53,7 @@ namespace Treble_Toolkit
 
         private void CompatibleDevices_Click(object sender, RoutedEventArgs e)
         {
-            Uri uri = new Uri("CompatibleDevices.xaml", UriKind.Relative);
+            Uri uri = new Uri("VendorFlash.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);
         }
 

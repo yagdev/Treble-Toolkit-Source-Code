@@ -5,10 +5,10 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Treble_Toolkit"
       xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
-      mc:Ignorable="d" d:DesignWidth="350"
+      mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight ="550"
       fw:AcrylicWindow.Enabled="True" Background="{DynamicResource SystemAltMediumHighColorBrush}" >
 
-    <Grid x:Name="grid">
+    <Grid x:Name="grid" Initialized="grid_Initialized">
         <Grid.RowDefinitions>
             <RowDefinition Height="80*"/>
             <RowDefinition Height="23*"/>
@@ -17,7 +17,6 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="Title" Content="Device Information" Margin="10,10,10,0" VerticalAlignment="Top" Height="35" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="20" Grid.ColumnSpan="2"/>
         <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="1,0,10,10" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Bottom" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="1" Grid.Row="1"/>
         <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="10,0,1,10" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Bottom" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Row="1"/>
         <Label Content="Test Again" Margin="1,0,10,10" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.Column="1" Grid.Row="1"/>
@@ -38,7 +37,7 @@
         <Label x:Name="Title_Copy11" Content="Board Name:" Margin="10,375,0,0" VerticalAlignment="Top" Height="30" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="20" Grid.RowSpan="2"/>
         <Label x:Name="Brand" Content="Failed // Not Applicable" Margin="0,45,10,0" VerticalAlignment="Top" Height="30" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.Column="1"/>
         <Label x:Name="Model" Content="Failed // Not Applicable" Margin="0,75,10,0" VerticalAlignment="Top" Height="30" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.Column="1"/>
-        <Label x:Name="SupportsTreble" Content="Failed // Not Applicable" Margin="0,105,10,0" VerticalAlignment="Top" Height="30" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.Column="1"/>
+        <Label x:Name="SupportsTreble" Content="Failed // Not Applicable" Margin="0,105,10,0" VerticalAlignment="Top" Height="30" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.Column="1" Loaded="SupportsTreble_Loaded"/>
         <Label x:Name="AndroidVersion" Content="Failed // Not Applicable" Margin="0,135,10,0" VerticalAlignment="Top" Height="30" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.Column="1"/>
         <Label x:Name="SDKVersion" Content="Failed // Not Applicable" Margin="0,165,10,0" VerticalAlignment="Top" Height="30" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.Column="1"/>
         <Label x:Name="SecurityPatch" Content="Failed // Not Applicable" Margin="0,195,10,0" VerticalAlignment="Top" Height="30" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.Column="1"/>
@@ -48,9 +47,9 @@
         <Label x:Name="VendorSDK" Content="Failed // Not Applicable" Margin="0,315,10,0" VerticalAlignment="Top" Height="30" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.Column="1"/>
         <Label x:Name="VendorPatch" Content="Failed // Not Applicable" Margin="0,345,10,0" VerticalAlignment="Top" Height="30" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.Column="1"/>
         <Label x:Name="BoardName" Content="Failed // Not Applicable" Margin="0,375,10,0" VerticalAlignment="Top" Height="30" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.Column="1" Grid.RowSpan="2"/>
-        <Label x:Name="Title_Copy12" Content="Warning: Plug your device in with USB debugging enabled before using this feature." Margin="10,0,10,60" VerticalAlignment="Bottom" Height="19" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="8" Grid.ColumnSpan="2" Grid.Row="1"/>
-        <Label x:Name="Title_Copy13" Content="If a field shows up as empty, that field does not apply to your device (e.g. Treble Support)." Margin="10,0,10,79" VerticalAlignment="Bottom" Height="19" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="7" Grid.ColumnSpan="2" Grid.Row="1"/>
-        <Label x:Name="Title_Copy14" Content=" If everything shows up as empty, please reinstall your ADB drivers and enable USB Debugging." Margin="10,0,10,98" VerticalAlignment="Bottom" Height="19" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="7" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <Label x:Name="Warning" Content="Warning: Plug your device in with USB debugging enabled before using this feature." Margin="10,0,10,60" VerticalAlignment="Bottom" Height="19" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="8" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <Label x:Name="NotDetected" Content="One or more fields failed to retrieve the info. Check if your device has USB debugging enabled." Margin="10,0,10,79" VerticalAlignment="Bottom" Height="19" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="7" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <Label x:Name="Title_Copy12" Content="Device Information" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.ColumnSpan="2" Height="30" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

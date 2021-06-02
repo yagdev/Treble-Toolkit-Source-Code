@@ -79,7 +79,7 @@ namespace Treble_Toolkit
 
         private void BACK_Click(object sender, RoutedEventArgs e)
         {
-            Uri uri = new Uri("HomeScreen.xaml", UriKind.Relative);
+            Uri uri = new Uri("More.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);
         }
     }

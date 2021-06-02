@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Media.Animation;
+using System.Diagnostics;
 
 namespace Treble_Toolkit
 {
@@ -38,6 +39,12 @@ namespace Treble_Toolkit
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
+            String command = @"/C wmic process where name='adb.exe' delete";
+            ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
+            cmdsi.WindowStyle = ProcessWindowStyle.Hidden;
+            cmdsi.Arguments = command;
+            Process cmd = Process.Start(cmdsi);
+            cmd.WaitForExit();
             Application.Current.Shutdown();
         }
 
