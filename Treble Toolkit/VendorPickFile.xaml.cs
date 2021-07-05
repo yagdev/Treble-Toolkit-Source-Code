@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.IO;
 using System.Diagnostics;
 using System.Windows.Media.Animation;
@@ -28,16 +17,26 @@ namespace Treble_Toolkit
             InitializeComponent();
             NotFound.Visibility = Visibility.Hidden;
             FileSize.Visibility = Visibility.Hidden;
-            grid.Opacity = 0;
-            Grid r = (Grid)grid;
-            DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
-            r.BeginAnimation(Grid.OpacityProperty, animation);
+            string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotAnimated.txt");
+            if (File.Exists(IsAnimated))
+            {
+
+            }
+            else
+            {
+                GridMain.Opacity = 0;
+                Grid r = (Grid)GridMain;
+                DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
+                r.BeginAnimation(Grid.OpacityProperty, animation);
+            }
             String command = @"/C cd .. & cd Place_Files_Here & cd Vendor & ren * vendor.img & start .";
             ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
             cmdsi.WindowStyle = ProcessWindowStyle.Hidden;
             cmdsi.Arguments = command;
             Process cmd = Process.Start(cmdsi);
             cmd.WaitForExit();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)

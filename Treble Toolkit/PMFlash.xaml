@@ -7,9 +7,9 @@
       xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
       mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight="565"
       Title="GSIAFlash"
-      fw:AcrylicWindow.Enabled="True" Background="{DynamicResource SystemAltMediumHighColorBrush}" >
+      fw:AcrylicWindow.Enabled="True">
 
-    <Grid x:Name="grid">
+    <Grid x:Name="GridMain">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="14*" MaxWidth="300"/>
             <ColumnDefinition Width="10*"/>

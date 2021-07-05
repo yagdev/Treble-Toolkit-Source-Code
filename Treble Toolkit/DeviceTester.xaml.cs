@@ -1,19 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Media.Animation;
-using System.Diagnostics;
+using System.IO;
 
 namespace Treble_Toolkit
 {
@@ -26,10 +15,18 @@ namespace Treble_Toolkit
         {
             InitializeComponent();
             NotDetected.Visibility = Visibility.Hidden;
-            grid.Opacity = 0;
-            Grid r = (Grid)grid;
-            DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
-            r.BeginAnimation(Grid.OpacityProperty, animation);
+            string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotAnimated.txt");
+            if (File.Exists(IsAnimated))
+            {
+
+            }
+            else
+            {
+                GridMain.Opacity = 0;
+                Grid r = (Grid)GridMain;
+                DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
+                r.BeginAnimation(Grid.OpacityProperty, animation);
+            }
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.UseShellExecute = false;
@@ -276,6 +273,8 @@ namespace Treble_Toolkit
             {
                 Warning.Visibility = Visibility.Hidden;
             }
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
         }
 
         private void BackAbout_Click(object sender, RoutedEventArgs e)

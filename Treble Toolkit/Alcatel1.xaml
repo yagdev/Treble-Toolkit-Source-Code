@@ -6,7 +6,54 @@
       xmlns:local="clr-namespace:Treble_Toolkit"
       xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
       mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight="565"
-      fw:AcrylicWindow.Enabled="True" Background="{DynamicResource SystemAltMediumHighColorBrush}" >
+      fw:AcrylicWindow.Enabled="True">
+    <Page.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="Button21.7.1" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="2" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" CornerRadius="9.5">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true"/>
+                            <Trigger Property="IsPressed" Value="true"/>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
 
     <Grid x:Name="GridMain">
         <Grid.RowDefinitions>
@@ -18,14 +65,10 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <TextBlock x:Name="Changelog" Margin="10,55,10,4" TextWrapping="Wrap" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="2"><Run Foreground="White" FontSize="12" Text="SoC: "/><Run Foreground="White" FontSize="12" Text="Mediatek MT6739"/><Run Foreground="White" FontSize="12" Text=" ("/><Run Foreground="White" FontSize="12" Text="4C"/><Run Foreground="White" FontSize="12" Text="/"/><Run Foreground="White" FontSize="12" Text="4"/><Run Foreground="White" FontSize="12" Text="T)"/><LineBreak/><Run Foreground="White" FontSize="12" Text="Storage + RAM Configuration: 8"/><Run Foreground="White" FontSize="12" Text="G/"/><Run Foreground="White" FontSize="12" Text="1"/><Run Foreground="White" FontSize="12" Text="G"/><LineBreak/><Run Foreground="White" FontSize="12" Text="Back Cameras: "/><Run Foreground="White" FontSize="12" Text="8MP (Main)"/><LineBreak/><Run Foreground="White" FontSize="12" Text="Front Camera: "/><Run Foreground="White" FontSize="12" Text="5"/><Run Foreground="White" FontSize="12" Text="MP"/><LineBreak/><Run Foreground="White" FontSize="12" Text="Display: LCD"/><Run Foreground="White" FontSize="12" Text=" ("/><Run Foreground="White" FontSize="12" Text="960"/><Run Foreground="White" FontSize="12" Text="*"/><Run Foreground="White" FontSize="12" Text="540"/><Run Foreground="White" FontSize="12" Text=" @ "/><Run Foreground="White" FontSize="12" Text="6"/><Run Foreground="White" FontSize="12" Text="0Hz) ("/><Run Foreground="White" FontSize="12" Text="5,0"/><Run Foreground="White" FontSize="12" Text="&quot;)"/><LineBreak/><Run Foreground="White" FontSize="12" Text="Battery: "/><Run Foreground="White" FontSize="12" Text="2000"/><Run Foreground="White" FontSize="12" Text="MAh ("/><Run Foreground="White" FontSize="12" Text="User "/><Run Foreground="White" FontSize="12" Text="Removable)"/><LineBreak/><Run Foreground="White" FontSize="12" Text="Misc: USB"/><Run Foreground="White" FontSize="12" Text=" Micro-B"/><LineBreak/><Run Foreground="White" FontSize="12"/><LineBreak/><Run Foreground="White" FontSize="12" Text="Notes: TWRP Flashing is not supported in this device due to a restritive bootloader."/></TextBlock>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="1,0,10,10" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Bottom" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="1" Grid.Row="1"/>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="10,0,1,10" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Bottom" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Row="1"/>
-        <Label Content="More" Margin="1,0,10,10" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.Column="1" Grid.Row="1"/>
-        <Label Content="Back" Margin="10,0,1,10" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.Row="1"/>
-        <Button x:Name="BackAbout" Content="Button" Margin="10,0,1,10" VerticalAlignment="Bottom" Height="50" Opacity="0" Grid.Row="1" Click="BackAbout_Click"/>
-        <Button x:Name="UpdateAbout" Content="Button" Margin="1,10,10,10" VerticalAlignment="Center" Height="50" Opacity="0" Grid.Column="1" Grid.Row="1" Click="More_Click"/>
         <Label x:Name="Title" Content="Alcatel 1 (2018)" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.ColumnSpan="2" Height="30" VerticalAlignment="Top"/>
         <Label x:Name="VersionString" Content="Android 8.1 (A)" Margin="0,30,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Top"/>
+        <Button x:Name="BackAbout" Content="Back" Margin="10,0,1,10" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseLowColorBrush}" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.7.1}" Click="BackAbout_Click" Grid.Row="1"/>
+        <Button x:Name="UpdateAbout" Content="More" Margin="1,0,10,10" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseLowColorBrush}" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.7.1}" Click="More_Click" Grid.Row="1" Grid.Column="1"/>
 
     </Grid>
 </Page>

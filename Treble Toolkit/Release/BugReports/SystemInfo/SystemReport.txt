@@ -1,48 +1,42 @@
 Treble Toolkit System Report
 ©2021 YAG-dev
 
-Host Name:                 DESKTOP-530PG07
+Host Name:                 DESKTOP-AVDBJVA
 OS Name:                   Microsoft Windows 10 Home
-OS Version:                10.0.19042 N/A Build 19042
+OS Version:                10.0.19043 N/A Build 19043
 OS Manufacturer:           Microsoft Corporation
 OS Configuration:          Standalone Workstation
 OS Build Type:             Multiprocessor Free
-Registered Owner:          N/A
-Registered Organization:   N/A
+Registered Owner:          dinisp25@gmail.com
+Registered Organization:   
 Product ID:                00325-80263-47997-AAOEM
-Original Install Date:     04/05/2021, 16:04:06
-System Boot Time:          20/05/2021, 13:59:51
-System Manufacturer:       TOSHIBA
-System Model:              SATELLITE P50-C
+Original Install Date:     02/06/2021, 23:40:06
+System Boot Time:          03/06/2021, 21:50:26
+System Manufacturer:       Acidanthera
+System Model:              MacBookPro13,1
 System Type:               x64-based PC
 Processor(s):              1 Processor(s) Installed.
                            [01]: Intel64 Family 6 Model 78 Stepping 3 GenuineIntel ~2300 Mhz
-BIOS Version:              INSYDE Corp. 1.70, 05/07/2017
-Windows Directory:         C:\WINDOWS
-System Directory:          C:\WINDOWS\system32
+BIOS Version:              Acidanthera 429.100.7.0.0, 26/02/2021
+Windows Directory:         C:\Windows
+System Directory:          C:\Windows\system32
 Boot Device:               \Device\HarddiskVolume1
 System Locale:             pt;Portuguˆs (Portugal)
 Input Locale:              pt;Portuguˆs (Portugal)
 Time Zone:                 (UTC+00:00) Dublin, Edimburgo, Lisboa, Londres
 Total Physical Memory:     16ÿ218 MB
-Available Physical Memory: 8ÿ684 MB
-Virtual Memory: Max Size:  22ÿ124 MB
-Virtual Memory: Available: 12ÿ085 MB
-Virtual Memory: In Use:    10ÿ039 MB
+Available Physical Memory: 8ÿ182 MB
+Virtual Memory: Max Size:  19ÿ162 MB
+Virtual Memory: Available: 9ÿ969 MB
+Virtual Memory: In Use:    9ÿ193 MB
 Page File Location(s):     C:\pagefile.sys
 Domain:                    WORKGROUP
-Logon Server:              \\DESKTOP-530PG07
-Hotfix(s):                 10 Hotfix(s) Installed.
-                           [01]: KB4601554
-                           [02]: KB4562830
-                           [03]: KB4570334
-                           [04]: KB4577586
-                           [05]: KB4580325
-                           [06]: KB4586864
-                           [07]: KB4589212
-                           [08]: KB4598481
-                           [09]: KB5003173
-                           [10]: KB5003242
+Logon Server:              \\DESKTOP-AVDBJVA
+Hotfix(s):                 4 Hotfix(s) Installed.
+                           [01]: KB5003254
+                           [02]: KB5000736
+                           [03]: KB5003214
+                           [04]: KB5003503
 Network Card(s):           3 NIC(s) Installed.
                            [01]: Realtek PCIe GBE Family Controller
                                  Connection Name: Ethernet
@@ -52,8 +46,7 @@ Network Card(s):           3 NIC(s) Installed.
                                  DHCP Enabled:    Yes
                                  DHCP Server:     192.168.1.254
                                  IP address(es)
-                                 [01]: 192.168.1.79
-                                 [02]: fe80::c7f:8595:2a53:8209
+                                 [01]: 192.168.1.70
                            [03]: Bluetooth Device (Personal Area Network)
                                  Connection Name: Liga‡Æo de Rede Bluetooth
                                  Status:          Media disconnected
@@ -61,6 +54,6 @@ Hyper-V Requirements:      VM Monitor Mode Extensions: Yes
                            Virtualization Enabled In Firmware: Yes
                            Second Level Address Translation: Yes
                            Data Execution Prevention Available: Yes
-Deleting instance \\DESKTOP-530PG07\ROOT\CIMV2:Win32_Process.Handle="10812"
+Deleting instance \\DESKTOP-AVDBJVA\ROOT\CIMV2:Win32_Process.Handle="20832"
 Instance deletion successful.
 

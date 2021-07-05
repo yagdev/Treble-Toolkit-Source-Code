@@ -1,22 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Media.Animation;
 using System.Net;
-using System.Threading;
-using System.Diagnostics;
 using System.ComponentModel;
+using System.IO;
 
 namespace Treble_Toolkit
 {
@@ -28,11 +16,21 @@ namespace Treble_Toolkit
         public OnePlus6DSF()
         {
             InitializeComponent();
-            grid.Opacity = 0;
-            Grid r = (Grid)grid;
-            DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
-            r.BeginAnimation(Grid.OpacityProperty, animation);
+            string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotAnimated.txt");
+            if (File.Exists(IsAnimated))
+            {
+
+            }
+            else
+            {
+                GridMain.Opacity = 0;
+                Grid r = (Grid)GridMain;
+                DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
+                r.BeginAnimation(Grid.OpacityProperty, animation);
+            }
             status_pgr.Visibility = Visibility.Hidden;
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
         }
 
         private void HM10L_Click(object sender, RoutedEventArgs e)
@@ -42,8 +40,8 @@ namespace Treble_Toolkit
                 string TWRPDownloadLocationTemp = System.IO.Path.Combine(Environment.CurrentDirectory, @"..", "Place_Files_Here", "TWRP", "twrp.img");
                 if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
                 {
-                    DLLabel.Content = "Starting Download...";
-                    DLLabel.FontSize = 16;
+                    BackAbout.Content = "Starting Download...";
+                    BackAbout.FontSize = 16;
                     status_pgr.Visibility = Visibility.Visible;
                     using (System.Net.WebClient client = new System.Net.WebClient())
                     {
@@ -55,8 +53,8 @@ namespace Treble_Toolkit
                 }
                 else
                 {
-                    DLLabel.Content = "You need an internet connection for this...";
-                    DLLabel.FontSize = 10;
+                    BackAbout.Content = "You need an internet connection for this...";
+                    BackAbout.FontSize = 10;
                 }
             }
         }
@@ -69,7 +67,7 @@ namespace Treble_Toolkit
         private void Completed(object sender, AsyncCompletedEventArgs e)
         {
             status_pgr.Visibility = Visibility.Hidden;
-            DLLabel.Content = "Download Finished";
+            BackAbout.Content = "Download Finished";
         }
 
         private void BACK_Click(object sender, RoutedEventArgs e)

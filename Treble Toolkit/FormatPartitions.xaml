@@ -7,9 +7,56 @@
       xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
       mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight="380"
       Title="HomeScreen"
-      fw:AcrylicWindow.Enabled="True" Background="{DynamicResource SystemAltMediumHighColorBrush}" >
+      fw:AcrylicWindow.Enabled="True">
+    <Page.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="Button21.7.1" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="2" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" CornerRadius="9.5">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true"/>
+                            <Trigger Property="IsPressed" Value="true"/>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
 
-    <Grid x:Name="grid">
+    <Grid x:Name="GridMain">
         <Grid.RowDefinitions>
             <RowDefinition Height="9*"/>
             <RowDefinition/>
@@ -22,37 +69,21 @@
             <ColumnDefinition Width="10*"/>
             <ColumnDefinition FrameworkElement.FlowDirection="RightToLeft" MaxWidth="10"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Format Partitions" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.ColumnSpan="4" Height="40" VerticalAlignment="Top" Margin="0,5,0,0"/>
-        <Label Content="System" Margin="10,0,5,250" VerticalAlignment="Bottom" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.Row="2"/>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="48" Margin="1,0,0,250" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Bottom" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="2" Grid.Row="2"/>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="48" Margin="0,0,1,250" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Bottom" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="1" Grid.Row="2"/>
-        <Label Content="B" Margin="1,0,0,250" VerticalAlignment="Bottom" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.Column="2" Grid.Row="2"/>
-        <Label Content="A" Margin="0,0,1,250" VerticalAlignment="Bottom" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.Column="1" Grid.Row="2"/>
-        <Label Content="Boot" Margin="10,0,5,200" VerticalAlignment="Bottom" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.Row="2"/>
-        <Label Content="Userdata" Margin="10,0,5,150" VerticalAlignment="Bottom" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.Row="2"/>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="48" Margin="0,0,0,150" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Bottom" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2"/>
-        <Label Content="Userdata" Margin="0,0,0,150" VerticalAlignment="Bottom" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2"/>
-        <Label Content="Cache" Margin="0,0,0,100" VerticalAlignment="Bottom" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.Row="2"/>
-        <Label Content="Back" Margin="10,0,5,0" VerticalAlignment="Bottom" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.Row="2"/>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="48" Margin="1,0,0,200" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Bottom" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="2" Grid.Row="2"/>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="48" Margin="0,0,1,200" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Bottom" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="1" Grid.Row="2"/>
-        <Label Content="B" Margin="1,0,0,200" VerticalAlignment="Bottom" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.Column="2" Grid.Row="2"/>
-        <Label Content="A" Margin="0,0,1,200" VerticalAlignment="Bottom" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.Column="1" Grid.Row="2"/>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="48" Margin="0,0,0,100" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Bottom" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2"/>
-        <Label Content="Cache" Margin="0,0,0,100" VerticalAlignment="Bottom" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2"/>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="48" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Bottom" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2"/>
-        <Label Content="Back" VerticalAlignment="Bottom" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2"/>
-        <Button Content="Button" Margin="0,0,1,250" VerticalAlignment="Bottom" Height="48" Opacity="0" Click="AButton_Click" Grid.Column="1" Grid.Row="2"/>
-        <Button Content="Button" Grid.Row="2" VerticalAlignment="Bottom" Height="48" Opacity="0" Click="BackButton_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <Button Content="Button" Margin="1,0,0,250" VerticalAlignment="Bottom" Height="48" Opacity="0" Click="BButton_Click" Grid.Column="2" Grid.Row="2"/>
-        <Button Content="Button" Margin="0,0,1,200" Grid.Row="2" VerticalAlignment="Bottom" Height="48" Opacity="0" Click="A2Button_Click" Grid.Column="1"/>
-        <Button Content="Button" Margin="1,0,0,200" Grid.Row="2" VerticalAlignment="Bottom" Height="48" Opacity="0" Click="B2Button_Click" Grid.Column="2"/>
-        <Button Content="Button" Margin="0,0,0,150" Grid.Row="2" VerticalAlignment="Bottom" Height="48" Opacity="0" Click="UButton_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <Button Content="Button" Margin="0,0,0,100" Grid.Row="2" VerticalAlignment="Bottom" Height="48" Opacity="0" Click="CButton_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <Label Content="Vendor" Margin="0,0,0,50" VerticalAlignment="Bottom" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.Row="2"/>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="48" Margin="0,0,0,50" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Bottom" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2"/>
-        <Label Content="Vendor" Margin="0,0,0,50" VerticalAlignment="Bottom" Height="48" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2"/>
-        <Button Content="Button" Margin="0,0,0,50" Grid.Row="2" VerticalAlignment="Bottom" Height="48" Opacity="0" Click="VendorButton_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Label Content="System" Margin="10,0,5,260" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.Row="2"/>
+        <Label Content="Boot" Margin="10,0,5,208" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.Row="2"/>
+        <Label Content="Userdata" Margin="10,0,5,156" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.Row="2"/>
+        <Label Content="Cache" Margin="0,0,0,104" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.Row="2"/>
+        <Label Content="Back" Margin="10,0,5,0" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.Row="2"/>
+        <Label Content="Vendor" Margin="0,0,0,52" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.Row="2"/>
+        <Button x:Name="BackAbout_Copy" Content="A" Margin="0,0,1,260" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseLowColorBrush}" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.7.1}" Click="AButton_Click" Grid.Column="1" Grid.Row="2"/>
+        <Button x:Name="BackAbout_Copy1" Content="B" Margin="1,0,0,260" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseLowColorBrush}" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.7.1}" Click="BButton_Click" Grid.Column="2" Grid.Row="2"/>
+        <Button x:Name="BackAbout_Copy2" Content="A" Margin="0,0,1,208" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseLowColorBrush}" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.7.1}" Click="A2Button_Click" Grid.Column="1" Grid.Row="2"/>
+        <Button x:Name="BackAbout_Copy3" Content="B" Margin="1,0,0,208" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseLowColorBrush}" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.7.1}" Click="B2Button_Click" Grid.Column="2" Grid.Row="2"/>
+        <Button x:Name="BackAbout_Copy4" Content="Userdata" Margin="0,0,0,156" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseLowColorBrush}" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.7.1}" Click="UButton_Click" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2"/>
+        <Button x:Name="BackAbout_Copy5" Content="Cache" Margin="0,0,0,104" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseLowColorBrush}" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.7.1}" Click="CButton_Click" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2"/>
+        <Button x:Name="BackAbout_Copy6" Content="Vendor" Margin="0,0,0,52" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseLowColorBrush}" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.7.1}" Click="VendorButton_Click" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2"/>
+        <Button x:Name="BackAbout_Copy7" Content="Back" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseLowColorBrush}" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.7.1}" Click="BackButton_Click" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2"/>
+        <Label Content="Format Partitions" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.ColumnSpan="4" Height="30" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

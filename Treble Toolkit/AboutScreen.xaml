@@ -5,31 +5,75 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Treble_Toolkit"
       xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
-      mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight="565"
-      fw:AcrylicWindow.Enabled="True" Background="{DynamicResource SystemAltMediumHighColorBrush}" >
+      mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight="2000"
+      fw:AcrylicWindow.Enabled="True">
+    <Page.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="Button21.7.1" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="2" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" CornerRadius="9.5">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true"/>
+                            <Trigger Property="IsPressed" Value="true"/>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
 
     <Grid x:Name="GridMain">
         <Grid.RowDefinitions>
-            <RowDefinition Height="88*"/>
-            <RowDefinition Height="25*"/>
+            <RowDefinition Height="1759*"/>
+            <RowDefinition Height="241*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock x:Name="Changelog" Margin="10,55,10,19" TextWrapping="Wrap" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="2"><Run Text="Welcome to the new and improved Treble Toolkit!"/><LineBreak/><Run Text="Here's what's new:"/><LineBreak/><Run Text="[Important] More Bugfixes"/><LineBreak/><Run Text="[Important] "/><Run Text="Polished a lot of features"/><LineBreak/><Run Text="[Platform Tools] Updated to v31.0.2"/><LineBreak/><Run Text="[Feature] Added Vendor Flashing"/><LineBreak/><Run Text="[Feature] Introduction of the Beta Program"/><LineBreak/><Run Text="[Feature] First implementation of &quot;Device Specific Features&quot; which allows you to download TWRP for your device with one click"/><LineBreak/><Run Text="[Bug Reporting] "/><Run Text="Introduced &quot;Bug Reporting v2&quot; which creates a log file with system info to make it easier to identify the problem"/><LineBreak/><Run Text="[Misc] Design Touchups"/><LineBreak/><Run Text="[Misc] Moved &quot;Compatible Devices&quot; to &quot;More&quot;"/></TextBlock>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="1,0,10,10" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Bottom" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Column="1" Grid.Row="1"/>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="10,0,1,10" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Bottom" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.Row="1"/>
-        <Label Content="Update" Margin="1,0,10,10" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.Column="1" Grid.Row="1"/>
-        <Label Content="Back" Margin="10,0,1,10" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.Row="1"/>
-        <Button x:Name="BackAbout" Content="Button" Margin="10,0,1,10" VerticalAlignment="Bottom" Height="50" Opacity="0" Grid.Row="1" Click="BackAbout_Click"/>
-        <Button x:Name="UpdateAbout" Content="Button" Margin="1,0,10,10" VerticalAlignment="Bottom" Height="50" Opacity="0" Grid.Column="1" Grid.Row="1" Click="UpdateAbout_Click"/>
-        <Rectangle Fill="{DynamicResource SystemBaseLowColorBrush}" Height="50" Margin="10,0,10,62" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" VerticalAlignment="Bottom" RadiusY="9.5" RadiusX="9.5" StrokeThickness="2" Grid.ColumnSpan="2" Grid.Row="1"/>
-        <Label Content="Discover This Version" Margin="10,0,10,62" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Grid.ColumnSpan="2" Grid.Row="1"/>
-        <Button x:Name="UpdateAbout_Copy" Content="Button" Margin="10,0,10,62" VerticalAlignment="Bottom" Height="50" Opacity="0" Click="DiscoverAbout_Click" Grid.ColumnSpan="2" Grid.Row="1"/>
-        <TextBlock x:Name="Changelog_Copy" Margin="10,0,10,117" TextWrapping="Wrap" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="2" Text="©2021 YAG-dev · Platform Tools v31.0.2" Height="18" VerticalAlignment="Bottom" Grid.RowSpan="2"/>
-        <Label x:Name="Title" Content="Treble Toolkit" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.ColumnSpan="2" Height="30" VerticalAlignment="Top"/>
-        <Label x:Name="VersionString" Content="Version 21.6.1" Margin="0,30,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Top"/>
+        <TextBlock x:Name="Changelog" Margin="10,55,10,10" TextWrapping="Wrap" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="2"><Run Text="Welcome to the new and improved Treble Toolkit!"/><LineBreak/><Run Text="Here's what's new:"/><LineBreak/><Run Text="Beta 1"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="·"/><Run Text=" Even more bugfixes"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="·"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text=" "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Major performance upgrade"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="·"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text=" Changes in buttons (previous structure: Button, Label, Rectangle, new structure: Button with Label and Rectangle functions)"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="·"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text=" Changes in feature names"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="·"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text=" Changes in the update framework to smooth out the 32 bit discontinuation process"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="A lot of optimization done to the updater"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Beta 2"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Fixed an issue with the beta program and reinstalling/updating launcher"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="·"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text=" Animations 2.0 - Now tog"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="g"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="l"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="e"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="able and enabled on the Launcher (Toggle them in the new settings menu)"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="·"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text=" Huge overall optimization"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="·"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text=" New settings menu where you can toggle the animations and transparency"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="·"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text=" New transparent theme"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Beta 3"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Fixed crash when joining the beta program for the first time"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Fully implemented the new updating server"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Final"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Added Bug Reports 2.0"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Fixed some incorrect strings"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Final Touchups"/></TextBlock>
+        <TextBlock x:Name="Changelog_Copy" Margin="10,0,10,216" TextWrapping="Wrap" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="2" Height="18" VerticalAlignment="Bottom" Grid.Row="1"><Run Text="©2021 YAG-dev · Platform Tools v31.0.2"/><Run Text=" "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="·"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text=" Last 32-bit release!"/></TextBlock>
+        <Label x:Name="Title" Content="Treble Toolkit Beta" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.ColumnSpan="2" Height="30" VerticalAlignment="Top"/>
+        <Label x:Name="VersionString" Content="Version 21.7.1" Margin="0,30,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Top"/>
+        <Button x:Name="UpdateAbout_Copy1" Content="Discover This Version" Margin="10,0,1,62" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseLowColorBrush}" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.7.1}" Click="DiscoverAbout_Click" Grid.Row="1"/>
+        <Button x:Name="BackAbout" Content="Back" Margin="10,0,1,10" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseLowColorBrush}" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.7.1}" Click="BackAbout_Click" Grid.Row="1"/>
+        <Button x:Name="UpdateAbout" Content="Update" Margin="1,0,10,10" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseLowColorBrush}" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.7.1}" Click="UpdateAbout_Click" Grid.Row="1" Grid.Column="1"/>
+        <Button x:Name="Settings" Content="Settings" Margin="1,0,10,62" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseLowColorBrush}" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.7.1}" Click="Settings_Click" Grid.Row="1" Grid.Column="1"/>
+        <Button x:Name="Settings_Copy" Content="Learn about the 32-bit discontinuation" Margin="10,0,10,114" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseLowColorBrush}" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.7.1}" Click="thirtytwobitclick" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <Button x:Name="Settings_Copy1" Content="Time Machine" Margin="10,0,10,166" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseLowColorBrush}" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.7.1}" Click="AnniversaryEvent" Grid.ColumnSpan="2" Grid.Row="1"/>
 
     </Grid>
 </Page>

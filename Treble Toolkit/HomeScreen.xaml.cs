@@ -1,19 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Diagnostics;
 using System.Windows.Media.Animation;
+using System.IO;
 
 namespace Treble_Toolkit
 {
@@ -25,10 +15,18 @@ namespace Treble_Toolkit
         public HomeScreen()
         {
             InitializeComponent();
-            grid.Opacity = 0;
-            Grid r = (Grid)grid;
-            DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
-            r.BeginAnimation(Grid.OpacityProperty, animation);
+            string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotAnimated.txt");
+            if (File.Exists(IsAnimated))
+            {
+
+            }
+            else
+            {
+                GridMain.Opacity = 0;
+                Grid r = (Grid)GridMain;
+                DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
+                r.BeginAnimation(Grid.OpacityProperty, animation);
+            }
             if (Environment.Is64BitOperatingSystem)
             {
                 
@@ -36,8 +34,10 @@ namespace Treble_Toolkit
             else
             {
                 copyright.FontSize = 10;
-                copyright.Content = "©2021 YAG-dev · 32 Bit PCs will stop receiving updates in 2021.8.1";
+                copyright.Content = "©2021 YAG-dev · Last 32-bit major release";
             }
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
         }
         private void AboutButton_Click(object sender, RoutedEventArgs e)
         {
