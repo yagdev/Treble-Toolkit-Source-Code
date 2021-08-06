@@ -48,7 +48,7 @@ namespace Treble_Toolkit
                         WebClient webClient = new WebClient();
                         webClient.DownloadFileCompleted += new AsyncCompletedEventHandler(Completed);
                         webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler(ProgressChanged);
-                        webClient.DownloadFileAsync(new Uri("https://www.dropbox.com/s/2iixvu2ahnz5n64/twrp_mate10lite.img?dl=1"), TWRPDownloadLocationTemp);
+                        webClient.DownloadFileAsync(new Uri("https://drive.google.com/uc?export=download&id=1KKeZK_SFp2OUJhuO07oyjZ6bfh8Kg707"), TWRPDownloadLocationTemp);
                     }
                 }
                 else

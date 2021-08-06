@@ -3,20 +3,20 @@ Treble Toolkit System Report
 
 Host Name:                 DESKTOP-AVDBJVA
 OS Name:                   Microsoft Windows 11 Home
-OS Version:                10.0.21996 N/A Build 21996
+OS Version:                10.0.22000 N/A Build 22000
 OS Manufacturer:           Microsoft Corporation
 OS Configuration:          Standalone Workstation
 OS Build Type:             Multiprocessor Free
 Registered Owner:          N/A
 Registered Organization:   N/A
 Product ID:                00325-80263-47997-AAOEM
-Original Install Date:     6/22/2021, 1:00:07 PM
-System Boot Time:          6/30/2021, 2:10:52 PM
+Original Install Date:     7/5/2021, 9:59:20 PM
+System Boot Time:          7/25/2021, 7:42:40 AM
 System Manufacturer:       TOSHIBA
 System Model:              SATELLITE P50-C
 System Type:               x64-based PC
 Processor(s):              1 Processor(s) Installed.
-                           [01]: Intel64 Family 6 Model 78 Stepping 3 GenuineIntel ~1500 Mhz
+                           [01]: Intel64 Family 6 Model 78 Stepping 3 GenuineIntel ~2300 Mhz
 BIOS Version:              INSYDE Corp. 1.70, 7/5/2017
 Windows Directory:         C:\WINDOWS
 System Directory:          C:\WINDOWS\system32
@@ -25,34 +25,34 @@ System Locale:             en-us;English (United States)
 Input Locale:              pt;Portuguese (Portugal)
 Time Zone:                 (UTC+00:00) Dublin, Edinburgh, Lisbon, London
 Total Physical Memory:     16,218 MB
-Available Physical Memory: 9,358 MB
+Available Physical Memory: 9,660 MB
 Virtual Memory: Max Size:  18,650 MB
-Virtual Memory: Available: 11,208 MB
-Virtual Memory: In Use:    7,442 MB
+Virtual Memory: Available: 11,764 MB
+Virtual Memory: In Use:    6,886 MB
 Page File Location(s):     C:\pagefile.sys
 Domain:                    WORKGROUP
 Logon Server:              \\DESKTOP-AVDBJVA
-Hotfix(s):                 2 Hotfix(s) Installed.
-                           [01]: KB5004034
+Hotfix(s):                 5 Hotfix(s) Installed.
+                           [01]: KB5004342
                            [02]: KB5003792
+                           [03]: KB5004567
+                           [04]: KB5004300
+                           [05]: KB5005311
 Network Card(s):           3 NIC(s) Installed.
-                           [01]: Intel(R) Dual Band Wireless-AC 3165
+                           [01]: Realtek PCIe GBE Family Controller
+                                 Connection Name: Ethernet
+                                 Status:          Media disconnected
+                           [02]: Intel(R) Dual Band Wireless-AC 3165
                                  Connection Name: Wi-Fi
                                  DHCP Enabled:    Yes
                                  DHCP Server:     192.168.1.254
                                  IP address(es)
                                  [01]: 192.168.1.70
-                                 [02]: fe80::30c7:bf96:9e4b:3aed
-                                 [03]: 2001:8a0:6104:9b01:9c00:8f8c:1266:9323
-                                 [04]: 2001:8a0:6104:9b01:30c7:bf96:9e4b:3aed
-                           [02]: Realtek PCIe GBE Family Controller
-                                 Connection Name: Ethernet
+                                 [02]: fe80::525:8430:e9df:b573
+                                 [03]: 2001:8a0:6127:e001:54a8:95e:9b15:91ff
+                                 [04]: 2001:8a0:6127:e001:525:8430:e9df:b573
+                           [03]: TAP-Windows Adapter V9
+                                 Connection Name: Local Area Connection
                                  Status:          Media disconnected
-                           [03]: Bluetooth Device (Personal Area Network)
-                                 Connection Name: Bluetooth Network Connection
-                                 Status:          Media disconnected
-Hyper-V Requirements:      VM Monitor Mode Extensions: Yes
-                           Virtualization Enabled In Firmware: Yes
-                           Second Level Address Translation: Yes
-                           Data Execution Prevention Available: Yes
+Hyper-V Requirements:      A hypervisor has been detected. Features required for Hyper-V will not be displayed.
 
