@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CLConfiguration</name>
+    </assembly>
+    <members>
+        <member name="T:ChaseLabs.CLConfiguration.List.ConfigManager">
+            <summary>
+            <para>
+            Author: Drew Chase
+            </para>
+            <para>
+            Company: Chase Labs
+            </para>
+            </summary>
+        </member>
+        <member name="P:ChaseLabs.CLConfiguration.List.ConfigManager.Name">
+            <summary>
+            Sets the Name of the Config
+            <para>Good if You have multiple Configs</para>
+            </summary>
+        </member>
+        <member name="M:ChaseLabs.CLConfiguration.List.ConfigManager.ToString">
+            <summary>
+            Returns A Human Readable Version of the Config Class
+            <para>Example:</para>
+            <code>Default Config File</code>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ChaseLabs.CLConfiguration.List.ConfigManager.PATH">
+            <summary>
+            Returns the Current Path of the Config File
+            </summary>
+        </member>
+        <member name="M:ChaseLabs.CLConfiguration.List.ConfigManager.#ctor(System.String)">
+            <summary>
+            Initializes the Config Manager with a File Path
+            </summary>
+            <param name="_path"></param>
+        </member>
+        <member name="M:ChaseLabs.CLConfiguration.List.ConfigManager.FindPreExistingConfigs">
+            <summary>
+            Loads the Config File and PreExisting Configs
+            </summary>
+        </member>
+        <member name="M:ChaseLabs.CLConfiguration.List.ConfigManager.Size">
+            <summary>
+            Returns the Number of Config Inputs
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ChaseLabs.CLConfiguration.List.ConfigManager.GetConfigByKey(System.String)">
+            <summary>
+            Returns The Config Input based on Config Key.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ChaseLabs.CLConfiguration.List.ConfigManager.GetConfigByValue(System.String)">
+            <summary>
+            Returns The Config Input based on Config Value.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ChaseLabs.CLConfiguration.List.ConfigManager.GetConfigByIndex(System.Int32)">
+            <summary>
+            Returns The Config Input based on Config Index.
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ChaseLabs.CLConfiguration.List.ConfigManager.Add(ChaseLabs.CLConfiguration.Object.Config)">
+            <summary>
+            Adds a Config Input by Config Object
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="M:ChaseLabs.CLConfiguration.List.ConfigManager.Add(System.String,System.String)">
+            <summary>
+            Adds a Config to this ConfigManager using the Key and Value
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:ChaseLabs.CLConfiguration.List.ConfigManager.Remove(ChaseLabs.CLConfiguration.Object.Config)">
+            <summary>
+            Removes Config Input by Conifg Object
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="M:ChaseLabs.CLConfiguration.List.ConfigManager.Remove(System.Int32)">
+            <summary>
+            Removes Config Input by Index
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:ChaseLabs.CLConfiguration.List.ConfigManager.Remove(System.String)">
+            <summary>
+            Removes Config Input by Config Key
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:ChaseLabs.CLConfiguration.List.ConfigManager.List">
+            <summary>
+            Returns a ArrayList of all Config Objects
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ChaseLabs.CLConfiguration.List.ConfigManager.Read">
+            <summary>
+            Reads the Config File and Updates the Current Config Inputs
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ChaseLabs.CLConfiguration.List.ConfigManager.Write">
+            <summary>
+            Writes to file the Current List of Config Objects
+            <para>Example:</para>
+            <code>Key = Example<para>Value = Input<para>Output = "Example": "Input"</para></para></code>
+            </summary>
+        </member>
+        <member name="T:ChaseLabs.CLConfiguration.Interfaces.IConfig">
+            <summary>
+            The Skellington of a Config Object
+            </summary>
+        </member>
+        <member name="P:ChaseLabs.CLConfiguration.Interfaces.IConfig.Key">
+            <summary>
+            Returns the Configs Key
+            </summary>
+        </member>
+        <member name="P:ChaseLabs.CLConfiguration.Interfaces.IConfig.Value">
+            <summary>
+            Returns the Configs Value
+            </summary>
+        </member>
+        <member name="T:ChaseLabs.CLConfiguration.Object.Config">
+            <summary>
+            <para>
+            Author: Drew Chase
+            </para>
+            <para>
+            Company: Chase Labs
+            </para>
+            </summary>
+        </member>
+        <member name="P:ChaseLabs.CLConfiguration.Object.Config.Key">
+            <summary>
+            Returns the Configs Key
+            </summary>
+        </member>
+        <member name="P:ChaseLabs.CLConfiguration.Object.Config.Value">
+            <summary>
+            Returns the Configs Value
+            </summary>
+        </member>
+        <member name="M:ChaseLabs.CLConfiguration.Object.Config.#ctor(System.String,System.String,ChaseLabs.CLConfiguration.List.ConfigManager)">
+            <summary>
+            Creates a Config Object with Key and Value
+            </summary>
+            <param name="_key"></param>
+            <param name="_value"></param>
+        </member>
+        <member name="M:ChaseLabs.CLConfiguration.Object.Config.ParseInt">
+            <summary>
+            Attempts to Parse the Configs Value as Int
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ChaseLabs.CLConfiguration.Object.Config.ParseDouble">
+            <summary>
+            Attempts to Parse the Configs Value as Double
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ChaseLabs.CLConfiguration.Object.Config.ParseFloat">
+            <summary>
+            Attempts to Parse the Configs Value as Float
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ChaseLabs.CLConfiguration.Object.Config.ParseBoolean">
+            <summary>
+            Attempts to Parse the Configs Value as Boolean
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,20 @@
+﻿gui
+
+
+winexe
+C#
+.cs
+C:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\obj\Build21.8.1+\
+Treble_Toolkit
+none
+false
+
+C:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\App.xaml
+481122483287
+
+53228109702
+131-299482008
+AboutScreen.xaml;Alcatel1.xaml;CompatibleDevices.xaml;DeviceTester.xaml;FlashVendorFinished.xaml;FormatPartitions.xaml;GSIABFlash.xaml;GSIABPickAFile.xaml;GSIAFlash.xaml;GSIAPickAFile.xaml;GSIFlashTerminated.xaml;GSIFlashTerminatedAB.xaml;HM10LDSF.xaml;HomeScreen.xaml;HuaweiMate10Lite.xaml;MainWindow.xaml;MainWindow2.xaml;MainWindow3.xaml;More.xaml;OnePlus6.xaml;OnePlus6DSF.xaml;OnePlus8.xaml;OnePlus8DSF.xaml;PMFinished.xaml;PMFlash.xaml;ReportBug.xaml;ReportBugStep2.xaml;Settings.xaml;Sideloader.xaml;SideloaderPickFile.xaml;SideloadFinished.xaml;SonyXperia1.xaml;SonyXperia5.xaml;SonyXperiaXZ2.xaml;SXXZ2DSF.xaml;TWRPBoot.xaml;TWRPBootFinished.xaml;TWRPBootPickFile.xaml;TWRPFlash.xaml;TWRPFlashFinished.xaml;TWRPFlashPickFile.xaml;UnlockBootloader.xaml;UnlockedBootloader.xaml;VendorFinished.xaml;VendorFlash.xaml;VendorPickFile.xaml;XP1DSF.xaml;XP5DSF.xaml;
+
+False
+

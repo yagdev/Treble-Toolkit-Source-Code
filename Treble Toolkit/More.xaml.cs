@@ -50,7 +50,6 @@ namespace Treble_Toolkit
 
         private void APButton_Click(object sender, RoutedEventArgs e)
         {
-            AD.Content = "Testing...";
             Uri uri = new Uri("DeviceTester.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);
         }
@@ -64,6 +63,12 @@ namespace Treble_Toolkit
         private void DSF_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void StupidWindows(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("WindowsStupidDriverFix.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
         }
     }
 }

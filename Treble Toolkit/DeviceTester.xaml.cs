@@ -38,7 +38,6 @@ namespace Treble_Toolkit
             process.Start();
             string output = process.StandardOutput.ReadToEnd();
             process.WaitForExit();
-            Brand.Content = output;
             startInfo.UseShellExecute = false;
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
@@ -98,7 +97,6 @@ namespace Treble_Toolkit
             process.Start();
             string output7 = process.StandardOutput.ReadToEnd();
             process.WaitForExit();
-            BuildDate.Content = output7;
             startInfo.UseShellExecute = false;
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
@@ -138,7 +136,6 @@ namespace Treble_Toolkit
             process.Start();
             string output11 = process.StandardOutput.ReadToEnd();
             process.WaitForExit();
-            VendorPatch.Content = output11;
             startInfo.UseShellExecute = false;
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
@@ -148,7 +145,6 @@ namespace Treble_Toolkit
             process.Start();
             string output12 = process.StandardOutput.ReadToEnd();
             process.WaitForExit();
-            BoardName.Content = output12;
             if (output3.Contains("true") == true)
             {
                 SupportsTreble.Content = "Yes";
@@ -164,15 +160,6 @@ namespace Treble_Toolkit
             else
             {
                 IsEncrypted.Content = "No";
-            }
-            if (output.Length == 0)
-            {
-                Brand.Content = "Unable to retrieve";
-                NotDetected.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                Warning.Visibility = Visibility.Hidden;
             }
             if (output2.Length == 0)
             {
@@ -219,15 +206,6 @@ namespace Treble_Toolkit
             {
                 Warning.Visibility = Visibility.Hidden;
             }
-            if (output7.Length == 0)
-            {
-                BuildDate.Content = "Unable to retrieve";
-                NotDetected.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                Warning.Visibility = Visibility.Hidden;
-            }
             if (output8.Length == 0)
             {
                 IsEncrypted.Content = "Unable to retrieve";
@@ -249,24 +227,6 @@ namespace Treble_Toolkit
             if (output10.Length == 0)
             {
                 VendorSDK.Content = "Unable to retrieve";
-                NotDetected.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                Warning.Visibility = Visibility.Hidden;
-            }
-            if (output11.Length == 0)
-            {
-                VendorPatch.Content = "Unable to retrieve";
-                NotDetected.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                Warning.Visibility = Visibility.Hidden;
-            }
-            if (output12.Length == 0)
-            {
-                BoardName.Content = "Unable to retrieve";
                 NotDetected.Visibility = Visibility.Visible;
             }
             else
@@ -298,7 +258,6 @@ namespace Treble_Toolkit
             process.Start();
             string output = process.StandardOutput.ReadToEnd();
             process.WaitForExit();
-            Brand.Content = output;
             startInfo.UseShellExecute = false;
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
@@ -357,7 +316,6 @@ namespace Treble_Toolkit
             process.Start();
             string output7 = process.StandardOutput.ReadToEnd();
             process.WaitForExit();
-            BuildDate.Content = output7;
             startInfo.UseShellExecute = false;
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
@@ -397,7 +355,6 @@ namespace Treble_Toolkit
             process.Start();
             string output11 = process.StandardOutput.ReadToEnd();
             process.WaitForExit();
-            VendorPatch.Content = output11;
             startInfo.UseShellExecute = false;
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
@@ -407,7 +364,6 @@ namespace Treble_Toolkit
             process.Start();
             string output12 = process.StandardOutput.ReadToEnd();
             process.WaitForExit();
-            BoardName.Content = output12;
             if (output3.Contains("true") == true)
             {
                 SupportsTreble.Content = "Yes";
@@ -423,15 +379,6 @@ namespace Treble_Toolkit
             else
             {
                 IsEncrypted.Content = "No";
-            }
-            if (output.Length == 0)
-            {
-                Brand.Content = "Unable to retrieve";
-                NotDetected.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                Warning.Visibility = Visibility.Hidden;
             }
             if (output2.Length == 0)
             {
@@ -478,15 +425,6 @@ namespace Treble_Toolkit
             {
                 Warning.Visibility = Visibility.Hidden;
             }
-            if (output7.Length == 0)
-            {
-                BuildDate.Content = "Unable to retrieve";
-                NotDetected.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                Warning.Visibility = Visibility.Hidden;
-            }
             if (output8.Length == 0)
             {
                 IsEncrypted.Content = "Unable to retrieve";
@@ -508,24 +446,6 @@ namespace Treble_Toolkit
             if (output10.Length == 0)
             {
                 VendorSDK.Content = "Unable to retrieve";
-                NotDetected.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                Warning.Visibility = Visibility.Hidden;
-            }
-            if (output11.Length == 0)
-            {
-                VendorPatch.Content = "Unable to retrieve";
-                NotDetected.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                Warning.Visibility = Visibility.Hidden;
-            }
-            if (output12.Length == 0)
-            {
-                BoardName.Content = "Unable to retrieve";
                 NotDetected.Visibility = Visibility.Visible;
             }
             else

@@ -1,0 +1,20 @@
+﻿gui
+
+
+winexe
+C#
+.cs
+C:\Users\dinis\Documents\Treble Toolkit\21.9.1\Treble Toolkit\obj\x64\Debug\
+Treble_Toolkit
+none
+false
+
+C:\Users\dinis\Documents\Treble Toolkit\21.9.1\Treble Toolkit\App.xaml
+621823922054
+
+66-1863403927
+1311779854291
+AboutScreen.xaml;Alcatel1.xaml;BTULHW.xaml;CompatibilityCheck.xaml;CompatibleDevices.xaml;DeviceTester.xaml;FlashingGSITUT.xaml;FlashingVendorTUT.xaml;FlashVendorFinished.xaml;FormatPartitions.xaml;GSIABFlash.xaml;GSIABPickAFile.xaml;GSIAFlash.xaml;GSIAPickAFile.xaml;GSIFlashA.xaml;GSIFlashAB.xaml;GSIFlashTerminated.xaml;GSIFlashTerminatedAB.xaml;HM10LDSF.xaml;HomeScreen.xaml;HuaweiMate10Lite.xaml;MainWindow.xaml;MainWindow2.xaml;MainWindow3.xaml;More.xaml;OnePlus6.xaml;OnePlus6DSF.xaml;OnePlus8.xaml;OnePlus8DSF.xaml;PMFinished.xaml;PMFlash.xaml;PMTUT.xaml;QSG.xaml;QuickStartGuide.xaml;ReportBug.xaml;ReportBugStep2.xaml;Settings.xaml;Sideloader.xaml;SideloaderPickFile.xaml;SideloadFinished.xaml;SonyXperia1.xaml;SonyXperia5.xaml;SonyXperiaXZ2.xaml;SXXZ2DSF.xaml;TWRP.xaml;TWRPBoot.xaml;TWRPBootFinished.xaml;TWRPBootPickFile.xaml;TWRPFlash.xaml;TWRPFlashFinished.xaml;TWRPFlashPickFile.xaml;UnlockBootloader.xaml;UnlockBootloaderTut.xaml;UnlockedBootloader.xaml;VendorFinished.xaml;VendorFlash.xaml;VendorPickFile.xaml;Windows7Warning.xaml;WindowsStupidDriverFix.xaml;XP1DSF.xaml;XP5DSF.xaml;ZipSideloaderTUT.xaml;
+
+False
+

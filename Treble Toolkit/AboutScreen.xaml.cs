@@ -66,7 +66,7 @@ namespace Treble_Toolkit
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
             startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = "/C start https://youraveragegamer.wixsite.com/treble-toolkit/21-7-1";
+            startInfo.Arguments = "/C start https://youraveragegamer.wixsite.com/treble-toolkit/21-8-1";
             process.StartInfo = startInfo;
             process.Start();
         }
@@ -98,6 +98,12 @@ namespace Treble_Toolkit
             process.StartInfo = startInfo;
             process.Start();
             Application.Current.Shutdown();
+        }
+
+        private void DeviceSpecificFeatures_Copy4_Click(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("QSG.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
         }
     }
 }

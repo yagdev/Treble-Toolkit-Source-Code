@@ -17,6 +17,7 @@ namespace Treble_Toolkit
             string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotAnimated.txt");
             string IsTransparent = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotTransparent.txt");
             string IsTransparent2 = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "TransparentTheme.txt");
+            string VisibleCMD = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "VisibleCMD.txt");
             if (File.Exists(IsAnimated))
             {
                 AnimationsToggle.Content = "Enable Animations";
@@ -44,6 +45,14 @@ namespace Treble_Toolkit
             else
             {
                 TranparencyToggle.Content = "Disable Transparency";
+            }
+            if (File.Exists(VisibleCMD))
+            {
+                CMDVis.Content = "Disable CMD Prompt Visibility";
+            }
+            else
+            {
+                CMDVis.Content = "Enable CMD Prompt Visibility";
             }
             GC.Collect();
             GC.WaitForPendingFinalizers();
@@ -159,6 +168,33 @@ namespace Treble_Toolkit
             startInfo.Arguments = "/C wmic process where name='adb.exe' delete & wmic process where name='gui.exe' delete & start gui.exe";
             process.StartInfo = startInfo;
             process.Start();
+        }
+
+        private void CMDvis(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/C cd .. & cd .. & mkdir UpdateInfo & cd UpdateInfo & mkdir Settings";
+            process.StartInfo = startInfo;
+            process.Start();
+            process.WaitForExit();
+            string VisibleCMD = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "VisibleCMD.txt");
+            if (File.Exists(VisibleCMD))
+            {
+                File.Delete(VisibleCMD);
+                CMDVis.Content = "Enable CMD Prompt Visibility";
+            }
+            else
+            {
+                using (StreamWriter sw = File.CreateText(VisibleCMD))
+                {
+                    sw.WriteLine("Treble Toolkit Settings Item");
+                    sw.WriteLine("©2021 YAG-dev");
+                }
+                CMDVis.Content = "Disable CMD Prompt Visibility";
+            }
         }
     }
 }

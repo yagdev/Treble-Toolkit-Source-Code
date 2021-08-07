@@ -45,7 +45,6 @@ namespace Treble_Toolkit
 
         private void Next_Click(object sender, RoutedEventArgs e)
         {
-            Continuelbl.Content = "Checking...";
             String command5 = @"/C cd .. & cd Place_Files_Here & cd Sideload & ren * sideload.zip";
             ProcessStartInfo cmdsi5 = new ProcessStartInfo("cmd.exe");
             cmdsi5.Arguments = command5;

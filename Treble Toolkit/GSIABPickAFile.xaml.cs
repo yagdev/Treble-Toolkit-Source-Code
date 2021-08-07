@@ -45,7 +45,6 @@ namespace Treble_Toolkit
 
         private void Next_Click(object sender, RoutedEventArgs e)
         {
-            ContinueLbl.Content = "Checking...";
             String command = @"/C cd .. & cd Place_Files_Here & cd GSI & ren * system.img";
             ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
             cmdsi.Arguments = command;
@@ -61,12 +60,7 @@ namespace Treble_Toolkit
                 }
                 else
                 {
-                    String command2 = @"/C adb.exe reboot-bootloader & cd .. & mkdir Place_Files_Here & cd Place_Files_Here & mkdir boot & cd boot & ren *.img boot.img & cd .. & mkdir GSI & cd GSI & ren *.img system.img & cd .. & mkdir vbmeta & cd vbmeta & ren *.img vbmeta.img & cd .. & cd .. & cd assets & fastboot.exe format system_a & fastboot.exe format system_b & fastboot.exe format userdata & fastboot.exe --disable-verity --disable-verification flash vbmeta ../Place_Files_Here/vbmeta/vbmeta.img & fastboot.exe flash boot_a ../Place_Files_Here/boot/boot.img & fastboot.exe flash boot_b ../Place_Files_Here/boot/boot.img & fastboot.exe flash system_a ../Place_Files_Here/GSI/system.img & fastboot.exe flash system_b ../Place_Files_Here/GSI/system.img & fastboot.exe reboot & cd .. & cd Place_Files_Here & mkdir boot & mkdir GSI & mkdir vbmeta & wmic process where name='adb.exe' delete";
-                    ProcessStartInfo cmdsi2 = new ProcessStartInfo("cmd.exe");
-                    cmdsi2.Arguments = command2;
-                    Process cmd2 = Process.Start(cmdsi2);
-                    cmd2.WaitForExit();
-                    Uri uri = new Uri("GSIFlashTerminatedAB.xaml", UriKind.Relative);
+                    Uri uri = new Uri("GSIFlashAB.xaml", UriKind.Relative);
                     this.NavigationService.Navigate(uri);
                 }
             }

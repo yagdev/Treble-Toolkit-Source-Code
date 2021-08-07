@@ -89,8 +89,7 @@ namespace Treble_Toolkit
 
         private void FreeCMD_Click(object sender, RoutedEventArgs e)
         {
-            const string strCmdText = "/C start FreeCMD.exe";
-            Process.Start("CMD.exe", strCmdText);
+            Process.Start("CMD.exe");
         }
 
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
