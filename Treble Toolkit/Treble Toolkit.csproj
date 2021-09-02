@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Costura.Fody.5.1.0\build\Costura.Fody.props" Condition="Exists('..\packages\Costura.Fody.5.1.0\build\Costura.Fody.props')" />
+  <Import Project="..\packages\Microsoft.SourceLink.GitHub.1.0.0\build\Microsoft.SourceLink.GitHub.props" Condition="Exists('..\packages\Microsoft.SourceLink.GitHub.1.0.0\build\Microsoft.SourceLink.GitHub.props')" />
+  <Import Project="..\packages\Microsoft.SourceLink.Common.1.0.0\build\Microsoft.SourceLink.Common.props" Condition="Exists('..\packages\Microsoft.SourceLink.Common.1.0.0\build\Microsoft.SourceLink.Common.props')" />
+  <Import Project="..\packages\Microsoft.Build.Tasks.Git.1.0.0\build\Microsoft.Build.Tasks.Git.props" Condition="Exists('..\packages\Microsoft.Build.Tasks.Git.1.0.0\build\Microsoft.Build.Tasks.Git.props')" />
+  <Import Project="..\packages\Costura.Fody.5.4.0-alpha0042\build\Costura.Fody.props" Condition="Exists('..\packages\Costura.Fody.5.4.0-alpha0042\build\Costura.Fody.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,7 +12,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Treble_Toolkit</RootNamespace>
     <AssemblyName>gui</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -32,6 +35,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -55,25 +59,23 @@
   <PropertyGroup>
     <ApplicationIcon>TrebleToolkitIcon21.9.1.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Build21.8.1+|AnyCPU'">
+    <OutputPath>bin\Build21.8.1+\</OutputPath>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x64\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
     <PlatformTarget>x64</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
-    <Prefer32Bit>true</Prefer32Bit>
+    <OutputPath>bin\x64\Debug\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <OutputPath>bin\x64\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
     <PlatformTarget>x64</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
-    <Prefer32Bit>true</Prefer32Bit>
+    <OutputPath>bin\x64\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Build21.8.1+|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Build21.8.1+\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CLConfiguration, Version=0.0.4.0, Culture=neutral, processorArchitecture=MSIL">
@@ -82,11 +84,14 @@
     <Reference Include="CLUpdate, Version=0.0.9.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ChaseLabs.Updater.0.0.9\lib\netstandard2.0\CLUpdate.dll</HintPath>
     </Reference>
-    <Reference Include="Costura, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Costura.Fody.5.1.0\lib\netstandard1.0\Costura.dll</HintPath>
+    <Reference Include="Costura, Version=5.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Costura.Fody.5.4.0-alpha0042\lib\netstandard1.0\Costura.dll</HintPath>
     </Reference>
     <Reference Include="FluentWPF, Version=0.9.0.1, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentWPF.0.9.0\lib\net45\FluentWPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.1.1.1\lib\netstandard1.1\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
@@ -175,6 +180,9 @@
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
     </Reference>
+    <Reference Include="System.Reactive, Version=5.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.5.0.0\lib\net472\System.Reactive.dll</HintPath>
+    </Reference>
     <Reference Include="System.Reflection, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Reflection.4.3.0\lib\net462\System.Reflection.dll</HintPath>
       <Private>True</Private>
@@ -228,6 +236,11 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -244,17 +257,23 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="XamlFlair.WPF, Version=1.2.12.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\XamlFlair.WPF.1.2.12\lib\net48\XamlFlair.WPF.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="32bitlifecycleinfo.xaml.cs">
-      <DependentUpon>32bitlifecycleinfo.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Alcatel1.xaml.cs">
       <DependentUpon>Alcatel1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BTULHW.xaml.cs">
+      <DependentUpon>BTULHW.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CompatibilityCheck.xaml.cs">
+      <DependentUpon>CompatibilityCheck.xaml</DependentUpon>
     </Compile>
     <Compile Include="CompatibleDevices.xaml.cs">
       <DependentUpon>CompatibleDevices.xaml</DependentUpon>
@@ -262,11 +281,23 @@
     <Compile Include="DeviceTester.xaml.cs">
       <DependentUpon>DeviceTester.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FlashingGSITUT.xaml.cs">
+      <DependentUpon>FlashingGSITUT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FlashingVendorTUT.xaml.cs">
+      <DependentUpon>FlashingVendorTUT.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FlashVendorFinished.xaml.cs">
       <DependentUpon>FlashVendorFinished.xaml</DependentUpon>
     </Compile>
     <Compile Include="FormatPartitions.xaml.cs">
       <DependentUpon>FormatPartitions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GSIFlashA.xaml.cs">
+      <DependentUpon>GSIFlashA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GSIFlashAB.xaml.cs">
+      <DependentUpon>GSIFlashAB.xaml</DependentUpon>
     </Compile>
     <Compile Include="HM10LDSF.xaml.cs">
       <DependentUpon>HM10LDSF.xaml</DependentUpon>
@@ -301,6 +332,15 @@
     <Compile Include="PMFlash.xaml.cs">
       <DependentUpon>PMFlash.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PMTUT.xaml.cs">
+      <DependentUpon>PMTUT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="QSG.xaml.cs">
+      <DependentUpon>QSG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="QuickStartGuide.xaml.cs">
+      <DependentUpon>QuickStartGuide.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ReportBug.xaml.cs">
       <DependentUpon>ReportBug.xaml</DependentUpon>
     </Compile>
@@ -331,6 +371,9 @@
     <Compile Include="SXXZ2DSF.xaml.cs">
       <DependentUpon>SXXZ2DSF.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TWRP.xaml.cs">
+      <DependentUpon>TWRP.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TWRPBoot.xaml.cs">
       <DependentUpon>TWRPBoot.xaml</DependentUpon>
     </Compile>
@@ -352,6 +395,9 @@
     <Compile Include="UnlockBootloader.xaml.cs">
       <DependentUpon>UnlockBootloader.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UnlockBootloaderTut.xaml.cs">
+      <DependentUpon>UnlockBootloaderTut.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UnlockedBootloader.xaml.cs">
       <DependentUpon>UnlockedBootloader.xaml</DependentUpon>
     </Compile>
@@ -364,16 +410,21 @@
     <Compile Include="VendorPickFile.xaml.cs">
       <DependentUpon>VendorPickFile.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows7Warning.xaml.cs">
+      <DependentUpon>Windows7Warning.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsStupidDriverFix.xaml.cs">
+      <DependentUpon>WindowsStupidDriverFix.xaml</DependentUpon>
+    </Compile>
     <Compile Include="XP1DSF.xaml.cs">
       <DependentUpon>XP1DSF.xaml</DependentUpon>
     </Compile>
     <Compile Include="XP5DSF.xaml.cs">
       <DependentUpon>XP5DSF.xaml</DependentUpon>
     </Compile>
-    <Page Include="32bitlifecycleinfo.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <Compile Include="ZipSideloaderTUT.xaml.cs">
+      <DependentUpon>ZipSideloaderTUT.xaml</DependentUpon>
+    </Compile>
     <Page Include="AboutScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -382,11 +433,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="BTULHW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CompatibilityCheck.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CompatibleDevices.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DeviceTester.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FlashingGSITUT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FlashingVendorTUT.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -411,6 +478,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GSIAPickAFile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GSIFlashA.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GSIFlashAB.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -506,6 +581,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PMTUT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="QSG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="QuickStartGuide.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ReportBug.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -546,6 +633,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="TWRP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TWRPBoot.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -574,6 +665,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UnlockBootloaderTut.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UnlockedBootloader.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -590,11 +685,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows7Warning.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowsStupidDriverFix.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="XP1DSF.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="XP5DSF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ZipSideloaderTUT.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -618,6 +725,70 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Resource Include="Fonts\bahnschrift.ttf" />
+    <None Include="app.manifest" />
+    <Resource Include="Fonts\pro\SF-Pro-Display-Black.otf" />
+    <Resource Include="Fonts\pro\SF-Pro-Display-BlackItalic.otf" />
+    <Resource Include="Fonts\pro\SF-Pro-Display-Bold.otf" />
+    <Resource Include="Fonts\pro\SF-Pro-Display-BoldItalic.otf" />
+    <Resource Include="Fonts\pro\SF-Pro-Display-Heavy.otf" />
+    <Resource Include="Fonts\pro\SF-Pro-Display-HeavyItalic.otf" />
+    <Resource Include="Fonts\pro\SF-Pro-Display-Light.otf" />
+    <Resource Include="Fonts\pro\SF-Pro-Display-LightItalic.otf" />
+    <Resource Include="Fonts\pro\SF-Pro-Display-Medium.otf" />
+    <Resource Include="Fonts\pro\SF-Pro-Display-MediumItalic.otf" />
+    <Resource Include="Fonts\pro\SF-Pro-Display-Regular.otf" />
+    <Resource Include="Fonts\pro\SF-Pro-Display-RegularItalic.otf" />
+    <Resource Include="Fonts\pro\SF-Pro-Display-Semibold.otf" />
+    <Resource Include="Fonts\pro\SF-Pro-Display-SemiboldItalic.otf" />
+    <Resource Include="Fonts\pro\SF-Pro-Display-Thin.otf" />
+    <Resource Include="Fonts\pro\SF-Pro-Display-ThinItalic.otf" />
+    <Resource Include="Fonts\pro\SF-Pro-Display-Ultralight.otf" />
+    <Resource Include="Fonts\pro\SF-Pro-Display-UltralightItalic.otf" />
+    <Resource Include="Fonts\pro\SF-Pro-Text-Bold.otf" />
+    <Resource Include="Fonts\pro\SF-Pro-Text-BoldItalic.otf" />
+    <Resource Include="Fonts\pro\SF-Pro-Text-Heavy.otf" />
+    <Resource Include="Fonts\pro\SF-Pro-Text-HeavyItalic.otf" />
+    <Resource Include="Fonts\pro\SF-Pro-Text-Light.otf" />
+    <Resource Include="Fonts\pro\SF-Pro-Text-LightItalic.otf" />
+    <Resource Include="Fonts\pro\SF-Pro-Text-Medium.otf" />
+    <Resource Include="Fonts\pro\SF-Pro-Text-MediumItalic.otf" />
+    <Resource Include="Fonts\pro\SF-Pro-Text-Regular.otf" />
+    <Resource Include="Fonts\pro\SF-Pro-Text-RegularItalic.otf" />
+    <Resource Include="Fonts\pro\SF-Pro-Text-Semibold.otf" />
+    <Resource Include="Fonts\pro\SF-Pro-Text-SemiboldItalic.otf" />
+    <Resource Include="Fonts\pro\SFUIText-Regular.otf" />
+    <Resource Include="Fonts\SFUIDisplay\SFUIDisplay-Black.otf" />
+    <Resource Include="Fonts\SFUIDisplay\SFUIDisplay-Bold.ttf" />
+    <Resource Include="Fonts\SFUIDisplay\SFUIDisplay-Heavy.otf" />
+    <Resource Include="Fonts\SFUIDisplay\SFUIDisplay-Light.ttf" />
+    <Resource Include="Fonts\SFUIDisplay\SFUIDisplay-Medium.otf" />
+    <Resource Include="Fonts\SFUIDisplay\SFUIDisplay-Regular.otf" />
+    <Resource Include="Fonts\SFUIDisplay\SFUIDisplay-Semibold.otf" />
+    <Resource Include="Fonts\SFUIDisplay\SFUIDisplay-Thin.otf" />
+    <Resource Include="Fonts\SFUIDisplay\SFUIDisplay-Ultralight.otf" />
+    <Resource Include="Fonts\SFUIText\SFUIText-Bold.otf" />
+    <Resource Include="Fonts\SFUIText\SFUIText-BoldG1.otf" />
+    <Resource Include="Fonts\SFUIText\SFUIText-BoldG2.otf" />
+    <Resource Include="Fonts\SFUIText\SFUIText-BoldG3.otf" />
+    <Resource Include="Fonts\SFUIText\SFUIText-BoldItalicG1.otf" />
+    <Resource Include="Fonts\SFUIText\SFUIText-BoldItalicG2.otf" />
+    <Resource Include="Fonts\SFUIText\SFUIText-BoldItalicG3.otf" />
+    <Resource Include="Fonts\SFUIText\SFUIText-Heavy.otf" />
+    <Resource Include="Fonts\SFUIText\SFUIText-HeavyItalic.otf" />
+    <Resource Include="Fonts\SFUIText\SFUIText-Italic.otf" />
+    <Resource Include="Fonts\SFUIText\SFUIText-ItalicG1.otf" />
+    <Resource Include="Fonts\SFUIText\SFUIText-ItalicG2.otf" />
+    <Resource Include="Fonts\SFUIText\SFUIText-ItalicG3.otf" />
+    <Resource Include="Fonts\SFUIText\SFUIText-Light.otf" />
+    <Resource Include="Fonts\SFUIText\SFUIText-LightItalic.otf" />
+    <Resource Include="Fonts\SFUIText\SFUIText-Medium.otf" />
+    <Resource Include="Fonts\SFUIText\SFUIText-MediumItalic.otf" />
+    <Resource Include="Fonts\SFUIText\SFUIText-Regular.otf" />
+    <Resource Include="Fonts\SFUIText\SFUIText-RegularG1.otf" />
+    <Resource Include="Fonts\SFUIText\SFUIText-RegularG2.otf" />
+    <Resource Include="Fonts\SFUIText\SFUIText-RegularG3.otf" />
+    <Resource Include="Fonts\SFUIText\SFUIText-Semibold.otf" />
+    <Resource Include="Fonts\SFUIText\SFUIText-SemiboldItalic.otf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -665,10 +836,21 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Fody.6.4.0\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.6.4.0\build\Fody.targets'))" />
     <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets'))" />
-    <Error Condition="!Exists('..\packages\Costura.Fody.5.1.0\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.5.1.0\build\Costura.Fody.props'))" />
+    <Error Condition="!Exists('..\packages\Fody.6.5.1\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.6.5.1\build\Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\Costura.Fody.5.4.0-alpha0042\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.5.4.0-alpha0042\build\Costura.Fody.props'))" />
+    <Error Condition="!Exists('..\packages\Costura.Fody.5.4.0-alpha0042\build\Costura.Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.5.4.0-alpha0042\build\Costura.Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Build.Tasks.Git.1.0.0\build\Microsoft.Build.Tasks.Git.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Build.Tasks.Git.1.0.0\build\Microsoft.Build.Tasks.Git.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Build.Tasks.Git.1.0.0\build\Microsoft.Build.Tasks.Git.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Build.Tasks.Git.1.0.0\build\Microsoft.Build.Tasks.Git.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.SourceLink.Common.1.0.0\build\Microsoft.SourceLink.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SourceLink.Common.1.0.0\build\Microsoft.SourceLink.Common.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.SourceLink.Common.1.0.0\build\Microsoft.SourceLink.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SourceLink.Common.1.0.0\build\Microsoft.SourceLink.Common.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.SourceLink.GitHub.1.0.0\build\Microsoft.SourceLink.GitHub.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SourceLink.GitHub.1.0.0\build\Microsoft.SourceLink.GitHub.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.SourceLink.GitHub.1.0.0\build\Microsoft.SourceLink.GitHub.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SourceLink.GitHub.1.0.0\build\Microsoft.SourceLink.GitHub.targets'))" />
   </Target>
-  <Import Project="..\packages\Fody.6.4.0\build\Fody.targets" Condition="Exists('..\packages\Fody.6.4.0\build\Fody.targets')" />
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
+  <Import Project="..\packages\Fody.6.5.1\build\Fody.targets" Condition="Exists('..\packages\Fody.6.5.1\build\Fody.targets')" />
+  <Import Project="..\packages\Costura.Fody.5.4.0-alpha0042\build\Costura.Fody.targets" Condition="Exists('..\packages\Costura.Fody.5.4.0-alpha0042\build\Costura.Fody.targets')" />
+  <Import Project="..\packages\Microsoft.Build.Tasks.Git.1.0.0\build\Microsoft.Build.Tasks.Git.targets" Condition="Exists('..\packages\Microsoft.Build.Tasks.Git.1.0.0\build\Microsoft.Build.Tasks.Git.targets')" />
+  <Import Project="..\packages\Microsoft.SourceLink.Common.1.0.0\build\Microsoft.SourceLink.Common.targets" Condition="Exists('..\packages\Microsoft.SourceLink.Common.1.0.0\build\Microsoft.SourceLink.Common.targets')" />
+  <Import Project="..\packages\Microsoft.SourceLink.GitHub.1.0.0\build\Microsoft.SourceLink.GitHub.targets" Condition="Exists('..\packages\Microsoft.SourceLink.GitHub.1.0.0\build\Microsoft.SourceLink.GitHub.targets')" />
 </Project>

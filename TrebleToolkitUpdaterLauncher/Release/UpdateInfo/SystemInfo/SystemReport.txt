@@ -11,7 +11,7 @@ Registered Owner:          N/A
 Registered Organization:   N/A
 Product ID:                00325-80263-47997-AAOEM
 Original Install Date:     7/5/2021, 9:59:20 PM
-System Boot Time:          7/25/2021, 7:42:40 AM
+System Boot Time:          7/10/2021, 2:44:39 AM
 System Manufacturer:       TOSHIBA
 System Model:              SATELLITE P50-C
 System Type:               x64-based PC
@@ -25,34 +25,33 @@ System Locale:             en-us;English (United States)
 Input Locale:              pt;Portuguese (Portugal)
 Time Zone:                 (UTC+00:00) Dublin, Edinburgh, Lisbon, London
 Total Physical Memory:     16,218 MB
-Available Physical Memory: 9,660 MB
-Virtual Memory: Max Size:  18,650 MB
-Virtual Memory: Available: 11,764 MB
-Virtual Memory: In Use:    6,886 MB
+Available Physical Memory: 8,166 MB
+Virtual Memory: Max Size:  19,162 MB
+Virtual Memory: Available: 10,428 MB
+Virtual Memory: In Use:    8,734 MB
 Page File Location(s):     C:\pagefile.sys
 Domain:                    WORKGROUP
 Logon Server:              \\DESKTOP-AVDBJVA
-Hotfix(s):                 5 Hotfix(s) Installed.
-                           [01]: KB5004342
-                           [02]: KB5003792
-                           [03]: KB5004567
-                           [04]: KB5004300
-                           [05]: KB5005311
-Network Card(s):           3 NIC(s) Installed.
-                           [01]: Realtek PCIe GBE Family Controller
-                                 Connection Name: Ethernet
-                                 Status:          Media disconnected
-                           [02]: Intel(R) Dual Band Wireless-AC 3165
+Hotfix(s):                 4 Hotfix(s) Installed.
+                           [01]: KB5004034
+                           [02]: KB5004567
+                           [03]: KB5004745
+                           [04]: KB5005011
+Network Card(s):           2 NIC(s) Installed.
+                           [01]: Intel(R) Dual Band Wireless-AC 3165
                                  Connection Name: Wi-Fi
                                  DHCP Enabled:    Yes
                                  DHCP Server:     192.168.1.254
                                  IP address(es)
                                  [01]: 192.168.1.70
-                                 [02]: fe80::525:8430:e9df:b573
-                                 [03]: 2001:8a0:6127:e001:54a8:95e:9b15:91ff
-                                 [04]: 2001:8a0:6127:e001:525:8430:e9df:b573
-                           [03]: TAP-Windows Adapter V9
-                                 Connection Name: Local Area Connection
+                                 [02]: fe80::a8d2:c2de:eccb:8cdc
+                                 [03]: 2001:8a0:6104:9b01:1dcd:d22e:2540:37c6
+                                 [04]: 2001:8a0:6104:9b01:a8d2:c2de:eccb:8cdc
+                           [02]: Realtek PCIe GBE Family Controller
+                                 Connection Name: Ethernet
                                  Status:          Media disconnected
-Hyper-V Requirements:      A hypervisor has been detected. Features required for Hyper-V will not be displayed.
+Hyper-V Requirements:      VM Monitor Mode Extensions: Yes
+                           Virtualization Enabled In Firmware: Yes
+                           Second Level Address Translation: Yes
+                           Data Execution Prevention Available: Yes
 

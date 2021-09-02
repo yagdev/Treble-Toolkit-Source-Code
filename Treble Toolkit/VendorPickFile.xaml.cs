@@ -47,7 +47,6 @@ namespace Treble_Toolkit
 
         private void Next_Click(object sender, RoutedEventArgs e)
         {
-            ContinueLbl.Content = "Checking...";
             String command = @"/C cd .. & cd Place_Files_Here & cd Vendor & ren * vendor.img";
             ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
             cmdsi.Arguments = command;

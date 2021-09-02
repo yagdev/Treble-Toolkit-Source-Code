@@ -54,23 +54,111 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="Button21.8.1Rev4" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Background="{DynamicResource SystemAltMediumHighColorBrush}" Margin="0,0,0,0">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{DynamicResource SystemAltMediumColorBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{DynamicResource SystemBaseMediumColorBrush}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource SystemAltHighColorBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Page.Resources>
 
     <Grid x:Name="GridMain">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="14*" MaxWidth="300"/>
-            <ColumnDefinition Width="10*"/>
-            <ColumnDefinition Width="10*"/>
-            <ColumnDefinition MaxWidth="10" FrameworkElement.FlowDirection="RightToLeft"/>
+            <ColumnDefinition MaxWidth="10" Width="2*"/>
+            <ColumnDefinition Width="33*"/>
+            <ColumnDefinition Width="33*"/>
+            <ColumnDefinition MaxWidth="10" FrameworkElement.FlowDirection="RightToLeft" Width="2*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Your TWRP has been flashed!" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.ColumnSpan="4" Height="41" VerticalAlignment="Top"/>
-        <Label Content="If TWRP failed to flash, try again or use another image." Margin="0,42,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="4" FontSize="10" Height="23" VerticalAlignment="Top"/>
-        <Label Content="Select Close to close Treble Toolkit and Main Menu to go to the main menu." Margin="0,65,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="4" FontSize="10" Height="23" VerticalAlignment="Top"/>
-        <Label Content="Post-Flash" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20"/>
-        <Label Content="Troubleshooting" Margin="10,0,10,62" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="15"/>
-        <Button x:Name="BackAbout" Content="Retry" Margin="0,0,0,62" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseLowColorBrush}" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.7.1}" Click="ReportBug_Click" Grid.ColumnSpan="2" Grid.Column="1"/>
-        <Button x:Name="BackAbout_Copy" Content="Close" Margin="0,0,1,10" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseLowColorBrush}" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.7.1}" Click="Back_Click" Grid.Column="1"/>
-        <Button x:Name="BackAbout_Copy1" Content="Main Menu" Margin="1,0,0,10" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseLowColorBrush}" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.7.1}" Click="Next_Click" Grid.Column="2"/>
+        <Label Content="If something went wrong, please try again." Margin="0,40,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="4" FontSize="10" Height="25" VerticalAlignment="Top">
+            <Label.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemAltHighColor}"
+                    Opacity="0.8"
+                    BlurRadius="2"/>
+            </Label.Effect>
+        </Label>
+        <Label Content="Select Close to close Treble Toolkit and Main Menu to go to the main menu." Margin="0,65,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="4" FontSize="10" Height="25" VerticalAlignment="Top">
+            <Label.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemAltHighColor}"
+                    Opacity="0.8"
+                    BlurRadius="2"/>
+            </Label.Effect>
+        </Label>
+        <Button x:Name="DeviceSpecificFeatures_Copy1" Content="Close" Margin="0,0,1,10" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Back_Click" Grid.Column="1">
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="DeviceSpecificFeatures_Copy4" Content="Main Menu" Margin="1,0,0,10" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Next_Click" Grid.Column="2">
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="DeviceSpecificFeatures_Copy" Content="Retry" Margin="0,0,0,62" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="ReportBug_Click" Grid.Column="1" Grid.ColumnSpan="2">
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Button.Effect>
+        </Button>
+        <Label x:Name="Title_Copy12" Content="TWRP Has Been Flashed" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.ColumnSpan="4" Height="40" VerticalAlignment="Top">
+            <Label.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemAltHighColor}"
+                    Opacity="0.8"
+                    BlurRadius="2"/>
+            </Label.Effect>
+        </Label>
 
     </Grid>
 </Page>

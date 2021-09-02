@@ -53,26 +53,113 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="Button21.8.1Rev4" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Background="{DynamicResource SystemAltMediumHighColorBrush}" Margin="0,0,0,0">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{DynamicResource SystemAltMediumColorBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{DynamicResource SystemBaseMediumColorBrush}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource SystemAltHighColorBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Page.Resources>
 
     <Grid x:Name="GridMain">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="14*" MaxWidth="300"/>
-            <ColumnDefinition Width="10*"/>
-            <ColumnDefinition Width="10*"/>
-            <ColumnDefinition MaxWidth="10" FrameworkElement.FlowDirection="RightToLeft"/>
+            <ColumnDefinition MaxWidth="10" Width="10"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition MaxWidth="10" FrameworkElement.FlowDirection="RightToLeft" Width="10"/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="Title" Content="Settings" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.ColumnSpan="4" Height="35" VerticalAlignment="Top"/>
-        <Label Content="Go Back" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20"/>
-        <Label Content="Animations" Margin="9,0,10,62" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="18"/>
+        <Label x:Name="Title" Content="Settings" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.ColumnSpan="4" Height="40" VerticalAlignment="Top">
+            <Label.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemAltHighColor}"
+                    Opacity="0.8"
+                    BlurRadius="2"/>
+            </Label.Effect>
+        </Label>
         <Label x:Name="ThisIsAwkward" Content="[TEMP TEXT]" Margin="0,0,0,216" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="4" FontSize="8" Height="23" VerticalAlignment="Bottom" Visibility="Hidden"/>
         <Label x:Name="FileSize" Content="Your GSI file is smaller than 500 MB and is likely not the correct file. Try again" Margin="-1,104,1,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="4" FontSize="9" Height="23" VerticalAlignment="Top" Visibility="Hidden"/>
-        <Button x:Name="AnimationsToggle" Content="Disable Animations" Margin="0,0,0,62" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseLowColorBrush}" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.7.1}" Click="ReportBug_Click" Grid.ColumnSpan="2" Grid.Column="1"/>
-        <Button x:Name="AddBootBtn_Copy1" Content="Back" Margin="0,0,0,10" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseLowColorBrush}" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.7.1}" Click="Back_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <Label Content="Transparency" Margin="9,0,10,114" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="18"/>
-        <Button x:Name="TranparencyToggle" Content="Disable Transparency" Margin="0,0,0,114" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseLowColorBrush}" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.7.1}" Click="ToggleTransparency_Click" Grid.ColumnSpan="2" Grid.Column="1"/>
-        <Label Content="Transparent Theme" Margin="9,0,10,166" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="13"/>
-        <Button x:Name="TranparentTheme" Content="Enable Transparent Theme" Margin="0,0,0,166" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseLowColorBrush}" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.7.1}" Click="TransparentTheme_Click" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Button x:Name="DeviceSpecificFeatures_Copy4" Content="Back" Margin="0,0,0,10" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Back_Click" Grid.Column="1" Grid.ColumnSpan="2">
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="AnimationsToggle" Content="Disable Animations" Margin="0,0,0,62" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="ReportBug_Click" Grid.Column="1" Grid.ColumnSpan="2">
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="TranparencyToggle" Content="Disable Transparency" Margin="0,0,0,114" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="ToggleTransparency_Click" Grid.Column="1" Grid.ColumnSpan="2">
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="TranparentTheme" Content="Enable Transparent Theme" Margin="0,0,0,166" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="TransparentTheme_Click" Grid.Column="1" Grid.ColumnSpan="2">
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="CMDVis" Content="Enable CMD Prompt Visibility" Margin="0,0,0,218" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="CMDvis" Grid.Column="1" Grid.ColumnSpan="2">
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Button.Effect>
+        </Button>
 
     </Grid>
 </Page>

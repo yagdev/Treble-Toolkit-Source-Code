@@ -45,7 +45,6 @@ namespace Treble_Toolkit
 
         private void Next_Click(object sender, RoutedEventArgs e)
         {
-            Continuelbl.Content = "Checking...";
             String command5 = @"/C cd .. & cd Place_Files_Here & cd GSI & ren * system.img";
             ProcessStartInfo cmdsi5 = new ProcessStartInfo("cmd.exe");
             cmdsi5.Arguments = command5;
@@ -61,27 +60,7 @@ namespace Treble_Toolkit
                 }
                 else
                 {
-                    String command = @"/C cd .. & mkdir Place_Files_Here & cd Place_Files_Here & mkdir boot & cd boot & ren *.img boot.img & cd .. & mkdir GSI & cd GSI & ren *.img system.img & cd .. & mkdir vbmeta & cd vbmeta & ren *.img vbmeta.img";
-                    ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
-                    cmdsi.Arguments = command;
-                    Process cmd = Process.Start(cmdsi);
-                    cmd.WaitForExit();
-                    String command2 = @"/C adb.exe reboot-bootloader & fastboot.exe format system & fastboot.exe format userdata";
-                    ProcessStartInfo cmdsi2 = new ProcessStartInfo("cmd.exe");
-                    cmdsi2.Arguments = command2;
-                    Process cmd2 = Process.Start(cmdsi2);
-                    cmd2.WaitForExit();
-                    String command3 = @"/C fastboot.exe --disable-verity --disable-verification flash vbmeta ../Place_Files_Here/vbmeta/vbmeta.img & fastboot.exe flash boot ../Place_Files_Here/boot/boot.img & fastboot.exe flash system ../Place_Files_Here/GSI/system.img & fastboot.exe reboot";
-                    ProcessStartInfo cmdsi3 = new ProcessStartInfo("cmd.exe");
-                    cmdsi3.Arguments = command3;
-                    Process cmd3 = Process.Start(cmdsi3);
-                    cmd3.WaitForExit();
-                    String command4 = @"/C cd .. & cd Place_Files_Here & mkdir boot & mkdir GSI & mkdir vbmeta & wmic process where name='adb.exe' delete";
-                    ProcessStartInfo cmdsi4 = new ProcessStartInfo("cmd.exe");
-                    cmdsi4.Arguments = command4;
-                    Process cmd4 = Process.Start(cmdsi4);
-                    cmd4.WaitForExit();
-                    Uri uri = new Uri("GSIFlashTerminated.xaml", UriKind.Relative);
+                    Uri uri = new Uri("GSIFlashA.xaml", UriKind.Relative);
                     this.NavigationService.Navigate(uri);
                 }
             }

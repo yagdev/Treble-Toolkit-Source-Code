@@ -117,28 +117,165 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="PgrBar21.4.2" TargetType="{x:Type ProgressBar}">
+            <Setter Property="Foreground" Value="{StaticResource ProgressBar.Progress}"/>
+            <Setter Property="Background" Value="{StaticResource ProgressBar.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ProgressBar.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ProgressBar}">
+                        <Grid x:Name="TemplateRoot">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Determinate"/>
+                                    <VisualState x:Name="Indeterminate">
+                                        <Storyboard RepeatBehavior="Forever">
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="Animation">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="0.25"/>
+                                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.25"/>
+                                                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0.25"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <PointAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)" Storyboard.TargetName="Animation">
+                                                <EasingPointKeyFrame KeyTime="0" Value="-0.5,0.5"/>
+                                                <EasingPointKeyFrame KeyTime="0:0:1" Value="0.5,0.5"/>
+                                                <EasingPointKeyFrame KeyTime="0:0:2" Value="1.5,0.5"/>
+                                            </PointAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="5"/>
+                            <Rectangle x:Name="PART_Track" RadiusX="5" RadiusY="5"/>
+                            <Grid x:Name="PART_Indicator" ClipToBounds="true" HorizontalAlignment="Left" Margin="5">
+                                <Rectangle x:Name="Indicator" Fill="{TemplateBinding Foreground}" RadiusX="3" RadiusY="3"/>
+                                <Rectangle x:Name="Animation" Fill="{TemplateBinding Foreground}" RenderTransformOrigin="0.5,0.5" RadiusX="5" RadiusY="5">
+                                    <Rectangle.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Rectangle.RenderTransform>
+                                </Rectangle>
+                            </Grid>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Orientation" Value="Vertical">
+                                <Setter Property="LayoutTransform" TargetName="TemplateRoot">
+                                    <Setter.Value>
+                                        <RotateTransform Angle="-90"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsIndeterminate" Value="true">
+                                <Setter Property="Visibility" TargetName="Indicator" Value="Collapsed"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="Button21.8.1Rev4" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Background="{DynamicResource SystemAltMediumHighColorBrush}" Margin="0,0,0,0">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{DynamicResource SystemAltMediumColorBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{DynamicResource SystemBaseMediumColorBrush}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource SystemAltHighColorBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Page.Resources>
 
     <Grid x:Name="GridMain">
         <Grid.RowDefinitions>
-            <RowDefinition Height="55*"/>
-            <RowDefinition Height="11*"/>
-            <RowDefinition Height="300*"/>
+            <RowDefinition/>
             <RowDefinition Height="10" MaxHeight="10" MinHeight="10"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="14*" MaxWidth="300"/>
-            <ColumnDefinition Width="10*"/>
-            <ColumnDefinition Width="10*"/>
-            <ColumnDefinition FrameworkElement.FlowDirection="RightToLeft" MaxWidth="10"/>
+            <ColumnDefinition Width="10" MaxWidth="300"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition FrameworkElement.FlowDirection="RightToLeft" MaxWidth="10" Width="10"/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="Title" Content="Device Specific Features" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.ColumnSpan="4" Height="30" VerticalAlignment="Top"/>
-        <Label x:Name="VersionString" Content="Sony Xperia 5" Margin="0,30,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="4" Height="25" VerticalAlignment="Top"/>
-        <ProgressBar x:Name="status_pgr" Height="21" Margin="10,54.834,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="{DynamicResource SystemBaseHighColorBrush}" BorderBrush="{DynamicResource SystemBaseHighColorBrush}" RenderTransformOrigin="0.5,0.5" BorderThickness="3" UseLayoutRounding="False" Grid.ColumnSpan="3" Style="{DynamicResource PgrBar21.4.1}" Grid.RowSpan="3"/>
-        <Label Content="TWRP" Margin="0,0,0,52" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.Row="2"/>
-        <Label Content="Go Back" Margin="10,0,5,0" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.Row="2"/>
-        <Button x:Name="DL" Content="Download TWRP Image" Margin="0,0,0,52" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseLowColorBrush}" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.7.1}" Click="HM10L_Click" Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="1"/>
-        <Button x:Name="Back" Content="Back" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseLowColorBrush}" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.7.1}" Click="BACK_Click" Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="1"/>
+        <Label x:Name="Title" Content="Device Specific Features" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.ColumnSpan="4" Height="40" VerticalAlignment="Top">
+            <Label.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemAltHighColor}"
+                    Opacity="0.8"
+                    BlurRadius="2"/>
+            </Label.Effect>
+        </Label>
+        <Label x:Name="VersionString" Content="Sony Xperia 5" Margin="0,40,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="4" Height="25" VerticalAlignment="Top">
+            <Label.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemAltHighColor}"
+                    Opacity="0.8"
+                    BlurRadius="2"/>
+            </Label.Effect>
+        </Label>
+        <ProgressBar x:Name="status_pgr" Height="21" Margin="0,70,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="{DynamicResource SystemBaseHighColorBrush}" BorderBrush="{DynamicResource SystemBaseHighColorBrush}" RenderTransformOrigin="0.5,0.5" BorderThickness="3" UseLayoutRounding="False" Grid.ColumnSpan="2" Style="{DynamicResource PgrBar21.4.2}" Grid.Column="1">
+            <ProgressBar.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="2"/>
+            </ProgressBar.Effect>
+        </ProgressBar>
+        <Button x:Name="DL" Content="Download TWRP Image" Margin="1,0,0,52" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="HM10L_Click" Grid.ColumnSpan="2" Grid.Column="1">
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="DeviceSpecificFeatures_Copy" Content="Back" Margin="1,0,0,0" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="BACK_Click" Grid.ColumnSpan="2" Grid.Column="1">
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Button.Effect>
+        </Button>
 
     </Grid>
 </Page>

@@ -15,7 +15,6 @@ namespace Treble_Toolkit
         public Sideloader()
         {
             InitializeComponent();
-            ReportLabel.Visibility = Visibility.Hidden;
             string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotAnimated.txt");
             if (File.Exists(IsAnimated))
             {

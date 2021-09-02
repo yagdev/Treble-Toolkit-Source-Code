@@ -8,18 +8,19 @@
             <ResourceDictionary.MergedDictionaries>
                 <!--  FluentWPF Controls  -->
                 <ResourceDictionary Source="pack://application:,,,/FluentWPF;component/Styles/Controls.xaml" />
+
             </ResourceDictionary.MergedDictionaries>
             <Style x:Key="FocusVisual">
                 <Setter Property="Control.Template">
                     <Setter.Value>
                         <ControlTemplate>
-                            <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                            <Rectangle Margin="2" SnapsToDevicePixels="true" StrokeDashArray="1 2"/>
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>
             </Style>
-            <SolidColorBrush x:Key="OptionMark.Static.Background" Color="#FFFFFFFF"/>
-            <SolidColorBrush x:Key="OptionMark.Static.Border" Color="#FF707070"/>
+            <SolidColorBrush x:Key="OptionMark.Static.Background" Color="Transparent" Opacity="100"/>
+            <SolidColorBrush x:Key="OptionMark.Static.Border" Color="Transparent"/>
             <Style x:Key="OptionMarkFocusVisual">
                 <Setter Property="Control.Template">
                     <Setter.Value>
@@ -29,16 +30,17 @@
                     </Setter.Value>
                 </Setter>
             </Style>
-            <SolidColorBrush x:Key="OptionMark.MouseOver.Background" Color="#FFF3F9FF"/>
-            <SolidColorBrush x:Key="OptionMark.MouseOver.Border" Color="#FF5593FF"/>
+            <SolidColorBrush x:Key="OptionMark.MouseOver.Background" Color="Transparent"/>
+            <SolidColorBrush x:Key="OptionMark.MouseOver.Border" Color="Transparent"/>
             <SolidColorBrush x:Key="OptionMark.MouseOver.Glyph" Color="#FF212121"/>
-            <SolidColorBrush x:Key="OptionMark.Disabled.Background" Color="#FFE6E6E6"/>
-            <SolidColorBrush x:Key="OptionMark.Disabled.Border" Color="#FFBCBCBC"/>
-            <SolidColorBrush x:Key="OptionMark.Disabled.Glyph" Color="#FF707070"/>
-            <SolidColorBrush x:Key="OptionMark.Pressed.Background" Color="#FFD9ECFF"/>
-            <SolidColorBrush x:Key="OptionMark.Pressed.Border" Color="#FF3C77DD"/>
-            <SolidColorBrush x:Key="OptionMark.Pressed.Glyph" Color="#FF212121"/>
-            <SolidColorBrush x:Key="OptionMark.Static.Glyph" Color="#FF212121"/>
+            <SolidColorBrush x:Key="OptionMark.Disabled.Background" Color="Transparent"/>
+            <SolidColorBrush x:Key="OptionMark.Disabled.Border" Color="Transparent"/>
+            <SolidColorBrush x:Key="OptionMark.Disabled.Glyph" Color="Transparent"/>
+            <SolidColorBrush x:Key="OptionMark.Pressed.Background" Color="Transparent"/>
+            <SolidColorBrush x:Key="OptionMark.Pressed.Border" Color="Transparent"/>
+            <SolidColorBrush x:Key="OptionMark.Pressed.Glyph" Color="Transparent"/>
+            <SolidColorBrush x:Key="OptionMark.Static.Glyph" Color="Transparent"/>
+            <Style x:Key="WidgetBackground" TargetType="{x:Type Rectangle}"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
