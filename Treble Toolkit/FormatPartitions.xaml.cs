@@ -89,15 +89,7 @@ namespace Treble_Toolkit
         {
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            const string strCmdText = "/C adb.exe reboot-bootloader & fastboot.exe format vendor_a";
-            Process.Start("CMD.exe", strCmdText);
-        }
-
-        private void VendorButtonB_Click(object sender, RoutedEventArgs e)
-        {
-            System.Diagnostics.Process process = new System.Diagnostics.Process();
-            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            const string strCmdText = "/C adb.exe reboot-bootloader & fastboot.exe format vendor_b";
+            const string strCmdText = "/C adb.exe reboot-bootloader & fastboot.exe format vendor";
             Process.Start("CMD.exe", strCmdText);
         }
     }

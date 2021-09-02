@@ -146,42 +146,6 @@
                 </MultiTrigger>
             </Style.Triggers>
         </Style>
-        <Style x:Key="Button21.8.1Rev4" TargetType="{x:Type Button}">
-            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
-            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
-            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="Padding" Value="1"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Background="{DynamicResource SystemAltMediumHighColorBrush}" Margin="0,0,0,0">
-                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsDefaulted" Value="true">
-                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-                            </Trigger>
-                            <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{DynamicResource SystemAltMediumColorBrush}"/>
-                            </Trigger>
-                            <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{DynamicResource SystemBaseMediumColorBrush}"/>
-                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource SystemAltHighColorBrush}"/>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
-                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
     </Page.Resources>
 
     <Grid x:Name="GridMain">
@@ -195,49 +159,13 @@
         </Grid.ColumnDefinitions>
         <Label x:Name="Title" Content="Report Bug - Now let's submit!" Foreground="{DynamicResource SystemBaseHighColorBrush}" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.ColumnSpan="2" Height="35" VerticalAlignment="Top"/>
         <Label x:Name="VersionString" Content="Follow these steps:" Margin="0,35,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Top"/>
+        <Button x:Name="BackAbout" Content="Back" Margin="10,0,1,10" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseLowColorBrush}" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.7.1}" Click="Back_Click" Grid.Row="1"/>
+        <Button x:Name="UpdateAbout" Content="Main Menu" Margin="1,0,10,10" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseLowColorBrush}" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.7.1}" Click="More_Click" Grid.Row="1" Grid.Column="1"/>
         <TextBlock x:Name="Changelog" Margin="10,60,10,0" TextWrapping="Wrap" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="2" Height="15" VerticalAlignment="Top"><Run Text="Go on GitHub"/><Run Text=":"/></TextBlock>
+        <Button x:Name="BackAbout_Copy" Content="Open GitHub" Margin="10,80,10,0" VerticalAlignment="Top" Height="50" Background="{DynamicResource SystemBaseLowColorBrush}" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.7.1}" Click="BackAbout_Click" Grid.ColumnSpan="2"/>
         <TextBlock x:Name="Changelog_Copy" Margin="10,135,10,0" TextWrapping="Wrap" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="2" Text="Open report file location:" Height="15" VerticalAlignment="Top"/>
+        <Button x:Name="BackAbout_Copy1" Content="Open File Location" Margin="10,155,10,0" VerticalAlignment="Top" Height="50" Background="{DynamicResource SystemBaseLowColorBrush}" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.7.1}" Click="Location_Click" Grid.ColumnSpan="2"/>
         <TextBlock x:Name="Changelog_Copy1" Margin="10,210,10,0" TextWrapping="Wrap" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="2" Height="29" VerticalAlignment="Top"><Run Text="Give the report a title and drag &quot;Report.txt&quot; to the GitHub window"/><Run Text=" and submit"/></TextBlock>
-        <Button x:Name="DeviceSpecificFeatures_Copy1" Content="Back" Margin="10,0,1,10" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Back_Click" Grid.Row="1">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="Black"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
-        </Button>
-        <Button x:Name="DeviceSpecificFeatures_Copy4" Content="Main Menu" Margin="1,0,10,10" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="More_Click" Grid.Column="1" Grid.Row="1">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="Black"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
-        </Button>
-        <Button x:Name="DeviceSpecificFeatures_Copy" Content="Open GitHub" Margin="10,80,10,0" VerticalAlignment="Top" Height="50" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="BackAbout_Click" Grid.ColumnSpan="2">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="Black"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
-        </Button>
-        <Button x:Name="DeviceSpecificFeatures_Copy2" Content="Open File Location" Margin="10,155,10,0" VerticalAlignment="Top" Height="50" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Location_Click" Grid.ColumnSpan="2">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="Black"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
-        </Button>
 
     </Grid>
 </Page>

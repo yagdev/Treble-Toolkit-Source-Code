@@ -89,11 +89,21 @@ namespace TrebleToolkitUpdaterLauncher
                 Title.Content = "Welcome To Treble Toolkit Launcher (Offline Mode)";
                 JoinBeta.Visibility = Visibility.Hidden;
                 CheckConnection.Visibility = Visibility.Visible;
+                Launcher.Visibility = Visibility.Hidden;
             }
             GridMain.Opacity = 0;
             Grid r = (Grid)GridMain;
             DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
             r.BeginAnimation(Grid.OpacityProperty, animation);
+            if (Environment.Is64BitOperatingSystem)
+            {
+                
+            }
+            else
+            {
+                JoinBeta.Content = "This feature is not compatible with your computer";
+                JoinBeta.FontSize = 8;
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -142,6 +152,17 @@ namespace TrebleToolkitUpdaterLauncher
                 string application_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateFiles");
                 string local_version_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "CurrentVersion", "VersionString.txt");
                 string launch_exe = "TrebleToolkitLauncher.exe";
+                // Remove this in 21.8.1!!
+                if (Environment.Is64BitOperatingSystem)
+                {
+                    url = "https://www.dropbox.com/s/f76ks90k8gvi0p5/release.zip?dl=1";
+                    remote_version_url = "https://www.dropbox.com/s/elbmcwbx389z71o/version.txt?dl=1";
+                }
+                else
+                {
+                    url = "https://www.dropbox.com/s/dqmk13zq52d3clo/release.zip?dl=1";
+                    remote_version_url = "https://www.dropbox.com/s/7faalz9dxjgethh/version.txt?dl=0";
+                }
                 if (File.Exists(beta_path))
                 {
                     url = "https://www.dropbox.com/s/2nykzlitzy2u8an/release.zip?dl=1";
@@ -264,6 +285,8 @@ namespace TrebleToolkitUpdaterLauncher
                     r4.BeginAnimation(Button.OpacityProperty, animation);
                     Button r5 = (Button)JoinBeta;
                     r5.BeginAnimation(Button.OpacityProperty, animation);
+                    Label r6 = (Label)Launcher;
+                    r6.BeginAnimation(Label.OpacityProperty, animation);
                 }
                 UpdateLauncher.Visibility = Visibility.Hidden;
                 status_lbl.Content = "©2021 YAG-dev · Looks like you're offline. Reconnect to the Internet to gain access to more features.";
@@ -537,6 +560,8 @@ namespace TrebleToolkitUpdaterLauncher
                     r4.BeginAnimation(Button.OpacityProperty, animation);
                     Button r5 = (Button)JoinBeta;
                     r5.BeginAnimation(Button.OpacityProperty, animation);
+                    Label r6 = (Label)Launcher;
+                    r6.BeginAnimation(Label.OpacityProperty, animation);
                 }
                 status_lbl.Content = "©2021 YAG-dev · Looks like you're offline. Reconnect to the Internet to gain access to more features.";
                 Title.Content = "Welcome To Treble Toolkit Launcher (Offline Mode)";
@@ -638,6 +663,17 @@ namespace TrebleToolkitUpdaterLauncher
                 string application_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateFiles");
                 string local_version_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "CurrentVersion", "LauncherVersion.txt");
                 string launch_exe = "TrebleToolkitLauncher.exe";
+                // Remove this in 21.8.1!!
+                if (Environment.Is64BitOperatingSystem)
+                {
+                    url = "https://www.dropbox.com/s/f76ks90k8gvi0p5/release.zip?dl=1";
+                    remote_version_url = "https://www.dropbox.com/s/elbmcwbx389z71o/version.txt?dl=1";
+                }
+                else
+                {
+                    url = "https://www.dropbox.com/s/dqmk13zq52d3clo/release.zip?dl=1";
+                    remote_version_url = "https://www.dropbox.com/s/7faalz9dxjgethh/version.txt?dl=0";
+                }
                 if (File.Exists(beta_path))
                 {
                     url = "https://www.dropbox.com/s/2nykzlitzy2u8an/release.zip?dl=1";
@@ -739,6 +775,8 @@ namespace TrebleToolkitUpdaterLauncher
                     r4.BeginAnimation(Button.OpacityProperty, animation);
                     Button r5 = (Button)JoinBeta;
                     r5.BeginAnimation(Button.OpacityProperty, animation);
+                    Label r6 = (Label)Launcher;
+                    r6.BeginAnimation(Label.OpacityProperty, animation);
                 }
                 UpdateLauncher.Visibility = Visibility.Hidden;
                 status_lbl.Content = "©2021 YAG-dev · Looks like you're offline. Reconnect to the Internet to gain access to more features.";
@@ -761,6 +799,7 @@ namespace TrebleToolkitUpdaterLauncher
                     Reinstall.Visibility = Visibility.Visible;
                     UpdateLauncher.Visibility = Visibility.Visible;
                     JoinBeta.Visibility = Visibility.Visible;
+                    Launcher.Visibility = Visibility.Visible;
                 }
                 else
                 {
@@ -773,6 +812,8 @@ namespace TrebleToolkitUpdaterLauncher
                     r4.BeginAnimation(Button.OpacityProperty, animation);
                     Button r5 = (Button)JoinBeta;
                     r5.BeginAnimation(Button.OpacityProperty, animation);
+                    Label r6 = (Label)Launcher;
+                    r6.BeginAnimation(Label.OpacityProperty, animation);
                 }
                 Title.Content = "Welcome to Treble Toolkit Launcher";
                 status_lbl.Content = "©2021 YAG-dev · Version 21.7.1";
@@ -786,6 +827,7 @@ namespace TrebleToolkitUpdaterLauncher
                     Reinstall.Visibility = Visibility.Hidden;
                     UpdateLauncher.Visibility = Visibility.Hidden;
                     JoinBeta.Visibility = Visibility.Hidden;
+                    Launcher.Visibility = Visibility.Hidden;
                 }
                 else
                 {
@@ -798,6 +840,8 @@ namespace TrebleToolkitUpdaterLauncher
                     r4.BeginAnimation(Button.OpacityProperty, animation);
                     Button r5 = (Button)JoinBeta;
                     r5.BeginAnimation(Button.OpacityProperty, animation);
+                    Label r6 = (Label)Launcher;
+                    r6.BeginAnimation(Label.OpacityProperty, animation);
                 }
                 status_lbl.Content = "©2021 YAG-dev · Still couldn't connect to the internet :(";
                 Title.Content = "Welcome To Treble Toolkit Launcher (Offline Mode)";
@@ -846,7 +890,7 @@ namespace TrebleToolkitUpdaterLauncher
                             sw.WriteLine("©2021 YAG-dev");
                         }
                         JoinBeta.Content = "Leave Beta Program";
-                        JoinBeta.FontSize = 16;
+                        JoinBeta.FontSize = 14;
                     }
                 }
                 else
@@ -873,6 +917,8 @@ namespace TrebleToolkitUpdaterLauncher
                     r4.BeginAnimation(Button.OpacityProperty, animation);
                     Button r5 = (Button)JoinBeta;
                     r5.BeginAnimation(Button.OpacityProperty, animation);
+                    Label r6 = (Label)Launcher;
+                    r6.BeginAnimation(Label.OpacityProperty, animation);
                 }
                 status_lbl.Content = "©2021 YAG-dev · Looks like you're offline. Reconnect to the Internet to gain access to more features.";
                 Title.Content = "Welcome To Treble Toolkit Launcher (Offline Mode)";

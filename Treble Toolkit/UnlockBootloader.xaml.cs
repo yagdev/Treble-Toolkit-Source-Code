@@ -54,11 +54,5 @@ namespace Treble_Toolkit
             Uri uri = new Uri("UnlockedBootloader.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);
         }
-
-        private void HW_Click(object sender, RoutedEventArgs e)
-        {
-            Uri uri = new Uri("BTULHW.xaml", UriKind.Relative);
-            this.NavigationService.Navigate(uri);
-        }
     }
 }

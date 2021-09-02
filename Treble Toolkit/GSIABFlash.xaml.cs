@@ -15,7 +15,7 @@ namespace Treble_Toolkit
         public GSIABFlash()
         {
             InitializeComponent();
-            FileSize.Visibility = Visibility.Hidden;
+            ReportLabel.Visibility = Visibility.Hidden;
             string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotAnimated.txt");
             if (File.Exists(IsAnimated))
             {
@@ -36,6 +36,7 @@ namespace Treble_Toolkit
             if (File.Exists("../Place_Files_Here/vbmeta/vbmeta.img"))
             {
                 AddVbmeta.Visibility = Visibility.Hidden;
+                VbmetaText.Visibility = Visibility.Hidden;
             }
             else
             {
@@ -44,6 +45,7 @@ namespace Treble_Toolkit
             if (File.Exists("../Place_Files_Here/boot/boot.img"))
             {
                 AddBootBtn.Visibility = Visibility.Hidden;
+                Bootlbl.Visibility = Visibility.Hidden;
             }
             else
             {
@@ -82,7 +84,12 @@ namespace Treble_Toolkit
                 }
                 else
                 {
-                    Uri uri = new Uri("GSIFlashAB.xaml", UriKind.Relative);
+                    String command = @"/C adb.exe reboot-bootloader & cd .. & mkdir Place_Files_Here & cd Place_Files_Here & mkdir boot & cd boot & ren *.img boot.img & cd .. & mkdir GSI & cd GSI & ren *.img system.img & cd .. & mkdir vbmeta & cd vbmeta & ren *.img vbmeta.img & cd .. & cd .. & cd assets & fastboot.exe format system_a & fastboot.exe format system_b & fastboot.exe format userdata & fastboot.exe --disable-verity --disable-verification flash vbmeta ../Place_Files_Here/vbmeta/vbmeta.img & fastboot.exe flash boot_a ../Place_Files_Here/boot/boot.img & fastboot.exe flash boot_b ../Place_Files_Here/boot/boot.img & fastboot.exe flash system_a ../Place_Files_Here/GSI/system.img & fastboot.exe flash system_b ../Place_Files_Here/GSI/system.img & fastboot.exe reboot & cd .. & cd Place_Files_Here & mkdir boot & mkdir GSI & mkdir vbmeta & wmic process where name='adb.exe' delete";
+                    ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
+                    cmdsi.Arguments = command;
+                    Process cmd = Process.Start(cmdsi);
+                    cmd.WaitForExit();
+                    Uri uri = new Uri("GSIFlashTerminatedAB.xaml", UriKind.Relative);
                     this.NavigationService.Navigate(uri);
                 }
             }
@@ -98,6 +105,7 @@ namespace Treble_Toolkit
             if (File.Exists("../Place_Files_Here/vbmeta/vbmeta.img"))
             {
                 AddVbmeta.Visibility = Visibility.Hidden;
+                VbmetaText.Visibility = Visibility.Hidden;
                 ThisIsAwkward.Content = "This is awkward. We thought you needed a vbmeta file, but turns out you don't. Sorry!";
                 ThisIsAwkward.Visibility = Visibility.Visible;
             }
@@ -118,6 +126,7 @@ namespace Treble_Toolkit
             if (File.Exists("../Place_Files_Here/boot/boot.img"))
             {
                 AddBootBtn.Visibility = Visibility.Hidden;
+                Bootlbl.Visibility = Visibility.Hidden;
                 ThisIsAwkward.Content = "This is awkward. We thought you needed a boot file, but turns out you don't. Sorry!";
                 ThisIsAwkward.Visibility = Visibility.Visible;
             }
