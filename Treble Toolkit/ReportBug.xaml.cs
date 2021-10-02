@@ -14,6 +14,11 @@ namespace Treble_Toolkit
         public ReportBug()
         {
             InitializeComponent();
+            if (Environment.OSVersion.Version.Build <= 9)
+            {
+                DeviceSpecificFeatures_Copy4.IsEnabled = false;
+                DeviceSpecificFeatures_Copy4.Content = "🔒 Report Bug";
+            }
             string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotAnimated.txt");
             if (File.Exists(IsAnimated))
             {

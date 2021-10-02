@@ -1,0 +1,54 @@
+Treble Toolkit System Report
+©2021 YAG-dev
+
+Host Name:                 DESKTOP-AVDBJVA
+OS Name:                   Microsoft Windows 11 Home Insider Preview
+OS Version:                10.0.22449 N/A Build 22449
+OS Manufacturer:           Microsoft Corporation
+OS Configuration:          Standalone Workstation
+OS Build Type:             Multiprocessor Free
+Registered Owner:          N/A
+Registered Organization:   N/A
+Product ID:                00325-80263-47997-AAOEM
+Original Install Date:     9/3/2021, 3:12:12 AM
+System Boot Time:          9/3/2021, 10:30:57 AM
+System Manufacturer:       TOSHIBA
+System Model:              SATELLITE P50-C
+System Type:               x64-based PC
+Processor(s):              1 Processor(s) Installed.
+                           [01]: Intel64 Family 6 Model 78 Stepping 3 GenuineIntel ~2300 Mhz
+BIOS Version:              INSYDE Corp. 1.70, 7/5/2017
+Windows Directory:         C:\WINDOWS
+System Directory:          C:\WINDOWS\system32
+Boot Device:               \Device\HarddiskVolume1
+System Locale:             en-us;English (United States)
+Input Locale:              pt;Portuguese (Portugal)
+Time Zone:                 (UTC+00:00) Dublin, Edinburgh, Lisbon, London
+Total Physical Memory:     16,218 MB
+Available Physical Memory: 6,797 MB
+Virtual Memory: Max Size:  18,650 MB
+Virtual Memory: Available: 7,770 MB
+Virtual Memory: In Use:    10,880 MB
+Page File Location(s):     C:\pagefile.sys
+Domain:                    WORKGROUP
+Logon Server:              \\DESKTOP-AVDBJVA
+Hotfix(s):                 1 Hotfix(s) Installed.
+                           [01]: KB5005544
+Network Card(s):           3 NIC(s) Installed.
+                           [01]: TAP-Windows Adapter V9
+                                 Connection Name: Local Area Connection
+                                 Status:          Media disconnected
+                           [02]: Intel(R) Dual Band Wireless-AC 3165
+                                 Connection Name: Wi-Fi
+                                 DHCP Enabled:    Yes
+                                 DHCP Server:     192.168.1.254
+                                 IP address(es)
+                                 [01]: 192.168.1.70
+                                 [02]: fe80::525:8430:e9df:b573
+                                 [03]: 2001:8a0:6132:8401:9108:fcee:a975:7fa8
+                                 [04]: 2001:8a0:6132:8401:525:8430:e9df:b573
+                           [03]: Realtek PCIe GBE Family Controller
+                                 Connection Name: Ethernet
+                                 Status:          Media disconnected
+Hyper-V Requirements:      A hypervisor has been detected. Features required for Hyper-V will not be displayed.
+

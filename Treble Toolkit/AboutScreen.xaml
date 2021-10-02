@@ -94,14 +94,13 @@
 
     <Grid x:Name="GridMain">
         <Grid.RowDefinitions>
-            <RowDefinition Height="909*"/>
-            <RowDefinition Height="91*"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock x:Name="Changelog" Margin="10,70,10,2" TextWrapping="Wrap" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="2">
+        <TextBlock x:Name="Changelog" Margin="10,70,10,187" TextWrapping="Wrap" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="2">
             <TextBlock.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -109,8 +108,8 @@
                     Color="{DynamicResource SystemAltHighColor}"
                     Opacity="0.8"
                     BlurRadius="2"/>
-            </TextBlock.Effect><Run Text="Welcome to the new and improved Treble Toolkit!"/><LineBreak/><Run Text="Here's what's new:"/><LineBreak/><Run Text="["/><Run Text="R"/><Run Text="1"/><Run Text=" // Beta 1"/><Run Text="]"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Added Widgets"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Design fixes"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Fixed some typos"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Bug fixes"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Cleaned up old Bug Reporting 1.0 residues"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Better Dark Mode visibility"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="[R"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="2"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text=" // Beta "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="2"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="]"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Fixed crash on Quick Start Guide (First Time Use)"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Fixed Launcher Version not updating when updating Treble Toolkit on 21.9.1[R1]"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· Fixed shading issues on the launcher"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· Fixed layout on Treble Toolkit Launcher"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· Fixed Treble Toolkit Launcher font"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Better visibility on the Transparent Theme"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Changed the way Treble Toolkit handles Launcher updates."/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="[R3 // "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Final"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="]"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="New logo"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Updated Platform Tools to r31.0.3"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Bugfixes"/></TextBlock>
-        <TextBlock x:Name="Changelog_Copy" Margin="10,0,10,164" TextWrapping="Wrap" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="2" Height="18" VerticalAlignment="Bottom" Grid.Row="1">
+            </TextBlock.Effect><Run Text="Welcome to the new and improved Treble Toolkit!"/><LineBreak/><Run Text="Here's what's new:"/><LineBreak/><Run Text="[21.10[21"/><Run Text="97"/><Run Text="]"/><Run Text=" // Beta 1"/><Run Text="]"/><LineBreak/><Run Text="· Changed version numbering system"/><LineBreak/><Run Text="· "/><Run Text="Fixed inconsistent window sizes with Transparent Theme"/><LineBreak/><Run Text="· "/><Run Text="Cleaned up old code for non implemented features "/><LineBreak/><Run Text="· "/><Run Text="Widgets are now more helpful than ever with Widgets 2.0"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Added old version functionalty warning since I don't test Windows 7/8/8.1 compatibility anymore"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Fixed rechecks on Widgets"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Added Widget setup utility"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Brand new and improved Treble Toolkit Launcher"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Update warnings in Treble Toolkit (scrapped 5.0 feature brought to life with matured coding skills)"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· Fixed Update Launcher feaature"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="[21.10[2197"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text=".1"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="] // Beta 1]"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Fixed initial rollout issues"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="[21.10[21"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="98"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="] // Beta "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="2"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="]"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="New "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="U"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="pdate Platform Tools feature"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="New Update Center"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Settings 2.0 organized with categories"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Delete log feature"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Fixed Bug Reporting on Windows 10 and later (leftover debug stuff)"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· Progress Bars 3.0"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· Slight edits to the Launcher"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="[21.10[21"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="102"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="] // "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Final"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="]"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Final bugfixes"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="Launcher "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="t"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="ouchups"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text=" and fixes"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="· Integrated Treble Toolkit Installer source code into the normal source code"/></TextBlock>
+        <TextBlock x:Name="Changelog_Copy" Margin="10,0,10,164" TextWrapping="Wrap" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Height="18" VerticalAlignment="Bottom" Grid.ColumnSpan="2">
             <TextBlock.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -119,7 +118,7 @@
                     Opacity="0.8"
                     BlurRadius="2"/>
             </TextBlock.Effect><Run Text="©2021 YAG-dev · Platform Tools v31.0."/><Run Text="3"/></TextBlock>
-        <Button x:Name="DeviceSpecificFeatures_Copy"  Content="Back" Margin="10,0,1,10" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="BackAbout_Click" Grid.Row="1" MouseEnter="DeviceSpecificFeatures_Copy_MouseEnter">
+        <Button x:Name="DeviceSpecificFeatures_Copy"  Content="Back" Margin="10,0,1,10" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="BackAbout_Click" MouseEnter="DeviceSpecificFeatures_Copy_MouseEnter">
             <Button.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -130,7 +129,7 @@
             </Button.Effect>
         </Button>
         <Button x:Name="DeviceSpecificFeatures_Copy1" Content="Update" Margin="1,0,10,10" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="UpdateAbout_Click"
-                Grid.Column="1" Grid.Row="1">
+                Grid.Column="1">
             <Button.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -140,7 +139,7 @@
                     BlurRadius="8"/>
             </Button.Effect>
         </Button>
-        <Button x:Name="DeviceSpecificFeatures_Copy2" Content="Discover Release" Margin="10,0,1,62" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="DiscoverAbout_Click" Grid.Row="1">
+        <Button x:Name="DeviceSpecificFeatures_Copy2" Content="Discover Release" Margin="10,0,1,62" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="DiscoverAbout_Click">
             <Button.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -150,7 +149,7 @@
                     BlurRadius="8"/>
             </Button.Effect>
         </Button>
-        <Button x:Name="DeviceSpecificFeatures_Copy3" Content="Settings" Margin="1,0,10,62" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Settings_Click" Grid.Column="1" Grid.Row="1">
+        <Button x:Name="DeviceSpecificFeatures_Copy3" Content="Settings" Margin="1,0,10,62" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Settings_Click" Grid.Column="1">
             <Button.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -171,7 +170,7 @@
             </Label.Effect>
         </Label>
 
-        <Label x:Name="copyright" Content="Version 21.9.1[R3]" Margin="0,40,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Top">
+        <Label x:Name="copyright" Content="Version 21.10[21102]" Margin="0,40,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Top">
             <Label.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -181,7 +180,87 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <Button x:Name="DeviceSpecificFeatures_Copy4" Content="Quick Start Guide" Margin="10,0,10,114" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="DeviceSpecificFeatures_Copy4_Click" Grid.Row="1" Grid.ColumnSpan="2">
+        <Button x:Name="DeviceSpecificFeatures_Copy4" Content="Quick Start Guide" Margin="10,0,10,114" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="DeviceSpecificFeatures_Copy4_Click" Grid.ColumnSpan="2">
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Button.Effect>
+        </Button>
+        <Rectangle x:Name="TTOutOfDate" Fill="#B2FFC500" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="8" RadiusX="8" Margin="10,0,10,185" Grid.ColumnSpan="2" Height="102" VerticalAlignment="Bottom">
+            <Rectangle.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Label x:Name="TTOutOfDateTxt1" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Content="⚠Treble Toolkit is out of date" Margin="20,0,20,237" Grid.ColumnSpan="2" Height="40" VerticalAlignment="Bottom">
+            <Label.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemAltHighColor}"
+                    Opacity="0.8"
+                    BlurRadius="2"/>
+            </Label.Effect>
+        </Label>
+        <Label x:Name="TTOutOfDateTxt2" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Content="Updating is recommended" Margin="20,0,115,195" Grid.ColumnSpan="2" Height="40" VerticalAlignment="Bottom">
+            <Label.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemAltHighColor}"
+                    Opacity="0.8"
+                    BlurRadius="2"/>
+            </Label.Effect>
+        </Label>
+        <Button x:Name="Update" Content="Update" Margin="65,0,20,195" VerticalAlignment="Bottom" Height="40" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Troubleshoot" Grid.Column="1">
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Button.Effect>
+        </Button>
+        <Rectangle x:Name="W7WarningRectangle" Fill="#B2FFC500" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="8" RadiusX="8" Margin="10,0,10,289" Grid.ColumnSpan="2" Height="102" VerticalAlignment="Bottom">
+            <Rectangle.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Label x:Name="W7WarningTxt1" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Content="⚠Your PC is out of date." Margin="20,0,20,341" Grid.ColumnSpan="2" Height="40" VerticalAlignment="Bottom">
+            <Label.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemAltHighColor}"
+                    Opacity="0.8"
+                    BlurRadius="2"/>
+            </Label.Effect>
+        </Label>
+        <Label x:Name="W7WarningTxt2" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Content="Learn more here" Margin="20,0,115,299" Grid.ColumnSpan="2" Height="40" VerticalAlignment="Bottom">
+            <Label.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemAltHighColor}"
+                    Opacity="0.8"
+                    BlurRadius="2"/>
+            </Label.Effect>
+        </Label>
+        <Button x:Name="LearnMore" Content="Learn More" Margin="65,0,20,299" VerticalAlignment="Bottom" Height="40" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="LearnMore_Click" Grid.Column="1">
             <Button.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"

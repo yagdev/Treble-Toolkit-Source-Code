@@ -5,12 +5,16 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Treble Toolkit", "Treble Toolkit\Treble Toolkit.csproj", "{0D02CC5D-100D-4E51-9170-65B9EF60538C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrebleToolkitLauncher", "TrebleToolkitUpdaterLauncher\TrebleToolkitLauncher.csproj", "{0358C365-CE88-48D9-ADA6-C365B82828A1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrebleToolkitLauncherOld", "TrebleToolkitUpdaterLauncher\TrebleToolkitLauncherOld.csproj", "{0358C365-CE88-48D9-ADA6-C365B82828A1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DF10B9AD-CD9E-4552-8907-335FFCF03528}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrebleToolkitLauncher", "TrebleToolkitLauncher\TrebleToolkitLauncher.csproj", "{BA03C7EB-F866-419A-B590-B640A82C4775}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Treble Toolkit Installer", "Treble Toolkit Installer\Treble Toolkit Installer\Treble Toolkit Installer.csproj", "{F8CA40FA-2E5E-4AFF-89BD-FF3832163270}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,6 +50,30 @@ Global
 		{0358C365-CE88-48D9-ADA6-C365B82828A1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0358C365-CE88-48D9-ADA6-C365B82828A1}.Release|x64.ActiveCfg = Release|x64
 		{0358C365-CE88-48D9-ADA6-C365B82828A1}.Release|x64.Build.0 = Release|x64
+		{BA03C7EB-F866-419A-B590-B640A82C4775}.Build21.8.1+|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA03C7EB-F866-419A-B590-B640A82C4775}.Build21.8.1+|Any CPU.Build.0 = Debug|Any CPU
+		{BA03C7EB-F866-419A-B590-B640A82C4775}.Build21.8.1+|x64.ActiveCfg = Debug|Any CPU
+		{BA03C7EB-F866-419A-B590-B640A82C4775}.Build21.8.1+|x64.Build.0 = Debug|Any CPU
+		{BA03C7EB-F866-419A-B590-B640A82C4775}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{BA03C7EB-F866-419A-B590-B640A82C4775}.Debug|Any CPU.Build.0 = Debug|x64
+		{BA03C7EB-F866-419A-B590-B640A82C4775}.Debug|x64.ActiveCfg = Debug|x64
+		{BA03C7EB-F866-419A-B590-B640A82C4775}.Debug|x64.Build.0 = Debug|x64
+		{BA03C7EB-F866-419A-B590-B640A82C4775}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA03C7EB-F866-419A-B590-B640A82C4775}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA03C7EB-F866-419A-B590-B640A82C4775}.Release|x64.ActiveCfg = Release|Any CPU
+		{BA03C7EB-F866-419A-B590-B640A82C4775}.Release|x64.Build.0 = Release|Any CPU
+		{F8CA40FA-2E5E-4AFF-89BD-FF3832163270}.Build21.8.1+|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8CA40FA-2E5E-4AFF-89BD-FF3832163270}.Build21.8.1+|Any CPU.Build.0 = Debug|Any CPU
+		{F8CA40FA-2E5E-4AFF-89BD-FF3832163270}.Build21.8.1+|x64.ActiveCfg = Debug|Any CPU
+		{F8CA40FA-2E5E-4AFF-89BD-FF3832163270}.Build21.8.1+|x64.Build.0 = Debug|Any CPU
+		{F8CA40FA-2E5E-4AFF-89BD-FF3832163270}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8CA40FA-2E5E-4AFF-89BD-FF3832163270}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8CA40FA-2E5E-4AFF-89BD-FF3832163270}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F8CA40FA-2E5E-4AFF-89BD-FF3832163270}.Debug|x64.Build.0 = Debug|Any CPU
+		{F8CA40FA-2E5E-4AFF-89BD-FF3832163270}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8CA40FA-2E5E-4AFF-89BD-FF3832163270}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8CA40FA-2E5E-4AFF-89BD-FF3832163270}.Release|x64.ActiveCfg = Release|Any CPU
+		{F8CA40FA-2E5E-4AFF-89BD-FF3832163270}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -3,23 +3,23 @@ Bug Report Description
 System.Windows.Controls.TextBox: Please describe your issue here
 Phone Info
 ©2021 YAG-dev
-Deleting instance \\DESKTOP-AVDBJVA\ROOT\CIMV2:Win32_Process.Handle="5644"
+Deleting instance \\DESKTOP-AVDBJVA\ROOT\CIMV2:Win32_Process.Handle="20280"
 Instance deletion successful.
 
 PC Info
 ©2021 YAG-dev
 
 Host Name:                 DESKTOP-AVDBJVA
-OS Name:                   Microsoft Windows 11 Home
-OS Version:                10.0.22000 N/A Build 22000
+OS Name:                   Microsoft Windows 11 Home Insider Preview
+OS Version:                10.0.22449 N/A Build 22449
 OS Manufacturer:           Microsoft Corporation
 OS Configuration:          Standalone Workstation
 OS Build Type:             Multiprocessor Free
 Registered Owner:          N/A
 Registered Organization:   N/A
 Product ID:                00325-80263-47997-AAOEM
-Original Install Date:     7/5/2021, 9:59:20 PM
-System Boot Time:          7/25/2021, 7:42:44 AM
+Original Install Date:     9/3/2021, 3:12:12 AM
+System Boot Time:          9/7/2021, 2:53:26 PM
 System Manufacturer:       TOSHIBA
 System Model:              SATELLITE P50-C
 System Type:               x64-based PC
@@ -33,22 +33,18 @@ System Locale:             en-us;English (United States)
 Input Locale:              pt;Portuguese (Portugal)
 Time Zone:                 (UTC+00:00) Dublin, Edinburgh, Lisbon, London
 Total Physical Memory:     16,218 MB
-Available Physical Memory: 8,772 MB
+Available Physical Memory: 7,047 MB
 Virtual Memory: Max Size:  18,650 MB
-Virtual Memory: Available: 9,515 MB
-Virtual Memory: In Use:    9,135 MB
+Virtual Memory: Available: 5,996 MB
+Virtual Memory: In Use:    12,654 MB
 Page File Location(s):     C:\pagefile.sys
 Domain:                    WORKGROUP
 Logon Server:              \\DESKTOP-AVDBJVA
-Hotfix(s):                 5 Hotfix(s) Installed.
-                           [01]: KB5004342
-                           [02]: KB5003792
-                           [03]: KB5004567
-                           [04]: KB5004300
-                           [05]: KB5005311
+Hotfix(s):                 1 Hotfix(s) Installed.
+                           [01]: KB5005544
 Network Card(s):           3 NIC(s) Installed.
-                           [01]: Realtek PCIe GBE Family Controller
-                                 Connection Name: Ethernet
+                           [01]: TAP-Windows Adapter V9
+                                 Connection Name: Local Area Connection
                                  Status:          Media disconnected
                            [02]: Intel(R) Dual Band Wireless-AC 3165
                                  Connection Name: Wi-Fi
@@ -57,10 +53,10 @@ Network Card(s):           3 NIC(s) Installed.
                                  IP address(es)
                                  [01]: 192.168.1.70
                                  [02]: fe80::525:8430:e9df:b573
-                                 [03]: 2001:8a0:6127:e001:3c0b:24b1:708d:f1eb
-                                 [04]: 2001:8a0:6127:e001:525:8430:e9df:b573
-                           [03]: TAP-Windows Adapter V9
-                                 Connection Name: Local Area Connection
+                                 [03]: 2001:8a0:6132:8401:acb0:e3d9:4f61:4b34
+                                 [04]: 2001:8a0:6132:8401:525:8430:e9df:b573
+                           [03]: Realtek PCIe GBE Family Controller
+                                 Connection Name: Ethernet
                                  Status:          Media disconnected
 Hyper-V Requirements:      A hypervisor has been detected. Features required for Hyper-V will not be displayed.
 

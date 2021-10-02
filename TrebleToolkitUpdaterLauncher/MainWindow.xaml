@@ -234,7 +234,7 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <Label x:Name="Title" Content="Welcome to Treble Toolkit Launcher" VerticalAlignment="Top" Height="40" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="3" >
+        <Label x:Name="Title" Content="Welcome to Treble Toolkit Launcher (Compatibility Mode)" VerticalAlignment="Top" Height="40" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="3" >
             <Label.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -335,7 +335,7 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <Label x:Name="CurrentVersion" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="16" Content="21.9.1[R3]" Grid.Column="4" Margin="10,123,10,0" Height="40" VerticalAlignment="Top">
+        <Label x:Name="CurrentVersion" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="16" Content="21.10 (21.9.1[R3])" Grid.Column="4" Margin="10,123,10,0" Height="40" VerticalAlignment="Top">
             <Label.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -375,7 +375,7 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <Label x:Name="LauncherVer" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="16" Content="21.9.1[R3]" Grid.Column="4" Margin="10,227,10,0" Height="40" VerticalAlignment="Top">
+        <Label x:Name="LauncherVer" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="16" Content="21.10 (21.9.1[R3])" Grid.Column="4" Margin="10,227,10,0" Height="40" VerticalAlignment="Top">
             <Label.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"

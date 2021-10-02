@@ -117,7 +117,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Style x:Key="PgrBar21.4.2" TargetType="{x:Type ProgressBar}">
+        <Style TargetType="{x:Type ProgressBar}" x:Key="PgrBar21.4.2">
             <Setter Property="Foreground" Value="{StaticResource ProgressBar.Progress}"/>
             <Setter Property="Background" Value="{StaticResource ProgressBar.Background}"/>
             <Setter Property="BorderBrush" Value="{StaticResource ProgressBar.Border}"/>
@@ -146,10 +146,10 @@
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
                             <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="5"/>
-                            <Rectangle x:Name="PART_Track" RadiusX="5" RadiusY="5"/>
-                            <Grid x:Name="PART_Indicator" ClipToBounds="true" HorizontalAlignment="Left" Margin="5">
-                                <Rectangle x:Name="Indicator" Fill="{TemplateBinding Foreground}" RadiusX="3" RadiusY="3"/>
-                                <Rectangle x:Name="Animation" Fill="{TemplateBinding Foreground}" RenderTransformOrigin="0.5,0.5" RadiusX="5" RadiusY="5">
+                            <Rectangle x:Name="PART_Track" RadiusX="9" RadiusY="9"/>
+                            <Grid x:Name="PART_Indicator" ClipToBounds="true" HorizontalAlignment="Left" Margin="0">
+                                <Rectangle x:Name="Indicator" Fill="{TemplateBinding Foreground}" RadiusX="8" RadiusY="8" Margin="1,1,2.3,1"/>
+                                <Rectangle x:Name="Animation" Fill="{TemplateBinding Foreground}" RenderTransformOrigin="0.5,0.5" RadiusX="8" RadiusY="8" Margin="1">
                                     <Rectangle.RenderTransform>
                                         <TransformGroup>
                                             <ScaleTransform/>
@@ -226,6 +226,17 @@
             <ColumnDefinition/>
             <ColumnDefinition FrameworkElement.FlowDirection="RightToLeft" MaxWidth="10" Width="10"/>
         </Grid.ColumnDefinitions>
+        <ProgressBar x:Name="status_pgr" Height="50" Margin="0,0,0,52" VerticalAlignment="Bottom" Background="{x:Null}" Foreground="{DynamicResource SystemBaseHighColorBrush}" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5" BorderThickness="3" UseLayoutRounding="False" Style="{DynamicResource PgrBar21.4.2}" Grid.ColumnSpan="2" Grid.Column="1">
+            <ProgressBar.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="2"/>
+            </ProgressBar.Effect>
+        </ProgressBar>
+
         <Label x:Name="Title" Content="Device Specific Features" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.ColumnSpan="4" Height="40" VerticalAlignment="Top">
             <Label.Effect>
                 <DropShadowEffect
@@ -246,16 +257,6 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <ProgressBar x:Name="status_pgr" Height="21" Margin="0,70,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="{DynamicResource SystemBaseHighColorBrush}" BorderBrush="{DynamicResource SystemBaseHighColorBrush}" RenderTransformOrigin="0.5,0.5" BorderThickness="3" UseLayoutRounding="False" Grid.ColumnSpan="2" Style="{DynamicResource PgrBar21.4.2}" Grid.Column="1">
-            <ProgressBar.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="2"/>
-            </ProgressBar.Effect>
-        </ProgressBar>
         <Button x:Name="BackAbout" Content="Download TWRP Image" Margin="1,0,0,52" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="HM10L_Click" Grid.ColumnSpan="2" Grid.Column="1">
             <Button.Effect>
                 <DropShadowEffect

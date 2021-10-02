@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Treble_Toolkit"
         xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
         mc:Ignorable="d"
-        Title="Treble Toolkit" Height="566" Width="360" 
+        Title="Treble Toolkit" Height="566" Width="640" 
         MinWidth="360" MinHeight="566" fw:AcrylicWindow.Enabled="True" Background="Transparent" fw:AcrylicWindow.NoiseOpacity="0" fw:AcrylicPanel.NoiseOpacity="0" fw:AcrylicPanel.TintColor="Transparent" fw:AcrylicWindow.TintColor="Transparent" BorderThickness="0">
     <Grid x:Name="GridMain">
         <ScrollViewer x:Name="scrollviewer" ClipToBounds="True" VerticalScrollBarVisibility="Hidden">

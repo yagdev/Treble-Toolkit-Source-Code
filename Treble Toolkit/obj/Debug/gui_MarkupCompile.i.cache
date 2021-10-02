@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\App.xaml
-49-452599791
+752081447422
 
-54-787448507
-131-424872620
-AboutScreen.xaml;Alcatel1.xaml;CompatibleDevices.xaml;DeviceTester.xaml;FlashVendorFinished.xaml;FormatPartitions.xaml;GSIABFlash.xaml;GSIABPickAFile.xaml;GSIAFlash.xaml;GSIAPickAFile.xaml;GSIFlashTerminated.xaml;GSIFlashTerminatedAB.xaml;HM10LDSF.xaml;HomeScreen.xaml;HuaweiMate10Lite.xaml;MainWindow.xaml;MainWindow2.xaml;MainWindow3.xaml;More.xaml;OnePlus6.xaml;OnePlus6DSF.xaml;OnePlus8.xaml;OnePlus8DSF.xaml;PMFinished.xaml;PMFlash.xaml;ReportBug.xaml;ReportBugStep2.xaml;Settings.xaml;Sideloader.xaml;SideloaderPickFile.xaml;SideloadFinished.xaml;SonyXperia1.xaml;SonyXperia5.xaml;SonyXperiaXZ2.xaml;SXXZ2DSF.xaml;TWRPBoot.xaml;TWRPBootFinished.xaml;TWRPBootPickFile.xaml;TWRPFlash.xaml;TWRPFlashFinished.xaml;TWRPFlashPickFile.xaml;UnlockBootloader.xaml;UnlockedBootloader.xaml;VendorFinished.xaml;VendorFlash.xaml;VendorPickFile.xaml;Windows7Warning.xaml;XP1DSF.xaml;XP5DSF.xaml;
+80-1255941507
+138-1186744734
+AboutScreen.xaml;Alcatel1.xaml;BTULHW.xaml;BugReports.xaml;CompatibilityCheck.xaml;CompatibleDevices.xaml;DebugInfo.xaml;DeviceTester.xaml;FixConnectionPhoneStep1.xaml;FixConnectionPhoneStep2.xaml;FixConnectionPhoneStep3.xaml;FlashingGSIA.xaml;FlashingGSITUT.xaml;FlashingVendorTUT.xaml;FlashVendorFinished.xaml;FormatPartitions.xaml;GSIABFlash.xaml;GSIABPickAFile.xaml;GSIAFlash.xaml;GSIAPickAFile.xaml;GSIFlashA.xaml;GSIFlashAB.xaml;GSIFlashTerminated.xaml;GSIFlashTerminatedAB.xaml;HM10LDSF.xaml;HomeScreen.xaml;HuaweiMate10Lite.xaml;MainWindow.xaml;MainWindow2.xaml;MainWindow3.xaml;More.xaml;OnePlus6.xaml;OnePlus6DSF.xaml;OnePlus8.xaml;OnePlus8DSF.xaml;PMFinished.xaml;PMFlash.xaml;PMTUT.xaml;PrivacyAndDataManagement.xaml;QSG.xaml;QuickStartGuide.xaml;ReportBug.xaml;ReportBugStep2.xaml;Settings.xaml;Setup.xaml;Setup2.xaml;Setup3.xaml;Sideloader.xaml;SideloaderPickFile.xaml;SideloadFinished.xaml;SonyXperia1.xaml;SonyXperia5.xaml;SonyXperiaXZ2.xaml;SXXZ2DSF.xaml;TransparencyAndEffects.xaml;TWRP.xaml;TWRPBoot.xaml;TWRPBootFinished.xaml;TWRPBootPickFile.xaml;TWRPFlash.xaml;TWRPFlashFinished.xaml;TWRPFlashPickFile.xaml;UnlockBootloader.xaml;UnlockBootloaderTut.xaml;UnlockedBootloader.xaml;UpdateCenter.xaml;VendorFinished.xaml;VendorFlash.xaml;VendorPickFile.xaml;Windows7Warning.xaml;WindowsOutdatedMoreInfo.xaml;WindowsStupidDriverFix.xaml;XP1DSF.xaml;XP5DSF.xaml;ZipSideloaderTUT.xaml;
 
-True
+False
 

@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CLUpdate</name>
+    </assembly>
+    <members>
+        <member name="T:ChaseLabs.CLUpdate.Interfaces.IUpdater">
+            <summary>
+            The Interface Class for the Updater
+            </summary>
+        </member>
+        <member name="P:ChaseLabs.CLUpdate.Interfaces.IUpdater.URL">
+            <summary>
+            Returns the Download URL
+            </summary>
+        </member>
+        <member name="P:ChaseLabs.CLUpdate.Interfaces.IUpdater.ZipDirectory">
+            <summary>
+            The Temp Directory in Which the Zip File will Reside
+            </summary>
+        </member>
+        <member name="P:ChaseLabs.CLUpdate.Interfaces.IUpdater.UnzipDirectory">
+            <summary>
+            The Directory in Which the Application File will Reside
+            </summary>
+        </member>
+        <member name="P:ChaseLabs.CLUpdate.Interfaces.IUpdater.LaunchExecutableName">
+            <summary>
+            The Executable to be Launched apon Completion
+            </summary>
+        </member>
+        <member name="P:ChaseLabs.CLUpdate.Interfaces.IUpdater.OverwriteDirectory">
+            <summary>
+            Returns Weather or not to remove all files in a directory or just skip them
+            </summary>
+        </member>
+        <member name="P:ChaseLabs.CLUpdate.Interfaces.IUpdater.DownloadProgress">
+            <summary>
+            Returns the Current Download Progress in interger form
+            </summary>
+        </member>
+        <member name="M:ChaseLabs.CLUpdate.Interfaces.IUpdater.Download">
+            <summary>
+            Downloads the Zip Archive From URL
+            </summary>
+        </member>
+        <member name="M:ChaseLabs.CLUpdate.Interfaces.IUpdater.Unzip">
+            <summary>
+            Unzips the Zip Archive to Application Directory
+            </summary>
+        </member>
+        <member name="M:ChaseLabs.CLUpdate.Interfaces.IUpdater.CleanUp">
+            <summary>
+            Removes the Zip Archive and Temp Directory
+            </summary>
+        </member>
+        <member name="M:ChaseLabs.CLUpdate.Interfaces.IUpdater.LaunchExecutable">
+            <summary>
+            Launches the Applications Executable
+            </summary>
+        </member>
+        <member name="T:ChaseLabs.CLUpdate.UpdateManager">
+            <summary>
+            <para>
+            Author: Drew Chase
+            </para>
+            <para>
+            Company: Chase Labs
+            </para>
+            </summary>
+        </member>
+        <member name="M:ChaseLabs.CLUpdate.UpdateManager.Update(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Automatically Checks for Update and Downloads if Needed
+            <para>Version Files Should be Orginized Like so</para>
+            <code>Version Key 1.0.0</code>
+            </summary>
+            <param name="versionKey">The Label before the Version Numbers</param>
+            <param name="localVersionFilePath">The Path to the current Version File, If not found it will automatically update</param>
+            <param name="remoteVersionFilePath">The URL to the updated Version File</param>
+            <param name="zipUrl">The Direct Download URL to the Update Zip Archive</param>
+            <param name="zipDirectory">The Temp Directory where the Zip Archive will be Downloaded</param>
+            <param name="unzipDirectory">The Application Directory</param>
+            <param name="launchExecutableName">The Application Executable Path</param>
+            <param name="overwrite">Weather to Clear the Application Directory Prior to Unziping</param>
+        </member>
+        <member name="M:ChaseLabs.CLUpdate.UpdateManager.CheckForUpdate(System.String,System.String,System.String)">
+            <summary>
+            Checks if an Update is Needed
+            <para>Version Files Should be Orginized Like so</para>
+            <code>Version Key 1.0.0</code>
+            </summary>
+            <param name="versionKey">The Label before the Version Numbers</param>
+            <param name="localVersionFilePath">The Path to the current Version File, If not found it will automatically update</param>
+            <param name="remoteVersionFilePath">The URL to the updated Version File</param>
+            <returns>True = Needs Update | False = Doesn't Need Update</returns>
+        </member>
+        <member name="T:ChaseLabs.CLUpdate.Updater">
+            <summary>
+            <para>
+            Author: Drew Chase
+            </para>
+            <para>
+            Company: Chase Labs
+            </para>
+            </summary>
+        </member>
+        <member name="P:ChaseLabs.CLUpdate.Updater.URL">
+            <summary>
+            Returns the Download URL
+            </summary>
+        </member>
+        <member name="P:ChaseLabs.CLUpdate.Updater.ZipDirectory">
+            <summary>
+            The Temp Directory in Which the Zip File will Reside
+            </summary>
+        </member>
+        <member name="P:ChaseLabs.CLUpdate.Updater.UnzipDirectory">
+            <summary>
+            The Directory in Which the Application File will Reside
+            </summary>
+        </member>
+        <member name="P:ChaseLabs.CLUpdate.Updater.LaunchExecutableName">
+            <summary>
+            The Executable to be Launched apon Completion
+            </summary>
+        </member>
+        <member name="P:ChaseLabs.CLUpdate.Updater.OverwriteDirectory">
+            <summary>
+            Returns Weather or not to remove all files in a directory or just skip them
+            </summary>
+        </member>
+        <member name="P:ChaseLabs.CLUpdate.Updater.DownloadProgress">
+            <summary>
+            Returns the Current Download Progress in interger form
+            </summary>
+        </member>
+        <member name="M:ChaseLabs.CLUpdate.Updater.Init(System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            A Static Method to Initialize the Updater
+            </summary>
+            <param name="_url">The Direct Download URL of the Zip File</param>
+            <param name="_zipDirectory">The Temp Directory to Download the Zip Archive</param>
+            <param name="_unzipDirectory">The Application Directory</param>
+            <param name="_launchExecutableName">The Application Executable to Launch Apon Completion</param>
+            <param name="_overwrite">Weather to Clear the Application Directory Prior to Unziping</param>
+            <returns></returns>
+        </member>
+        <member name="M:ChaseLabs.CLUpdate.Updater.Download">
+            <summary>
+            Downloads the Zip Archive From URL
+            </summary>
+        </member>
+        <member name="M:ChaseLabs.CLUpdate.Updater.Unzip">
+            <summary>
+            Unzips the Zip Archive to Application Directory
+            </summary>
+        </member>
+        <member name="M:ChaseLabs.CLUpdate.Updater.CleanUp">
+            <summary>
+            Removes the Zip Archive and Temp Directory
+            </summary>
+        </member>
+        <member name="M:ChaseLabs.CLUpdate.Updater.LaunchExecutable">
+            <summary>
+            Launches the Applications Executable
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -8,6 +8,8 @@ using System.Diagnostics;
 using System.Windows.Threading;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Media.Effects;
+using System.Windows.Media;
 
 namespace Treble_Toolkit
 {
@@ -19,113 +21,337 @@ namespace Treble_Toolkit
         public HomeScreen()
         {
             InitializeComponent();
-            string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotAnimated.txt");
-            if (File.Exists(IsAnimated))
-            {
-
-            }
-            else
-            {
-                GridMain.Opacity = 0;
-                Grid r = (Grid)GridMain;
-                DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
-                r.BeginAnimation(Grid.OpacityProperty, animation);
-            }
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.UseShellExecute = false;
+            startInfo.RedirectStandardOutput = true;
+            startInfo.FileName = "adb.exe";
+            startInfo.Arguments = "shell dumpsys battery";
+            startInfo.CreateNoWindow = true;
+            process.StartInfo = startInfo;
+            process.Start();
+            process.WaitForExit();
+            process.StandardOutput.ReadLine();
+            process.StandardOutput.ReadLine();
+            process.StandardOutput.ReadLine();
+            process.StandardOutput.ReadLine();
+            process.StandardOutput.ReadLine();
+            process.StandardOutput.ReadLine();
+            process.StandardOutput.ReadLine();
+            process.StandardOutput.ReadLine();
+            process.StandardOutput.ReadLine();
+            process.StandardOutput.ReadLine();
+            string outputbattery = process.StandardOutput.ReadLine();
+            Thread.Sleep(1000);
+            DebugShit.Text = outputbattery + "%";
             Dispatcher dis = Dispatcher.CurrentDispatcher;
             Task.Run(() =>
             {
                 dis.Invoke(() =>
                 {
-                    System.Diagnostics.Process process = new System.Diagnostics.Process();
-                    System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-                    startInfo.UseShellExecute = false;
-                    startInfo.FileName = "CMD.exe";
-                    startInfo.Arguments = "/C cd .. & mkdir Place_Files_Here & cd Place_Files_Here & mkdir GSI & mkdir TWRP & mkdir boot & cd GSI & ren *.img system.img & cd .. & cd boot & ren *.img boot.img & cd .. & cd TWRP & ren *.img twrp.img";
-                    startInfo.CreateNoWindow = true;
-                    process.StartInfo = startInfo;
-                    process.Start();
-                    process.WaitForExit();
-                    string GSI = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\", "Place_Files_Here", "GSI", "system.img");
-                    string BootIMG = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\", "Place_Files_Here", "boot", "boot.img");
-                    string TWRPIMG = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\", "Place_Files_Here", "TWRP", "twrp.img");
-                    if (File.Exists(GSI))
+                    string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotAnimated.txt");
+                    if (File.Exists(IsAnimated))
                     {
-                        GSIFileLabel.Content = "Detected";
+
                     }
                     else
+                    {
+                        GridMain.Opacity = 0;
+                        Grid r = (Grid)GridMain;
+                        DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
+                        r.BeginAnimation(Grid.OpacityProperty, animation);
+                    }
+                });
+            });
+            startInfo.UseShellExecute = false;
+            startInfo.FileName = "CMD.exe";
+            startInfo.Arguments = "/C cd .. & mkdir Place_Files_Here & cd Place_Files_Here & mkdir GSI & mkdir TWRP & mkdir boot & cd GSI & ren *.img system.img & cd .. & cd boot & ren *.img boot.img & cd .. & cd TWRP & ren *.img twrp.img";
+            startInfo.CreateNoWindow = true;
+            process.StartInfo = startInfo;
+            process.Start();
+            process.WaitForExit();
+            string GSI = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\", "Place_Files_Here", "GSI", "system.img");
+            string BootIMG = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\", "Place_Files_Here", "boot", "boot.img");
+            string TWRPIMG = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\", "Place_Files_Here", "TWRP", "twrp.img");
+            if (File.Exists(GSI))
+            {
+                Task.Run(() =>
+                {
+                    dis.Invoke(() =>
+                    {
+                        FileInfo fInfo = new FileInfo(@"..\Place_Files_Here\GSI\system.img");
+                        if (fInfo.Length < 500000000)
+                        {
+                            GSIFileLabel.Content = "Invalid (< 500MB)";
+                            DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                            // Set the color of the shadow to Black.
+                            Color myShadowColor = new Color();
+                            myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                                   // The Opacity property is used to control the alpha.
+                            myShadowColor.B = 0;
+                            myShadowColor.G = 0;
+                            myShadowColor.R = 255;
+                            myDropShadowEffect.Direction = 0;
+                            myDropShadowEffect.ShadowDepth = 0;
+
+                            myDropShadowEffect.Color = myShadowColor;
+                            GSIRectangle.Effect = myDropShadowEffect;
+                        }
+                        else
+                        {
+                            GSIRectangle.Effect = DeviceSpecificFeatures_Copy.Effect;
+                            GSIFileLabel.Content = "Detected";
+                        }
+                    });
+                });
+            }
+            else
+            {
+                Task.Run(() =>
+                {
+                    dis.Invoke(() =>
                     {
                         GSIFileLabel.Content = "Not Detected";
-                    }
-                    if (File.Exists(BootIMG))
+                        DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                        // Set the color of the shadow to Black.
+                        Color myShadowColor = new Color();
+                        myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                               // The Opacity property is used to control the alpha.
+                        myShadowColor.B = 0;
+                        myShadowColor.G = 0;
+                        myShadowColor.R = 255;
+                        myDropShadowEffect.Direction = 0;
+                        myDropShadowEffect.ShadowDepth = 0;
+
+                        myDropShadowEffect.Color = myShadowColor;
+                        GSIRectangle.Effect = myDropShadowEffect;
+                    });
+                });
+            }
+            if (File.Exists(BootIMG))
+            {
+                Task.Run(() =>
+                {
+                    dis.Invoke(() =>
                     {
-                        BootFileLabel.Content = "Detected";
-                    }
-                    else
+                        FileInfo fInfo = new FileInfo(@"..\Place_Files_Here\boot\boot.img");
+                        if (fInfo.Length > 100000000)
+                        {
+                            BootFileLabel.Content = "Invalid (> 100MB)";
+                            DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                            // Set the color of the shadow to Black.
+                            Color myShadowColor = new Color();
+                            myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                                   // The Opacity property is used to control the alpha.
+                            myShadowColor.B = 0;
+                            myShadowColor.G = 0;
+                            myShadowColor.R = 255;
+                            myDropShadowEffect.Direction = 0;
+                            myDropShadowEffect.ShadowDepth = 0;
+
+                            myDropShadowEffect.Color = myShadowColor;
+                            BootRectangle.Effect = myDropShadowEffect;
+                        }
+                        else
+                        {
+                            BootRectangle.Effect = DeviceSpecificFeatures_Copy.Effect;
+                            BootFileLabel.Content = "Detected";
+                        }
+                    });
+                });
+            }
+            else
+            {
+                Task.Run(() =>
+                {
+                    dis.Invoke(() =>
                     {
                         BootFileLabel.Content = "Not Detected";
-                    }
-                    if (File.Exists(TWRPIMG))
+                        DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                        // Set the color of the shadow to Black.
+                        Color myShadowColor = new Color();
+                        myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                               // The Opacity property is used to control the alpha.
+                        myShadowColor.B = 0;
+                        myShadowColor.G = 255;
+                        myShadowColor.R = 255;
+                        myDropShadowEffect.Direction = 0;
+                        myDropShadowEffect.ShadowDepth = 0;
+
+                        myDropShadowEffect.Color = myShadowColor;
+                        BootRectangle.Effect = myDropShadowEffect;
+                    });
+                });
+            }
+            if (File.Exists(TWRPIMG))
+            {
+                Task.Run(() =>
+                {
+                    dis.Invoke(() =>
                     {
-                        TWRPFileLabel.Content = "Detected";
-                    }
-                    else
+                        FileInfo fInfo = new FileInfo(@"..\Place_Files_Here\TWRP\twrp.img");
+                        if (fInfo.Length > 100000000)
+                        {
+                            TWRPFileLabel.Content = "Invalid (> 100MB)";
+                            DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                            // Set the color of the shadow to Black.
+                            Color myShadowColor = new Color();
+                            myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                                   // The Opacity property is used to control the alpha.
+                            myShadowColor.B = 0;
+                            myShadowColor.G = 0;
+                            myShadowColor.R = 255;
+                            myDropShadowEffect.Direction = 0;
+                            myDropShadowEffect.ShadowDepth = 0;
+
+                            myDropShadowEffect.Color = myShadowColor;
+                            TWRPRectangle.Effect = myDropShadowEffect;
+                        }
+                        else
+                        {
+                            TWRPRectangle.Effect = DeviceSpecificFeatures_Copy.Effect;
+                            TWRPFileLabel.Content = "Detected";
+                        }
+                    });
+                });
+            }
+            else
+            {
+                Task.Run(() =>
+                {
+                    dis.Invoke(() =>
                     {
                         TWRPFileLabel.Content = "Not Detected";
-                    }
-                    startInfo.UseShellExecute = false;
-                    startInfo.RedirectStandardOutput = true;
-                    startInfo.FileName = "CMD.exe";
-                    startInfo.Arguments = "/C adb.exe get-state";
-                    startInfo.CreateNoWindow = true;
-                    process.StartInfo = startInfo;
-                    process.Start();
-                    string output3 = process.StandardOutput.ReadToEnd();
-                    process.WaitForExit();
-                    if (output3.Contains("device") == true)
+                        DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                        // Set the color of the shadow to Black.
+                        Color myShadowColor = new Color();
+                        myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                               // The Opacity property is used to control the alpha.
+                        myShadowColor.B = 0;
+                        myShadowColor.G = 255;
+                        myShadowColor.R = 255;
+                        myDropShadowEffect.Direction = 0;
+                        myDropShadowEffect.ShadowDepth = 0;
+
+                        myDropShadowEffect.Color = myShadowColor;
+                        TWRPRectangle.Effect = myDropShadowEffect;
+                    });
+                });
+            }
+            startInfo.UseShellExecute = false;
+            startInfo.RedirectStandardOutput = true;
+            startInfo.FileName = "CMD.exe";
+            startInfo.Arguments = "/C adb.exe get-state";
+            startInfo.CreateNoWindow = true;
+            process.StartInfo = startInfo;
+            process.Start();
+            string output3 = process.StandardOutput.ReadToEnd();
+            process.WaitForExit();
+            if (output3.Contains("device") == true)
+            {
+                startInfo.UseShellExecute = false;
+                startInfo.RedirectStandardOutput = true;
+                startInfo.FileName = "CMD.exe";
+                startInfo.Arguments = "/C fastboot.exe devices";
+                startInfo.CreateNoWindow = true;
+                process.StartInfo = startInfo;
+                process.Start();
+                string output4 = process.StandardOutput.ReadToEnd();
+                process.WaitForExit();
+                if (output4.Contains("fastboot") == true)
+                {
+                    if (GridMain.ActualWidth <= 530)
                     {
-                        startInfo.UseShellExecute = false;
-                        startInfo.RedirectStandardOutput = true;
-                        startInfo.FileName = "CMD.exe";
-                        startInfo.Arguments = "/C fastboot.exe devices";
-                        startInfo.CreateNoWindow = true;
-                        process.StartInfo = startInfo;
-                        process.Start();
-                        string output4 = process.StandardOutput.ReadToEnd();
-                        process.WaitForExit();
-                        if (output4.Contains("fastboot") == true)
-                        {
-                            cc.Content = "Yes (ADB/Fastboot)";
-                        }
-                        else
-                        {
-                            cc.Content = "Yes (ADB)";
-                        }
+                        DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                        // Set the color of the shadow to Black.
+                        Color myShadowColor = new Color();
+                        myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                               // The Opacity property is used to control the alpha.
+                        myShadowColor.B = 0;
+                        myShadowColor.G = 255;
+                        myShadowColor.R = 255;
+                        myDropShadowEffect.Direction = 0;
+                        myDropShadowEffect.ShadowDepth = 0;
+
+                        myDropShadowEffect.Color = myShadowColor;
+                        DeviceRectangle.Effect = myDropShadowEffect;
+                        cc.Content = "Yes (2+)";
                     }
                     else
                     {
-                        startInfo.UseShellExecute = false;
-                        startInfo.RedirectStandardOutput = true;
-                        startInfo.FileName = "CMD.exe";
-                        startInfo.Arguments = "/C fastboot.exe devices";
-                        startInfo.CreateNoWindow = true;
-                        process.StartInfo = startInfo;
-                        process.Start();
-                        string output4 = process.StandardOutput.ReadToEnd();
-                        process.WaitForExit();
-                        if (output4.Contains("fastboot") == true)
-                        {
-                            cc.Content = "Yes (Fastboot)";
-                        }
-                        else
-                        {
-                            cc.Content = "No";
-                        }
-                    }
-                }, DispatcherPriority.Normal);
-            });
+                        DropShadowEffect myDropShadowEffect = new DropShadowEffect();
 
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
+                        // Set the color of the shadow to Black.
+                        Color myShadowColor = new Color();
+                        myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                               // The Opacity property is used to control the alpha.
+                        myShadowColor.B = 0;
+                        myShadowColor.G = 255;
+                        myShadowColor.R = 255;
+                        myDropShadowEffect.Direction = 0;
+                        myDropShadowEffect.ShadowDepth = 0;
+
+                        myDropShadowEffect.Color = myShadowColor;
+                        DeviceRectangle.Effect = myDropShadowEffect;
+                        cc.Content = "Yes (2+ Devices)";
+                    }
+                }
+                else
+                {
+                    DeviceRectangle.Effect = DeviceSpecificFeatures_Copy.Effect;
+                    cc.Content = "Yes (ADB)";
+                }
+            }
+            else
+            {
+                startInfo.UseShellExecute = false;
+                startInfo.RedirectStandardOutput = true;
+                startInfo.FileName = "CMD.exe";
+                startInfo.Arguments = "/C fastboot.exe devices";
+                startInfo.CreateNoWindow = true;
+                process.StartInfo = startInfo;
+                process.Start();
+                string output4 = process.StandardOutput.ReadToEnd();
+                process.WaitForExit();
+                if (output4.Contains("fastboot") == true)
+                {
+                    if (GridMain.ActualWidth <= 530)
+                    {
+                        DeviceRectangle.Effect = DeviceSpecificFeatures_Copy.Effect;
+                        cc.Content = "Yes (F)";
+                    }
+                    else
+                    {
+                        DeviceRectangle.Effect = DeviceSpecificFeatures_Copy.Effect;
+                        cc.Content = "Yes (Fastboot)";
+                    }
+                }
+                else
+                {
+                    DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                    // Set the color of the shadow to Black.
+                    Color myShadowColor = new Color();
+                    myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                           // The Opacity property is used to control the alpha.
+                    myShadowColor.B = 0;
+                    myShadowColor.G = 0;
+                    myShadowColor.R = 255;
+                    myDropShadowEffect.Direction = 0;
+                    myDropShadowEffect.ShadowDepth = 0;
+
+                    myDropShadowEffect.Color = myShadowColor;
+                    DeviceRectangle.Effect = myDropShadowEffect;
+                    cc.Content = "No";
+                }
+            }
         }
         private void AboutButton_Click(object sender, RoutedEventArgs e)
         {
@@ -182,14 +408,8 @@ namespace Treble_Toolkit
 
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process process = new System.Diagnostics.Process();
-            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = "/C cd .. & cd .. & start TrebleToolkitLauncher.exe";
-            process.StartInfo = startInfo;
-            process.Start();
-            Application.Current.Shutdown();
+            Uri uri = new Uri("UpdateCenter.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
         }
 
         private void Website_Click(object sender, RoutedEventArgs e)
@@ -211,46 +431,193 @@ namespace Treble_Toolkit
 
         private void Refresh(object sender, RoutedEventArgs e)
         {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.UseShellExecute = false;
+            startInfo.FileName = "CMD.exe";
+            startInfo.Arguments = "/C cd .. & mkdir Place_Files_Here & cd Place_Files_Here & mkdir GSI & mkdir TWRP & mkdir boot & cd GSI & ren *.img system.img & cd .. & cd boot & ren *.img boot.img & cd .. & cd TWRP & ren *.img twrp.img";
+            startInfo.CreateNoWindow = true;
+            process.StartInfo = startInfo;
+            process.Start();
+            process.WaitForExit();
             Dispatcher dis = Dispatcher.CurrentDispatcher;
             Task.Run(() =>
             {
                 dis.Invoke(() =>
                 {
-                    System.Diagnostics.Process process = new System.Diagnostics.Process();
-                    System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-                    startInfo.UseShellExecute = false;
-                    startInfo.FileName = "CMD.exe";
-                    startInfo.Arguments = "/C cd .. & mkdir Place_Files_Here & cd Place_Files_Here & mkdir GSI & mkdir TWRP & mkdir boot & cd GSI & ren *.img system.img & cd .. & cd boot & ren *.img boot.img & cd .. & cd TWRP & ren *.img twrp.img";
-                    startInfo.CreateNoWindow = true;
-                    process.StartInfo = startInfo;
-                    process.Start();
-                    process.WaitForExit();
                     string GSI = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\", "Place_Files_Here", "GSI", "system.img");
                     string BootIMG = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\", "Place_Files_Here", "boot", "boot.img");
                     string TWRPIMG = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\", "Place_Files_Here", "TWRP", "twrp.img");
                     if (File.Exists(GSI))
                     {
-                        GSIFileLabel.Content = "Detected";
+                        Task.Run(() =>
+                        {
+                            dis.Invoke(() =>
+                            {
+                                FileInfo fInfo = new FileInfo(@"..\Place_Files_Here\GSI\system.img");
+                                if (fInfo.Length < 500000000)
+                                {
+                                    GSIFileLabel.Content = "Invalid (< 500MB)";
+                                    DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                                    // Set the color of the shadow to Black.
+                                    Color myShadowColor = new Color();
+                                    myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                                           // The Opacity property is used to control the alpha.
+                                    myShadowColor.B = 0;
+                                    myShadowColor.G = 0;
+                                    myShadowColor.R = 255;
+                                    myDropShadowEffect.Direction = 0;
+                                    myDropShadowEffect.ShadowDepth = 0;
+
+                                    myDropShadowEffect.Color = myShadowColor;
+                                    GSIRectangle.Effect = myDropShadowEffect;
+                                }
+                                else
+                                {
+                                    GSIRectangle.Effect = DeviceSpecificFeatures_Copy.Effect;
+                                    GSIFileLabel.Content = "Detected";
+                                }
+                            });
+                        });
                     }
                     else
                     {
-                        GSIFileLabel.Content = "Not Detected";
+                        Task.Run(() =>
+                        {
+                            dis.Invoke(() =>
+                            {
+                                GSIFileLabel.Content = "Not Detected";
+                                DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                                // Set the color of the shadow to Black.
+                                Color myShadowColor = new Color();
+                                myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                                       // The Opacity property is used to control the alpha.
+                                myShadowColor.B = 0;
+                                myShadowColor.G = 0;
+                                myShadowColor.R = 255;
+                                myDropShadowEffect.Direction = 0;
+                                myDropShadowEffect.ShadowDepth = 0;
+
+                                myDropShadowEffect.Color = myShadowColor;
+                                GSIRectangle.Effect = myDropShadowEffect;
+                            });
+                        });
                     }
                     if (File.Exists(BootIMG))
                     {
-                        BootFileLabel.Content = "Detected";
+                        Task.Run(() =>
+                        {
+                            dis.Invoke(() =>
+                            {
+                                FileInfo fInfo = new FileInfo(@"..\Place_Files_Here\boot\boot.img");
+                                if (fInfo.Length > 100000000)
+                                {
+                                    BootFileLabel.Content = "Invalid (> 100MB)";
+                                    DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                                    // Set the color of the shadow to Black.
+                                    Color myShadowColor = new Color();
+                                    myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                                           // The Opacity property is used to control the alpha.
+                                    myShadowColor.B = 0;
+                                    myShadowColor.G = 0;
+                                    myShadowColor.R = 255;
+                                    myDropShadowEffect.Direction = 0;
+                                    myDropShadowEffect.ShadowDepth = 0;
+
+                                    myDropShadowEffect.Color = myShadowColor;
+                                    BootRectangle.Effect = myDropShadowEffect;
+                                }
+                                else
+                                {
+                                    BootRectangle.Effect = DeviceSpecificFeatures_Copy.Effect;
+                                    BootFileLabel.Content = "Detected";
+                                }
+                            });
+                        });
                     }
                     else
                     {
-                        BootFileLabel.Content = "Not Detected";
+                        Task.Run(() =>
+                        {
+                            dis.Invoke(() =>
+                            {
+                                BootFileLabel.Content = "Not Detected";
+                                DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                                // Set the color of the shadow to Black.
+                                Color myShadowColor = new Color();
+                                myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                                       // The Opacity property is used to control the alpha.
+                                myShadowColor.B = 0;
+                                myShadowColor.G = 255;
+                                myShadowColor.R = 255;
+                                myDropShadowEffect.Direction = 0;
+                                myDropShadowEffect.ShadowDepth = 0;
+
+                                myDropShadowEffect.Color = myShadowColor;
+                                BootRectangle.Effect = myDropShadowEffect;
+                            });
+                        });
                     }
                     if (File.Exists(TWRPIMG))
                     {
-                        TWRPFileLabel.Content = "Detected";
+                        Task.Run(() =>
+                        {
+                            dis.Invoke(() =>
+                            {
+                                FileInfo fInfo = new FileInfo(@"..\Place_Files_Here\TWRP\twrp.img");
+                                if (fInfo.Length > 100000000)
+                                {
+                                    TWRPFileLabel.Content = "Invalid (> 100MB)";
+                                    DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                                    // Set the color of the shadow to Black.
+                                    Color myShadowColor = new Color();
+                                    myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                                           // The Opacity property is used to control the alpha.
+                                    myShadowColor.B = 0;
+                                    myShadowColor.G = 0;
+                                    myShadowColor.R = 255;
+                                    myDropShadowEffect.Direction = 0;
+                                    myDropShadowEffect.ShadowDepth = 0;
+
+                                    myDropShadowEffect.Color = myShadowColor;
+                                    TWRPRectangle.Effect = myDropShadowEffect;
+                                }
+                                else
+                                {
+                                    TWRPRectangle.Effect = DeviceSpecificFeatures_Copy.Effect;
+                                    TWRPFileLabel.Content = "Detected";
+                                }
+                            });
+                        });
                     }
                     else
                     {
-                        TWRPFileLabel.Content = "Not Detected";
+                        Task.Run(() =>
+                        {
+                            dis.Invoke(() =>
+                            {
+                                TWRPFileLabel.Content = "Not Detected";
+                                DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                                // Set the color of the shadow to Black.
+                                Color myShadowColor = new Color();
+                                myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                                       // The Opacity property is used to control the alpha.
+                                myShadowColor.B = 0;
+                                myShadowColor.G = 255;
+                                myShadowColor.R = 255;
+                                myDropShadowEffect.Direction = 0;
+                                myDropShadowEffect.ShadowDepth = 0;
+
+                                myDropShadowEffect.Color = myShadowColor;
+                                TWRPRectangle.Effect = myDropShadowEffect;
+                            });
+                        });
                     }
                     startInfo.UseShellExecute = false;
                     startInfo.RedirectStandardOutput = true;
@@ -276,15 +643,44 @@ namespace Treble_Toolkit
                         {
                             if (GridMain.ActualWidth <= 530)
                             {
-                                cc.Content = "Yes (A/F)";
+                                DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                                // Set the color of the shadow to Black.
+                                Color myShadowColor = new Color();
+                                myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                                       // The Opacity property is used to control the alpha.
+                                myShadowColor.B = 0;
+                                myShadowColor.G = 255;
+                                myShadowColor.R = 255;
+                                myDropShadowEffect.Direction = 0;
+                                myDropShadowEffect.ShadowDepth = 0;
+
+                                myDropShadowEffect.Color = myShadowColor;
+                                DeviceRectangle.Effect = myDropShadowEffect;
+                                cc.Content = "Yes (2+)";
                             }
                             else
                             {
-                                cc.Content = "Yes (ADB/Fastboot)";
+                                DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                                // Set the color of the shadow to Black.
+                                Color myShadowColor = new Color();
+                                myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                                       // The Opacity property is used to control the alpha.
+                                myShadowColor.B = 0;
+                                myShadowColor.G = 255;
+                                myShadowColor.R = 255;
+                                myDropShadowEffect.Direction = 0;
+                                myDropShadowEffect.ShadowDepth = 0;
+
+                                myDropShadowEffect.Color = myShadowColor;
+                                DeviceRectangle.Effect = myDropShadowEffect;
+                                cc.Content = "Yes (2+ Devices)";
                             }
                         }
                         else
                         {
+                            DeviceRectangle.Effect = DeviceSpecificFeatures_Copy.Effect;
                             cc.Content = "Yes (ADB)";
                         }
                     }
@@ -303,15 +699,31 @@ namespace Treble_Toolkit
                         {
                             if (GridMain.ActualWidth <= 530)
                             {
+                                DeviceRectangle.Effect = DeviceSpecificFeatures_Copy.Effect;
                                 cc.Content = "Yes (F)";
                             }
                             else
                             {
+                                DeviceRectangle.Effect = DeviceSpecificFeatures_Copy.Effect;
                                 cc.Content = "Yes (Fastboot)";
                             }
                         }
                         else
                         {
+                            DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                            // Set the color of the shadow to Black.
+                            Color myShadowColor = new Color();
+                            myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                                   // The Opacity property is used to control the alpha.
+                            myShadowColor.B = 0;
+                            myShadowColor.G = 0;
+                            myShadowColor.R = 255;
+                            myDropShadowEffect.Direction = 0;
+                            myDropShadowEffect.ShadowDepth = 0;
+
+                            myDropShadowEffect.Color = myShadowColor;
+                            DeviceRectangle.Effect = myDropShadowEffect;
                             cc.Content = "No";
                         }
                     }
@@ -334,9 +746,9 @@ namespace Treble_Toolkit
             if(GridMain.ActualWidth <= 530)
             {
                 ConDev.Content = "Connected";
-                if(cc.Content == "Yes (ADB/Fastboot)") 
+                if(cc.Content == "Yes (2+ Devices)") 
                 {
-                    cc.Content = "Yes (A/F)";
+                    cc.Content = "Yes (2+)";
                 } else 
                 {
                     if (cc.Content == "Yes (Fastboot)")
@@ -352,9 +764,9 @@ namespace Treble_Toolkit
             else
             {
                 ConDev.Content = "Connected Device";
-                if (cc.Content == "Yes (A/F)")
+                if (cc.Content == "Yes (2+)")
                 {
-                    cc.Content = "Yes (ADB/Fastboot)";
+                    cc.Content = "Yes (2+ Devices)";
                 }
                 else 
                 {
@@ -364,6 +776,12 @@ namespace Treble_Toolkit
                     }
                 }
             }
+        }
+
+        private void Setup(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("Setup.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
         }
     }
 }

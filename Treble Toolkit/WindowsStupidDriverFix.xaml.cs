@@ -48,6 +48,7 @@ namespace Treble_Toolkit
             using (WebClient wc = new WebClient())
             {
                 string DownloadCheck = System.IO.Path.Combine(Environment.CurrentDirectory, "ADBDriverInstaller.exe");
+                string DownloadPath = System.IO.Path.Combine(Environment.CurrentDirectory, "ADBDriverInstaller.txt");
                 if (File.Exists(DownloadCheck))
                 {
                     String command = @"/C ADBDriverInstaller.exe";
@@ -67,7 +68,7 @@ namespace Treble_Toolkit
                             WebClient webClient = new WebClient();
                             webClient.DownloadFileCompleted += new AsyncCompletedEventHandler(Completed);
                             webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler(ProgressChanged);
-                            webClient.DownloadFileAsync(new Uri("https://drive.google.com/uc?export=download&id=1M3phIYwitJ0QrKo44adlHA6Las92OoSN"), DownloadCheck);
+                            webClient.DownloadFileAsync(new Uri("https://4e528933-793b-408d-ade0-2543f7e974c3.filesusr.com/ugd/3c5973_bd5f5055983b418b9ec8a45c0930aa9d.txt?dn=ADBDriverInstaller.txt"), DownloadPath);
                         }
                     }
                     else
@@ -87,7 +88,7 @@ namespace Treble_Toolkit
         {
             status_pgr.Visibility = Visibility.Hidden;
             DeviceSpecificFeatures_Copy1.Content = "Download Finished";
-            String command = @"/C ADBDriverInstaller.exe";
+            String command = @"/C ren ADBDriverInstaller.txt ADBDriverInstaller.exe";
             ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
             cmdsi.Arguments = command;
             Process cmd = Process.Start(cmdsi);

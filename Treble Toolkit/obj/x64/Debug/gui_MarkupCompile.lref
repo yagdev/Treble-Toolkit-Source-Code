@@ -3,9 +3,15 @@ FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Tre
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\AboutScreen.xaml;;
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\Alcatel1.xaml;;
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\BTULHW.xaml;;
+FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\BugReports.xaml;;
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\CompatibilityCheck.xaml;;
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\CompatibleDevices.xaml;;
+FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\DebugInfo.xaml;;
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\DeviceTester.xaml;;
+FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\FixConnectionPhoneStep1.xaml;;
+FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\FixConnectionPhoneStep2.xaml;;
+FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\FixConnectionPhoneStep3.xaml;;
+FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\FlashingGSIA.xaml;;
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\FlashingGSITUT.xaml;;
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\FlashingVendorTUT.xaml;;
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\FlashVendorFinished.xaml;;
@@ -32,11 +38,15 @@ FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Tre
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\PMFinished.xaml;;
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\PMFlash.xaml;;
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\PMTUT.xaml;;
+FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\PrivacyAndDataManagement.xaml;;
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\QSG.xaml;;
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\QuickStartGuide.xaml;;
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\ReportBug.xaml;;
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\ReportBugStep2.xaml;;
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\Settings.xaml;;
+FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\Setup.xaml;;
+FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\Setup2.xaml;;
+FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\Setup3.xaml;;
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\Sideloader.xaml;;
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\SideloaderPickFile.xaml;;
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\SideloadFinished.xaml;;
@@ -44,6 +54,7 @@ FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Tre
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\SonyXperia5.xaml;;
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\SonyXperiaXZ2.xaml;;
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\SXXZ2DSF.xaml;;
+FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\TransparencyAndEffects.xaml;;
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\TWRP.xaml;;
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\TWRPBoot.xaml;;
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\TWRPBootFinished.xaml;;
@@ -58,8 +69,10 @@ FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Tre
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\VendorFlash.xaml;;
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\VendorPickFile.xaml;;
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\Windows7Warning.xaml;;
+FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\WindowsOutdatedMoreInfo.xaml;;
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\WindowsStupidDriverFix.xaml;;
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\XP1DSF.xaml;;
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\XP5DSF.xaml;;
 FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\ZipSideloaderTUT.xaml;;
+FC:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treble Toolkit\UpdateCenter.xaml;;
 

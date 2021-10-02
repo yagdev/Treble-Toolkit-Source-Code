@@ -15,6 +15,11 @@ namespace Treble_Toolkit
         public UnlockBootloader()
         {
             InitializeComponent();
+            if (Environment.OSVersion.Version.Build <= 9)
+            {
+                DeviceSpecificFeatures_Copy.IsEnabled = false;
+                DeviceSpecificFeatures_Copy.Content = "🔒 Report Bug";
+            }
             ReportLabel.Visibility = Visibility.Hidden;
             string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotAnimated.txt");
             if (File.Exists(IsAnimated))
