@@ -14,7 +14,6 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Threading;
 using System.Windows.Threading;
-using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Effects;

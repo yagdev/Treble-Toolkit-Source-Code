@@ -13,7 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
-using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Threading;
 using System.Diagnostics;
@@ -43,7 +42,7 @@ namespace TrebleToolkitLauncher
             process.StartInfo = startInfo;
             process.Start();
             process.WaitForExit();
-            string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotAnimated.txt");
+            string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "Settings", "NotAnimated.txt");
             if (File.Exists(IsAnimated))
             {
 
@@ -110,6 +109,12 @@ namespace TrebleToolkitLauncher
             if (InternetGetConnectedState(out Out, 0) == true)
             {
                 Yes.IsEnabled = false;
+                String command = @"/C wmic process where name='adb.exe' delete & wmic process where name='gui.exe' delete & wmic process where name='fastboot.exe' delete";
+                ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
+                cmdsi.Arguments = command;
+                cmdsi.WindowStyle = ProcessWindowStyle.Hidden;
+                Process cmd = Process.Start(cmdsi);
+                cmd.WaitForExit();
                 System.Diagnostics.Process process = new System.Diagnostics.Process();
                 System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
                 startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
@@ -172,6 +177,7 @@ namespace TrebleToolkitLauncher
                         {
                             Yes.Content = "Decompressing...";
                             status_pgr.Value += 60;
+                            Yes.Foreground = No.Background;
                         }, DispatcherPriority.Normal);
 
                         update.Unzip();
@@ -206,12 +212,12 @@ namespace TrebleToolkitLauncher
                         Yes.Content = "Executing...";
                         status_pgr.Value += 10;
                     }, DispatcherPriority.Normal);
-                    String command = @"/C wmic process where name='adb.exe' delete & wmic process where name='gui.exe' delete & wmic process where name='fastboot.exe' delete";
-                    ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
-                    cmdsi.Arguments = command;
-                    cmdsi.WindowStyle = ProcessWindowStyle.Hidden;
-                    Process cmd = Process.Start(cmdsi);
-                    cmd.WaitForExit();
+                    String command2 = @"/C wmic process where name='adb.exe' delete & wmic process where name='gui.exe' delete & wmic process where name='fastboot.exe' delete";
+                    ProcessStartInfo cmdsi2 = new ProcessStartInfo("cmd.exe");
+                    cmdsi2.Arguments = command2;
+                    cmdsi2.WindowStyle = ProcessWindowStyle.Hidden;
+                    Process cmd2 = Process.Start(cmdsi2);
+                    cmd2.WaitForExit();
                     System.Diagnostics.Process process1 = new System.Diagnostics.Process();
                     System.Diagnostics.ProcessStartInfo startInfo1 = new System.Diagnostics.ProcessStartInfo();
                     startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;

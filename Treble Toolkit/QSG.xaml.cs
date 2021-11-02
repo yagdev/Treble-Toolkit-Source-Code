@@ -86,5 +86,17 @@ namespace Treble_Toolkit
             Uri uri = new Uri("PMTUT.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);
         }
+
+        private void WidgetTutorial(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("Widgets.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
+
+        private void WidgetSetup(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("WidgetSetupGuide.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
     }
 }

@@ -4,7 +4,6 @@ using System.Windows.Controls;
 using System.Diagnostics;
 using System.Windows.Media.Animation;
 using System.IO;
-using System.Diagnostics;
 using System.Windows.Threading;
 using System.Threading;
 using System.Threading.Tasks;
@@ -733,7 +732,7 @@ namespace Treble_Toolkit
 
         private void Page_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            if (GridMain.ActualWidth <= 400)
+            if (GridMain.ActualWidth <= 410)
             {
                 BootmgTitle.Content = "Boot Img";
                 TWRPImgTitle.Content = "TWRP Img";

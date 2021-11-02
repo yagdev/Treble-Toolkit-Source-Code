@@ -10,6 +10,7 @@ using ChaseLabs.CLConfiguration;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Threading;
+using System.Windows.Media.Effects;
 
 namespace Treble_Toolkit
 {
@@ -24,12 +25,23 @@ namespace Treble_Toolkit
         public AboutScreen()
         {
             InitializeComponent();
+            string ptpath = System.IO.Path.Combine(Environment.CurrentDirectory, "PlatformTools.txt");
+            if (File.Exists(ptpath))
+            {
+                string ptversion = System.IO.File.ReadAllText(System.IO.Path.Combine(Environment.CurrentDirectory, "PlatformTools.txt"));
+                Changelog_Copy.Text = "©2021 YAG-dev · " + ptversion;
+            }
+            else
+            {
+                Changelog_Copy.Text = "©2021 YAG-dev · Unable to check current Platform Tools version";
+            }
             TTOutOfDate.Visibility = Visibility.Hidden;
             TTOutOfDateTxt1.Visibility = Visibility.Hidden;
             TTOutOfDateTxt2.Visibility = Visibility.Hidden;
             Update.Visibility = Visibility.Hidden;
+            string local_version_path = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "CurrentVersion", "VersionString.txt");
             int Out;
-            if (InternetGetConnectedState(out Out, 0) == true)
+            if (InternetGetConnectedState(out Out, 0) == true && File.Exists(local_version_path))
             {
                 string beta_path = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "BetaProgram", "BetaProgram.txt");
                 string url = "https://www.dropbox.com/s/f76ks90k8gvi0p5/release.zip?dl=1";
@@ -37,7 +49,6 @@ namespace Treble_Toolkit
                 string version_key = "Treble Toolkit ";
                 string update_path = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "Update", "Download");
                 string application_path = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateFiles");
-                string local_version_path = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "CurrentVersion", "VersionString.txt");
                 string local_launcher_path = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "CurrentVersion", "LauncherVersion.txt");
                 string launch_exe = "TrebleToolkitLauncher.exe";
                 if (File.Exists(beta_path))
@@ -76,7 +87,26 @@ namespace Treble_Toolkit
             }
             else
             {
-                
+                TTOutOfDate.Visibility = Visibility.Visible;
+                TTOutOfDateTxt1.Visibility = Visibility.Visible;
+                TTOutOfDateTxt2.Visibility = Visibility.Visible;
+                DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                // Set the color of the shadow to Black.
+                Color myShadowColor = new Color();
+                myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                       // The Opacity property is used to control the alpha.
+                myShadowColor.B = 0;
+                myShadowColor.G = 0;
+                myShadowColor.R = 255;
+                myDropShadowEffect.Direction = 0;
+                myDropShadowEffect.ShadowDepth = 0;
+
+                myDropShadowEffect.Color = myShadowColor;
+                TTOutOfDate.Effect = myDropShadowEffect;
+                TTOutOfDate.Fill = new SolidColorBrush(Color.FromArgb(255, 255, 0, 0));
+                TTOutOfDateTxt1.Content = "⚠ Could not check for updates";
+                TTOutOfDateTxt2.Content = "Updates might be available";
             }
             if (Environment.OSVersion.Version.Build <= 9)
             {
@@ -129,7 +159,7 @@ namespace Treble_Toolkit
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
             startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = "/C start https://youraveragegamer.wixsite.com/treble-toolkit/21-10";
+            startInfo.Arguments = "/C start https://youraveragegamer.wixsite.com/treble-toolkit/21-11";
             process.StartInfo = startInfo;
             process.Start();
         }
@@ -189,6 +219,12 @@ namespace Treble_Toolkit
         private void LearnMore_Click(object sender, RoutedEventArgs e)
         {
             Uri uri = new Uri("WindowsOutdatedMoreInfo.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
+
+        private void LogViewADB(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("PlatformToolsChangelog.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);
         }
     }

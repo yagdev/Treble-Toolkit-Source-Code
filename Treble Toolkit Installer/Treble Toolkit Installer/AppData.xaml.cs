@@ -43,11 +43,6 @@ namespace Treble_Toolkit_Installer
             {
                 System.Diagnostics.Process process = new System.Diagnostics.Process();
                 System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-                startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-                startInfo.FileName = "cmd.exe";
-                startInfo.Arguments = "/C mkdir UpdateInfo & cd UpdateInfo & mkdir CurrentVersion & cd CurrentVersion";
-                process.StartInfo = startInfo;
-                process.Start();
                 Task.Run(() =>
                 {
                     dis.Invoke(() =>

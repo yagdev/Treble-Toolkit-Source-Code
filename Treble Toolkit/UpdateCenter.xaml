@@ -241,6 +241,16 @@
                     BlurRadius="8"/>
             </Button.Effect>
         </Button>
+        <Button x:Name="DeviceSpecificFeatures_Copy2" Content="View Bug Bulletin" Margin="10,250,10,0" VerticalAlignment="Top" Height="50" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="ViewBug" Grid.ColumnSpan="4">
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Button.Effect>
+        </Button>
 
     </Grid>
 </Page>

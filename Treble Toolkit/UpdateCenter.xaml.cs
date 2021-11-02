@@ -17,7 +17,6 @@ using System.IO;
 using ChaseLabs.CLUpdate;
 using System.Runtime.InteropServices;
 using System.Net;
-using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Threading;
 using System.Diagnostics;
@@ -35,6 +34,11 @@ namespace Treble_Toolkit
         public UpdateCenter()
         {
             InitializeComponent();
+            ADBStatus.Content = "No Updates Available";
+            PhoneWarning.Visibility = Visibility.Hidden;
+            PhoneWarningTxt1.Visibility = Visibility.Hidden;
+            PhoneWarningTxt2.Visibility = Visibility.Hidden;
+            Change1b_Copy.IsEnabled = false;
             PhoneWarning.Visibility = Visibility.Hidden;
             PhoneWarningTxt1.Visibility = Visibility.Hidden;
             PhoneWarningTxt2.Visibility = Visibility.Hidden;
@@ -102,6 +106,7 @@ namespace Treble_Toolkit
                     {
                         dis.Invoke(() =>
                         {
+                            Change1b_Copy.IsEnabled = true;
                             ADBStatus_Copy.Content = "Update Available";
                         }, DispatcherPriority.Normal);
                     }
@@ -345,6 +350,17 @@ namespace Treble_Toolkit
         private void Next(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void ViewBug(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/C start https://youraveragegamer.wixsite.com/treble-toolkit/bugs";
+            process.StartInfo = startInfo;
+            process.Start();
         }
     }
 }

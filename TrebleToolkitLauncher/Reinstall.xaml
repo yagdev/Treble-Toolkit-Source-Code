@@ -51,7 +51,7 @@
                                 <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource SystemAltHighColorBrush}"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                                
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>

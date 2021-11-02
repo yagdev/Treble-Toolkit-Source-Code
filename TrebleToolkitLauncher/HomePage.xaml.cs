@@ -15,7 +15,6 @@ using System.Windows.Shapes;
 using System.IO;
 using System.Diagnostics;
 using System.Windows.Diagnostics;
-using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Threading;
 using ChaseLabs.CLUpdate;
@@ -57,15 +56,6 @@ namespace TrebleToolkitLauncher
                 JoinBeta.IsEnabled = true;
                 DeviceSpecificFeatures_Copy.Content = "Reinstall";
                 UpdateLauncher_Btn.Content = "Update Launcher";
-                string beta_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "BetaProgram", "BetaProgram.txt");
-                if (File.Exists(beta_path))
-                {
-                    JoinBeta.Content = "Leave Beta Program";
-                }
-                else
-                {
-                    JoinBeta.Content = "Join Beta Program";
-                }
             }
             else
             {
@@ -75,15 +65,6 @@ namespace TrebleToolkitLauncher
                 JoinBeta.IsEnabled = false;
                 DeviceSpecificFeatures_Copy.Content = "🔒 Reinstall";
                 UpdateLauncher_Btn.Content = "🔒 Update Launcher";
-                string beta_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "BetaProgram", "BetaProgram.txt");
-                if (File.Exists(beta_path))
-                {
-                    JoinBeta.Content = "🔒 Leave Beta Program";
-                }
-                else
-                {
-                    JoinBeta.Content = "🔒 Join Beta Program";
-                }
             }
             string GetCurVer = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "CurrentVersion", "VersionString.txt");
             string GetLauncherVer = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "CurrentVersion", "LauncherVersion.txt");
@@ -118,7 +99,8 @@ namespace TrebleToolkitLauncher
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             int Out;
-            if (InternetGetConnectedState(out Out, 0) == true)
+            string blocker_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "UpdateBlocker", "BlockUpdates.txt");
+            if (InternetGetConnectedState(out Out, 0) == true && File.Exists(blocker_path) == false)
             {
                 string beta_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "BetaProgram", "BetaProgram.txt");
                 string url = "https://www.dropbox.com/s/f76ks90k8gvi0p5/release.zip?dl=1";
@@ -364,70 +346,8 @@ namespace TrebleToolkitLauncher
 
         private void JoinBeta_Click(object sender, RoutedEventArgs e)
         {
-            int Out;
-            if (InternetGetConnectedState(out Out, 0) == true)
-            {
-                if (Environment.Is64BitOperatingSystem)
-                {
-                    System.Diagnostics.Process process = new System.Diagnostics.Process();
-                    System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-                    startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-                    startInfo.FileName = "cmd.exe";
-                    startInfo.Arguments = "/C mkdir UpdateInfo & cd UpdateInfo & mkdir BetaProgram & cd CurrentVersion & del /f /q ";
-                    process.StartInfo = startInfo;
-                    process.Start();
-                    process.WaitForExit();
-                    string beta_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "BetaProgram", "BetaProgram.txt");
-                    string version_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "CurrentVersion", "VersionString.txt");
-                    if (File.Exists(version_path))
-                    {
-                        File.Delete(version_path);
-                    }
-                    if (File.Exists(beta_path))
-                    {
-                        File.Delete(beta_path);
-                        JoinBeta.Content = "Join Beta Program";
-                        JoinBeta.FontSize = 16;
-                    }
-                    else
-                    {
-                        startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-                        startInfo.FileName = "cmd.exe";
-                        startInfo.Arguments = "/C mkdir UpdateInfo & cd UpdateInfo & mkdir BetaProgram";
-                        process.StartInfo = startInfo;
-                        process.Start();
-                        using (StreamWriter sw = File.CreateText(beta_path))
-                        {
-                            sw.WriteLine("Treble Toolkit Beta Program Validation");
-                            sw.WriteLine("©2021 YAG-dev");
-                        }
-                        JoinBeta.Content = "Leave Beta Program";
-                        JoinBeta.FontSize = 16;
-                    }
-                }
-                else
-                {
-                    string beta_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "BetaProgram", "BetaProgram.txt");
-                    File.Delete(beta_path);
-                }
-            }
-            else
-            {
-                DeviceSpecificFeatures_Copy.IsEnabled = false;
-                UpdateLauncher_Btn.IsEnabled = false;
-                JoinBeta.IsEnabled = false;
-                DeviceSpecificFeatures_Copy.Content = "🔒 Reinstall";
-                UpdateLauncher_Btn.Content = "🔒 Update Launcher";
-                string beta_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "BetaProgram", "BetaProgram.txt");
-                if (File.Exists(beta_path))
-                {
-                    JoinBeta.Content = "🔒 Leave Beta Program";
-                }
-                else
-                {
-                    JoinBeta.Content = "🔒 Join Beta Program";
-                }
-            }
+            Uri uri = new Uri("Settings.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
         }
     }
 }
