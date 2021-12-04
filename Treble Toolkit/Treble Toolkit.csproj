@@ -87,6 +87,12 @@
     <Reference Include="Costura, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Costura.Fody.5.7.0\lib\netstandard1.0\Costura.dll</HintPath>
     </Reference>
+    <Reference Include="Eagle, Version=1.0.7945.33333, Culture=neutral, PublicKeyToken=29c6297630be05eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Eagle.CLRv4.Core.1.0.7945.33333\lib\net40\Eagle.dll</HintPath>
+    </Reference>
+    <Reference Include="Eagle.Eye, Version=1.0.7945.33333, Culture=neutral, PublicKeyToken=29c6297630be05eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Eagle.CLRv4.Core.1.0.7945.33333\lib\net40\Eagle.Eye.dll</HintPath>
+    </Reference>
     <Reference Include="FluentWPF, Version=0.9.0.1, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentWPF.0.9.0\lib\net45\FluentWPF.dll</HintPath>
     </Reference>
@@ -97,6 +103,12 @@
       <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
       <Private>True</Private>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="NHotkey, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a76ffb086700b11c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHotkey.2.1.0\lib\net45\NHotkey.dll</HintPath>
+    </Reference>
+    <Reference Include="NHotkey.Wpf, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a76ffb086700b11c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHotkey.Wpf.2.1.0\lib\net45\NHotkey.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.AppContext, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -297,9 +309,6 @@
     <Compile Include="FixConnectionPhoneStep3.xaml.cs">
       <DependentUpon>FixConnectionPhoneStep3.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FlashingGSIA.xaml.cs">
-      <DependentUpon>FlashingGSIA.xaml</DependentUpon>
-    </Compile>
     <Compile Include="FlashingGSITUT.xaml.cs">
       <DependentUpon>FlashingGSITUT.xaml</DependentUpon>
     </Compile>
@@ -324,6 +333,9 @@
     <Compile Include="HuaweiMate10Lite.xaml.cs">
       <DependentUpon>HuaweiMate10Lite.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HuaweiP20Lite.xaml.cs">
+      <DependentUpon>HuaweiP20Lite.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow2.xaml.cs">
       <DependentUpon>MainWindow2.xaml</DependentUpon>
     </Compile>
@@ -344,6 +356,9 @@
     </Compile>
     <Compile Include="OnePlus8DSF.xaml.cs">
       <DependentUpon>OnePlus8DSF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="P20LDSF.xaml.cs">
+      <DependentUpon>P20LDSF.xaml</DependentUpon>
     </Compile>
     <Compile Include="PlatformToolsChangelog.xaml.cs">
       <DependentUpon>PlatformToolsChangelog.xaml</DependentUpon>
@@ -518,10 +533,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="FlashingGSIA.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="FlashingGSITUT.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -579,6 +590,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="HuaweiMate10Lite.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HuaweiP20Lite.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -643,6 +658,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="OnePlus8DSF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P20LDSF.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -962,6 +981,7 @@
     <Error Condition="!Exists('..\packages\Fody.6.5.5\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.6.5.5\build\Fody.targets'))" />
     <Error Condition="!Exists('..\packages\Costura.Fody.5.7.0\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.5.7.0\build\Costura.Fody.props'))" />
     <Error Condition="!Exists('..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\Harpy.CLRv4.1.0.7945.33333\build\net40\Harpy.CLRv4.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Harpy.CLRv4.1.0.7945.33333\build\net40\Harpy.CLRv4.targets'))" />
   </Target>
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
   <Import Project="..\packages\Microsoft.Build.Tasks.Git.1.0.0\build\Microsoft.Build.Tasks.Git.targets" Condition="Exists('..\packages\Microsoft.Build.Tasks.Git.1.0.0\build\Microsoft.Build.Tasks.Git.targets')" />
@@ -969,4 +989,5 @@
   <Import Project="..\packages\Microsoft.SourceLink.GitHub.1.0.0\build\Microsoft.SourceLink.GitHub.targets" Condition="Exists('..\packages\Microsoft.SourceLink.GitHub.1.0.0\build\Microsoft.SourceLink.GitHub.targets')" />
   <Import Project="..\packages\Fody.6.5.5\build\Fody.targets" Condition="Exists('..\packages\Fody.6.5.5\build\Fody.targets')" />
   <Import Project="..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets" Condition="Exists('..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets')" />
+  <Import Project="..\packages\Harpy.CLRv4.1.0.7945.33333\build\net40\Harpy.CLRv4.targets" Condition="Exists('..\packages\Harpy.CLRv4.1.0.7945.33333\build\net40\Harpy.CLRv4.targets')" />
 </Project>

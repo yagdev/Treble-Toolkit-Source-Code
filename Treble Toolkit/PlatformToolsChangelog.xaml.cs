@@ -21,6 +21,7 @@ using System.Threading.Tasks;
 using System.Windows.Threading;
 using System.Net;
 using System.Windows.Media.Effects;
+using System.Threading;
 
 namespace Treble_Toolkit
 {
@@ -35,105 +36,16 @@ namespace Treble_Toolkit
         public PlatformToolsChangelog()
         {
             InitializeComponent();
-            string ptpath = System.IO.Path.Combine(Environment.CurrentDirectory, "PlatformTools.txt");
-            string ptlog = System.IO.Path.Combine(Environment.CurrentDirectory, "PlatformToolsLog.txt");
-            if (File.Exists(ptpath))
-            {
-                string ptversion = System.IO.File.ReadAllText(System.IO.Path.Combine(Environment.CurrentDirectory, "PlatformTools.txt"));
-                copyright.Content = "©2021 YAG-dev · " + ptversion;
-            }
-            else
-            {
-                copyright.Content = "©2021 YAG-dev · Unable to check current Platform Tools version";
-            }
-            if (File.Exists(ptlog))
-            {
-                string ptlog2 = System.IO.File.ReadAllText(System.IO.Path.Combine(Environment.CurrentDirectory, "PlatformToolsLog.txt"));
-                Changelog.Text = ptlog2;
-            }
-            else
-            {
-                Changelog.Text = "Changelog not available for this release.";
-            }
-            string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotAnimated.txt");
-            if (File.Exists(IsAnimated))
-            {
-
-            }
-            else
-            {
-                GridMain.Opacity = 0;
-                Grid r = (Grid)GridMain;
-                DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
-                r.BeginAnimation(Grid.OpacityProperty, animation);
-            }
-            TTOutOfDate.Visibility = Visibility.Hidden;
-            TTOutOfDateTxt1.Visibility = Visibility.Hidden;
-            TTOutOfDateTxt2.Visibility = Visibility.Hidden;
-            Update.Visibility = Visibility.Hidden;
-            int Out;
-            if (InternetGetConnectedState(out Out, 0) == true)
-            {
-                string remote_version_url2 = "https://www.dropbox.com/s/iseh3e7tzpujznt/version.txt?dl=1";
-                string url = "https://www.dropbox.com/s/8nz4xbwb1dlb9hl/PlatformToolsPackage.zip?dl=1";
-                string version_key2 = "Platform Tools ";
-                string update_path = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "Update", "Download");
-                string update_path2 = System.IO.Path.Combine(Environment.CurrentDirectory, "TempDownload");
-                string application_path = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateFiles");
-                string local_version_path2 = System.IO.Path.Combine(Environment.CurrentDirectory, "PlatformTools.txt");
-                string launch_exe = "TrebleToolkitLauncher.exe";
-                Task.Run(() =>
-                {
-                    dis.Invoke(() =>
-                    {
-
-                    }, DispatcherPriority.Normal);
-                    var update = Updater.Init(url, update_path, application_path, launch_exe);
-                    if (UpdateManager.CheckForUpdate(version_key2, local_version_path2, remote_version_url2))
-                    {
-                        dis.Invoke(() =>
-                        {
-                            TTOutOfDate.Visibility = Visibility.Visible;
-                            TTOutOfDateTxt1.Visibility = Visibility.Visible;
-                            TTOutOfDateTxt2.Visibility = Visibility.Visible;
-                            Update.Visibility = Visibility.Visible;
-                        }, DispatcherPriority.Normal);
-                    }
-                    else
-                    {
-                        dis.Invoke(() =>
-                        {
-                            TTOutOfDate.Visibility = Visibility.Hidden;
-                            TTOutOfDateTxt1.Visibility = Visibility.Hidden;
-                            TTOutOfDateTxt2.Visibility = Visibility.Hidden;
-                            Update.Visibility = Visibility.Hidden;
-                        }, DispatcherPriority.Normal);
-                    }
-                });
-            }
-            else
-            {
-                TTOutOfDate.Visibility = Visibility.Visible;
-                TTOutOfDateTxt1.Visibility = Visibility.Visible;
-                TTOutOfDateTxt2.Visibility = Visibility.Visible;
-                DropShadowEffect myDropShadowEffect = new DropShadowEffect();
-
-                // Set the color of the shadow to Black.
-                Color myShadowColor = new Color();
-                myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
-                                       // The Opacity property is used to control the alpha.
-                myShadowColor.B = 0;
-                myShadowColor.G = 0;
-                myShadowColor.R = 255;
-                myDropShadowEffect.Direction = 0;
-                myDropShadowEffect.ShadowDepth = 0;
-
-                myDropShadowEffect.Color = myShadowColor;
-                TTOutOfDate.Effect = myDropShadowEffect;
-                TTOutOfDate.Fill = new SolidColorBrush(Color.FromArgb(255, 255, 0, 0));
-                TTOutOfDateTxt1.Content = "⚠ Could not check for updates";
-                TTOutOfDateTxt2.Content = "Updates might be available";
-            }
+            Thread thread = new Thread(Animate);
+            thread.Start();
+            Thread thread2 = new Thread(UpdateUI);
+            thread2.Start();
+            Thread thread3 = new Thread(UpdateUI2);
+            thread3.Start();
+            Thread thread4 = new Thread(UpdateUI3);
+            thread4.Start();
+            Thread thread5 = new Thread(CheckForUpdates);
+            thread5.Start();
         }
 
         private void Troubleshoot(object sender, RoutedEventArgs e)
@@ -149,6 +61,148 @@ namespace Treble_Toolkit
         }
 
         private void DiscoverAbout_Click(object sender, RoutedEventArgs e)
+        {
+            Thread thread = new Thread(Website);
+            thread.Start();
+        }
+        //Threading starts here -- 5/11/2021@22:07, YAG-dev, 21.12+
+        private void Animate()
+        {
+            string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotAnimated.txt");
+            if (File.Exists(IsAnimated))
+            {
+
+            }
+            else
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    GridMain.Opacity = 0;
+                    Grid r = (Grid)GridMain;
+                    DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
+                    r.BeginAnimation(Grid.OpacityProperty, animation);
+                });
+            }
+        }
+        private void UpdateUI()
+        {
+            string ptpath = System.IO.Path.Combine(Environment.CurrentDirectory, "PlatformTools.txt");
+            string ptlog = System.IO.Path.Combine(Environment.CurrentDirectory, "PlatformToolsLog.txt");
+            if (File.Exists(ptpath))
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    string ptversion = System.IO.File.ReadAllText(System.IO.Path.Combine(Environment.CurrentDirectory, "PlatformTools.txt"));
+                    copyright.Content = "©2021 YAG-dev · " + ptversion;
+                });
+            }
+            else
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    copyright.Content = "©2021 YAG-dev · Unable to check current Platform Tools version";
+                });
+            }
+        }
+        private void UpdateUI2()
+        {
+            string ptlog = System.IO.Path.Combine(Environment.CurrentDirectory, "PlatformToolsLog.txt");
+            if (File.Exists(ptlog))
+            {
+                string ptlog2 = System.IO.File.ReadAllText(System.IO.Path.Combine(Environment.CurrentDirectory, "PlatformToolsLog.txt"));
+                this.Dispatcher.Invoke(() =>
+                {
+                    Changelog.Text = ptlog2;
+                });
+            }
+            else
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    Changelog.Text = "Changelog not available for this release.";
+                });
+            }
+        }
+        private void UpdateUI3()
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                TTOutOfDate.Visibility = Visibility.Hidden;
+                TTOutOfDateTxt1.Visibility = Visibility.Hidden;
+                TTOutOfDateTxt2.Visibility = Visibility.Hidden;
+                Update.Visibility = Visibility.Hidden;
+            });
+        }
+        private void CheckForUpdates()
+        {
+            int Out;
+            if (InternetGetConnectedState(out Out, 0) == true)
+            {
+                string remote_version_url2 = "https://www.dropbox.com/s/iseh3e7tzpujznt/version.txt?dl=1";
+                string url = "https://www.dropbox.com/s/8nz4xbwb1dlb9hl/PlatformToolsPackage.zip?dl=1";
+                string version_key2 = "Platform Tools ";
+                string update_path = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "Update", "Download");
+                string update_path2 = System.IO.Path.Combine(Environment.CurrentDirectory, "TempDownload");
+                string application_path = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateFiles");
+                string local_version_path2 = System.IO.Path.Combine(Environment.CurrentDirectory, "PlatformTools.txt");
+                string launch_exe = "TrebleToolkitLauncher.exe";
+                Task.Run(() =>
+                {
+                    var update = Updater.Init(url, update_path, application_path, launch_exe);
+                    if (UpdateManager.CheckForUpdate(version_key2, local_version_path2, remote_version_url2))
+                    {
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            TTOutOfDate.Visibility = Visibility.Visible;
+                            TTOutOfDateTxt1.Visibility = Visibility.Visible;
+                            TTOutOfDateTxt2.Visibility = Visibility.Visible;
+                            Update.Visibility = Visibility.Visible;
+                        });
+                    }
+                    else
+                    {
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            TTOutOfDate.Visibility = Visibility.Hidden;
+                            TTOutOfDateTxt1.Visibility = Visibility.Hidden;
+                            TTOutOfDateTxt2.Visibility = Visibility.Hidden;
+                            Update.Visibility = Visibility.Hidden;
+                        });
+                    }
+                });
+            }
+            else
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    TTOutOfDate.Visibility = Visibility.Visible;
+                    TTOutOfDateTxt1.Visibility = Visibility.Visible;
+                    TTOutOfDateTxt2.Visibility = Visibility.Visible;
+                });
+                this.Dispatcher.Invoke(() =>
+                {
+                    DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+                    // Set the color of the shadow to Black.
+                    Color myShadowColor = new Color();
+                    myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                    // The Opacity property is used to control the alpha.
+                    myShadowColor.B = 0;
+                    myShadowColor.G = 0;
+                    myShadowColor.R = 255;
+                    myDropShadowEffect.Direction = 0;
+                    myDropShadowEffect.ShadowDepth = 0;
+                    myDropShadowEffect.Color = myShadowColor;
+                    TTOutOfDate.Effect = myDropShadowEffect;
+                    TTOutOfDate.Fill = new SolidColorBrush(Color.FromArgb(255, 255, 0, 0));
+                });
+                this.Dispatcher.Invoke(() =>
+                {
+                    TTOutOfDateTxt1.Content = "⚠ Could not check for updates";
+                    TTOutOfDateTxt2.Content = "Updates might be available";
+                });
+            }
+        }
+        private void Website()
         {
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();

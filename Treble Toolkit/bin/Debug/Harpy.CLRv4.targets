@@ -1,0 +1,124 @@
+<!--
+ *
+ * Harpy.NuGet.targets -
+ *
+ * WARNING: This MSBuild file requires MSBuild 4.0 features.
+ *
+ * Written by Joe Mistachkin and David Archer.
+ * Released to the public domain, use at your own risk!
+ *
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--
+  ******************************************************************************
+  **                        Harpy Library Build Items                         **
+  ******************************************************************************
+  -->
+
+  <ItemGroup>
+    <HarpyFiles Condition="'$(MSBuildThisFileDirectory)' != '' And
+                           HasTrailingSlash('$(MSBuildThisFileDirectory)')"
+                Include="$(MSBuildThisFileDirectory)**"
+                Exclude="$(MSBuildThisFileDirectory)Harpy.targets" />
+  </ItemGroup>
+
+  <!--
+  ******************************************************************************
+  **                      Harpy Library Build Properties                      **
+  ******************************************************************************
+  -->
+
+  <PropertyGroup Condition="'$(NoHarpyDefineConstant)' != 'false'">
+    <DefineConstants>$(DefineConstants);HARPY</DefineConstants>
+  </PropertyGroup>
+
+  <!--
+  ******************************************************************************
+  **                       Harpy Library Build Targets                        **
+  ******************************************************************************
+  -->
+
+  <Target Name="CopyHarpyFiles"
+          Condition="'$(CopyHarpyFiles)' != 'false' And
+                     '$(OutDir)' != '' And
+                     HasTrailingSlash('$(OutDir)') And
+                     Exists('$(OutDir)')"
+          Inputs="@(HarpyFiles)"
+          Outputs="@(HarpyFiles -> '$(OutDir)%(RecursiveDir)%(Filename)%(Extension)')">
+    <!--
+        NOTE: Copy "Harpy.dll" and all related files, for every
+              supported architecture, to the build output directory.
+    -->
+    <Copy SourceFiles="@(HarpyFiles)"
+          DestinationFiles="@(HarpyFiles -> '$(OutDir)%(RecursiveDir)%(Filename)%(Extension)')" />
+  </Target>
+
+  <!--
+  ******************************************************************************
+  -->
+
+  <Target Name="CleanHarpyFiles"
+          Condition="'$(CleanHarpyFiles)' != 'false' And
+                     '$(OutDir)' != '' And
+                     HasTrailingSlash('$(OutDir)') And
+                     Exists('$(OutDir)')">
+    <!--
+        NOTE: Delete "Harpy.dll" and all related files, for every
+              supported architecture, from the build output directory.
+    -->
+    <Delete Files="@(HarpyFiles -> '$(OutDir)%(RecursiveDir)%(Filename)%(Extension)')" />
+  </Target>
+
+  <!--
+  ******************************************************************************
+  -->
+
+  <Target Name="CollectHarpyFiles"
+          Condition="'$(CollectHarpyFiles)' != 'false'">
+    <ItemGroup>
+      <FilesForPackagingFromProject Include="@(HarpyFiles)">
+        <DestinationRelativePath>bin\%(RecursiveDir)%(Filename)%(Extension)</DestinationRelativePath>
+      </FilesForPackagingFromProject>
+    </ItemGroup>
+  </Target>
+
+  <!--
+  ******************************************************************************
+  **                      Harpy Library Build Properties                      **
+  ******************************************************************************
+  -->
+
+  <PropertyGroup>
+    <PostBuildEventDependsOn>
+      $(PostBuildEventDependsOn);
+      CopyHarpyFiles;
+    </PostBuildEventDependsOn>
+    <BuildDependsOn>
+      $(BuildDependsOn);
+      CopyHarpyFiles;
+    </BuildDependsOn>
+    <CleanDependsOn>
+      $(CleanDependsOn);
+      CleanHarpyFiles;
+    </CleanDependsOn>
+  </PropertyGroup>
+
+  <!--
+  ******************************************************************************
+  **         Harpy Library Publish Properties for Visual Studio 201x          **
+  ******************************************************************************
+  -->
+
+  <PropertyGroup Condition="'$(VisualStudioVersion)' == '' Or
+                            '$(VisualStudioVersion)' == '10.0' Or
+                            '$(VisualStudioVersion)' == '11.0' Or
+                            '$(VisualStudioVersion)' == '12.0' Or
+                            '$(VisualStudioVersion)' == '14.0' Or
+                            '$(VisualStudioVersion)' == '15.0' Or
+                            '$(VisualStudioVersion)' == '16.0'">
+    <PipelineCollectFilesPhaseDependsOn>
+      CollectHarpyFiles;
+      $(PipelineCollectFilesPhaseDependsOn);
+    </PipelineCollectFilesPhaseDependsOn>
+  </PropertyGroup>
+</Project>

@@ -128,7 +128,7 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <Label x:Name="FileSize" Content="Your TWRP is bigger than 500MB and is likely not the correct file." Margin="0,115,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="4" FontSize="9" Height="25" VerticalAlignment="Top">
+        <Label x:Name="FileSize" Content="Your TWRP is bigger than 100MB and is likely not the correct file." Margin="0,115,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="4" FontSize="9" Height="25" VerticalAlignment="Top">
             <Label.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"

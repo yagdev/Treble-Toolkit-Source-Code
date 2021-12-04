@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using System.Windows.Media.Animation;
+using System.Threading;
 
 namespace Treble_Toolkit
 {
@@ -25,65 +26,10 @@ namespace Treble_Toolkit
         public FixConnectionPhoneStep1()
         {
             InitializeComponent();
-            string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotAnimated.txt");
-            if (File.Exists(IsAnimated))
-            {
-
-            }
-            else
-            {
-                GridMain.Opacity = 0;
-                Grid r = (Grid)GridMain;
-                DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
-                r.BeginAnimation(Grid.OpacityProperty, animation);
-            }
-            System.Diagnostics.Process process = new System.Diagnostics.Process();
-            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            startInfo.UseShellExecute = false;
-            startInfo.RedirectStandardOutput = true;
-            startInfo.FileName = "CMD.exe";
-            startInfo.Arguments = "/C fastboot.exe devices";
-            startInfo.CreateNoWindow = true;
-            process.StartInfo = startInfo;
-            process.Start();
-            string output4 = process.StandardOutput.ReadToEnd();
-            process.WaitForExit();
-            if (output4.Contains("fastboot") == true)
-            {
-                PhoneStatus.Content = "Detected";
-            }
-            else
-            {
-                startInfo.UseShellExecute = false;
-                startInfo.RedirectStandardOutput = true;
-                startInfo.FileName = "CMD.exe";
-                startInfo.Arguments = "/C adb.exe get-state";
-                startInfo.CreateNoWindow = true;
-                process.StartInfo = startInfo;
-                process.Start();
-                string output3 = process.StandardOutput.ReadToEnd();
-                process.WaitForExit();
-                if (output3.Contains("device") == true)
-                {
-                    PhoneStatus.Content = "Detected";
-                }
-                else
-                {
-                    PhoneStatus.Content = "Not Detected";
-                }
-            }
-            if (PhoneStatus.Content == "Not Detected")
-            {
-                PhoneWarning.Visibility = Visibility.Visible;
-                PhoneWarningTxt1.Visibility = Visibility.Visible;
-                PhoneWarningTxt2.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                PhoneWarning.Visibility = Visibility.Hidden;
-                PhoneWarningTxt1.Visibility = Visibility.Hidden;
-                PhoneWarningTxt2.Visibility = Visibility.Hidden;
-            }
+            Thread thread = new Thread(Animate);
+            thread.Start();
+            Thread thread2 = new Thread(CheckPhone);
+            thread2.Start();
         }
 
         private void BackAbout_Click(object sender, RoutedEventArgs e)
@@ -94,6 +40,36 @@ namespace Treble_Toolkit
 
         private void Refresh(object sender, RoutedEventArgs e)
         {
+            Thread thread2 = new Thread(CheckPhone);
+            thread2.Start();
+        }
+
+        private void Next(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("FixConnectionPhoneStep2.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
+        //Threading starts here -- 5/11/2021@22:07, YAG-dev, 21.12+
+        private void Animate()
+        {
+            string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotAnimated.txt");
+            if (File.Exists(IsAnimated))
+            {
+
+            }
+            else
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    GridMain.Opacity = 0;
+                    Grid r = (Grid)GridMain;
+                    DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
+                    r.BeginAnimation(Grid.OpacityProperty, animation);
+                });
+            }
+        }
+        private void CheckPhone()
+        {
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.UseShellExecute = false;
@@ -107,7 +83,10 @@ namespace Treble_Toolkit
             process.WaitForExit();
             if (output4.Contains("fastboot") == true)
             {
-                PhoneStatus.Content = "Detected";
+                this.Dispatcher.Invoke(() =>
+                {
+                    PhoneStatus.Content = "Detected";
+                });
             }
             else
             {
@@ -122,31 +101,34 @@ namespace Treble_Toolkit
                 process.WaitForExit();
                 if (output3.Contains("device") == true)
                 {
-                    PhoneStatus.Content = "Detected";
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        PhoneStatus.Content = "Detected";
+                    });
                 }
                 else
                 {
-                    PhoneStatus.Content = "Not Detected";
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        PhoneStatus.Content = "Not Detected";
+                    });
                 }
             }
-            if (PhoneStatus.Content == "Not Detected")
+            this.Dispatcher.Invoke(() =>
             {
-                PhoneWarning.Visibility = Visibility.Visible;
-                PhoneWarningTxt1.Visibility = Visibility.Visible;
-                PhoneWarningTxt2.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                PhoneWarning.Visibility = Visibility.Hidden;
-                PhoneWarningTxt1.Visibility = Visibility.Hidden;
-                PhoneWarningTxt2.Visibility = Visibility.Hidden;
-            }
-        }
-
-        private void Next(object sender, RoutedEventArgs e)
-        {
-            Uri uri = new Uri("FixConnectionPhoneStep2.xaml", UriKind.Relative);
-            this.NavigationService.Navigate(uri);
+                if (PhoneStatus.Content == "Not Detected")
+                {
+                    PhoneWarning.Visibility = Visibility.Visible;
+                    PhoneWarningTxt1.Visibility = Visibility.Visible;
+                    PhoneWarningTxt2.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    PhoneWarning.Visibility = Visibility.Hidden;
+                    PhoneWarningTxt1.Visibility = Visibility.Hidden;
+                    PhoneWarningTxt2.Visibility = Visibility.Hidden;
+                }
+            });
         }
     }
 }

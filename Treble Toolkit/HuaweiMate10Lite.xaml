@@ -91,7 +91,7 @@
         </Style>
     </Page.Resources>
 
-    <Grid x:Name="grid">
+    <Grid x:Name="GridMain">
         <Grid.RowDefinitions>
             <RowDefinition Height="99*"/>
             <RowDefinition Height="14*"/>

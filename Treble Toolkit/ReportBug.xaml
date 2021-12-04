@@ -230,7 +230,7 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <CheckBox x:Name="PhoneInfo" Content="Include Phone Information (ADB Required)" Margin="10,66,10,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Checked="CheckBox_Checked" Style="{DynamicResource Checkbox21.7.1}" Height="25" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="14" Foreground="{DynamicResource SystemBaseHighColorBrush}" IsChecked="True">
+        <CheckBox x:Name="PhoneInfo" Content="Include Phone Information (ADB Required)" Margin="10,66,10,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Style="{DynamicResource Checkbox21.7.1}" Height="25" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="14" Foreground="{DynamicResource SystemBaseHighColorBrush}" IsChecked="True">
             <CheckBox.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -240,7 +240,7 @@
                     BlurRadius="2"/>
             </CheckBox.Effect>
             </CheckBox>
-        <CheckBox x:Name="PCInfo" Content="Include Computer Information" Margin="10,91,10,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Checked="CheckBox_Checked" Style="{DynamicResource Checkbox21.7.1}" Height="25" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="14" Foreground="{DynamicResource SystemBaseHighColorBrush}" IsChecked="True">
+        <CheckBox x:Name="PCInfo" Content="Include Computer Information" Margin="10,91,10,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Style="{DynamicResource Checkbox21.7.1}" Height="25" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="14" Foreground="{DynamicResource SystemBaseHighColorBrush}" IsChecked="True">
             <CheckBox.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"

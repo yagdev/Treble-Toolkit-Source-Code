@@ -1,0 +1,1477 @@
+###############################################################################
+#
+# test.eagle --
+#
+# Extensible Adaptable Generalized Logic Engine (Eagle)
+# Harpy Testing Support Package
+#
+# Copyright (c) 2007-2012 by Joe Mistachkin.  All rights reserved.
+#
+# See the file "license.terms" for information on usage and redistribution of
+# this file, and for a DISCLAIMER OF ALL WARRANTIES.
+#
+# RCS: @(#) $Id: $
+#
+###############################################################################
+
+#
+# NOTE: Use our own namespace here because even though we do not directly
+#       support namespaces ourselves, we do not want to pollute the global
+#       namespace if this script actually ends up being evaluated in Tcl.
+#
+namespace eval ::Eagle {
+  proc reformatCertificateSpacing { fileName } {
+    set data [readFile $fileName]
+
+    set xmlNs xmlns=\"https://eagle.to/2011/harpy\"
+    set xmlNsXsi xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
+    set xmlNsXsd xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"
+
+    set data [string map [list \
+        [appendArgs $xmlNsXsd " " $xmlNsXsi " " $xmlNs] \
+        [appendArgs $xmlNs " " $xmlNsXsi " " $xmlNsXsd]]  $data]
+
+    set data [string map [list \
+        [appendArgs $xmlNsXsi " " $xmlNsXsd " " $xmlNs] \
+        [appendArgs $xmlNs " " $xmlNsXsi " " $xmlNsXsd]]  $data]
+
+    set spaces "             "
+
+    set data [string map [list \
+        "\" xmlns" [appendArgs \" [info newline] $spaces xmlns]] $data]
+
+    writeFile $fileName $data
+    return ""
+  }
+
+  proc isValidKeyRing { name } {
+    if {[string length $name] == 0} then {
+      return false
+    }
+
+    return true
+  }
+
+  proc saveKeyRing { varName } {
+    upvar 1 $varName savedKeyRing
+
+    set savedKeyRing(local) ""
+    catch {set savedKeyRing(local) [keyring save]}
+
+    return ""
+  }
+
+  proc resetKeyRing {} {
+    global testKeyName
+    global testPolicy
+
+    #
+    # NOTE: In order for the [keyring bootstrap] sub-command to work when
+    #       the test policy is active (which enforces key name matching),
+    #       the key name must be set to the trust root key name.
+    #
+    saveKeyName savedKeyName
+
+    if {[info exists testKeyName(2)]} then {
+      setKeyName $testKeyName(2)
+    } else {
+      resetKeyName
+    }
+
+    try {
+      #
+      # HACK: Force use of the default key rings as that is how Harpy is
+      #       generally tested.  In the future, perhaps make testing not
+      #       depend on this.
+      #
+      saveKeyRingName savedKeyRingName; resetKeyRingName
+
+      try {
+        #
+        # NOTE: In order for the [keyring bootstrap] sub-command to work
+        #       when the test policy is active, certain policy flags are
+        #       required.
+        #
+        savePolicy savedPolicy; resetPolicy
+
+        if {[info exists testPolicy(5)]} then {
+          certificate policy -file $testPolicy(5) -script $testPolicy(5)
+        } else {
+          certificate policy -enabled true
+        }
+
+        try {
+          keyring bootstrap
+        } finally {
+          restorePolicy savedPolicy
+        }
+      } finally {
+        restoreKeyRingName savedKeyRingName
+      }
+    } finally {
+      restoreKeyName savedKeyName
+    }
+
+    return ""
+  }
+
+  proc restoreKeyRing { varName } {
+    upvar 1 $varName savedKeyRing
+
+    if {[info exists savedKeyRing(local)] && \
+        [isValidKeyRing $savedKeyRing(local)]} then {
+      keyring restore $savedKeyRing(local)
+    }
+
+    unset -nocomplain savedKeyRing(local)
+
+    if {[array size savedKeyRing] == 0} then {
+      unset -nocomplain savedKeyRing
+    }
+
+    return ""
+  }
+
+  proc isValidPolicy { policy } {
+    if {[string length $policy] == 0} then {
+      return false
+    }
+
+    if {$policy eq "None" || $policy eq "Undefined"} then {
+      return false
+    }
+
+    return true
+  }
+
+  proc savePolicy { varName } {
+    upvar 1 $varName savedPolicy
+
+    set savedPolicy(global) [certificate policy -local false]
+    set savedPolicy(local) [certificate policy -local true]
+
+    return ""
+  }
+
+  proc resetPolicy {} {
+    certificate policy -local false -enabled false -unset true
+    certificate policy -local true -enabled false -unset true
+
+    return ""
+  }
+
+  proc restorePolicy { varName {policyTypes ""} {unset true} } {
+    upvar 1 $varName savedPolicy
+
+    if {[info exists savedPolicy(local)]} then {
+      foreach {policyType policy} $savedPolicy(local) {
+        if {[llength $policyTypes] > 0 && \
+            [lsearch -exact -- $policyTypes $policyType] == -1} then {
+          continue
+        }
+
+        if {[isValidPolicy $policy]} then {
+          certificate policy -local true $policyType $policy
+        } else {
+          certificate policy -local true $policyType None -unset true
+        }
+      }
+    }
+
+    if {$unset} then {
+      unset -nocomplain savedPolicy(local)
+    }
+
+    if {[info exists savedPolicy(global)]} then {
+      foreach {policyType policy} $savedPolicy(global) {
+        if {[llength $policyTypes] > 0 && \
+            [lsearch -exact -- $policyTypes $policyType] == -1} then {
+          continue
+        }
+
+        if {[isValidPolicy $policy]} then {
+          certificate policy -local false $policyType $policy
+        } else {
+          certificate policy -local false $policyType None -unset true
+        }
+      }
+    }
+
+    if {$unset} then {
+      unset -nocomplain savedPolicy(global)
+
+      if {[array size savedPolicy] == 0} then {
+        unset -nocomplain savedPolicy
+      }
+    }
+
+    return ""
+  }
+
+  proc setApprovedDataPolicy { enabled } {
+    global testPolicy
+
+    if {$enabled} then {
+      set operator +
+    } else {
+      set operator -
+    }
+
+    certificate policy -local false -file \
+        [appendArgs $operator $testPolicy(21)]
+
+    certificate policy -local true -file \
+        [appendArgs $operator $testPolicy(21)]
+
+    return ""
+  }
+
+  proc restoreLicensePolicy { varName } {
+    upvar 1 $varName savedPolicy
+
+    restorePolicy savedPolicy [list -license] false
+  }
+
+  proc saveRenewCallbacks { varName } {
+    upvar 1 $varName savedRenewCallbacks
+
+    set savedRenewCallbacks(global) [certificate renewcallback]
+
+    return ""
+  }
+
+  proc resetRenewCallbacks {} {
+    certificate renewcallback \
+        -script true -file true -stream true -license true -trace true \
+        -other true
+
+    return ""
+  }
+
+  proc restoreRenewCallbacks { varName {policyTypes ""} {unset true} } {
+    upvar 1 $varName savedRenewCallbacks
+
+    if {[info exists savedRenewCallbacks(global)]} then {
+      foreach {policyType enabled} $savedRenewCallbacks(global) {
+        if {[llength $policyTypes] > 0 && \
+            [lsearch -exact -- $policyTypes $policyType] == -1} then {
+          continue
+        }
+
+        certificate renewcallback $policyType $enabled
+      }
+    }
+
+    if {$unset} then {
+      unset -nocomplain savedRenewCallbacks(global)
+
+      if {[array size savedRenewCallbacks] == 0} then {
+        unset -nocomplain savedRenewCallbacks
+      }
+    }
+
+    return ""
+  }
+
+  proc hasSecurity {} {
+    if {[catch {
+      object invoke -flags +NonPublic Interpreter.GetActive HasSecurity
+    } security] == 0} then {
+      return $security
+    }
+
+    return ""
+  }
+
+  proc saveSecurity { varName } {
+    set security [hasSecurity]
+
+    if {[string is boolean -strict $security]} then {
+      upvar 1 $varName savedSecurity
+
+      set savedSecurity(global) $security
+    }
+
+    return ""
+  }
+
+  proc resetSecurity {} {
+    catch {security false}
+
+    return ""
+  }
+
+  proc restoreSecurity { varName {unset true} } {
+    upvar 1 $varName savedSecurity
+
+    if {[info exists savedSecurity(global)]} then {
+      set security [hasSecurity]
+
+      if {![string is boolean -strict $security] || \
+          $security != $savedSecurity(global)} then {
+        security $savedSecurity(global)
+      }
+    }
+
+    if {$unset} then {
+      unset -nocomplain savedSecurity(global)
+
+      if {[array size savedSecurity] == 0} then {
+        unset -nocomplain savedSecurity
+      }
+    }
+
+    return ""
+  }
+
+  proc isValidKeyName { keyName } {
+    if {[string length $keyName] == 0} then {
+      return false
+    }
+
+    return true
+  }
+
+  proc saveKeyName { varName } {
+    upvar 1 $varName savedKeyName
+
+    set savedKeyName(global) [certificate keyname -local false]
+    set savedKeyName(local) [certificate keyname -local true]
+
+    return ""
+  }
+
+  proc setKeyName { keyName } {
+    certificate keyname -local false \
+        -file $keyName -script $keyName -stream $keyName -license $keyName \
+        -trace $keyName -other $keyName
+
+    certificate keyname -local true \
+        -file $keyName -script $keyName -stream $keyName -license $keyName \
+        -trace $keyName -other $keyName
+
+    return ""
+  }
+
+  proc resetKeyName {} {
+    certificate keyname -local false \
+        -script "" -file "" -stream "" -license "" -trace "" -other "" \
+        -unset true
+
+    certificate keyname -local true \
+        -script "" -file "" -stream "" -license "" -trace "" -other "" \
+        -unset true
+
+    return ""
+  }
+
+  proc restoreKeyName { varName {policyTypes ""} {unset true} } {
+    upvar 1 $varName savedKeyName
+
+    if {[info exists savedKeyName(local)]} then {
+      foreach {policyType keyName} $savedKeyName(local) {
+        if {[llength $policyTypes] > 0 && \
+            [lsearch -exact -- $policyTypes $policyType] == -1} then {
+          continue
+        }
+
+        if {[isValidKeyName $keyName]} then {
+          certificate keyname -local true $policyType $keyName
+        } else {
+          certificate keyname -local true $policyType "" -unset true
+        }
+      }
+    }
+
+    if {$unset} then {
+      unset -nocomplain savedKeyName(local)
+    }
+
+    if {[info exists savedKeyName(global)]} then {
+      foreach {policyType keyName} $savedKeyName(global) {
+        if {[llength $policyTypes] > 0 && \
+            [lsearch -exact -- $policyTypes $policyType] == -1} then {
+          continue
+        }
+
+        if {[isValidKeyName $keyName]} then {
+          certificate keyname -local false $policyType $keyName
+        } else {
+          certificate keyname -local false $policyType "" -unset true
+        }
+      }
+    }
+
+    if {$unset} then {
+      unset -nocomplain savedKeyName(global)
+
+      if {[array size savedKeyName] == 0} then {
+        unset -nocomplain savedKeyName
+      }
+    }
+
+    return ""
+  }
+
+  proc isValidKeyRingName { keyRingName } {
+    if {[string length $keyRingName] == 0} then {
+      return false
+    }
+
+    return true
+  }
+
+  proc saveKeyRingName { varName } {
+    upvar 1 $varName savedKeyRingName
+
+    set savedKeyRingName(global) [certificate keyringname -local false]
+    set savedKeyRingName(local) [certificate keyringname -local true]
+
+    return ""
+  }
+
+  proc setKeyRingName { keyRingName } {
+    certificate keyringname -local false \
+        -file $keyRingName -script $keyRingName -stream $keyRingName \
+        -license $keyRingName -trace $keyRingName -other $keyRingName
+
+    certificate keyringname -local true \
+        -file $keyRingName -script $keyRingName -stream $keyRingName \
+        -license $keyRingName -trace $keyRingName -other $keyRingName
+
+    return ""
+  }
+
+  proc resetKeyRingName {} {
+    certificate keyringname -local false \
+        -script "" -file "" -stream "" -license "" -trace "" -other "" \
+        -unset true
+
+    certificate keyringname -local true \
+        -script "" -file "" -stream "" -license "" -trace "" -other "" \
+        -unset true
+
+    return ""
+  }
+
+  proc restoreKeyRingName { varName {policyTypes ""} {unset true} } {
+    upvar 1 $varName savedKeyRingName
+
+    if {[info exists savedKeyRingName(local)]} then {
+      foreach {policyType keyRingName} $savedKeyRingName(local) {
+        if {[llength $policyTypes] > 0 && \
+            [lsearch -exact -- $policyTypes $policyType] == -1} then {
+          continue
+        }
+
+        if {[isValidKeyRingName $keyRingName]} then {
+          certificate keyringname -local true $policyType $keyRingName
+        } else {
+          certificate keyringname -local true $policyType "" -unset true
+        }
+      }
+    }
+
+    if {$unset} then {
+      unset -nocomplain savedKeyRingName(local)
+    }
+
+    if {[info exists savedKeyRingName(global)]} then {
+      foreach {policyType keyRingName} $savedKeyRingName(global) {
+        if {[llength $policyTypes] > 0 && \
+            [lsearch -exact -- $policyTypes $policyType] == -1} then {
+          continue
+        }
+
+        if {[isValidKeyRingName $keyRingName]} then {
+          certificate keyringname -local false $policyType $keyRingName
+        } else {
+          certificate keyringname -local false $policyType "" -unset true
+        }
+      }
+    }
+
+    if {$unset} then {
+      unset -nocomplain savedKeyRingName(global)
+
+      if {[array size savedKeyRingName] == 0} then {
+        unset -nocomplain savedKeyRingName
+      }
+    }
+
+    return ""
+  }
+
+  proc isValidScriptFlags { scriptFlags } {
+    if {[string length $scriptFlags] == 0} then {
+      return false
+    }
+
+    if {$scriptFlags eq "None"} then {
+      return false
+    }
+
+    return true
+  }
+
+  proc saveScriptFlags { varName } {
+    upvar 1 $varName savedScriptFlags
+
+    set savedScriptFlags(global) [certificate scriptflags -local false]
+    set savedScriptFlags(local) [certificate scriptflags -local true]
+
+    return ""
+  }
+
+  proc resetScriptFlags {} {
+    certificate scriptflags -local false \
+        -script None -file None -stream None -license None -trace None \
+        -other None -unset true
+
+    certificate scriptflags -local true \
+        -script None -file None -stream None -license None -trace None \
+        -other None -unset true
+
+    return ""
+  }
+
+  proc restoreScriptFlags { varName {policyTypes ""} {unset true} } {
+    upvar 1 $varName savedScriptFlags
+
+    if {[info exists savedScriptFlags(local)]} then {
+      foreach {policyType scriptFlags} $savedScriptFlags(local) {
+        if {[llength $policyTypes] > 0 && \
+            [lsearch -exact -- $policyTypes $policyType] == -1} then {
+          continue
+        }
+
+        if {[isValidScriptFlags $scriptFlags]} then {
+          certificate scriptflags -local true $policyType $scriptFlags
+        } else {
+          certificate scriptflags -local true $policyType None -unset true
+        }
+      }
+    }
+
+    if {$unset} then {
+      unset -nocomplain savedScriptFlags(local)
+    }
+
+    if {[info exists savedScriptFlags(global)]} then {
+      foreach {policyType scriptFlags} $savedScriptFlags(global) {
+        if {[llength $policyTypes] > 0 && \
+            [lsearch -exact -- $policyTypes $policyType] == -1} then {
+          continue
+        }
+
+        if {[isValidScriptFlags $scriptFlags]} then {
+          certificate scriptflags -local false $policyType $scriptFlags
+        } else {
+          certificate scriptflags -local false $policyType None -unset true
+        }
+      }
+    }
+
+    if {$unset} then {
+      unset -nocomplain savedScriptFlags(global)
+
+      if {[array size savedScriptFlags] == 0} then {
+        unset -nocomplain savedScriptFlags
+      }
+    }
+
+    return ""
+  }
+
+  proc dumpPolicySettings { channel } {
+    package require Eagle.Test
+
+    tputs $channel [appendArgs \
+        "---- local security is \"" [hasSecurity] \"\n]
+
+    tputs $channel [appendArgs \
+        "---- global policy is \"" \
+        [certificate policy -local false] \"\n]
+
+    tputs $channel [appendArgs \
+        "---- local policy is \"" \
+        [certificate policy -local true] \"\n]
+
+    tputs $channel [appendArgs \
+        "---- global key name is \"" \
+        [certificate keyname -local false] \"\n]
+
+    tputs $channel [appendArgs \
+        "---- local key name is \"" \
+        [certificate keyname -local true] \"\n]
+
+    tputs $channel [appendArgs \
+        "---- global key ring name is \"" \
+        [certificate keyringname -local false] \"\n]
+
+    tputs $channel [appendArgs \
+        "---- local key ring name is \"" \
+        [certificate keyringname -local true] \"\n]
+
+    tputs $channel [appendArgs \
+        "---- global script flags are \"" \
+        [certificate scriptflags -local false] \"\n]
+
+    tputs $channel [appendArgs \
+        "---- local script flags are \"" \
+        [certificate scriptflags -local true] \"\n]
+
+    tputs $channel [appendArgs \
+        "---- global renewal callbacks are \"" \
+        [certificate renewcallback] \"\n]
+  }
+
+  proc dumpServerEnvironmentVariables {
+          varName savedIis iis savedLocal local savedRootBaseUri
+          rootBaseUri full channel } {
+    package require Eagle.Test
+
+    if {[string length $savedIis] > 0} then {
+      set savedIis [appendArgs \" $savedIis \"]
+    } else {
+      set savedIis <none>
+    }
+
+    tputs $channel [appendArgs \
+        "---- saved IIS flag is " $savedIis \n]
+
+    tputs $channel [appendArgs \
+        "---- effective IIS flag is \"" $iis \"\n]
+
+    if {[string length $savedLocal] > 0} then {
+      set savedLocal [appendArgs \" $savedLocal \"]
+    } else {
+      set savedLocal <none>
+    }
+
+    tputs $channel [appendArgs \
+        "---- saved local flag is " $savedLocal \n]
+
+    tputs $channel [appendArgs \
+        "---- effective local flag is \"" $local \"\n]
+
+    if {[string length $savedRootBaseUri] > 0} then {
+      set savedRootBaseUri [appendArgs \" $savedRootBaseUri \"]
+    } else {
+      set savedRootBaseUri <none>
+    }
+
+    tputs $channel [appendArgs \
+        "---- saved root base URI is " $savedRootBaseUri \n]
+
+    if {[string length $rootBaseUri] > 0} then {
+      set rootBaseUri [appendArgs \" $rootBaseUri \"]
+    } else {
+      set rootBaseUri <none>
+    }
+
+    tputs $channel [appendArgs \
+        "---- effective root base URI is " $rootBaseUri \n]
+
+    upvar 1 $varName array
+
+    foreach name [getServerEnvironmentVariableNames $full] {
+      if {[info exists array($name)] && \
+          [string length $array($name)] > 0} then {
+        set value [appendArgs \" $array($name) \"]
+      } else {
+        set value <none>
+      }
+
+      tputs $channel [appendArgs \
+          "---- server environment variable \"" $name "\" is " \
+          $value \n]
+    }
+  }
+
+  proc publicKeyTokenToBytes { publicKeyToken } {
+    set result [list]
+
+    foreach {nibble1 nibble2} [split $publicKeyToken ""] {
+      lappend result [expr {[appendArgs 0x $nibble1 $nibble2] + 0}]
+    }
+
+    return $result
+  }
+
+  proc saveEnvironmentVariables { names {varName ""} } {
+    #
+    # NOTE: For each name, does the live environment variable exist?  If
+    #       so, save the value for later; otherwise, make sure the saved
+    #       value does not exist either.  The live environment variables
+    #       ARE NOT changed by this procedure.
+    #
+    if {[string length $varName] == 0} then {
+      set varName savedEnv
+    }
+
+    upvar 1 $varName savedEnv
+
+    foreach name $names {
+      if {[info exists ::env($name)]} then {
+        set savedEnv($name) $::env($name)
+      } else {
+        unset -nocomplain savedEnv($name)
+      }
+    }
+
+    #
+    # NOTE: This is self-cleaning.  If no saved environment variables now
+    #       exist, remove the array.
+    #
+    if {[array size savedEnv] == 0} then {
+      unset -nocomplain savedEnv
+    }
+  }
+
+  proc restoreEnvironmentVariables { names {varName ""} } {
+    #
+    # NOTE: For each name, does the saved environment variable exist?  If
+    #       so, restore the saved value and unset it; otherwise, make sure
+    #       the live environment variable does not exist either (i.e. it
+    #       was not set to begin with).  Both saved and live environment
+    #       variables ARE changed by this procedure.
+    #
+    if {[string length $varName] == 0} then {
+      set varName savedEnv
+    }
+
+    upvar 1 $varName savedEnv
+
+    foreach name $names {
+      if {[info exists savedEnv($name)]} then {
+        set ::env($name) $savedEnv($name)
+        unset -nocomplain savedEnv($name)
+      } else {
+        unset -nocomplain ::env($name)
+      }
+    }
+
+    #
+    # NOTE: This is self-cleaning.  If no saved environment variables now
+    #       exist, remove the array.
+    #
+    if {[array size savedEnv] == 0} then {
+      unset -nocomplain savedEnv
+    }
+  }
+
+  proc getServerEnvironmentVariableNames { {full true} } {
+    #
+    # NOTE: The list returned from this procedure is intended to be a
+    #       complete list of the environment variable names that are
+    #       used by Harpy (to connect with a Kapok server) and/or the
+    #       Kapok test suite.
+    #
+    if {$full} then {
+      return [list \
+          AuthorityBaseUri \
+          LicenseUri \
+          LocalServerPort \
+          NetworkTimeHttpUri \
+          NetworkTimeNtpUri \
+          NetworkTimeUri \
+          NoRenewalRelativeUri \
+          NoRevocationRelativeUri \
+          NoScriptRelativeUri \
+          NoStorageRelativeUri \
+          NoSupportRelativeUri \
+          PingBaseUri \
+          PingRelativeUri \
+          RenewalBaseUri \
+          RenewalRelativeUri \
+          RevocationBaseUri \
+          RevocationRelativeUri \
+          RootBaseUri \
+          SandboxEvalUri \
+          ScriptBaseUri \
+          ScriptRelativeUri \
+          ServerPort \
+          StorageBaseUri \
+          StorageRelativeUri \
+          SupportBaseUri \
+          SupportRelativeUri \
+          UseLocalHost]
+    } else {
+      #
+      # HACK: Return the subset of environment variable names that may be
+      #       changed by the [resetServerEnvironmentVariables] procedure.
+      #
+      return [list \
+          RenewalRelativeUri \
+          RevocationRelativeUri \
+          SupportRelativeUri \
+          ScriptRelativeUri \
+          StorageRelativeUri \
+          LocalServerPort \
+          ServerPort \
+          UseLocalHost]
+    }
+  }
+
+  proc saveServerEnvironmentVariables { {varName ""} {full false} } {
+    if {[string length $varName] == 0} then {
+      set varName savedEnv
+    }
+
+    upvar 1 $varName savedEnv
+
+    saveEnvironmentVariables \
+        [getServerEnvironmentVariableNames $full] savedEnv
+  }
+
+  proc restoreServerEnvironmentVariables { {varName ""} {full false} } {
+    if {[string length $varName] == 0} then {
+      set varName savedEnv
+    }
+
+    upvar 1 $varName savedEnv
+
+    restoreEnvironmentVariables \
+        [getServerEnvironmentVariableNames $full] savedEnv
+  }
+
+  proc checkForInternetInformationServices { channel } {
+    package require Eagle.Test
+
+    if {![haveConstraint configuration.Debug] && \
+        ![haveConstraint configuration.Release]} then {
+      if {![info exists ::test_configuration]} then {
+        set ::test_configuration [getPlatformInfo configuration Release]
+      }
+
+      package require Eagle.Test.Constraints
+      checkForTestConfiguration $channel
+    }
+  }
+
+  proc checkForNetworkHosts { channel timeout } {
+    package require Eagle.Test
+
+    if {![haveConstraint network_www.eagle-lang.org]} then {
+      package require Eagle.Test.Constraints
+      checkForNetwork $channel www.eagle-lang.org $timeout
+    }
+
+    if {![haveConstraint network_urn.to]} then {
+      package require Eagle.Test.Constraints
+      checkForNetwork $channel urn.to $timeout
+    }
+
+    if {![haveConstraint network_time.mistachkin.net]} then {
+      package require Eagle.Test.Constraints
+      checkForNetwork $channel time.mistachkin.net $timeout
+    }
+  }
+
+  proc isUsingInternetInformationServices { {iis ""} } {
+    if {[string length $iis] == 0} then {
+      if {![info exists ::no(testConfiguration)]} then {
+        checkForInternetInformationServices ""
+      }
+
+      package require Eagle.Test
+
+      if {[haveConstraint configuration.Debug]} then {
+        return false; # NOTE: Assume IDE testing.
+      } else {
+        return true; # NOTE: Assume release testing.
+      }
+    } else {
+      return $iis; # NOTE: Use caller provided override.
+    }
+  }
+
+  proc isUsingLocalHost { {local ""} } {
+    if {[string length $local] == 0} then {
+      if {![info exists ::no(www.eagle-lang.org)] && \
+          ![info exists ::no(urn.to)] && \
+          ![info exists ::no(time.mistachkin.net)]} then {
+        if {![info exists ::no(core)] && \
+            ![info exists ::no(network)]} then {
+          if {[info exists ::test_timeout]} then {
+            set timeout $::test_timeout
+          } else {
+            set timeout 2000
+          }
+
+          checkForNetworkHosts "" $timeout
+        }
+
+        package require Eagle.Test
+
+        if {[haveConstraint network_www.eagle-lang.org] && \
+            [haveConstraint network_urn.to] && \
+            [haveConstraint network_time.mistachkin.net]} then {
+          return false; # NOTE: Assume release testing.
+        } else {
+          return true; # NOTE: Assume IDE testing.
+        }
+      } else {
+        return true; # NOTE: Assume IDE testing.
+      }
+    } else {
+      return $local; # NOTE: Use caller provided override.
+    }
+  }
+
+  proc getTestChannel { {channel stdout} } {
+    if {[info exists ::test_channel]} then {
+      return $::test_channel
+    }
+
+    return $channel
+  }
+
+  proc getHostFromBaseUri { baseUri {default true} } {
+    set uri null
+
+    set ok [object invoke \
+        -create -alias Uri TryCreate $baseUri Absolute uri]
+
+    if {[isNonNullObjectHandle $ok] && \
+        [$ok ToString] && [isNonNullObjectHandle $uri]} then {
+      return [$uri Host]
+    }
+
+    return ""
+  }
+
+  proc getPortFromBaseUri { baseUri {default true} } {
+    set uri null
+
+    set ok [object invoke \
+        -create -alias Uri TryCreate $baseUri Absolute uri]
+
+    if {[isNonNullObjectHandle $ok] && \
+        [$ok ToString] && [isNonNullObjectHandle $uri]} then {
+      set port [$uri Port]
+
+      if {!$default} then {
+        #
+        # NOTE: Before returning the port value, make sure it is
+        #       NOT the default value for its associated scheme.
+        #       This does not apply when the "default" argument
+        #       is true.
+        #
+        switch -exact -nocase -- [$uri Scheme] {
+          http {
+            if {$port eq "80"} then {
+              return ""
+            }
+          }
+          https {
+            if {$port eq "443"} then {
+              return ""
+            }
+          }
+        }
+      }
+
+      return $port
+    }
+
+    return ""
+  }
+
+  proc shouldUseLocalRelativeUris {} {
+    #
+    # HACK: For now, assume that when an absolute base URI is specified,
+    #       the non-local relative URIs should be used by the procedure
+    #       [resetServerEnvironmentVariables].
+    #
+    return [expr {![info exists ::env(AuthorityBaseUri)]}]
+  }
+
+  #
+  # TODO: Make the specific servers, ports, and relative URIs in this test
+  #       procedure more configurable.
+  #
+  proc resetServerEnvironmentVariables {
+          {varName ""} {iis ""} {local ""} {quiet false} {logOnly false}
+          {rootBaseUri ""} } {
+    #
+    # NOTE: Figure out where the reset environment variables are going to
+    #       reside (i.e. it may not be in the actual "::env" array).
+    #
+    if {[string length $varName] > 0} then {
+      upvar 1 $varName array; # use specified variable
+    } else {
+      upvar #0 env array; # use global env array
+    }
+
+    set savedIis $iis
+    set iis [isUsingInternetInformationServices $iis]
+
+    set savedLocal $local
+    set local [isUsingLocalHost $local]
+
+    #
+    # HACK: For the Harpy test suite, fallback to the RootBaseUri
+    #       environment variable if the "rootBaseUri" argument is
+    #       not specified.
+    #
+    set savedRootBaseUri $rootBaseUri
+
+    if {[string length $rootBaseUri] == 0 && \
+        [info exists ::env(RootBaseUri)]} then {
+      set rootBaseUri $::env(RootBaseUri)
+    }
+
+    if {$iis && $local} then {
+      #
+      # NOTE: These are for use with IIS 7.x (e.g. 7.5) on Windows 7,
+      #       Windows Server 2008 R2, etc.  These will only work when
+      #       not using the live remote server due to it containing
+      #       the "kapok" portion already.
+      #
+      set array(RenewalRelativeUri) kapok/certificate/renew.cgi?
+      set array(RevocationRelativeUri) kapok/certificate/revoked.cgi?
+      set array(SupportRelativeUri) kapok/support/check.cgi?
+      set array(ScriptRelativeUri) kapok/wrapper/script.cgi?
+      set array(StorageRelativeUri) kapok/var/storage.cgi?
+
+      if {[string length $rootBaseUri] > 0} then {
+        set array(LocalServerPort) [getPortFromBaseUri $rootBaseUri]
+      } else {
+        set array(LocalServerPort) 11452
+      }
+
+      set array(ServerPort) $array(LocalServerPort)
+    } else {
+      #
+      # NOTE: These are for use with the ASP.NET Development Server
+      #       included with Visual Studio 20XX (e.g. Visual Studio
+      #       2008) -AND- remote IIS servers that use the official
+      #       authority URNs.
+      #
+      set array(RenewalRelativeUri) certificate/renew.cgi?
+      set array(RevocationRelativeUri) certificate/revoked.cgi?
+      set array(SupportRelativeUri) support/check.cgi?
+      set array(ScriptRelativeUri) wrapper/script.cgi?
+      set array(StorageRelativeUri) var/storage.cgi?
+
+      #
+      # NOTE: When operating locally, use specially reserved port;
+      #       otherwise, use the default port for the URL scheme.
+      #
+      if {[string length $rootBaseUri] > 0} then {
+        set array(LocalServerPort) [getPortFromBaseUri $rootBaseUri]
+      } else {
+        set array(LocalServerPort) 1195
+      }
+
+      if {$local} then {
+        set array(ServerPort) $array(LocalServerPort)
+      } else {
+        unset -nocomplain array(ServerPort)
+      }
+    }
+
+    #
+    # NOTE: Are we forcing the use of "localhost"...?  This only works
+    #       in the debug build.
+    #
+    if {$local && \
+        [getHostFromBaseUri $rootBaseUri] eq "localhost"} then {
+      set array(UseLocalHost) 1
+    } else {
+      unset -nocomplain array(UseLocalHost)
+    }
+
+    #
+    # NOTE: When not forbidden from doing so by the caller, emit final
+    #       configuration to the test log.
+    #
+    if {!$quiet} then {
+      set channel [expr {$logOnly ? "" : [getTestChannel]}]
+
+      dumpServerEnvironmentVariables \
+          array $savedIis $iis $savedLocal $local $savedRootBaseUri \
+          $rootBaseUri false $channel
+    }
+  }
+
+  proc getServerUriForPing { {iis ""} {local ""} {rootBaseUri ""} } {
+    #
+    # HACK: For the Harpy test suite, fallback to the RootBaseUri
+    #       environment variable if the "rootBaseUri" argument is
+    #       not specified.
+    #
+    if {[string length $rootBaseUri] == 0 && \
+        [info exists ::env(RootBaseUri)]} then {
+      set rootBaseUri $::env(RootBaseUri)
+    }
+
+    resetServerEnvironmentVariables \
+        array $iis $local true false $rootBaseUri
+
+    if {[string length $rootBaseUri] > 0} then {
+      if {[info exists ::env(PingRelativeUri)]} then {
+        set relativeUri $::env(PingRelativeUri)
+      } else {
+        set relativeUri $array(RenewalRelativeUri)
+      }
+
+      return [appendArgs \
+          $rootBaseUri $relativeUri ping=true]
+    } elseif {[info exists ::env(PingBaseUri)]} then {
+      if {[info exists ::env(PingRelativeUri)]} then {
+        set relativeUri $::env(PingRelativeUri)
+      } else {
+        set relativeUri $array(RenewalRelativeUri)
+      }
+
+      return [appendArgs \
+          $::env(PingBaseUri) $relativeUri ping=true]
+    }
+
+    return [appendArgs \
+        http://localhost: $array(LocalServerPort) / \
+        $array(RenewalRelativeUri) ping=true]
+  }
+
+  proc maybeGetServerUriForPing { {iis ""} {local ""} {rootBaseUri ""} } {
+    #
+    # HACK: For the Harpy and Kapok test suites, first check if a root
+    #       base URI has been set specifically for server pings.  If so,
+    #       use it; otherwise, fallback to the normal detection method.
+    #
+    if {[info exists ::pingBaseUri] && \
+        ![info exists ::setPingBaseUri]} then {
+      #
+      # NOTE: Next, see if there is a relative URI, set by the caller,
+      #       to be used for pinging the server.
+      #
+      if {[info exists ::pingRelativeUri] && \
+          ![info exists ::setPingRelativeUri]} then {
+        return [appendArgs \
+            $::pingBaseUri $::pingRelativeUri ping=true]
+      } else {
+        return $::pingBaseUri
+      }
+    } else {
+      return [getServerUriForPing $iis $local $rootBaseUri]
+    }
+  }
+
+  proc checkForRemoteCertificateServer {
+          channel {iis ""} {local ""} {rootBaseUri ""} } {
+    #
+    # NOTE: This is not actually a properly formatted request to the server;
+    #       however, that does not matter for the purposes of this check.
+    #
+    # BUGBUG: This assumes that the "certificate renewal" server endpoint is
+    #         the "primary" one -AND- that it will always be available when
+    #         the server is online.
+    #
+    if {![info exists ::no(kapok.server)]} then {
+      set uri [maybeGetServerUriForPing $iis $local $rootBaseUri]
+    }
+
+    tputs $channel "---- checking for remote certificate server... "
+
+    if {![info exists ::no(kapok.server)]} then {
+      #
+      # NOTE: Start trusting ONLY our self-signed SSL certificate.
+      #
+      set trusted true
+
+      if {[lindex [uri softwareupdates] end] eq "untrusted"} then {
+        catch {uri softwareupdates true}
+      } else {
+        set trusted false; # NOTE: Already trusted.
+      }
+
+      try {
+        if {[catch {uri download -inline $uri} data] == 0} then {
+          if {$data eq "Error: invalid requestId"} then {
+            #
+            # NOTE: The remote server appears to be available and working
+            #       properly.
+            #
+            addConstraint kapok.server
+
+            tputs $channel [appendArgs "yes (" $uri ")\n"]
+          } else {
+            tputs $channel no\n
+
+            if {![info exists ::no(kapok.server.verbose)]} then {
+              tputs $channel [appendArgs \
+                  "---- remote server \"" $uri "\" response mismatch: " \
+                  $data \n]
+            }
+          }
+        } else {
+          tputs $channel error\n
+
+          if {![info exists ::no(kapok.server.verbose)]} then {
+            tputs $channel [appendArgs \
+                "---- remote server \"" $uri "\" request failed: " \
+                $data \n]
+          }
+        }
+      } finally {
+        if {$trusted && \
+            [lindex [uri softwareupdates] end] eq "trusted"} then {
+          #
+          # NOTE: Stop trusting ONLY our self-signed SSL certificate.
+          #
+          catch {uri softwareupdates false}
+        }
+      }
+    } else {
+      addConstraint kapok.server
+
+      tputs $channel skipped\n
+    }
+  }
+
+  proc getCertificateEnvironmentVariableNames {} {
+    #
+    # NOTE: The list returned from this procedure is intended to be a
+    #       complete list of the environment variable names that are
+    #       used by Harpy (including its SDK), Badge, and Kapok.  Not
+    #       all of these are currently used (e.g. NoScriptRelativeUri).
+    #       Generally, this returned list must include all environment
+    #       variable names that are included in the lists returned by
+    #       the [getXdgEnvironmentVariableNames] procedure and/or the
+    #       [getServerEnvironmentVariableNames] procedure.
+    #
+    set result [list \
+        AlwaysExpires \
+        AlwaysLimitedQuantity \
+        AsynchronousConfiguration \
+        Certificate \
+        CertificateNamePrefix \
+        CertificatePath \
+        CertificateSummaryFeatures \
+        CertificateSummaryPairs \
+        CertificateTraceFile \
+        ConfigurationInterpreterSettings \
+        CONFIGURATION_SUFFIX \
+        DumpKeyPairs \
+        EnablePolicyTracing \
+        FullPluginPolicyTracing \
+        HarpyBinaryPath \
+        HarpyNoAutoAcquire \
+        HarpyNoIsolated \
+        HarpyNoProbePlugins \
+        HashAlgorithm \
+        Isolated \
+        IsolatedConfiguration \
+        LicenseAssemblyPath \
+        LicenseExecutionPolicy \
+        LicenseOtherAppDomain \
+        MachineGuid \
+        MachineVolumeSerialNumber \
+        NoBackupCertificateFile \
+        NoCertificateSummary \
+        NoCertificateSummaryRestrictions \
+        NoConfiguration \
+        NoIsolated \
+        NoLoadKeyRings \
+        NoLoadLicenseKeyRings \
+        NoNetworkTime \
+        NoRequestTimeout \
+        NoSandboxStatus \
+        NoScriptPath \
+        NoTraceServer \
+        NoTrustedRenewal \
+        NoWriteWithoutFailViaHost \
+        PackageDatabase \
+        PackageScriptBlockFlags \
+        PackageScriptBlocks \
+        PackageScriptFile \
+        PackageServerEnabled \
+        PackageServerSecurityFlags \
+        PackageServerSecurityLevel \
+        PackageSetupScript \
+        PreLoadSQLite_BaseDirectory \
+        PrimaryKeyRingOnly \
+        PrimaryNetworkTime \
+        RenewalCertificateDatabase \
+        RenewalLicenseKeyRingDatabase \
+        RenewalNoRequestTimeout \
+        RenewalPassThroughMode \
+        RenewalScriptBlockFlags \
+        RenewalScriptBlocks \
+        RenewalScriptFile \
+        RenewalScriptKeyRingDatabase \
+        RenewalServerEnabled \
+        RenewalServerSecurityFlags \
+        RenewalServerSecurityLevel \
+        RenewalSetupScript \
+        RenewalTimeout \
+        ScriptExecutionPolicy \
+        ScriptInterpreterSettings \
+        Security_Force_CanLoad \
+        SpecificKeyRingOnly \
+        SupportScriptBlockFlags \
+        SupportScriptBlocks \
+        SupportScriptFile \
+        SupportServerEnabled \
+        SupportServerSecurityFlags \
+        SupportServerSecurityLevel \
+        SupportSetupScript \
+        UseAnyPackage \
+        UseDefaultRenewCallback \
+        UseEmptyId \
+        VerbosePolicyTrace \
+        VerboseTracePriority \
+        WrapperScriptBlockFlags \
+        WrapperScriptBlocks \
+        WrapperScriptFile \
+        WrapperScriptFile \
+        WrapperServerEnabled \
+        WrapperServerSecurityFlags \
+        WrapperServerSecurityLevel \
+        WrapperSetupScript \
+        WriteWithoutFail]
+
+    eval lappend result [getServerEnvironmentVariableNames]
+    eval lappend result [getXdgEnvironmentVariableNames]
+
+    return [lsort $result]
+  }
+
+  proc saveCertificateEnvironment {} {
+    upvar 1 savedEnv savedEnv
+
+    saveEnvironmentVariables \
+        [getCertificateEnvironmentVariableNames] savedEnv
+  }
+
+  proc restoreCertificateEnvironment {} {
+    upvar 1 savedEnv savedEnv
+
+    restoreEnvironmentVariables \
+        [getCertificateEnvironmentVariableNames] savedEnv
+  }
+
+  proc resetCertificateEnvironment {} {
+    global env
+
+    unset -nocomplain env(CertificateNamePrefix) env(CertificatePath)
+  }
+
+  proc getLicenseEnvironmentVariableNames {} {
+    #
+    # NOTE: The list returned from this procedure is intended to be a
+    #       complete list of the environment variable names that are
+    #       used by for Harpy license certificates.
+    #
+    return [list \
+        Override_Harpy_Licensing.Enterprise_Certificate \
+        Override_Licensing.Enterprise_Certificate \
+        Override_Harpy_Enterprise_Certificate \
+        Override_Enterprise_Certificate \
+        Override_Harpy_Licensing.Standard_Certificate \
+        Override_Licensing.Standard_Certificate \
+        Override_Harpy_Standard_Certificate \
+        Override_Standard_Certificate \
+        Override_Harpy_Licensing.Core_Certificate \
+        Override_Licensing.Core_Certificate \
+        Override_Harpy_Core_Certificate \
+        Override_Core_Certificate \
+        Override_Harpy_Security.Core_Certificate \
+        Override_Security.Core_Certificate \
+        Override_Harpy_Certificate \
+        Override_Eagle_Certificate \
+        Override_Certificate \
+        Harpy_Licensing.Enterprise_Certificate \
+        Licensing.Enterprise_Certificate \
+        Harpy_Enterprise_Certificate \
+        Enterprise_Certificate \
+        Harpy_Licensing.Standard_Certificate \
+        Licensing.Standard_Certificate \
+        Harpy_Standard_Certificate \
+        Standard_Certificate \
+        Harpy_Licensing.Core_Certificate \
+        Licensing.Core_Certificate \
+        Harpy_Core_Certificate \
+        Core_Certificate \
+        Harpy_Security.Core_Certificate \
+        Security.Core_Certificate \
+        Harpy_Certificate \
+        Eagle_Certificate \
+        Certificate]
+  }
+
+  proc saveLicenseEnvironment {} {
+    upvar 1 savedEnv savedEnv
+
+    saveEnvironmentVariables \
+        [getLicenseEnvironmentVariableNames] savedEnv
+  }
+
+  proc restoreLicenseEnvironment {} {
+    upvar 1 savedEnv savedEnv
+
+    restoreEnvironmentVariables \
+        [getLicenseEnvironmentVariableNames] savedEnv
+  }
+
+  proc resetLicenseEnvironment {} {
+    global env
+
+    foreach name [getLicenseEnvironmentVariableNames] {
+      unset -nocomplain env($name)
+    }
+  }
+
+  proc getXdgEnvironmentVariableNames {} {
+    #
+    # NOTE: The list returned from this procedure is intended to be a
+    #       complete list of the environment variable names that are
+    #       used by Harpy (including its SDK), Badge, or Kapok -AND-
+    #       originate from the Base Directory Specification released
+    #       by the X Desktop Group.
+    #
+    return [list \
+        XDG_CLOUD_DIRS \
+        XDG_CLOUD_HOME \
+        XDG_CONFIG_DIRS \
+        XDG_CONFIG_HOME \
+        XDG_DATA_DIRS \
+        XDG_DATA_HOME \
+        XDG_KEYRING_DIRS \
+        XDG_KEYRING_HOME \
+        XDG_RUNTIME_DIR \
+        XDG_STARTUP_DIRS \
+        XDG_STARTUP_HOME]
+  }
+
+  proc saveXdgEnvironment {} {
+    upvar 1 savedEnv savedEnv
+
+    saveEnvironmentVariables \
+        [getXdgEnvironmentVariableNames] savedEnv
+  }
+
+  proc restoreXdgEnvironment {} {
+    upvar 1 savedEnv savedEnv
+
+    restoreEnvironmentVariables \
+        [getXdgEnvironmentVariableNames] savedEnv
+  }
+
+  proc resetXdgEnvironment {} {
+    global env
+
+    foreach name [getXdgEnvironmentVariableNames] {
+      unset -nocomplain env($name)
+    }
+  }
+
+  #
+  # NOTE: Provide the Harpy test package to the interpreter.
+  #
+  package provide Harpy.Test 1.0
+}
+

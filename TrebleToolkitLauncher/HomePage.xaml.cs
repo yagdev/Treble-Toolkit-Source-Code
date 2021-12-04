@@ -35,6 +35,48 @@ namespace TrebleToolkitLauncher
         public HomePage()
         {
             InitializeComponent();
+            Thread thread = new Thread(Animate);
+            thread.Start();
+            Thread thread2 = new Thread(NetworkCheck);
+            thread2.Start();
+            Thread thread3 = new Thread(GetCurrentVersion);
+            thread3.Start();
+            Thread thread4 = new Thread(GetLauncherVersion);
+            thread4.Start();
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            Thread thread = new Thread(Launch);
+            thread.Start();
+        }
+
+        private void Reinstall(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("Reinstall.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
+
+        private void UpdateLauncher(object sender, RoutedEventArgs e)
+        {
+            Thread thread = new Thread(UpdateLauncher);
+            thread.Start();
+        }
+
+        private void CheckConnection(object sender, RoutedEventArgs e)
+        {
+            Thread thread = new Thread(CheckNetworking);
+            thread.Start();
+        }
+
+        private void JoinBeta_Click(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("Settings.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
+        //Threading starts here -- 5/11/2021@22:07, YAG-dev, 21.12+
+        private void Animate()
+        {
             string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotAnimated.txt");
             if (File.Exists(IsAnimated))
             {
@@ -42,66 +84,103 @@ namespace TrebleToolkitLauncher
             }
             else
             {
-                GridMain.Opacity = 0;
-                Grid r = (Grid)GridMain;
-                DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
-                r.BeginAnimation(Grid.OpacityProperty, animation);
+                this.Dispatcher.Invoke(() =>
+                {
+                    GridMain.Opacity = 0;
+                    Grid r = (Grid)GridMain;
+                    DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
+                    r.BeginAnimation(Grid.OpacityProperty, animation);
+                });
             }
+        }
+        private void NetworkCheck()
+        {
             int Out;
             if (InternetGetConnectedState(out Out, 0) == true)
             {
-                BootFileLabel_Copy1.Content = "Connected";
-                DeviceSpecificFeatures_Copy.IsEnabled = true;
-                UpdateLauncher_Btn.IsEnabled = true;
-                JoinBeta.IsEnabled = true;
-                DeviceSpecificFeatures_Copy.Content = "Reinstall";
-                UpdateLauncher_Btn.Content = "Update Launcher";
+                this.Dispatcher.Invoke(() =>
+                {
+                    BootFileLabel_Copy1.Content = "Connected";
+                    DeviceSpecificFeatures_Copy.IsEnabled = true;
+                    UpdateLauncher_Btn.IsEnabled = true;
+                    JoinBeta.IsEnabled = true;
+                    DeviceSpecificFeatures_Copy.Content = "Reinstall";
+                    UpdateLauncher_Btn.Content = "Update Launcher";
+                });
             }
             else
             {
-                BootFileLabel_Copy1.Content = "Not Connected";
-                DeviceSpecificFeatures_Copy.IsEnabled = false;
-                UpdateLauncher_Btn.IsEnabled = false;
-                JoinBeta.IsEnabled = false;
-                DeviceSpecificFeatures_Copy.Content = "🔒 Reinstall";
-                UpdateLauncher_Btn.Content = "🔒 Update Launcher";
+                this.Dispatcher.Invoke(() =>
+                {
+                    BootFileLabel_Copy1.Content = "Not Connected";
+                    DeviceSpecificFeatures_Copy.IsEnabled = false;
+                    UpdateLauncher_Btn.IsEnabled = false;
+                    JoinBeta.IsEnabled = false;
+                    DeviceSpecificFeatures_Copy.Content = "🔒 Reinstall";
+                    UpdateLauncher_Btn.Content = "🔒 Update Launcher";
+                });
             }
+        }
+        private void GetCurrentVersion()
+        {
             string GetCurVer = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "CurrentVersion", "VersionString.txt");
-            string GetLauncherVer = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "CurrentVersion", "LauncherVersion.txt");
             if (File.Exists(GetCurVer))
             {
                 string text = System.IO.File.ReadAllText(GetCurVer);
-                CurrentVersion.Content = text;
+                this.Dispatcher.Invoke(() =>
+                {
+                    CurrentVersion.Content = text;
+                });
             }
             else
             {
-                CurrentVersion.Content = "No Data Yet";
+                this.Dispatcher.Invoke(() =>
+                {
+                    CurrentVersion.Content = "No Data Yet";
+                });
             }
+        }
+        private void GetLauncherVersion()
+        {
+            string GetCurVer = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "CurrentVersion", "VersionString.txt");
+            string GetLauncherVer = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "CurrentVersion", "LauncherVersion.txt");
             if (File.Exists(GetLauncherVer))
             {
                 string text = System.IO.File.ReadAllText(GetLauncherVer);
-                LauncherVer.Content = text;
+                this.Dispatcher.Invoke(() =>
+                {
+                    LauncherVer.Content = text;
+                });
             }
             else
             {
                 if (File.Exists(GetCurVer))
                 {
                     string text = System.IO.File.ReadAllText(GetCurVer);
-                    LauncherVer.Content = text;
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        LauncherVer.Content = text;
+                    });
                 }
                 else
                 {
-                    LauncherVer.Content = "No Data Yet";
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        LauncherVer.Content = "No Data Yet";
+                    });
                 }
             }
         }
-
-        private void BackButton_Click(object sender, RoutedEventArgs e)
+        private void Launch()
         {
             int Out;
             string blocker_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "UpdateBlocker", "BlockUpdates.txt");
             if (InternetGetConnectedState(out Out, 0) == true && File.Exists(blocker_path) == false)
             {
+                this.Dispatcher.Invoke(() =>
+                {
+                    DeviceSpecificFeatures_Copy3.Content = "Checking for Updates...";
+                });
                 string beta_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "BetaProgram", "BetaProgram.txt");
                 string url = "https://www.dropbox.com/s/f76ks90k8gvi0p5/release.zip?dl=1";
                 string remote_version_url = "https://www.dropbox.com/s/elbmcwbx389z71o/version.txt?dl=1";
@@ -111,51 +190,50 @@ namespace TrebleToolkitLauncher
                 string local_version_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "CurrentVersion", "VersionString.txt");
                 string local_launcher_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "CurrentVersion", "LauncherVersion.txt");
                 string launch_exe = "TrebleToolkitLauncher.exe";
-                if (File.Exists(beta_path))
+                if (File.Exists(beta_path) && Environment.Is64BitOperatingSystem)
                 {
                     url = "https://www.dropbox.com/s/2nykzlitzy2u8an/release.zip?dl=1";
                     remote_version_url = "https://www.dropbox.com/s/7onsz56k52liim2/version.txt?dl=1";
                 }
-                Task.Run(() =>
+                if (Environment.Is64BitOperatingSystem)
                 {
-                    dis.Invoke(() =>
+                    
+                }
+                else
+                {
+                    url = "https://www.dropbox.com/s/dqmk13zq52d3clo/release.zip?dl=1";
+                    remote_version_url = "https://www.dropbox.com/s/7faalz9dxjgethh/version.txt?dl=1";
+                }
+                var update = Updater.Init(url, update_path, application_path, launch_exe);
+                if (UpdateManager.CheckForUpdate(version_key, local_version_path, remote_version_url))
+                {
+                    this.Dispatcher.Invoke(() =>
                     {
-
-                    }, DispatcherPriority.Normal);
-                    var update = Updater.Init(url, update_path, application_path, launch_exe);
-                    if (UpdateManager.CheckForUpdate(version_key, local_version_path, remote_version_url))
-                    {
-                        dis.Invoke(() =>
-                        {
-                            Uri uri = new Uri("UpdateAvailable.xaml", UriKind.Relative);
-                            this.NavigationService.Navigate(uri);
-                        }, DispatcherPriority.Normal);
-                    }
-                    else
-                    {
-                        dis.Invoke(() =>
-                        {
-                            String command = @"/C wmic process where name='adb.exe' delete & wmic process where name='fastboot.exe' delete";
-                            ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
-                            cmdsi.Arguments = command;
-                            cmdsi.WindowStyle = ProcessWindowStyle.Hidden;
-                            Process cmd = Process.Start(cmdsi);
-                            cmd.WaitForExit();
-                            System.Diagnostics.Process process2 = new System.Diagnostics.Process();
-                            System.Diagnostics.ProcessStartInfo startInfo2 = new System.Diagnostics.ProcessStartInfo();
-                            startInfo2.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-                            startInfo2.FileName = "cmd.exe";
-                            startInfo2.Arguments = "/C cd Application & cd assets & gui.exe";
-                            process2.StartInfo = startInfo2;
-                            process2.Start();
-                            startInfo2.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-                            startInfo2.FileName = "cmd.exe";
-                            startInfo2.Arguments = "/C taskkill /im TrebleToolkitLauncher.exe";
-                            process2.StartInfo = startInfo2;
-                            process2.Start();
-                        });
-                    }
-                });
+                        Uri uri = new Uri("UpdateAvailable.xaml", UriKind.Relative);
+                        this.NavigationService.Navigate(uri);
+                    });
+                }
+                else
+                {
+                    String command = @"/C wmic process where name='adb.exe' delete & wmic process where name='fastboot.exe' delete";
+                    ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
+                    cmdsi.Arguments = command;
+                    cmdsi.WindowStyle = ProcessWindowStyle.Hidden;
+                    Process cmd = Process.Start(cmdsi);
+                    cmd.WaitForExit();
+                    System.Diagnostics.Process process2 = new System.Diagnostics.Process();
+                    System.Diagnostics.ProcessStartInfo startInfo2 = new System.Diagnostics.ProcessStartInfo();
+                    startInfo2.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                    startInfo2.FileName = "cmd.exe";
+                    startInfo2.Arguments = "/C cd Application & cd assets & gui.exe";
+                    process2.StartInfo = startInfo2;
+                    process2.Start();
+                    startInfo2.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                    startInfo2.FileName = "cmd.exe";
+                    startInfo2.Arguments = "/C taskkill /im TrebleToolkitLauncher.exe";
+                    process2.StartInfo = startInfo2;
+                    process2.Start();
+                }
             }
             else
             {
@@ -179,14 +257,7 @@ namespace TrebleToolkitLauncher
                 process2.Start();
             }
         }
-
-        private void Reinstall(object sender, RoutedEventArgs e)
-        {
-            Uri uri = new Uri("Reinstall.xaml", UriKind.Relative);
-            this.NavigationService.Navigate(uri);
-        }
-
-        private void UpdateLauncher(object sender, RoutedEventArgs e)
+        private void UpdateLauncher()
         {
             int Out;
             if (InternetGetConnectedState(out Out, 0) == true)
@@ -213,11 +284,11 @@ namespace TrebleToolkitLauncher
                 }
                 Task.Run(() =>
                 {
-                    dis.Invoke(() =>
+                    this.Dispatcher.Invoke(() =>
                     {
                         UpdateLauncher_Btn.Content = "Checking for Launcher Updates...";
                         status_pgr.Value += 5;
-                    }, DispatcherPriority.Normal);
+                    });
                     var update = Updater.Init(url, update_path, application_path, launch_exe);
                     if (UpdateManager.CheckForUpdate(version_key, local_version_path, remote_version_url))
                     {
@@ -231,36 +302,36 @@ namespace TrebleToolkitLauncher
                         startInfo.Arguments = "/C ren TrebleToolkitLauncher.exe TrebleToolkitLauncherOld.exe & move TrebleToolkitLauncherOld.exe old & move CLConfiguration.dll old & move CLConfiguration.xml old & move CLUpdate.dll old & move CLUpdate.xml old";
                         process.StartInfo = startInfo;
                         process.Start();
-                        dis.Invoke(() =>
+                        this.Dispatcher.Invoke(() =>
                         {
                             UpdateLauncher_Btn.Content = "Downloading...";
                             status_pgr.Value += 5;
-                        }, DispatcherPriority.Normal);
+                        });
 
                         update.Download();
 
-                        dis.Invoke(() =>
+                        this.Dispatcher.Invoke(() =>
                         {
                             UpdateLauncher_Btn.Content = "Unzipping...";
                             status_pgr.Value += 60;
-                        }, DispatcherPriority.Normal);
+                        });
 
                         update.Unzip();
 
-                        dis.Invoke(() =>
+                        this.Dispatcher.Invoke(() =>
                         {
                             UpdateLauncher_Btn.Content = "Cleaning Up...";
                             status_pgr.Value += 10;
-                        }, DispatcherPriority.Normal);
+                        });
 
                         update.CleanUp();
 
 
-                        dis.Invoke(() =>
+                        this.Dispatcher.Invoke(() =>
                         {
                             UpdateLauncher_Btn.Content = "Finishing Up...";
                             status_pgr.Value += 10;
-                        }, DispatcherPriority.Normal);
+                        });
 
                         using (var client = new System.Net.WebClient())
                         {
@@ -270,11 +341,11 @@ namespace TrebleToolkitLauncher
 
                     }
 
-                    dis.Invoke(() =>
+                    this.Dispatcher.Invoke(() =>
                     {
                         UpdateLauncher_Btn.Content = "Launching...";
                         status_pgr.Value += 10;
-                    }, DispatcherPriority.Normal);
+                    });
                     System.Diagnostics.Process process1 = new System.Diagnostics.Process();
                     System.Diagnostics.ProcessStartInfo startInfo1 = new System.Diagnostics.ProcessStartInfo();
                     startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
@@ -282,72 +353,58 @@ namespace TrebleToolkitLauncher
                     startInfo.Arguments = "/C cd UpdateFiles & move TrebleToolkitLauncher.exe ../ & cd .. & rmdir UpdateFiles /s /q & wmic process where name='TrebleToolkitLauncher.exe' delete & start TrebleToolkitLauncher.exe";
                     process.StartInfo = startInfo;
                     process.Start();
-                    GC.Collect();
-                    GC.WaitForPendingFinalizers();
                 });
             }
             else
             {
-                DeviceSpecificFeatures_Copy.IsEnabled = false;
-                UpdateLauncher_Btn.IsEnabled = false;
-                JoinBeta.IsEnabled = false;
-                DeviceSpecificFeatures_Copy.Content = "🔒 Reinstall";
-                UpdateLauncher_Btn.Content = "🔒 Update Launcher";
+                this.Dispatcher.Invoke(() =>
+                {
+                    DeviceSpecificFeatures_Copy.IsEnabled = false;
+                    UpdateLauncher_Btn.IsEnabled = false;
+                    JoinBeta.IsEnabled = false;
+                    DeviceSpecificFeatures_Copy.Content = "🔒 Reinstall";
+                    UpdateLauncher_Btn.Content = "🔒 Update Launcher";
+                });
                 string beta_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "BetaProgram", "BetaProgram.txt");
                 if (File.Exists(beta_path))
                 {
-                    JoinBeta.Content = "🔒 Leave Beta Program";
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        JoinBeta.Content = "🔒 Leave Beta Program";
+                    });
                 }
                 else
                 {
-                    JoinBeta.Content = "🔒 Join Beta Program";
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        JoinBeta.Content = "🔒 Join Beta Program";
+                    });
                 }
             }
         }
-
-        private void CheckConnection(object sender, RoutedEventArgs e)
+        private void CheckNetworking()
         {
             int Out;
             if (InternetGetConnectedState(out Out, 0) == true)
             {
-                DeviceSpecificFeatures_Copy.IsEnabled = true;
-                UpdateLauncher_Btn.IsEnabled = true;
-                JoinBeta.IsEnabled = true;
-                DeviceSpecificFeatures_Copy.Content = "Reinstall";
-                UpdateLauncher_Btn.Content = "Update Launcher";
-                string beta_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "BetaProgram", "BetaProgram.txt");
-                if (File.Exists(beta_path))
+                this.Dispatcher.Invoke(() =>
                 {
-                    JoinBeta.Content = "Leave Beta Program";
-                }
-                else
-                {
-                    JoinBeta.Content = "Join Beta Program";
-                }
+                    DeviceSpecificFeatures_Copy.IsEnabled = true;
+                    UpdateLauncher_Btn.IsEnabled = true;
+                    DeviceSpecificFeatures_Copy.Content = "Reinstall";
+                    UpdateLauncher_Btn.Content = "Update Launcher";
+                });
             }
             else
             {
-                DeviceSpecificFeatures_Copy.IsEnabled = false;
-                UpdateLauncher_Btn.IsEnabled = false;
-                JoinBeta.IsEnabled = false;
-                DeviceSpecificFeatures_Copy.Content = "🔒 Reinstall";
-                UpdateLauncher_Btn.Content = "🔒 Update Launcher";
-                string beta_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "BetaProgram", "BetaProgram.txt");
-                if (File.Exists(beta_path))
+                this.Dispatcher.Invoke(() =>
                 {
-                    JoinBeta.Content = "🔒 Leave Beta Program";
-                }
-                else
-                {
-                    JoinBeta.Content = "🔒 Join Beta Program";
-                }
+                    DeviceSpecificFeatures_Copy.IsEnabled = false;
+                    UpdateLauncher_Btn.IsEnabled = false;
+                    DeviceSpecificFeatures_Copy.Content = "🔒 Reinstall";
+                    UpdateLauncher_Btn.Content = "🔒 Update Launcher";
+                });
             }
-        }
-
-        private void JoinBeta_Click(object sender, RoutedEventArgs e)
-        {
-            Uri uri = new Uri("Settings.xaml", UriKind.Relative);
-            this.NavigationService.Navigate(uri);
         }
     }
 }

@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Treble_Toolkit"
       xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
       mc:Ignorable="d" d:DesignWidth="550" d:DesignHeight="531"
-      Title="HomeScreen" SizeChanged="Page_SizeChanged"  >
+      Title="HomeScreen"  >
     <Page.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">

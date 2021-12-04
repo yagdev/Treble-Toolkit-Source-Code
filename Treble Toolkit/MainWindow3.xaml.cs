@@ -30,8 +30,6 @@ namespace Treble_Toolkit
                     ContentFrame.Navigate(new Uri("QuickStartGuide.xaml", UriKind.Relative));
                 }
             }
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
         }
     }
 }

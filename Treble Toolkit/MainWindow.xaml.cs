@@ -51,8 +51,6 @@ namespace Treble_Toolkit
             {
 
             }
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
         }
     }
 }

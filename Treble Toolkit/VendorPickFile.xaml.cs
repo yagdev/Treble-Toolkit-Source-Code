@@ -4,6 +4,10 @@ using System.Windows.Controls;
 using System.IO;
 using System.Diagnostics;
 using System.Windows.Media.Animation;
+using System.Threading;
+using NHotkey;
+using NHotkey.Wpf;
+using System.Windows.Input;
 
 namespace Treble_Toolkit
 {
@@ -15,30 +19,16 @@ namespace Treble_Toolkit
         public VendorPickFile()
         {
             InitializeComponent();
-            NotFound.Visibility = Visibility.Hidden;
-            FileSize.Visibility = Visibility.Hidden;
-            string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotAnimated.txt");
-            if (File.Exists(IsAnimated))
-            {
-
-            }
-            else
-            {
-                GridMain.Opacity = 0;
-                Grid r = (Grid)GridMain;
-                DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
-                r.BeginAnimation(Grid.OpacityProperty, animation);
-            }
-            String command = @"/C cd .. & cd Place_Files_Here & cd Vendor & ren * vendor.img & start .";
-            ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
-            cmdsi.WindowStyle = ProcessWindowStyle.Hidden;
-            cmdsi.Arguments = command;
-            Process cmd = Process.Start(cmdsi);
-            cmd.WaitForExit();
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
+            HotkeyManager.Current.AddOrReplace("Increment", Key.D, ModifierKeys.Control, OnIncrement);
+            Thread thread = new Thread(Animate);
+            thread.Start();
+            Thread thread2 = new Thread(Preparation);
+            thread2.Start();
         }
-
+        private void OnIncrement(object sender, HotkeyEventArgs e)
+        {
+            Debug1.Visibility = Visibility.Visible;
+        }
         private void Back_Click(object sender, RoutedEventArgs e)
         {
             Uri uri = new Uri("VendorFlash.xaml", UriKind.Relative);
@@ -46,6 +36,55 @@ namespace Treble_Toolkit
         }
 
         private void Next_Click(object sender, RoutedEventArgs e)
+        {
+            Thread thread = new Thread(Flash);
+            thread.Start();
+        }
+        private void Skip_Click(object sender, RoutedEventArgs e)
+        {
+            String command4 = @"/C adb.exe reboot-bootloader & cd .. & mkdir Place_Files_Here & cd Place_Files_Here & mkdir vendor & cd vendor & ren *.img vendor.img & cd .. & cd .. & cd assets & fastboot.exe format vendor & fastboot.exe flash vendor ../Place_Files_Here/Vendor/vendor.img & fastboot.exe reboot & wmic process where name='adb.exe' delete";
+            ProcessStartInfo cmdsi4 = new ProcessStartInfo("cmd.exe");
+            cmdsi4.Arguments = command4;
+            Process cmd4 = Process.Start(cmdsi4);
+            cmd4.WaitForExit();
+            Uri uri = new Uri("VendorFinished.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
+        //Threading starts here -- 5/11/2021@22:07, YAG-dev, 21.12+
+        private void Animate()
+        {
+            string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotAnimated.txt");
+            if (File.Exists(IsAnimated))
+            {
+
+            }
+            else
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    GridMain.Opacity = 0;
+                    Grid r = (Grid)GridMain;
+                    DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
+                    r.BeginAnimation(Grid.OpacityProperty, animation);
+                });
+            }
+        }
+        private void Preparation()
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                Debug1.Visibility = Visibility.Hidden;
+                NotFound.Visibility = Visibility.Hidden;
+                FileSize.Visibility = Visibility.Hidden;
+            });
+            String command = @"/C cd .. & cd Place_Files_Here & cd Vendor & ren * vendor.img & start .";
+            ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
+            cmdsi.WindowStyle = ProcessWindowStyle.Hidden;
+            cmdsi.Arguments = command;
+            Process cmd = Process.Start(cmdsi);
+            cmd.WaitForExit();
+        }
+        private void Flash()
         {
             String command = @"/C cd .. & cd Place_Files_Here & cd Vendor & ren * vendor.img";
             ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
@@ -57,8 +96,11 @@ namespace Treble_Toolkit
                 FileInfo fInfo = new FileInfo(@"..\Place_Files_Here\Vendor\vendor.img");
                 if (fInfo.Length < 300000000)
                 {
-                    Title.Content = "This is not the correct file...";
-                    FileSize.Visibility = Visibility.Visible;
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        Title.Content = "This is not the correct file...";
+                        FileSize.Visibility = Visibility.Visible;
+                    });
                     String command2 = @"/C cd .. & cd Place_Files_Here & cd Vendor & cd .";
                     ProcessStartInfo cmdsi2 = new ProcessStartInfo("cmd.exe");
                     cmdsi2.Arguments = command2;
@@ -69,9 +111,12 @@ namespace Treble_Toolkit
                 {
                     if (fInfo.Length > 1500000000)
                     {
-                        Title.Content = "Holy crap, that's a big file!";
-                        FileSize.Visibility = Visibility.Visible;
-                        FileSize.Content = "Your Vendor file is above 1.5GB and is likely not the correct file. Try again";
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            Title.Content = "Holy crap, that's a big file!";
+                            FileSize.Visibility = Visibility.Visible;
+                            FileSize.Content = "Your Vendor file is above 1.5GB and is likely not the correct file. Try again";
+                        });
                         String command3 = @"/C cd .. & cd Place_Files_Here & cd Vendor & cd .";
                         ProcessStartInfo cmdsi3 = new ProcessStartInfo("cmd.exe");
                         cmdsi3.Arguments = command3;
@@ -85,14 +130,20 @@ namespace Treble_Toolkit
                         cmdsi4.Arguments = command4;
                         Process cmd4 = Process.Start(cmdsi4);
                         cmd4.WaitForExit();
-                        Uri uri = new Uri("VendorFinished.xaml", UriKind.Relative);
-                        this.NavigationService.Navigate(uri);
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            Uri uri = new Uri("VendorFinished.xaml", UriKind.Relative);
+                            this.NavigationService.Navigate(uri);
+                        });
                     }
                 }
             }
             else
             {
-                NotFound.Visibility = Visibility.Visible;
+                this.Dispatcher.Invoke(() =>
+                {
+                    NotFound.Visibility = Visibility.Visible;
+                });
                 String command3 = @"/C cd .. & cd Place_Files_Here & cd Vendor & start .";
                 ProcessStartInfo cmdsi3 = new ProcessStartInfo("cmd.exe");
                 cmdsi3.Arguments = command3;

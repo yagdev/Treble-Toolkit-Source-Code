@@ -7,7 +7,7 @@
       xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
       mc:Ignorable="d" 
       d:DesignHeight="419" d:DesignWidth="442"
-      Title="Start" Initialized="Page_Initialized">
+      Title="Start">
     <Page.Resources>
         <SolidColorBrush x:Key="ProgressBar.Progress" Color="#FF06B025"/>
         <SolidColorBrush x:Key="ProgressBar.Background" Color="#FFE6E6E6"/>
@@ -115,7 +115,7 @@
         </Style>
     </Page.Resources>
 
-    <Grid x:Name="GridMain" IsMouseDirectlyOverChanged="GridMain_IsMouseDirectlyOverChanged" MouseEnter="GridMain_MouseEnter">
+    <Grid x:Name="GridMain">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="75"/>

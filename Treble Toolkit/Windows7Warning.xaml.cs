@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using System.Diagnostics;
+using System.Threading;
+using System.Windows.Media.Animation;
 
 namespace Treble_Toolkit
 {
@@ -25,9 +27,35 @@ namespace Treble_Toolkit
         public Windows7Warning()
         {
             InitializeComponent();
+            Thread thread = new Thread(Animate);
+            thread.Start();
         }
 
         private void Next_Click(object sender, RoutedEventArgs e)
+        {
+            Thread thread = new Thread(Next);
+            thread.Start();
+        }
+        //Threading starts here -- 5/11/2021@22:07, YAG-dev, 21.12+
+        private void Animate()
+        {
+            string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotAnimated.txt");
+            if (File.Exists(IsAnimated))
+            {
+
+            }
+            else
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    GridMain.Opacity = 0;
+                    Grid r = (Grid)GridMain;
+                    DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
+                    r.BeginAnimation(Grid.OpacityProperty, animation);
+                });
+            }
+        }
+        private void Next()
         {
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
@@ -43,15 +71,21 @@ namespace Treble_Toolkit
                 sw.WriteLine("©2021 YAG-dev");
             }
             string FTU = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "FirstTimeUse.txt");
-            if (File.Exists(FTU)) 
+            if (File.Exists(FTU))
             {
-                Uri uri = new Uri("HomeScreen.xaml", UriKind.Relative);
-                this.NavigationService.Navigate(uri);
+                this.Dispatcher.Invoke(() =>
+                {
+                    Uri uri = new Uri("HomeScreen.xaml", UriKind.Relative);
+                    this.NavigationService.Navigate(uri);
+                });
             }
             else
             {
-                Uri uri = new Uri("QuickStartGuide.xaml", UriKind.Relative);
-                this.NavigationService.Navigate(uri);
+                this.Dispatcher.Invoke(() =>
+                {
+                    Uri uri = new Uri("QuickStartGuide.xaml", UriKind.Relative);
+                    this.NavigationService.Navigate(uri);
+                });
             }
         }
     }

@@ -31,68 +31,10 @@ namespace Treble_Toolkit
         public Setup2()
         {
             InitializeComponent();
-            string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotAnimated.txt");
-            if (File.Exists(IsAnimated))
-            {
-
-            }
-            else
-            {
-                GridMain.Opacity = 0;
-                Grid r = (Grid)GridMain;
-                DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
-                r.BeginAnimation(Grid.OpacityProperty, animation);
-            }
-            System.Diagnostics.Process process = new System.Diagnostics.Process();
-            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            startInfo.UseShellExecute = false;
-            startInfo.RedirectStandardOutput = true;
-            startInfo.FileName = "CMD.exe";
-            startInfo.Arguments = "/C adb.exe get-state";
-            startInfo.CreateNoWindow = true;
-            process.StartInfo = startInfo;
-            process.Start();
-            string output3 = process.StandardOutput.ReadToEnd();
-            process.WaitForExit();
-            if (output3.Contains("device") == true)
-            {
-                ADBStatus.Content = "Detected";
-            }
-            else
-            {
-                ADBStatus.Content = "Not Detected";
-            }
-            startInfo.UseShellExecute = false;
-            startInfo.RedirectStandardOutput = true;
-            startInfo.FileName = "CMD.exe";
-            startInfo.Arguments = "/C fastboot.exe devices";
-            startInfo.CreateNoWindow = true;
-            process.StartInfo = startInfo;
-            process.Start();
-            string output4 = process.StandardOutput.ReadToEnd();
-            process.WaitForExit();
-            if (output4.Contains("fastboot") == true)
-            {
-                FastbootStatus.Content = "Detected";
-            }
-            else
-            {
-                FastbootStatus.Content = "Not Detected";
-            }
-            if (output4.Contains("fastboot") == false && output3.Contains("device") == false)
-            {
-                PhoneWarning.Visibility = Visibility.Visible;
-                PhoneWarningTxt1.Visibility = Visibility.Visible;
-                PhoneWarningTxt2.Visibility = Visibility.Visible;
-                PhoneWarningBtn.Visibility = Visibility.Visible;
-            }
-            else 
-            {
-                PhoneWarning.Visibility = Visibility.Hidden;
-                PhoneWarningTxt1.Visibility = Visibility.Hidden;
-                PhoneWarningTxt2.Visibility = Visibility.Hidden;
-                PhoneWarningBtn.Visibility = Visibility.Hidden;
-            }
+            Thread thread = new Thread(Animate);
+            thread.Start();
+            Thread thread2 = new Thread(Check);
+            thread2.Start();
         }
 
         private void BackAbout_Click(object sender, RoutedEventArgs e)
@@ -103,56 +45,8 @@ namespace Treble_Toolkit
 
         private void Refresh(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process process = new System.Diagnostics.Process();
-            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            startInfo.UseShellExecute = false;
-            startInfo.RedirectStandardOutput = true;
-            startInfo.FileName = "CMD.exe";
-            startInfo.Arguments = "/C adb.exe get-state";
-            startInfo.CreateNoWindow = true;
-            process.StartInfo = startInfo;
-            process.Start();
-            string output3 = process.StandardOutput.ReadToEnd();
-            process.WaitForExit();
-            if (output3.Contains("device") == true)
-            {
-                ADBStatus.Content = "Detected";
-            }
-            else
-            {
-                ADBStatus.Content = "Not Detected";
-            }
-            startInfo.UseShellExecute = false;
-            startInfo.RedirectStandardOutput = true;
-            startInfo.FileName = "CMD.exe";
-            startInfo.Arguments = "/C fastboot.exe devices";
-            startInfo.CreateNoWindow = true;
-            process.StartInfo = startInfo;
-            process.Start();
-            string output4 = process.StandardOutput.ReadToEnd();
-            process.WaitForExit();
-            if (output4.Contains("fastboot") == true)
-            {
-                FastbootStatus.Content = "Detected";
-            }
-            else
-            {
-                FastbootStatus.Content = "Not Detected";
-            }
-            if (output4.Contains("fastboot") == false && output3.Contains("device") == false)
-            {
-                PhoneWarning.Visibility = Visibility.Visible;
-                PhoneWarningTxt1.Visibility = Visibility.Visible;
-                PhoneWarningTxt2.Visibility = Visibility.Visible;
-                PhoneWarningBtn.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                PhoneWarning.Visibility = Visibility.Hidden;
-                PhoneWarningTxt1.Visibility = Visibility.Hidden;
-                PhoneWarningTxt2.Visibility = Visibility.Hidden;
-                PhoneWarningBtn.Visibility = Visibility.Hidden;
-            }
+            Thread thread = new Thread(Check);
+            thread.Start();
         }
 
         private void Next(object sender, RoutedEventArgs e)
@@ -169,6 +63,36 @@ namespace Treble_Toolkit
 
         private void Change1(object sender, RoutedEventArgs e)
         {
+            Thread thread = new Thread(RefreshADB);
+            thread.Start();
+        }
+
+        private void Change2(object sender, RoutedEventArgs e)
+        {
+            Thread thread = new Thread(RefreshFastboot);
+            thread.Start();
+        }
+        //Threading starts here -- 5/11/2021@22:07, YAG-dev, 21.12+
+        private void Animate()
+        {
+            string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotAnimated.txt");
+            if (File.Exists(IsAnimated))
+            {
+
+            }
+            else
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    GridMain.Opacity = 0;
+                    Grid r = (Grid)GridMain;
+                    DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
+                    r.BeginAnimation(Grid.OpacityProperty, animation);
+                });
+            }
+        }
+        private void Check()
+        {
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.UseShellExecute = false;
@@ -182,29 +106,108 @@ namespace Treble_Toolkit
             process.WaitForExit();
             if (output3.Contains("device") == true)
             {
-                ADBStatus.Content = "Detected";
+                this.Dispatcher.Invoke(() =>
+                {
+                    ADBStatus.Content = "Detected";
+                });
             }
             else
             {
-                ADBStatus.Content = "Not Detected";
+                this.Dispatcher.Invoke(() =>
+                {
+                    ADBStatus.Content = "Not Detected";
+                });
             }
-            if(ADBStatus.Content == "Not Detected" && FastbootStatus.Content == "Not Detected") 
+            startInfo.UseShellExecute = false;
+            startInfo.RedirectStandardOutput = true;
+            startInfo.FileName = "CMD.exe";
+            startInfo.Arguments = "/C fastboot.exe devices";
+            startInfo.CreateNoWindow = true;
+            process.StartInfo = startInfo;
+            process.Start();
+            string output4 = process.StandardOutput.ReadToEnd();
+            process.WaitForExit();
+            if (output4.Contains("fastboot") == true)
             {
-                PhoneWarning.Visibility = Visibility.Visible;
-                PhoneWarningTxt1.Visibility = Visibility.Visible;
-                PhoneWarningTxt2.Visibility = Visibility.Visible;
-                PhoneWarningBtn.Visibility = Visibility.Visible;
+                this.Dispatcher.Invoke(() =>
+                {
+                    FastbootStatus.Content = "Detected";
+                });
             }
             else
             {
-                PhoneWarning.Visibility = Visibility.Hidden;
-                PhoneWarningTxt1.Visibility = Visibility.Hidden;
-                PhoneWarningTxt2.Visibility = Visibility.Hidden;
-                PhoneWarningBtn.Visibility = Visibility.Hidden;
+                this.Dispatcher.Invoke(() =>
+                {
+                    FastbootStatus.Content = "Not Detected";
+                });
+            }
+            if (output4.Contains("fastboot") == false && output3.Contains("device") == false)
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    PhoneWarning.Visibility = Visibility.Visible;
+                    PhoneWarningTxt1.Visibility = Visibility.Visible;
+                    PhoneWarningTxt2.Visibility = Visibility.Visible;
+                    PhoneWarningBtn.Visibility = Visibility.Visible;
+                });
+            }
+            else
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    PhoneWarning.Visibility = Visibility.Hidden;
+                    PhoneWarningTxt1.Visibility = Visibility.Hidden;
+                    PhoneWarningTxt2.Visibility = Visibility.Hidden;
+                    PhoneWarningBtn.Visibility = Visibility.Hidden;
+                });
             }
         }
-
-        private void Change2(object sender, RoutedEventArgs e)
+        private void RefreshADB()
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.UseShellExecute = false;
+            startInfo.RedirectStandardOutput = true;
+            startInfo.FileName = "CMD.exe";
+            startInfo.Arguments = "/C adb.exe get-state";
+            startInfo.CreateNoWindow = true;
+            process.StartInfo = startInfo;
+            process.Start();
+            string output3 = process.StandardOutput.ReadToEnd();
+            process.WaitForExit();
+            if (output3.Contains("device") == true)
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    ADBStatus.Content = "Detected";
+                });
+            }
+            else
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    ADBStatus.Content = "Not Detected";
+                });
+            }
+            this.Dispatcher.Invoke(() =>
+            {
+                if (ADBStatus.Content == "Not Detected" && FastbootStatus.Content == "Not Detected")
+                {
+                    PhoneWarning.Visibility = Visibility.Visible;
+                    PhoneWarningTxt1.Visibility = Visibility.Visible;
+                    PhoneWarningTxt2.Visibility = Visibility.Visible;
+                    PhoneWarningBtn.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    PhoneWarning.Visibility = Visibility.Hidden;
+                    PhoneWarningTxt1.Visibility = Visibility.Hidden;
+                    PhoneWarningTxt2.Visibility = Visibility.Hidden;
+                    PhoneWarningBtn.Visibility = Visibility.Hidden;
+                }
+            });
+        }
+        private void RefreshFastboot()
         {
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
@@ -219,26 +222,35 @@ namespace Treble_Toolkit
             process.WaitForExit();
             if (output4.Contains("fastboot") == true)
             {
-                FastbootStatus.Content = "Detected";
+                this.Dispatcher.Invoke(() =>
+                {
+                    FastbootStatus.Content = "Detected";
+                });
             }
             else
             {
-                FastbootStatus.Content = "Not Detected";
+                this.Dispatcher.Invoke(() =>
+                {
+                    FastbootStatus.Content = "Not Detected";
+                });
             }
-            if (ADBStatus.Content == "Not Detected" && FastbootStatus.Content == "Not Detected")
+            this.Dispatcher.Invoke(() =>
             {
-                PhoneWarning.Visibility = Visibility.Visible;
-                PhoneWarningTxt1.Visibility = Visibility.Visible;
-                PhoneWarningTxt2.Visibility = Visibility.Visible;
-                PhoneWarningBtn.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                PhoneWarning.Visibility = Visibility.Hidden;
-                PhoneWarningTxt1.Visibility = Visibility.Hidden;
-                PhoneWarningTxt2.Visibility = Visibility.Hidden;
-                PhoneWarningBtn.Visibility = Visibility.Hidden;
-            }
+                if (ADBStatus.Content == "Not Detected" && FastbootStatus.Content == "Not Detected")
+                {
+                    PhoneWarning.Visibility = Visibility.Visible;
+                    PhoneWarningTxt1.Visibility = Visibility.Visible;
+                    PhoneWarningTxt2.Visibility = Visibility.Visible;
+                    PhoneWarningBtn.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    PhoneWarning.Visibility = Visibility.Hidden;
+                    PhoneWarningTxt1.Visibility = Visibility.Hidden;
+                    PhoneWarningTxt2.Visibility = Visibility.Hidden;
+                    PhoneWarningBtn.Visibility = Visibility.Hidden;
+                }
+            });
         }
     }
 }

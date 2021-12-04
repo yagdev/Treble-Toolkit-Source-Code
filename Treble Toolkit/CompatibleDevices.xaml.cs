@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
 using System.IO;
+using System.Threading;
 
 namespace Treble_Toolkit
 {
@@ -14,20 +15,8 @@ namespace Treble_Toolkit
         public CompatibleDevices()
         {
             InitializeComponent();
-            string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotAnimated.txt");
-            if (File.Exists(IsAnimated))
-            {
-
-            }
-            else
-            {
-                GridMain.Opacity = 0;
-                Grid r = (Grid)GridMain;
-                DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
-                r.BeginAnimation(Grid.OpacityProperty, animation);
-            }
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
+            Thread thread = new Thread(Animate);
+            thread.Start();
         }
 
         private void AButton_Click(object sender, RoutedEventArgs e)
@@ -81,6 +70,30 @@ namespace Treble_Toolkit
         {
             Uri uri = new Uri("More.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);
+        }
+        private void HP20L_Click(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("HuaweiP20Lite.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
+        //Threading starts here -- 5/11/2021@22:07, YAG-dev, 21.12+
+        private void Animate()
+        {
+            string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotAnimated.txt");
+            if (File.Exists(IsAnimated))
+            {
+
+            }
+            else
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    GridMain.Opacity = 0;
+                    Grid r = (Grid)GridMain;
+                    DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
+                    r.BeginAnimation(Grid.OpacityProperty, animation);
+                });
+            }
         }
     }
 }

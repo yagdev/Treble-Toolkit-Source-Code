@@ -9,6 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using NHotkey.Wpf;
 using SourceChord.FluentWPF;
 using System;
 using System.Diagnostics;

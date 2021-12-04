@@ -33,3 +33,38 @@ C:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\Treb
 C:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\TrebleToolkitUpdaterLauncher\obj\x64\Debug\TrebleToolkitLauncherOld.csproj.CopyComplete
 C:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\TrebleToolkitUpdaterLauncher\obj\x64\Debug\TrebleToolkitLauncher.exe
 C:\Users\dinis\Documents\Treble Toolkit\Treble Toolkit Source Code - Cópia\TrebleToolkitUpdaterLauncher\obj\x64\Debug\TrebleToolkitLauncher.pdb
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\bin\x64\Debug\TrebleToolkitLauncher.exe.config
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\bin\x64\Debug\TrebleToolkitLauncher.exe
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\bin\x64\Debug\TrebleToolkitLauncher.pdb
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\bin\x64\Debug\en\TrebleToolkitLauncher.resources.dll
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\bin\x64\Debug\pt\TrebleToolkitLauncher.resources.dll
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\bin\x64\Debug\CLConfiguration.xml
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\bin\x64\Debug\CLUpdate.xml
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\bin\x64\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\bin\x64\Debug\System.Buffers.xml
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\bin\x64\Debug\System.Diagnostics.DiagnosticSource.xml
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\bin\x64\Debug\System.Memory.xml
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\bin\x64\Debug\System.Numerics.Vectors.xml
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\bin\x64\Debug\System.Reactive.xml
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.xml
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\bin\x64\Debug\System.Threading.Tasks.Extensions.xml
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\obj\x64\Debug\TrebleToolkitLauncherOld.csproj.AssemblyReference.cache
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\obj\x64\Debug\MainWindow.g.cs
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\obj\x64\Debug\App.g.cs
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\obj\x64\Debug\TrebleToolkitLauncher_MarkupCompile.cache
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\obj\x64\Debug\TrebleToolkitLauncher_MarkupCompile.lref
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\obj\x64\Debug\App.baml
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\obj\x64\Debug\MainWindow.baml
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\obj\x64\Debug\TrebleToolkitLauncher.g.resources
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\obj\x64\Debug\TrebleToolkitLauncher.Properties.Resources.resources
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\obj\x64\Debug\TrebleToolkitLauncher.Properties.Resources.en.resources
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\obj\x64\Debug\TrebleToolkitLauncher.Properties.Resources.pt.resources
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\obj\x64\Debug\TrebleToolkitLauncherOld.csproj.GenerateResource.cache
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\obj\x64\Debug\TrebleToolkitLauncherOld.csproj.CoreCompileInputs.cache
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\obj\x64\Debug\TrebleToolkitLauncherOld.sourcelink.json
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\obj\x64\Debug\TrebleToolkitLauncherOld.csproj.Fody.CopyLocal.cache
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\obj\x64\Debug\en\TrebleToolkitLauncher.resources.dll
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\obj\x64\Debug\pt\TrebleToolkitLauncher.resources.dll
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\obj\x64\Debug\TrebleToolkitLauncherOld.csproj.CopyComplete
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\obj\x64\Debug\TrebleToolkitLauncher.exe
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\TrebleToolkitUpdaterLauncher\obj\x64\Debug\TrebleToolkitLauncher.pdb

@@ -200,7 +200,6 @@ F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\obj\x64\Debug
 F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\obj\x64\Debug\FixConnectionPhoneStep1.g.cs
 F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\obj\x64\Debug\FixConnectionPhoneStep2.g.cs
 F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\obj\x64\Debug\FixConnectionPhoneStep3.g.cs
-F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\obj\x64\Debug\FlashingGSIA.g.cs
 F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\obj\x64\Debug\FlashingGSITUT.g.cs
 F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\obj\x64\Debug\FlashingVendorTUT.g.cs
 F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\obj\x64\Debug\FlashVendorFinished.g.cs
@@ -279,7 +278,6 @@ F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\obj\x64\Debug
 F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\obj\x64\Debug\FixConnectionPhoneStep1.baml
 F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\obj\x64\Debug\FixConnectionPhoneStep2.baml
 F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\obj\x64\Debug\FixConnectionPhoneStep3.baml
-F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\obj\x64\Debug\FlashingGSIA.baml
 F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\obj\x64\Debug\FlashingGSITUT.baml
 F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\obj\x64\Debug\FlashingVendorTUT.baml
 F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\obj\x64\Debug\FlashVendorFinished.baml
@@ -358,3 +356,7 @@ F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\obj\x64\Debug
 F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\obj\x64\Debug\WidgetSetupGuide.baml
 F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\obj\x64\Debug\PlatformToolsChangelog.g.cs
 F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\obj\x64\Debug\PlatformToolsChangelog.baml
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\obj\x64\Debug\HuaweiP20Lite.g.cs
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\obj\x64\Debug\HuaweiP20Lite.baml
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\obj\x64\Debug\P20LDSF.g.cs
+F:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\obj\x64\Debug\P20LDSF.baml

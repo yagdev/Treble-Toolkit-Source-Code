@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.IO;
 using System.Diagnostics;
 using System.Windows.Media.Animation;
+using System.Threading;
 
 namespace TrebleToolkitLauncher
 {
@@ -26,40 +27,14 @@ namespace TrebleToolkitLauncher
         public Settings()
         {
             InitializeComponent();
-            string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "Settings", "NotAnimated.txt");
-            if (File.Exists(IsAnimated))
-            {
-
-            }
-            else
-            {
-                GridMain.Opacity = 0;
-                Grid r = (Grid)GridMain;
-                DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
-                r.BeginAnimation(Grid.OpacityProperty, animation);
-            }
-            string beta_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "BetaProgram", "BetaProgram.txt");
-            string blocker_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "UpdateBlocker", "BlockUpdates.txt");
-            if (File.Exists(beta_path))
-            {
-                BetaUpdatesToggle.Content = "Stop Receiving Beta Updates";
-                BranchCheck.Content = "Beta";
-            }
-            else
-            {
-                BetaUpdatesToggle.Content = "Receive Beta Updates";
-                BranchCheck.Content = "Stable";
-            }
-            if (File.Exists(blocker_path))
-            {
-                UpdateToggle.Content = "Enable Updates";
-                UpdateIsEnabledChecker.Content = "Disabled";
-            }
-            else
-            {
-                UpdateToggle.Content = "Disable Updates";
-                UpdateIsEnabledChecker.Content = "Enabled";
-            }
+            Thread thread = new Thread(Animate);
+            thread.Start();
+            Thread thread2 = new Thread(CheckBetaEnrollment);
+            thread2.Start();
+            Thread thread3 = new Thread(CheckUpdateEnrollment);
+            thread3.Start();
+            Thread thread4 = new Thread(x8632Specific);
+            thread4.Start();
         }
 
         private void UpdateLauncher(object sender, RoutedEventArgs e)
@@ -69,6 +44,77 @@ namespace TrebleToolkitLauncher
         }
 
         private void Reinstall(object sender, RoutedEventArgs e)
+        {
+            Thread thread = new Thread(ToggleUpdates);
+            thread.Start();
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            Thread thread = new Thread(ToggleBetaEnrollment);
+            thread.Start();
+        }
+        //Threading starts here -- 5/11/2021@22:07, YAG-dev, 21.12+
+        private void Animate()
+        {
+            string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotAnimated.txt");
+            if (File.Exists(IsAnimated))
+            {
+
+            }
+            else
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    GridMain.Opacity = 0;
+                    Grid r = (Grid)GridMain;
+                    DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
+                    r.BeginAnimation(Grid.OpacityProperty, animation);
+                });
+            }
+        }
+        private void CheckBetaEnrollment()
+        {
+            string beta_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "BetaProgram", "BetaProgram.txt");
+            string blocker_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "UpdateBlocker", "BlockUpdates.txt");
+            if (File.Exists(beta_path))
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    BetaUpdatesToggle.Content = "Stop Receiving Beta Updates";
+                    BranchCheck.Content = "Beta";
+                });
+            }
+            else
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    BetaUpdatesToggle.Content = "Receive Beta Updates";
+                    BranchCheck.Content = "Stable";
+                });
+            }
+        }
+        private void CheckUpdateEnrollment()
+        {
+            string blocker_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "UpdateBlocker", "BlockUpdates.txt");
+            if (File.Exists(blocker_path))
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    UpdateToggle.Content = "Enable Updates";
+                    UpdateIsEnabledChecker.Content = "Disabled";
+                });
+            }
+            else
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    UpdateToggle.Content = "Disable Updates";
+                    UpdateIsEnabledChecker.Content = "Enabled";
+                });
+            }
+        }
+        private void ToggleUpdates()
         {
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
@@ -82,8 +128,11 @@ namespace TrebleToolkitLauncher
             if (File.Exists(blocker_path))
             {
                 File.Delete(blocker_path);
-                UpdateToggle.Content = "Disable Updates";
-                UpdateIsEnabledChecker.Content = "Enabled";
+                this.Dispatcher.Invoke(() =>
+                {
+                    UpdateToggle.Content = "Disable Updates";
+                    UpdateIsEnabledChecker.Content = "Enabled";
+                });
             }
             else
             {
@@ -98,12 +147,14 @@ namespace TrebleToolkitLauncher
                     sw.WriteLine("Treble Toolkit Settings - Disable Updates");
                     sw.WriteLine("©2021 YAG-dev");
                 }
-                UpdateToggle.Content = "Enable Updates";
-                UpdateIsEnabledChecker.Content = "Disabled";
+                this.Dispatcher.Invoke(() =>
+                {
+                    UpdateToggle.Content = "Enable Updates";
+                    UpdateIsEnabledChecker.Content = "Disabled";
+                });
             }
         }
-
-        private void BackButton_Click(object sender, RoutedEventArgs e)
+        private void ToggleBetaEnrollment()
         {
             if (Environment.Is64BitOperatingSystem)
             {
@@ -124,8 +175,11 @@ namespace TrebleToolkitLauncher
                 if (File.Exists(beta_path))
                 {
                     File.Delete(beta_path);
-                    BetaUpdatesToggle.Content = "Receive Beta Updates";
-                    BranchCheck.Content = "Stable";
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        BetaUpdatesToggle.Content = "Receive Beta Updates";
+                        BranchCheck.Content = "Stable";
+                    });
                 }
                 else
                 {
@@ -139,14 +193,33 @@ namespace TrebleToolkitLauncher
                         sw.WriteLine("Treble Toolkit Beta Program Validation");
                         sw.WriteLine("©2021 YAG-dev");
                     }
-                    BetaUpdatesToggle.Content = "Stop Receiving Beta Updates";
-                    BranchCheck.Content = "Beta";
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        BetaUpdatesToggle.Content = "Stop Receiving Beta Updates";
+                        BranchCheck.Content = "Beta";
+                    });
                 }
             }
             else
             {
                 string beta_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "BetaProgram", "BetaProgram.txt");
                 File.Delete(beta_path);
+            }
+        }
+        private void x8632Specific()
+        {
+            if(Environment.Is64BitOperatingSystem == false)
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    string beta_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "BetaProgram", "BetaProgram.txt");
+                    if (File.Exists(beta_path))
+                    {
+                        File.Delete(beta_path);
+                    }
+                    BetaUpdatesToggle.IsEnabled = false;
+                    BetaUpdatesToggle.Content = "This feature is not available in this PC.";
+                });
             }
         }
     }

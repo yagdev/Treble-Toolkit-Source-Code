@@ -264,7 +264,7 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <TextBlock x:Name="Changelog" Margin="10,147,10,229" TextWrapping="Wrap" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="4">
+        <TextBlock x:Name="Changelog" Margin="10,147,10,223" TextWrapping="Wrap" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="4">
             <TextBlock.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -272,7 +272,7 @@
                     Color="{DynamicResource SystemAltHighColor}"
                     Opacity="0.8"
                     BlurRadius="2"/>
-            </TextBlock.Effect><Run Text="Plug in your phone to your PC, follow all the steps mentioned in step 1 &amp; 2 and if you see a notification that reads &quot;Charging this device via USB&quot; press on it and select &quot;File Transfer&quot; and press &quot;Refresh Status&quot;"/><Run Text=" on this window"/><Run Text="."/><LineBreak/><Run/><LineBreak/><Run Text="If th"/><Run Text="ese"/><Run Text=" methods didn't work, these most likely will fix your problem:"/><LineBreak/><Run Text="· Try another cable"/><LineBreak/><Run Text="· Check if none of the pins are missing on your USB port"/><LineBreak/><Run Text="· Try another USB port on your computer"/><LineBreak/><Run Text="· Restart your PC"/><LineBreak/><Run/><LineBreak/><Run Text="If these don't work, please leave a bug report (Windows 10/11 users only, as guaranteed support for Windows 8.1 and earlier has ended in 21.10)"/></TextBlock>
+            </TextBlock.Effect><Run Text="Plug in your phone to your PC, follow all the steps mentioned in step 1 &amp; 2 and if you see a notification that reads &quot;Charging this device via USB&quot; press on it and select &quot;File Transfer&quot; and press &quot;Refresh Status&quot;"/><Run Text=" on this window"/><Run Text="."/><LineBreak/><Run Text="If th"/><Run Text="ese"/><Run Text=" methods didn't work, these most likely will fix your problem:"/><LineBreak/><Run Text="· Try another cable"/><LineBreak/><Run Text="· Check if none of the pins are missing on your USB port"/><LineBreak/><Run Text="· Try another USB port on your computer"/><LineBreak/><Run Text="· Restart your PC"/><LineBreak/><Run Text="If these don't work, please leave a bug report (Windows 10/11 users only, as guaranteed support for Windows 8.1 and earlier has ended in 21.10)"/></TextBlock>
         <Button x:Name="DeviceSpecificFeatures_Copy3" Content="Previous Solution" Margin="10,0,1,63" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="PreviousSolution" Grid.ColumnSpan="2">
             <Button.Effect>
                 <DropShadowEffect

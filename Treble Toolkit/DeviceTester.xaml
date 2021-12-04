@@ -91,7 +91,7 @@
         </Style>
     </Page.Resources>
 
-    <Grid x:Name="GridMain" Initialized="grid_Initialized">
+    <Grid x:Name="GridMain">
         <Grid.RowDefinitions>
             <RowDefinition Height="80*"/>
             <RowDefinition Height="23*"/>
@@ -351,7 +351,7 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <Label x:Name="SupportsTreble" Content="Failed // Not Applicable" Margin="1,169,10,0" VerticalAlignment="Top" Height="42" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Loaded="SupportsTreble_Loaded" Grid.Column="1">
+        <Label x:Name="SupportsTreble" Content="Failed // Not Applicable" Margin="1,169,10,0" VerticalAlignment="Top" Height="42" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.Column="1">
             <Label.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"

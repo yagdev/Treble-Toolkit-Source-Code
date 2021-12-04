@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Management;
 using System.Windows.Media.Animation;
 using System.IO;
+using System.Threading;
 
 namespace Treble_Toolkit
 {
@@ -26,6 +27,32 @@ namespace Treble_Toolkit
         public WindowsOutdatedMoreInfo()
         {
             InitializeComponent();
+            Thread thread = new Thread(Animate);
+            thread.Start();
+            Thread thread2 = new Thread(CheckWinver);
+            thread2.Start();
+        }
+
+        private void BackAbout_Click(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("AboutScreen.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
+
+        private void Refresh(object sender, RoutedEventArgs e)
+        {
+            Thread thread = new Thread(GetWin10);
+            thread.Start();
+        }
+
+        private void Next(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("HomeScreen.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
+        //Threading starts here -- 5/11/2021@22:07, YAG-dev, 21.12+
+        private void Animate()
+        {
             string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotAnimated.txt");
             if (File.Exists(IsAnimated))
             {
@@ -33,11 +60,17 @@ namespace Treble_Toolkit
             }
             else
             {
-                GridMain.Opacity = 0;
-                Grid r = (Grid)GridMain;
-                DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
-                r.BeginAnimation(Grid.OpacityProperty, animation);
+                this.Dispatcher.Invoke(() =>
+                {
+                    GridMain.Opacity = 0;
+                    Grid r = (Grid)GridMain;
+                    DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
+                    r.BeginAnimation(Grid.OpacityProperty, animation);
+                });
             }
+        }
+        private void CheckWinver()
+        {
             string r2 = "";
             using (ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_OperatingSystem"))
             {
@@ -51,17 +84,13 @@ namespace Treble_Toolkit
                 }
                 r2 = r2.Replace("NT 5.1.2600", "XP");
                 r2 = r2.Replace("NT 5.2.3790", "Server 2003");
-                PhoneStatus.Content = r2;
+                this.Dispatcher.Invoke(() =>
+                {
+                    PhoneStatus.Content = r2;
+                });
             }
         }
-
-        private void BackAbout_Click(object sender, RoutedEventArgs e)
-        {
-            Uri uri = new Uri("AboutScreen.xaml", UriKind.Relative);
-            this.NavigationService.Navigate(uri);
-        }
-
-        private void Refresh(object sender, RoutedEventArgs e)
+        private void GetWin10()
         {
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
@@ -70,12 +99,6 @@ namespace Treble_Toolkit
             startInfo.Arguments = "/C start https://www.microsoft.com/software-download/windows10";
             process.StartInfo = startInfo;
             process.Start();
-        }
-
-        private void Next(object sender, RoutedEventArgs e)
-        {
-            Uri uri = new Uri("HomeScreen.xaml", UriKind.Relative);
-            this.NavigationService.Navigate(uri);
         }
     }
 }

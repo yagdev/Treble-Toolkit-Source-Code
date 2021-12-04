@@ -11,7 +11,6 @@ FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\DeviceTester
 FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\FixConnectionPhoneStep1.xaml;;
 FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\FixConnectionPhoneStep2.xaml;;
 FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\FixConnectionPhoneStep3.xaml;;
-FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\FlashingGSIA.xaml;;
 FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\FlashingGSITUT.xaml;;
 FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\FlashingVendorTUT.xaml;;
 FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\FlashVendorFinished.xaml;;
@@ -27,6 +26,7 @@ FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\GSIFlashTerm
 FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\HM10LDSF.xaml;;
 FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\HomeScreen.xaml;;
 FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\HuaweiMate10Lite.xaml;;
+FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\HuaweiP20Lite.xaml;;
 FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\MainWindow.xaml;;
 FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\MainWindow2.xaml;;
 FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\MainWindow3.xaml;;
@@ -35,6 +35,8 @@ FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\OnePlus6.xam
 FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\OnePlus6DSF.xaml;;
 FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\OnePlus8.xaml;;
 FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\OnePlus8DSF.xaml;;
+FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\P20LDSF.xaml;;
+FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\PlatformToolsChangelog.xaml;;
 FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\PMFinished.xaml;;
 FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\PMFlash.xaml;;
 FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\PMTUT.xaml;;
@@ -69,6 +71,8 @@ FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\UpdateCenter
 FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\VendorFinished.xaml;;
 FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\VendorFlash.xaml;;
 FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\VendorPickFile.xaml;;
+FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\Widgets.xaml;;
+FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\WidgetSetupGuide.xaml;;
 FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\Windows7Warning.xaml;;
 FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\WindowsOutdatedMoreInfo.xaml;;
 FF:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit\WindowsStupidDriverFix.xaml;;
