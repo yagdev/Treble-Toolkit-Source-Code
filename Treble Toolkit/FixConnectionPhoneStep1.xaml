@@ -100,16 +100,17 @@
             <ColumnDefinition Width="11*"/>
             <ColumnDefinition Width="12*"/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="Title" Content="Phone Connection Troubleshooting" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.ColumnSpan="3" Height="40" VerticalAlignment="Top">
-            <Label.Effect>
+        <Rectangle Fill="{DynamicResource SystemAltHighColorBrush}" Height="70" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Bottom" RadiusY="12" RadiusX="12" Grid.ColumnSpan="3" Opacity="0.5">
+            <Rectangle.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
                     Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
-        </Label>
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Rectangle.Effect>
+        </Rectangle>
+
         <Button x:Name="DeviceSpecificFeatures_Copy" Content="This Worked" Margin="10,0,1,10" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="BackAbout_Click">
             <Button.Effect>
                 <DropShadowEffect
@@ -120,36 +121,6 @@
                     BlurRadius="8"/>
             </Button.Effect>
         </Button>
-        <Rectangle x:Name="GSIRectangle" Fill="{DynamicResource SystemAltHighColorBrush}" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="8" RadiusX="8" Margin="10,42,10,0" Height="102" VerticalAlignment="Top" Grid.ColumnSpan="3">
-            <Rectangle.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Rectangle.Effect>
-        </Rectangle>
-        <Label x:Name="GSIImgTitle" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Content="Phone Connected Status" Margin="20,52,20,0" Height="40" VerticalAlignment="Top" Grid.ColumnSpan="3">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
-        </Label>
-        <Label x:Name="PhoneStatus" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Content="Checking" Margin="20,94,20,0" Height="40" VerticalAlignment="Top" Grid.ColumnSpan="3">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
-        </Label>
         <Button x:Name="DeviceSpecificFeatures_Copy1" Content="Refresh Status" Margin="1,0,1,10" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Refresh" Grid.Column="1">
             <Button.Effect>
                 <DropShadowEffect
@@ -170,7 +141,16 @@
                     BlurRadius="8"/>
             </Button.Effect>
         </Button>
-        <Rectangle x:Name="PhoneWarning" Fill="#B2FFC500" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="8" RadiusX="8" Margin="10,0,10,63" Grid.ColumnSpan="3" Height="102" VerticalAlignment="Bottom">
+        <TextBlock x:Name="Changelog" Margin="10,105,10,170" TextWrapping="Wrap" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="3">
+            <TextBlock.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemAltHighColor}"
+                    Opacity="0.8"
+                    BlurRadius="2"/>
+            </TextBlock.Effect><Run Text="This is a fix for ADB:"/><LineBreak/><Run/><LineBreak/><Run Text="Please navigate to &quot;Settings&quot; &gt; &quot;About phone&quot; &gt; and tap &quot;Build number&quot; until a notification pops up saying &quot;You are now a developer!&quot;."/><LineBreak/><Run Text="Navigate back and then to &quot;System&quot; &gt; &quot;Advanced&quot; &gt; &quot;Developer Options&quot;, enable &quot;USB debugging&quot; and press "/><Run Text="&quot;Refresh Status&quot; on this window."/><LineBreak/><Run Text="On your phone check &quot;Always allow from this computer&quot; and press &quot;Allow&quot;."/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="P"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="ress "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="&quot;Refresh Status&quot; on this window again and Treble Toolkit will let you know about the result."/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="For Fastboot, proceed to the next s"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="tep"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="."/></TextBlock>
+        <Rectangle x:Name="GSIRectangle" Fill="{DynamicResource SystemAltHighColorBrush}" Height="90" Margin="10,10,10,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" RadiusY="8" RadiusX="8" Grid.ColumnSpan="3">
             <Rectangle.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -180,7 +160,7 @@
                     BlurRadius="8"/>
             </Rectangle.Effect>
         </Rectangle>
-        <Label x:Name="PhoneWarningTxt1" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Content="⚠Your phone was not detected." Margin="20,0,20,115" Grid.ColumnSpan="3" Height="40" VerticalAlignment="Bottom">
+        <Label x:Name="PhoneStatus" Content="Checking Connection..." Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="35" VerticalAlignment="Top" Margin="90,20,20,0" Grid.ColumnSpan="3">
             <Label.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -190,7 +170,7 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <Label x:Name="PhoneWarningTxt2" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Content="Navigate to Solution #2 or retry" Margin="20,0,20,73" Grid.ColumnSpan="3" Height="40" VerticalAlignment="Bottom">
+        <Label x:Name="PhoneStatus2" Content="Checking status..." Margin="90,55,20,0" VerticalAlignment="Top" Height="35" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.ColumnSpan="3">
             <Label.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -200,15 +180,7 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <TextBlock x:Name="Changelog" Margin="10,147,10,170" TextWrapping="Wrap" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="3">
-            <TextBlock.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </TextBlock.Effect><Run Text="This is a fix for ADB:"/><LineBreak/><Run/><LineBreak/><Run Text="Please navigate to &quot;Settings&quot; &gt; &quot;About phone&quot; &gt; and tap &quot;Build number&quot; until a notification pops up saying &quot;You are now a developer!&quot;."/><LineBreak/><Run Text="Navigate back and then to &quot;System&quot; &gt; &quot;Advanced&quot; &gt; &quot;Developer Options&quot;, enable &quot;USB debugging&quot; and press "/><Run Text="&quot;Refresh Status&quot; on this window."/><LineBreak/><Run Text="On your phone check &quot;Always allow from this computer&quot; and press &quot;Allow&quot;."/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="P"/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="ress "/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="&quot;Refresh Status&quot; on this window again and Treble Toolkit will let you know about the result."/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold"/><LineBreak/><Run FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Text="For Fastboot, proceed to the next spot."/></TextBlock>
+        <Image x:Name="DeviceInfoImg" Margin="20,20,0,0" Source="tt-phone.png" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70"/>
 
     </Grid>
 </Page>

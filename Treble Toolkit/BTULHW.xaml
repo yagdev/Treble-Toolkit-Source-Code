@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Treble_Toolkit"
       xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
-      mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight="565"
+      mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="565"
       Title="GSIAFlash"
       fw:AcrylicWindow.Enabled="True">
     <Page.Resources>
@@ -113,7 +113,7 @@
                                     Opacity="0.5"
                                     BlurRadius="8"/>
                             </Border.Effect>
-                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsEnabled" Value="false">
@@ -144,46 +144,27 @@
             <ColumnDefinition/>
             <ColumnDefinition MaxWidth="10" FrameworkElement.FlowDirection="RightToLeft" Width="10"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Unlock Bootloader (Huawei)" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.ColumnSpan="4" Height="40" VerticalAlignment="Top">
-            <Label.Effect>
+        <Rectangle Fill="{DynamicResource SystemAltHighColorBrush}" Height="122" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Bottom" RadiusY="12" RadiusX="12" Grid.ColumnSpan="4" Opacity="0.5">
+            <Rectangle.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
                     Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
-        </Label>
-        <Label Content="Make sure your phone is in fastboot mode or has ADB enabled." Margin="0,41,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="4" FontSize="10" Height="26" VerticalAlignment="Top">
-            <Label.Effect>
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Rectangle.Effect>
+        </Rectangle>
+
+        <Rectangle x:Name="AndroidRectangle" Fill="{DynamicResource SystemAltHighColorBrush}" Height="90" Margin="0,102,0,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" RadiusY="8" RadiusX="8" Grid.Column="1" Grid.ColumnSpan="2">
+            <Rectangle.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
                     Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
-        </Label>
-        <Label Content="This also works in non-treble devices." Margin="0,67,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="4" FontSize="10" Height="24" VerticalAlignment="Top">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
-        </Label>
-        <Label Content="Got issues? Please leave them in the feedback section of the Website." Margin="0,91,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="4" FontSize="10" Height="26" VerticalAlignment="Top">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
-        </Label>
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Rectangle.Effect>
+        </Rectangle>
         <Button x:Name="DeviceSpecificFeatures_Copy1" Content="Back" Margin="0,0,1,10" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Back_Click" Grid.Column="1">
             <Button.Effect>
                 <DropShadowEffect
@@ -214,8 +195,39 @@
                     BlurRadius="8"/>
             </Button.Effect>
         </Button>
-        <TextBox x:Name="BLCode" Margin="0,0,0,114" TextWrapping="Wrap" Grid.ColumnSpan="2" Style="{DynamicResource TextBox21.7.1}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.Column="1" Height="28" VerticalAlignment="Bottom" />
-        <Label x:Name="ReportLabel_Copy" Content="Please insert your bootloader unlock code here" Margin="0,0,0,144" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="4" FontSize="10" Height="23" VerticalAlignment="Bottom">
+        <TextBox x:Name="BLCode" Margin="10,147,10,0" TextWrapping="Wrap" Grid.ColumnSpan="2" Style="{DynamicResource TextBox21.7.1}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Height="35" VerticalAlignment="Top" Grid.Column="1" />
+        <Rectangle x:Name="DeviceRectangle" Fill="{DynamicResource SystemAltHighColorBrush}" Height="90" Margin="0,10,0,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" RadiusY="8" RadiusX="8" Grid.ColumnSpan="2" Grid.Column="1">
+            <Rectangle.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Label x:Name="cc" Content="Checking Device Connection" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="35" VerticalAlignment="Top" Margin="80,20,10,0" Grid.ColumnSpan="2" Grid.Column="1">
+            <Label.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemAltHighColor}"
+                    Opacity="0.8"
+                    BlurRadius="2"/>
+            </Label.Effect>
+        </Label>
+        <Label x:Name="ConnectdDevice" Content="Checking Bootloader Status" Margin="80,55,10,0" VerticalAlignment="Top" Height="35" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.ColumnSpan="2" Grid.Column="1">
+            <Label.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemAltHighColor}"
+                    Opacity="0.8"
+                    BlurRadius="2"/>
+            </Label.Effect>
+        </Label>
+        <Image x:Name="DeviceInfoImg" Margin="10,20,0,0" Source="tt-phone.png" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70" Grid.Column="1"/>
+        <Label x:Name="Title_Copy9" Content="Bootloader Code" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="35" VerticalAlignment="Top" Margin="10,112,10,0" Grid.Column="1" Grid.ColumnSpan="2">
             <Label.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"

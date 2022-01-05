@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.IO;
 using System.Windows.Media.Animation;
 using System.Threading;
+using System.Windows.Media.Effects;
 
 namespace Treble_Toolkit
 {
@@ -30,6 +31,8 @@ namespace Treble_Toolkit
             thread.Start();
             Thread thread2 = new Thread(CheckPhone);
             thread2.Start();
+            Thread thread3 = new Thread(UpdateUI);
+            thread3.Start();
         }
 
         private void BackAbout_Click(object sender, RoutedEventArgs e)
@@ -103,30 +106,55 @@ namespace Treble_Toolkit
                 {
                     this.Dispatcher.Invoke(() =>
                     {
-                        PhoneStatus.Content = "Detected";
+                        PhoneStatus.Content = "Device Detected";
+                        PhoneStatus2.Content = "You're all set!";
                     });
                 }
                 else
                 {
                     this.Dispatcher.Invoke(() =>
                     {
-                        PhoneStatus.Content = "Not Detected";
+                        PhoneStatus.Content = "Device Not Detected";
+                        PhoneStatus2.Content = "Uh oh, something might be wrong here...";
                     });
                 }
             }
             this.Dispatcher.Invoke(() =>
             {
-                if (PhoneStatus.Content == "Not Detected")
+                if (PhoneStatus.Content == "Device Not Detected")
                 {
-                    PhoneWarning.Visibility = Visibility.Visible;
-                    PhoneWarningTxt1.Visibility = Visibility.Visible;
-                    PhoneWarningTxt2.Visibility = Visibility.Visible;
+                    DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                    // Set the color of the shadow to Black.
+                    Color myShadowColor = new Color();
+                    myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                           // The Opacity property is used to control the alpha.
+                    myShadowColor.B = 0;
+                    myShadowColor.G = 0;
+                    myShadowColor.R = 255;
+                    myDropShadowEffect.Direction = 0;
+                    myDropShadowEffect.ShadowDepth = 0;
+
+                    myDropShadowEffect.Color = myShadowColor;
+                    GSIRectangle.Effect = myDropShadowEffect;
                 }
                 else
                 {
-                    PhoneWarning.Visibility = Visibility.Hidden;
-                    PhoneWarningTxt1.Visibility = Visibility.Hidden;
-                    PhoneWarningTxt2.Visibility = Visibility.Hidden;
+                    GSIRectangle.Effect = DeviceSpecificFeatures_Copy1.Effect;
+                }
+            });
+        }
+        private void UpdateUI()
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-usb-dark.png"));
+                }
+                else
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-usb-light.png"));
                 }
             });
         }

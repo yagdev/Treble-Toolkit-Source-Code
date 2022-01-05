@@ -8,6 +8,7 @@ using System.Threading;
 using NHotkey;
 using NHotkey.Wpf;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace Treble_Toolkit
 {
@@ -20,14 +21,19 @@ namespace Treble_Toolkit
         {
             InitializeComponent();
             HotkeyManager.Current.AddOrReplace("Increment", Key.D, ModifierKeys.Control, OnIncrement);
+            Debug1.Visibility = Visibility.Hidden;
+            DbgRct1.Visibility = Visibility.Hidden;
             Thread thread = new Thread(Animate);
             thread.Start();
             Thread thread2 = new Thread(Preparation);
             thread2.Start();
+            Thread thread3 = new Thread(UpdateUI);
+            thread3.Start();
         }
         private void OnIncrement(object sender, HotkeyEventArgs e)
         {
             Debug1.Visibility = Visibility.Visible;
+            DbgRct1.Visibility = Visibility.Visible;
         }
         private void Back_Click(object sender, RoutedEventArgs e)
         {
@@ -47,7 +53,7 @@ namespace Treble_Toolkit
             cmdsi4.Arguments = command4;
             Process cmd4 = Process.Start(cmdsi4);
             cmd4.WaitForExit();
-            Uri uri = new Uri("VendorFinished.xaml", UriKind.Relative);
+            Uri uri = new Uri("FlashVendorFinished.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);
         }
         //Threading starts here -- 5/11/2021@22:07, YAG-dev, 21.12+
@@ -71,12 +77,6 @@ namespace Treble_Toolkit
         }
         private void Preparation()
         {
-            this.Dispatcher.Invoke(() =>
-            {
-                Debug1.Visibility = Visibility.Hidden;
-                NotFound.Visibility = Visibility.Hidden;
-                FileSize.Visibility = Visibility.Hidden;
-            });
             String command = @"/C cd .. & cd Place_Files_Here & cd Vendor & ren * vendor.img & start .";
             ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
             cmdsi.WindowStyle = ProcessWindowStyle.Hidden;
@@ -96,11 +96,6 @@ namespace Treble_Toolkit
                 FileInfo fInfo = new FileInfo(@"..\Place_Files_Here\Vendor\vendor.img");
                 if (fInfo.Length < 300000000)
                 {
-                    this.Dispatcher.Invoke(() =>
-                    {
-                        Title.Content = "This is not the correct file...";
-                        FileSize.Visibility = Visibility.Visible;
-                    });
                     String command2 = @"/C cd .. & cd Place_Files_Here & cd Vendor & cd .";
                     ProcessStartInfo cmdsi2 = new ProcessStartInfo("cmd.exe");
                     cmdsi2.Arguments = command2;
@@ -111,12 +106,6 @@ namespace Treble_Toolkit
                 {
                     if (fInfo.Length > 1500000000)
                     {
-                        this.Dispatcher.Invoke(() =>
-                        {
-                            Title.Content = "Holy crap, that's a big file!";
-                            FileSize.Visibility = Visibility.Visible;
-                            FileSize.Content = "Your Vendor file is above 1.5GB and is likely not the correct file. Try again";
-                        });
                         String command3 = @"/C cd .. & cd Place_Files_Here & cd Vendor & cd .";
                         ProcessStartInfo cmdsi3 = new ProcessStartInfo("cmd.exe");
                         cmdsi3.Arguments = command3;
@@ -132,7 +121,7 @@ namespace Treble_Toolkit
                         cmd4.WaitForExit();
                         this.Dispatcher.Invoke(() =>
                         {
-                            Uri uri = new Uri("VendorFinished.xaml", UriKind.Relative);
+                            Uri uri = new Uri("FlashVendorFinished.xaml", UriKind.Relative);
                             this.NavigationService.Navigate(uri);
                         });
                     }
@@ -140,10 +129,6 @@ namespace Treble_Toolkit
             }
             else
             {
-                this.Dispatcher.Invoke(() =>
-                {
-                    NotFound.Visibility = Visibility.Visible;
-                });
                 String command3 = @"/C cd .. & cd Place_Files_Here & cd Vendor & start .";
                 ProcessStartInfo cmdsi3 = new ProcessStartInfo("cmd.exe");
                 cmdsi3.Arguments = command3;
@@ -155,6 +140,20 @@ namespace Treble_Toolkit
                 Process cmd4 = Process.Start(cmdsi4);
                 cmd4.WaitForExit();
             }
+        }
+        private void UpdateUI()
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-fnf-dark.png"));
+                }
+                else
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-fnf-light.png"));
+                }
+            });
         }
     }
 }

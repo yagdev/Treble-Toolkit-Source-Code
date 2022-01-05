@@ -4,6 +4,8 @@ using System.Windows.Controls;
 using System.IO;
 using System.Windows.Media.Animation;
 using System.Threading;
+using System.Windows.Media;
+using System.Windows.Threading;
 
 namespace Treble_Toolkit
 {
@@ -17,6 +19,8 @@ namespace Treble_Toolkit
             InitializeComponent();
             Thread thread = new Thread(Animate);
             thread.Start();
+            Thread thread2 = new Thread(UpdateUI);
+            thread2.Start();
         }
 
         private void BackAbout_Click(object sender, RoutedEventArgs e)
@@ -82,6 +86,21 @@ namespace Treble_Toolkit
             process.StartInfo = startInfo;
             process.Start();
             process.WaitForExit();
+        }
+        private void UpdateUI()
+        {
+            Dispatcher dis = Dispatcher.CurrentDispatcher;
+            this.Dispatcher.Invoke(() =>
+            {
+                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-bug-dark.png"));
+                }
+                else
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-bug-light.png"));
+                }
+            });
         }
     }
 }

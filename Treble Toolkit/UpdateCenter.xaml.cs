@@ -65,6 +65,11 @@ namespace Treble_Toolkit
             Uri uri = new Uri("HomeScreen.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);
         }
+        private void DeviceSpecificFeatures_Copy3_Click(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("PlatformToolsChangelog.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
 
         private void Next(object sender, RoutedEventArgs e)
         {
@@ -99,14 +104,17 @@ namespace Treble_Toolkit
         {
             this.Dispatcher.Invoke(() =>
             {
-                ADBStatus.Content = "No Updates Available";
-                PhoneWarning.Visibility = Visibility.Hidden;
-                PhoneWarningTxt1.Visibility = Visibility.Hidden;
-                PhoneWarningTxt2.Visibility = Visibility.Hidden;
+                ADBStatus.Content = "Up To Date";
+                PhoneStatus.Content = "Update Center · No Updates Available";
                 Change1b_Copy.IsEnabled = false;
-                PhoneWarning.Visibility = Visibility.Hidden;
-                PhoneWarningTxt1.Visibility = Visibility.Hidden;
-                PhoneWarningTxt2.Visibility = Visibility.Hidden;
+                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-up-dark.png"));
+                }
+                else
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-up-light.png"));
+                }
             });
         }
         private void CheckUpdates()
@@ -138,9 +146,7 @@ namespace Treble_Toolkit
                     this.Dispatcher.Invoke(() =>
                     {
                         ADBStatus.Content = "Update Available";
-                        PhoneWarning.Visibility = Visibility.Visible;
-                        PhoneWarningTxt1.Visibility = Visibility.Visible;
-                        PhoneWarningTxt2.Visibility = Visibility.Visible;
+                        PhoneStatus.Content = "Update Center · Update Available";
                     });
                 }
                 else
@@ -148,9 +154,10 @@ namespace Treble_Toolkit
                     this.Dispatcher.Invoke(() =>
                     {
                         ADBStatus.Content = "No Updates Available";
-                        PhoneWarning.Visibility = Visibility.Hidden;
-                        PhoneWarningTxt1.Visibility = Visibility.Hidden;
-                        PhoneWarningTxt2.Visibility = Visibility.Hidden;
+                        if (ADBStatus_Copy.Content == "No Updates Available")
+                        {
+                            PhoneStatus.Content = "Update Center · No Updates Available";
+                        }
                     });
                 }
                 if (UpdateManager.CheckForUpdate(version_key2, local_version_path2, remote_version_url2))
@@ -159,6 +166,7 @@ namespace Treble_Toolkit
                     {
                         Change1b_Copy.IsEnabled = true;
                         ADBStatus_Copy.Content = "Update Available";
+                        PhoneStatus.Content = "Update Center · Update Available";
                     });
                 }
                 else
@@ -167,7 +175,10 @@ namespace Treble_Toolkit
                     {
                         Change1b_Copy.IsEnabled = false;
                         ADBStatus_Copy.Content = "No Updates Available";
-                        Change1b_Copy.Content = "No Updates Available";
+                        if (ADBStatus.Content == "No Updates Available")
+                        {
+                            PhoneStatus.Content = "Update Center · No Updates Available";
+                        }
                     });
                 }
             }
@@ -264,6 +275,10 @@ namespace Treble_Toolkit
                         Change1b_Copy.Content = "Update Finished";
                         ADBStatus_Copy.Content = "Update Finished";
                         Change1b_Copy.IsEnabled = false;
+                        if (ADBStatus.Content == "No Updates Available")
+                        {
+                            PhoneStatus.Content = "Update Center · No Updates Available";
+                        }
                     });
                 }
                 else
@@ -279,8 +294,6 @@ namespace Treble_Toolkit
             {
                 this.Dispatcher.Invoke(() =>
                 {
-                    Change1b.Content = "🔒 Update";
-                    Change1b_Copy.Content = "🔒 Update";
                     Change1b.IsEnabled = false;
                     Change1b_Copy.IsEnabled = false;
                 });

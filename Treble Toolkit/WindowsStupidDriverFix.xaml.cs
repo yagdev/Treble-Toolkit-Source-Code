@@ -87,13 +87,6 @@ namespace Treble_Toolkit
                 });
             }
         }
-        private void UpdateUI()
-        {
-            this.Dispatcher.Invoke(() =>
-            {
-                status_pgr.Visibility = Visibility.Hidden;
-            });
-        }
         private void InstallADB()
         {
             using (WebClient wc = new WebClient())
@@ -134,6 +127,24 @@ namespace Treble_Toolkit
                     }
                 }
             }
+        }
+        private void UpdateUI()
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                status_pgr.Visibility = Visibility.Hidden;
+            });
+            this.Dispatcher.Invoke(() =>
+            {
+                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-usb-dark.png"));
+                }
+                else
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-usb-light.png"));
+                }
+            });
         }
     }
 }

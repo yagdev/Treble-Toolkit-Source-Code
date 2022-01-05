@@ -98,36 +98,16 @@
             <ColumnDefinition/>
             <ColumnDefinition MaxWidth="10" FrameworkElement.FlowDirection="RightToLeft" Width="10"/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="Title" Content="Flash TWRP" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.ColumnSpan="4" Height="40" VerticalAlignment="Top">
-            <Label.Effect>
+        <Rectangle Fill="{DynamicResource SystemAltHighColorBrush}" Height="70" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Bottom" RadiusY="12" RadiusX="12" Grid.ColumnSpan="4" Opacity="0.5">
+            <Rectangle.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
                     Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
-        </Label>
-        <Label Content="We've noticed you haven't added your TWRP file." Margin="0,40,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="4" FontSize="10" Height="25" VerticalAlignment="Top">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
-        </Label>
-        <Label Content="A new window will pop up where you can put your TWRP's *.img file." Margin="0,65,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="4" FontSize="10" Height="25" VerticalAlignment="Top">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
-        </Label>
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Rectangle.Effect>
+        </Rectangle>
         <Label x:Name="NotFound" Content="Your TWRP was not found. Please try again :/" Margin="0,81,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="4" FontSize="10" Height="23" VerticalAlignment="Top" Visibility="Hidden">
             <Label.Effect>
                 <DropShadowEffect
@@ -168,7 +148,17 @@
                     BlurRadius="8"/>
             </Button.Effect>
         </Button>
-        <Button x:Name="Debug1" Content="Skip [DEBUG]" Margin="0,0,0,62" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Skip_Click" Grid.Column="1" Grid.ColumnSpan="2">
+        <Rectangle x:Name="DbgRct1" Fill="{DynamicResource SystemAltHighColorBrush}" Height="70" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" RadiusY="12" RadiusX="12" Grid.ColumnSpan="4" Opacity="0.5" Margin="0,102,0,0">
+            <Rectangle.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Button x:Name="Debug1" Content="Skip [DEBUG]" Margin="0,112,0,0" VerticalAlignment="Top" Height="50" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Skip_Click" Grid.ColumnSpan="2" Grid.Column="1">
             <Button.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -178,6 +168,37 @@
                     BlurRadius="8"/>
             </Button.Effect>
         </Button>
+        <Rectangle x:Name="GSIRectangle" Fill="{DynamicResource SystemAltHighColorBrush}" Height="90" Margin="0,10,0,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" RadiusY="8" RadiusX="8" Grid.ColumnSpan="2" Grid.Column="1">
+            <Rectangle.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Label x:Name="PhoneStatus" Content="Add TWRP Image" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="35" VerticalAlignment="Top" Margin="80,20,10,0" Grid.ColumnSpan="2" Grid.Column="1">
+            <Label.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemAltHighColor}"
+                    Opacity="0.8"
+                    BlurRadius="2"/>
+            </Label.Effect>
+        </Label>
+        <Label x:Name="PhoneStatus2" Content="Flash TWRP" Margin="80,55,10,0" VerticalAlignment="Top" Height="35" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.ColumnSpan="2" Grid.Column="1">
+            <Label.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemAltHighColor}"
+                    Opacity="0.8"
+                    BlurRadius="2"/>
+            </Label.Effect>
+        </Label>
+        <Image x:Name="DeviceInfoImg" Margin="10,20,0,0" Source="tt-phone.png" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70" Grid.Column="1"/>
 
     </Grid>
 </Page>

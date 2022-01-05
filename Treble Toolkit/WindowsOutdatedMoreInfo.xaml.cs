@@ -31,6 +31,8 @@ namespace Treble_Toolkit
             thread.Start();
             Thread thread2 = new Thread(CheckWinver);
             thread2.Start();
+            Thread thread3 = new Thread(UpdateUI);
+            thread3.Start();
         }
 
         private void BackAbout_Click(object sender, RoutedEventArgs e)
@@ -99,6 +101,20 @@ namespace Treble_Toolkit
             startInfo.Arguments = "/C start https://www.microsoft.com/software-download/windows10";
             process.StartInfo = startInfo;
             process.Start();
+        }
+        private void UpdateUI()
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-info-dark.png"));
+                }
+                else
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-info-light.png"));
+                }
+            });
         }
     }
 }

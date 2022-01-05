@@ -8,6 +8,7 @@ using System.Windows.Input;
 using NHotkey.Wpf;
 using NHotkey;
 using System.Threading;
+using System.Windows.Media;
 
 namespace Treble_Toolkit
 {
@@ -21,15 +22,19 @@ namespace Treble_Toolkit
             InitializeComponent();
             HotkeyManager.Current.AddOrReplace("Increment", Key.D, ModifierKeys.Control, OnIncrement);
             Debug1.Visibility = Visibility.Hidden;
+            DbgRct1.Visibility = Visibility.Hidden;
             Thread thread = new Thread(Animate);
             thread.Start();
             Thread thread2 = new Thread(PrepareFiles);
             thread2.Start();
+            Thread thread3 = new Thread(UpdateUI);
+            thread3.Start();
         }
 
         private void OnIncrement(object sender, HotkeyEventArgs e)
         {
             Debug1.Visibility = Visibility.Visible;
+            DbgRct1.Visibility = Visibility.Visible;
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -96,8 +101,8 @@ namespace Treble_Toolkit
             {
                 this.Dispatcher.Invoke(() =>
                 {
-                    Title.Content = "This is not the correct file...";
-                    FileSize.Visibility = Visibility.Visible;
+                    PhoneStatus.Content = "This GSI is invalid";
+                    PhoneStatus2.Content = "This GSI is less than 500MB. Please try again.";
                 });
             }
             else
@@ -121,6 +126,20 @@ namespace Treble_Toolkit
             cmdsi4.Arguments = command4;
             Process cmd4 = Process.Start(cmdsi4);
             cmd4.WaitForExit();
+        }
+        private void UpdateUI()
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-fnf-dark.png"));
+                }
+                else
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-fnf-light.png"));
+                }
+            });
         }
     }
 }

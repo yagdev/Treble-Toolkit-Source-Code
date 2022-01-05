@@ -17,6 +17,7 @@ using System.IO;
 using System.Windows.Media.Animation;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Media.Effects;
 
 namespace Treble_Toolkit
 {
@@ -74,6 +75,18 @@ namespace Treble_Toolkit
         }
         private void UpdateUI()
         {
+            this.Dispatcher.Invoke(() =>
+            {
+                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-usb-dark.png"));
+                }
+                else
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-usb-light.png"));
+                }
+            });
+
             if (Environment.OSVersion.Version.Build <= 9)
             {
                 this.Dispatcher.Invoke(() =>
@@ -82,6 +95,138 @@ namespace Treble_Toolkit
                     DeviceSpecificFeatures_Copy.Content = "🔒 Report Bug";
                 });
             }
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.UseShellExecute = false;
+            startInfo.RedirectStandardOutput = true;
+            startInfo.FileName = "CMD.exe";
+            startInfo.Arguments = "/C adb.exe get-state";
+            startInfo.CreateNoWindow = true;
+            process.StartInfo = startInfo;
+            process.Start();
+            string output3 = process.StandardOutput.ReadToEnd();
+            process.WaitForExit();
+            this.Dispatcher.Invoke(() =>
+                {
+                    if (output3.Contains("device") == true)
+                {
+                    startInfo.UseShellExecute = false;
+                    startInfo.RedirectStandardOutput = true;
+                    startInfo.FileName = "CMD.exe";
+                    startInfo.Arguments = "/C fastboot.exe devices";
+                    startInfo.CreateNoWindow = true;
+                    process.StartInfo = startInfo;
+                    process.Start();
+                    string output4 = process.StandardOutput.ReadToEnd();
+                    process.WaitForExit();
+                    if (output4.Contains("fastboot") == true)
+                    {
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            if (GridMain.ActualWidth <= 530)
+                            {
+                                DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+                                // Set the color of the shadow to Black.
+                                Color myShadowColor = new Color();
+                                myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                // The Opacity property is used to control the alpha.
+                                myShadowColor.B = 0;
+                                myShadowColor.G = 255;
+                                myShadowColor.R = 255;
+                                myDropShadowEffect.Direction = 0;
+                                myDropShadowEffect.ShadowDepth = 0;
+                                myDropShadowEffect.Color = myShadowColor;
+                                DeviceRectangle.Effect = myDropShadowEffect;
+                                cc.Content = "Device Connected (ADB/Fastboot)";
+                            }
+                        });
+                    }
+                    else
+                    {
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            DeviceRectangle.Effect = DeviceSpecificFeatures_Copy.Effect;
+                            cc.Content = "Device Connected (ADB)";
+                        });
+                    }
+                }
+                else
+                {
+                    startInfo.UseShellExecute = false;
+                    startInfo.RedirectStandardOutput = true;
+                    startInfo.FileName = "CMD.exe";
+                    startInfo.Arguments = "/C fastboot.exe devices";
+                    startInfo.CreateNoWindow = true;
+                    process.StartInfo = startInfo;
+                    process.Start();
+                    string output4 = process.StandardOutput.ReadToEnd();
+                    process.WaitForExit();
+                    if (output4.Contains("fastboot") == true)
+                    {
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            if (GridMain.ActualWidth <= 530)
+                            {
+                                DeviceRectangle.Effect = DeviceSpecificFeatures_Copy.Effect;
+                                cc.Content = "Device Connected (Fastboot)";
+                            }
+                        });
+                    }
+                    else
+                    {
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+                            // Set the color of the shadow to Black.
+                            Color myShadowColor = new Color();
+                            myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                            // The Opacity property is used to control the alpha.
+                            myShadowColor.B = 0;
+                            myShadowColor.G = 0;
+                            myShadowColor.R = 255;
+                            myDropShadowEffect.Direction = 0;
+                            myDropShadowEffect.ShadowDepth = 0;
+                            myDropShadowEffect.Color = myShadowColor;
+                            DeviceRectangle.Effect = myDropShadowEffect;
+                            cc.Content = "No Device Connected";
+                        });
+                    }
+                }
+                startInfo.UseShellExecute = false;
+                startInfo.RedirectStandardOutput = true;
+                startInfo.FileName = "CMD.exe";
+                startInfo.Arguments = "/C fastboot devices";
+                startInfo.CreateNoWindow = true;
+                process.StartInfo = startInfo;
+                process.Start();
+                string output5 = process.StandardOutput.ReadToEnd();
+                process.WaitForExit();
+                if (output5.Contains("fastboot") == true)
+                {
+                    ConnectdDevice.Content = output5;
+                }
+                else
+                {
+                        startInfo.UseShellExecute = false;
+                        startInfo.RedirectStandardOutput = true;
+                        startInfo.FileName = "CMD.exe";
+                        startInfo.Arguments = "/C adb devices";
+                        startInfo.CreateNoWindow = true;
+                        process.StartInfo = startInfo;
+                        process.Start();
+                        process.StandardOutput.ReadLine();
+                        string output6 = process.StandardOutput.ReadLine();
+                        process.WaitForExit();
+                        if (output6.Contains("device") == true)
+                        {
+                            ConnectdDevice.Content = output6;
+                        }
+                        else
+                        {
+                            ConnectdDevice.Content = "Unable to Verify";
+                        }
+                }
+            });
         }
         private void StartOps()
         {

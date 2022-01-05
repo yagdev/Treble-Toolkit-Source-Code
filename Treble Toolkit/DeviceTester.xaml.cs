@@ -7,6 +7,10 @@ using System.Threading;
 using System.Windows.Threading;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Windows.Media.Effects;
+using System.Windows.Media;
+using Microsoft.Win32;
+using System.Linq;
 
 namespace Treble_Toolkit
 {
@@ -15,6 +19,14 @@ namespace Treble_Toolkit
     /// </summary>
     public partial class DeviceTester : Page
     {
+        public string GetTheme()
+        {
+            string RegistryKey = @"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes";
+            string theme;
+            theme = (string)Registry.GetValue(RegistryKey, "CurrentTheme", string.Empty);
+            theme = theme.Split('\\').Last().Split('.').First().ToString();
+            return theme;
+        }
         public DeviceTester()
         {
             InitializeComponent();
@@ -107,12 +119,25 @@ namespace Treble_Toolkit
                     Model.Content = output2;
                     if (output2.Length == 0)
                     {
+                        DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                        // Set the color of the shadow to Black.
+                        Color myShadowColor = new Color();
+                        myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                               // The Opacity property is used to control the alpha.
+                        myShadowColor.B = 0;
+                        myShadowColor.G = 255;
+                        myShadowColor.R = 255;
+                        myDropShadowEffect.Direction = 0;
+                        myDropShadowEffect.ShadowDepth = 0;
+
+                        myDropShadowEffect.Color = myShadowColor;
+                        TrebleSupportRectangle.Effect = myDropShadowEffect;
                         Model.Content = "Unable to retrieve";
-                        NotDetected.Visibility = Visibility.Visible;
                     }
                     else
                     {
-                        Warning.Visibility = Visibility.Hidden;
+                        TrebleSupportRectangle.Effect = DeviceSpecificFeatures_Copy4.Effect;
                     }
                 });
             });
@@ -138,20 +163,48 @@ namespace Treble_Toolkit
                     SupportsTreble.Content = output3;
                     if (output3.Contains("true") == true)
                     {
-                        SupportsTreble.Content = "Yes";
+                        SupportsTreble.Content = "Project Treble Supported";
+                        TrebleSupportRectangle.Effect = DeviceSpecificFeatures_Copy4.Effect;
                     }
                     else
                     {
-                        SupportsTreble.Content = "No";
+                        SupportsTreble.Content = "Project Treble Not Supported";
+                        DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                        // Set the color of the shadow to Black.
+                        Color myShadowColor = new Color();
+                        myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                               // The Opacity property is used to control the alpha.
+                        myShadowColor.B = 0;
+                        myShadowColor.G = 255;
+                        myShadowColor.R = 255;
+                        myDropShadowEffect.Direction = 0;
+                        myDropShadowEffect.ShadowDepth = 0;
+
+                        myDropShadowEffect.Color = myShadowColor;
+                        TrebleSupportRectangle.Effect = myDropShadowEffect;
                     }
                     if (output3.Length == 0)
                     {
+                        DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                        // Set the color of the shadow to Black.
+                        Color myShadowColor = new Color();
+                        myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                               // The Opacity property is used to control the alpha.
+                        myShadowColor.B = 0;
+                        myShadowColor.G = 0;
+                        myShadowColor.R = 255;
+                        myDropShadowEffect.Direction = 0;
+                        myDropShadowEffect.ShadowDepth = 0;
+
+                        myDropShadowEffect.Color = myShadowColor;
+                        TrebleSupportRectangle.Effect = myDropShadowEffect;
                         SupportsTreble.Content = "Unable to retrieve";
-                        NotDetected.Visibility = Visibility.Visible;
                     }
                     else
                     {
-                        Warning.Visibility = Visibility.Hidden;
+                        
                     }
                 });
             });
@@ -178,12 +231,25 @@ namespace Treble_Toolkit
                     AndroidVersion.Content = output4;
                     if (output4.Length == 0)
                     {
+                        DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                        // Set the color of the shadow to Black.
+                        Color myShadowColor = new Color();
+                        myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                               // The Opacity property is used to control the alpha.
+                        myShadowColor.B = 0;
+                        myShadowColor.G = 0;
+                        myShadowColor.R = 255;
+                        myDropShadowEffect.Direction = 0;
+                        myDropShadowEffect.ShadowDepth = 0;
+
+                        myDropShadowEffect.Color = myShadowColor;
+                        AndroidRectangle.Effect = myDropShadowEffect;
                         AndroidVersion.Content = "Unable to retrieve";
-                        NotDetected.Visibility = Visibility.Visible;
                     }
                     else
                     {
-                        Warning.Visibility = Visibility.Hidden;
+                        AndroidRectangle.Effect = DeviceSpecificFeatures_Copy4.Effect;
                     }
                 });
             });
@@ -209,12 +275,25 @@ namespace Treble_Toolkit
                     SDKVersion.Content = output5;
                     if (output5.Length == 0)
                     {
+                        DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                        // Set the color of the shadow to Black.
+                        Color myShadowColor = new Color();
+                        myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                               // The Opacity property is used to control the alpha.
+                        myShadowColor.B = 0;
+                        myShadowColor.G = 0;
+                        myShadowColor.R = 255;
+                        myDropShadowEffect.Direction = 0;
+                        myDropShadowEffect.ShadowDepth = 0;
+
+                        myDropShadowEffect.Color = myShadowColor;
+                        SDK1Rectangle.Effect = myDropShadowEffect;
                         SDKVersion.Content = "Unable to retrieve";
-                        NotDetected.Visibility = Visibility.Visible;
                     }
                     else
                     {
-                        Warning.Visibility = Visibility.Hidden;
+                        SDK1Rectangle.Effect = DeviceSpecificFeatures_Copy4.Effect;
                     }
                 });
             });
@@ -240,12 +319,25 @@ namespace Treble_Toolkit
                     SecurityPatch.Content = output6;
                     if (output6.Length == 0)
                     {
+                        DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                        // Set the color of the shadow to Black.
+                        Color myShadowColor = new Color();
+                        myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                               // The Opacity property is used to control the alpha.
+                        myShadowColor.B = 0;
+                        myShadowColor.G = 0;
+                        myShadowColor.R = 255;
+                        myDropShadowEffect.Direction = 0;
+                        myDropShadowEffect.ShadowDepth = 0;
+
+                        myDropShadowEffect.Color = myShadowColor;
+                        SecurityPatchRectangle.Effect = myDropShadowEffect;
                         SecurityPatch.Content = "Unable to retrieve";
-                        NotDetected.Visibility = Visibility.Visible;
                     }
                     else
                     {
-                        Warning.Visibility = Visibility.Hidden;
+                        SecurityPatchRectangle.Effect = DeviceSpecificFeatures_Copy4.Effect;
                     }
                 });
             });
@@ -270,20 +362,33 @@ namespace Treble_Toolkit
                 {
                     if (output8.Contains("encrypted") == true)
                     {
-                        IsEncrypted.Content = "Yes";
+                        IsEncrypted.Content = "Encrypted";
                     }
                     else
                     {
-                        IsEncrypted.Content = "No";
+                        IsEncrypted.Content = "Not Encrypted";
                     }
                     if (output8.Length == 0)
                     {
+                        DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                        // Set the color of the shadow to Black.
+                        Color myShadowColor = new Color();
+                        myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                               // The Opacity property is used to control the alpha.
+                        myShadowColor.B = 0;
+                        myShadowColor.G = 0;
+                        myShadowColor.R = 255;
+                        myDropShadowEffect.Direction = 0;
+                        myDropShadowEffect.ShadowDepth = 0;
+
+                        myDropShadowEffect.Color = myShadowColor;
+                        CryptoRectangle.Effect = myDropShadowEffect;
                         IsEncrypted.Content = "Unable to retrieve";
-                        NotDetected.Visibility = Visibility.Visible;
                     }
                     else
                     {
-                        Warning.Visibility = Visibility.Hidden;
+                        CryptoRectangle.Effect = DeviceSpecificFeatures_Copy4.Effect;
                     }
                 });
             });
@@ -309,12 +414,25 @@ namespace Treble_Toolkit
                     SN.Content = output9;
                     if (output9.Length == 0)
                     {
+                        DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                        // Set the color of the shadow to Black.
+                        Color myShadowColor = new Color();
+                        myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                               // The Opacity property is used to control the alpha.
+                        myShadowColor.B = 0;
+                        myShadowColor.G = 0;
+                        myShadowColor.R = 255;
+                        myDropShadowEffect.Direction = 0;
+                        myDropShadowEffect.ShadowDepth = 0;
+
+                        myDropShadowEffect.Color = myShadowColor;
+                        SNRectangle.Effect = myDropShadowEffect;
                         SN.Content = "Unable to retrieve";
-                        NotDetected.Visibility = Visibility.Visible;
                     }
                     else
                     {
-                        Warning.Visibility = Visibility.Hidden;
+                        SNRectangle.Effect = DeviceSpecificFeatures_Copy4.Effect;
                     }
                 });
             });
@@ -340,12 +458,25 @@ namespace Treble_Toolkit
                     VendorSDK.Content = output10;
                     if (output10.Length == 0)
                     {
+                        DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                        // Set the color of the shadow to Black.
+                        Color myShadowColor = new Color();
+                        myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                               // The Opacity property is used to control the alpha.
+                        myShadowColor.B = 0;
+                        myShadowColor.G = 0;
+                        myShadowColor.R = 255;
+                        myDropShadowEffect.Direction = 0;
+                        myDropShadowEffect.ShadowDepth = 0;
+
+                        myDropShadowEffect.Color = myShadowColor;
+                        SDK2Rectangle.Effect = myDropShadowEffect;
                         VendorSDK.Content = "Unable to retrieve";
-                        NotDetected.Visibility = Visibility.Visible;
                     }
                     else
                     {
-                        Warning.Visibility = Visibility.Hidden;
+                        SDK2Rectangle.Effect = DeviceSpecificFeatures_Copy4.Effect;
                     }
                 });
             });
@@ -355,7 +486,14 @@ namespace Treble_Toolkit
             Dispatcher dis = Dispatcher.CurrentDispatcher;
             this.Dispatcher.Invoke(() =>
             {
-                NotDetected.Visibility = Visibility.Hidden;
+                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-phone-dark.png"));
+                }
+                else
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-phone-light.png"));
+                }
             });
         }
     }

@@ -30,6 +30,8 @@ namespace Treble_Toolkit
             thread.Start();
             Thread thread2 = new Thread(Prepare);
             thread2.Start();
+            Thread thread3 = new Thread(GetCurrentVersion);
+            thread3.Start();
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -113,6 +115,25 @@ namespace Treble_Toolkit
             {
                 sw.WriteLine("Treble Toolkit First Time Use");
                 sw.WriteLine("©2021 YAG-dev");
+            }
+        }
+        private void GetCurrentVersion()
+        {
+            string GetCurVer = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "CurrentVersion", "VersionString.txt");
+            if (File.Exists(GetCurVer))
+            {
+                string text = System.IO.File.ReadAllText(GetCurVer);
+                this.Dispatcher.Invoke(() =>
+                {
+                    FileSizeCheck.Content = text;
+                });
+            }
+            else
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    FileSizeCheck.Content = "I hope you enjoy using Treble Toolkit.";
+                });
             }
         }
     }

@@ -42,6 +42,8 @@ namespace TrebleToolkitLauncher
             thread3.Start();
             Thread thread4 = new Thread(NewReleaseGet);
             thread4.Start();
+            Thread thread5 = new Thread(UpdateUI);
+            thread5.Start();
         }
         private void Completed(object sender, AsyncCompletedEventArgs e)
         {
@@ -124,20 +126,6 @@ namespace TrebleToolkitLauncher
             string local_version_path1 = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "CurrentVersion", "NewVersionLabel.txt");
             string local_launcher_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "CurrentVersion", "LauncherVersion.txt");
             string launch_exe = "TrebleToolkitLauncher.exe";
-            if (File.Exists(beta_path) && Environment.Is64BitOperatingSystem)
-            {
-                url = "https://www.dropbox.com/s/2nykzlitzy2u8an/release.zip?dl=1";
-                remote_version_url = "https://www.dropbox.com/s/7onsz56k52liim2/version.txt?dl=1";
-            }
-            if (Environment.Is64BitOperatingSystem)
-            {
-
-            }
-            else
-            {
-                url = "https://www.dropbox.com/s/dqmk13zq52d3clo/release.zip?dl=1";
-                remote_version_url = "https://www.dropbox.com/s/7faalz9dxjgethh/version.txt?dl=1";
-            }
             if (File.Exists(beta_path))
             {
                 using (var client = new System.Net.WebClient())
@@ -155,6 +143,24 @@ namespace TrebleToolkitLauncher
                 }
             }
         }
+        private void UpdateUI()
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-fnf-dark.png"));
+                    DeviceInfoImg_Copy.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-checkmark-dark.png"));
+                    DeviceInfoImg_Copy1.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-up-dark.png"));
+                }
+                else
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-fnf-light.png"));
+                    DeviceInfoImg_Copy.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-checkmark-light.png"));
+                    DeviceInfoImg_Copy1.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-up-light.png"));
+                }
+            });
+        }
         private void NextReinstall()
         {
             int Out;
@@ -164,7 +170,7 @@ namespace TrebleToolkitLauncher
                 {
                     Yes.IsEnabled = false;
                 });
-                String command = @"/C wmic process where name='adb.exe' delete & wmic process where name='gui.exe' delete & wmic process where name='fastboot.exe' delete";
+                String command = @"/C wmic process where name='adb.exe' delete & wmic process where name='TrebleToolkitLauncher.exe' delete & wmic process where name='fastboot.exe' delete";
                 ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
                 cmdsi.Arguments = command;
                 cmdsi.WindowStyle = ProcessWindowStyle.Hidden;
@@ -187,19 +193,10 @@ namespace TrebleToolkitLauncher
                 string local_version_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "CurrentVersion", "VersionString.txt");
                 string local_launcher_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "CurrentVersion", "LauncherVersion.txt");
                 string launch_exe = "TrebleToolkitLauncher.exe";
-                if (File.Exists(beta_path) && Environment.Is64BitOperatingSystem)
+                if (File.Exists(beta_path))
                 {
                     url = "https://www.dropbox.com/s/2nykzlitzy2u8an/release.zip?dl=1";
                     remote_version_url = "https://www.dropbox.com/s/7onsz56k52liim2/version.txt?dl=1";
-                }
-                if (Environment.Is64BitOperatingSystem)
-                {
-
-                }
-                else
-                {
-                    url = "https://www.dropbox.com/s/dqmk13zq52d3clo/release.zip?dl=1";
-                    remote_version_url = "https://www.dropbox.com/s/7faalz9dxjgethh/version.txt?dl=1";
                 }
                 this.Dispatcher.Invoke(() =>
                 {
@@ -274,7 +271,7 @@ namespace TrebleToolkitLauncher
                     Yes.Content = "Executing...";
                     status_pgr.Value += 10;
                 });
-                String command2 = @"/C wmic process where name='adb.exe' delete & wmic process where name='gui.exe' delete & wmic process where name='fastboot.exe' delete";
+                String command2 = @"/C wmic process where name='adb.exe' delete & wmic process where name='TrebleToolkitLauncher.exe' delete & wmic process where name='fastboot.exe' delete";
                 ProcessStartInfo cmdsi2 = new ProcessStartInfo("cmd.exe");
                 cmdsi2.Arguments = command2;
                 cmdsi2.WindowStyle = ProcessWindowStyle.Hidden;
@@ -290,7 +287,7 @@ namespace TrebleToolkitLauncher
                 process.WaitForExit();
                 startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                 startInfo.FileName = "cmd.exe";
-                startInfo.Arguments = "/C cd Application & cd assets & gui.exe";
+                startInfo.Arguments = "/C cd Application & cd assets & TrebleToolkitLauncher.exe";
                 process.StartInfo = startInfo;
                 process.Start();
                 startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;

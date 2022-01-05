@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Treble_Toolkit"
       xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
       xmlns:xf="clr-namespace:XamlFlair;assembly=XamlFlair.WPF"
-      mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight="2000"
+      mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="2000"
       fw:AcrylicWindow.Enabled="True">
     <Page.Resources>
         <Style x:Key="FocusVisual">
@@ -100,7 +100,29 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock x:Name="Changelog" Margin="10,70,10,190" TextWrapping="Wrap" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="2">
+        <Rectangle Fill="{DynamicResource SystemAltHighColorBrush}" Margin="10,105,10,72" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="8" RadiusX="8" Grid.ColumnSpan="2">
+            <Rectangle.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Rectangle.Effect>
+        </Rectangle>
+
+        <Rectangle Fill="{DynamicResource SystemAltHighColorBrush}" Height="70" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Bottom" RadiusY="12" RadiusX="12" Grid.ColumnSpan="2" Opacity="0.5">
+            <Rectangle.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Rectangle.Effect>
+        </Rectangle>
+
+        <TextBlock x:Name="Changelog" Margin="20,115,20,82" TextWrapping="Wrap" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="2">
             <TextBlock.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -109,15 +131,6 @@
                     Opacity="0.8"
                     BlurRadius="2"/>
             </TextBlock.Effect><Run Text="Reading log..."/><LineBreak/><Run Text="If this takes longer than 5 seconds, please report it."/></TextBlock>
-        <TextBlock x:Name="Changelog_Copy" Margin="10,0,10,63" TextWrapping="Wrap" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Height="18" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Text="©2021 YAG-dev · Treble Toolkit">
-            <TextBlock.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </TextBlock.Effect></TextBlock>
         <Button x:Name="DeviceSpecificFeatures_Copy"  Content="Back" Margin="10,0,1,10" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="BackAbout_Click">
             <Button.Effect>
                 <DropShadowEffect
@@ -138,28 +151,7 @@
                     BlurRadius="8"/>
             </Button.Effect>
         </Button>
-        <Label Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.ColumnSpan="2" Height="40" VerticalAlignment="Top" Content="Platform Tools Changelog">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
-        </Label>
-
-        <Label x:Name="copyright" Content="©2021 YAG-dev · " Margin="0,40,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Top">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
-        </Label>
-        <Rectangle x:Name="TTOutOfDate" Fill="#B2FFC500" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="8" RadiusX="8" Margin="10,0,10,83" Grid.ColumnSpan="2" Height="102" VerticalAlignment="Bottom">
+        <Rectangle x:Name="Reptangle" Fill="{DynamicResource SystemAltHighColorBrush}" Height="90" Margin="10,10,10,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" RadiusY="8" RadiusX="8" Grid.ColumnSpan="2">
             <Rectangle.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -169,7 +161,7 @@
                     BlurRadius="8"/>
             </Rectangle.Effect>
         </Rectangle>
-        <Label x:Name="TTOutOfDateTxt1" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Content="⚠Platform Tools is out of date" Margin="20,0,20,135" Grid.ColumnSpan="2" Height="40" VerticalAlignment="Bottom">
+        <Label x:Name="Title_Copy" Content="Platform Tools" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="35" VerticalAlignment="Top" Margin="90,20,20,0" Grid.ColumnSpan="2">
             <Label.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -179,7 +171,7 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <Label x:Name="TTOutOfDateTxt2" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Content="Updating is recommended" Margin="20,0,115,93" Grid.ColumnSpan="2" Height="40" VerticalAlignment="Bottom">
+        <Label x:Name="copyright" Content="Checking..." Margin="90,55,20,0" VerticalAlignment="Top" Height="35" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.ColumnSpan="2">
             <Label.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -189,7 +181,8 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <Button x:Name="Update" Content="Update" Margin="65,0,20,93" VerticalAlignment="Bottom" Height="40" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Troubleshoot" Grid.Column="1">
+        <Image Margin="20,20,0,0" Source="tt-source-download.png" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70"/>
+        <Button x:Name="Update" Content="Update" Margin="280,54,20,0" VerticalAlignment="Top" Height="35" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Troubleshoot" Grid.Column="1">
             <Button.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"

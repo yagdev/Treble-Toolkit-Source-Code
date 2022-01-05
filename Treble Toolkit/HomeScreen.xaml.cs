@@ -30,6 +30,8 @@ namespace Treble_Toolkit
             thread4.Start();
             Thread thread5 = new Thread(CheckBoot);
             thread5.Start();
+            Thread thread6 = new Thread(UpdateUI);
+            thread6.Start();
         }
         private void AboutButton_Click(object sender, RoutedEventArgs e)
         {
@@ -57,13 +59,13 @@ namespace Treble_Toolkit
 
         private void ABButton_Click(object sender, RoutedEventArgs e)
         {
-            Uri uri = new Uri("GSIABFlash.xaml", UriKind.Relative);
+            Uri uri = new Uri("FlashGSI.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);
         }
 
         private void FlashButton_Click(object sender, RoutedEventArgs e)
         {
-            Uri uri = new Uri("TWRPFlash.xaml", UriKind.Relative);
+            Uri uri = new Uri("TWRPShits.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);
         }
 
@@ -113,12 +115,8 @@ namespace Treble_Toolkit
             thread3.Start();
             Thread thread4 = new Thread(CheckBoot);
             thread4.Start();
-        }
-
-        private void Page_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            Thread thread = new Thread(Size);
-            thread.Start();
+            Thread thread5 = new Thread(UpdateUI);
+            thread5.Start();
         }
 
         private void Setup(object sender, RoutedEventArgs e)
@@ -394,7 +392,7 @@ namespace Treble_Toolkit
                             myDropShadowEffect.ShadowDepth = 0;
                             myDropShadowEffect.Color = myShadowColor;
                             DeviceRectangle.Effect = myDropShadowEffect;
-                            cc.Content = "Yes (2+)";
+                            cc.Content = "Connected (2+)";
                         }
                         else
                         {
@@ -410,7 +408,7 @@ namespace Treble_Toolkit
                             myDropShadowEffect.ShadowDepth = 0;
                             myDropShadowEffect.Color = myShadowColor;
                             DeviceRectangle.Effect = myDropShadowEffect;
-                            cc.Content = "Yes (2+ Devices)";
+                            cc.Content = "Connected (2+ Devices)";
                         }
                     });
                 }
@@ -446,7 +444,7 @@ namespace Treble_Toolkit
                         else
                         {
                             DeviceRectangle.Effect = DeviceSpecificFeatures_Copy.Effect;
-                            cc.Content = "Yes (Fastboot)";
+                            cc.Content = "Connected (Fastboot)";
                         }
                     });
                 }
@@ -466,7 +464,7 @@ namespace Treble_Toolkit
                         myDropShadowEffect.ShadowDepth = 0;
                         myDropShadowEffect.Color = myShadowColor;
                         DeviceRectangle.Effect = myDropShadowEffect;
-                        cc.Content = "No";
+                        cc.Content = "Not Connected";
                     });
                 }
             }
@@ -481,64 +479,49 @@ namespace Treble_Toolkit
             process.StartInfo = startInfo;
             process.Start();
         }
-        private void Size()
-        {
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
-            this.Dispatcher.Invoke(() =>
-            {
-                if (GridMain.ActualWidth <= 410)
-                {
-                    BootmgTitle.Content = "Boot Img";
-                    TWRPImgTitle.Content = "TWRP Img";
-                }
-                else
-                {
-                    BootmgTitle.Content = "Boot Image";
-                    TWRPImgTitle.Content = "TWRP Image";
-                }
-            });
-            this.Dispatcher.Invoke(() =>
-            {
-                if (GridMain.ActualWidth <= 530)
-                {
-                    ConDev.Content = "Connected";
-                    if (cc.Content == "Yes (2+ Devices)")
-                    {
-                        cc.Content = "Yes (2+)";
-                    }
-                    else
-                    {
-                        if (cc.Content == "Yes (Fastboot)")
-                        {
-                            cc.Content = "Yes (F)";
-                        }
-                        else
-                        {
-
-                        }
-                    }
-                }
-                else
-                {
-                    ConDev.Content = "Connected Device";
-                    if (cc.Content == "Yes (2+)")
-                    {
-                        cc.Content = "Yes (2+ Devices)";
-                    }
-                    else
-                    {
-                        if (cc.Content == "Yes (F)")
-                        {
-                            cc.Content = "Yes (Fastboot)";
-                        }
-                    }
-                }
-            });
-        }
         private void FreeCMD()
         {
             Process.Start("CMD.exe");
+        }
+        private void UpdateUI()
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-phone-dark.png"));
+                    DeviceInfoImg_Copy.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-gsi-dark.png"));
+                    DeviceInfoImg_Copy1.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-bootimg-dark.png"));
+                    DeviceInfoImg_Copy2.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-twrpimg-dark.png"));
+                    BtnImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-flash-dark.png"));
+                    BtnImg_Copy4.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-erase-dark.png"));
+                    BtnImg_Copy.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-twrp-dark.png"));
+                    BtnImg_Copy5.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-more-dark.png"));
+                    BtnImg_Copy6.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-web-dark.png"));
+                    BtnImg_Copy1.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-flash-dark.png"));
+                    BtnImg_Copy2.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-lock-dark.png"));
+                    BtnImg_Copy7.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-up-dark.png"));
+                    BtnImg_Copy3.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-freecmd-dark.png"));
+                    BtnImg_Copy8.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-info-dark.png"));
+                }
+                else
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-phone-light.png"));
+                    DeviceInfoImg_Copy.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-gsi-light.png"));
+                    DeviceInfoImg_Copy1.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-bootimg-light.png"));
+                    DeviceInfoImg_Copy2.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-twrpimg-light.png"));
+                    BtnImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-flash-light.png"));
+                    BtnImg_Copy4.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-erase-light.png"));
+                    BtnImg_Copy.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-twrp-light.png"));
+                    BtnImg_Copy5.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-more-light.png"));
+                    BtnImg_Copy6.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-web-light.png"));
+                    BtnImg_Copy1.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-flash-light.png"));
+                    BtnImg_Copy2.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-lock-light.png"));
+                    BtnImg_Copy7.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-up-light.png"));
+                    BtnImg_Copy3.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-freecmd-light.png"));
+                    BtnImg_Copy8.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-info-light.png"));
+                }
+            });
         }
     }
 }

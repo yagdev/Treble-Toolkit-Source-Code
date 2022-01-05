@@ -5,6 +5,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows.Media.Animation;
 using System.Threading;
+using System.Windows.Media.Effects;
+using System.Windows.Media;
 
 namespace Treble_Toolkit
 {
@@ -24,6 +26,8 @@ namespace Treble_Toolkit
             thread3.Start();
             Thread thread4 = new Thread(Prepare);
             thread4.Start();
+            Thread thread5 = new Thread(CheckPhone);
+            thread5.Start();
         }
 
         private void ReportBug_Click(object sender, RoutedEventArgs e)
@@ -73,14 +77,6 @@ namespace Treble_Toolkit
                 });
             }
         }
-        private void UpdateUI()
-        {
-            this.Dispatcher.Invoke(() =>
-            {
-                ReportLabel.Visibility = Visibility.Hidden;
-                FileSize.Visibility = Visibility.Hidden;
-            });
-        }
         private void Prepare()
         {
             String command = @"/C cd .. & cd Place_Files_Here & cd Vendor & ren * vendor.img";
@@ -98,8 +94,8 @@ namespace Treble_Toolkit
                 {
                     this.Dispatcher.Invoke(() =>
                     {
-                        Title.Content = "This is not the correct file...";
-                        FileSize.Visibility = Visibility.Visible;
+                        Uri uri = new Uri("VendorPickFile.xaml", UriKind.Relative);
+                        this.NavigationService.Navigate(uri);
                     });
                     String command = @"/C cd .. & cd Place_Files_Here & cd Vendor & cd .";
                     ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
@@ -113,9 +109,8 @@ namespace Treble_Toolkit
                     {
                         this.Dispatcher.Invoke(() =>
                         {
-                            Title.Content = "Holy crap, that's a big file!";
-                            FileSize.Visibility = Visibility.Visible;
-                            FileSize.Content = "Your Vendor file is above 1.5GB and is likely not the correct file. Try again";
+                            Uri uri = new Uri("VendorPickFile.xaml", UriKind.Relative);
+                            this.NavigationService.Navigate(uri);
                         });
                         String command = @"/C cd .. & cd Place_Files_Here & cd Vendor & cd .";
                         ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
@@ -132,7 +127,7 @@ namespace Treble_Toolkit
                         cmd.WaitForExit();
                         this.Dispatcher.Invoke(() =>
                         {
-                            Uri uri = new Uri("VendorFinished.xaml", UriKind.Relative);
+                            Uri uri = new Uri("FlashVendorFinished.xaml", UriKind.Relative);
                             this.NavigationService.Navigate(uri);
                         });
                     }
@@ -146,6 +141,199 @@ namespace Treble_Toolkit
                     this.NavigationService.Navigate(uri);
                 });
             }
+        }
+        private void CheckPhone()
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.UseShellExecute = false;
+            startInfo.RedirectStandardOutput = true;
+            startInfo.FileName = "CMD.exe";
+            startInfo.Arguments = "/C fastboot.exe devices";
+            startInfo.CreateNoWindow = true;
+            process.StartInfo = startInfo;
+            process.Start();
+            string output4 = process.StandardOutput.ReadToEnd();
+            process.WaitForExit();
+            if (output4.Contains("fastboot") == true)
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    PhoneStatus2.Content = "Fastboot";
+                });
+            }
+            else
+            {
+                startInfo.UseShellExecute = false;
+                startInfo.RedirectStandardOutput = true;
+                startInfo.FileName = "CMD.exe";
+                startInfo.Arguments = "/C adb.exe get-state";
+                startInfo.CreateNoWindow = true;
+                process.StartInfo = startInfo;
+                process.Start();
+                string output3 = process.StandardOutput.ReadToEnd();
+                process.WaitForExit();
+                if (output3.Contains("device") == true)
+                {
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        PhoneStatus2.Content = "ADB";
+                    });
+                }
+                else
+                {
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        PhoneStatus2.Content = "Device Not Detected";
+                    });
+                }
+            }
+            this.Dispatcher.Invoke(() =>
+            {
+                if (PhoneStatus2.Content == "Device Not Detected")
+                {
+                    DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                    // Set the color of the shadow to Black.
+                    Color myShadowColor = new Color();
+                    myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                           // The Opacity property is used to control the alpha.
+                    myShadowColor.B = 0;
+                    myShadowColor.G = 0;
+                    myShadowColor.R = 255;
+                    myDropShadowEffect.Direction = 0;
+                    myDropShadowEffect.ShadowDepth = 0;
+
+                    myDropShadowEffect.Color = myShadowColor;
+                    GSIRectangle.Effect = myDropShadowEffect;
+                }
+                else
+                {
+                    GSIRectangle.Effect = DeviceSpecificFeatures_Copy1.Effect;
+                }
+            });
+            string TWRPIMG = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\", "Place_Files_Here", "TWRP", "twrp.img");
+            if (File.Exists(TWRPIMG))
+            {
+                FileInfo fInfo = new FileInfo(@"..\Place_Files_Here\Vendor\vendor.img");
+                if (fInfo.Length < 300000000)
+                {
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        FileInfo fs = new FileInfo(TWRPIMG);
+                        long filesize = fs.Length / 1000000;
+                        PhoneStatus2.Content = PhoneStatus2.Content + " · Invalid Image (-100 MB)";
+                    });
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                        // Set the color of the shadow to Black.
+                        Color myShadowColor = new Color();
+                        myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                               // The Opacity property is used to control the alpha.
+                        myShadowColor.B = 0;
+                        myShadowColor.G = 0;
+                        myShadowColor.R = 255;
+                        myDropShadowEffect.Direction = 0;
+                        myDropShadowEffect.ShadowDepth = 0;
+
+                        myDropShadowEffect.Color = myShadowColor;
+                        GSIRectangle.Effect = myDropShadowEffect;
+                    });
+                }
+                else
+                {
+                    if (fInfo.Length > 1500000000)
+                    {
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            FileInfo fs = new FileInfo(TWRPIMG);
+                            long filesize = fs.Length / 1000000;
+                            PhoneStatus2.Content = PhoneStatus2.Content + " · Invalid Image (+1.5 GB)";
+                        });
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                            // Set the color of the shadow to Black.
+                            Color myShadowColor = new Color();
+                            myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                                   // The Opacity property is used to control the alpha.
+                            myShadowColor.B = 0;
+                            myShadowColor.G = 0;
+                            myShadowColor.R = 255;
+                            myDropShadowEffect.Direction = 0;
+                            myDropShadowEffect.ShadowDepth = 0;
+
+                            myDropShadowEffect.Color = myShadowColor;
+                            GSIRectangle.Effect = myDropShadowEffect;
+                        });
+                    }
+                    else
+                    {
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            GSIRectangle.Effect = DeviceSpecificFeatures_Copy.Effect;
+                        });
+                        FileInfo fs = new FileInfo(TWRPIMG);
+                        if (fs.Length >= 1000000000)
+                        {
+                            long filesize = fs.Length / 1000000000;
+                            this.Dispatcher.Invoke(() =>
+                            {
+                                PhoneStatus2.Content = PhoneStatus2.Content + " · Valid Image (" + System.Convert.ToString(filesize) + "GB)";
+                            });
+                        }
+                        else
+                        {
+                            long filesize = fs.Length / 1000000;
+                            this.Dispatcher.Invoke(() =>
+                            {
+                                PhoneStatus2.Content = PhoneStatus2.Content + " · Valid Image (" + System.Convert.ToString(filesize) + "MB)";
+                            });
+                        }
+                    }
+                }
+            }
+            else
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    PhoneStatus2.Content = PhoneStatus2.Content + " · No Image";
+                });
+                this.Dispatcher.Invoke(() =>
+                {
+                    DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                    // Set the color of the shadow to Black.
+                    Color myShadowColor = new Color();
+                    myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                           // The Opacity property is used to control the alpha.
+                    myShadowColor.B = 0;
+                    myShadowColor.G = 0;
+                    myShadowColor.R = 255;
+                    myDropShadowEffect.Direction = 0;
+                    myDropShadowEffect.ShadowDepth = 0;
+
+                    myDropShadowEffect.Color = myShadowColor;
+                    GSIRectangle.Effect = myDropShadowEffect;
+                });
+            }
+        }
+        private void UpdateUI()
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-flash-dark.png"));
+                }
+                else
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-flash-light.png"));
+                }
+            });
         }
     }
 }

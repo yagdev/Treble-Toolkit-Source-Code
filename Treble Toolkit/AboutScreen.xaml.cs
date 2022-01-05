@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Threading;
 using System.Windows.Media.Effects;
+using System.Diagnostics;
 
 namespace Treble_Toolkit
 {
@@ -25,10 +26,6 @@ namespace Treble_Toolkit
         public AboutScreen()
         {
             InitializeComponent();
-            TTOutOfDate.Visibility = Visibility.Hidden;
-            TTOutOfDateTxt1.Visibility = Visibility.Hidden;
-            TTOutOfDateTxt2.Visibility = Visibility.Hidden;
-            Update.Visibility = Visibility.Hidden;
             Thread thread = new Thread(PlatformToolsUI);
             thread.Start();
             Thread thread2 = new Thread(CheckForUpdates);
@@ -47,14 +44,8 @@ namespace Treble_Toolkit
 
         private void UpdateAbout_Click(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process process = new System.Diagnostics.Process();
-            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = "/C cd .. & cd .. & start TrebleToolkitLauncher.exe";
-            process.StartInfo = startInfo;
-            process.Start();
-            Application.Current.Shutdown();
+            Uri uri = new Uri("UpdateCenter.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
         }
 
         private void DiscoverAbout_Click(object sender, RoutedEventArgs e)
@@ -101,14 +92,14 @@ namespace Treble_Toolkit
                 string ptversion = System.IO.File.ReadAllText(System.IO.Path.Combine(Environment.CurrentDirectory, "PlatformTools.txt"));
                 this.Dispatcher.Invoke(() =>
                 {
-                    Changelog_Copy.Text = "©2021 YAG-dev · " + ptversion;
+                    PT_Version.Content = ptversion;
                 });
             }
             else
             {
                 this.Dispatcher.Invoke(() =>
                 {
-                    Changelog_Copy.Text = "©2021 YAG-dev · Unable to check current Platform Tools version";
+                    PT_Version.Content = "Unable to check";
                 });
             }
         }
@@ -116,12 +107,29 @@ namespace Treble_Toolkit
         {
             string local_version_path = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "CurrentVersion", "VersionString.txt");
             int Out;
-            if (InternetGetConnectedState(out Out, 0) == true && File.Exists(local_version_path))
+            if (File.Exists(local_version_path))
+            {
+
+            }
+            else
+            {
+                String command = @"/C cd .. & cd .. & mkdir UpdateInfo & cd UpdateInfo & mkdir CurrentVersion & cd CurrentVersion";
+                ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
+                cmdsi.WindowStyle = ProcessWindowStyle.Hidden;
+                cmdsi.Arguments = command;
+                Process cmd = Process.Start(cmdsi);
+                cmd.WaitForExit();
+            }
+            if (InternetGetConnectedState(out Out, 0) == true)
             {
                 string beta_path = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "BetaProgram", "BetaProgram.txt");
                 string url = "https://www.dropbox.com/s/f76ks90k8gvi0p5/release.zip?dl=1";
                 string remote_version_url = "https://www.dropbox.com/s/elbmcwbx389z71o/version.txt?dl=1";
+                string remote_version_url2 = "https://www.dropbox.com/s/iseh3e7tzpujznt/version.txt?dl=1";
                 string version_key = "Treble Toolkit ";
+                string version_key2 = "Platform Tools ";
+                string update_path2 = System.IO.Path.Combine(Environment.CurrentDirectory, "TempDownload");
+                string local_version_path2 = System.IO.Path.Combine(Environment.CurrentDirectory, "PlatformTools.txt");
                 string update_path = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "Update", "Download");
                 string application_path = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateFiles");
                 string local_launcher_path = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "CurrentVersion", "LauncherVersion.txt");
@@ -142,20 +150,60 @@ namespace Treble_Toolkit
                     {
                         this.Dispatcher.Invoke(() =>
                         {
-                            TTOutOfDate.Visibility = Visibility.Visible;
-                            TTOutOfDateTxt1.Visibility = Visibility.Visible;
-                            TTOutOfDateTxt2.Visibility = Visibility.Visible;
-                            Update.Visibility = Visibility.Visible;
+                            DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                            // Set the color of the shadow to Black.
+                            Color myShadowColor = new Color();
+                            myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                                   // The Opacity property is used to control the alpha.
+                            myShadowColor.B = 0;
+                            myShadowColor.G = 255;
+                            myShadowColor.R = 255;
+                            myDropShadowEffect.Direction = 0;
+                            myDropShadowEffect.ShadowDepth = 0;
+
+                            myDropShadowEffect.Color = myShadowColor;
+                            TTUpdateRectangle.Effect = myDropShadowEffect;
+                            DeviceSpecificFeatures_Copy3.Effect = myDropShadowEffect;
+                            UpdateCheckTxt.Content = "Updates Available";
+                            DeviceSpecificFeatures_Copy3.Content = DeviceSpecificFeatures_Copy3.Content + " (Recommended)";
                         });
                     }
                     else
                     {
                         this.Dispatcher.Invoke(() =>
                         {
-                            TTOutOfDate.Visibility = Visibility.Hidden;
-                            TTOutOfDateTxt1.Visibility = Visibility.Hidden;
-                            TTOutOfDateTxt2.Visibility = Visibility.Hidden;
-                            Update.Visibility = Visibility.Hidden;
+                            UpdateCheckTxt.Content = "Up to date";
+                        });
+                    }
+                    if (UpdateManager.CheckForUpdate(version_key2, local_version_path2, remote_version_url2))
+                    {
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                            // Set the color of the shadow to Black.
+                            Color myShadowColor = new Color();
+                            myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                                   // The Opacity property is used to control the alpha.
+                            myShadowColor.B = 0;
+                            myShadowColor.G = 255;
+                            myShadowColor.R = 255;
+                            myDropShadowEffect.Direction = 0;
+                            myDropShadowEffect.ShadowDepth = 0;
+
+                            myDropShadowEffect.Color = myShadowColor;
+                            PTRectangle.Effect = myDropShadowEffect;
+                            DeviceSpecificFeatures_Copy3.Effect = myDropShadowEffect;
+                            PTCheck.Content = "Updates Available";
+                            DeviceSpecificFeatures_Copy3.Content = DeviceSpecificFeatures_Copy3.Content + " (Recommended)";
+                        });
+                    }
+                    else
+                    {
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            PTCheck.Content = "Up to date";
                         });
                     }
                 });
@@ -164,9 +212,6 @@ namespace Treble_Toolkit
             {
                 this.Dispatcher.Invoke(() =>
                 {
-                    TTOutOfDate.Visibility = Visibility.Visible;
-                    TTOutOfDateTxt1.Visibility = Visibility.Visible;
-                    TTOutOfDateTxt2.Visibility = Visibility.Visible;
                     DropShadowEffect myDropShadowEffect = new DropShadowEffect();
 
                     // Set the color of the shadow to Black.
@@ -180,10 +225,10 @@ namespace Treble_Toolkit
                     myDropShadowEffect.ShadowDepth = 0;
 
                     myDropShadowEffect.Color = myShadowColor;
-                    TTOutOfDate.Effect = myDropShadowEffect;
-                    TTOutOfDate.Fill = new SolidColorBrush(Color.FromArgb(255, 255, 0, 0));
-                    TTOutOfDateTxt1.Content = "⚠ Could not check for updates";
-                    TTOutOfDateTxt2.Content = "Updates might be available";
+                    TTUpdateRectangle.Effect = myDropShadowEffect;
+                    DeviceSpecificFeatures_Copy3.Effect = myDropShadowEffect;
+                    UpdateCheckTxt.Content = "Unable to check...";
+                    DeviceSpecificFeatures_Copy3.Content = DeviceSpecificFeatures_Copy3.Content + " (Recommended)";
                 });
             }
         }
@@ -207,7 +252,7 @@ namespace Treble_Toolkit
         }
         private void CheckForWindowsVersion()
         {
-            if (Environment.OSVersion.Version.Build <= 9)
+            if (Environment.OSVersion.Version.Build >= 9)
             {
 
             }
@@ -215,10 +260,7 @@ namespace Treble_Toolkit
             {
                 this.Dispatcher.Invoke(() =>
                 {
-                    W7WarningRectangle.Visibility = Visibility.Hidden;
-                    W7WarningTxt1.Visibility = Visibility.Hidden;
-                    W7WarningTxt2.Visibility = Visibility.Hidden;
-                    LearnMore.Visibility = Visibility.Hidden;
+                    VersionCheck.Content = VersionCheck.Content + " · Support features have been disabled.";
                 });
             }
         }

@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.IO;
 using System.Windows.Media.Animation;
 using System.Threading;
+using System.Windows.Threading;
 
 namespace Treble_Toolkit
 {
@@ -79,6 +80,18 @@ namespace Treble_Toolkit
                     DeviceSpecificFeatures_Copy.Content = "Show CMD Window While Flashing";
                 });
             }
+            Dispatcher dis = Dispatcher.CurrentDispatcher;
+            this.Dispatcher.Invoke(() =>
+            {
+                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-settings-dark.png"));
+                }
+                else
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-settings-light.png"));
+                }
+            });
         }
         private void Toggle1()
         {

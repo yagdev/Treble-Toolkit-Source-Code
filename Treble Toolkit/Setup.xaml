@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Treble_Toolkit"
       xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
-      mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight="565"
+      mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
       fw:AcrylicWindow.Enabled="True">
     <Page.Resources>
         <Style x:Key="FocusVisual">
@@ -93,35 +93,14 @@
 
     <Grid x:Name="GridMain">
         <Grid.RowDefinitions>
-            <RowDefinition Height="99*"/>
-            <RowDefinition Height="14*"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="12*"/>
             <ColumnDefinition Width="11*"/>
             <ColumnDefinition Width="12*"/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="Title" Content="Setup Important Files" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.ColumnSpan="3" Height="40" VerticalAlignment="Top">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
-        </Label>
-        <Button x:Name="DeviceSpecificFeatures_Copy" Content="Back" Margin="10,0,1,10" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="BackAbout_Click" Grid.Row="1">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
-        </Button>
-        <Rectangle x:Name="GSIRectangle" Fill="{DynamicResource SystemAltHighColorBrush}" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="8" RadiusX="8" Margin="10,41,0,0" Height="102" VerticalAlignment="Top" Grid.ColumnSpan="2">
+        <Rectangle Fill="{DynamicResource SystemAltHighColorBrush}" Height="70" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Bottom" RadiusY="12" RadiusX="12" Grid.ColumnSpan="3" Opacity="0.5">
             <Rectangle.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -131,27 +110,38 @@
                     BlurRadius="8"/>
             </Rectangle.Effect>
         </Rectangle>
-        <Label x:Name="GSIImgTitle" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Content="GSI Image" Margin="18,51,8,0" Height="40" VerticalAlignment="Top" Grid.ColumnSpan="2">
-            <Label.Effect>
+
+        <Button x:Name="DeviceSpecificFeatures_Copy" Content="Back" Margin="10,0,1,10" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="BackAbout_Click">
+            <Button.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
                     Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
-        </Label>
-        <Label x:Name="GSIFileLabel" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Content="Checking" Margin="18,93,8,0" Height="40" VerticalAlignment="Top" Grid.ColumnSpan="2">
-            <Label.Effect>
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="DeviceSpecificFeatures_Copy1" Content="Refresh" Margin="1,0,1,10" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Refresh" Grid.Column="1">
+            <Button.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
                     Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
-        </Label>
-        <Rectangle x:Name="BootRectangle" Fill="{DynamicResource SystemAltHighColorBrush}" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="8" RadiusX="8" Margin="10,146,0,0" Height="102" VerticalAlignment="Top" Grid.ColumnSpan="2">
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="DeviceSpecificFeatures_Copy2" Content="Next" Margin="1,0,10,10" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Next" Grid.Column="2">
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Button.Effect>
+        </Button>
+        <Rectangle x:Name="BugReport" Fill="{DynamicResource SystemAltHighColorBrush}" Height="90" Margin="10,10,10,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" RadiusY="8" RadiusX="8" Grid.ColumnSpan="3">
             <Rectangle.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -161,7 +151,7 @@
                     BlurRadius="8"/>
             </Rectangle.Effect>
         </Rectangle>
-        <Label x:Name="BootImgTitle" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Content="Boot Image" Margin="18,156,8,0" Height="40" VerticalAlignment="Top" Grid.ColumnSpan="2">
+        <Label x:Name="cc" Content="Setup" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="35" VerticalAlignment="Top" Margin="90,20,20,0" Grid.ColumnSpan="3">
             <Label.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -171,7 +161,7 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <Label x:Name="BootFileLabel" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Content="Checking" Margin="18,198,8,0" Height="40" VerticalAlignment="Top" Grid.ColumnSpan="2">
+        <Label x:Name="FileSizeCheck" Content="Change or delete files here" Margin="90,55,20,0" VerticalAlignment="Top" Height="35" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.ColumnSpan="3">
             <Label.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -181,7 +171,8 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <Rectangle x:Name="VbmetaRectangle" Fill="{DynamicResource SystemAltHighColorBrush}" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="8" RadiusX="8" Margin="10,251,0,0" Height="102" VerticalAlignment="Top" Grid.ColumnSpan="2">
+        <Image x:Name="DeviceInfoImg" Margin="20,20,0,0" Source="tt-phone.png" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70"/>
+        <Rectangle x:Name="GSIRectangle" Fill="{DynamicResource SystemAltHighColorBrush}" Height="90" Margin="10,102,10,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" RadiusY="8" RadiusX="8" Grid.ColumnSpan="3">
             <Rectangle.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -191,7 +182,7 @@
                     BlurRadius="8"/>
             </Rectangle.Effect>
         </Rectangle>
-        <Label x:Name="VbmetaImgTitle" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Content="Vbmeta Image" Margin="18,261,8,0" Height="40" VerticalAlignment="Top" Grid.ColumnSpan="2">
+        <Label x:Name="cc_Copy" Content="GSI Image" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="35" VerticalAlignment="Top" Margin="90,112,20,0" Grid.ColumnSpan="3">
             <Label.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -201,7 +192,7 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <Label x:Name="VbmetaFileLabel" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Content="Checking" Margin="18,303,8,0" Height="40" VerticalAlignment="Top" Grid.ColumnSpan="2">
+        <Label x:Name="GSIFileLabel" Content="Checking" Margin="90,147,227,0" VerticalAlignment="Top" Height="35" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.ColumnSpan="3">
             <Label.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -211,7 +202,28 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <Rectangle x:Name="TWRPRectangle" Fill="{DynamicResource SystemAltHighColorBrush}" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="8" RadiusX="8" Margin="10,356,0,0" Height="102" VerticalAlignment="Top" Grid.ColumnSpan="2">
+        <Image x:Name="DeviceInfoImg_Copy" Margin="20,112,0,0" Source="tt-phone.png" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70"/>
+        <Button x:Name="Change1b" Content="Change" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Change1" Margin="0,147,122,0" Grid.Column="2" Height="35" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100">
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="Delete1b" Content="Delete" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Delete1" Margin="0,147,20,0" Grid.Column="2" Height="35" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100">
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Button.Effect>
+        </Button>
+        <Rectangle x:Name="BootRectangle" Fill="{DynamicResource SystemAltHighColorBrush}" Height="90" Margin="10,194,10,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" RadiusY="8" RadiusX="8" Grid.ColumnSpan="3">
             <Rectangle.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -221,7 +233,7 @@
                     BlurRadius="8"/>
             </Rectangle.Effect>
         </Rectangle>
-        <Label x:Name="TWRPImgTitle" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Content="TWRP Image" Margin="18,366,8,0" Height="40" VerticalAlignment="Top" Grid.ColumnSpan="2">
+        <Label x:Name="cc_Copy1" Content="Boot Image" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="35" VerticalAlignment="Top" Margin="90,204,20,0" Grid.ColumnSpan="3">
             <Label.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -231,7 +243,7 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <Label x:Name="TWRPFileLabel" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Content="Checking" Margin="18,408,8,0" Height="40" VerticalAlignment="Top" Grid.ColumnSpan="2">
+        <Label x:Name="BootFileLabel" Content="Checking" Margin="90,239,227,0" VerticalAlignment="Top" Height="35" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.ColumnSpan="3">
             <Label.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -241,7 +253,8 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <Button x:Name="Change1b" Content="Change" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Change1" Margin="2,41,10,0" Grid.Column="2" Height="50" VerticalAlignment="Top">
+        <Image x:Name="DeviceInfoImg_Copy1" Margin="20,204,0,0" Source="tt-phone.png" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70"/>
+        <Button x:Name="Change2b" Content="Change" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Change2" Margin="0,239,122,0" Grid.Column="2" Height="35" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100">
             <Button.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -251,7 +264,7 @@
                     BlurRadius="8"/>
             </Button.Effect>
         </Button>
-        <Button x:Name="Delete1b" Content="Delete" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Delete1" Margin="2,93,10,0" Grid.Column="2" Height="50" VerticalAlignment="Top">
+        <Button x:Name="Delete2b" Content="Delete" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Delete2" Margin="0,239,20,0" Grid.Column="2" Height="35" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100">
             <Button.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -261,7 +274,38 @@
                     BlurRadius="8"/>
             </Button.Effect>
         </Button>
-        <Button x:Name="Change2b" Content="Change" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Change2" Margin="2,146,10,0" Grid.Column="2" Height="50" VerticalAlignment="Top">
+        <Rectangle x:Name="VbmetaRectangle" Fill="{DynamicResource SystemAltHighColorBrush}" Height="90" Margin="10,286,10,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" RadiusY="8" RadiusX="8" Grid.ColumnSpan="3">
+            <Rectangle.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Label x:Name="cc_Copy2" Content="Vbmeta Image" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="35" VerticalAlignment="Top" Margin="90,296,20,0" Grid.ColumnSpan="3">
+            <Label.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemAltHighColor}"
+                    Opacity="0.8"
+                    BlurRadius="2"/>
+            </Label.Effect>
+        </Label>
+        <Label x:Name="VbmetaFileLabel" Content="Checking" Margin="90,331,227,0" VerticalAlignment="Top" Height="35" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.ColumnSpan="3">
+            <Label.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemAltHighColor}"
+                    Opacity="0.8"
+                    BlurRadius="2"/>
+            </Label.Effect>
+        </Label>
+        <Image x:Name="DeviceInfoImg_Copy2" Margin="20,296,0,0" Source="tt-phone.png" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70"/>
+        <Button x:Name="Change3b" Content="Change" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Change3" Margin="0,331,122,0" Grid.Column="2" Height="35" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100">
             <Button.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -271,7 +315,7 @@
                     BlurRadius="8"/>
             </Button.Effect>
         </Button>
-        <Button x:Name="Delete2b" Content="Delete" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Delete2" Margin="2,198,10,0" Grid.Column="2" Height="50" VerticalAlignment="Top">
+        <Button x:Name="Delete3b" Content="Delete" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Delete3" Margin="0,331,20,0" Grid.Column="2" Height="35" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100">
             <Button.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -281,7 +325,38 @@
                     BlurRadius="8"/>
             </Button.Effect>
         </Button>
-        <Button x:Name="Change3b" Content="Change" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Change3" Margin="2,251,10,0" Grid.Column="2" Height="50" VerticalAlignment="Top">
+        <Rectangle x:Name="TWRPRectangle" Fill="{DynamicResource SystemAltHighColorBrush}" Height="90" Margin="10,378,10,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" RadiusY="8" RadiusX="8" Grid.ColumnSpan="3">
+            <Rectangle.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Label x:Name="cc_Copy3" Content="TWRP Image" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="35" VerticalAlignment="Top" Margin="90,388,20,0" Grid.ColumnSpan="3">
+            <Label.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemAltHighColor}"
+                    Opacity="0.8"
+                    BlurRadius="2"/>
+            </Label.Effect>
+        </Label>
+        <Label x:Name="TWRPFileLabel" Content="Checking" Margin="90,423,227,0" VerticalAlignment="Top" Height="35" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.ColumnSpan="3">
+            <Label.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemAltHighColor}"
+                    Opacity="0.8"
+                    BlurRadius="2"/>
+            </Label.Effect>
+        </Label>
+        <Image x:Name="DeviceInfoImg_Copy3" Margin="20,388,0,0" Source="tt-phone.png" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70"/>
+        <Button x:Name="Change4b" Content="Change" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Change4" Margin="0,423,122,0" Grid.Column="2" Height="35" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100">
             <Button.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -291,47 +366,7 @@
                     BlurRadius="8"/>
             </Button.Effect>
         </Button>
-        <Button x:Name="Delete3b" Content="Delete" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Delete3" Margin="2,303,10,0" Grid.Column="2" Height="50" VerticalAlignment="Top">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
-        </Button>
-        <Button x:Name="Change4b" Content="Change" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Change4" Margin="2,356,10,0" Grid.Column="2" Height="50" VerticalAlignment="Top">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
-        </Button>
-        <Button x:Name="Delete4b" Content="Delete" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Delete4" Margin="2,408,10,0" Grid.Column="2" Height="50" VerticalAlignment="Top">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
-        </Button>
-        <Button x:Name="DeviceSpecificFeatures_Copy1" Content="Refresh" Margin="1,0,1,10" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Refresh" Grid.Row="1" Grid.Column="1">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
-        </Button>
-        <Button x:Name="DeviceSpecificFeatures_Copy2" Content="Next" Margin="1,0,10,10" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Next" Grid.Row="1" Grid.Column="2">
+        <Button x:Name="Delete4b" Content="Delete" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Delete4" Margin="0,423,20,0" Grid.Column="2" Height="35" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100">
             <Button.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"

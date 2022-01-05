@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Windows.Media.Animation;
 using System.IO;
 using System.Threading;
+using System.Windows.Media;
 
 namespace Treble_Toolkit
 {
@@ -18,6 +19,8 @@ namespace Treble_Toolkit
             InitializeComponent();
             Thread thread = new Thread(Animate);
             thread.Start();
+            Thread thread2 = new Thread(UpdateUI);
+            thread2.Start();
         }
 
         private void AButton_Click(object sender, RoutedEventArgs e)
@@ -147,6 +150,20 @@ namespace Treble_Toolkit
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             const string strCmdText = "/C adb.exe reboot-bootloader & fastboot.exe format vendor_b";
             Process.Start("CMD.exe", strCmdText);
+        }
+        private void UpdateUI()
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-erase-dark.png"));
+                }
+                else
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-erase-light.png"));
+                }
+            });
         }
     }
 }

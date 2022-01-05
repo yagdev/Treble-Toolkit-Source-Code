@@ -35,6 +35,8 @@ namespace Treble_Toolkit
             thread.Start();
             Thread thread2 = new Thread(Check);
             thread2.Start();
+            Thread thread3 = new Thread(UpdateUI);
+            thread3.Start();
         }
 
         private void BackAbout_Click(object sender, RoutedEventArgs e)
@@ -145,20 +147,31 @@ namespace Treble_Toolkit
             {
                 this.Dispatcher.Invoke(() =>
                 {
-                    PhoneWarning.Visibility = Visibility.Visible;
-                    PhoneWarningTxt1.Visibility = Visibility.Visible;
-                    PhoneWarningTxt2.Visibility = Visibility.Visible;
                     PhoneWarningBtn.Visibility = Visibility.Visible;
+                    cc.Content = "Setup · Phone Not Detected";
+                    DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                    // Set the color of the shadow to Black.
+                    Color myShadowColor = new Color();
+                    myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                           // The Opacity property is used to control the alpha.
+                    myShadowColor.B = 0;
+                    myShadowColor.G = 0;
+                    myShadowColor.R = 255;
+                    myDropShadowEffect.Direction = 0;
+                    myDropShadowEffect.ShadowDepth = 0;
+
+                    myDropShadowEffect.Color = myShadowColor;
+                    BugReport.Effect = myDropShadowEffect;
                 });
             }
             else
             {
                 this.Dispatcher.Invoke(() =>
                 {
-                    PhoneWarning.Visibility = Visibility.Hidden;
-                    PhoneWarningTxt1.Visibility = Visibility.Hidden;
-                    PhoneWarningTxt2.Visibility = Visibility.Hidden;
                     PhoneWarningBtn.Visibility = Visibility.Hidden;
+                    cc.Content = "Setup";
+                    BugReport.Effect = DeviceSpecificFeatures_Copy.Effect;
                 });
             }
         }
@@ -193,17 +206,34 @@ namespace Treble_Toolkit
             {
                 if (ADBStatus.Content == "Not Detected" && FastbootStatus.Content == "Not Detected")
                 {
-                    PhoneWarning.Visibility = Visibility.Visible;
-                    PhoneWarningTxt1.Visibility = Visibility.Visible;
-                    PhoneWarningTxt2.Visibility = Visibility.Visible;
-                    PhoneWarningBtn.Visibility = Visibility.Visible;
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        PhoneWarningBtn.Visibility = Visibility.Visible;
+                        cc.Content = "Setup · Phone Not Detected";
+                        DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                        // Set the color of the shadow to Black.
+                        Color myShadowColor = new Color();
+                        myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                               // The Opacity property is used to control the alpha.
+                        myShadowColor.B = 0;
+                        myShadowColor.G = 0;
+                        myShadowColor.R = 255;
+                        myDropShadowEffect.Direction = 0;
+                        myDropShadowEffect.ShadowDepth = 0;
+
+                        myDropShadowEffect.Color = myShadowColor;
+                        BugReport.Effect = myDropShadowEffect;
+                    });
                 }
                 else
                 {
-                    PhoneWarning.Visibility = Visibility.Hidden;
-                    PhoneWarningTxt1.Visibility = Visibility.Hidden;
-                    PhoneWarningTxt2.Visibility = Visibility.Hidden;
-                    PhoneWarningBtn.Visibility = Visibility.Hidden;
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        PhoneWarningBtn.Visibility = Visibility.Hidden;
+                        cc.Content = "Setup";
+                        BugReport.Effect = DeviceSpecificFeatures_Copy.Effect;
+                    });
                 }
             });
         }
@@ -238,17 +268,53 @@ namespace Treble_Toolkit
             {
                 if (ADBStatus.Content == "Not Detected" && FastbootStatus.Content == "Not Detected")
                 {
-                    PhoneWarning.Visibility = Visibility.Visible;
-                    PhoneWarningTxt1.Visibility = Visibility.Visible;
-                    PhoneWarningTxt2.Visibility = Visibility.Visible;
-                    PhoneWarningBtn.Visibility = Visibility.Visible;
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        PhoneWarningBtn.Visibility = Visibility.Visible;
+                        cc.Content = "Setup · Phone Not Detected";
+                        DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                        // Set the color of the shadow to Black.
+                        Color myShadowColor = new Color();
+                        myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                               // The Opacity property is used to control the alpha.
+                        myShadowColor.B = 0;
+                        myShadowColor.G = 0;
+                        myShadowColor.R = 255;
+                        myDropShadowEffect.Direction = 0;
+                        myDropShadowEffect.ShadowDepth = 0;
+
+                        myDropShadowEffect.Color = myShadowColor;
+                        BugReport.Effect = myDropShadowEffect;
+                    });
                 }
                 else
                 {
-                    PhoneWarning.Visibility = Visibility.Hidden;
-                    PhoneWarningTxt1.Visibility = Visibility.Hidden;
-                    PhoneWarningTxt2.Visibility = Visibility.Hidden;
-                    PhoneWarningBtn.Visibility = Visibility.Hidden;
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        PhoneWarningBtn.Visibility = Visibility.Hidden;
+                        cc.Content = "Setup";
+                        BugReport.Effect = DeviceSpecificFeatures_Copy.Effect;
+                    });
+                }
+            });
+        }
+        private void UpdateUI()
+        {
+            Dispatcher dis = Dispatcher.CurrentDispatcher;
+            this.Dispatcher.Invoke(() =>
+            {
+                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-settings-dark.png"));
+                    DeviceInfoImg_Copy.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-phone-dark.png"));
+                    DeviceInfoImg_Copy1.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-phone-dark.png"));
+                }
+                else
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-settings-light.png"));
+                    DeviceInfoImg_Copy.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-phone-light.png"));
+                    DeviceInfoImg_Copy1.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-phone-light.png"));
                 }
             });
         }

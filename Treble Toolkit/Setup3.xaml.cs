@@ -19,6 +19,7 @@ using System.Windows.Threading;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Media.Animation;
+using System.Windows.Media.Effects;
 
 namespace Treble_Toolkit
 {
@@ -39,6 +40,8 @@ namespace Treble_Toolkit
             thread2.Start();
             Thread thread3 = new Thread(CurrentVersionCheck);
             thread3.Start();
+            Thread thread4 = new Thread(UpdateUI);
+            thread4.Start();
         }
 
         private void Change2(object sender, RoutedEventArgs e)
@@ -99,12 +102,21 @@ namespace Treble_Toolkit
         }
         private void UpdateUI()
         {
+            Dispatcher dis = Dispatcher.CurrentDispatcher;
             this.Dispatcher.Invoke(() =>
             {
-                PhoneWarning.Visibility = Visibility.Hidden;
-                PhoneWarningBtn.Visibility = Visibility.Hidden;
-                PhoneWarningTxt1.Visibility = Visibility.Hidden;
-                PhoneWarningTxt2.Visibility = Visibility.Hidden;
+                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-settings-dark.png"));
+                    DeviceInfoImg_Copy.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-up-dark.png"));
+                    DeviceInfoImg_Copy1.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-checkmark-dark.png"));
+                }
+                else
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-settings-light.png"));
+                    DeviceInfoImg_Copy.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-up-light.png"));
+                    DeviceInfoImg_Copy1.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-checkmark-light.png"));
+                }
             });
         }
         private void CheckForUpdates()
@@ -131,22 +143,33 @@ namespace Treble_Toolkit
                 {
                     this.Dispatcher.Invoke(() =>
                     {
-                        UpdateCheckTxt2.Content = "Update Available";
-                        PhoneWarning.Visibility = Visibility.Visible;
                         PhoneWarningBtn.Visibility = Visibility.Visible;
-                        PhoneWarningTxt1.Visibility = Visibility.Visible;
-                        PhoneWarningTxt2.Visibility = Visibility.Visible;
+                        cc.Content = "Setup · Updates Available";
+                        UpdateCheckTxt2.Content = "Updates Available";
+                        DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+
+                        // Set the color of the shadow to Black.
+                        Color myShadowColor = new Color();
+                        myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                               // The Opacity property is used to control the alpha.
+                        myShadowColor.B = 0;
+                        myShadowColor.G = 255;
+                        myShadowColor.R = 255;
+                        myDropShadowEffect.Direction = 0;
+                        myDropShadowEffect.ShadowDepth = 0;
+
+                        myDropShadowEffect.Color = myShadowColor;
+                        BugReport.Effect = myDropShadowEffect;
                     });
                 }
                 else
                 {
                     this.Dispatcher.Invoke(() =>
                     {
-                        UpdateCheckTxt2.Content = "No Updates Available";
-                        PhoneWarning.Visibility = Visibility.Hidden;
                         PhoneWarningBtn.Visibility = Visibility.Hidden;
-                        PhoneWarningTxt1.Visibility = Visibility.Hidden;
-                        PhoneWarningTxt2.Visibility = Visibility.Hidden;
+                        cc.Content = "Setup";
+                        UpdateCheckTxt2.Content = "Up To Date";
+                        BugReport.Effect = DeviceSpecificFeatures_Copy.Effect;
                     });
                 }
             }
@@ -173,7 +196,7 @@ namespace Treble_Toolkit
             {
                 this.Dispatcher.Invoke(() =>
                 {
-                    CurrentVersion.Content = "Unknown";
+                    CurrentVersion.Content = "Unable to determine current version";
                 });
             }
         }

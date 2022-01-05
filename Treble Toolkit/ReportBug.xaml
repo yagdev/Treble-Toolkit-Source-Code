@@ -67,17 +67,17 @@
                                 <ColumnDefinition Width="Auto" MinWidth="21"/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <Border x:Name="checkBoxBorder" BorderBrush="{DynamicResource SystemAltHighColorBrush}" BorderThickness="2" Background="Transparent" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="1,1,0,0" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" CornerRadius="3" Height="20" Width="20">
+                            <Border x:Name="checkBoxBorder" BorderBrush="{DynamicResource SystemAltHighColorBrush}" BorderThickness="2" Background="{DynamicResource SystemBaseHighColorBrush}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="1,1,0,0" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" CornerRadius="3" Height="20" Width="20">
                                 <Border.Effect>
                                     <DropShadowEffect
                                         ShadowDepth="0"
                                         Direction="0"
-                                        Color="{DynamicResource SystemBaseHighColor}"
+                                        Color="{DynamicResource SystemHighColor}"
                                         Opacity="0.5"
                                         BlurRadius="4"/>
                                 </Border.Effect>
                                 <Grid x:Name="markGrid">
-                                    <Path x:Name="optionMark" Data="M9.2624814,1.1359586 L4.3627071,8.4484586 4.1986657,8.4484586 0,4.8223593 1.1854514,3.2701036 3.9510714,5.6534493 7.7380736,1.4168886E-05 9.2624814,1.1359586 z" Fill="{DynamicResource SystemBaseHighColorBrush}" Margin="3,3,0,0" Opacity="0" Stretch="None"/>
+                                    <Path x:Name="optionMark" Data="M9.2624814,1.1359586 L4.3627071,8.4484586 4.1986657,8.4484586 0,4.8223593 1.1854514,3.2701036 3.9510714,5.6534493 7.7380736,1.4168886E-05 9.2624814,1.1359586 z" Fill="{DynamicResource SystemAltHighColorBrush}" Margin="3,3,0,0" Opacity="0" Stretch="None"/>
                                     <Rectangle x:Name="indeterminateMark" Fill="{DynamicResource SystemAltHighColorBrush}" Margin="2" Opacity="0"/>
                                 </Grid>
                             </Border>
@@ -103,7 +103,7 @@
                             <Trigger Property="IsChecked" Value="true">
                                 <Setter Property="Opacity" TargetName="optionMark" Value="1"/>
                                 <Setter Property="Opacity" TargetName="indeterminateMark" Value="0"/>
-                                <Setter Property="Background" TargetName="checkBoxBorder" Value="{DynamicResource SystemAltHighColorBrush}"/>
+                                <Setter Property="Background" TargetName="checkBoxBorder" Value="{DynamicResource SystemHighColorBrush}"/>
                             </Trigger>
                             <Trigger Property="IsChecked" Value="{x:Null}">
                                 <Setter Property="Opacity" TargetName="optionMark" Value="0"/>
@@ -210,57 +210,27 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="Title" Content="Report Bug" Foreground="{DynamicResource SystemBaseHighColorBrush}" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.ColumnSpan="2" Height="40" VerticalAlignment="Top" VerticalContentAlignment="Center">
-            <Label.Effect>
+        <Rectangle x:Name="BugReport_Copy" Fill="{DynamicResource SystemAltHighColorBrush}" Height="140" Margin="10,10,10,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" RadiusY="8" RadiusX="8" Grid.ColumnSpan="2">
+            <Rectangle.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
                     Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
-        </Label>
-        <Label x:Name="VersionString" Content="Choose what to include:" Margin="0,40,0,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="2" Height="26" VerticalAlignment="Top">
-            <Label.Effect>
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Rectangle Fill="{DynamicResource SystemAltHighColorBrush}" Height="70" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Bottom" RadiusY="12" RadiusX="12" Grid.ColumnSpan="2" Opacity="0.5">
+            <Rectangle.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
                     Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
-        </Label>
-        <CheckBox x:Name="PhoneInfo" Content="Include Phone Information (ADB Required)" Margin="10,66,10,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Style="{DynamicResource Checkbox21.7.1}" Height="25" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="14" Foreground="{DynamicResource SystemBaseHighColorBrush}" IsChecked="True">
-            <CheckBox.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </CheckBox.Effect>
-            </CheckBox>
-        <CheckBox x:Name="PCInfo" Content="Include Computer Information" Margin="10,91,10,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Style="{DynamicResource Checkbox21.7.1}" Height="25" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="14" Foreground="{DynamicResource SystemBaseHighColorBrush}" IsChecked="True">
-            <CheckBox.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </CheckBox.Effect>
-            </CheckBox>
-        <Label x:Name="VersionString_Copy" Content="Please tell us what happened:" Margin="10,116,10,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Top">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
-        </Label>
-        <TextBox x:Name="BugReport" Margin="10,141,10,65" TextWrapping="Wrap" Text="Please describe your issue here" Grid.ColumnSpan="2" Style="{DynamicResource TextBox21.7.1}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" >
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <TextBox x:Name="BugReport" Margin="10,155,10,75" TextWrapping="Wrap" Text="Please describe your issue here" Grid.ColumnSpan="2" Style="{DynamicResource TextBox21.7.1}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" >
             <TextBox.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -269,8 +239,8 @@
                     Opacity="0.8"
                     BlurRadius="2"/>
             </TextBox.Effect>
-            </TextBox>
-            <Button x:Name="DeviceSpecificFeatures_Copy1" Content="Back" Margin="10,0,1,10" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="BackAbout_Click">
+        </TextBox>
+        <Button x:Name="DeviceSpecificFeatures_Copy1" Content="Back" Margin="10,0,1,10" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="BackAbout_Click">
             <Button.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -290,6 +260,47 @@
                     BlurRadius="8"/>
             </Button.Effect>
         </Button>
+        <Label x:Name="cc" Content="Report Bug" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="35" VerticalAlignment="Top" Margin="90,20,20,0" Grid.ColumnSpan="2">
+            <Label.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemAltHighColor}"
+                    Opacity="0.8"
+                    BlurRadius="2"/>
+            </Label.Effect>
+        </Label>
+        <Label x:Name="FileSizeCheck" Content="Choose what to include" Margin="90,55,20,0" VerticalAlignment="Top" Height="35" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.ColumnSpan="2">
+            <Label.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemAltHighColor}"
+                    Opacity="0.8"
+                    BlurRadius="2"/>
+            </Label.Effect>
+        </Label>
+        <Image x:Name="DeviceInfoImg" Margin="20,20,0,0" Source="tt-phone.png" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70"/>
+        <CheckBox x:Name="PhoneInfo" Content="Include Phone Information (ADB Required)" Margin="20,90,20,0" VerticalAlignment="Top" Style="{DynamicResource Checkbox21.7.1}" Height="25" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="14" Foreground="{DynamicResource SystemBaseHighColorBrush}" IsChecked="True" Grid.ColumnSpan="2">
+            <CheckBox.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemAltHighColor}"
+                    Opacity="0.8"
+                    BlurRadius="2"/>
+            </CheckBox.Effect>
+        </CheckBox>
+        <CheckBox x:Name="PCInfo" Content="Include Computer Information" Margin="20,115,20,0" VerticalAlignment="Top" Style="{DynamicResource Checkbox21.7.1}" Height="25" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="14" Foreground="{DynamicResource SystemBaseHighColorBrush}" IsChecked="True" Grid.ColumnSpan="2">
+            <CheckBox.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemAltHighColor}"
+                    Opacity="0.8"
+                    BlurRadius="2"/>
+            </CheckBox.Effect>
+        </CheckBox>
 
     </Grid>
 </Page>

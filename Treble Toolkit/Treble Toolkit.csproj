@@ -309,6 +309,9 @@
     <Compile Include="FixConnectionPhoneStep3.xaml.cs">
       <DependentUpon>FixConnectionPhoneStep3.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FlashGSI.xaml.cs">
+      <DependentUpon>FlashGSI.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FlashingGSITUT.xaml.cs">
       <DependentUpon>FlashingGSITUT.xaml</DependentUpon>
     </Compile>
@@ -444,6 +447,9 @@
     <Compile Include="TWRPFlashPickFile.xaml.cs">
       <DependentUpon>TWRPFlashPickFile.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TWRPShits.xaml.cs">
+      <DependentUpon>TWRPShits.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UnlockBootloader.xaml.cs">
       <DependentUpon>UnlockBootloader.xaml</DependentUpon>
     </Compile>
@@ -532,6 +538,10 @@
     <Page Include="FixConnectionPhoneStep3.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FlashGSI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FlashingGSITUT.xaml">
       <SubType>Designer</SubType>
@@ -777,6 +787,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="TWRPShits.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UnlockBootloader.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -965,6 +979,168 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="TrebleToolkitIcon21.9.1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Alcatel-1S-500x500.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Alcatel1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="mate10liteblackfront.77fafb1ed7.999x550x550.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="p20lite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="oneplus_6_64gb_mirror_black_header.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="i413878.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="face-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="1510-w320h320.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="i410441.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="3c5973_c1cf50e6089f443ba92025a6531f0a6f_mv2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-source-download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-phone-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-phone-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-usb-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-usb-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-folder-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-folder-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-info-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-info-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-settings-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-settings-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-checkmark-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-checkmark-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-erase-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-erase-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-flash-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-flash-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-fnf-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-fnf-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-flashing-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-flashing-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-twrp-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-twrp-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-more-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-more-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-web-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-web-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-lock-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-lock-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-up-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-up-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-freecmd-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-freecmd-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-gsi-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-gsi-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-bootimg-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-bootimg-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-twrpimg-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-twrpimg-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-bug-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-bug-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-vbmetaimg-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-vbmetaimg-dark.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

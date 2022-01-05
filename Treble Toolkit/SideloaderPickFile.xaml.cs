@@ -8,6 +8,7 @@ using System.Threading;
 using NHotkey;
 using System.Windows.Input;
 using NHotkey.Wpf;
+using System.Windows.Media;
 
 namespace Treble_Toolkit
 {
@@ -20,10 +21,14 @@ namespace Treble_Toolkit
         {
             InitializeComponent();
             HotkeyManager.Current.AddOrReplace("Increment", Key.D, ModifierKeys.Control, OnIncrement);
+            Debug1.Visibility = Visibility.Hidden;
+            DbgRct1.Visibility = Visibility.Hidden;
             Thread thread = new Thread(Animate);
             thread.Start();
             Thread thread2 = new Thread(Prepare);
             thread2.Start();
+            Thread thread3 = new Thread(UpdateUI);
+            thread3.Start();
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -51,6 +56,7 @@ namespace Treble_Toolkit
         private void OnIncrement(object sender, HotkeyEventArgs e)
         {
             Debug1.Visibility = Visibility.Visible;
+            DbgRct1.Visibility = Visibility.Visible;
         }
         //Threading starts here -- 5/11/2021@22:07, YAG-dev, 21.12+
         private void Animate()
@@ -117,6 +123,20 @@ namespace Treble_Toolkit
                 Process cmd4 = Process.Start(cmdsi4);
                 cmd4.WaitForExit();
             }
+        }
+        private void UpdateUI()
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-fnf-dark.png"));
+                }
+                else
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-fnf-light.png"));
+                }
+            });
         }
     }
 }

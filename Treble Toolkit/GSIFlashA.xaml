@@ -53,7 +53,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Style x:Key="PgrBar21.4.2" TargetType="{x:Type ProgressBar}">
+        <Style TargetType="{x:Type ProgressBar}" x:Key="PgrBar21.4.2">
             <Setter Property="Foreground" Value="{StaticResource ProgressBar.Progress}"/>
             <Setter Property="Background" Value="{StaticResource ProgressBar.Background}"/>
             <Setter Property="BorderBrush" Value="{StaticResource ProgressBar.Border}"/>
@@ -81,11 +81,11 @@
                                     </VisualState>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
-                            <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" Background="{TemplateBinding Background}" CornerRadius="5"/>
-                            <Rectangle x:Name="PART_Track" RadiusX="0" RadiusY="0"/>
+                            <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="5"/>
+                            <Rectangle x:Name="PART_Track" RadiusX="9" RadiusY="9"/>
                             <Grid x:Name="PART_Indicator" ClipToBounds="true" HorizontalAlignment="Left" Margin="0">
-                                <Rectangle x:Name="Indicator" Fill="{TemplateBinding Foreground}" RadiusX="0" RadiusY="0"/>
-                                <Rectangle x:Name="Animation" Fill="{TemplateBinding Foreground}" RenderTransformOrigin="0.5,0.5" RadiusX="0" RadiusY="0">
+                                <Rectangle x:Name="Indicator" Fill="{TemplateBinding Foreground}" RadiusX="8" RadiusY="8" Margin="1,1,2.3,1"/>
+                                <Rectangle x:Name="Animation" Fill="{TemplateBinding Foreground}" RenderTransformOrigin="0.5,0.5" RadiusX="8" RadiusY="8" Margin="1">
                                     <Rectangle.RenderTransform>
                                         <TransformGroup>
                                             <ScaleTransform/>
@@ -123,16 +123,6 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <ProgressBar x:Name="status_pgr" Height="75" VerticalAlignment="Bottom" Background="{x:Null}" Foreground="{DynamicResource SystemBaseHighColorBrush}" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5" BorderThickness="3" UseLayoutRounding="False" Style="{DynamicResource PgrBar21.4.2}" Value="50" Opacity="0.5" Grid.Row="1">
-            <ProgressBar.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="2"/>
-            </ProgressBar.Effect>
-        </ProgressBar>
         <Rectangle x:Name="continue_box" Fill="{DynamicResource SystemBaseLowColorBrush}" Margin="10,0,312,259.667" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" RadiusY="9.5" RadiusX="9.5" Height="50" VerticalAlignment="Bottom" StrokeThickness="2" Visibility="Hidden"/>
         <Label x:Name="continue_lbl" Content="If Something Went Wrong, Press This Button." Margin="10,0,312,259.667" VerticalAlignment="Bottom" Height="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="20" Foreground="White" Visibility="Hidden">
             <Label.Effect>
@@ -144,37 +134,17 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <Label Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="20" Height="40" VerticalAlignment="Top" Content="Flashing GSI... (A)">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
-        </Label>
-        <Label x:Name="status_lbl" Content="Ah shoot, seems like we messed up. Please restart Treble Toolkit Installer to retry." Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" Height="73" VerticalAlignment="Bottom" FontSize="10" Grid.Row="1">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
-        </Label>
-        <Button x:Name="DeviceSpecificFeatures" Content="Cancel (Might Cause Problems)" Margin="10,0,10,2" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="DSF_Click">
-            <Button.Effect>
+        <ProgressBar x:Name="status_pgr" Height="75" VerticalAlignment="Bottom" Background="{x:Null}" Foreground="{DynamicResource SystemBaseHighColorBrush}" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5" BorderThickness="3" UseLayoutRounding="False" Style="{DynamicResource PgrBar21.4.2}" Value="50" Opacity="0.5" Grid.Row="1">
+            <ProgressBar.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
                     Direction="0"
                     Color="{DynamicResource SystemBaseHighColor}"
                     Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
-        </Button>
-        <Label x:Name="status_lbl_Copy" Content="Looks like we froze. Please install the ADB/Fastboot drivers." Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="10" Height="25" VerticalAlignment="Bottom" Margin="0,0,0,54">
+                    BlurRadius="2"/>
+            </ProgressBar.Effect>
+        </ProgressBar>
+        <Label x:Name="status_lbl" Content="Ah shoot, seems like we messed up. Please restart Treble Toolkit Installer to retry." Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" Height="75" VerticalAlignment="Bottom" FontSize="10" Grid.Row="1">
             <Label.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -184,7 +154,7 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <Rectangle Fill="{DynamicResource SystemAltHighColorBrush}" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="8" RadiusX="8" Margin="10,45,10,0" Height="102" VerticalAlignment="Top">
+        <Rectangle x:Name="GSIRectangle" Fill="{DynamicResource SystemAltHighColorBrush}" Height="90" Margin="10,10,10,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" RadiusY="8" RadiusX="8">
             <Rectangle.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -194,7 +164,7 @@
                     BlurRadius="8"/>
             </Rectangle.Effect>
         </Rectangle>
-        <Label x:Name="BootmgTitle" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Content="Flashing On..." Margin="20,55,20,0" Height="40" VerticalAlignment="Top">
+        <Label x:Name="PhoneStatus" Content="Flashing On..." Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="35" VerticalAlignment="Top" Margin="90,20,20,0">
             <Label.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -204,7 +174,7 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <Label x:Name="CheckingDevice" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Content="Checking" Margin="20,96,20,0" Height="40" VerticalAlignment="Top">
+        <Label x:Name="PhoneStatus2" Content="Checking status..." Margin="90,55,20,0" VerticalAlignment="Top" Height="35" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14">
             <Label.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -214,5 +184,16 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
+        <Image x:Name="DeviceInfoImg" Margin="20,20,0,0" Source="tt-phone.png" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70"/>
+        <Button x:Name="DeviceSpecificFeatures" Content="Cancel" Margin="0,55,20,0" VerticalAlignment="Top" Height="35" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="DSF_Click" HorizontalAlignment="Right" Width="100">
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Button.Effect>
+        </Button>
     </Grid>
 </Page>

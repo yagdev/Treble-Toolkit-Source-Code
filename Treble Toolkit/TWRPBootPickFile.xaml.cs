@@ -8,6 +8,7 @@ using NHotkey.Wpf;
 using NHotkey;
 using System.Windows.Input;
 using System.Threading;
+using System.Windows.Media;
 
 namespace Treble_Toolkit
 {
@@ -20,14 +21,19 @@ namespace Treble_Toolkit
         {
             InitializeComponent();
             HotkeyManager.Current.AddOrReplace("Increment", Key.D, ModifierKeys.Control, OnIncrement);
+            Debug1.Visibility = Visibility.Hidden;
+            DbgRct1.Visibility = Visibility.Hidden;
             Thread thread = new Thread(Animate);
             thread.Start();
             Thread thread2 = new Thread(Preparation);
             thread2.Start();
+            Thread thread3 = new Thread(UpdateUI);
+            thread3.Start();
         }
         private void OnIncrement(object sender, HotkeyEventArgs e)
         {
             Debug1.Visibility = Visibility.Visible;
+            DbgRct1.Visibility = Visibility.Visible;
         }
         private void Back_Click(object sender, RoutedEventArgs e)
         {
@@ -95,8 +101,7 @@ namespace Treble_Toolkit
                 {
                     this.Dispatcher.Invoke(() =>
                     {
-                        Title.Content = "Holy crap, that's a big file!";
-                        FileSize.Visibility = Visibility.Visible;
+                        
                     });
                 }
                 else
@@ -127,6 +132,20 @@ namespace Treble_Toolkit
                 Process cmd4 = Process.Start(cmdsi4);
                 cmd4.WaitForExit();
             }
+        }
+        private void UpdateUI()
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-fnf-dark.png"));
+                }
+                else
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-fnf-light.png"));
+                }
+            });
         }
     }
 }

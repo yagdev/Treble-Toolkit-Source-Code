@@ -43,6 +43,8 @@ namespace TrebleToolkitLauncher
             thread3.Start();
             Thread thread4 = new Thread(GetLauncherVersion);
             thread4.Start();
+            Thread thread5 = new Thread(UpdateUI);
+            thread5.Start();
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
@@ -103,7 +105,6 @@ namespace TrebleToolkitLauncher
                     BootFileLabel_Copy1.Content = "Connected";
                     DeviceSpecificFeatures_Copy.IsEnabled = true;
                     UpdateLauncher_Btn.IsEnabled = true;
-                    JoinBeta.IsEnabled = true;
                     DeviceSpecificFeatures_Copy.Content = "Reinstall";
                     UpdateLauncher_Btn.Content = "Update Launcher";
                 });
@@ -115,7 +116,6 @@ namespace TrebleToolkitLauncher
                     BootFileLabel_Copy1.Content = "Not Connected";
                     DeviceSpecificFeatures_Copy.IsEnabled = false;
                     UpdateLauncher_Btn.IsEnabled = false;
-                    JoinBeta.IsEnabled = false;
                     DeviceSpecificFeatures_Copy.Content = "🔒 Reinstall";
                     UpdateLauncher_Btn.Content = "🔒 Update Launcher";
                 });
@@ -190,21 +190,12 @@ namespace TrebleToolkitLauncher
                 string local_version_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "CurrentVersion", "VersionString.txt");
                 string local_launcher_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "CurrentVersion", "LauncherVersion.txt");
                 string launch_exe = "TrebleToolkitLauncher.exe";
-                if (File.Exists(beta_path) && Environment.Is64BitOperatingSystem)
+                if (File.Exists(beta_path))
                 {
                     url = "https://www.dropbox.com/s/2nykzlitzy2u8an/release.zip?dl=1";
                     remote_version_url = "https://www.dropbox.com/s/7onsz56k52liim2/version.txt?dl=1";
                 }
-                if (Environment.Is64BitOperatingSystem)
-                {
-                    
-                }
-                else
-                {
-                    url = "https://www.dropbox.com/s/dqmk13zq52d3clo/release.zip?dl=1";
-                    remote_version_url = "https://www.dropbox.com/s/7faalz9dxjgethh/version.txt?dl=1";
-                }
-                var update = Updater.Init(url, update_path, application_path, launch_exe);
+                    var update = Updater.Init(url, update_path, application_path, launch_exe);
                 if (UpdateManager.CheckForUpdate(version_key, local_version_path, remote_version_url))
                 {
                     this.Dispatcher.Invoke(() =>
@@ -225,7 +216,7 @@ namespace TrebleToolkitLauncher
                     System.Diagnostics.ProcessStartInfo startInfo2 = new System.Diagnostics.ProcessStartInfo();
                     startInfo2.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                     startInfo2.FileName = "cmd.exe";
-                    startInfo2.Arguments = "/C cd Application & cd assets & gui.exe";
+                    startInfo2.Arguments = "/C cd Application & cd assets & TrebleToolkitLauncher.exe";
                     process2.StartInfo = startInfo2;
                     process2.Start();
                     startInfo2.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
@@ -247,7 +238,7 @@ namespace TrebleToolkitLauncher
                 System.Diagnostics.ProcessStartInfo startInfo2 = new System.Diagnostics.ProcessStartInfo();
                 startInfo2.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                 startInfo2.FileName = "cmd.exe";
-                startInfo2.Arguments = "/C cd Application & cd assets & gui.exe";
+                startInfo2.Arguments = "/C cd Application & cd assets & TrebleToolkitLauncher.exe";
                 process2.StartInfo = startInfo2;
                 process2.Start();
                 startInfo2.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
@@ -405,6 +396,34 @@ namespace TrebleToolkitLauncher
                     UpdateLauncher_Btn.Content = "🔒 Update Launcher";
                 });
             }
+        }
+        private void UpdateUI()
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                {
+                    BtnImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-launch-dark.png"));
+                    BtnImg_Copy.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-up-dark.png"));
+                    BtnImg_Copy1.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-fnf-dark.png"));
+                    BtnImg_Copy2.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-internet-dark.png"));
+                    BtnImg_Copy3.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-settings-dark.png"));
+                    ntwimg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-internet-dark.png"));
+                    launcherimg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-about-dark.png"));
+                    CurrentVerImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-about-dark.png"));
+                }
+                else
+                {
+                    BtnImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-launch-light.png"));
+                    BtnImg_Copy.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-up-light.png"));
+                    BtnImg_Copy1.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-fnf-light.png"));
+                    BtnImg_Copy2.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-internet-light.png"));
+                    BtnImg_Copy3.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-settings-light.png"));
+                    ntwimg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-internet-light.png"));
+                    launcherimg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-about-light.png"));
+                    CurrentVerImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-about-light.png"));
+                }
+            });
         }
     }
 }

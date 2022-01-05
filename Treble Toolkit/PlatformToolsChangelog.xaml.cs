@@ -93,14 +93,14 @@ namespace Treble_Toolkit
                 this.Dispatcher.Invoke(() =>
                 {
                     string ptversion = System.IO.File.ReadAllText(System.IO.Path.Combine(Environment.CurrentDirectory, "PlatformTools.txt"));
-                    copyright.Content = "©2021 YAG-dev · " + ptversion;
+                    copyright.Content = ptversion;
                 });
             }
             else
             {
                 this.Dispatcher.Invoke(() =>
                 {
-                    copyright.Content = "©2021 YAG-dev · Unable to check current Platform Tools version";
+                    copyright.Content = "Unable to check current Platform Tools version.";
                 });
             }
         }
@@ -127,9 +127,6 @@ namespace Treble_Toolkit
         {
             this.Dispatcher.Invoke(() =>
             {
-                TTOutOfDate.Visibility = Visibility.Hidden;
-                TTOutOfDateTxt1.Visibility = Visibility.Hidden;
-                TTOutOfDateTxt2.Visibility = Visibility.Hidden;
                 Update.Visibility = Visibility.Hidden;
             });
         }
@@ -153,19 +150,27 @@ namespace Treble_Toolkit
                     {
                         this.Dispatcher.Invoke(() =>
                         {
-                            TTOutOfDate.Visibility = Visibility.Visible;
-                            TTOutOfDateTxt1.Visibility = Visibility.Visible;
-                            TTOutOfDateTxt2.Visibility = Visibility.Visible;
+                            Title_Copy.Content = "Platform Tools · Please Update";
                             Update.Visibility = Visibility.Visible;
+                            DropShadowEffect myDropShadowEffect = new DropShadowEffect();
+                            // Set the color of the shadow to Black.
+                            Color myShadowColor = new Color();
+                            myShadowColor.A = 255; // Note that the alpha value is ignored by Color property. 
+                                                   // The Opacity property is used to control the alpha.
+                            myShadowColor.B = 0;
+                            myShadowColor.G = 255;
+                            myShadowColor.R = 255;
+                            myDropShadowEffect.Direction = 0;
+                            myDropShadowEffect.ShadowDepth = 0;
+                            myDropShadowEffect.Color = myShadowColor;
+                            Reptangle.Effect = myDropShadowEffect;
                         });
                     }
                     else
                     {
                         this.Dispatcher.Invoke(() =>
                         {
-                            TTOutOfDate.Visibility = Visibility.Hidden;
-                            TTOutOfDateTxt1.Visibility = Visibility.Hidden;
-                            TTOutOfDateTxt2.Visibility = Visibility.Hidden;
+                            Title_Copy.Content = "Platform Tools";
                             Update.Visibility = Visibility.Hidden;
                         });
                     }
@@ -175,9 +180,8 @@ namespace Treble_Toolkit
             {
                 this.Dispatcher.Invoke(() =>
                 {
-                    TTOutOfDate.Visibility = Visibility.Visible;
-                    TTOutOfDateTxt1.Visibility = Visibility.Visible;
-                    TTOutOfDateTxt2.Visibility = Visibility.Visible;
+                    Title_Copy.Content = "Platform Tools · Unable To Check For Updates";
+                    Update.Visibility = Visibility.Visible;
                 });
                 this.Dispatcher.Invoke(() =>
                 {
@@ -192,13 +196,7 @@ namespace Treble_Toolkit
                     myDropShadowEffect.Direction = 0;
                     myDropShadowEffect.ShadowDepth = 0;
                     myDropShadowEffect.Color = myShadowColor;
-                    TTOutOfDate.Effect = myDropShadowEffect;
-                    TTOutOfDate.Fill = new SolidColorBrush(Color.FromArgb(255, 255, 0, 0));
-                });
-                this.Dispatcher.Invoke(() =>
-                {
-                    TTOutOfDateTxt1.Content = "⚠ Could not check for updates";
-                    TTOutOfDateTxt2.Content = "Updates might be available";
+                    Reptangle.Effect = myDropShadowEffect;
                 });
             }
         }

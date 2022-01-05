@@ -12,7 +12,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("YAG-dev")]
 [assembly: AssemblyProduct("TrebleToolkitLauncher")]
-[assembly: AssemblyCopyright("©2020-2021 YAG-dev")]
+[assembly: AssemblyCopyright("©2020-2022 YAG-dev")]
 [assembly: AssemblyTrademark("Treble Toolkit")]
 [assembly: AssemblyCulture("")]
 
@@ -51,5 +51,5 @@ using System.Windows;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("21.12.2112.02")]
-[assembly: AssemblyFileVersion("21.12.2112.02")]
+[assembly: AssemblyVersion("22.1.2212")]
+[assembly: AssemblyFileVersion("22.1.2212")]

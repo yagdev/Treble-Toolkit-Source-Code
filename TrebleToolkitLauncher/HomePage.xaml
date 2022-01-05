@@ -7,8 +7,8 @@
       xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
       xmlns:FluentWPF="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF" x:Class="TrebleToolkitLauncher.HomePage"
       mc:Ignorable="d" 
-      d:DesignWidth="591" fw:AcrylicWindow.Enabled="True"
-      Title="HomePage" d:DesignHeight="452" >
+      d:DesignWidth="800" fw:AcrylicWindow.Enabled="True"
+      Title="HomePage" d:DesignHeight="387" >
     <Page.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -123,28 +123,85 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="ImageButton22.1" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Background="{DynamicResource SystemAltMediumHighColorBrush}" Margin="0,0,0,0">
+                            <Grid>
+                                <Label x:Name="PhoneStatus" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="Auto" VerticalAlignment="Stretch" Margin="80,10,10,10" Grid.ColumnSpan="1">
+                                    <Label.Effect>
+                                        <DropShadowEffect
+                                            ShadowDepth="0"
+                                            Direction="0"
+                                            Color="{DynamicResource SystemAltHighColor}"
+                                            Opacity="0.8"
+                                            BlurRadius="2"/>
+                                    </Label.Effect>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="0" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                </Label>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{DynamicResource SystemAltMediumColorBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{DynamicResource SystemBaseMediumColorBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Page.Resources>
 
     <Grid x:Name="GridMain">
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
-            <RowDefinition/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="45*"/>
             <RowDefinition Height="2"/>
-            <RowDefinition/>
+            <RowDefinition Height="44*"/>
+            <RowDefinition Height="46*"/>
             <RowDefinition Height="2"/>
-            <RowDefinition/>
+            <RowDefinition Height="46*"/>
+            <RowDefinition Height="46*"/>
             <RowDefinition Height="2"/>
-            <RowDefinition/>
-            <RowDefinition Height="2"/>
-            <RowDefinition/>
-            <RowDefinition Height="154"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="44*"/>
+            <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200*"/>
-            <ColumnDefinition Width="191*"/>
-            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="192*"/>
+            <ColumnDefinition Width="192*"/>
+            <ColumnDefinition Width="197*"/>
         </Grid.ColumnDefinitions>
-        <ProgressBar x:Name="status_pgr" Height="50" Margin="10,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="{DynamicResource SystemBaseHighColorBrush}" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5" BorderThickness="3" UseLayoutRounding="False" Style="{DynamicResource PgrBar21.4.2}" Grid.ColumnSpan="3" Grid.Row="5">
+        <Rectangle Fill="{DynamicResource SystemAltHighColorBrush}" Stroke="{x:Static FluentWPF:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="12" RadiusX="12" Opacity="0.5" Margin="2,0,0,0" Grid.Column="3" Grid.RowSpan="13">
+            <Rectangle.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Rectangle.Effect>
+        </Rectangle>
+
+        <ProgressBar x:Name="status_pgr" Margin="1,0,0,1.5" Background="{x:Null}" Foreground="{DynamicResource SystemBaseHighColorBrush}" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5" BorderThickness="3" UseLayoutRounding="False" Style="{DynamicResource PgrBar21.4.2}" Grid.Column="2" Grid.RowSpan="3" Grid.Row="4">
             <ProgressBar.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -154,8 +211,7 @@
                     BlurRadius="2"/>
             </ProgressBar.Effect>
         </ProgressBar>
-
-        <Label Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="40" VerticalAlignment="Top" Content="Welcome to Treble Toolkit!" Grid.ColumnSpan="3" Grid.RowSpan="2">
+        <Label Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="20" Content="Widgets" Grid.Column="3" Margin="2,0,0,0" Grid.RowSpan="3">
             <Label.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -165,67 +221,7 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <Button x:Name="DeviceSpecificFeatures_Copy3" Content="Launch" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="BackButton_Click" Margin="10,0" Grid.ColumnSpan="3" Grid.Row="1">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
-        </Button>
-        <Button x:Name="DeviceSpecificFeatures_Copy" Content="Reinstall" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Reinstall" Margin="10,0" Grid.ColumnSpan="3" Grid.Row="3">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
-        </Button>
-        <Button x:Name="UpdateLauncher_Btn" Content="Update Launcher" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="UpdateLauncher" Margin="10,0" Grid.ColumnSpan="3" Grid.Row="5">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
-        </Button>
-        <Button x:Name="CheckConnectionBtn" Content="Check Connection" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="CheckConnection" Margin="10,0" Grid.ColumnSpan="3" Grid.Row="7">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
-        </Button>
-        <Button x:Name="JoinBeta" Content="Settings" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="JoinBeta_Click" Margin="10,0" Grid.ColumnSpan="3" Grid.Row="9">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
-        </Button>
-        <Label Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="40" VerticalAlignment="Bottom" Content="Widgets" Margin="0,0,0,114" Grid.ColumnSpan="3" Grid.Row="10">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
-        </Label>
-        <Rectangle Fill="{DynamicResource SystemAltHighColorBrush}" Stroke="{x:Static FluentWPF:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="8" RadiusX="8" Margin="1,0,10,10" Height="102" VerticalAlignment="Bottom" Grid.Column="2" Grid.Row="10">
+        <Rectangle Fill="{DynamicResource SystemAltHighColorBrush}" Stroke="{x:Static FluentWPF:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="8" RadiusX="8" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
             <Rectangle.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -235,7 +231,7 @@
                     BlurRadius="8"/>
             </Rectangle.Effect>
         </Rectangle>
-        <Label x:Name="BootmgTitle" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="20" Content="Current Version" Margin="11,0,20,62" Height="40" VerticalAlignment="Bottom" Grid.Column="2" Grid.Row="10">
+        <Label x:Name="Title_Copy7" Content="Welcome to Treble Toolkit" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="20" Margin="80,10,10,0" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1">
             <Label.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -245,7 +241,7 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <Label x:Name="CurrentVersion" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="16" Content="21.12" Margin="11,0,20,20" Height="40" VerticalAlignment="Bottom" Grid.Column="2" Grid.Row="10">
+        <Label x:Name="VersionCheck" Content="©2022 YAG-dev" Margin="80,0,10,10" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2">
             <Label.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -255,7 +251,63 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <Rectangle Fill="{DynamicResource SystemAltHighColorBrush}" Stroke="{x:Static FluentWPF:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="8" RadiusX="8" Margin="1,0,1,10" Height="102" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="10">
+        <Image Margin="10,10,0,10" Source="TT21.9.1Logo.png" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2"/>
+        <Button x:Name="DeviceSpecificFeatures_Copy3" Content="Launch" Margin="0,0,1,0" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource ImageButton22.1}" Click="BackButton_Click" Grid.Column="1" Grid.Row="4" Grid.RowSpan="2" >
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Button.Effect>
+        </Button>
+        <Image x:Name="BtnImg" Margin="10,10,0,10" Source="tt-launch-dark.png" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="4" Grid.Column="1"/>
+        <Button x:Name="UpdateLauncher_Btn" Content="Update Launcher" Margin="1,0,0,0" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource ImageButton22.1}" Click="UpdateLauncher" Grid.Column="2" Grid.Row="4" Grid.RowSpan="2" >
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Button.Effect>
+        </Button>
+        <Image x:Name="BtnImg_Copy" Margin="11,10,0,10" Source="tt-launch-dark.png" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="4" Grid.Column="2"/>
+        <Button x:Name="DeviceSpecificFeatures_Copy" Content="Reinstall" Margin="0,0,1,0" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource ImageButton22.1}" Click="Reinstall" Grid.Column="1" Grid.Row="7" Grid.RowSpan="2" >
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Button.Effect>
+        </Button>
+        <Image x:Name="BtnImg_Copy1" Margin="10,12,0,10" Source="tt-launch-dark.png" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="7" Grid.Column="1"/>
+        <Button x:Name="BackAbout_Copy2" Content="Check Connection" Margin="1,0,0,0" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource ImageButton22.1}" Click="CheckConnection" Grid.Column="2" Grid.Row="7" Grid.RowSpan="2" >
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Button.Effect>
+        </Button>
+        <Image x:Name="BtnImg_Copy2" Margin="11,12,0,10" Source="tt-launch-dark.png" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="7" Grid.Column="2"/>
+        <Button x:Name="JoinBeta" Content="Settings" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource ImageButton22.1}" Click="JoinBeta_Click" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="10" Grid.RowSpan="2" >
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Button.Effect>
+        </Button>
+        <Image x:Name="BtnImg_Copy3" Margin="10,9,0,10" Source="tt-launch-dark.png" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="10" Grid.Column="1"/>
+        <Rectangle Fill="{DynamicResource SystemAltHighColorBrush}" Margin="12,0,10,0" Stroke="{x:Static FluentWPF:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="8" RadiusX="8" Grid.Column="3" Grid.Row="4" Grid.RowSpan="2">
             <Rectangle.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -265,7 +317,7 @@
                     BlurRadius="8"/>
             </Rectangle.Effect>
         </Rectangle>
-        <Label x:Name="LauncherVer2" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="20" Content="Launcher Version" Margin="11,0,11,62" Height="40" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="10">
+        <Label x:Name="Title_Copy" Content="Network Status" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="20" Margin="92,10,20,0" Grid.Column="3" Grid.Row="4">
             <Label.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -275,7 +327,7 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <Label x:Name="LauncherVer" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="16" Content="21.12" Margin="11,0,11,20" Height="40" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="10">
+        <Label x:Name="BootFileLabel_Copy1" Content="Checking" Margin="92,0,20,10" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.Column="3" Grid.Row="5">
             <Label.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -285,7 +337,8 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <Rectangle Fill="{DynamicResource SystemAltHighColorBrush}" Stroke="{x:Static FluentWPF:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="8" RadiusX="8" Margin="10,0,1,10" Height="102" VerticalAlignment="Bottom" Grid.Row="10">
+        <Image x:Name="ntwimg" Margin="22,10,0,10" Source="tt-launch-dark.png" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Column="3" Grid.Row="4" Grid.RowSpan="2"/>
+        <Rectangle Fill="{DynamicResource SystemAltHighColorBrush}" Margin="12,0,10,2" Stroke="{x:Static FluentWPF:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="8" RadiusX="8" Grid.Column="3" Grid.Row="7" Grid.RowSpan="2">
             <Rectangle.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -295,7 +348,7 @@
                     BlurRadius="8"/>
             </Rectangle.Effect>
         </Rectangle>
-        <Label x:Name="BootmgTitle_Copy1" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="20" Content="Network Status" Margin="20,0,11,62" Height="40" VerticalAlignment="Bottom" Grid.Row="10">
+        <Label x:Name="Title_Copy1" Content="Launcher Version" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="20" Margin="92,10,20,0" Grid.Column="3" Grid.Row="7">
             <Label.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -305,7 +358,7 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <Label x:Name="BootFileLabel_Copy1" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="16" Content="Checking..." Margin="20,0,11,20" Height="40" VerticalAlignment="Bottom" Grid.Row="10">
+        <Label x:Name="LauncherVer" Content="Checking" Margin="92,0,20,12" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.Column="3" Grid.Row="8">
             <Label.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -315,6 +368,38 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
+        <Image x:Name="launcherimg" Margin="22,10,0,12" Source="tt-launch-dark.png" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Column="3" Grid.Row="7" Grid.RowSpan="2"/>
+        <Rectangle Fill="{DynamicResource SystemAltHighColorBrush}" Margin="12,0,10,9" Stroke="{x:Static FluentWPF:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="8" RadiusX="8" Grid.Column="3" Grid.Row="10" Grid.RowSpan="3">
+            <Rectangle.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Label x:Name="Title_Copy2" Content="Current Version" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="20" Margin="92,10,20,0" Grid.Column="3" Grid.Row="10">
+            <Label.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemAltHighColor}"
+                    Opacity="0.8"
+                    BlurRadius="2"/>
+            </Label.Effect>
+        </Label>
+        <Label x:Name="CurrentVersion" Content="Checking" Margin="92,0,20,9" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.Column="3" Grid.Row="11">
+            <Label.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemAltHighColor}"
+                    Opacity="0.8"
+                    BlurRadius="2"/>
+            </Label.Effect>
+        </Label>
+        <Image x:Name="CurrentVerImg" Margin="22,10,0,9" Source="tt-launch-dark.png" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Column="3" Grid.Row="10" Grid.RowSpan="2"/>
 
     </Grid>
 </Page>

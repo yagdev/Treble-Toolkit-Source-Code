@@ -5,6 +5,8 @@ using System.Diagnostics;
 using System.Windows.Media.Animation;
 using System.IO;
 using System.Threading;
+using System.Windows.Media;
+using System.Windows.Media.Effects;
 
 namespace Treble_Toolkit
 {
@@ -20,6 +22,8 @@ namespace Treble_Toolkit
             thread.Start();
             Thread thread2 = new Thread(SupportLock);
             thread2.Start();
+            Thread thread3 = new Thread(UpdateUI);
+            thread3.Start();
         }
 
         private void ReportBug_Click(object sender, RoutedEventArgs e)
@@ -65,7 +69,7 @@ namespace Treble_Toolkit
             }
             this.Dispatcher.Invoke(() =>
             {
-                ReportLabel.Visibility = Visibility.Hidden;
+                
             });
         }
         private void SupportLock()
@@ -90,6 +94,77 @@ namespace Treble_Toolkit
             {
                 Uri uri = new Uri("UnlockedBootloader.xaml", UriKind.Relative);
                 this.NavigationService.Navigate(uri);
+            });
+        }
+        private void UpdateUI()
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-lock-dark.png"));
+                }
+                else
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-lock-light.png"));
+                }
+            });
+
+            if (Environment.OSVersion.Version.Build <= 9)
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    DeviceSpecificFeatures_Copy.IsEnabled = false;
+                    DeviceSpecificFeatures_Copy.Content = "🔒 Report Bug";
+                });
+            }
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.UseShellExecute = false;
+            startInfo.RedirectStandardOutput = true;
+            startInfo.FileName = "CMD.exe";
+            startInfo.Arguments = "/C adb.exe get-state";
+            startInfo.CreateNoWindow = true;
+            process.StartInfo = startInfo;
+            process.Start();
+            string output3 = process.StandardOutput.ReadToEnd();
+            process.WaitForExit();
+            this.Dispatcher.Invoke(() =>
+            {
+                startInfo.UseShellExecute = false;
+                startInfo.RedirectStandardOutput = true;
+                startInfo.FileName = "CMD.exe";
+                startInfo.Arguments = "/C fastboot devices";
+                startInfo.CreateNoWindow = true;
+                process.StartInfo = startInfo;
+                process.Start();
+                string output5 = process.StandardOutput.ReadToEnd();
+                process.WaitForExit();
+                if (output5.Contains("fastboot") == true)
+                {
+                    ConnectdDevice.Content = output5;
+                }
+                else
+                {
+                    startInfo.UseShellExecute = false;
+                    startInfo.RedirectStandardOutput = true;
+                    startInfo.FileName = "CMD.exe";
+                    startInfo.Arguments = "/C adb devices";
+                    startInfo.CreateNoWindow = true;
+                    process.StartInfo = startInfo;
+                    process.Start();
+                    process.StandardOutput.ReadLine();
+                    string output6 = process.StandardOutput.ReadLine();
+                    process.WaitForExit();
+                    if (output6.Contains("device") == true)
+                    {
+                        ConnectdDevice.Content = output6;
+                    }
+                    else
+                    {
+                        ConnectdDevice.Content = "Unable to Verify";
+                    }
+                }
             });
         }
     }

@@ -34,6 +34,8 @@ namespace Treble_Toolkit
             thread.Start();
             Thread thread2 = new Thread(FileProcess);
             thread2.Start();
+            Thread thread3 = new Thread(UpdateUI);
+            thread3.Start();
         }
 
         private void Refresh(object sender, RoutedEventArgs e)
@@ -472,7 +474,7 @@ namespace Treble_Toolkit
         }
         private void Change1Prc()
         {
-            String command = @"/C taskkill /f /im explorer.exe & start explorer.exe & cd .. & cd Place_Files_Here & mkdir GSI & cd GSI & start . & ren *.img system.img";
+            String command = @"/C cd .. & cd Place_Files_Here & mkdir GSI & cd GSI & start . & ren *.img system.img";
             ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
             cmdsi.Arguments = command;
             cmdsi.WindowStyle = ProcessWindowStyle.Hidden;
@@ -490,7 +492,7 @@ namespace Treble_Toolkit
 
         private void Change2Prc()
         {
-            String command = @"/C taskkill /f /im explorer.exe & start explorer.exe & cd .. & cd Place_Files_Here & mkdir boot & cd boot & start . & ren * boot.img";
+            String command = @"/C cd .. & cd Place_Files_Here & mkdir boot & cd boot & start . & ren * boot.img";
             ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
             cmdsi.Arguments = command;
             cmdsi.WindowStyle = ProcessWindowStyle.Hidden;
@@ -499,7 +501,7 @@ namespace Treble_Toolkit
 
         private void Delete2Prc()
         {
-            String command = @"/C taskkill /f /im explorer.exe & start explorer.exe & cd .. & cd Place_Files_Here & mkdir boot & cd boot & del /f /q boot.img";
+            String command = @"/C cd .. & cd Place_Files_Here & mkdir boot & cd boot & del /f /q boot.img";
             ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
             cmdsi.Arguments = command;
             cmdsi.WindowStyle = ProcessWindowStyle.Hidden;
@@ -508,7 +510,7 @@ namespace Treble_Toolkit
 
         private void Change3Prc()
         {
-            String command = @"/C taskkill /f /im explorer.exe & start explorer.exe & cd .. & cd Place_Files_Here & mkdir vbmeta & cd vbmeta & start . & ren * vbmeta.img";
+            String command = @"/C cd .. & cd Place_Files_Here & mkdir vbmeta & cd vbmeta & start . & ren * vbmeta.img";
             ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
             cmdsi.Arguments = command;
             cmdsi.WindowStyle = ProcessWindowStyle.Hidden;
@@ -517,7 +519,7 @@ namespace Treble_Toolkit
 
         private void Delete3Prc()
         {
-            String command = @"/C taskkill /f /im explorer.exe & start explorer.exe & cd .. & cd Place_Files_Here & mkdir vbmeta & cd vbmeta & del /f /q vbmeta.img";
+            String command = @"/C cd .. & cd Place_Files_Here & mkdir vbmeta & cd vbmeta & del /f /q vbmeta.img";
             ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
             cmdsi.Arguments = command;
             cmdsi.WindowStyle = ProcessWindowStyle.Hidden;
@@ -526,7 +528,7 @@ namespace Treble_Toolkit
 
         private void Change4Prc()
         {
-            String command = @"/C taskkill /f /im explorer.exe & start explorer.exe & cd .. & cd Place_Files_Here & mkdir twrp & cd twrp & start . & ren * twrp.img";
+            String command = @"/C cd .. & cd Place_Files_Here & mkdir twrp & cd twrp & start . & ren * twrp.img";
             ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
             cmdsi.Arguments = command;
             cmdsi.WindowStyle = ProcessWindowStyle.Hidden;
@@ -535,11 +537,34 @@ namespace Treble_Toolkit
 
         private void Delete4Prc()
         {
-            String command = @"/C taskkill /f /im explorer.exe & start explorer.exe & cd .. & cd Place_Files_Here & mkdir twrp & cd twrp & del /f /q twrp.img";
+            String command = @"/C cd .. & cd Place_Files_Here & mkdir twrp & cd twrp & del /f /q twrp.img";
             ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
             cmdsi.Arguments = command;
             cmdsi.WindowStyle = ProcessWindowStyle.Hidden;
             Process cmd = Process.Start(cmdsi);
+        }
+        private void UpdateUI()
+        {
+            Dispatcher dis = Dispatcher.CurrentDispatcher;
+            this.Dispatcher.Invoke(() =>
+            {
+                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-settings-dark.png"));
+                    DeviceInfoImg_Copy.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-gsi-dark.png"));
+                    DeviceInfoImg_Copy1.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-bootimg-dark.png"));
+                    DeviceInfoImg_Copy2.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-vbmetaimg-dark.png"));
+                    DeviceInfoImg_Copy3.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-twrpimg-dark.png"));
+                }
+                else
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-settings-light.png"));
+                    DeviceInfoImg_Copy.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-gsi-light.png"));
+                    DeviceInfoImg_Copy1.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-bootimg-light.png"));
+                    DeviceInfoImg_Copy2.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-vbmetaimg-light.png"));
+                    DeviceInfoImg_Copy3.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-twrpimg-light.png"));
+                }
+            });
         }
     }
 }

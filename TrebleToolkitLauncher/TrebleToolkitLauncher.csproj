@@ -296,6 +296,51 @@
   <ItemGroup>
     <Resource Include="TrebleToolkitIcon21.9.1.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-launch-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-launch-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TT21.9.1Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-up-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-up-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-internet-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-internet-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-settings-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-settings-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-about-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-about-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-fnf-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-fnf-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-checkmark-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-checkmark-dark.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.6.5.5\build\Fody.targets" Condition="Exists('..\packages\Fody.6.5.5\build\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

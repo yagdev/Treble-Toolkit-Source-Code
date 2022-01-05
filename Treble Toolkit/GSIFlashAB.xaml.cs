@@ -34,6 +34,8 @@ namespace Treble_Toolkit
             thread2.Start();
             Thread thread3 = new Thread(Flash);
             thread3.Start();
+            Thread thread4 = new Thread(UpdateUI);
+            thread4.Start();
         }
 
         private void DSF_Click(object sender, RoutedEventArgs e)
@@ -77,14 +79,14 @@ namespace Treble_Toolkit
             {
                 this.Dispatcher.Invoke(() =>
                 {
-                    CheckingDevice.Content = output3;
+                    PhoneStatus2.Content = output3;
                 });
             }
             else
             {
                 this.Dispatcher.Invoke(() =>
                 {
-                    CheckingDevice.Content = "Not Detected. Please restart this!";
+                    PhoneStatus2.Content = "Not Detected. Uh oh...";
                 });
             }
         }
@@ -112,8 +114,7 @@ namespace Treble_Toolkit
             this.Dispatcher.Invoke(() =>
             {
                 status_pgr.Value += 5;
-                status_lbl.Content = "Formatting partitions...";
-                status_lbl_Copy.Visibility = Visibility.Visible;
+                status_lbl.Content = "Looks like we froze... Please try installing the ADB/Fastboot drivers.";
             });
             String command2 = @"/C fastboot.exe format system_a & fastboot.exe format system_b & fastboot.exe format userdata";
             ProcessStartInfo cmdsi2 = new ProcessStartInfo("cmd.exe");
@@ -132,7 +133,6 @@ namespace Treble_Toolkit
             {
                 status_pgr.Value += 5;
                 status_lbl.Content = "Flashing vbmeta and boot images...";
-                status_lbl_Copy.Visibility = Visibility.Hidden;
             });
             String command3 = @"/C fastboot.exe --disable-verity --disable-verification flash vbmeta ../Place_Files_Here/vbmeta/vbmeta.img & fastboot.exe flash boot_a ../Place_Files_Here/boot/boot.img & fastboot.exe flash boot_b ../Place_Files_Here/boot/boot.img";
             ProcessStartInfo cmdsi3 = new ProcessStartInfo("cmd.exe");
@@ -214,6 +214,20 @@ namespace Treble_Toolkit
             cmd4.WaitForExit();
             Process cmd5 = Process.Start(cmdsi);
             cmd5.WaitForExit();
+        }
+        private void UpdateUI()
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-flashing-dark.png"));
+                }
+                else
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-flashing-light.png"));
+                }
+            });
         }
     }
 }

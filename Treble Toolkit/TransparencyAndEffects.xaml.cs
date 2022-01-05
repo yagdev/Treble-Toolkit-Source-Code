@@ -32,6 +32,8 @@ namespace Treble_Toolkit
             thread2.Start();
             Thread thread3 = new Thread(TransparentThemeCheck);
             thread3.Start();
+            Thread thread4 = new Thread(UpdateUI);
+            thread4.Start();
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -241,6 +243,20 @@ namespace Treble_Toolkit
             startInfo.Arguments = "/C wmic process where name='adb.exe' delete & wmic process where name='gui.exe' delete & start gui.exe";
             process.StartInfo = startInfo;
             process.Start();
+        }
+        private void UpdateUI()
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-settings-dark.png"));
+                }
+                else
+                {
+                    DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-settings-light.png"));
+                }
+            });
         }
     }
 }
