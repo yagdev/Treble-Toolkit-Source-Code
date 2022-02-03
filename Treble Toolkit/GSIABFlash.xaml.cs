@@ -38,7 +38,7 @@ namespace Treble_Toolkit
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            Uri uri = new Uri("HomeScreen.xaml", UriKind.Relative);
+            Uri uri = new Uri("FlashGSI.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);
         }
 
@@ -92,6 +92,41 @@ namespace Treble_Toolkit
                 thread.Start();
             }
         }
+        private void NoVbmeta(object sender, RoutedEventArgs e)
+        {
+            Thread thread = new Thread(NoVbmeta1);
+            thread.Start();
+        }
+
+        private void YesVbmeta(object sender, RoutedEventArgs e)
+        {
+            Thread thread = new Thread(YesVbmeta1);
+            thread.Start();
+        }
+
+        private void NoBoot(object sender, RoutedEventArgs e)
+        {
+            Thread thread = new Thread(NoBoot1);
+            thread.Start();
+        }
+
+        private void YesBoot(object sender, RoutedEventArgs e)
+        {
+            Thread thread = new Thread(YesBoot1);
+            thread.Start();
+        }
+
+        private void NoFormat(object sender, RoutedEventArgs e)
+        {
+            Thread thread = new Thread(NoFormat1);
+            thread.Start();
+        }
+
+        private void YesFormat(object sender, RoutedEventArgs e)
+        {
+            Thread thread = new Thread(YesFormat1);
+            thread.Start();
+        }
         //Threading starts here -- 5/11/2021@22:07, YAG-dev, 21.12+
         private void Animate()
         {
@@ -135,37 +170,45 @@ namespace Treble_Toolkit
                 this.Dispatcher.Invoke(() =>
                 {
                     AddVbmeta.Visibility = Visibility.Hidden;
-                    RectangleNormal.Visibility = Visibility.Hidden;
-                    BootRectangle.Visibility = Visibility.Hidden;
-                    VbmetaRectangle.Visibility = Visibility.Visible;
+                    BugReport_Copy.Visibility = Visibility.Hidden;
+                    cc_Copy.Visibility = Visibility.Hidden;
+                    FileSizeCheck_Copy.Visibility = Visibility.Hidden;
+                    DeviceInfoImg_Copy.Visibility = Visibility.Hidden;
                 });
             }
             else
             {
-
+                this.Dispatcher.Invoke(() =>
+                {
+                    AddVbmeta.Visibility = Visibility.Visible;
+                    BugReport_Copy.Visibility = Visibility.Visible;
+                    cc_Copy.Visibility = Visibility.Visible;
+                    FileSizeCheck_Copy.Visibility = Visibility.Visible;
+                    DeviceInfoImg_Copy.Visibility = Visibility.Visible;
+                });
             }
             this.Dispatcher.Invoke(() =>
             {
-                if (File.Exists("../Place_Files_Here/boot/boot.img") & AddVbmeta.Visibility == Visibility.Hidden)
+                if (File.Exists("../Place_Files_Here/boot/boot.img"))
                 {
                     this.Dispatcher.Invoke(() =>
                     {
                         AddBootBtn.Visibility = Visibility.Hidden;
-                        RectangleNormal.Visibility = Visibility.Visible;
-                        BootRectangle.Visibility = Visibility.Hidden;
-                        VbmetaRectangle.Visibility = Visibility.Hidden;
+                        BugReport_Copy1.Visibility = Visibility.Hidden;
+                        cc_Copy1.Visibility = Visibility.Hidden;
+                        FileSizeCheck_Copy1.Visibility = Visibility.Hidden;
+                        DeviceInfoImg_Copy1.Visibility = Visibility.Hidden;
                     });
                 }
                 else
                 {
                     this.Dispatcher.Invoke(() =>
                     {
-                        if (AddVbmeta.Visibility == Visibility.Visible)
-                        {
-                            RectangleNormal.Visibility = Visibility.Hidden;
-                            BootRectangle.Visibility = Visibility.Hidden;
-                            VbmetaRectangle.Visibility = Visibility.Visible;
-                        }
+                        AddBootBtn.Visibility = Visibility.Visible;
+                        BugReport_Copy1.Visibility = Visibility.Visible;
+                        cc_Copy1.Visibility = Visibility.Visible;
+                        FileSizeCheck_Copy1.Visibility = Visibility.Visible;
+                        DeviceInfoImg_Copy1.Visibility = Visibility.Visible;
                     });
                 }
             });
@@ -175,9 +218,10 @@ namespace Treble_Toolkit
             this.Dispatcher.Invoke(() =>
             {
                 AddVbmeta.Visibility = Visibility.Hidden;
-                RectangleNormal.Visibility = Visibility.Visible;
-                BootRectangle.Visibility = Visibility.Hidden;
-                VbmetaRectangle.Visibility = Visibility.Hidden;
+                BugReport_Copy.Visibility = Visibility.Hidden;
+                cc_Copy.Visibility = Visibility.Hidden;
+                FileSizeCheck_Copy.Visibility = Visibility.Hidden;
+                DeviceInfoImg_Copy.Visibility = Visibility.Hidden;
             });
         }
         private void AddVbmeta2()
@@ -195,9 +239,10 @@ namespace Treble_Toolkit
             this.Dispatcher.Invoke(() =>
             {
                 AddBootBtn.Visibility = Visibility.Hidden;
-                RectangleNormal.Visibility = Visibility.Visible;
-                BootRectangle.Visibility = Visibility.Hidden;
-                VbmetaRectangle.Visibility = Visibility.Hidden;
+                BugReport_Copy1.Visibility = Visibility.Hidden;
+                cc_Copy1.Visibility = Visibility.Hidden;
+                FileSizeCheck_Copy1.Visibility = Visibility.Hidden;
+                DeviceInfoImg_Copy1.Visibility = Visibility.Hidden;
             });
         }
         private void AddBoot2()
@@ -369,14 +414,186 @@ namespace Treble_Toolkit
         {
             this.Dispatcher.Invoke(() =>
             {
-                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                if (SourceChord.FluentWPF.ResourceDictionaryEx.GlobalTheme == SourceChord.FluentWPF.ElementTheme.Dark)
                 {
                     DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-flash-dark.png"));
+                    DeviceInfoImg_Copy.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-vbmetaimg-dark.png"));
+                    DeviceInfoImg_Copy1.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-bootimg-dark.png"));
+                    DeviceInfoImg_Copy2.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-restart-dark.png"));
+                    DeviceInfoImg_Copy3.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-bug-dark.png"));
+                    DeviceInfoImg_Copy4.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-launch-dark.png"));
                 }
                 else
                 {
                     DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-flash-light.png"));
+                    DeviceInfoImg_Copy.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-vbmetaimg-light.png"));
+                    DeviceInfoImg_Copy1.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-bootimg-light.png"));
+                    DeviceInfoImg_Copy2.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-restart-light.png"));
+                    DeviceInfoImg_Copy3.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-bug-light.png"));
+                    DeviceInfoImg_Copy4.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-launch-light.png"));
                 }
+                string VbmetaFlashYes = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "FlashVbmetaYes.txt");
+                string BootFlashYes = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "FlashBootYes.txt");
+                string FormatYes = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "FormatYes.txt");
+                if (File.Exists(VbmetaFlashYes))
+                {
+                    DeviceSpecificFeatures_Copy8.IsEnabled = true;
+                    DeviceSpecificFeatures_Copy9.IsEnabled = false;
+                }
+                else
+                {
+                    DeviceSpecificFeatures_Copy8.IsEnabled = false;
+                    DeviceSpecificFeatures_Copy9.IsEnabled = true;
+                }
+                if (File.Exists(BootFlashYes))
+                {
+                    DeviceSpecificFeatures_Copy6.IsEnabled = true;
+                    DeviceSpecificFeatures_Copy7.IsEnabled = false;
+                }
+                else
+                {
+                    DeviceSpecificFeatures_Copy6.IsEnabled = false;
+                    DeviceSpecificFeatures_Copy7.IsEnabled = true;
+                }
+                if (File.Exists(FormatYes))
+                {
+                    DeviceSpecificFeatures_Copy3.IsEnabled = true;
+                    DeviceSpecificFeatures_Copy5.IsEnabled = false;
+                }
+                else
+                {
+                    DeviceSpecificFeatures_Copy3.IsEnabled = false;
+                    DeviceSpecificFeatures_Copy5.IsEnabled = true;
+                }
+            });
+        }
+        private void NoVbmeta1()
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/C cd .. & cd .. & mkdir UpdateInfo & cd UpdateInfo & mkdir Settings & cd Settings & mkdir Temp";
+            process.StartInfo = startInfo;
+            process.Start();
+            process.WaitForExit();
+            string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "FlashVbmetaYes.txt");
+            if (File.Exists(IsAnimated))
+            {
+                File.Delete(IsAnimated);
+                this.Dispatcher.Invoke(() =>
+                {
+                    DeviceSpecificFeatures_Copy8.IsEnabled = false;
+                    DeviceSpecificFeatures_Copy9.IsEnabled = true;
+                });
+            }
+        }
+        private void YesVbmeta1()
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/C cd .. & cd .. & mkdir UpdateInfo & cd UpdateInfo & mkdir Settings & cd Settings & mkdir Temp";
+            process.StartInfo = startInfo;
+            process.Start();
+            process.WaitForExit();
+            string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "FlashVbmetaYes.txt");
+            using (StreamWriter sw = File.CreateText(IsAnimated))
+            {
+                sw.WriteLine("Treble Toolkit Flash Settings");
+                sw.WriteLine("©2021-2022 YAG-dev");
+            }
+            this.Dispatcher.Invoke(() =>
+            {
+                DeviceSpecificFeatures_Copy8.IsEnabled = true;
+                DeviceSpecificFeatures_Copy9.IsEnabled = false;
+            });
+        }
+        private void NoBoot1()
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/C cd .. & cd .. & mkdir UpdateInfo & cd UpdateInfo & mkdir Settings & cd Settings & mkdir Temp";
+            process.StartInfo = startInfo;
+            process.Start();
+            process.WaitForExit();
+            string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "FlashBootYes.txt");
+            if (File.Exists(IsAnimated))
+            {
+                File.Delete(IsAnimated);
+                this.Dispatcher.Invoke(() =>
+                {
+                    DeviceSpecificFeatures_Copy6.IsEnabled = false;
+                    DeviceSpecificFeatures_Copy7.IsEnabled = true;
+                });
+            }
+        }
+        private void YesBoot1()
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/C cd .. & cd .. & mkdir UpdateInfo & cd UpdateInfo & mkdir Settings & cd Settings & mkdir Temp";
+            process.StartInfo = startInfo;
+            process.Start();
+            process.WaitForExit();
+            string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "FlashBootYes.txt");
+            using (StreamWriter sw = File.CreateText(IsAnimated))
+            {
+                sw.WriteLine("Treble Toolkit Flash Settings");
+                sw.WriteLine("©2021-2022 YAG-dev");
+            }
+            this.Dispatcher.Invoke(() =>
+            {
+                DeviceSpecificFeatures_Copy6.IsEnabled = true;
+                DeviceSpecificFeatures_Copy7.IsEnabled = false;
+            });
+        }
+        private void NoFormat1()
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/C cd .. & cd .. & mkdir UpdateInfo & cd UpdateInfo & mkdir Settings & cd Settings & mkdir Temp";
+            process.StartInfo = startInfo;
+            process.Start();
+            process.WaitForExit();
+            string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "FormatYes.txt");
+            if (File.Exists(IsAnimated))
+            {
+                File.Delete(IsAnimated);
+                this.Dispatcher.Invoke(() =>
+                {
+                    DeviceSpecificFeatures_Copy3.IsEnabled = false;
+                    DeviceSpecificFeatures_Copy5.IsEnabled = true;
+                });
+            }
+        }
+        private void YesFormat1()
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/C cd .. & cd .. & mkdir UpdateInfo & cd UpdateInfo & mkdir Settings & cd Settings & mkdir Temp";
+            process.StartInfo = startInfo;
+            process.Start();
+            process.WaitForExit();
+            string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "FormatYes.txt");
+            using (StreamWriter sw = File.CreateText(IsAnimated))
+            {
+                sw.WriteLine("Treble Toolkit Flash Settings");
+                sw.WriteLine("©2021-2022 YAG-dev");
+            }
+            this.Dispatcher.Invoke(() =>
+            {
+                DeviceSpecificFeatures_Copy3.IsEnabled = true;
+                DeviceSpecificFeatures_Copy5.IsEnabled = false;
             });
         }
     }

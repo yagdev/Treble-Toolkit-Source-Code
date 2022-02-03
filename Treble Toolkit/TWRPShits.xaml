@@ -15,9 +15,13 @@
         <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
         <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
         <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
-        <Style x:Key="Button21.8.1Rev4" TargetType="{x:Type Button}">
+        <Style TargetType="{x:Type Button}" x:Key="Button21.8.1Rev4">
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <SolidColorBrush Color="{DynamicResource SystemAltMediumHighColor}"/>
+                </Setter.Value>
+            </Setter>
             <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
             <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
             <Setter Property="BorderThickness" Value="1"/>
@@ -27,25 +31,46 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Background="{DynamicResource SystemAltMediumHighColorBrush}" Margin="0,0,0,0">
-                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Margin="0,0,0,0" Background="{TemplateBinding Background}">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsDefaulted" Value="true">
                                 <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                             </Trigger>
-                            <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{DynamicResource SystemAltMediumColorBrush}"/>
-                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true"/>
                             <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{DynamicResource SystemBaseMediumColorBrush}"/>
                                 <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource SystemAltHighColorBrush}"/>
                             </Trigger>
-                            <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
-                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
-                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false"/>
+                            <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation From="{StaticResource SystemAltMediumHighColor}" To="{StaticResource SystemAltMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation From="{StaticResource SystemAltMediumColor}" To="{StaticResource SystemAltMediumHighColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonDown">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation From="{StaticResource SystemAltMediumColor}" To="{StaticResource SystemBaseMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonUp">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation From="{StaticResource SystemBaseMediumColor}" To="{StaticResource SystemAltMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
@@ -86,7 +111,7 @@
             </Label.Effect>
         </Label>
         <Image x:Name="DeviceInfoImg" Margin="20,20,0,0" Source="tt-phone.png" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70"/>
-        <Rectangle x:Name="RectangleNormal" Fill="{DynamicResource SystemAltHighColorBrush}" Height="122" Stroke="{x:Static FluentWPF:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Bottom" RadiusY="12" RadiusX="12" Opacity="0.5">
+        <Rectangle x:Name="RectangleNormal" Fill="{DynamicResource SystemAltHighColorBrush}" Height="122" Stroke="{x:Static FluentWPF:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Bottom" Opacity="0.5" RadiusY="12" RadiusX="12" >
             <Rectangle.Effect>
                 <DropShadowEffect
                 ShadowDepth="0"
@@ -96,7 +121,7 @@
                 BlurRadius="8"/>
             </Rectangle.Effect>
         </Rectangle>
-        <Button x:Name="DeviceSpecificFeatures_Copy1" Content="Back" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Back_Click">
+        <Button x:Name="DeviceSpecificFeatures_Copy1" Content="Back" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="50"  Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Back_Click">
             <Button.Effect>
                 <DropShadowEffect
                 ShadowDepth="0"
@@ -106,7 +131,7 @@
                 BlurRadius="8"/>
             </Button.Effect>
         </Button>
-        <Button x:Name="DeviceSpecificFeatures_Copy4" Content="Boot TWRP" Margin="401,0,10,62" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Next_Click">
+        <Button x:Name="DeviceSpecificFeatures_Copy4" Content="Boot TWRP" Margin="401,0,10,62" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Next_Click">
             <Button.Effect>
                 <DropShadowEffect
                 ShadowDepth="0"
@@ -116,7 +141,7 @@
                 BlurRadius="8"/>
             </Button.Effect>
         </Button>
-        <Button x:Name="DeviceSpecificFeatures_Copy" Content="Flash TWRP" Margin="10,0,401,62" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="ReportBug_Click">
+        <Button x:Name="DeviceSpecificFeatures_Copy" Content="Flash TWRP" Margin="10,0,401,62" VerticalAlignment="Bottom" Height="50"  Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="ReportBug_Click">
             <Button.Effect>
                 <DropShadowEffect
                 ShadowDepth="0"

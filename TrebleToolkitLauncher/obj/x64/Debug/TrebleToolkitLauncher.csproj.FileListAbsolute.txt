@@ -83,3 +83,32 @@ C:\Users\dinis\Desktop\Treble Toolkit\Treble Toolkit\Treble-Toolkit-Source-Code-
 C:\Users\dinis\Desktop\Treble Toolkit\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\x64\Debug\TrebleToolkitLauncher.csproj.CopyComplete
 C:\Users\dinis\Desktop\Treble Toolkit\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\x64\Debug\TrebleToolkitLauncher.exe
 C:\Users\dinis\Desktop\Treble Toolkit\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\x64\Debug\TrebleToolkitLauncher.pdb
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\bin\x64\Debug\TrebleToolkitLauncher.exe.config
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\bin\x64\Debug\TrebleToolkitLauncher.exe
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\bin\x64\Debug\TrebleToolkitLauncher.pdb
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\bin\x64\Debug\CLConfiguration.xml
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\bin\x64\Debug\CLUpdate.xml
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\bin\x64\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\x64\Debug\TrebleToolkitLauncher.csproj.AssemblyReference.cache
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\x64\Debug\HomePage.g.cs
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\x64\Debug\MainWindow.g.cs
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\x64\Debug\Reinstall.g.cs
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\x64\Debug\Settings.g.cs
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\x64\Debug\UpdateAvailable.g.cs
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\x64\Debug\App.g.cs
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\x64\Debug\TrebleToolkitLauncher_MarkupCompile.cache
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\x64\Debug\TrebleToolkitLauncher_MarkupCompile.lref
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\x64\Debug\App.baml
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\x64\Debug\HomePage.baml
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\x64\Debug\MainWindow.baml
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\x64\Debug\Reinstall.baml
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\x64\Debug\Settings.baml
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\x64\Debug\UpdateAvailable.baml
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\x64\Debug\TrebleToolkitLauncher.g.resources
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\x64\Debug\TrebleToolkitLauncher.Properties.Resources.resources
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\x64\Debug\TrebleToolkitLauncher.csproj.GenerateResource.cache
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\x64\Debug\TrebleToolkitLauncher.csproj.CoreCompileInputs.cache
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\x64\Debug\TrebleToolkitLauncher.csproj.Fody.CopyLocal.cache
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\x64\Debug\TrebleToolkitLauncher.csproj.CopyComplete
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\x64\Debug\TrebleToolkitLauncher.exe
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\x64\Debug\TrebleToolkitLauncher.pdb

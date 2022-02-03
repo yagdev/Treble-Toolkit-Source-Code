@@ -98,7 +98,7 @@ namespace Treble_Toolkit
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
             startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = "/C start https://www.microsoft.com/software-download/windows10";
+            startInfo.Arguments = "/C start https://www.microsoft.com/software-download/windows11";
             process.StartInfo = startInfo;
             process.Start();
         }
@@ -106,7 +106,7 @@ namespace Treble_Toolkit
         {
             this.Dispatcher.Invoke(() =>
             {
-                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                if (SourceChord.FluentWPF.ResourceDictionaryEx.GlobalTheme == SourceChord.FluentWPF.ElementTheme.Dark)
                 {
                     DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-info-dark.png"));
                 }

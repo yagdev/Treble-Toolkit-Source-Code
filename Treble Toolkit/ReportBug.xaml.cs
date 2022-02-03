@@ -82,7 +82,7 @@ namespace Treble_Toolkit
             File.Delete(Report);
             using (StreamWriter sw = File.CreateText(Report))
             {
-                sw.WriteLine("©2021 YAG-dev");
+                sw.WriteLine("©2021-2022 YAG-dev");
                 sw.WriteLine("Bug Report Description");
                 sw.WriteLine(BugReport);
                 this.Dispatcher.Invoke(() =>
@@ -99,7 +99,7 @@ namespace Treble_Toolkit
                         string output = process.StandardOutput.ReadToEnd();
                         process.WaitForExit();
                         sw.WriteLine("Phone Info");
-                        sw.WriteLine("©2021 YAG-dev");
+                        sw.WriteLine("©2021-2022 YAG-dev");
                         sw.WriteLine(output);
                     }
                     if (PCInfo.IsChecked == true)
@@ -114,7 +114,7 @@ namespace Treble_Toolkit
                         string output = process.StandardOutput.ReadToEnd();
                         process.WaitForExit();
                         sw.WriteLine("PC Info");
-                        sw.WriteLine("©2021 YAG-dev");
+                        sw.WriteLine("©2021-2022 YAG-dev");
                         sw.WriteLine(output);
                     }
                 });
@@ -125,7 +125,7 @@ namespace Treble_Toolkit
             Dispatcher dis = Dispatcher.CurrentDispatcher;
             this.Dispatcher.Invoke(() =>
             {
-                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                if (SourceChord.FluentWPF.ResourceDictionaryEx.GlobalTheme == SourceChord.FluentWPF.ElementTheme.Dark)
                 {
                     DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-bug-dark.png"));
                 }

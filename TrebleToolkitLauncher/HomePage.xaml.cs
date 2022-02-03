@@ -216,7 +216,7 @@ namespace TrebleToolkitLauncher
                     System.Diagnostics.ProcessStartInfo startInfo2 = new System.Diagnostics.ProcessStartInfo();
                     startInfo2.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                     startInfo2.FileName = "cmd.exe";
-                    startInfo2.Arguments = "/C cd Application & cd assets & TrebleToolkitLauncher.exe";
+                    startInfo2.Arguments = "/C cd Application & cd assets & gui.exe";
                     process2.StartInfo = startInfo2;
                     process2.Start();
                     startInfo2.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
@@ -341,9 +341,10 @@ namespace TrebleToolkitLauncher
                     System.Diagnostics.ProcessStartInfo startInfo1 = new System.Diagnostics.ProcessStartInfo();
                     startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                     startInfo.FileName = "cmd.exe";
-                    startInfo.Arguments = "/C cd UpdateFiles & move TrebleToolkitLauncher.exe ../ & cd .. & rmdir UpdateFiles /s /q & wmic process where name='TrebleToolkitLauncher.exe' delete & start TrebleToolkitLauncher.exe";
+                    startInfo.Arguments = "/C cd UpdateFiles & move TrebleToolkitLauncher.exe ../ & cd .. & rmdir UpdateFiles /s /q & start TrebleToolkitLauncher.exe";
                     process.StartInfo = startInfo;
                     process.Start();
+                    Application.Current.Shutdown();
                 });
             }
             else
@@ -352,25 +353,9 @@ namespace TrebleToolkitLauncher
                 {
                     DeviceSpecificFeatures_Copy.IsEnabled = false;
                     UpdateLauncher_Btn.IsEnabled = false;
-                    JoinBeta.IsEnabled = false;
                     DeviceSpecificFeatures_Copy.Content = "🔒 Reinstall";
                     UpdateLauncher_Btn.Content = "🔒 Update Launcher";
                 });
-                string beta_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "BetaProgram", "BetaProgram.txt");
-                if (File.Exists(beta_path))
-                {
-                    this.Dispatcher.Invoke(() =>
-                    {
-                        JoinBeta.Content = "🔒 Leave Beta Program";
-                    });
-                }
-                else
-                {
-                    this.Dispatcher.Invoke(() =>
-                    {
-                        JoinBeta.Content = "🔒 Join Beta Program";
-                    });
-                }
             }
         }
         private void CheckNetworking()

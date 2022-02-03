@@ -70,7 +70,7 @@ namespace Treble_Toolkit
             using (StreamWriter sw = File.CreateText(W7))
             {
                 sw.WriteLine("Treble Toolkit Windows Versions Earlier Than 10 Warning Confirmation");
-                sw.WriteLine("©2021 YAG-dev");
+                sw.WriteLine("©2021-2022 YAG-dev");
             }
             string FTU = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "FirstTimeUse.txt");
             if (File.Exists(FTU))
@@ -94,7 +94,7 @@ namespace Treble_Toolkit
         {
             this.Dispatcher.Invoke(() =>
             {
-                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                if (SourceChord.FluentWPF.ResourceDictionaryEx.GlobalTheme == SourceChord.FluentWPF.ElementTheme.Dark)
                 {
                     DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-info-dark.png"));
                 }

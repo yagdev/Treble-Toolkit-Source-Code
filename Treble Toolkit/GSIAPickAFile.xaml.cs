@@ -23,6 +23,7 @@ namespace Treble_Toolkit
             HotkeyManager.Current.AddOrReplace("Increment", Key.D, ModifierKeys.Control, OnIncrement);
             Debug1.Visibility = Visibility.Hidden;
             DbgRct1.Visibility = Visibility.Hidden;
+            DeviceInfoImg_Copy3.Visibility = Visibility.Hidden;
             Thread thread = new Thread(Animate);
             thread.Start();
             Thread thread2 = new Thread(PrepareFiles);
@@ -35,6 +36,7 @@ namespace Treble_Toolkit
         {
             Debug1.Visibility = Visibility.Visible;
             DbgRct1.Visibility = Visibility.Visible;
+            DeviceInfoImg_Copy3.Visibility = Visibility.Visible;
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -57,6 +59,11 @@ namespace Treble_Toolkit
             }
         }
         private void Skip_Click(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("GSIFlashA.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
+        private void AddVbmeta_Click(object sender, RoutedEventArgs e)
         {
             Uri uri = new Uri("GSIFlashA.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);
@@ -101,8 +108,11 @@ namespace Treble_Toolkit
             {
                 this.Dispatcher.Invoke(() =>
                 {
-                    PhoneStatus.Content = "This GSI is invalid";
-                    PhoneStatus2.Content = "This GSI is less than 500MB. Please try again.";
+                    FileSizeCheck_Copy.Visibility = Visibility.Visible;
+                    cc_Copy.Visibility = Visibility.Visible;
+                    AddVbmeta.Visibility = Visibility.Visible;
+                    BugReport_Copy.Visibility = Visibility.Visible;
+                    DeviceInfoImg_Copy.Visibility = Visibility.Visible;
                 });
             }
             else
@@ -131,13 +141,49 @@ namespace Treble_Toolkit
         {
             this.Dispatcher.Invoke(() =>
             {
-                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                if (SourceChord.FluentWPF.ResourceDictionaryEx.GlobalTheme == SourceChord.FluentWPF.ElementTheme.Dark)
                 {
                     DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-fnf-dark.png"));
+                    DeviceInfoImg_Copy.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-gsi-dark.png"));
+                    DeviceInfoImg_Copy1.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-restart-dark.png"));
+                    DeviceInfoImg_Copy2.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-launch-dark.png"));
+                    DeviceInfoImg_Copy3.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-launch-dark.png"));
                 }
                 else
                 {
                     DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-fnf-light.png"));
+                    DeviceInfoImg_Copy.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-gsi-light.png"));
+                    DeviceInfoImg_Copy1.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-restart-light.png"));
+                    DeviceInfoImg_Copy2.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-launch-light.png"));
+                    DeviceInfoImg_Copy3.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-launch-light.png"));
+                }
+                if (File.Exists("../Place_Files_Here/GSI/system.img"))
+                {
+                    FileInfo fInfo = new FileInfo(@"..\Place_Files_Here\GSI\system.img");
+                    if (fInfo.Length < 500000000)
+                    {
+                        FileSizeCheck_Copy.Visibility = Visibility.Visible;
+                        cc_Copy.Visibility = Visibility.Visible;
+                        AddVbmeta.Visibility = Visibility.Visible;
+                        BugReport_Copy.Visibility = Visibility.Visible;
+                        DeviceInfoImg_Copy.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        FileSizeCheck_Copy.Visibility = Visibility.Hidden;
+                        cc_Copy.Visibility = Visibility.Hidden;
+                        AddVbmeta.Visibility = Visibility.Hidden;
+                        BugReport_Copy.Visibility = Visibility.Hidden;
+                        DeviceInfoImg_Copy.Visibility = Visibility.Hidden;
+                    }
+                }
+                else
+                {
+                    FileSizeCheck_Copy.Visibility = Visibility.Hidden;
+                    cc_Copy.Visibility = Visibility.Hidden;
+                    AddVbmeta.Visibility = Visibility.Hidden;
+                    BugReport_Copy.Visibility = Visibility.Hidden;
+                    DeviceInfoImg_Copy.Visibility = Visibility.Hidden;
                 }
             });
         }

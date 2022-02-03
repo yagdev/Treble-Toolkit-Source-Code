@@ -1,0 +1,247 @@
+﻿<Page x:Class="Treble_Toolkit_Installer.InstallingAD"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Treble_Toolkit_Installer"
+      xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+      xmlns:FluentWPF="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="570" d:DesignWidth="800"
+      Title="Start">
+    <Page.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <Style TargetType="{x:Type Button}" x:Key="ImageButton22.1">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <SolidColorBrush Color="{DynamicResource SystemAltMediumHighColor}"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Background="{TemplateBinding Background}" Margin="0,0,0,0">
+                            <Grid>
+                                <Label x:Name="PhoneStatus" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="20" Height="Auto" VerticalAlignment="Stretch" Margin="80,10,10,10" Grid.ColumnSpan="1">
+                                    <Label.Effect>
+                                        <DropShadowEffect
+                                            ShadowDepth="0"
+                                            Direction="0"
+                                            Color="{DynamicResource SystemAltHighColor}"
+                                            Opacity="0.8"
+                                            BlurRadius="2"/>
+                                    </Label.Effect>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="0" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                </Label>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true"/>
+                            <Trigger Property="IsMouseOver" Value="true"/>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource SystemAltHighColorBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false"/>
+                            <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation From="{StaticResource SystemAltMediumHighColor}" To="{StaticResource SystemAltMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation From="{StaticResource SystemAltMediumColor}" To="{StaticResource SystemAltMediumHighColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonDown">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation From="{StaticResource SystemAltMediumColor}" To="{StaticResource SystemBaseMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonUp">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation From="{StaticResource SystemBaseMediumColor}" To="{StaticResource SystemAltMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="ProgressBar.Progress" Color="#FF06B025"/>
+        <SolidColorBrush x:Key="ProgressBar.Background" Color="#FFE6E6E6"/>
+        <SolidColorBrush x:Key="ProgressBar.Border" Color="#FFBCBCBC"/>
+        <Style TargetType="{x:Type ProgressBar}" x:Key="PgrBar21.4.2">
+            <Setter Property="Foreground" Value="{StaticResource ProgressBar.Progress}"/>
+            <Setter Property="Background" Value="{StaticResource ProgressBar.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ProgressBar.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ProgressBar}">
+                        <Grid x:Name="TemplateRoot">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Determinate"/>
+                                    <VisualState x:Name="Indeterminate">
+                                        <Storyboard RepeatBehavior="Forever">
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="Animation">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="0.25"/>
+                                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.25"/>
+                                                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0.25"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <PointAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)" Storyboard.TargetName="Animation">
+                                                <EasingPointKeyFrame KeyTime="0" Value="-0.5,0.5"/>
+                                                <EasingPointKeyFrame KeyTime="0:0:1" Value="0.5,0.5"/>
+                                                <EasingPointKeyFrame KeyTime="0:0:2" Value="1.5,0.5"/>
+                                            </PointAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="5"/>
+                            <Rectangle x:Name="PART_Track" RadiusX="9" RadiusY="9"/>
+                            <Grid x:Name="PART_Indicator" ClipToBounds="true" HorizontalAlignment="Left" Margin="0">
+                                <Rectangle x:Name="Indicator" Fill="{TemplateBinding Foreground}" RadiusX="8" RadiusY="8" Margin="1,1,2.3,1"/>
+                                <Rectangle x:Name="Animation" Fill="{TemplateBinding Foreground}" RenderTransformOrigin="0.5,0.5" RadiusX="8" RadiusY="8" Margin="1">
+                                    <Rectangle.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Rectangle.RenderTransform>
+                                </Rectangle>
+                            </Grid>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Orientation" Value="Vertical">
+                                <Setter Property="LayoutTransform" TargetName="TemplateRoot">
+                                    <Setter.Value>
+                                        <RotateTransform Angle="-90"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsIndeterminate" Value="true">
+                                <Setter Property="Visibility" TargetName="Indicator" Value="Collapsed"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid x:Name="GridMain">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="{DynamicResource SystemAltHighColorBrush}" Stroke="{x:Static FluentWPF:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="8" RadiusX="8" Margin="10,10,10,0" Height="90" VerticalAlignment="Top">
+            <Rectangle.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Label x:Name="Title_Copy7" Content="Installing to AppData" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="20" Margin="90,20,20,0" Height="35" VerticalAlignment="Top">
+            <Label.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemAltHighColor}"
+                    Opacity="0.8"
+                    BlurRadius="2"/>
+            </Label.Effect>
+        </Label>
+        <Label x:Name="VersionCheck" Content="We will be done in a second" Margin="90,55,20,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="Bahnschrift Bold" FontSize="14" Height="35" VerticalAlignment="Top">
+            <Label.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemAltHighColor}"
+                    Opacity="0.8"
+                    BlurRadius="2"/>
+            </Label.Effect>
+        </Label>
+        <Image x:Name="BtnImg_Copy2" Margin="20,20,0,0" Source="3c5973_c1cf50e6089f443ba92025a6531f0a6f_mv2.png" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70" Grid.Column="0" Grid.Row="0" Grid.RowSpan="1"/>
+        <ProgressBar x:Name="status_pgr" Height="75" VerticalAlignment="Bottom" Background="{x:Null}" Foreground="{DynamicResource SystemBaseHighColorBrush}" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5" BorderThickness="3" UseLayoutRounding="False" Style="{DynamicResource PgrBar21.4.2}" Value="50" Opacity="0.5">
+            <ProgressBar.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="2"/>
+            </ProgressBar.Effect>
+        </ProgressBar>
+        <Label x:Name="status_lbl" Content="Ah shoot, seems like we messed up. Please restart Treble Toolkit Installer to retry." Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Semibold" Height="75" VerticalAlignment="Bottom" FontSize="10">
+            <Label.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemAltHighColor}"
+                    Opacity="0.8"
+                    BlurRadius="2"/>
+            </Label.Effect>
+        </Label>
+        <Rectangle Fill="{DynamicResource SystemAltHighColorBrush}" Stroke="{x:Static FluentWPF:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="8" RadiusX="8" Margin="10,102,10,0" Height="90" VerticalAlignment="Top">
+            <Rectangle.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemBaseHighColor}"
+                    Opacity="0.5"
+                    BlurRadius="8"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Label x:Name="Title_Copy" Content="Currently Installing" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="Bahnschrift Semibold" FontSize="20" Margin="90,112,20,0" Height="35" VerticalAlignment="Top">
+            <Label.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemAltHighColor}"
+                    Opacity="0.8"
+                    BlurRadius="2"/>
+            </Label.Effect>
+        </Label>
+        <Label x:Name="VersionCheck_Copy" Content="Checking..." Margin="90,147,20,0" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="Bahnschrift Bold" FontSize="14" Height="35" VerticalAlignment="Top">
+            <Label.Effect>
+                <DropShadowEffect
+                    ShadowDepth="0"
+                    Direction="0"
+                    Color="{DynamicResource SystemAltHighColor}"
+                    Opacity="0.8"
+                    BlurRadius="2"/>
+            </Label.Effect>
+        </Label>
+        <Image x:Name="BtnImg_Copy3" Margin="20,112,0,0" Source="3c5973_c1cf50e6089f443ba92025a6531f0a6f_mv2.png" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70" Grid.Column="0" Grid.Row="0" Grid.RowSpan="1"/>
+    </Grid>
+</Page>

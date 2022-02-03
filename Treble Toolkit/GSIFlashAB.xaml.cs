@@ -92,14 +92,34 @@ namespace Treble_Toolkit
         }
         private void Flash()
         {
+            string VbmetaFlashYes = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "FlashVbmetaYes.txt");
+            string BootFlashYes = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "FlashBootYes.txt");
+            string FormatYes = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "FormatYes.txt");
+            string Fastbootd = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Fastbootd.txt");
+            string VisibleCMD = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "VisibleCMD.txt");
             this.Dispatcher.Invoke(() =>
             {
                 status_pgr.Value = 0;
                 status_lbl.Content = "Doing some preparations...";
             });
+            if (File.Exists(Fastbootd))
+            {
+                String command0 = @"/C adb.exe reboot-bootloader & fastboot.exe reboot fastboot";
+                ProcessStartInfo cmdsi0 = new ProcessStartInfo("cmd.exe");
+                if (File.Exists(VisibleCMD))
+                {
+                    cmdsi0.WindowStyle = ProcessWindowStyle.Normal;
+                }
+                else
+                {
+                    cmdsi0.WindowStyle = ProcessWindowStyle.Hidden;
+                }
+                cmdsi0.Arguments = command0;
+                Process cmd0 = Process.Start(cmdsi0);
+                cmd0.WaitForExit();
+            }
             String command = @"/C adb.exe reboot-bootloader & cd .. & mkdir Place_Files_Here & cd Place_Files_Here & mkdir boot & cd boot & ren *.img boot.img & cd .. & mkdir GSI & cd GSI & ren *.img system.img & cd .. & mkdir vbmeta & cd vbmeta & ren *.img vbmeta.img & cd .. & cd .. & cd assets";
             ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
-            string VisibleCMD = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "VisibleCMD.txt");
             if (File.Exists(VisibleCMD))
             {
                 cmdsi.WindowStyle = ProcessWindowStyle.Normal;
@@ -116,41 +136,63 @@ namespace Treble_Toolkit
                 status_pgr.Value += 5;
                 status_lbl.Content = "Looks like we froze... Please try installing the ADB/Fastboot drivers.";
             });
-            String command2 = @"/C fastboot.exe format system_a & fastboot.exe format system_b & fastboot.exe format userdata";
-            ProcessStartInfo cmdsi2 = new ProcessStartInfo("cmd.exe");
-            if (File.Exists(VisibleCMD))
+            if (File.Exists(FormatYes))
             {
-                cmdsi2.WindowStyle = ProcessWindowStyle.Normal;
+                String command2 = @"/C fastboot.exe format system_a & fastboot.exe format system_b & fastboot.exe format userdata";
+                ProcessStartInfo cmdsi2 = new ProcessStartInfo("cmd.exe");
+                if (File.Exists(VisibleCMD))
+                {
+                    cmdsi2.WindowStyle = ProcessWindowStyle.Normal;
+                }
+                else
+                {
+                    cmdsi2.WindowStyle = ProcessWindowStyle.Hidden;
+                }
+                cmdsi2.Arguments = command2;
+                Process cmd2 = Process.Start(cmdsi2);
+                cmd2.WaitForExit();
             }
-            else
-            {
-                cmdsi2.WindowStyle = ProcessWindowStyle.Hidden;
-            }
-            cmdsi2.Arguments = command2;
-            Process cmd2 = Process.Start(cmdsi2);
-            cmd2.WaitForExit();
             this.Dispatcher.Invoke(() =>
             {
                 status_pgr.Value += 5;
                 status_lbl.Content = "Flashing vbmeta and boot images...";
             });
-            String command3 = @"/C fastboot.exe --disable-verity --disable-verification flash vbmeta ../Place_Files_Here/vbmeta/vbmeta.img & fastboot.exe flash boot_a ../Place_Files_Here/boot/boot.img & fastboot.exe flash boot_b ../Place_Files_Here/boot/boot.img";
-            ProcessStartInfo cmdsi3 = new ProcessStartInfo("cmd.exe");
-            if (File.Exists(VisibleCMD))
+            if (File.Exists(BootFlashYes))
             {
-                cmdsi3.WindowStyle = ProcessWindowStyle.Normal;
+                String command3 = @"/C fastboot.exe flash boot_a ../Place_Files_Here/boot/boot.img & fastboot.exe flash boot_b ../Place_Files_Here/boot/boot.img";
+                ProcessStartInfo cmdsi3 = new ProcessStartInfo("cmd.exe");
+                if (File.Exists(VisibleCMD))
+                {
+                    cmdsi3.WindowStyle = ProcessWindowStyle.Normal;
+                }
+                else
+                {
+                    cmdsi3.WindowStyle = ProcessWindowStyle.Hidden;
+                }
+                cmdsi3.Arguments = command3;
+                Process cmd3 = Process.Start(cmdsi3);
+                cmd3.WaitForExit();
             }
-            else
+            if (File.Exists(VbmetaFlashYes))
             {
-                cmdsi3.WindowStyle = ProcessWindowStyle.Hidden;
+                String command3 = @"/C fastboot.exe --disable-verity --disable-verification flash vbmeta ../Place_Files_Here/vbmeta/vbmeta.img";
+                ProcessStartInfo cmdsi3 = new ProcessStartInfo("cmd.exe");
+                if (File.Exists(VisibleCMD))
+                {
+                    cmdsi3.WindowStyle = ProcessWindowStyle.Normal;
+                }
+                else
+                {
+                    cmdsi3.WindowStyle = ProcessWindowStyle.Hidden;
+                }
+                cmdsi3.Arguments = command3;
+                Process cmd3 = Process.Start(cmdsi3);
+                cmd3.WaitForExit();
             }
-            cmdsi3.Arguments = command3;
-            Process cmd3 = Process.Start(cmdsi3);
-            cmd3.WaitForExit();
             this.Dispatcher.Invoke(() =>
             {
                 status_pgr.Value += 10;
-                status_lbl.Content = "Flashing GSI on both partitions...";
+                status_lbl.Content = "Flashing GSI...";
             });
             String command4 = @"/C fastboot.exe flash system_a ../Place_Files_Here/GSI/system.img & fastboot.exe flash system_b ../Place_Files_Here/GSI/system.img";
             ProcessStartInfo cmdsi4 = new ProcessStartInfo("cmd.exe");
@@ -170,6 +212,22 @@ namespace Treble_Toolkit
                 status_pgr.Value += 70;
                 status_lbl.Content = "Finishing up...";
             });
+            if (File.Exists(Fastbootd))
+            {
+                String commandf = @"/C fastboot.exe reboot bootloader";
+                ProcessStartInfo cmdsif = new ProcessStartInfo("cmd.exe");
+                if (File.Exists(VisibleCMD))
+                {
+                    cmdsif.WindowStyle = ProcessWindowStyle.Normal;
+                }
+                else
+                {
+                    cmdsif.WindowStyle = ProcessWindowStyle.Hidden;
+                }
+                cmdsif.Arguments = commandf;
+                Process cmdf = Process.Start(cmdsif);
+                cmdf.WaitForExit();
+            }
             String command5 = @"/C fastboot.exe reboot & cd .. & cd Place_Files_Here & mkdir boot & mkdir GSI & mkdir vbmeta & wmic process where name='adb.exe' delete";
             ProcessStartInfo cmdsi5 = new ProcessStartInfo("cmd.exe");
             if (File.Exists(VisibleCMD))
@@ -214,12 +272,18 @@ namespace Treble_Toolkit
             cmd4.WaitForExit();
             Process cmd5 = Process.Start(cmdsi);
             cmd5.WaitForExit();
+            Process cmd6 = Process.Start(cmdsi);
+            cmd6.WaitForExit();
+            Process cmd7 = Process.Start(cmdsi);
+            cmd7.WaitForExit();
+            Process cmd8 = Process.Start(cmdsi);
+            cmd8.WaitForExit();
         }
         private void UpdateUI()
         {
             this.Dispatcher.Invoke(() =>
             {
-                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                if (SourceChord.FluentWPF.ResourceDictionaryEx.GlobalTheme == SourceChord.FluentWPF.ElementTheme.Dark)
                 {
                     DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-flashing-dark.png"));
                 }

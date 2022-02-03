@@ -357,7 +357,7 @@ namespace Treble_Toolkit
             startInfo.UseShellExecute = false;
             startInfo.RedirectStandardOutput = true;
             startInfo.FileName = "CMD.exe";
-            startInfo.Arguments = "/C adb.exe get-state";
+            startInfo.Arguments = "/C adb.exe get-state & wmic process where name='adb.exe' delete";
             startInfo.CreateNoWindow = true;
             process.StartInfo = startInfo;
             process.Start();
@@ -487,7 +487,7 @@ namespace Treble_Toolkit
         {
             this.Dispatcher.Invoke(() =>
             {
-                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                if (SourceChord.FluentWPF.ResourceDictionaryEx.GlobalTheme == SourceChord.FluentWPF.ElementTheme.Dark)
                 {
                     DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-phone-dark.png"));
                     DeviceInfoImg_Copy.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-gsi-dark.png"));

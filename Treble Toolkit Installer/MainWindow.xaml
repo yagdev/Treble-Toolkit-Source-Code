@@ -1,0 +1,17 @@
+﻿<Window x:Class="Treble_Toolkit_Installer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Treble_Toolkit_Installer"
+        xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+        mc:Ignorable="d"
+        Title="Treble Toolkit" Height="600" Width="800" 
+        fw:AcrylicWindow.Enabled="True" fw:AcrylicPanel.NoiseOpacity="0" fw:AcrylicWindow.NoiseOpacity="0" MinWidth="450" >
+    <Grid>
+        <ScrollViewer x:Name="scrollviewer" ClipToBounds="True" VerticalScrollBarVisibility="Hidden">
+            <Frame Source="Start.xaml" NavigationUIVisibility="Hidden" ScrollViewer.CanContentScroll="True">
+            </Frame>
+        </ScrollViewer>
+    </Grid>
+</Window>

@@ -107,7 +107,7 @@ namespace Treble_Toolkit
                 ADBStatus.Content = "Up To Date";
                 PhoneStatus.Content = "Update Center · No Updates Available";
                 Change1b_Copy.IsEnabled = false;
-                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                if (SourceChord.FluentWPF.ResourceDictionaryEx.GlobalTheme == SourceChord.FluentWPF.ElementTheme.Dark)
                 {
                     DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-up-dark.png"));
                 }

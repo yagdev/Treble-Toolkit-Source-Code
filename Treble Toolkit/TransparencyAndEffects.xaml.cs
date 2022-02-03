@@ -28,10 +28,6 @@ namespace Treble_Toolkit
             InitializeComponent();
             Thread thread = new Thread(Animate);
             thread.Start();
-            Thread thread2 = new Thread(CheckTransparency);
-            thread2.Start();
-            Thread thread3 = new Thread(TransparentThemeCheck);
-            thread3.Start();
             Thread thread4 = new Thread(UpdateUI);
             thread4.Start();
         }
@@ -44,8 +40,8 @@ namespace Treble_Toolkit
 
         private void ToggleTransparency(object sender, RoutedEventArgs e)
         {
-            Thread thread = new Thread(ToggleTransparentTheme);
-            thread.Start();
+            Uri uri = new Uri("TransparencySlider.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
         }
 
         private void BugReports_Click(object sender, RoutedEventArgs e)
@@ -53,16 +49,15 @@ namespace Treble_Toolkit
 
         }
 
-        private void EnableTransparentTheme(object sender, RoutedEventArgs e)
-        {
-            Thread thread = new Thread(ToggleTransparency);
-            thread.Start();
-        }
-
         private void AnimationToggle(object sender, RoutedEventArgs e)
         {
-            Thread thread = new Thread(ToggleAnimations);
-            thread.Start();
+            Uri uri = new Uri("Animations.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
+        private void Theme(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("ThemeSelect.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
         }
         //Threading starts here -- 5/11/2021@22:07, YAG-dev, 21.12+
         private void Animate()
@@ -70,16 +65,12 @@ namespace Treble_Toolkit
             string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotAnimated.txt");
             if (File.Exists(IsAnimated))
             {
-                this.Dispatcher.Invoke(() =>
-                {
-                    AnimationsToggle.Content = "Enable Animations";
-                });
+                
             }
             else
             {
                 this.Dispatcher.Invoke(() =>
                 {
-                    AnimationsToggle.Content = "Disable Animations";
                     GridMain.Opacity = 0;
                     Grid r = (Grid)GridMain;
                     DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromMilliseconds(250));
@@ -87,168 +78,11 @@ namespace Treble_Toolkit
                 });
             }
         }
-        private void CheckTransparency()
-        {
-            string IsTransparent = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotTransparent.txt");
-            if (File.Exists(IsTransparent))
-            {
-                this.Dispatcher.Invoke(() =>
-                {
-                    TransparencyToggle.Content = "Enable Transparency";
-                });
-            }
-            else
-            {
-                this.Dispatcher.Invoke(() =>
-                {
-                    TransparencyToggle.Content = "Disable Transparency";
-                });
-            }
-        }
-        private void TransparentThemeCheck()
-        {
-            string IsTransparent2 = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "TransparentTheme.txt");
-            if (File.Exists(IsTransparent2))
-            {
-                this.Dispatcher.Invoke(() =>
-                {
-                    DeviceSpecificFeatures_Copy.Content = "Disable Transparent Theme";
-                });
-            }
-            else
-            {
-                this.Dispatcher.Invoke(() =>
-                {
-                    DeviceSpecificFeatures_Copy.Content = "Enable Transparent Theme";
-                });
-            }
-        }
-        private void ToggleTransparentTheme()
-        {
-            string IsTransparent2 = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "TransparentTheme.txt");
-            if (File.Exists(IsTransparent2))
-            {
-                File.Delete(IsTransparent2);
-            }
-            System.Diagnostics.Process process = new System.Diagnostics.Process();
-            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = "/C cd .. & cd .. & mkdir UpdateInfo & cd UpdateInfo & mkdir Settings";
-            process.StartInfo = startInfo;
-            process.Start();
-            process.WaitForExit();
-            string IsTransparent = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotTransparent.txt");
-            if (File.Exists(IsTransparent))
-            {
-                File.Delete(IsTransparent);
-                this.Dispatcher.Invoke(() =>
-                {
-                    TransparencyToggle.Content = "Disable Transparency";
-                });
-            }
-            else
-            {
-                using (StreamWriter sw = File.CreateText(IsTransparent))
-                {
-                    sw.WriteLine("Treble Toolkit Settings Item");
-                    sw.WriteLine("©2021 YAG-dev");
-                }
-                this.Dispatcher.Invoke(() =>
-                {
-                    TransparencyToggle.Content = "Enable Transparency";
-                });
-            }
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = "/C wmic process where name='adb.exe' delete & wmic process where name='gui.exe' delete & start gui.exe";
-            process.StartInfo = startInfo;
-            process.Start();
-        }
-        private void ToggleTransparency()
-        {
-            string IsTransparent = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotTransparent.txt");
-            if (File.Exists(IsTransparent))
-            {
-                File.Delete(IsTransparent);
-            }
-            System.Diagnostics.Process process = new System.Diagnostics.Process();
-            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = "/C cd .. & cd .. & mkdir UpdateInfo & cd UpdateInfo & mkdir Settings";
-            process.StartInfo = startInfo;
-            process.Start();
-            process.WaitForExit();
-            string IsTransparent2 = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "TransparentTheme.txt");
-            if (File.Exists(IsTransparent2))
-            {
-                File.Delete(IsTransparent2);
-                this.Dispatcher.Invoke(() =>
-                {
-                    DeviceSpecificFeatures_Copy.Content = "Enable Transparent Theme";
-                });
-            }
-            else
-            {
-                using (StreamWriter sw = File.CreateText(IsTransparent2))
-                {
-                    sw.WriteLine("Treble Toolkit Settings Item");
-                    sw.WriteLine("©2021 YAG-dev");
-                }
-                this.Dispatcher.Invoke(() =>
-                {
-                    DeviceSpecificFeatures_Copy.Content = "Disable Transparent Theme";
-                });
-            }
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = "/C wmic process where name='adb.exe' delete & wmic process where name='gui.exe' delete & start gui.exe";
-            process.StartInfo = startInfo;
-            process.Start();
-        }
-        private void ToggleAnimations()
-        {
-            System.Diagnostics.Process process = new System.Diagnostics.Process();
-            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = "/C cd .. & cd .. & mkdir UpdateInfo & cd UpdateInfo & mkdir Settings";
-            process.StartInfo = startInfo;
-            process.Start();
-            process.WaitForExit();
-            string IsAnimated = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "NotAnimated.txt");
-            if (File.Exists(IsAnimated))
-            {
-                File.Delete(IsAnimated);
-                this.Dispatcher.Invoke(() =>
-                {
-                    AnimationsToggle.Content = "Disable Animations";
-                });
-            }
-            else
-            {
-                using (StreamWriter sw = File.CreateText(IsAnimated))
-                {
-                    sw.WriteLine("Treble Toolkit Settings Item");
-                    sw.WriteLine("©2021 YAG-dev");
-                }
-                this.Dispatcher.Invoke(() =>
-                {
-                    AnimationsToggle.Content = "Enable Animations";
-                });
-            }
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = "/C wmic process where name='adb.exe' delete & wmic process where name='gui.exe' delete & start gui.exe";
-            process.StartInfo = startInfo;
-            process.Start();
-        }
         private void UpdateUI()
         {
             this.Dispatcher.Invoke(() =>
             {
-                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                if (SourceChord.FluentWPF.ResourceDictionaryEx.GlobalTheme == SourceChord.FluentWPF.ElementTheme.Dark)
                 {
                     DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-settings-dark.png"));
                 }

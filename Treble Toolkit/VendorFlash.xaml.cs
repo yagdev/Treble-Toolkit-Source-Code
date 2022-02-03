@@ -212,7 +212,7 @@ namespace Treble_Toolkit
                     GSIRectangle.Effect = DeviceSpecificFeatures_Copy1.Effect;
                 }
             });
-            string TWRPIMG = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\", "Place_Files_Here", "TWRP", "twrp.img");
+            string TWRPIMG = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\", "Place_Files_Here", "Vendor", "vendor.img");
             if (File.Exists(TWRPIMG))
             {
                 FileInfo fInfo = new FileInfo(@"..\Place_Files_Here\Vendor\vendor.img");
@@ -222,7 +222,7 @@ namespace Treble_Toolkit
                     {
                         FileInfo fs = new FileInfo(TWRPIMG);
                         long filesize = fs.Length / 1000000;
-                        PhoneStatus2.Content = PhoneStatus2.Content + " · Invalid Image (-100 MB)";
+                        PhoneStatus2.Content = PhoneStatus2.Content + " · Invalid Image (-300 MB)";
                     });
                     this.Dispatcher.Invoke(() =>
                     {
@@ -325,7 +325,7 @@ namespace Treble_Toolkit
         {
             this.Dispatcher.Invoke(() =>
             {
-                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                if (SourceChord.FluentWPF.ResourceDictionaryEx.GlobalTheme == SourceChord.FluentWPF.ElementTheme.Dark)
                 {
                     DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-flash-dark.png"));
                 }

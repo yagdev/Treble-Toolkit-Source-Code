@@ -56,6 +56,11 @@ namespace Treble_Toolkit
             Uri uri = new Uri("TWRPBootFinished.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);
         }
+        private void AddVbmeta_Click(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("TWRPBoot.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
         //Threading starts here -- 5/11/2021@22:07, YAG-dev, 21.12+
         private void Animate()
         {
@@ -101,7 +106,11 @@ namespace Treble_Toolkit
                 {
                     this.Dispatcher.Invoke(() =>
                     {
-                        
+                        FileSizeCheck_Copy.Visibility = Visibility.Visible;
+                        cc_Copy.Visibility = Visibility.Visible;
+                        AddVbmeta.Visibility = Visibility.Visible;
+                        BugReport_Copy.Visibility = Visibility.Visible;
+                        DeviceInfoImg_Copy.Visibility = Visibility.Visible;
                     });
                 }
                 else
@@ -133,17 +142,79 @@ namespace Treble_Toolkit
                 cmd4.WaitForExit();
             }
         }
+        private void Skip()
+        {
+            if (File.Exists("../Place_Files_Here/TWRP/twrp.img"))
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    NotFound.Visibility = Visibility.Hidden;
+                });
+                String command2 = @"/C adb.exe reboot-bootloader & cd .. & cd Place_Files_Here & cd TWRP & ren *.img twrp.img & cd .. & cd .. & cd assets & fastboot.exe boot ../Place_Files_Here/TWRP/twrp.img & cd .. & cd Place_Files_Here & mkdir TWRP & wmic process where name='adb.exe' delete";
+                ProcessStartInfo cmdsi2 = new ProcessStartInfo("cmd.exe");
+                cmdsi2.Arguments = command2;
+                Process cmd2 = Process.Start(cmdsi2);
+                cmd2.WaitForExit();
+                Uri uri = new Uri("TWRPBootFinished.xaml", UriKind.Relative);
+                this.NavigationService.Navigate(uri);
+            }
+            else
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    NotFound.Visibility = Visibility.Visible;
+                });
+                String command3 = @"/C cd .. & cd Place_Files_Here & cd TWRP & start .";
+                ProcessStartInfo cmdsi3 = new ProcessStartInfo("cmd.exe");
+                cmdsi3.Arguments = command3;
+                Process cmd3 = Process.Start(cmdsi3);
+                cmd3.WaitForExit();
+                String command4 = @"/C cd .. & cd Place_Files_Here & cd TWRP & ren * twrp.img";
+                ProcessStartInfo cmdsi4 = new ProcessStartInfo("cmd.exe");
+                cmdsi4.Arguments = command4;
+                Process cmd4 = Process.Start(cmdsi4);
+                cmd4.WaitForExit();
+            }
+        }
         private void UpdateUI()
         {
             this.Dispatcher.Invoke(() =>
             {
-                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                if (SourceChord.FluentWPF.ResourceDictionaryEx.GlobalTheme == SourceChord.FluentWPF.ElementTheme.Dark)
                 {
                     DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-fnf-dark.png"));
                 }
                 else
                 {
                     DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-fnf-light.png"));
+                }
+                if (File.Exists("../Place_Files_Here/TWRP/twrp.img"))
+                {
+                    FileInfo fInfo = new FileInfo(@"..\Place_Files_Here\TWRP\twrp.img");
+                    if (fInfo.Length > 100000000)
+                    {
+                        FileSizeCheck_Copy.Visibility = Visibility.Visible;
+                        cc_Copy.Visibility = Visibility.Visible;
+                        AddVbmeta.Visibility = Visibility.Visible;
+                        BugReport_Copy.Visibility = Visibility.Visible;
+                        DeviceInfoImg_Copy.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        FileSizeCheck_Copy.Visibility = Visibility.Hidden;
+                        cc_Copy.Visibility = Visibility.Hidden;
+                        AddVbmeta.Visibility = Visibility.Hidden;
+                        BugReport_Copy.Visibility = Visibility.Hidden;
+                        DeviceInfoImg_Copy.Visibility = Visibility.Hidden;
+                    }
+                }
+                else
+                {
+                    FileSizeCheck_Copy.Visibility = Visibility.Hidden;
+                    cc_Copy.Visibility = Visibility.Hidden;
+                    AddVbmeta.Visibility = Visibility.Hidden;
+                    BugReport_Copy.Visibility = Visibility.Hidden;
+                    DeviceInfoImg_Copy.Visibility = Visibility.Hidden;
                 }
             });
         }

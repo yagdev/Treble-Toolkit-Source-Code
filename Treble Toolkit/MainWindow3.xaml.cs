@@ -30,6 +30,30 @@ namespace Treble_Toolkit
                     ContentFrame.Navigate(new Uri("QuickStartGuide.xaml", UriKind.Relative));
                 }
             }
+            string Dark = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "DarkTheme.txt");
+            string Light = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "LightTheme.txt");
+            if (File.Exists(Dark))
+            {
+                SourceChord.FluentWPF.ResourceDictionaryEx.GlobalTheme = SourceChord.FluentWPF.ElementTheme.Dark;
+            }
+            else
+            {
+                if (File.Exists(Light))
+                {
+                    SourceChord.FluentWPF.ResourceDictionaryEx.GlobalTheme = SourceChord.FluentWPF.ElementTheme.Light;
+                }
+                else
+                {
+                    if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                    {
+                        SourceChord.FluentWPF.ResourceDictionaryEx.GlobalTheme = SourceChord.FluentWPF.ElementTheme.Dark;
+                    }
+                    else
+                    {
+                        SourceChord.FluentWPF.ResourceDictionaryEx.GlobalTheme = SourceChord.FluentWPF.ElementTheme.Light;
+                    }
+                }
+            }
         }
     }
 }

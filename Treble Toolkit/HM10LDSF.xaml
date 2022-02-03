@@ -117,9 +117,13 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Style x:Key="Button21.8.1Rev4" TargetType="{x:Type Button}">
+        <Style TargetType="{x:Type Button}" x:Key="Button21.8.1Rev4">
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <SolidColorBrush Color="{DynamicResource SystemAltMediumHighColor}"/>
+                </Setter.Value>
+            </Setter>
             <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
             <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
             <Setter Property="BorderThickness" Value="1"/>
@@ -129,23 +133,46 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Background="{DynamicResource SystemAltMediumHighColorBrush}" Margin="0,0,0,0">
-                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Margin="0,0,0,0" Background="{TemplateBinding Background}">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsDefaulted" Value="true">
                                 <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                             </Trigger>
-                            <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{DynamicResource SystemAltMediumColorBrush}"/>
-                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true"/>
                             <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{DynamicResource SystemBaseMediumColorBrush}"/>
                                 <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource SystemAltHighColorBrush}"/>
                             </Trigger>
-                            <Trigger Property="IsEnabled" Value="false">
-
-                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false"/>
+                            <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation From="{StaticResource SystemAltMediumHighColor}" To="{StaticResource SystemAltMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation From="{StaticResource SystemAltMediumColor}" To="{StaticResource SystemAltMediumHighColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonDown">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation From="{StaticResource SystemAltMediumColor}" To="{StaticResource SystemBaseMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonUp">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation From="{StaticResource SystemBaseMediumColor}" To="{StaticResource SystemAltMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
@@ -219,10 +246,8 @@
             <RowDefinition Height="10" MaxHeight="10" MinHeight="10"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition MaxWidth="300"/>
-            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Rectangle Fill="{DynamicResource SystemAltHighColorBrush}" Height="122" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Bottom" RadiusY="12" RadiusX="12" Grid.ColumnSpan="2" Opacity="0.5" Grid.RowSpan="2">
+        <Rectangle Fill="{DynamicResource SystemAltHighColorBrush}" Height="122" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Opacity="0.5" Grid.RowSpan="2" RadiusY="12" RadiusX="12" >
             <Rectangle.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -243,7 +268,7 @@
                     BlurRadius="2"/>
             </ProgressBar.Effect>
         </ProgressBar>
-        <Button x:Name="BackAbout" Content="Download TWRP Image" Margin="10,0,10,52" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemBaseHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="HM10L_Click" Grid.ColumnSpan="2">
+        <Button x:Name="BackAbout" Content="Download TWRP Image" Margin="10,0,10,52" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="HM10L_Click" Grid.ColumnSpan="2">
             <Button.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -253,7 +278,7 @@
                     BlurRadius="8"/>
             </Button.Effect>
         </Button>
-        <Button x:Name="DeviceSpecificFeatures_Copy" Content="Back" Margin="10,0" VerticalAlignment="Bottom" Height="50" Background="{DynamicResource SystemAltHighColorBrush}" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="BACK_Click" Grid.ColumnSpan="2">
+        <Button x:Name="DeviceSpecificFeatures_Copy" Content="Back" Margin="10,0" VerticalAlignment="Bottom" Height="50"  Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="BACK_Click" Grid.ColumnSpan="2">
             <Button.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"

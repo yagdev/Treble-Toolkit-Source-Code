@@ -98,7 +98,7 @@ namespace Treble_Toolkit
             using (StreamWriter sw = File.CreateText(FTU))
             {
                 sw.WriteLine("Treble Toolkit First Time Use");
-                sw.WriteLine("©2021 YAG-dev");
+                sw.WriteLine("©2021-2022 YAG-dev");
             }
         }
         private void HomeScreen()
@@ -114,7 +114,7 @@ namespace Treble_Toolkit
             using (StreamWriter sw = File.CreateText(FTU))
             {
                 sw.WriteLine("Treble Toolkit First Time Use");
-                sw.WriteLine("©2021 YAG-dev");
+                sw.WriteLine("©2021-2022 YAG-dev");
             }
         }
         private void GetCurrentVersion()

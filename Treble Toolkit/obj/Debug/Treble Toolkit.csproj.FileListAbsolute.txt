@@ -373,7 +373,6 @@ D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\bin\De
 D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\bin\Debug\System.Reactive.xml
 D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\bin\Debug\System.Threading.Tasks.Extensions.xml
-D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Treble Toolkit.csproj.AssemblyReference.cache
 D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\AboutScreen.g.cs
 D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Alcatel1.g.cs
 D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\BTULHW.g.cs
@@ -738,3 +737,16 @@ C:\Users\dinis\Desktop\Treble Toolkit\Treble Toolkit\Treble-Toolkit-Source-Code-
 C:\Users\dinis\Desktop\Treble Toolkit\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Treble Toolkit.csproj.CopyComplete
 C:\Users\dinis\Desktop\Treble Toolkit\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\gui.exe
 C:\Users\dinis\Desktop\Treble Toolkit\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\gui.pdb
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\ThemeSelect.g.cs
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\ThemeSelect.baml
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\CMDInfo.g.cs
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\CMDInfo.baml
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Animations.g.cs
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Animations.baml
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TransparencySlider.g.cs
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TransparencySlider.baml
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\CompatibilitySettings.g.cs
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FlashMethod.g.cs
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\CompatibilitySettings.baml
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FlashMethod.baml
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Treble Toolkit.csproj.AssemblyReference.cache

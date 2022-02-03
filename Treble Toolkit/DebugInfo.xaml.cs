@@ -35,8 +35,8 @@ namespace Treble_Toolkit
 
         private void BugReports_Click(object sender, RoutedEventArgs e)
         {
-            Thread thread = new Thread(Toggle1);
-            thread.Start();
+            Uri uri = new Uri("CMDInfo.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -65,65 +65,22 @@ namespace Treble_Toolkit
         }
         private void UpdateUI()
         {
-            string VisibleCMD = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "VisibleCMD.txt");
-            if (File.Exists(VisibleCMD))
-            {
-                this.Dispatcher.Invoke(() =>
-                {
-                    DeviceSpecificFeatures_Copy.Content = "Hide CMD Window While Flashing";
-                });
-            }
-            else
-            {
-                this.Dispatcher.Invoke(() =>
-                {
-                    DeviceSpecificFeatures_Copy.Content = "Show CMD Window While Flashing";
-                });
-            }
             Dispatcher dis = Dispatcher.CurrentDispatcher;
             this.Dispatcher.Invoke(() =>
             {
-                if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
+                if (SourceChord.FluentWPF.ResourceDictionaryEx.GlobalTheme == SourceChord.FluentWPF.ElementTheme.Dark)
                 {
                     DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-settings-dark.png"));
+                    DeviceInfoImg_Copy.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-restart-dark.png"));
+                    DeviceInfoImg_Copy1.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-freecmd-dark.png"));
                 }
                 else
                 {
                     DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-settings-light.png"));
+                    DeviceInfoImg_Copy.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-restart-light.png"));
+                    DeviceInfoImg_Copy1.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-freecmd-light.png"));
                 }
             });
-        }
-        private void Toggle1()
-        {
-            System.Diagnostics.Process process = new System.Diagnostics.Process();
-            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = "/C cd .. & cd .. & mkdir UpdateInfo & cd UpdateInfo & mkdir Settings";
-            process.StartInfo = startInfo;
-            process.Start();
-            process.WaitForExit();
-            string VisibleCMD = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "VisibleCMD.txt");
-            if (File.Exists(VisibleCMD))
-            {
-                File.Delete(VisibleCMD);
-                this.Dispatcher.Invoke(() =>
-                {
-                    DeviceSpecificFeatures_Copy.Content = "Show CMD Window While Flashing";
-                });
-            }
-            else
-            {
-                using (StreamWriter sw = File.CreateText(VisibleCMD))
-                {
-                    sw.WriteLine("Treble Toolkit Settings Item");
-                    sw.WriteLine("©2021 YAG-dev");
-                }
-                this.Dispatcher.Invoke(() =>
-                {
-                    DeviceSpecificFeatures_Copy.Content = "Hide CMD Window While Flashing";
-                });
-            }
         }
     }
 }

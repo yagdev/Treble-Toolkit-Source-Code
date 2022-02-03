@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\dinis\Desktop\Treble Toolkit\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\Debug\
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\Debug\
 TrebleToolkitLauncher
 none
 false
 DEBUG;TRACE
-C:\Users\dinis\Desktop\Treble Toolkit\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\App.xaml
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\App.xaml
 51424992814
 
 10163584703
-127-1028675535
+1272100988245
 HomePage.xaml;MainWindow.xaml;Reinstall.xaml;Settings.xaml;UpdateAvailable.xaml;
 
-False
+True
 

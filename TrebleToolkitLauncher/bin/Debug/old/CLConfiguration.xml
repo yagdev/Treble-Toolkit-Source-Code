@@ -20,6 +20,16 @@
             <para>Good if You have multiple Configs</para>
             </summary>
         </member>
+        <member name="P:ChaseLabs.CLConfiguration.List.ConfigManager.EncryptionPassword">
+            <summary>
+            The Password used to Encrypt the Config File
+            </summary>
+        </member>
+        <member name="P:ChaseLabs.CLConfiguration.List.ConfigManager.UseEncryption">
+            <summary>
+            If true the Config File will be encrypted.
+            </summary>
+        </member>
         <member name="M:ChaseLabs.CLConfiguration.List.ConfigManager.ToString">
             <summary>
             Returns A Human Readable Version of the Config Class
@@ -37,7 +47,15 @@
             <summary>
             Initializes the Config Manager with a File Path
             </summary>
-            <param name="_path"></param>
+            <param name="file">File Path</param>
+        </member>
+        <member name="M:ChaseLabs.CLConfiguration.List.ConfigManager.#ctor(System.String,System.Boolean,System.String)">
+            <summary>
+            Initializes the Config Manager with a File Path and Encryption
+            </summary>
+            <param name="file"></param>
+            <param name="useencryption"></param>
+            <param name="encryption_password">Default is Machine Name</param>
         </member>
         <member name="M:ChaseLabs.CLConfiguration.List.ConfigManager.FindPreExistingConfigs">
             <summary>
@@ -77,7 +95,7 @@
             </summary>
             <param name="config"></param>
         </member>
-        <member name="M:ChaseLabs.CLConfiguration.List.ConfigManager.Add(System.String,System.String)">
+        <member name="M:ChaseLabs.CLConfiguration.List.ConfigManager.Add(System.String,System.Object)">
             <summary>
             Adds a Config to this ConfigManager using the Key and Value
             </summary>
@@ -156,36 +174,29 @@
             Returns the Configs Value
             </summary>
         </member>
-        <member name="M:ChaseLabs.CLConfiguration.Object.Config.#ctor(System.String,System.String,ChaseLabs.CLConfiguration.List.ConfigManager)">
+        <member name="M:ChaseLabs.CLConfiguration.Object.Config.#ctor(System.String,System.Object,ChaseLabs.CLConfiguration.List.ConfigManager)">
             <summary>
             Creates a Config Object with Key and Value
             </summary>
             <param name="_key"></param>
             <param name="_value"></param>
+            <param name="_manager"></param>
         </member>
-        <member name="M:ChaseLabs.CLConfiguration.Object.Config.ParseInt">
+        <member name="M:com.drewchaseproject.MDM.Library.Utilities.Crypto.EncryptStringAES(System.String,System.String)">
             <summary>
-            Attempts to Parse the Configs Value as Int
+            Encrypt the given string using AES.  The string can be decrypted using
+            DecryptStringAES().  The sharedSecret parameters must match.
             </summary>
-            <returns></returns>
+            <param name="plainText">The text to encrypt.</param>
+            <param name="sharedSecret">A password used to generate a key for encryption. Default is Machine Name</param>
         </member>
-        <member name="M:ChaseLabs.CLConfiguration.Object.Config.ParseDouble">
+        <member name="M:com.drewchaseproject.MDM.Library.Utilities.Crypto.DecryptStringAES(System.String,System.String)">
             <summary>
-            Attempts to Parse the Configs Value as Double
+            Decrypt the given string.  Assumes the string was encrypted using
+            EncryptStringAES(), using an identical sharedSecret.
             </summary>
-            <returns></returns>
-        </member>
-        <member name="M:ChaseLabs.CLConfiguration.Object.Config.ParseFloat">
-            <summary>
-            Attempts to Parse the Configs Value as Float
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:ChaseLabs.CLConfiguration.Object.Config.ParseBoolean">
-            <summary>
-            Attempts to Parse the Configs Value as Boolean
-            </summary>
-            <returns></returns>
+            <param name="cipherText">The text to decrypt.</param>
+            <param name="sharedSecret">A password used to generate a key for decryption. Default is Machine Name</param>
         </member>
     </members>
 </doc>

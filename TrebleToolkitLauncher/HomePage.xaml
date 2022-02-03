@@ -190,7 +190,7 @@
             <ColumnDefinition Width="192*"/>
             <ColumnDefinition Width="197*"/>
         </Grid.ColumnDefinitions>
-        <Rectangle Fill="{DynamicResource SystemAltHighColorBrush}" Stroke="{x:Static FluentWPF:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="12" RadiusX="12" Opacity="0.5" Margin="2,0,0,0" Grid.Column="3" Grid.RowSpan="13">
+        <Rectangle Fill="{DynamicResource SystemAltHighColorBrush}" Stroke="{x:Static FluentWPF:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" Opacity="0.5" Margin="2,0,0,0" Grid.Column="3" Grid.RowSpan="13">
             <Rectangle.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"

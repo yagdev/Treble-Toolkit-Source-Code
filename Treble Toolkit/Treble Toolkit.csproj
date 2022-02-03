@@ -93,8 +93,8 @@
     <Reference Include="Eagle.Eye, Version=1.0.7945.33333, Culture=neutral, PublicKeyToken=29c6297630be05eb, processorArchitecture=MSIL">
       <HintPath>..\packages\Eagle.CLRv4.Core.1.0.7945.33333\lib\net40\Eagle.Eye.dll</HintPath>
     </Reference>
-    <Reference Include="FluentWPF, Version=0.9.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentWPF.0.9.0\lib\net45\FluentWPF.dll</HintPath>
+    <Reference Include="FluentWPF, Version=0.10.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentWPF.0.10.2\lib\net45\FluentWPF.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.1.1.1\lib\netstandard1.1\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
@@ -282,14 +282,23 @@
     <Compile Include="Alcatel1.xaml.cs">
       <DependentUpon>Alcatel1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Animations.xaml.cs">
+      <DependentUpon>Animations.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BTULHW.xaml.cs">
       <DependentUpon>BTULHW.xaml</DependentUpon>
     </Compile>
     <Compile Include="BugReports.xaml.cs">
       <DependentUpon>BugReports.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CMDInfo.xaml.cs">
+      <DependentUpon>CMDInfo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CompatibilityCheck.xaml.cs">
       <DependentUpon>CompatibilityCheck.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CompatibilitySettings.xaml.cs">
+      <DependentUpon>CompatibilitySettings.xaml</DependentUpon>
     </Compile>
     <Compile Include="CompatibleDevices.xaml.cs">
       <DependentUpon>CompatibleDevices.xaml</DependentUpon>
@@ -317,6 +326,9 @@
     </Compile>
     <Compile Include="FlashingVendorTUT.xaml.cs">
       <DependentUpon>FlashingVendorTUT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FlashMethod.xaml.cs">
+      <DependentUpon>FlashMethod.xaml</DependentUpon>
     </Compile>
     <Compile Include="FlashVendorFinished.xaml.cs">
       <DependentUpon>FlashVendorFinished.xaml</DependentUpon>
@@ -423,8 +435,14 @@
     <Compile Include="SXXZ2DSF.xaml.cs">
       <DependentUpon>SXXZ2DSF.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ThemeSelect.xaml.cs">
+      <DependentUpon>ThemeSelect.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TransparencyAndEffects.xaml.cs">
       <DependentUpon>TransparencyAndEffects.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TransparencySlider.xaml.cs">
+      <DependentUpon>TransparencySlider.xaml</DependentUpon>
     </Compile>
     <Compile Include="TWRP.xaml.cs">
       <DependentUpon>TWRP.xaml</DependentUpon>
@@ -503,6 +521,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Animations.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="BTULHW.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -511,7 +533,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="CMDInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CompatibilityCheck.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CompatibilitySettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -548,6 +578,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FlashingVendorTUT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FlashMethod.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -755,7 +789,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ThemeSelect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TransparencyAndEffects.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TransparencySlider.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1141,6 +1183,159 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="tt-vbmetaimg-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-theme-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-theme-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-animation-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-animation-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-transparency-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-transparency-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-restart-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-restart-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-cpu-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-cpu-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-storage-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-storage-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-battery-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-battery-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-launch-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-launch-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-trash-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-trash-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-android-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-android-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-sn-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-sn-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-security-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-security-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-sdk-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-sdk-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-retry-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-retry-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-down-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-down-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-ab-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-ab-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-aonly-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-aonly-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-cache.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-vendorb-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-vendorb-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-vendora-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-vendora-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-bootb-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-bootb-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-boota-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-boota-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-systemb-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-systemb-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-systema-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-systema-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-cache-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-cache-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-cross-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-cross-light.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

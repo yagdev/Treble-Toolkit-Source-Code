@@ -91,13 +91,21 @@ namespace TrebleToolkitLauncher
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
             startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = "/C mkdir UpdateInfo & cd UpdateInfo & mkdir CurrentVersion & cd CurrentVersion";
+            startInfo.Arguments = "/C mkdir Update & cd Update & mkdir Download & cd .. & mkdir UpdateFiles & mkdir UpdateInfo & cd UpdateInfo & mkdir BetaProgram & mkdir CurrentVersion & cd CurrentVersion";
             process.StartInfo = startInfo;
             process.Start();
             process.WaitForExit();
         }
         private void CurrentVersionGet()
         {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/C mkdir Update & cd Update & mkdir Download & cd .. & mkdir UpdateFiles & mkdir UpdateInfo & cd UpdateInfo & mkdir BetaProgram & mkdir CurrentVersion & cd CurrentVersion";
+            process.StartInfo = startInfo;
+            process.Start();
+            process.WaitForExit();
             string GetCurVer = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "CurrentVersion", "VersionString.txt");
             if (File.Exists(GetCurVer))
             {
@@ -117,6 +125,14 @@ namespace TrebleToolkitLauncher
         }
         private void NewReleaseGet()
         {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/C mkdir Update & cd Update & mkdir Download & cd .. & mkdir UpdateFiles & mkdir UpdateInfo & cd UpdateInfo & mkdir BetaProgram & mkdir CurrentVersion & cd CurrentVersion";
+            process.StartInfo = startInfo;
+            process.Start();
+            process.WaitForExit();
             string beta_path = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "BetaProgram", "BetaProgram.txt");
             string url = "https://www.dropbox.com/s/f76ks90k8gvi0p5/release.zip?dl=1";
             string remote_version_url = "https://www.dropbox.com/s/elbmcwbx389z71o/version.txt?dl=1";
@@ -170,7 +186,7 @@ namespace TrebleToolkitLauncher
                 {
                     Yes.IsEnabled = false;
                 });
-                String command = @"/C wmic process where name='adb.exe' delete & wmic process where name='TrebleToolkitLauncher.exe' delete & wmic process where name='fastboot.exe' delete";
+                String command = @"/C wmic process where name='adb.exe' delete & wmic process where name='gui.exe' delete & wmic process where name='fastboot.exe' delete";
                 ProcessStartInfo cmdsi = new ProcessStartInfo("cmd.exe");
                 cmdsi.Arguments = command;
                 cmdsi.WindowStyle = ProcessWindowStyle.Hidden;
@@ -271,7 +287,7 @@ namespace TrebleToolkitLauncher
                     Yes.Content = "Executing...";
                     status_pgr.Value += 10;
                 });
-                String command2 = @"/C wmic process where name='adb.exe' delete & wmic process where name='TrebleToolkitLauncher.exe' delete & wmic process where name='fastboot.exe' delete";
+                String command2 = @"/C wmic process where name='adb.exe' delete & wmic process where name='gui.exe' delete & wmic process where name='fastboot.exe' delete";
                 ProcessStartInfo cmdsi2 = new ProcessStartInfo("cmd.exe");
                 cmdsi2.Arguments = command2;
                 cmdsi2.WindowStyle = ProcessWindowStyle.Hidden;
@@ -287,7 +303,7 @@ namespace TrebleToolkitLauncher
                 process.WaitForExit();
                 startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                 startInfo.FileName = "cmd.exe";
-                startInfo.Arguments = "/C cd Application & cd assets & TrebleToolkitLauncher.exe";
+                startInfo.Arguments = "/C cd Application & cd assets & gui.exe";
                 process.StartInfo = startInfo;
                 process.Start();
                 startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
