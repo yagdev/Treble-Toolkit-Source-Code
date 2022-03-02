@@ -6,6 +6,7 @@ using System.Net;
 using System.ComponentModel;
 using System.IO;
 using System.Threading;
+using System.Windows.Media;
 
 namespace Treble_Toolkit
 {
@@ -21,6 +22,8 @@ namespace Treble_Toolkit
             thread.Start();
             Thread thread2 = new Thread(UpdateUI);
             thread2.Start();
+            Thread thread3 = new Thread(UpdateUI2);
+            thread3.Start();
         }
 
         private void HM10L_Click(object sender, RoutedEventArgs e)
@@ -105,6 +108,22 @@ namespace Treble_Toolkit
                     BackAbout.FontSize = 10;
                 });
             }
+        }
+        private void UpdateUI2()
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                if (SourceChord.FluentWPF.ResourceDictionaryEx.GlobalTheme == SourceChord.FluentWPF.ElementTheme.Dark)
+                {
+                    DeviceInfoImg_Copy1.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-twrpimg-dark.png"));
+                    DeviceInfoImg_Copy2.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-restart-dark.png"));
+                }
+                else
+                {
+                    DeviceInfoImg_Copy1.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-twrpimg-light.png"));
+                    DeviceInfoImg_Copy2.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-restart-light.png"));
+                }
+            });
         }
     }
 }

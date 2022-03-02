@@ -15,7 +15,7 @@ namespace TrebleToolkitUpdaterLauncher
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         [DllImport("wininet.dll")]
         private extern static bool InternetGetConnectedState(out int conn, int val);

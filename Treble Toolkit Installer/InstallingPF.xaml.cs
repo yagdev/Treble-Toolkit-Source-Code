@@ -190,6 +190,14 @@ namespace Treble_Toolkit_Installer
                         shortcut.TargetPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), "Treble_Toolkit") + @"\TrebleToolkitLauncher.exe";
                         shortcut.WorkingDirectory = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), "Treble_Toolkit");
                         shortcut.Save();
+                        System.Diagnostics.Process process1 = new System.Diagnostics.Process();
+                        System.Diagnostics.ProcessStartInfo startInfo1 = new System.Diagnostics.ProcessStartInfo();
+                        startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                        startInfo.FileName = "cmd.exe";
+                        startInfo.Arguments = "/C cd %ProgramFiles(X86)% & cd Treble_Toolkit & cd UpdateFiles & move Application ../ & move TrebleToolkitLauncher.exe ../ & cd .. & RD /s /q UpdateFiles & cd .. & RD /s /q UpdateInfo & cd %UserProfile% & cd Desktop & copy \u0022Treble Toolkit.lnk\u0022 \u0022%AppData%/Microsoft/Windows/Start Menu/\u0022";
+                        process.StartInfo = startInfo;
+                        process.Start();
+                        process.WaitForExit();
                         using (var fs = new FileStream(shortcutAddress, FileMode.Open, FileAccess.ReadWrite))
                         {
                             fs.Seek(21, SeekOrigin.Begin);
@@ -200,13 +208,6 @@ namespace Treble_Toolkit_Installer
                         status_lbl.Content = "Done.";
                         status_pgr.Value += 20;
                     }, DispatcherPriority.Normal);
-                    System.Diagnostics.Process process1 = new System.Diagnostics.Process();
-                    System.Diagnostics.ProcessStartInfo startInfo1 = new System.Diagnostics.ProcessStartInfo();
-                    startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-                    startInfo.FileName = "cmd.exe";
-                    startInfo.Arguments = "/C cd %ProgramFiles(X86)% & cd Treble_Toolkit & cd UpdateFiles & move Application ../ & move TrebleToolkitLauncher.exe ../ & cd .. & RD /s /q UpdateFiles & cd .. & RD /s /q UpdateInfo & cd %UserProfile% & cd Desktop & copy \u0022Treble Toolkit.lnk\u0022 \u0022%AppData%/Microsoft/Windows/Start Menu/\u0022";
-                    process.StartInfo = startInfo;
-                    process.Start();
                 });
             }
             else

@@ -78,7 +78,7 @@ namespace Treble_Toolkit_Installer
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal;
             startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = "/C cd Treble_Toolkit & start TrebleToolkitLauncher.exe";
+            startInfo.Arguments = "/C cd .. & cd .. cd %ProgramFiles(x86)% & cd Treble_Toolkit & start TrebleToolkitLauncher.exe";
             process.StartInfo = startInfo;
             process.Start();
         }

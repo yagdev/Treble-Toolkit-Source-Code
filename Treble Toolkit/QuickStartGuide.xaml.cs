@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.IO;
 using System.Windows.Media.Animation;
 using System.Threading;
+using System.Windows.Threading;
 
 namespace Treble_Toolkit
 {
@@ -32,6 +33,8 @@ namespace Treble_Toolkit
             thread2.Start();
             Thread thread3 = new Thread(GetCurrentVersion);
             thread3.Start();
+            Thread thread4 = new Thread(UpdateUI);
+            thread4.Start();
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -135,6 +138,25 @@ namespace Treble_Toolkit
                     FileSizeCheck.Content = "I hope you enjoy using Treble Toolkit.";
                 });
             }
+        }
+        private void UpdateUI()
+        {
+            Dispatcher dis = Dispatcher.CurrentDispatcher;
+            this.Dispatcher.Invoke(() =>
+            {
+                if (SourceChord.FluentWPF.ResourceDictionaryEx.GlobalTheme == SourceChord.FluentWPF.ElementTheme.Dark)
+                {
+                    DeviceInfoImg_Copy.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-launch-dark.png"));
+                    DeviceInfoImg_Copy1.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-info-dark.png"));
+                    DeviceInfoImg_Copy2.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-down-dark.png"));
+                }
+                else
+                {
+                    DeviceInfoImg_Copy.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-launch-light.png"));
+                    DeviceInfoImg_Copy1.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-info-light.png"));
+                    DeviceInfoImg_Copy2.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-down-light.png"));
+                }
+            });
         }
     }
 }

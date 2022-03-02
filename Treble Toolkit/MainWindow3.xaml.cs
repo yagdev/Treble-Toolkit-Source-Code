@@ -7,7 +7,7 @@ namespace Treble_Toolkit
     /// <summary>
     /// Lógica interna para MainWindow3.xaml
     /// </summary>
-    public partial class MainWindow3 : Window
+    public partial class MainWindow3
     {
         public MainWindow3()
         {

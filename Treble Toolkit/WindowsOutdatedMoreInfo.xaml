@@ -70,7 +70,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Margin="0,0,0,0" Background="{TemplateBinding Background}">
-                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="50,16,0,16" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsDefaulted" Value="true">
@@ -184,12 +184,10 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="24*"/>
-            <ColumnDefinition Width="11*"/>
-            <ColumnDefinition Width="11*"/>
-            <ColumnDefinition Width="24*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Rectangle Fill="{DynamicResource SystemAltHighColorBrush}" Height="70" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Bottom" Grid.ColumnSpan="4" Opacity="0.5" RadiusY="12" RadiusX="12" >
+        <Rectangle Fill="{DynamicResource SystemAltHighColorBrush}" Height="122" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Opacity="0.5" RadiusY="12" RadiusX="12" >
             <Rectangle.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -209,7 +207,7 @@
                     BlurRadius="8"/>
             </Button.Effect>
         </Button>
-        <Button x:Name="DeviceSpecificFeatures_Copy1" Content="Windows 11" Margin="1,0,1,10" VerticalAlignment="Bottom" Height="50"  Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Refresh" Grid.Column="1" Grid.ColumnSpan="2">
+        <Button x:Name="DeviceSpecificFeatures_Copy1" Content="Windows 11" Margin="10,0,10,62" VerticalAlignment="Bottom" Height="50"  Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Refresh" Grid.ColumnSpan="2">
             <Button.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -219,7 +217,7 @@
                     BlurRadius="8"/>
             </Button.Effect>
         </Button>
-        <Button x:Name="DeviceSpecificFeatures_Copy2" Content="Main Menu" Margin="1,0,10,10" VerticalAlignment="Bottom" Height="50"  Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Next" Grid.Column="3">
+        <Button x:Name="DeviceSpecificFeatures_Copy2" Content="Main Menu" Margin="1,0,10,10" VerticalAlignment="Bottom" Height="50"  Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Next" Grid.Column="1">
             <Button.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -229,7 +227,7 @@
                     BlurRadius="8"/>
             </Button.Effect>
         </Button>
-        <TextBlock x:Name="Changelog" Margin="10,105,10,107" TextWrapping="Wrap" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="4">
+        <TextBlock x:Name="Changelog" Margin="10,105,10,127" TextWrapping="Wrap" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="2">
             <TextBlock.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -238,7 +236,7 @@
                     Opacity="0.8"
                     BlurRadius="2"/>
             </TextBlock.Effect><Run Text="With version 21.10, the support policies have changed, with now reports working with priorities. Here they are:"/><LineBreak/><Run Text="For Windows 7, 8 &amp; 8.1, the report bug feature is disabled, as those versions are long outdated and don't feature some of the necessary resources needed for the ideal experience. Treble Toolkit will still work on these systems, however full functionality and stability is not guaranteed."/><LineBreak/><Run Text="For Windows 10 systems, version 1909 and earlier bug reports are attributed low priority and the bug will only be fixed if it can be replicated in the current version on Windows."/><LineBreak/><Run Text="For Windows 10 systems, version 2004 and later, bug reports are attributed normal priority"/><LineBreak/><Run Text="For Windows 11 systems, bug reports are only attributed normal priority if you are running the latest (or close to latest) compilation"/><LineBreak/><Run Text="For Windows Server 2016 systems, the policies are the same as Windows 10, version 1909 and earlier"/><LineBreak/><Run Text="For Windows Server 2019, the policies are the same as Windows 10, version 2004 and later"/><LineBreak/><Run Text="For WIndows Server 2022, the policies are the same as Windows 11"/></TextBlock>
-        <Rectangle x:Name="BugReport" Fill="{DynamicResource SystemAltHighColorBrush}" Height="90" Margin="10,10,10,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" RadiusY="8" RadiusX="8" Grid.ColumnSpan="4">
+        <Rectangle x:Name="BugReport" Fill="{DynamicResource SystemAltHighColorBrush}" Height="90" Margin="10,10,10,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" RadiusY="8" RadiusX="8" Grid.ColumnSpan="2">
             <Rectangle.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -248,7 +246,7 @@
                     BlurRadius="8"/>
             </Rectangle.Effect>
         </Rectangle>
-        <Label x:Name="cc" Content="Current Support Status" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="35" VerticalAlignment="Top" Margin="90,20,20,0" Grid.ColumnSpan="4">
+        <Label x:Name="cc" Content="Current Support Status" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="35" VerticalAlignment="Top" Margin="90,20,20,0" Grid.ColumnSpan="2">
             <Label.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -258,7 +256,7 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <Label x:Name="PhoneStatus" Content="Checking" Margin="90,55,20,0" VerticalAlignment="Top" Height="35" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.ColumnSpan="4">
+        <Label x:Name="PhoneStatus" Content="Checking" Margin="90,55,20,0" VerticalAlignment="Top" Height="35" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.ColumnSpan="2">
             <Label.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -269,6 +267,9 @@
             </Label.Effect>
         </Label>
         <Image x:Name="DeviceInfoImg" Margin="20,20,0,0" Source="tt-phone.png" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70"/>
+        <Image x:Name="DeviceInfoImg_Copy2" Margin="20,0,0,20" Source="tt-phone.png" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30"/>
+        <Image x:Name="DeviceInfoImg_Copy" Margin="20,0,0,72" Source="tt-phone.png" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30"/>
+        <Image x:Name="DeviceInfoImg_Copy1" Margin="11,0,0,20" Source="tt-phone.png" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Column="1"/>
 
     </Grid>
 </Page>

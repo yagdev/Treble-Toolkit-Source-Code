@@ -129,7 +129,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type TextBox}">
-                        <Border x:Name="border" BorderBrush="{DynamicResource SystemAltHighColorBrush}" BorderThickness="{TemplateBinding BorderThickness}"  SnapsToDevicePixels="True" CornerRadius="3">
+                        <Border x:Name="border" BorderBrush="{DynamicResource SystemBaseHighColorBrush}" BorderThickness="{TemplateBinding BorderThickness}"  SnapsToDevicePixels="True" CornerRadius="3" Background="Black">
                             <Border.Effect>
                                 <DropShadowEffect
                                     ShadowDepth="0"

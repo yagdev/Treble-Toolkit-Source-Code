@@ -1,4 +1,4 @@
-﻿<Window x:Class="Treble_Toolkit.MainWindow"
+﻿<fw:AcrylicWindow x:Class="Treble_Toolkit.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,11 +7,13 @@
         xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
         mc:Ignorable="d"
         Title="Treble Toolkit" Height="600" Width="800" 
-        MinWidth="800" MinHeight="600" fw:AcrylicWindow.Enabled="True" fw:AcrylicWindow.NoiseOpacity="0" fw:AcrylicPanel.NoiseOpacity="0" BorderThickness="0" fw:AcrylicWindow.AcrylicWindowStyle="Normal" >
+        MinWidth="800" MinHeight="600" fw:AcrylicWindow.Enabled="True" fw:AcrylicWindow.NoiseOpacity="0" fw:AcrylicPanel.NoiseOpacity="0" BorderThickness="0"  WindowStyle="None"
+        fw:AcrylicWindow.AcrylicAccentState="AcrylicBlurBehind"
+        fw:AcrylicWindow.AllowsTransparency="True" >
     <Grid x:Name="GridMain" Background="{DynamicResource DynamicResource SystemBaseLowColorBrush}">
             <ScrollViewer x:Name="scrollviewer" ClipToBounds="True" VerticalScrollBarVisibility="Hidden">
                 <Frame x:Name="ContentFrame" Source="HomeScreen.xaml" NavigationUIVisibility="Hidden" ScrollViewer.CanContentScroll="True" >
                 </Frame>
             </ScrollViewer>
     </Grid>
-</Window>
+</fw:AcrylicWindow>

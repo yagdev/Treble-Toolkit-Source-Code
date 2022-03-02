@@ -5,7 +5,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Treble_Toolkit"
       xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
-      mc:Ignorable="d" d:DesignWidth="801" d:DesignHeight="518"
+      mc:Ignorable="d" d:DesignWidth="801" d:DesignHeight="600"
+      fw:AcrylicWindow.Enabled="True"
       Title="HomeScreen"  >
     <Page.Resources>
         <Style x:Key="FocusVisual">
@@ -70,7 +71,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Margin="0,0,0,0" Background="{TemplateBinding Background}">
-                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="50,16,0,16" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsDefaulted" Value="true">
@@ -633,5 +634,7 @@
         <Image x:Name="BtnImg_Copy6" Margin="11,10,0,10" Source="tt-phone.png" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="7" Grid.Column="1"/>
         <Image x:Name="BtnImg_Copy7" Margin="11,10,0,10" Source="tt-phone.png" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="10" Grid.Column="1"/>
         <Image x:Name="BtnImg_Copy8" Margin="11,10,0,10" Source="tt-phone.png" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="13" Grid.Column="1"/>
+        <Image x:Name="DeviceInfoImg_Copy3" Margin="20,12,0,11" Source="tt-phone.png" Stretch="Fill" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Width="30" Grid.Row="14" Grid.Column="2"/>
+        <Image x:Name="DeviceInfoImg_Copy4" Margin="20,11,0,12" Source="tt-phone.png" Stretch="Fill" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Width="30" Grid.Row="13" Grid.Column="2"/>
     </Grid>
 </Page>
