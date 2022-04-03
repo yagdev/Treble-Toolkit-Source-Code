@@ -1,3 +1,6 @@
-Version 31.0.3 (August 2021)
-· Added support for flashing vbmeta_vendor.img for fastboot flashall / update using fastboot
-· Fixed version number (Treble Toolkit Package)
+Version 33.0.0 (February 2022)
+· Fixes the issue introduced in 32.0.0 of crashes when run without any arguments.
+
+Version 32.0.0 (January 2022)
+· Universal binary for Apple M1 devices.
+· Known issue: this version crashes when run without any arguments.

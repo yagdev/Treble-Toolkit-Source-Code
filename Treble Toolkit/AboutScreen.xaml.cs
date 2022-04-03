@@ -44,6 +44,12 @@ namespace Treble_Toolkit
             this.NavigationService.Navigate(uri);
         }
 
+        private void AboutMe_Click(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("DiscoverMore.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
+
         private void UpdateAbout_Click(object sender, RoutedEventArgs e)
         {
             Uri uri = new Uri("UpdateCenter.xaml", UriKind.Relative);
@@ -56,7 +62,7 @@ namespace Treble_Toolkit
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
             startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = "/C start https://youraveragegamer.wixsite.com/treble-toolkit/22-3";
+            startInfo.Arguments = "/C start https://youraveragegamer.wixsite.com/treble-toolkit/22-4";
             process.StartInfo = startInfo;
             process.Start();
         }
@@ -168,7 +174,7 @@ namespace Treble_Toolkit
                             TTUpdateRectangle.Effect = myDropShadowEffect;
                             DeviceSpecificFeatures_Copy3.Effect = myDropShadowEffect;
                             UpdateCheckTxt.Content = "Updates Available";
-                            DeviceSpecificFeatures_Copy3.Content = DeviceSpecificFeatures_Copy3.Content + " (Recommended)";
+                            DeviceSpecificFeatures_Copy3.Content = "Update (Recommended)";
                         });
                     }
                     else
@@ -198,7 +204,7 @@ namespace Treble_Toolkit
                             PTRectangle.Effect = myDropShadowEffect;
                             DeviceSpecificFeatures_Copy3.Effect = myDropShadowEffect;
                             PTCheck.Content = "Updates Available";
-                            DeviceSpecificFeatures_Copy3.Content = DeviceSpecificFeatures_Copy3.Content + " (Recommended)";
+                            DeviceSpecificFeatures_Copy3.Content = "Update (Recommended)";
                         });
                     }
                     else
@@ -230,7 +236,7 @@ namespace Treble_Toolkit
                     TTUpdateRectangle.Effect = myDropShadowEffect;
                     DeviceSpecificFeatures_Copy3.Effect = myDropShadowEffect;
                     UpdateCheckTxt.Content = "Unable to check...";
-                    DeviceSpecificFeatures_Copy3.Content = DeviceSpecificFeatures_Copy3.Content + " (Recommended)";
+                    DeviceSpecificFeatures_Copy3.Content = "Update (Recommended)";
                 });
             }
         }
@@ -281,6 +287,8 @@ namespace Treble_Toolkit
                     DeviceInfoImg_Copy5.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-info-dark.png"));
                     DeviceInfoImg_Copy6.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-settings-dark.png"));
                     DeviceInfoImg_Copy7.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-up-dark.png"));
+                    DeviceInfoImg_Copy8.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-freecmd-dark.png"));
+                    DeviceInfoImg_Copy9.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-info-dark.png"));
                 }
                 else
                 {
@@ -293,6 +301,8 @@ namespace Treble_Toolkit
                     DeviceInfoImg_Copy5.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-info-light.png"));
                     DeviceInfoImg_Copy6.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-settings-light.png"));
                     DeviceInfoImg_Copy7.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-up-light.png"));
+                    DeviceInfoImg_Copy8.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-freecmd-light.png"));
+                    DeviceInfoImg_Copy9.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-info-light.png"));
                 }
             });
         }

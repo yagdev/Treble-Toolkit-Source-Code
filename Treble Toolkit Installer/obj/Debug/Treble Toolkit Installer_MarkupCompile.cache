@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit Installer\obj\Debug\
 Treble_Toolkit_Installer
 none
 false
 DEBUG;TRACE
-D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\App.xaml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master\Treble Toolkit Installer\App.xaml
 14-948999447
 
-18-974576595
-129-514469108
+19-1729146379
+1291356242594
 Install.xaml;InstallFinishedAD.xaml;InstallFinishedCF.xaml;InstallFinishedPF.xaml;InstallingAD.xaml;InstallingCF.xaml;InstallingPF.xaml;MainWindow.xaml;Reinstall.xaml;RepairFinished.xaml;RepairingInstall.xaml;Start.xaml;Uninstall.xaml;UninstallFinished.xaml;
 
-False
+True
 

@@ -66,6 +66,16 @@ namespace Treble_Toolkit
             Uri uri = new Uri("TransparencyAndEffects.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);
         }
+        private void Compatibility(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("CompatibilitySettings.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
+        private void ResetAll(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("ResetAll.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
         //Threading starts here -- 5/11/2021@22:07, YAG-dev, 21.12+
         private void Animate()
         {
@@ -98,6 +108,7 @@ namespace Treble_Toolkit
                     DeviceInfoImg_Copy2.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-bug-dark.png"));
                     DeviceInfoImg_Copy3.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-security-dark.png"));
                     DeviceInfoImg_Copy4.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-flash-dark.png"));
+                    DeviceInfoImg_Copy5.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-retry-dark.png"));
                 }
                 else
                 {
@@ -107,14 +118,9 @@ namespace Treble_Toolkit
                     DeviceInfoImg_Copy2.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-bug-light.png"));
                     DeviceInfoImg_Copy3.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-security-light.png"));
                     DeviceInfoImg_Copy4.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-flash-light.png"));
+                    DeviceInfoImg_Copy5.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-retry-light.png"));
                 }
             });
-        }
-
-        private void Compatibility(object sender, RoutedEventArgs e)
-        {
-            Uri uri = new Uri("CompatibilitySettings.xaml", UriKind.Relative);
-            this.NavigationService.Navigate(uri);
         }
     }
 }

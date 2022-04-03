@@ -34,6 +34,29 @@ namespace Treble_Toolkit
             Thread thread3 = new Thread(UpdateUI2);
             thread3.Start();
         }
+        private void Slate(object sender, RoutedEventArgs e)
+        {
+            Thread thread = new Thread(SlateEnable);
+            thread.Start();
+        }
+
+        private void Slipside(object sender, RoutedEventArgs e)
+        {
+            Thread thread = new Thread(SlipsideEnable);
+            thread.Start();
+        }
+
+        private void Intensity(object sender, RoutedEventArgs e)
+        {
+            Thread thread = new Thread(IntensityEnable);
+            thread.Start();
+        }
+
+        private void Joy(object sender, RoutedEventArgs e)
+        {
+            Thread thread = new Thread(JoyEnable);
+            thread.Start();
+        }
 
         private void BACK_Click(object sender, RoutedEventArgs e)
         {
@@ -178,6 +201,168 @@ namespace Treble_Toolkit
             Thread thread = new Thread(UpdateUI);
             thread.Start();
         }
+        private void SlateEnable()
+        {
+            string IntensityFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Intensity.txt");
+            string SlipsideFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Slipside.txt");
+            string JoyFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Joy.txt");
+            if (File.Exists(IntensityFile))
+            {
+                File.Delete(IntensityFile);
+            }
+            if (File.Exists(SlipsideFile))
+            {
+                File.Delete(SlipsideFile);
+            }
+            if (File.Exists(JoyFile))
+            {
+                File.Delete(JoyFile);
+            }
+            this.Dispatcher.Invoke(() =>
+            {
+                DeviceSpecificFeatures_Copy4.IsEnabled = false;
+                DeviceSpecificFeatures_Copy5.IsEnabled = true;
+                DeviceSpecificFeatures_Copy6.IsEnabled = true;
+                DeviceSpecificFeatures_Copy7.IsEnabled = true;
+                Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["22.4Alt2"];
+                Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["Rectangle22.4StyleDefault"];
+                Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["ImageButton22.4Alt1"];
+            });
+            Thread thread = new Thread(UpdateUI);
+            thread.Start();
+        }
+        private void IntensityEnable()
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/C cd .. & cd .. & mkdir UpdateInfo & cd UpdateInfo & mkdir Settings";
+            process.StartInfo = startInfo;
+            process.Start();
+            process.WaitForExit();
+            string IntensityFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Intensity.txt");
+            string SlipsideFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Slipside.txt");
+            string JoyFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Joy.txt");
+            if (File.Exists(SlipsideFile))
+            {
+                File.Delete(SlipsideFile);
+            }
+            if (File.Exists(JoyFile))
+            {
+                File.Delete(JoyFile);
+            }
+            using (StreamWriter sw = File.CreateText(IntensityFile))
+            {
+                sw.WriteLine("Treble Toolkit Settings Item");
+                sw.WriteLine("©2022 YAG-dev");
+            }
+            this.Dispatcher.Invoke(() =>
+            {
+                DeviceSpecificFeatures_Copy4.IsEnabled = true;
+                DeviceSpecificFeatures_Copy5.IsEnabled = true;
+                DeviceSpecificFeatures_Copy7.IsEnabled = true;
+                DeviceSpecificFeatures_Copy6.IsEnabled = false;
+                Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["22.4Alt1"];
+                Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["Rectangle22.4Style2"];
+                Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["ImageButton22.4Alt2"];
+            });
+            Thread thread = new Thread(UpdateUI);
+            thread.Start();
+            this.Dispatcher.Invoke(() =>
+            {
+                Uri uri = new Uri("ThemeSelect.xaml", UriKind.Relative);
+                this.NavigationService.Navigate(uri);
+            });
+        }
+        private void JoyEnable()
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/C cd .. & cd .. & mkdir UpdateInfo & cd UpdateInfo & mkdir Settings";
+            process.StartInfo = startInfo;
+            process.Start();
+            process.WaitForExit();
+            string IntensityFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Intensity.txt");
+            string SlipsideFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Slipside.txt");
+            string JoyFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Joy.txt");
+            if (File.Exists(SlipsideFile))
+            {
+                File.Delete(SlipsideFile);
+            }
+            if (File.Exists(IntensityFile))
+            {
+                File.Delete(IntensityFile);
+            }
+            using (StreamWriter sw = File.CreateText(JoyFile))
+            {
+                sw.WriteLine("Treble Toolkit Settings Item");
+                sw.WriteLine("©2022 YAG-dev");
+            }
+            this.Dispatcher.Invoke(() =>
+            {
+                DeviceSpecificFeatures_Copy4.IsEnabled = true;
+                DeviceSpecificFeatures_Copy5.IsEnabled = true;
+                DeviceSpecificFeatures_Copy6.IsEnabled = true;
+                DeviceSpecificFeatures_Copy7.IsEnabled = false;
+                Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["22.4Alt3"];
+                Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["Rectangle22.4Style3"];
+                Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["ImageButton22.4Alt3"];
+            });
+            Thread thread = new Thread(UpdateUI);
+            thread.Start();
+            this.Dispatcher.Invoke(() =>
+            {
+                Uri uri = new Uri("ThemeSelect.xaml", UriKind.Relative);
+                this.NavigationService.Navigate(uri);
+            });
+        }
+        private void SlipsideEnable()
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/C cd .. & cd .. & mkdir UpdateInfo & cd UpdateInfo & mkdir Settings";
+            process.StartInfo = startInfo;
+            process.Start();
+            process.WaitForExit();
+            string IntensityFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Intensity.txt");
+            string SlipsideFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Slipside.txt");
+            string JoyFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Joy.txt");
+            if (File.Exists(IntensityFile))
+            {
+                File.Delete(IntensityFile);
+            }
+            if (File.Exists(JoyFile))
+            {
+                File.Delete(JoyFile);
+            }
+            using (StreamWriter sw = File.CreateText(SlipsideFile))
+            {
+                sw.WriteLine("Treble Toolkit Settings Item");
+                sw.WriteLine("©2022 YAG-dev");
+            }
+            this.Dispatcher.Invoke(() =>
+            {
+                DeviceSpecificFeatures_Copy4.IsEnabled = true;
+                DeviceSpecificFeatures_Copy6.IsEnabled = true;
+                DeviceSpecificFeatures_Copy7.IsEnabled = true;
+                DeviceSpecificFeatures_Copy5.IsEnabled = false;
+                Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["22.4Alt2"];
+                Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["Rectangle22.4Style2"];
+                Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["ImageButton22.4Alt1"];
+            });
+            Thread thread = new Thread(UpdateUI);
+            thread.Start();
+            this.Dispatcher.Invoke(() =>
+            {
+                Uri uri = new Uri("ThemeSelect.xaml", UriKind.Relative);
+                this.NavigationService.Navigate(uri);
+            });
+        }
         private void UpdateUI()
         {
             this.Dispatcher.Invoke(() =>
@@ -200,6 +385,9 @@ namespace Treble_Toolkit
             {
                 string Dark = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "DarkTheme.txt");
                 string Light = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "LightTheme.txt");
+                string IntensityFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Intensity.txt");
+                string SlipsideFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Slipside.txt");
+                string JoyFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Joy.txt");
                 if (File.Exists(Dark))
                 {
                     DeviceSpecificFeatures_Copy2.IsEnabled = false;
@@ -219,6 +407,40 @@ namespace Treble_Toolkit
                         DeviceSpecificFeatures_Copy2.IsEnabled = true;
                         DeviceSpecificFeatures_Copy1.IsEnabled = false;
                         DeviceSpecificFeatures_Copy3.IsEnabled = true;
+                    }
+                }
+                if (File.Exists(IntensityFile))
+                {
+                    DeviceSpecificFeatures_Copy4.IsEnabled = true;
+                    DeviceSpecificFeatures_Copy5.IsEnabled = true;
+                    DeviceSpecificFeatures_Copy6.IsEnabled = false;
+                    DeviceSpecificFeatures_Copy7.IsEnabled = true;
+                }
+                else
+                {
+                    if (File.Exists(SlipsideFile))
+                    {
+                        DeviceSpecificFeatures_Copy4.IsEnabled = true;
+                        DeviceSpecificFeatures_Copy5.IsEnabled = false;
+                        DeviceSpecificFeatures_Copy6.IsEnabled = true;
+                        DeviceSpecificFeatures_Copy7.IsEnabled = true;
+                    }
+                    else
+                    {
+                        if (File.Exists(JoyFile))
+                        {
+                            DeviceSpecificFeatures_Copy4.IsEnabled = true;
+                            DeviceSpecificFeatures_Copy5.IsEnabled = true;
+                            DeviceSpecificFeatures_Copy6.IsEnabled = true;
+                            DeviceSpecificFeatures_Copy7.IsEnabled = false;
+                        }
+                        else
+                        {
+                            DeviceSpecificFeatures_Copy4.IsEnabled = false;
+                            DeviceSpecificFeatures_Copy5.IsEnabled = true;
+                            DeviceSpecificFeatures_Copy6.IsEnabled = true;
+                            DeviceSpecificFeatures_Copy7.IsEnabled = true;
+                        }
                     }
                 }
             });

@@ -750,3 +750,9 @@ D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\De
 D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\CompatibilitySettings.baml
 D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FlashMethod.baml
 D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Treble Toolkit.csproj.AssemblyReference.cache
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FreeCMD.g.cs
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FreeCMD.baml
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\ResetAll.g.cs
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\ResetAll.baml
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\DiscoverMore.g.cs
+D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\DiscoverMore.baml

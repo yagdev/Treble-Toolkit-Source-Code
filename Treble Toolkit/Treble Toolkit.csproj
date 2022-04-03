@@ -309,6 +309,9 @@
     <Compile Include="DeviceTester.xaml.cs">
       <DependentUpon>DeviceTester.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DiscoverMore.xaml.cs">
+      <DependentUpon>DiscoverMore.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FixConnectionPhoneStep1.xaml.cs">
       <DependentUpon>FixConnectionPhoneStep1.xaml</DependentUpon>
     </Compile>
@@ -335,6 +338,9 @@
     </Compile>
     <Compile Include="FormatPartitions.xaml.cs">
       <DependentUpon>FormatPartitions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FreeCMD.xaml.cs">
+      <DependentUpon>FreeCMD.xaml</DependentUpon>
     </Compile>
     <Compile Include="GSIFlashA.xaml.cs">
       <DependentUpon>GSIFlashA.xaml</DependentUpon>
@@ -401,6 +407,9 @@
     </Compile>
     <Compile Include="ReportBugStep2.xaml.cs">
       <DependentUpon>ReportBugStep2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ResetAll.xaml.cs">
+      <DependentUpon>ResetAll.xaml</DependentUpon>
     </Compile>
     <Compile Include="Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
@@ -557,6 +566,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DiscoverMore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FixConnectionPhoneStep1.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -590,6 +603,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FormatPartitions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FreeCMD.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -742,6 +759,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ReportBugStep2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResetAll.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1336,6 +1357,48 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="tt-cross-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-shrink-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-shrink-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-expand-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-expand-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-twitter-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-twitter-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-tiktok-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-tiktok-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-github-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-github-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-xda-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-xda-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-ty-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-ty-dark.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

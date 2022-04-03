@@ -211,7 +211,7 @@
                     BlurRadius="2"/>
             </ProgressBar.Effect>
         </ProgressBar>
-        <Rectangle Fill="{DynamicResource SystemAltHighColorBrush}" Stroke="{x:Static FluentWPF:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="8" RadiusX="8" Grid.ColumnSpan="3" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Margin="0,0,10,0">
+        <Rectangle Fill="{DynamicResource SystemAltMediumHighColorBrush}" Stroke="{x:Static FluentWPF:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="8" RadiusX="8" Grid.ColumnSpan="3" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Margin="0,0,10,0">
             <Rectangle.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -297,7 +297,7 @@
             </Button.Effect>
         </Button>
         <Image x:Name="BtnImg_Copy3" Margin="10,9,0,10" Source="tt-launch-dark.png" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="10" Grid.Column="1"/>
-        <Rectangle Fill="{DynamicResource SystemAltHighColorBrush}" Margin="12,0,10,0" Stroke="{x:Static FluentWPF:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="8" RadiusX="8" Grid.Column="3" Grid.Row="4" Grid.RowSpan="2">
+        <Rectangle Fill="{DynamicResource SystemAltMediumHighColorBrush}" Margin="12,0,10,0" Stroke="{x:Static FluentWPF:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="8" RadiusX="8" Grid.Column="3" Grid.Row="4" Grid.RowSpan="2">
             <Rectangle.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -328,7 +328,7 @@
             </Label.Effect>
         </Label>
         <Image x:Name="ntwimg" Margin="22,10,0,10" Source="tt-launch-dark.png" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Column="3" Grid.Row="4" Grid.RowSpan="2"/>
-        <Rectangle Fill="{DynamicResource SystemAltHighColorBrush}" Margin="12,0,10,2" Stroke="{x:Static FluentWPF:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="8" RadiusX="8" Grid.Column="3" Grid.Row="7" Grid.RowSpan="2">
+        <Rectangle Fill="{DynamicResource SystemAltMediumHighColorBrush}" Margin="12,0,10,2" Stroke="{x:Static FluentWPF:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="8" RadiusX="8" Grid.Column="3" Grid.Row="7" Grid.RowSpan="2">
             <Rectangle.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -359,7 +359,7 @@
             </Label.Effect>
         </Label>
         <Image x:Name="launcherimg" Margin="22,10,0,12" Source="tt-launch-dark.png" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Column="3" Grid.Row="7" Grid.RowSpan="2"/>
-        <Rectangle Fill="{DynamicResource SystemAltHighColorBrush}" Margin="12,0,10,9" Stroke="{x:Static FluentWPF:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="8" RadiusX="8" Grid.Column="3" Grid.Row="10" Grid.RowSpan="3">
+        <Rectangle Fill="{DynamicResource SystemAltMediumHighColorBrush}" Margin="12,0,10,9" Stroke="{x:Static FluentWPF:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="8" RadiusX="8" Grid.Column="3" Grid.Row="10" Grid.RowSpan="3">
             <Rectangle.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"

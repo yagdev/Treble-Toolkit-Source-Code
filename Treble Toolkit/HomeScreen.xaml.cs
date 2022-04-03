@@ -20,16 +20,10 @@ namespace Treble_Toolkit
         public HomeScreen()
         {
             InitializeComponent();
+            Thread thread7 = new Thread(UpdateUIWidgets);
+            thread7.Start();
             Thread thread = new Thread(Animate);
             thread.Start();
-            Thread thread2 = new Thread(CheckGSI);
-            thread2.Start();
-            Thread thread3 = new Thread(CheckPhone);
-            thread3.Start();
-            Thread thread4 = new Thread(CheckTWRP);
-            thread4.Start();
-            Thread thread5 = new Thread(CheckBoot);
-            thread5.Start();
             Thread thread6 = new Thread(UpdateUI);
             thread6.Start();
         }
@@ -83,6 +77,8 @@ namespace Treble_Toolkit
 
         private void FreeCMD_Click(object sender, RoutedEventArgs e)
         {
+            Uri uri = new Uri("FreeCMD.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
             Thread thread = new Thread(FreeCMD);
             thread.Start();
         }
@@ -123,6 +119,11 @@ namespace Treble_Toolkit
         {
             Uri uri = new Uri("Setup.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);
+        }
+        private void ChangeWidgets(object sender, RoutedEventArgs e)
+        {
+            Thread thread1 = new Thread(UpdateUIWidgetsClick);
+            thread1.Start();
         }
         //Threading starts here -- 5/11/2021@22:07, YAG-dev, 21.12+
         private void Animate()
@@ -487,8 +488,49 @@ namespace Treble_Toolkit
         {
             this.Dispatcher.Invoke(() =>
             {
+                string IntensityFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Intensity.txt");
+                string SlipsideFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Slipside.txt");
+                string JoyFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Joy.txt");
+                if (File.Exists(SlipsideFile))
+                {
+                    Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["22.4Alt2"];
+                    Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["Rectangle22.4Style2"];
+                    Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["ImageButton22.4Alt1"];
+                }
+                else
+                {
+                    if (File.Exists(IntensityFile))
+                    {
+                        Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["22.4Alt1"];
+                        Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["Rectangle22.4Style2"];
+                        Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["ImageButton22.4Alt2"];
+                    }
+                    else
+                    {
+                        if (File.Exists(JoyFile))
+                        {
+                            Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["22.4Alt3"];
+                            Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["Rectangle22.4Style3"];
+                            Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["ImageButton22.4Alt3"];
+                        }
+                        else
+                        {
+                            Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["22.4Alt2"];
+                            Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["Rectangle22.4StyleDefault"];
+                            Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["ImageButton22.4Alt1"];
+                        }
+                    }
+                }
                 if (SourceChord.FluentWPF.ResourceDictionaryEx.GlobalTheme == SourceChord.FluentWPF.ElementTheme.Dark)
                 {
+                    if (Widgets.Width == new System.Windows.GridLength(70))
+                    {
+                        DeviceInfoImg_Copy5.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-expand-dark.png"));
+                    }
+                    else
+                    {
+                        DeviceInfoImg_Copy5.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-shrink-dark.png"));
+                    }
                     DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-phone-dark.png"));
                     DeviceInfoImg_Copy.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-gsi-dark.png"));
                     DeviceInfoImg_Copy1.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-bootimg-dark.png"));
@@ -508,6 +550,14 @@ namespace Treble_Toolkit
                 }
                 else
                 {
+                    if (Widgets.Width == new System.Windows.GridLength(70))
+                    {
+                        DeviceInfoImg_Copy5.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-expand-light.png"));
+                    }
+                    else
+                    {
+                        DeviceInfoImg_Copy5.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-shrink-light.png"));
+                    }
                     DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-phone-light.png"));
                     DeviceInfoImg_Copy.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-gsi-light.png"));
                     DeviceInfoImg_Copy1.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-bootimg-light.png"));
@@ -526,6 +576,156 @@ namespace Treble_Toolkit
                     DeviceInfoImg_Copy4.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-settings-light.png"));
                 }
             });
+        }
+        private void UpdateUIWidgets()
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/C cd .. & cd .. & mkdir UpdateInfo & cd UpdateInfo & mkdir Settings";
+            process.StartInfo = startInfo;
+            process.Start();
+            process.WaitForExit();
+            string DisableWidgets = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "DisableWidgets.txt");
+            if (File.Exists(DisableWidgets))
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    Widgets.Width = new System.Windows.GridLength(70, GridUnitType.Pixel);
+                    DeviceRectangle.Visibility = Visibility.Hidden;
+                    BootRectangle.Visibility = Visibility.Hidden;
+                    GSIRectangle.Visibility = Visibility.Hidden;
+                    TWRPRectangle.Visibility = Visibility.Hidden;
+                    PhoneStatus.Visibility = Visibility.Hidden;
+                    PhoneStatus_Copy.Visibility = Visibility.Hidden;
+                    PhoneStatus_Copy1.Visibility = Visibility.Hidden;
+                    PhoneStatus_Copy2.Visibility = Visibility.Hidden;
+                    cc.Visibility = Visibility.Hidden;
+                    GSIFileLabel.Visibility = Visibility.Hidden;
+                    BootFileLabel.Visibility = Visibility.Hidden;
+                    TWRPFileLabel.Visibility = Visibility.Hidden;
+                    DeviceInfoImg.Visibility = Visibility.Hidden;
+                    DeviceInfoImg_Copy.Visibility = Visibility.Hidden;
+                    DeviceInfoImg_Copy1.Visibility = Visibility.Hidden;
+                    DeviceInfoImg_Copy2.Visibility = Visibility.Hidden;
+                    DeviceSpecificFeatures_Copy.Visibility = Visibility.Hidden;
+                    DeviceInfoImg_Copy3.Visibility = Visibility.Hidden;
+                });
+            }
+            else
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    Thread thread2 = new Thread(CheckGSI);
+                    thread2.Start();
+                    Thread thread3 = new Thread(CheckPhone);
+                    thread3.Start();
+                    Thread thread4 = new Thread(CheckTWRP);
+                    thread4.Start();
+                    Thread thread5 = new Thread(CheckBoot);
+                    thread5.Start();
+                    Widgets.Width = new System.Windows.GridLength(1, GridUnitType.Star);
+                    DeviceRectangle.Visibility = Visibility.Visible;
+                    BootRectangle.Visibility = Visibility.Visible;
+                    GSIRectangle.Visibility = Visibility.Visible;
+                    TWRPRectangle.Visibility = Visibility.Visible;
+                    PhoneStatus.Visibility = Visibility.Visible;
+                    PhoneStatus_Copy.Visibility = Visibility.Visible;
+                    PhoneStatus_Copy1.Visibility = Visibility.Visible;
+                    PhoneStatus_Copy2.Visibility = Visibility.Visible;
+                    cc.Visibility = Visibility.Visible;
+                    GSIFileLabel.Visibility = Visibility.Visible;
+                    BootFileLabel.Visibility = Visibility.Visible;
+                    TWRPFileLabel.Visibility = Visibility.Visible;
+                    DeviceInfoImg.Visibility = Visibility.Visible;
+                    DeviceInfoImg_Copy.Visibility = Visibility.Visible;
+                    DeviceInfoImg_Copy1.Visibility = Visibility.Visible;
+                    DeviceInfoImg_Copy2.Visibility = Visibility.Visible;
+                    DeviceSpecificFeatures_Copy.Visibility = Visibility.Visible;
+                    DeviceInfoImg_Copy3.Visibility = Visibility.Visible;
+                });
+            }
+            Thread thread1 = new Thread(UpdateUI);
+            thread1.Start();
+        }
+        private void UpdateUIWidgetsClick()
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/C cd .. & cd .. & mkdir UpdateInfo & cd UpdateInfo & mkdir Settings";
+            process.StartInfo = startInfo;
+            process.Start();
+            process.WaitForExit();
+            string DisableWidgets = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "DisableWidgets.txt");
+            if (File.Exists(DisableWidgets))
+            {
+                File.Delete(DisableWidgets);
+                this.Dispatcher.Invoke(() =>
+                {
+                    Thread thread2 = new Thread(CheckGSI);
+                    thread2.Start();
+                    Thread thread3 = new Thread(CheckPhone);
+                    thread3.Start();
+                    Thread thread4 = new Thread(CheckTWRP);
+                    thread4.Start();
+                    Thread thread5 = new Thread(CheckBoot);
+                    thread5.Start();
+                    Widgets.Width = new System.Windows.GridLength(1, GridUnitType.Star);
+                    DeviceRectangle.Visibility = Visibility.Visible;
+                    BootRectangle.Visibility = Visibility.Visible;
+                    GSIRectangle.Visibility = Visibility.Visible;
+                    TWRPRectangle.Visibility = Visibility.Visible;
+                    PhoneStatus.Visibility = Visibility.Visible;
+                    PhoneStatus_Copy.Visibility = Visibility.Visible;
+                    PhoneStatus_Copy1.Visibility = Visibility.Visible;
+                    PhoneStatus_Copy2.Visibility = Visibility.Visible;
+                    cc.Visibility = Visibility.Visible;
+                    GSIFileLabel.Visibility = Visibility.Visible;
+                    BootFileLabel.Visibility = Visibility.Visible;
+                    TWRPFileLabel.Visibility = Visibility.Visible;
+                    DeviceInfoImg.Visibility = Visibility.Visible;
+                    DeviceInfoImg_Copy.Visibility = Visibility.Visible;
+                    DeviceInfoImg_Copy1.Visibility = Visibility.Visible;
+                    DeviceInfoImg_Copy2.Visibility = Visibility.Visible;
+                    DeviceSpecificFeatures_Copy.Visibility = Visibility.Visible;
+                    DeviceInfoImg_Copy3.Visibility = Visibility.Visible;
+                });
+            }
+            else
+            {
+                using (StreamWriter sw = File.CreateText(DisableWidgets))
+                {
+                    sw.WriteLine("Treble Toolkit Settings Item");
+                    sw.WriteLine("©2022 YAG-dev");
+                }
+                this.Dispatcher.Invoke(() =>
+                {
+                    Widgets.Width = new System.Windows.GridLength(70, GridUnitType.Pixel);
+                    DeviceRectangle.Visibility = Visibility.Hidden;
+                    BootRectangle.Visibility = Visibility.Hidden;
+                    GSIRectangle.Visibility = Visibility.Hidden;
+                    TWRPRectangle.Visibility = Visibility.Hidden;
+                    PhoneStatus.Visibility = Visibility.Hidden;
+                    PhoneStatus_Copy.Visibility = Visibility.Hidden;
+                    PhoneStatus_Copy1.Visibility = Visibility.Hidden;
+                    PhoneStatus_Copy2.Visibility = Visibility.Hidden;
+                    cc.Visibility = Visibility.Hidden;
+                    GSIFileLabel.Visibility = Visibility.Hidden;
+                    BootFileLabel.Visibility = Visibility.Hidden;
+                    TWRPFileLabel.Visibility = Visibility.Hidden;
+                    DeviceInfoImg.Visibility = Visibility.Hidden;
+                    DeviceInfoImg_Copy.Visibility = Visibility.Hidden;
+                    DeviceInfoImg_Copy1.Visibility = Visibility.Hidden;
+                    DeviceInfoImg_Copy2.Visibility = Visibility.Hidden;
+                    DeviceSpecificFeatures_Copy.Visibility = Visibility.Hidden;
+                    DeviceInfoImg_Copy3.Visibility = Visibility.Hidden;
+                });
+            }
+            Thread thread1 = new Thread(UpdateUI);
+            thread1.Start();
         }
     }
 }

@@ -179,7 +179,7 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <Rectangle x:Name="GSIRectangle" Fill="{DynamicResource SystemAltHighColorBrush}" Height="90" Margin="10,10,10,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" RadiusY="8" RadiusX="8">
+        <Rectangle x:Name="GSIRectangle"  Height="90" Margin="10,10,10,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" Style="{DynamicResource Rectangle22.4Style1}">
             <Rectangle.Effect>
                 <DropShadowEffect
                     ShadowDepth="0"
@@ -209,7 +209,7 @@
                     BlurRadius="2"/>
             </Label.Effect>
         </Label>
-        <Image x:Name="DeviceInfoImg" Margin="20,20,0,0" Source="tt-phone.png" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70"/>
+        <Image x:Name="DeviceInfoImg" Margin="20,20,0,0" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70"/>
         <Button x:Name="DeviceSpecificFeatures" Content="Cancel" Margin="0,55,20,0" VerticalAlignment="Top" Height="35" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="DSF_Click" HorizontalAlignment="Right" Width="100">
             <Button.Effect>
                 <DropShadowEffect
