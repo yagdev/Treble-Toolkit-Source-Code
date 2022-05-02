@@ -286,315 +286,94 @@
             <ColumnDefinition/>
             <ColumnDefinition x:Name="Widgets"/>
         </Grid.ColumnDefinitions>
-        <Rectangle x:Name="DeviceRectangle_Copy"  Margin="10,10,1,2" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" Style="{DynamicResource Rectangle22.4Style1}" Grid.ColumnSpan="2">
-            <Rectangle.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Rectangle.Effect>
+        <Rectangle x:Name="DeviceRectangle_Copy"  Margin="10,10,1,2" Style="{DynamicResource Rectangle22.4Style1}" Grid.ColumnSpan="2">
         </Rectangle>
         <ProgressBar x:Name="BatteryLvl" Grid.Column="2" HorizontalAlignment="Right" Height="15" Margin="0,0,15,1" VerticalAlignment="Bottom" Width="35" Style="{DynamicResource BatteryIcon}" Value="100" Foreground="{DynamicResource SystemBaseLowColorBrush}" Visibility="Hidden" Grid.Row="2"/>
         <TextBlock x:Name="BatteryLvlText" HorizontalAlignment="Right" Margin="0,0,15,1" TextWrapping="Wrap" Text="1%" Height="15" FontSize="6" TextAlignment="Center" VerticalAlignment="Bottom" Foreground="{DynamicResource SystemBaseHighColorBrush}" Grid.Column="2" Padding="0,3,0,0" Width="35" Visibility="Hidden" Grid.Row="2"/>
         <TextBlock x:Name="DebugShit" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="40" Width="325" Foreground="White" Visibility="Hidden" Grid.ColumnSpan="2"/>
-        <Label Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Grid.ColumnSpan="2" Height="50" VerticalAlignment="Top" Content="| Treble Toolkit" Margin="49,10,60,0">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label VerticalContentAlignment="Center" Grid.ColumnSpan="2" Height="50" VerticalAlignment="Top" Content="| Treble Toolkit" Margin="49,10,10,0" Style="{DynamicResource TitleTheme22.5}">
         </Label>
-        <Button x:Name="BackAbout" Content="Format Partitions" Margin="1,0" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource ImageButton22.4Default}" Click="Format_Click" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" >
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="BackAbout" Content="Format Partitions" Margin="1,0"  Style="{DynamicResource ImageButton22.4Default}" Click="Format_Click" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" >
+
         </Button>
-        <Button x:Name="BackAbout_Copy" Content="More" Margin="1,0" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource ImageButton22.4Default}" Click="More_Click" Grid.Column="1" Grid.Row="4" Grid.RowSpan="2" >
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="BackAbout_Copy" Content="More" Margin="1,0"  Style="{DynamicResource ImageButton22.4Default}" Click="More_Click" Grid.Column="1" Grid.Row="4" Grid.RowSpan="2" >
+
         </Button>
-        <Button x:Name="BackAbout_Copy1" Content="Visit Website" Margin="1,0" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource ImageButton22.4Default}" Click="Website_Click" Grid.Column="1" Grid.Row="7" Grid.RowSpan="2" >
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="BackAbout_Copy1" Content="Visit Website" Margin="1,0" Style="{DynamicResource ImageButton22.4Default}" Click="Website_Click" Grid.Column="1" Grid.Row="7" Grid.RowSpan="2" >
+
         </Button>
-        <Button x:Name="BackAbout_Copy2" Content="Update" Margin="1,0" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource ImageButton22.4Default}" Click="UpdateButton_Click" Grid.Column="1" Grid.Row="10" Grid.RowSpan="2" >
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="BackAbout_Copy2" Content="Update" Margin="1,0"  Style="{DynamicResource ImageButton22.4Default}" Click="UpdateButton_Click" Grid.Column="1" Grid.Row="10" Grid.RowSpan="2" >
+
         </Button>
-        <Button x:Name="BackAbout_Copy3" Content="About" Margin="1,0" FontSize="16" Style="{DynamicResource ImageButton22.4Default}" Click="AboutButton_Click" Grid.Column="1" Grid.Row="13" Grid.RowSpan="2" >
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="BackAbout_Copy3" Content="About" Margin="1,0"  Style="{DynamicResource ImageButton22.4Default}" Click="AboutButton_Click" Grid.Column="1" Grid.Row="13" Grid.RowSpan="2" >
+
         </Button>
-        <Button x:Name="BackAbout_Copy4" Content="Flash GSI" Margin="10,0,1,0"  FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource ImageButton22.4Default}" Click="ABButton_Click" Grid.Row="1" Grid.RowSpan="2" >
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="BackAbout_Copy4" Content="Flash GSI" Margin="10,0,1,0"  Style="{DynamicResource ImageButton22.4Default}" Click="ABButton_Click" Grid.Row="1" Grid.RowSpan="2" >
+
         </Button>
-        <Button x:Name="BackAbout_Copy5" Content="TWRP" Margin="10,0,1,0" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource ImageButton22.4Default}" Click="FlashButton_Click" Grid.Row="4" Grid.RowSpan="2" >
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="BackAbout_Copy5" Content="TWRP" Margin="10,0,1,0"  Style="{DynamicResource ImageButton22.4Default}" Click="FlashButton_Click" Grid.Row="4" Grid.RowSpan="2" >
+
         </Button>
-        <Button x:Name="Vendor" Content="Flash Vendor" Margin="10,0,1,0" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource ImageButton22.4Default}" Click="CompatibleDevices_Click" Grid.Row="7" Grid.RowSpan="2" >
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="Vendor" Content="Flash Vendor" Margin="10,0,1,0" Style="{DynamicResource ImageButton22.4Default}" Click="CompatibleDevices_Click" Grid.Row="7" Grid.RowSpan="2" >
+
         </Button>
-        <Button x:Name="BackAbout_Copy7" Content="Unlock BL" Margin="10,0,1,0" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource ImageButton22.4Default}" Click="Unlock_Click" Grid.Row="10" Grid.RowSpan="2" >
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="BackAbout_Copy7" Content="Unlock BL" Margin="10,0,1,0" Style="{DynamicResource ImageButton22.4Default}" Click="Unlock_Click" Grid.Row="10" Grid.RowSpan="2" >
+
         </Button>
-        <Button x:Name="BackAbout_Copy8" Content="FreeCMD" Margin="10,0,1,0" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource ImageButton22.4Default}" Click="FreeCMD_Click" Grid.Row="13" Grid.RowSpan="2" >
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="BackAbout_Copy8" Content="FreeCMD" Margin="10,0,1,0"  Style="{DynamicResource ImageButton22.4Default}" Click="FreeCMD_Click" Grid.Row="13" Grid.RowSpan="2" >
+
         </Button>
-        <Rectangle  Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" Opacity="0.5" Margin="1,0,0,0" Grid.RowSpan="16" Grid.Column="2" Style="{DynamicResource Rectangle22.4Style1}" RadiusY="0" RadiusX="0">
-            <Rectangle.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Rectangle.Effect>
+        <Rectangle Opacity="0.5" Margin="1,0,0,0" Grid.RowSpan="17" Grid.Column="2" Style="{DynamicResource Rectangle22.4Style1}" RadiusY="0" RadiusX="0">
         </Rectangle>
-        <Label Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="50" VerticalAlignment="Top" Content="Widgets" Grid.Column="2" Margin="65,10,10,0">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label VerticalContentAlignment="Center" Height="50" VerticalAlignment="Top" Content="Widgets" Grid.Column="2" Margin="65,10,10,0" Style="{DynamicResource TitleTheme22.5}">
         </Label>
-        <Rectangle x:Name="DeviceRectangle"  Margin="10,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" Style="{DynamicResource Rectangle22.4Style1}" Grid.Column="2" Grid.Row="1" Grid.RowSpan="2">
-            <Rectangle.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Rectangle.Effect>
+        <Rectangle x:Name="DeviceRectangle"  Margin="10,0" Style="{DynamicResource Rectangle22.4Style1}" Grid.Column="2" Grid.Row="1" Grid.RowSpan="2">
         </Rectangle>
-        <Label x:Name="PhoneStatus" Content="Device" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Margin="90,10,20,0" Grid.Column="2" Grid.Row="1">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="PhoneStatus" Content="Device" VerticalContentAlignment="Center" Margin="90,10,20,0" Grid.Column="2" Grid.Row="1" Style="{DynamicResource TitleTheme22.5}">
         </Label>
-        <Label x:Name="cc" Content="Checking..." Margin="90,0,20,10" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.Row="2" Grid.Column="2">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="cc" Content="Checking..." Margin="90,0,20,10" VerticalContentAlignment="Center" Grid.Row="2" Grid.Column="2" Style="{DynamicResource SubtitleTheme22.5}">
         </Label>
-        <Image x:Name="DeviceInfoImg" Margin="20,10,0,10" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Column="2" Grid.Row="1" Grid.RowSpan="2"/>
-        <Rectangle x:Name="GSIRectangle"  Margin="10,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" Style="{DynamicResource Rectangle22.4Style1}" Grid.Column="2" Grid.Row="4" Grid.RowSpan="2">
-            <Rectangle.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Rectangle.Effect>
+        <Image x:Name="DeviceInfoImg" Margin="20,17,0,17" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Column="2" Grid.Row="1" Grid.RowSpan="2"/>
+        <Rectangle x:Name="GSIRectangle"  Margin="10,0" Style="{DynamicResource Rectangle22.4Style1}" Grid.Column="2" Grid.Row="4" Grid.RowSpan="2">
         </Rectangle>
-        <Label x:Name="PhoneStatus_Copy" Content="GSI Image" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Margin="90,10,20,0" Grid.Column="2" Grid.Row="4">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="PhoneStatus_Copy" Content="GSI Image" VerticalContentAlignment="Center" Margin="90,10,20,0" Grid.Column="2" Grid.Row="4" Style="{DynamicResource TitleTheme22.5}"/>
+        <Label x:Name="GSIFileLabel" Content="Checking..." Margin="90,0,20,10" VerticalContentAlignment="Center" Grid.Row="5" Grid.Column="2" Style="{DynamicResource SubtitleTheme22.5}">
         </Label>
-        <Label x:Name="GSIFileLabel" Content="Checking..." Margin="90,0,20,10" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.Row="5" Grid.Column="2">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
-        </Label>
-        <Image x:Name="DeviceInfoImg_Copy" Margin="20,10,0,10" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Column="2" Grid.Row="4" Grid.RowSpan="2"/>
-        <Rectangle x:Name="BootRectangle"  Margin="10,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" Style="{DynamicResource Rectangle22.4Style1}" Grid.Column="2" Grid.Row="7" Grid.RowSpan="2">
-            <Rectangle.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Rectangle.Effect>
+        <Image x:Name="DeviceInfoImg_Copy" Margin="20,17,0,17" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Column="2" Grid.Row="4" Grid.RowSpan="2"/>
+        <Rectangle x:Name="BootRectangle"  Margin="10,0" Style="{DynamicResource Rectangle22.4Style1}" Grid.Column="2" Grid.Row="7" Grid.RowSpan="2">
         </Rectangle>
-        <Label x:Name="PhoneStatus_Copy1" Content="Boot Image" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Margin="90,10,20,0" Grid.Column="2" Grid.Row="7">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="PhoneStatus_Copy1" Content="Boot Image" VerticalContentAlignment="Center" Margin="90,10,20,0" Grid.Column="2" Grid.Row="7" Style="{DynamicResource TitleTheme22.5}">
         </Label>
-        <Label x:Name="BootFileLabel" Content="Checking..." Margin="90,0,20,10" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.Row="8" Grid.Column="2">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="BootFileLabel" Content="Checking..." Margin="90,0,20,10" VerticalContentAlignment="Center" Grid.Row="8" Grid.Column="2" Style="{DynamicResource SubtitleTheme22.5}">
         </Label>
-        <Image x:Name="DeviceInfoImg_Copy1" Margin="20,10,0,10" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Column="2" Grid.Row="7" Grid.RowSpan="2"/>
-        <Rectangle x:Name="TWRPRectangle"  Margin="10,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" Style="{DynamicResource Rectangle22.4Style1}" Grid.Column="2" Grid.Row="10" Grid.RowSpan="2">
-            <Rectangle.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Rectangle.Effect>
+        <Image x:Name="DeviceInfoImg_Copy1" Margin="20,17,0,17" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Column="2" Grid.Row="7" Grid.RowSpan="2"/>
+        <Rectangle x:Name="TWRPRectangle"  Margin="10,0" Style="{DynamicResource Rectangle22.4Style1}" Grid.Column="2" Grid.Row="10" Grid.RowSpan="2">
         </Rectangle>
-        <Label x:Name="PhoneStatus_Copy2" Content="TWRP Image" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Margin="91,10,20,0" Grid.Column="2" Grid.Row="10">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="PhoneStatus_Copy2" Content="TWRP Image" VerticalContentAlignment="Center" Margin="91,10,20,0" Grid.Column="2" Grid.Row="10" Style="{DynamicResource TitleTheme22.5}">
         </Label>
-        <Label x:Name="TWRPFileLabel" Content="Checking..." Margin="91,0,20,10" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.Row="11" Grid.Column="2">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="TWRPFileLabel" Content="Checking..." Margin="91,0,20,10" VerticalContentAlignment="Center" Grid.Row="11" Grid.Column="2" Style="{DynamicResource SubtitleTheme22.5}">
         </Label>
-        <Image x:Name="DeviceInfoImg_Copy2" Margin="20,10,0,10" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" HorizontalAlignment="Left" Width="70" Grid.Column="2" Grid.Row="10" Height="70" VerticalAlignment="Center" Grid.RowSpan="2"/>
-        <Button x:Name="DeviceSpecificFeatures_Copy" Content="Refresh" Margin="10,0,10,1" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Refresh" Grid.Row="13" Grid.Column="2">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Image x:Name="DeviceInfoImg_Copy2" Margin="20,17,0,17" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" HorizontalAlignment="Left" Width="70" Grid.Column="2" Grid.Row="10" Height="70" VerticalAlignment="Center" Grid.RowSpan="2"/>
+        <Button x:Name="DeviceSpecificFeatures_Copy" Content="Refresh" Margin="10,0,10,1" Foreground="{DynamicResource SystemBaseHighColorBrush}" Style="{DynamicResource Button21.8.1Rev4}" Click="Refresh" Grid.Row="13" Grid.Column="2">
+
         </Button>
-        <Button x:Name="BackAbout_Copy10" Content="Setup" Margin="10,1,10,0"  Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Setup" Grid.Row="14" Grid.Column="2">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="BackAbout_Copy10" Content="Setup" Margin="10,1,10,0"  Foreground="{DynamicResource SystemBaseHighColorBrush}" Style="{DynamicResource Button21.8.1Rev4}" Click="Setup" Grid.Row="14" Grid.Column="2">
+
         </Button>
-        <Image x:Name="BtnImg" Margin="20,10,0,10" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="1"/>
-        <Image x:Name="BtnImg_Copy" Margin="20,10,0,10" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="4"/>
-        <Image x:Name="BtnImg_Copy1" Margin="20,10,0,10" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="7"/>
-        <Image x:Name="BtnImg_Copy2" Margin="20,10,0,10" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="10"/>
-        <Image x:Name="BtnImg_Copy3" Margin="20,10,0,10" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="13"/>
-        <Image x:Name="BtnImg_Copy4" Margin="11,10,0,10" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="1" Grid.Column="1"/>
-        <Image x:Name="BtnImg_Copy5" Margin="11,10,0,10" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="4" Grid.Column="1"/>
-        <Image x:Name="BtnImg_Copy6" Margin="11,10,0,10" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="7" Grid.Column="1"/>
-        <Image x:Name="BtnImg_Copy7" Margin="11,10,0,10" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="10" Grid.Column="1"/>
-        <Image x:Name="BtnImg_Copy8" Margin="11,10,0,10" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="13" Grid.Column="1"/>
+        <Image x:Name="BtnImg" Margin="20,17,0,17" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="1"/>
+        <Image x:Name="BtnImg_Copy" Margin="20,17,0,17" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="4"/>
+        <Image x:Name="BtnImg_Copy1" Margin="20,17,0,17" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="7"/>
+        <Image x:Name="BtnImg_Copy2" Margin="20,17,0,17" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="10"/>
+        <Image x:Name="BtnImg_Copy3" Margin="20,17,0,17" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="13"/>
+        <Image x:Name="BtnImg_Copy4" Margin="11,17,0,17" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="1" Grid.Column="1"/>
+        <Image x:Name="BtnImg_Copy5" Margin="11,17,0,17" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="4" Grid.Column="1"/>
+        <Image x:Name="BtnImg_Copy6" Margin="11,17,0,17" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="7" Grid.Column="1"/>
+        <Image x:Name="BtnImg_Copy7" Margin="11,17,0,17" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="10" Grid.Column="1"/>
+        <Image x:Name="BtnImg_Copy8" Margin="11,17,0,17" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="13" Grid.Column="1"/>
         <Image x:Name="DeviceInfoImg_Copy3" Margin="20,10,0,12" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Width="30" Grid.Row="13" Grid.Column="2"/>
         <Image x:Name="DeviceInfoImg_Copy4" Margin="20,12,0,10" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Width="30" Grid.Row="14" Grid.Column="2"/>
         <Image Margin="20,20,0,0" Source="3c5973_c1cf50e6089f443ba92025a6531f0a6f_mv2.png" Stretch="Fill" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="29"/>
-        <Button x:Name="DeviceSpecificFeatures_Copy1" Content="" Margin="10,10,0,2" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="ChangeWidgets" Grid.Column="2" HorizontalAlignment="Left" Width="50" >
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="DeviceSpecificFeatures_Copy1" Content="" Margin="10,10,0,2" Style="{DynamicResource Button21.8.1Rev4}" Click="ChangeWidgets" Grid.Column="2" HorizontalAlignment="Left" Width="50" >
         </Button>
         <Image x:Name="DeviceInfoImg_Copy5" Margin="20,20,0,12" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Width="30" Grid.Column="2" Focusable="False"/>
     </Grid>

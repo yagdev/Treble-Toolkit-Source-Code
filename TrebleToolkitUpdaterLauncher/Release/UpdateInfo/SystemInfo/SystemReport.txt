@@ -2,57 +2,56 @@ Treble Toolkit System Report
 ©2021 YAG-dev
 
 Host Name:                 DESKTOP
-OS Name:                   Microsoft Windows 11 Pro Insider Preview
-OS Version:                10.0.22543 N/A Build 22543
+OS Name:                   Microsoft Windows 11 Pro
+OS Version:                10.0.22581 N/A Build 22581
 OS Manufacturer:           Microsoft Corporation
 OS Configuration:          Standalone Workstation
 OS Build Type:             Multiprocessor Free
 Registered Owner:          dinisp25@gmail.com
 Registered Organization:   
 Product ID:                00330-71290-00002-AAOEM
-Original Install Date:     28/01/2022, 13:40:13
-System Boot Time:          05/02/2022, 04:41:57
-System Manufacturer:       Gigabyte Technology Co., Ltd.
-System Model:              B450M DS3H
+Original Install Date:     06/04/2022, 17:18:07
+System Boot Time:          14/04/2022, 15:01:07
+System Manufacturer:       Acidanthera
+System Model:              MacPro7,1
 System Type:               x64-based PC
 Processor(s):              1 Processor(s) Installed.
                            [01]: AMD64 Family 25 Model 33 Stepping 0 AuthenticAMD ~3701 Mhz
-BIOS Version:              American Megatrends International, LLC. F62b, 06/09/2021
+BIOS Version:              Acidanthera 1715.81.2.0.0, 06/01/2022
 Windows Directory:         C:\WINDOWS
 System Directory:          C:\WINDOWS\system32
-Boot Device:               \Device\HarddiskVolume5
-System Locale:             pt;Portuguˆs (Portugal)
+Boot Device:               \Device\HarddiskVolume2
+System Locale:             en-us;Inglˆs (Estados Unidos)
 Input Locale:              pt;Portuguˆs (Portugal)
 Time Zone:                 (UTC+00:00) Dublin, Edimburgo, Lisboa, Londres
-Total Physical Memory:     16ÿ328 MB
-Available Physical Memory: 5ÿ999 MB
-Virtual Memory: Max Size:  27ÿ100 MB
-Virtual Memory: Available: 3ÿ754 MB
-Virtual Memory: In Use:    23ÿ346 MB
+Total Physical Memory:     16ÿ312 MB
+Available Physical Memory: 6ÿ627 MB
+Virtual Memory: Max Size:  22ÿ712 MB
+Virtual Memory: Available: 3ÿ878 MB
+Virtual Memory: In Use:    18ÿ834 MB
 Page File Location(s):     C:\pagefile.sys
 Domain:                    WORKGROUP
 Logon Server:              \\DESKTOP
-Hotfix(s):                 1 Hotfix(s) Installed.
-                           [01]: KB5007297
-Network Card(s):           2 NIC(s) Installed.
-                           [01]: Famatech RadminVPN Ethernet Adapter
-                                 Connection Name: Radmin VPN
-                                 DHCP Enabled:    No
-                                 IP address(es)
-                                 [01]: 26.31.202.50
-                                 [02]: fe80::d856:3e23:f28f:40e5
-                                 [03]: fdfd::1a1f:ca32
-                           [02]: Realtek PCIe GbE Family Controller
+Hotfix(s):                 3 Hotfix(s) Installed.
+                           [01]: KB5013284
+                           [02]: KB5013296
+                           [03]: KB5013287
+Network Card(s):           3 NIC(s) Installed.
+                           [01]: Realtek PCIe GbE Family Controller
                                  Connection Name: Ethernet
                                  DHCP Enabled:    Yes
                                  DHCP Server:     192.168.1.254
                                  IP address(es)
                                  [01]: 192.168.1.109
-                                 [02]: fe80::ac10:f9e4:d4f3:ae86
-                                 [03]: 2001:8a0:6132:8401:2894:6bc5:8263:f56c
-                                 [04]: 2001:8a0:6132:8401:247e:d97b:2300:47b7
-                                 [05]: 2001:8a0:6132:8401:18:aa94:a79:657d
-                                 [06]: 2001:8a0:6132:8401:ac10:f9e4:d4f3:ae86
+                                 [02]: fe80::d402:c1fd:52c9:567d
+                                 [03]: 2001:8a0:6132:8401:9469:3547:91f3:147e
+                                 [04]: 2001:8a0:6132:8401:d402:c1fd:52c9:567d
+                           [02]: Bluetooth Device (Personal Area Network)
+                                 Connection Name: Bluetooth Network Connection
+                                 Status:          Media disconnected
+                           [03]: D-Link DWA-140 Wireless N USB Adapter(rev.B3)
+                                 Connection Name: Wi-Fi
+                                 Status:          Media disconnected
 Hyper-V Requirements:      VM Monitor Mode Extensions: Yes
                            Virtualization Enabled In Firmware: No
                            Second Level Address Translation: Yes

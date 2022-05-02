@@ -116,5 +116,11 @@ namespace Treble_Toolkit
                 }
             });
         }
+
+        private void HM20L_Click(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("HuaweiMate20Lite.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
     }
 }

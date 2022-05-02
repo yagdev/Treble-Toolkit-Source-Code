@@ -226,7 +226,7 @@ namespace TrebleToolkitLauncher
                 }
                 this.Dispatcher.Invoke(() =>
                 {
-                    Yes.Content = "Preparating..";
+                    Yes.Content = "Preparing Update..";
                     status_pgr.Value += 5;
                 });
                 var update = Updater.Init(url, update_path, application_path, launch_exe);
@@ -238,27 +238,9 @@ namespace TrebleToolkitLauncher
                     cmdsi.WindowStyle = ProcessWindowStyle.Hidden;
                     Process cmd = Process.Start(cmdsi);
                     cmd.WaitForExit();
-                    startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-                    startInfo.FileName = "cmd.exe";
-                    startInfo.Arguments = "/C RD /s /q old & mkdir old";
-                    process.StartInfo = startInfo;
-                    process.Start();
-                    process.WaitForExit();
-                    startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-                    startInfo.FileName = "cmd.exe";
-                    startInfo.Arguments = "/C ren TrebleToolkitLauncher.exe TrebleToolkitLauncherOld.exe & move TrebleToolkitLauncherOld.exe old & move CLConfiguration.dll old & move CLConfiguration.xml old & move CLUpdate.dll old & move CLUpdate.xml old";
-                    process.StartInfo = startInfo;
-                    process.Start();
-                    process.WaitForExit();
-                    startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-                    startInfo.FileName = "cmd.exe";
-                    startInfo.Arguments = "/C RD /s /q Application";
-                    process.StartInfo = startInfo;
-                    process.Start();
-                    process.WaitForExit();
                     this.Dispatcher.Invoke(() =>
                     {
-                        Yes.Content = "Downloading...";
+                        Yes.Content = "Downloading Package...";
                         status_pgr.Value += 5;
                     });
 
@@ -266,7 +248,7 @@ namespace TrebleToolkitLauncher
 
                     this.Dispatcher.Invoke(() =>
                     {
-                        Yes.Content = "Decompressing...";
+                        Yes.Content = "Extracting Package...";
                         status_pgr.Value += 60;
                     });
 
@@ -274,7 +256,7 @@ namespace TrebleToolkitLauncher
 
                     this.Dispatcher.Invoke(() =>
                     {
-                        Yes.Content = "Cleaning Up...";
+                        Yes.Content = " Optimizing...";
                         status_pgr.Value += 10;
                     });
 
@@ -299,11 +281,29 @@ namespace TrebleToolkitLauncher
 
                 this.Dispatcher.Invoke(() =>
                 {
-                    Yes.Content = "Executing...";
+                    Yes.Content = "Launching...";
                     status_pgr.Value += 10;
                 });
                 System.Diagnostics.Process process1 = new System.Diagnostics.Process();
                 System.Diagnostics.ProcessStartInfo startInfo1 = new System.Diagnostics.ProcessStartInfo();
+                startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                startInfo.FileName = "cmd.exe";
+                startInfo.Arguments = "/C RD /s /q old & mkdir old";
+                process.StartInfo = startInfo;
+                process.Start();
+                process.WaitForExit();
+                startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                startInfo.FileName = "cmd.exe";
+                startInfo.Arguments = "/C ren TrebleToolkitLauncher.exe TrebleToolkitLauncherOld.exe & move TrebleToolkitLauncherOld.exe old & move CLConfiguration.dll old & move CLConfiguration.xml old & move CLUpdate.dll old & move CLUpdate.xml old";
+                process.StartInfo = startInfo;
+                process.Start();
+                process.WaitForExit();
+                startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                startInfo.FileName = "cmd.exe";
+                startInfo.Arguments = "/C RD /s /q Application";
+                process.StartInfo = startInfo;
+                process.Start();
+                process.WaitForExit();
                 startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                 startInfo.FileName = "cmd.exe";
                 startInfo.Arguments = "/C cd UpdateFiles & move Application ../ & move TrebleToolkitLauncher.exe ../";

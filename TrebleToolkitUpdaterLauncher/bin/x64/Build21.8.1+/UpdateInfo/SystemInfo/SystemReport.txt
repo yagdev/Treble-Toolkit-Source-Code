@@ -1,57 +1,59 @@
 Treble Toolkit System Report
 ©2021 YAG-dev
 
-Host Name:                 DESKTOP-AVDBJVA
-OS Name:                   Microsoft Windows 11 Home
-OS Version:                10.0.22000 N/A Build 22000
+Host Name:                 DESKTOP
+OS Name:                   Microsoft Windows 11 Pro
+OS Version:                10.0.22581 N/A Build 22581
 OS Manufacturer:           Microsoft Corporation
 OS Configuration:          Standalone Workstation
 OS Build Type:             Multiprocessor Free
-Registered Owner:          N/A
-Registered Organization:   N/A
-Product ID:                00325-80263-47997-AAOEM
-Original Install Date:     7/5/2021, 9:59:20 PM
-System Boot Time:          7/10/2021, 2:44:39 AM
-System Manufacturer:       TOSHIBA
-System Model:              SATELLITE P50-C
+Registered Owner:          dinisp25@gmail.com
+Registered Organization:   
+Product ID:                00330-71290-00002-AAOEM
+Original Install Date:     06/04/2022, 17:18:07
+System Boot Time:          15/04/2022, 05:43:41
+System Manufacturer:       Acidanthera
+System Model:              MacPro7,1
 System Type:               x64-based PC
 Processor(s):              1 Processor(s) Installed.
-                           [01]: Intel64 Family 6 Model 78 Stepping 3 GenuineIntel ~2300 Mhz
-BIOS Version:              INSYDE Corp. 1.70, 7/5/2017
+                           [01]: AMD64 Family 25 Model 33 Stepping 0 AuthenticAMD ~3701 Mhz
+BIOS Version:              Acidanthera 1715.81.2.0.0, 06/01/2022
 Windows Directory:         C:\WINDOWS
 System Directory:          C:\WINDOWS\system32
-Boot Device:               \Device\HarddiskVolume1
-System Locale:             en-us;English (United States)
-Input Locale:              pt;Portuguese (Portugal)
-Time Zone:                 (UTC+00:00) Dublin, Edinburgh, Lisbon, London
-Total Physical Memory:     16,218 MB
-Available Physical Memory: 7,789 MB
-Virtual Memory: Max Size:  19,162 MB
-Virtual Memory: Available: 10,001 MB
-Virtual Memory: In Use:    9,161 MB
+Boot Device:               \Device\HarddiskVolume2
+System Locale:             en-us;Inglˆs (Estados Unidos)
+Input Locale:              pt;Portuguˆs (Portugal)
+Time Zone:                 (UTC+00:00) Dublin, Edimburgo, Lisboa, Londres
+Total Physical Memory:     16ÿ312 MB
+Available Physical Memory: 5ÿ268 MB
+Virtual Memory: Max Size:  31ÿ550 MB
+Virtual Memory: Available: 4ÿ936 MB
+Virtual Memory: In Use:    26ÿ614 MB
 Page File Location(s):     C:\pagefile.sys
 Domain:                    WORKGROUP
-Logon Server:              \\DESKTOP-AVDBJVA
-Hotfix(s):                 4 Hotfix(s) Installed.
-                           [01]: KB5004034
-                           [02]: KB5004567
-                           [03]: KB5004745
-                           [04]: KB5005011
-Network Card(s):           2 NIC(s) Installed.
-                           [01]: Intel(R) Dual Band Wireless-AC 3165
-                                 Connection Name: Wi-Fi
+Logon Server:              \\DESKTOP
+Hotfix(s):                 3 Hotfix(s) Installed.
+                           [01]: KB5013284
+                           [02]: KB5013296
+                           [03]: KB5013287
+Network Card(s):           3 NIC(s) Installed.
+                           [01]: Realtek PCIe GbE Family Controller
+                                 Connection Name: Ethernet
                                  DHCP Enabled:    Yes
                                  DHCP Server:     192.168.1.254
                                  IP address(es)
-                                 [01]: 192.168.1.70
-                                 [02]: fe80::a8d2:c2de:eccb:8cdc
-                                 [03]: 2001:8a0:6104:9b01:1dcd:d22e:2540:37c6
-                                 [04]: 2001:8a0:6104:9b01:a8d2:c2de:eccb:8cdc
-                           [02]: Realtek PCIe GBE Family Controller
-                                 Connection Name: Ethernet
+                                 [01]: 192.168.1.109
+                                 [02]: fe80::d402:c1fd:52c9:567d
+                                 [03]: 2001:8a0:6132:8401:4409:2670:a3d9:ae3b
+                                 [04]: 2001:8a0:6132:8401:d402:c1fd:52c9:567d
+                           [02]: Bluetooth Device (Personal Area Network)
+                                 Connection Name: Bluetooth Network Connection
+                                 Status:          Media disconnected
+                           [03]: D-Link DWA-140 Wireless N USB Adapter(rev.B3)
+                                 Connection Name: Wi-Fi
                                  Status:          Media disconnected
 Hyper-V Requirements:      VM Monitor Mode Extensions: Yes
-                           Virtualization Enabled In Firmware: Yes
+                           Virtualization Enabled In Firmware: No
                            Second Level Address Translation: Yes
                            Data Execution Prevention Available: Yes
 

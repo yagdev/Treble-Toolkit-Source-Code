@@ -96,3 +96,53 @@ D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Instal
 D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\Treble Toolkit Installer.csproj.CopyComplete
 D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\Treble Toolkit Installer.exe
 D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\Treble Toolkit Installer.pdb
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\bin\Debug\Treble Toolkit Installer.exe.config
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\bin\Debug\Treble Toolkit Installer.exe
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\bin\Debug\Treble Toolkit Installer.pdb
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\bin\Debug\CLConfiguration.xml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\bin\Debug\CLUpdate.xml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\Treble Toolkit Installer.csproj.AssemblyReference.cache
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\Treble Toolkit Installer.csproj.SuggestedBindingRedirects.cache
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\Interop.IWshRuntimeLibrary.dll
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\Treble Toolkit Installer.csproj.ResolveComReference.cache
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\Install.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\InstallFinishedAD.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\InstallFinishedCF.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\InstallFinishedPF.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\InstallingAD.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\InstallingCF.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\InstallingPF.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\MainWindow.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\Reinstall.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\RepairFinished.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\RepairingInstall.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\Start.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\Uninstall.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\UninstallFinished.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\App.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\Treble Toolkit Installer_MarkupCompile.cache
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\Treble Toolkit Installer_MarkupCompile.lref
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\App.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\Install.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\InstallFinishedAD.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\InstallFinishedCF.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\InstallFinishedPF.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\InstallingAD.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\InstallingCF.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\InstallingPF.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\MainWindow.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\Reinstall.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\RepairFinished.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\RepairingInstall.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\Start.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\Uninstall.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\UninstallFinished.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\Treble Toolkit Installer.g.resources
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\Treble_Toolkit_Installer.Properties.Resources.resources
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\Treble Toolkit Installer.csproj.GenerateResource.cache
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\Treble Toolkit Installer.csproj.CoreCompileInputs.cache
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\Treble Toolkit Installer.csproj.Fody.CopyLocal.cache
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\Treble Toolkit Installer.csproj.CopyComplete
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\Treble Toolkit Installer.exe
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit Installer\obj\Debug\Treble Toolkit Installer.pdb

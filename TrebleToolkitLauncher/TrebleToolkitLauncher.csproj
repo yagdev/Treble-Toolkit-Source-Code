@@ -365,6 +365,24 @@
   <ItemGroup>
     <Resource Include="tt-cross-light.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-expand-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-expand-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-shrink-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-shrink-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-widgets-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-widgets-dark.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.6.5.5\build\Fody.targets" Condition="Exists('..\packages\Fody.6.5.5\build\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

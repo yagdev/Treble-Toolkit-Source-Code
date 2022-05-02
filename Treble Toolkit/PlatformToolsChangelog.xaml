@@ -125,86 +125,22 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Rectangle  Margin="10,105,10,72" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" Style="{DynamicResource Rectangle22.4Style1}" Grid.ColumnSpan="2">
-            <Rectangle.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Rectangle.Effect>
+        <Rectangle  Margin="10,105,10,72" Style="{DynamicResource Rectangle22.4Style1}" Grid.ColumnSpan="2">
         </Rectangle>
 
-        <Rectangle  Height="70" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Opacity="0.5" RadiusY="12" RadiusX="12" Style="{DynamicResource Rectangle22.4Style1}" >
-            <Rectangle.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Rectangle.Effect>
+        <Rectangle  Height="70" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Opacity="0.5" RadiusY="0" RadiusX="0" Style="{DynamicResource Rectangle22.4Style1}" >
         </Rectangle>
 
-        <TextBlock x:Name="Changelog" Margin="20,115,20,82" TextWrapping="Wrap" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="2">
-            <TextBlock.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </TextBlock.Effect><Run Text="Reading log..."/><LineBreak/><Run Text="If this takes longer than 5 seconds, please report it."/></TextBlock>
-        <Button x:Name="DeviceSpecificFeatures_Copy"  Content="Back" Margin="10,0,1,10" VerticalAlignment="Bottom" Height="50"  Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="BackAbout_Click">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <TextBlock x:Name="Changelog" Margin="20,115,20,82" TextWrapping="Wrap" Grid.ColumnSpan="2" Style="{DynamicResource TextBlockTheme22.5}"><Run Text="Reading log..."/> <LineBreak/><Run Text="If this takes longer than 5 seconds, please report it."/></TextBlock>
+        <Button x:Name="DeviceSpecificFeatures_Copy"  Content="Back" Margin="10,0,1,10" VerticalAlignment="Bottom" Height="50" Style="{DynamicResource Button21.8.1Rev4}" Click="BackAbout_Click">
         </Button>
-        <Button x:Name="DeviceSpecificFeatures_Copy2" Content="Official Website" Margin="1,0,10,10" VerticalAlignment="Bottom" Height="50"  Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="DiscoverAbout_Click" Grid.Column="1">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="DeviceSpecificFeatures_Copy2" Content="Official Website" Margin="1,0,10,10" VerticalAlignment="Bottom" Height="50" Style="{DynamicResource Button21.8.1Rev4}" Click="DiscoverAbout_Click" Grid.Column="1">
         </Button>
-        <Rectangle x:Name="Reptangle"  Height="90" Margin="10,10,10,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" Style="{DynamicResource Rectangle22.4Style1}" Grid.ColumnSpan="2">
-            <Rectangle.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Rectangle.Effect>
+        <Rectangle x:Name="Reptangle"  Height="90" Margin="10,10,10,0" VerticalAlignment="Top" Style="{DynamicResource Rectangle22.4Style1}" Grid.ColumnSpan="2">
         </Rectangle>
-        <Label x:Name="Title_Copy" Content="Platform Tools" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="35" VerticalAlignment="Top" Margin="90,20,20,0" Grid.ColumnSpan="2">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="Title_Copy" Content="Platform Tools" Height="35" VerticalAlignment="Top" Margin="90,20,20,0" Grid.ColumnSpan="2" Style="{DynamicResource TitleTheme22.5}">
         </Label>
-        <Label x:Name="copyright" Content="Checking..." Margin="90,55,120,0" VerticalAlignment="Top" Height="35" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.ColumnSpan="2">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="copyright" Content="Checking..." Margin="90,55,120,0" VerticalAlignment="Top" Height="35" Grid.ColumnSpan="2" Style="{DynamicResource SubtitleTheme22.5}">
         </Label>
         <Button x:Name="Update" Content="Update" Margin="280,54,20,0" VerticalAlignment="Top" Height="35"  Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource ButtonSmall}" Click="Troubleshoot" Grid.Column="1">
             <Button.Effect>

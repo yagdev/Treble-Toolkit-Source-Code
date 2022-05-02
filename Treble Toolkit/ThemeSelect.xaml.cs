@@ -80,6 +80,11 @@ namespace Treble_Toolkit
             Thread thread = new Thread(ToggleDefault);
             thread.Start();
         }
+        private void Anniversary_Click(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("AnniversaryThemes.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
         //Threading starts here (YAG-dev - 5/1/22@17:55
         private void Animate()
         {
@@ -206,6 +211,94 @@ namespace Treble_Toolkit
             string IntensityFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Intensity.txt");
             string SlipsideFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Slipside.txt");
             string JoyFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Joy.txt");
+            string Anniversary1_0File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary1.0.txt");
+            string Anniversary1_2File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary1.2.txt");
+            string Anniversary1_3File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary1.3.txt");
+            string Anniversary1_5_0_3File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary1.5.0.3.txt");
+            string Anniversary2_0File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary2.0.txt");
+            string Anniversary3_1File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary3.1.txt");
+            string Anniversary3_2File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary3.2.txt");
+            string Anniversary5_4File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary5.4.txt");
+            string Anniversary5_6File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary5.6.txt");
+            string Anniversary5_7File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary5.7.txt");
+            string Anniversary5_9File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary5.9.txt");
+            string Anniversary21_2_1File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary21.2.1.txt");
+            string Anniversary21_7_1File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary21.7.1.txt");
+            string Anniversary21_8_1File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary21.8.1.txt");
+            string Anniversary22_1File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary22.1.txt");
+            string Anniversary22_2File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary22.2.txt");
+            if (File.Exists(SlipsideFile))
+            {
+                File.Delete(SlipsideFile);
+            }
+            if (File.Exists(JoyFile))
+            {
+                File.Delete(JoyFile);
+            }
+            if (File.Exists(Anniversary1_0File))
+            {
+                File.Delete(Anniversary1_0File);
+            }
+            if (File.Exists(Anniversary1_2File))
+            {
+                File.Delete(Anniversary1_2File);
+            }
+            if (File.Exists(Anniversary1_3File))
+            {
+                File.Delete(Anniversary1_3File);
+            }
+            if (File.Exists(Anniversary1_5_0_3File))
+            {
+                File.Delete(Anniversary1_5_0_3File);
+            }
+            if (File.Exists(Anniversary2_0File))
+            {
+                File.Delete(Anniversary2_0File);
+            }
+            if (File.Exists(Anniversary3_1File))
+            {
+                File.Delete(Anniversary3_1File);
+            }
+            if (File.Exists(Anniversary3_2File))
+            {
+                File.Delete(Anniversary3_2File);
+            }
+            if (File.Exists(Anniversary5_4File))
+            {
+                File.Delete(Anniversary5_4File);
+            }
+            if (File.Exists(Anniversary5_6File))
+            {
+                File.Delete(Anniversary5_6File);
+            }
+            if (File.Exists(Anniversary5_7File))
+            {
+                File.Delete(Anniversary5_7File);
+            }
+            if (File.Exists(Anniversary5_9File))
+            {
+                File.Delete(Anniversary5_9File);
+            }
+            if (File.Exists(Anniversary21_2_1File))
+            {
+                File.Delete(Anniversary21_2_1File);
+            }
+            if (File.Exists(Anniversary21_7_1File))
+            {
+                File.Delete(Anniversary21_7_1File);
+            }
+            if (File.Exists(Anniversary21_8_1File))
+            {
+                File.Delete(Anniversary21_8_1File);
+            }
+            if (File.Exists(Anniversary22_1File))
+            {
+                File.Delete(Anniversary22_1File);
+            }
+            if (File.Exists(Anniversary22_2File))
+            {
+                File.Delete(Anniversary22_2File);
+            }
             if (File.Exists(IntensityFile))
             {
                 File.Delete(IntensityFile);
@@ -220,6 +313,7 @@ namespace Treble_Toolkit
             }
             this.Dispatcher.Invoke(() =>
             {
+                DeviceSpecificFeatures_Copy8.Content = "Anniversary Themes";
                 DeviceSpecificFeatures_Copy4.IsEnabled = false;
                 DeviceSpecificFeatures_Copy5.IsEnabled = true;
                 DeviceSpecificFeatures_Copy6.IsEnabled = true;
@@ -227,6 +321,9 @@ namespace Treble_Toolkit
                 Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["22.4Alt2"];
                 Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["Rectangle22.4StyleDefault"];
                 Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["ImageButton22.4Alt1"];
+                Application.Current.Resources["TitleTheme22.5"] = Application.Current.Resources["TitleTheme22.5Default"];
+                Application.Current.Resources["SubtitleTheme22.5"] = Application.Current.Resources["SubtitleTheme22.5Default"];
+                Application.Current.Resources["TextBlockTheme22.5"] = Application.Current.Resources["TextBlockTheme22.5Default"];
             });
             Thread thread = new Thread(UpdateUI);
             thread.Start();
@@ -244,6 +341,94 @@ namespace Treble_Toolkit
             string IntensityFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Intensity.txt");
             string SlipsideFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Slipside.txt");
             string JoyFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Joy.txt");
+            string Anniversary1_0File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary1.0.txt");
+            string Anniversary1_2File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary1.2.txt");
+            string Anniversary1_3File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary1.3.txt");
+            string Anniversary1_5_0_3File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary1.5.0.3.txt");
+            string Anniversary2_0File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary2.0.txt");
+            string Anniversary3_1File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary3.1.txt");
+            string Anniversary3_2File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary3.2.txt");
+            string Anniversary5_4File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary5.4.txt");
+            string Anniversary5_6File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary5.6.txt");
+            string Anniversary5_7File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary5.7.txt");
+            string Anniversary5_9File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary5.9.txt");
+            string Anniversary21_2_1File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary21.2.1.txt");
+            string Anniversary21_7_1File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary21.7.1.txt");
+            string Anniversary21_8_1File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary21.8.1.txt");
+            string Anniversary22_1File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary22.1.txt");
+            string Anniversary22_2File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary22.2.txt");
+            if (File.Exists(SlipsideFile))
+            {
+                File.Delete(SlipsideFile);
+            }
+            if (File.Exists(JoyFile))
+            {
+                File.Delete(JoyFile);
+            }
+            if (File.Exists(Anniversary1_0File))
+            {
+                File.Delete(Anniversary1_0File);
+            }
+            if (File.Exists(Anniversary1_2File))
+            {
+                File.Delete(Anniversary1_2File);
+            }
+            if (File.Exists(Anniversary1_3File))
+            {
+                File.Delete(Anniversary1_3File);
+            }
+            if (File.Exists(Anniversary1_5_0_3File))
+            {
+                File.Delete(Anniversary1_5_0_3File);
+            }
+            if (File.Exists(Anniversary2_0File))
+            {
+                File.Delete(Anniversary2_0File);
+            }
+            if (File.Exists(Anniversary3_1File))
+            {
+                File.Delete(Anniversary3_1File);
+            }
+            if (File.Exists(Anniversary3_2File))
+            {
+                File.Delete(Anniversary3_2File);
+            }
+            if (File.Exists(Anniversary5_4File))
+            {
+                File.Delete(Anniversary5_4File);
+            }
+            if (File.Exists(Anniversary5_6File))
+            {
+                File.Delete(Anniversary5_6File);
+            }
+            if (File.Exists(Anniversary5_7File))
+            {
+                File.Delete(Anniversary5_7File);
+            }
+            if (File.Exists(Anniversary5_9File))
+            {
+                File.Delete(Anniversary5_9File);
+            }
+            if (File.Exists(Anniversary21_2_1File))
+            {
+                File.Delete(Anniversary21_2_1File);
+            }
+            if (File.Exists(Anniversary21_7_1File))
+            {
+                File.Delete(Anniversary21_7_1File);
+            }
+            if (File.Exists(Anniversary21_8_1File))
+            {
+                File.Delete(Anniversary21_8_1File);
+            }
+            if (File.Exists(Anniversary22_1File))
+            {
+                File.Delete(Anniversary22_1File);
+            }
+            if (File.Exists(Anniversary22_2File))
+            {
+                File.Delete(Anniversary22_2File);
+            }
             if (File.Exists(SlipsideFile))
             {
                 File.Delete(SlipsideFile);
@@ -259,6 +444,7 @@ namespace Treble_Toolkit
             }
             this.Dispatcher.Invoke(() =>
             {
+                DeviceSpecificFeatures_Copy8.Content = "Anniversary Themes";
                 DeviceSpecificFeatures_Copy4.IsEnabled = true;
                 DeviceSpecificFeatures_Copy5.IsEnabled = true;
                 DeviceSpecificFeatures_Copy7.IsEnabled = true;
@@ -266,6 +452,9 @@ namespace Treble_Toolkit
                 Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["22.4Alt1"];
                 Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["Rectangle22.4Style2"];
                 Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["ImageButton22.4Alt2"];
+                Application.Current.Resources["TitleTheme22.5"] = Application.Current.Resources["TitleTheme22.5Default"];
+                Application.Current.Resources["SubtitleTheme22.5"] = Application.Current.Resources["SubtitleTheme22.5Default"];
+                Application.Current.Resources["TextBlockTheme22.5"] = Application.Current.Resources["TextBlockTheme22.5Default"];
             });
             Thread thread = new Thread(UpdateUI);
             thread.Start();
@@ -288,6 +477,94 @@ namespace Treble_Toolkit
             string IntensityFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Intensity.txt");
             string SlipsideFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Slipside.txt");
             string JoyFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Joy.txt");
+            string Anniversary1_0File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary1.0.txt");
+            string Anniversary1_2File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary1.2.txt");
+            string Anniversary1_3File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary1.3.txt");
+            string Anniversary1_5_0_3File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary1.5.0.3.txt");
+            string Anniversary2_0File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary2.0.txt");
+            string Anniversary3_1File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary3.1.txt");
+            string Anniversary3_2File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary3.2.txt");
+            string Anniversary5_4File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary5.4.txt");
+            string Anniversary5_6File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary5.6.txt");
+            string Anniversary5_7File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary5.7.txt");
+            string Anniversary5_9File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary5.9.txt");
+            string Anniversary21_2_1File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary21.2.1.txt");
+            string Anniversary21_7_1File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary21.7.1.txt");
+            string Anniversary21_8_1File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary21.8.1.txt");
+            string Anniversary22_1File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary22.1.txt");
+            string Anniversary22_2File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary22.2.txt");
+            if (File.Exists(SlipsideFile))
+            {
+                File.Delete(SlipsideFile);
+            }
+            if (File.Exists(JoyFile))
+            {
+                File.Delete(JoyFile);
+            }
+            if (File.Exists(Anniversary1_0File))
+            {
+                File.Delete(Anniversary1_0File);
+            }
+            if (File.Exists(Anniversary1_2File))
+            {
+                File.Delete(Anniversary1_2File);
+            }
+            if (File.Exists(Anniversary1_3File))
+            {
+                File.Delete(Anniversary1_3File);
+            }
+            if (File.Exists(Anniversary1_5_0_3File))
+            {
+                File.Delete(Anniversary1_5_0_3File);
+            }
+            if (File.Exists(Anniversary2_0File))
+            {
+                File.Delete(Anniversary2_0File);
+            }
+            if (File.Exists(Anniversary3_1File))
+            {
+                File.Delete(Anniversary3_1File);
+            }
+            if (File.Exists(Anniversary3_2File))
+            {
+                File.Delete(Anniversary3_2File);
+            }
+            if (File.Exists(Anniversary5_4File))
+            {
+                File.Delete(Anniversary5_4File);
+            }
+            if (File.Exists(Anniversary5_6File))
+            {
+                File.Delete(Anniversary5_6File);
+            }
+            if (File.Exists(Anniversary5_7File))
+            {
+                File.Delete(Anniversary5_7File);
+            }
+            if (File.Exists(Anniversary5_9File))
+            {
+                File.Delete(Anniversary5_9File);
+            }
+            if (File.Exists(Anniversary21_2_1File))
+            {
+                File.Delete(Anniversary21_2_1File);
+            }
+            if (File.Exists(Anniversary21_7_1File))
+            {
+                File.Delete(Anniversary21_7_1File);
+            }
+            if (File.Exists(Anniversary21_8_1File))
+            {
+                File.Delete(Anniversary21_8_1File);
+            }
+            if (File.Exists(Anniversary22_1File))
+            {
+                File.Delete(Anniversary22_1File);
+            }
+            if (File.Exists(Anniversary22_2File))
+            {
+                File.Delete(Anniversary22_2File);
+            }
             if (File.Exists(SlipsideFile))
             {
                 File.Delete(SlipsideFile);
@@ -303,6 +580,7 @@ namespace Treble_Toolkit
             }
             this.Dispatcher.Invoke(() =>
             {
+                DeviceSpecificFeatures_Copy8.Content = "Anniversary Themes";
                 DeviceSpecificFeatures_Copy4.IsEnabled = true;
                 DeviceSpecificFeatures_Copy5.IsEnabled = true;
                 DeviceSpecificFeatures_Copy6.IsEnabled = true;
@@ -310,6 +588,9 @@ namespace Treble_Toolkit
                 Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["22.4Alt3"];
                 Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["Rectangle22.4Style3"];
                 Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["ImageButton22.4Alt3"];
+                Application.Current.Resources["TitleTheme22.5"] = Application.Current.Resources["TitleTheme22.5Default"];
+                Application.Current.Resources["SubtitleTheme22.5"] = Application.Current.Resources["SubtitleTheme22.5Default"];
+                Application.Current.Resources["TextBlockTheme22.5"] = Application.Current.Resources["TextBlockTheme22.5Default"];
             });
             Thread thread = new Thread(UpdateUI);
             thread.Start();
@@ -332,6 +613,94 @@ namespace Treble_Toolkit
             string IntensityFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Intensity.txt");
             string SlipsideFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Slipside.txt");
             string JoyFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Joy.txt");
+            string Anniversary1_0File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary1.0.txt");
+            string Anniversary1_2File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary1.2.txt");
+            string Anniversary1_3File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary1.3.txt");
+            string Anniversary1_5_0_3File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary1.5.0.3.txt");
+            string Anniversary2_0File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary2.0.txt");
+            string Anniversary3_1File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary3.1.txt");
+            string Anniversary3_2File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary3.2.txt");
+            string Anniversary5_4File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary5.4.txt");
+            string Anniversary5_6File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary5.6.txt");
+            string Anniversary5_7File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary5.7.txt");
+            string Anniversary5_9File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary5.9.txt");
+            string Anniversary21_2_1File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary21.2.1.txt");
+            string Anniversary21_7_1File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary21.7.1.txt");
+            string Anniversary21_8_1File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary21.8.1.txt");
+            string Anniversary22_1File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary22.1.txt");
+            string Anniversary22_2File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary22.2.txt");
+            if (File.Exists(SlipsideFile))
+            {
+                File.Delete(SlipsideFile);
+            }
+            if (File.Exists(JoyFile))
+            {
+                File.Delete(JoyFile);
+            }
+            if (File.Exists(Anniversary1_0File))
+            {
+                File.Delete(Anniversary1_0File);
+            }
+            if (File.Exists(Anniversary1_2File))
+            {
+                File.Delete(Anniversary1_2File);
+            }
+            if (File.Exists(Anniversary1_3File))
+            {
+                File.Delete(Anniversary1_3File);
+            }
+            if (File.Exists(Anniversary1_5_0_3File))
+            {
+                File.Delete(Anniversary1_5_0_3File);
+            }
+            if (File.Exists(Anniversary2_0File))
+            {
+                File.Delete(Anniversary2_0File);
+            }
+            if (File.Exists(Anniversary3_1File))
+            {
+                File.Delete(Anniversary3_1File);
+            }
+            if (File.Exists(Anniversary3_2File))
+            {
+                File.Delete(Anniversary3_2File);
+            }
+            if (File.Exists(Anniversary5_4File))
+            {
+                File.Delete(Anniversary5_4File);
+            }
+            if (File.Exists(Anniversary5_6File))
+            {
+                File.Delete(Anniversary5_6File);
+            }
+            if (File.Exists(Anniversary5_7File))
+            {
+                File.Delete(Anniversary5_7File);
+            }
+            if (File.Exists(Anniversary5_9File))
+            {
+                File.Delete(Anniversary5_9File);
+            }
+            if (File.Exists(Anniversary21_2_1File))
+            {
+                File.Delete(Anniversary21_2_1File);
+            }
+            if (File.Exists(Anniversary21_7_1File))
+            {
+                File.Delete(Anniversary21_7_1File);
+            }
+            if (File.Exists(Anniversary21_8_1File))
+            {
+                File.Delete(Anniversary21_8_1File);
+            }
+            if (File.Exists(Anniversary22_1File))
+            {
+                File.Delete(Anniversary22_1File);
+            }
+            if (File.Exists(Anniversary22_2File))
+            {
+                File.Delete(Anniversary22_2File);
+            }
             if (File.Exists(IntensityFile))
             {
                 File.Delete(IntensityFile);
@@ -347,6 +716,7 @@ namespace Treble_Toolkit
             }
             this.Dispatcher.Invoke(() =>
             {
+                DeviceSpecificFeatures_Copy8.Content = "Anniversary Themes";
                 DeviceSpecificFeatures_Copy4.IsEnabled = true;
                 DeviceSpecificFeatures_Copy6.IsEnabled = true;
                 DeviceSpecificFeatures_Copy7.IsEnabled = true;
@@ -354,6 +724,9 @@ namespace Treble_Toolkit
                 Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["22.4Alt2"];
                 Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["Rectangle22.4Style2"];
                 Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["ImageButton22.4Alt1"];
+                Application.Current.Resources["TitleTheme22.5"] = Application.Current.Resources["TitleTheme22.5Default"];
+                Application.Current.Resources["SubtitleTheme22.5"] = Application.Current.Resources["SubtitleTheme22.5Default"];
+                Application.Current.Resources["TextBlockTheme22.5"] = Application.Current.Resources["TextBlockTheme22.5Default"];
             });
             Thread thread = new Thread(UpdateUI);
             thread.Start();
@@ -370,11 +743,13 @@ namespace Treble_Toolkit
                 if (SourceChord.FluentWPF.ResourceDictionaryEx.GlobalTheme == SourceChord.FluentWPF.ElementTheme.Dark)
                 {
                     DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-theme-dark.png"));
+                    DeviceInfoImg_Copy.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-confetti-dark.png"));
                     DeviceInfoImg_Copy2.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-restart-dark.png"));
                 }
                 else
                 {
                     DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-theme-light.png"));
+                    DeviceInfoImg_Copy.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-confetti-light.png"));
                     DeviceInfoImg_Copy2.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-restart-light.png"));
                 }
             });
@@ -391,55 +766,60 @@ namespace Treble_Toolkit
                 if (File.Exists(Dark))
                 {
                     DeviceSpecificFeatures_Copy2.IsEnabled = false;
-                    DeviceSpecificFeatures_Copy1.IsEnabled = true;
-                    DeviceSpecificFeatures_Copy3.IsEnabled = true;
                 }
                 else
                 {
                     if (File.Exists(Light))
                     {
-                        DeviceSpecificFeatures_Copy2.IsEnabled = true;
-                        DeviceSpecificFeatures_Copy1.IsEnabled = true;
                         DeviceSpecificFeatures_Copy3.IsEnabled = false;
                     }
                     else
                     {
-                        DeviceSpecificFeatures_Copy2.IsEnabled = true;
                         DeviceSpecificFeatures_Copy1.IsEnabled = false;
-                        DeviceSpecificFeatures_Copy3.IsEnabled = true;
                     }
                 }
                 if (File.Exists(IntensityFile))
                 {
-                    DeviceSpecificFeatures_Copy4.IsEnabled = true;
-                    DeviceSpecificFeatures_Copy5.IsEnabled = true;
                     DeviceSpecificFeatures_Copy6.IsEnabled = false;
-                    DeviceSpecificFeatures_Copy7.IsEnabled = true;
                 }
                 else
                 {
                     if (File.Exists(SlipsideFile))
                     {
-                        DeviceSpecificFeatures_Copy4.IsEnabled = true;
                         DeviceSpecificFeatures_Copy5.IsEnabled = false;
-                        DeviceSpecificFeatures_Copy6.IsEnabled = true;
-                        DeviceSpecificFeatures_Copy7.IsEnabled = true;
                     }
                     else
                     {
                         if (File.Exists(JoyFile))
                         {
-                            DeviceSpecificFeatures_Copy4.IsEnabled = true;
-                            DeviceSpecificFeatures_Copy5.IsEnabled = true;
-                            DeviceSpecificFeatures_Copy6.IsEnabled = true;
                             DeviceSpecificFeatures_Copy7.IsEnabled = false;
                         }
                         else
                         {
-                            DeviceSpecificFeatures_Copy4.IsEnabled = false;
-                            DeviceSpecificFeatures_Copy5.IsEnabled = true;
-                            DeviceSpecificFeatures_Copy6.IsEnabled = true;
-                            DeviceSpecificFeatures_Copy7.IsEnabled = true;
+                            string Anniversary1_0File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary1.0.txt");
+                            string Anniversary1_2File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary1.2.txt");
+                            string Anniversary1_3File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary1.3.txt");
+                            string Anniversary1_5_0_3File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary1.5.0.3.txt");
+                            string Anniversary2_0File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary2.0.txt");
+                            string Anniversary3_1File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary3.1.txt");
+                            string Anniversary3_2File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary3.2.txt");
+                            string Anniversary5_4File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary5.4.txt");
+                            string Anniversary5_6File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary5.6.txt");
+                            string Anniversary5_7File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary5.7.txt");
+                            string Anniversary5_9File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary5.9.txt");
+                            string Anniversary21_2_1File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary21.2.1.txt");
+                            string Anniversary21_7_1File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary21.7.1.txt");
+                            string Anniversary21_8_1File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary21.8.1.txt");
+                            string Anniversary22_1File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary22.1.txt");
+                            string Anniversary22_2File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary22.2.txt");
+                            if (File.Exists(Anniversary1_0File) || File.Exists(Anniversary1_2File) || File.Exists(Anniversary1_5_0_3File) || File.Exists(Anniversary2_0File) || File.Exists(Anniversary3_1File) || File.Exists(Anniversary3_2File) || File.Exists(Anniversary5_4File) || File.Exists(Anniversary5_6File) || File.Exists(Anniversary5_7File) || File.Exists(Anniversary5_9File) || File.Exists(Anniversary21_2_1File) || File.Exists(Anniversary21_7_1File) || File.Exists(Anniversary21_8_1File) || File.Exists(Anniversary22_1File) || File.Exists(Anniversary22_2File))
+                            {
+                                DeviceSpecificFeatures_Copy8.Content = DeviceSpecificFeatures_Copy8.Content + "(Active)";
+                            }
+                            else
+                            {
+                                DeviceSpecificFeatures_Copy4.IsEnabled = false;
+                            }
                         }
                     }
                 }

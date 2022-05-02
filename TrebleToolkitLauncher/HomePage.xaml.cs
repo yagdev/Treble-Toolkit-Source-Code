@@ -37,14 +37,10 @@ namespace TrebleToolkitLauncher
             InitializeComponent();
             Thread thread = new Thread(Animate);
             thread.Start();
-            Thread thread2 = new Thread(NetworkCheck);
+            Thread thread2 = new Thread(UpdateUI);
             thread2.Start();
-            Thread thread3 = new Thread(GetCurrentVersion);
+            Thread thread3 = new Thread(UpdateUIWidgets);
             thread3.Start();
-            Thread thread4 = new Thread(GetLauncherVersion);
-            thread4.Start();
-            Thread thread5 = new Thread(UpdateUI);
-            thread5.Start();
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
@@ -75,6 +71,11 @@ namespace TrebleToolkitLauncher
         {
             Uri uri = new Uri("Settings.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);
+        }
+        private void ChangeWidgets(object sender, RoutedEventArgs e)
+        {
+            Thread thread1 = new Thread(UpdateUIWidgetsClick);
+            thread1.Start();
         }
         //Threading starts here -- 5/11/2021@22:07, YAG-dev, 21.12+
         private void Animate()
@@ -277,22 +278,13 @@ namespace TrebleToolkitLauncher
                 {
                     this.Dispatcher.Invoke(() =>
                     {
-                        UpdateLauncher_Btn.Content = "Checking for Launcher Updates...";
+                        UpdateLauncher_Btn.Content = "Checking for Updates...";
                         status_pgr.Value += 5;
+                        UpdateLauncher_Btn.IsEnabled = false;
                     });
                     var update = Updater.Init(url, update_path, application_path, launch_exe);
                     if (UpdateManager.CheckForUpdate(version_key, local_version_path, remote_version_url))
                     {
-                        startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-                        startInfo.FileName = "cmd.exe";
-                        startInfo.Arguments = "/C RD /s /q old & mkdir old";
-                        process.StartInfo = startInfo;
-                        process.Start();
-                        startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-                        startInfo.FileName = "cmd.exe";
-                        startInfo.Arguments = "/C ren TrebleToolkitLauncher.exe TrebleToolkitLauncherOld.exe & move TrebleToolkitLauncherOld.exe old & move CLConfiguration.dll old & move CLConfiguration.xml old & move CLUpdate.dll old & move CLUpdate.xml old";
-                        process.StartInfo = startInfo;
-                        process.Start();
                         this.Dispatcher.Invoke(() =>
                         {
                             UpdateLauncher_Btn.Content = "Downloading...";
@@ -303,7 +295,7 @@ namespace TrebleToolkitLauncher
 
                         this.Dispatcher.Invoke(() =>
                         {
-                            UpdateLauncher_Btn.Content = "Unzipping...";
+                            UpdateLauncher_Btn.Content = "Extracting...";
                             status_pgr.Value += 60;
                         });
 
@@ -311,7 +303,7 @@ namespace TrebleToolkitLauncher
 
                         this.Dispatcher.Invoke(() =>
                         {
-                            UpdateLauncher_Btn.Content = "Cleaning Up...";
+                            UpdateLauncher_Btn.Content = "Optimizing...";
                             status_pgr.Value += 10;
                         });
 
@@ -329,7 +321,18 @@ namespace TrebleToolkitLauncher
                             client.DownloadFile(remote_version_url, local_version_path);
                             client.Dispose();
                         }
-
+                        System.Diagnostics.Process process1 = new System.Diagnostics.Process();
+                        System.Diagnostics.ProcessStartInfo startInfo1 = new System.Diagnostics.ProcessStartInfo();
+                        startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                        startInfo.FileName = "cmd.exe";
+                        startInfo.Arguments = "/C RD /s /q old & mkdir old";
+                        process.StartInfo = startInfo;
+                        process.Start();
+                        startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                        startInfo.FileName = "cmd.exe";
+                        startInfo.Arguments = "/C ren TrebleToolkitLauncher.exe TrebleToolkitLauncherOld.exe & move TrebleToolkitLauncherOld.exe old & move CLConfiguration.dll old & move CLConfiguration.xml old & move CLUpdate.dll old & move CLUpdate.xml old";
+                        process.StartInfo = startInfo;
+                        process.Start();
                     }
 
                     this.Dispatcher.Invoke(() =>
@@ -337,14 +340,15 @@ namespace TrebleToolkitLauncher
                         UpdateLauncher_Btn.Content = "Launching...";
                         status_pgr.Value += 10;
                     });
-                    System.Diagnostics.Process process1 = new System.Diagnostics.Process();
-                    System.Diagnostics.ProcessStartInfo startInfo1 = new System.Diagnostics.ProcessStartInfo();
                     startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                     startInfo.FileName = "cmd.exe";
                     startInfo.Arguments = "/C cd UpdateFiles & move TrebleToolkitLauncher.exe ../ & cd .. & rmdir UpdateFiles /s /q & start TrebleToolkitLauncher.exe";
                     process.StartInfo = startInfo;
                     process.Start();
-                    Application.Current.Shutdown();
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        Application.Current.Shutdown();
+                    });
                 });
             }
             else
@@ -388,6 +392,14 @@ namespace TrebleToolkitLauncher
             {
                 if (SourceChord.FluentWPF.SystemTheme.AppTheme == SourceChord.FluentWPF.ApplicationTheme.Dark)
                 {
+                    if (Widgets.Width == new System.Windows.GridLength(70))
+                    {
+                        DeviceInfoImg_Copy5.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-expand-dark.png"));
+                    }
+                    else
+                    {
+                        DeviceInfoImg_Copy5.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-shrink-dark.png"));
+                    }
                     BtnImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-launch-dark.png"));
                     BtnImg_Copy.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-up-dark.png"));
                     BtnImg_Copy1.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-fnf-dark.png"));
@@ -399,6 +411,14 @@ namespace TrebleToolkitLauncher
                 }
                 else
                 {
+                    if (Widgets.Width == new System.Windows.GridLength(70))
+                    {
+                        DeviceInfoImg_Copy5.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-expand-dark.png"));
+                    }
+                    else
+                    {
+                        DeviceInfoImg_Copy5.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-shrink-dark.png"));
+                    }
                     BtnImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-launch-light.png"));
                     BtnImg_Copy.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-up-light.png"));
                     BtnImg_Copy1.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-fnf-light.png"));
@@ -409,6 +429,128 @@ namespace TrebleToolkitLauncher
                     CurrentVerImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/TrebleToolkitLauncher;Component/tt-about-light.png"));
                 }
             });
+        }
+        private void UpdateUIWidgetsClick()
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/C cd .. & cd .. & mkdir UpdateInfo & cd UpdateInfo & mkdir Settings";
+            process.StartInfo = startInfo;
+            process.Start();
+            process.WaitForExit();
+            string DisableWidgets = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "Settings", "DisableWidgets.txt");
+            if (File.Exists(DisableWidgets))
+            {
+                File.Delete(DisableWidgets);
+                this.Dispatcher.Invoke(() =>
+                {
+                    Thread thread2 = new Thread(NetworkCheck);
+                    thread2.Start();
+                    Thread thread3 = new Thread(GetCurrentVersion);
+                    thread3.Start();
+                    Thread thread4 = new Thread(GetLauncherVersion);
+                    thread4.Start();
+                    Widgets.Width = new System.Windows.GridLength(1, GridUnitType.Star);
+                    Title_Copy.Visibility = Visibility.Visible;
+                    BootFileLabel_Copy1.Visibility = Visibility.Visible;
+                    NetworkRectangle.Visibility = Visibility.Visible;
+                    Title_Copy1.Visibility = Visibility.Visible;
+                    LauncherVer.Visibility = Visibility.Visible;
+                    LauncherVersionRectangle.Visibility = Visibility.Visible;
+                    Title_Copy2.Visibility = Visibility.Visible;
+                    CurrentVersion.Visibility = Visibility.Visible;
+                    CurrentVersionRectangle.Visibility = Visibility.Visible;
+                    ntwimg.Visibility = Visibility.Visible;
+                    launcherimg.Visibility = Visibility.Visible;
+                    CurrentVerImg.Visibility = Visibility.Visible;
+                });
+            }
+            else
+            {
+                using (StreamWriter sw = File.CreateText(DisableWidgets))
+                {
+                    sw.WriteLine("Treble Toolkit Settings Item");
+                    sw.WriteLine("©2022 YAG-dev");
+                }
+                this.Dispatcher.Invoke(() =>
+                {
+                    Widgets.Width = new System.Windows.GridLength(70, GridUnitType.Pixel);
+                    Title_Copy.Visibility = Visibility.Hidden;
+                    BootFileLabel_Copy1.Visibility = Visibility.Hidden;
+                    NetworkRectangle.Visibility = Visibility.Hidden;
+                    Title_Copy1.Visibility = Visibility.Hidden;
+                    LauncherVer.Visibility = Visibility.Hidden;
+                    LauncherVersionRectangle.Visibility = Visibility.Hidden;
+                    Title_Copy2.Visibility = Visibility.Hidden;
+                    CurrentVersion.Visibility = Visibility.Hidden;
+                    CurrentVersionRectangle.Visibility = Visibility.Hidden;
+                    ntwimg.Visibility = Visibility.Hidden;
+                    launcherimg.Visibility = Visibility.Hidden;
+                    CurrentVerImg.Visibility = Visibility.Hidden;
+                });
+            }
+            Thread thread1 = new Thread(UpdateUI);
+            thread1.Start();
+        }
+        private void UpdateUIWidgets()
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/C mkdir UpdateInfo & cd UpdateInfo & mkdir Settings";
+            process.StartInfo = startInfo;
+            process.Start();
+            process.WaitForExit();
+            string DisableWidgets = System.IO.Path.Combine(Environment.CurrentDirectory, "UpdateInfo", "Settings", "DisableWidgets.txt");
+            if (File.Exists(DisableWidgets))
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    Widgets.Width = new System.Windows.GridLength(70, GridUnitType.Pixel);
+                    Title_Copy.Visibility = Visibility.Hidden;
+                    BootFileLabel_Copy1.Visibility = Visibility.Hidden;
+                    NetworkRectangle.Visibility = Visibility.Hidden;
+                    Title_Copy1.Visibility = Visibility.Hidden;
+                    LauncherVer.Visibility = Visibility.Hidden;
+                    LauncherVersionRectangle.Visibility = Visibility.Hidden;
+                    Title_Copy2.Visibility = Visibility.Hidden;
+                    CurrentVersion.Visibility = Visibility.Hidden;
+                    CurrentVersionRectangle.Visibility = Visibility.Hidden;
+                    ntwimg.Visibility = Visibility.Hidden;
+                    launcherimg.Visibility = Visibility.Hidden;
+                    CurrentVerImg.Visibility = Visibility.Hidden;
+                });
+            }
+            else
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    Thread thread2 = new Thread(NetworkCheck);
+                    thread2.Start();
+                    Thread thread3 = new Thread(GetCurrentVersion);
+                    thread3.Start();
+                    Thread thread4 = new Thread(GetLauncherVersion);
+                    thread4.Start();
+                    Widgets.Width = new System.Windows.GridLength(1, GridUnitType.Star);
+                    Title_Copy.Visibility = Visibility.Visible;
+                    BootFileLabel_Copy1.Visibility = Visibility.Visible;
+                    NetworkRectangle.Visibility = Visibility.Visible;
+                    Title_Copy1.Visibility = Visibility.Visible;
+                    LauncherVer.Visibility = Visibility.Visible;
+                    LauncherVersionRectangle.Visibility = Visibility.Visible;
+                    Title_Copy2.Visibility = Visibility.Visible;
+                    CurrentVersion.Visibility = Visibility.Visible;
+                    CurrentVersionRectangle.Visibility = Visibility.Visible;
+                    ntwimg.Visibility = Visibility.Visible;
+                    launcherimg.Visibility = Visibility.Visible;
+                    CurrentVerImg.Visibility = Visibility.Visible;
+                });
+            }
+            Thread thread1 = new Thread(UpdateUI);
+            thread1.Start();
         }
     }
 }

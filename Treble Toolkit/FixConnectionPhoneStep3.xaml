@@ -126,55 +126,15 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock x:Name="Changelog" Margin="10,105,10,223" TextWrapping="Wrap" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" Grid.ColumnSpan="2">
-            <TextBlock.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </TextBlock.Effect><Run Text="Plug in your phone to your PC, follow all the steps mentioned in step 1 &amp; 2 and if you see a notification that reads &quot;Charging this device via USB&quot; press on it and select &quot;File Transfer&quot; and press &quot;Refresh Status&quot;"/><Run Text=" on this window"/><Run Text="."/><LineBreak/><Run Text="If th"/><Run Text="ese"/><Run Text=" methods didn't work, these most likely will fix your problem:"/><LineBreak/><Run Text="· Try another cable"/><LineBreak/><Run Text="· Check if none of the pins are missing on your USB port"/><LineBreak/><Run Text="· Try another USB port on your computer"/><LineBreak/><Run Text="· Restart your PC"/><LineBreak/><Run Text="If these don't work, please leave a bug report (Windows 10/11 users only, as guaranteed support for Windows 8.1 and earlier has ended in 21.10)"/></TextBlock>
-        <Rectangle x:Name="GSIRectangle"  Height="90" Margin="10,10,10,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" Style="{DynamicResource Rectangle22.4Style1}" Grid.ColumnSpan="2">
-            <Rectangle.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Rectangle.Effect>
+        <TextBlock x:Name="Changelog" Margin="10,105,10,179" TextWrapping="Wrap" Grid.ColumnSpan="2" Style="{DynamicResource TextBlockTheme22.5}"><Run Text="Plug in your phone to your PC, follow all the steps mentioned in step 1 &amp; 2 and if you see a notification that reads &quot;Charging this device via USB&quot; press on it and select &quot;File Transfer&quot; and press &quot;Refresh Status&quot;"/> <Run Text=" on this window"/><Run Text="."/><LineBreak/><Run Text="If th"/><Run Text="ese"/><Run Text=" methods didn't work, these most likely will fix your problem:"/><LineBreak/><Run Text="· Try another cable"/><LineBreak/><Run Text="· Check if none of the pins are missing on your USB port"/><LineBreak/><Run Text="· Try another USB port on your computer"/><LineBreak/><Run Text="· Restart your PC"/><LineBreak/><Run Text="If these don't work, please leave a bug report (Windows 10/11 users only, as guaranteed support for Windows 8.1 and earlier has ended in 21.10)"/></TextBlock>
+        <Rectangle x:Name="GSIRectangle"  Height="90" Margin="10,10,10,0" VerticalAlignment="Top" Style="{DynamicResource Rectangle22.4Style1}" Grid.ColumnSpan="2">
         </Rectangle>
-        <Label x:Name="PhoneStatus" Content="Checking Connection..." Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="35" VerticalAlignment="Top" Margin="90,20,20,0" Grid.ColumnSpan="2">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="PhoneStatus" Content="Checking Connection..." VerticalContentAlignment="Center" Height="35" VerticalAlignment="Top" Margin="90,20,20,0" Grid.ColumnSpan="2" Style="{DynamicResource TitleTheme22.5}">
         </Label>
-        <Label x:Name="PhoneStatus2" Content="Checking status..." Margin="90,55,20,0" VerticalAlignment="Top" Height="35" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.ColumnSpan="2">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="PhoneStatus2" Content="Checking status..." Margin="90,55,20,0" VerticalAlignment="Top" Height="35" VerticalContentAlignment="Center" Grid.ColumnSpan="2" Style="{DynamicResource SubtitleTheme22.5}">
         </Label>
         <Image x:Name="DeviceInfoImg" Margin="20,20,0,0" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70"/>
-        <Rectangle  Height="174" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Opacity="0.5" RadiusY="12" RadiusX="12" Style="{DynamicResource Rectangle22.4Style1}" >
-            <Rectangle.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Rectangle.Effect>
+        <Rectangle  Height="174" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Opacity="0.5" RadiusY="0" RadiusX="0" Style="{DynamicResource Rectangle22.4Style1}" >
         </Rectangle>
         <ProgressBar x:Name="status_pgr" Height="50" Margin="1,0,10,63" VerticalAlignment="Bottom" Background="{x:Null}" Foreground="{DynamicResource SystemBaseHighColorBrush}" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5" BorderThickness="3" UseLayoutRounding="False" Style="{DynamicResource PgrBar21.4.2}" Grid.Column="1">
             <ProgressBar.Effect>
@@ -186,55 +146,15 @@
                     BlurRadius="2"/>
             </ProgressBar.Effect>
         </ProgressBar>
-        <Button x:Name="DeviceSpecificFeatures_Copy" Content="This Worked" Margin="10,0,1,10" VerticalAlignment="Bottom" Height="50"  Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="BackAbout_Click">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="DeviceSpecificFeatures_Copy" Content="This Worked" Margin="10,0,1,10" VerticalAlignment="Bottom" Height="50" Style="{DynamicResource Button21.8.1Rev4}" Click="BackAbout_Click">
         </Button>
-        <Button x:Name="DeviceSpecificFeatures_Copy1" Content="Refresh Status" Margin="10,0,1,62" VerticalAlignment="Bottom" Height="50"  Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Refresh">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="DeviceSpecificFeatures_Copy1" Content="Refresh Status" Margin="10,0,1,62" VerticalAlignment="Bottom" Height="50" Style="{DynamicResource Button21.8.1Rev4}" Click="Refresh">
         </Button>
-        <Button x:Name="DeviceSpecificFeatures_Copy2" Content="Main Menu" Margin="1,0,10,10" VerticalAlignment="Bottom" Height="50"  Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Next" Grid.Column="1">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="DeviceSpecificFeatures_Copy2" Content="Main Menu" Margin="1,0,10,10" VerticalAlignment="Bottom" Height="50" Style="{DynamicResource Button21.8.1Rev4}" Click="Next" Grid.Column="1">
         </Button>
-        <Button x:Name="DeviceSpecificFeatures_Copy3" Content="Previous Solution" Margin="10,0,10,114" VerticalAlignment="Bottom" Height="50"  Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="PreviousSolution" Grid.ColumnSpan="2">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="DeviceSpecificFeatures_Copy3" Content="Previous Solution" Margin="10,0,10,114" VerticalAlignment="Bottom" Height="50" Style="{DynamicResource Button21.8.1Rev4}" Click="PreviousSolution" Grid.ColumnSpan="2">
         </Button>
-        <Button x:Name="ReportBug" Content="Report Bug" Margin="1,0,10,63" VerticalAlignment="Bottom" Height="50"  Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="InstallDrivers" Grid.Column="1">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="ReportBug" Content="Report Bug" Margin="1,0,10,63" VerticalAlignment="Bottom" Height="50" Style="{DynamicResource Button21.8.1Rev4}" Click="InstallDrivers" Grid.Column="1">
         </Button>
         <Image x:Name="DeviceInfoImg_Copy1" Margin="20,0,0,72" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30"/>
         <Image x:Name="DeviceInfoImg_Copy" Margin="20,0,0,20" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30"/>

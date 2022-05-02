@@ -220,33 +220,15 @@ namespace TrebleToolkitLauncher
                 }
                 this.Dispatcher.Invoke(() =>
                 {
-                    Yes.Content = "Preparating..";
+                    Yes.Content = "Preparing Reinstall..";
                     status_pgr.Value += 5;
                 });
                 var update = Updater.Init(url, update_path, application_path, launch_exe);
                 if (UpdateManager.CheckForUpdate(version_key, local_version_path, remote_version_url))
                 {
-                    startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-                    startInfo.FileName = "cmd.exe";
-                    startInfo.Arguments = "/C RD /s /q old & mkdir old";
-                    process.StartInfo = startInfo;
-                    process.Start();
-                    process.WaitForExit();
-                    startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-                    startInfo.FileName = "cmd.exe";
-                    startInfo.Arguments = "/C ren TrebleToolkitLauncher.exe TrebleToolkitLauncherOld.exe & move TrebleToolkitLauncherOld.exe old & move CLConfiguration.dll old & move CLConfiguration.xml old & move CLUpdate.dll old & move CLUpdate.xml old";
-                    process.StartInfo = startInfo;
-                    process.Start();
-                    process.WaitForExit();
-                    startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-                    startInfo.FileName = "cmd.exe";
-                    startInfo.Arguments = "/C RD /s /q Application";
-                    process.StartInfo = startInfo;
-                    process.Start();
-                    process.WaitForExit();
                 this.Dispatcher.Invoke(() =>
                 {
-                    Yes.Content = "Downloading...";
+                    Yes.Content = "Downloading Package...";
                         status_pgr.Value += 5;
                     });
 
@@ -254,7 +236,7 @@ namespace TrebleToolkitLauncher
 
                 this.Dispatcher.Invoke(() =>
                 {
-                    Yes.Content = "Decompressing...";
+                    Yes.Content = "Extracting Package...";
                         status_pgr.Value += 60;
                         Yes.Foreground = No.Background;
                     });
@@ -263,7 +245,7 @@ namespace TrebleToolkitLauncher
 
                 this.Dispatcher.Invoke(() =>
                 {
-                    Yes.Content = "Cleaning Up...";
+                    Yes.Content = "Optimizing...";
                     status_pgr.Value += 10;
                 });
 
@@ -288,9 +270,27 @@ namespace TrebleToolkitLauncher
 
                 this.Dispatcher.Invoke(() =>
                 {
-                    Yes.Content = "Executing...";
+                    Yes.Content = "Launching...";
                     status_pgr.Value += 10;
                 });
+                startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                startInfo.FileName = "cmd.exe";
+                startInfo.Arguments = "/C RD /s /q old & mkdir old";
+                process.StartInfo = startInfo;
+                process.Start();
+                process.WaitForExit();
+                startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                startInfo.FileName = "cmd.exe";
+                startInfo.Arguments = "/C ren TrebleToolkitLauncher.exe TrebleToolkitLauncherOld.exe & move TrebleToolkitLauncherOld.exe old & move CLConfiguration.dll old & move CLConfiguration.xml old & move CLUpdate.dll old & move CLUpdate.xml old";
+                process.StartInfo = startInfo;
+                process.Start();
+                process.WaitForExit();
+                startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                startInfo.FileName = "cmd.exe";
+                startInfo.Arguments = "/C RD /s /q Application";
+                process.StartInfo = startInfo;
+                process.Start();
+                process.WaitForExit();
                 String command2 = @"/C wmic process where name='adb.exe' delete & wmic process where name='gui.exe' delete & wmic process where name='fastboot.exe' delete";
                 ProcessStartInfo cmdsi2 = new ProcessStartInfo("cmd.exe");
                 cmdsi2.Arguments = command2;

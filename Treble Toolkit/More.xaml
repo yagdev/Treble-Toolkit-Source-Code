@@ -67,106 +67,26 @@
             <ColumnDefinition/>
             <ColumnDefinition FrameworkElement.FlowDirection="RightToLeft" MaxWidth="10" Width="10"/>
         </Grid.ColumnDefinitions>
-        <Rectangle  Height="330" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Bottom" Grid.ColumnSpan="4" Opacity="0.5" Grid.RowSpan="2" RadiusY="12" RadiusX="12" Style="{DynamicResource Rectangle22.4Style1}" >
-            <Rectangle.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Rectangle.Effect>
+        <Rectangle  Height="330" VerticalAlignment="Bottom" Grid.ColumnSpan="4" Opacity="0.5" Grid.RowSpan="2" RadiusY="0" RadiusX="0" Style="{DynamicResource Rectangle22.4Style1}" >
         </Rectangle>
 
-        <Button x:Name="DeviceSpecificFeatures_Copy3" Content="Back" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="BackButton_Click" Grid.Column="1" Grid.ColumnSpan="2">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="DeviceSpecificFeatures_Copy3" Content="Back" VerticalAlignment="Bottom" Height="50" Style="{DynamicResource Button21.8.1Rev4}" Click="BackButton_Click" Grid.Column="1" Grid.ColumnSpan="2">
         </Button>
-        <Button x:Name="DeviceSpecificFeatures_Copy" Content="Flash Permissiver" Margin="0,0,0,52" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="CButton_Click" Grid.Column="1" Grid.ColumnSpan="2">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="DeviceSpecificFeatures_Copy" Content="Flash Permissiver" Margin="0,0,0,52" VerticalAlignment="Bottom" Height="50" Style="{DynamicResource Button21.8.1Rev4}" Click="CButton_Click" Grid.Column="1" Grid.ColumnSpan="2">
         </Button>
-        <Button x:Name="DeviceSpecificFeatures_Copy1" Content="The Sideloader" Margin="0,0,0,104" VerticalAlignment="Bottom" Height="50"  Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="SButton_Click" Grid.ColumnSpan="2" Grid.Column="1">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="DeviceSpecificFeatures_Copy1" Content="The Sideloader" Margin="0,0,0,104" VerticalAlignment="Bottom" Height="50" Style="{DynamicResource Button21.8.1Rev4}" Click="SButton_Click" Grid.ColumnSpan="2" Grid.Column="1">
         </Button>
-        <Button x:Name="DeviceSpecificFeatures_Copy2" Content="Compatible Devices" Margin="0,0,0,156" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="FVButton_Click" Grid.ColumnSpan="2" Grid.Column="1">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="DeviceSpecificFeatures_Copy2" Content="Compatible Devices" Margin="0,0,0,156" VerticalAlignment="Bottom" Height="50" Style="{DynamicResource Button21.8.1Rev4}" Click="FVButton_Click" Grid.ColumnSpan="2" Grid.Column="1">
         </Button>
-        <Button x:Name="DeviceSpecificFeatures_Copy4" Content="About Your Device" Margin="0,0,0,208" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="APButton_Click" Grid.ColumnSpan="2" Grid.Column="1">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="DeviceSpecificFeatures_Copy4" Content="About Your Device" Margin="0,0,0,208" VerticalAlignment="Bottom" Height="50" Style="{DynamicResource Button21.8.1Rev4}" Click="APButton_Click" Grid.ColumnSpan="2" Grid.Column="1">
         </Button>
-        <Button x:Name="DeviceSpecificFeatures_Copy5" Content="Install ADB/Fastboot Drivers" Margin="0,0,0,260" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="StupidWindows" Grid.ColumnSpan="2" Grid.Column="1">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="DeviceSpecificFeatures_Copy5" Content="Install ADB/Fastboot Drivers" Margin="0,0,0,260" VerticalAlignment="Bottom" Height="50" Style="{DynamicResource Button21.8.1Rev4}" Click="StupidWindows" Grid.ColumnSpan="2" Grid.Column="1">
         </Button>
-        <Rectangle x:Name="GSIRectangle"  Height="90" Margin="0,10,0,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" Style="{DynamicResource Rectangle22.4Style1}" Grid.Column="1" Grid.ColumnSpan="2">
-            <Rectangle.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Rectangle.Effect>
+        <Rectangle x:Name="GSIRectangle"  Height="90" Margin="0,10,0,0" VerticalAlignment="Top" Style="{DynamicResource Rectangle22.4Style1}" Grid.Column="1" Grid.ColumnSpan="2">
         </Rectangle>
-        <Label x:Name="PhoneStatus" Content="More" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="35" VerticalAlignment="Top" Margin="80,20,10,0" Grid.Column="1" Grid.ColumnSpan="2">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="PhoneStatus" Content="More" Height="35" VerticalAlignment="Top" Margin="80,20,10,0" Grid.Column="1" Grid.ColumnSpan="2" Style="{DynamicResource TitleTheme22.5}">
         </Label>
-        <Label x:Name="PhoneStatus2" Content="Additional Features of Treble Toolkit" Margin="80,55,10,0" VerticalAlignment="Top" Height="35" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.Column="1" Grid.ColumnSpan="2">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="PhoneStatus2" Content="Additional Features of Treble Toolkit" Margin="80,55,10,0" VerticalAlignment="Top" Height="35" FontSize="14" Grid.Column="1" Grid.ColumnSpan="2" Style="{DynamicResource SubtitleTheme22.5}">
         </Label>
         <Image x:Name="DeviceInfoImg" Margin="10,20,0,0" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70" Grid.Column="1"/>
         <Image x:Name="DeviceInfoImg_Copy6" Margin="10,0,0,10" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Column="1"/>

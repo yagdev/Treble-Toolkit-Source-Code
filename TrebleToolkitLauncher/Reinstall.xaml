@@ -24,67 +24,6 @@
         <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
         <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
         <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
-        <Style TargetType="{x:Type Button}" x:Key="Button21.8.1Rev4">
-            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-            <Setter Property="Background">
-                <Setter.Value>
-                    <SolidColorBrush Color="{DynamicResource SystemAltMediumHighColor}"/>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
-            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="Padding" Value="1"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Margin="0,0,0,0" Background="{TemplateBinding Background}">
-                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="50,16,0,16" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsDefaulted" Value="true">
-                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-                            </Trigger>
-                            <Trigger Property="IsMouseOver" Value="true"/>
-                            <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource SystemAltHighColorBrush}"/>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="false"/>
-                            <EventTrigger RoutedEvent="UIElement.MouseEnter">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <ColorAnimation From="{StaticResource SystemAltMediumHighColor}" To="{StaticResource SystemAltMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                            <EventTrigger RoutedEvent="UIElement.MouseLeave">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <ColorAnimation From="{StaticResource SystemAltMediumColor}" To="{StaticResource SystemAltMediumHighColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                            <EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonDown">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <ColorAnimation From="{StaticResource SystemAltMediumColor}" To="{StaticResource SystemBaseMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                            <EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonUp">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <ColorAnimation From="{StaticResource SystemBaseMediumColor}" To="{StaticResource SystemAltMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
         <SolidColorBrush x:Key="ProgressBar.Progress" Color="#FF06B025"/>
         <SolidColorBrush x:Key="ProgressBar.Background" Color="#FFE6E6E6"/>
         <SolidColorBrush x:Key="ProgressBar.Border" Color="#FFBCBCBC"/>
@@ -155,15 +94,7 @@
             <ColumnDefinition Width="296*"/>
             <ColumnDefinition Width="296*"/>
         </Grid.ColumnDefinitions>
-        <Rectangle Fill="{DynamicResource SystemAltHighColorBrush}" Stroke="{x:Static FluentWPF:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" Opacity="0.5" Grid.ColumnSpan="2" Height="70" VerticalAlignment="Bottom" RadiusY="12" RadiusX="12">
-            <Rectangle.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Rectangle.Effect>
+        <Rectangle Opacity="0.5" Grid.ColumnSpan="2" Height="70" VerticalAlignment="Bottom" RadiusY="0" RadiusX="0" Style="{DynamicResource Rectangle22.4Style1}">
         </Rectangle>
 
         <ProgressBar x:Name="status_pgr" Height="50" Margin="1,0,10,10" VerticalAlignment="Bottom" Background="{x:Null}" Foreground="{DynamicResource SystemBaseHighColorBrush}" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5" BorderThickness="3" UseLayoutRounding="False" Style="{DynamicResource PgrBar21.4.2}" Grid.Column="1">
@@ -176,121 +107,33 @@
                     BlurRadius="2"/>
             </ProgressBar.Effect>
         </ProgressBar>
-        <Button x:Name="No" Content="Cancel" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="No_btn" Margin="10,0,1,10">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="No" Content="Cancel" VerticalAlignment="Bottom" Height="50" Style="{DynamicResource Button21.8.1Rev4}" Click="No_btn" Margin="10,0,1,10">
         </Button>
-        <Button x:Name="Yes" Content="Reinstall" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Yes_Click" Margin="1,0,10,10" Grid.Column="1">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="Yes" Content="Reinstall" VerticalAlignment="Bottom" Height="50" Style="{DynamicResource Button21.8.1Rev4}" Click="Yes_Click" Margin="1,0,10,10" Grid.Column="1">
         </Button>
-        <Rectangle x:Name="BugReport" Fill="{DynamicResource SystemAltMediumHighColorBrush}" Height="90" Margin="10,10,10,0" Stroke="{x:Static FluentWPF:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" RadiusY="8" RadiusX="8" Grid.ColumnSpan="2">
-            <Rectangle.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Rectangle.Effect>
+        <Rectangle x:Name="BugReport" Height="90" Margin="10,10,10,0" VerticalAlignment="Top" RadiusY="8" RadiusX="8" Grid.ColumnSpan="2" Style="{DynamicResource Rectangle22.4Style1}">
         </Rectangle>
-        <Label x:Name="cc" Content="Reinstall Treble Toolkit" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="35" VerticalAlignment="Top" Margin="90,20,20,0" Grid.ColumnSpan="2">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="cc" Content="Reinstall Treble Toolkit" Height="35" VerticalAlignment="Top" Margin="90,20,20,0" Grid.ColumnSpan="2" Style="{DynamicResource TitleTheme22.5}">
         </Label>
-        <Label x:Name="PhoneStatus" Content="Reinstalling may fix some issues, however you will lose your data." Margin="90,55,20,0" VerticalAlignment="Top" Height="35" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.ColumnSpan="2">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="PhoneStatus" Content="Reinstalling may fix some issues, however you will lose your data." Margin="90,55,20,0" VerticalAlignment="Top" Height="35" Grid.ColumnSpan="2" Style="{DynamicResource SubtitleTheme22.5}">
         </Label>
         <Image x:Name="DeviceInfoImg" Margin="20,20,0,0" Source="tt-up-dark.png" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70"/>
-        <Rectangle x:Name="BugReport_Copy" Fill="{DynamicResource SystemAltMediumHighColorBrush}" Height="90" Margin="10,102,10,0" Stroke="{x:Static FluentWPF:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" RadiusY="8" RadiusX="8" Grid.ColumnSpan="2">
-            <Rectangle.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Rectangle.Effect>
+        <Rectangle x:Name="BugReport_Copy" Height="90" Margin="10,102,10,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Style="{DynamicResource Rectangle22.4Style1}">
         </Rectangle>
-        <Label x:Name="cc_Copy" Content="You are currently running" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="35" VerticalAlignment="Top" Margin="90,112,20,0" Grid.ColumnSpan="2">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="cc_Copy" Content="You are currently running" Height="35" VerticalAlignment="Top" Margin="90,112,20,0" Grid.ColumnSpan="2" Style="{DynamicResource TitleTheme22.5}">
         </Label>
-        <Label x:Name="CurrentVersion" Content="Checking" Margin="90,147,20,0" VerticalAlignment="Top" Height="35" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.ColumnSpan="2">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="CurrentVersion" Content="Checking" Margin="90,147,20,0" VerticalAlignment="Top" Height="35" Grid.ColumnSpan="2" Style="{DynamicResource SubtitleTheme22.5}">
         </Label>
         <Image x:Name="DeviceInfoImg_Copy" Margin="20,112,0,0" Source="tt-up-dark.png" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70"/>
-        <Rectangle x:Name="BugReport_Copy1" Fill="{DynamicResource SystemAltMediumHighColorBrush}" Height="90" Margin="10,194,10,0" Stroke="{x:Static FluentWPF:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" RadiusY="8" RadiusX="8" Grid.ColumnSpan="2">
-            <Rectangle.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Rectangle.Effect>
+        <Rectangle x:Name="BugReport_Copy1" Height="90" Margin="10,194,10,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Style="{DynamicResource Rectangle22.4Style1}">
         </Rectangle>
-        <Label x:Name="cc_Copy1" Content="We will install" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="35" VerticalAlignment="Top" Margin="90,204,20,0" Grid.ColumnSpan="2">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="cc_Copy1" Content="We will install" Height="35" VerticalAlignment="Top" Margin="90,204,20,0" Grid.ColumnSpan="2" Style="{DynamicResource TitleTheme22.5}">
         </Label>
-        <Label x:Name="NewVersion" Content="Checking" Margin="90,239,20,0" VerticalAlignment="Top" Height="35" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.ColumnSpan="2">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="NewVersion" Content="Checking" Margin="90,239,20,0" VerticalAlignment="Top" Height="35" Grid.ColumnSpan="2" Style="{DynamicResource SubtitleTheme22.5}">
         </Label>
         <Image x:Name="DeviceInfoImg_Copy1" Margin="20,204,0,0" Source="tt-up-dark.png" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70"/>
-        <Image x:Name="DeviceInfoImg_Copy4" Margin="20,0,0,20" Source="/TrebleToolkitLauncher;component/tt-launch-dark.png" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30"/>
-        <Image x:Name="DeviceInfoImg_Copy2" Margin="11,0,0,20" Source="/TrebleToolkitLauncher;component/tt-launch-dark.png" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Column="1"/>
+        <Image x:Name="DeviceInfoImg_Copy4" IsHitTestVisible="False" Margin="20,0,0,20" Source="/TrebleToolkitLauncher;component/tt-launch-dark.png" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30"/>
+        <Image x:Name="DeviceInfoImg_Copy2" IsHitTestVisible="False" Margin="11,0,0,20" Source="/TrebleToolkitLauncher;component/tt-launch-dark.png" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Column="1"/>
 
     </Grid>
 </Page>

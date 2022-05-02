@@ -1,6 +1,6 @@
-Version 33.0.0 (February 2022)
-· Fixes the issue introduced in 32.0.0 of crashes when run without any arguments.
-
-Version 32.0.0 (January 2022)
-· Universal binary for Apple M1 devices.
-· Known issue: this version crashes when run without any arguments.
+Version 33.0.1 (March 2022)
+· Fixes Windows mdns crashes. (ADB)
+· Fixes enable-verity/disable-verity on old devices. (ADB)
+· Fixes "install multiple" on old devices (ADB)
+· Improves the help output to include all supported compression methods. (ADB)
+· Removed. Use Studio Profiler/gpuinspector.dev/Perfetto instead. (Systrace)

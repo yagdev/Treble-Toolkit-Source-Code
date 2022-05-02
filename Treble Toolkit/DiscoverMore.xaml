@@ -122,136 +122,32 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Rectangle  Height="174" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Opacity="0.5" RadiusY="12" RadiusX="12" Style="{DynamicResource Rectangle22.4Style1}" Grid.Row="1" >
-            <Rectangle.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Rectangle.Effect>
+        <Rectangle  Height="174" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Opacity="0.5" RadiusY="0" RadiusX="0" Style="{DynamicResource Rectangle22.4Style1}" Grid.Row="1" >
         </Rectangle>
-        <Rectangle Height="90" Margin="10,10,10,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" Grid.ColumnSpan="2" Style="{DynamicResource Rectangle22.4Style1}">
-            <Rectangle.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Rectangle.Effect>
+        <Rectangle Height="90" Margin="10,10,10,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Style="{DynamicResource Rectangle22.4Style1}">
         </Rectangle>
-        <Label x:Name="Title_Copy7" Content="Treble Toolkit" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="35" VerticalAlignment="Top" Margin="90,20,20,0" Grid.ColumnSpan="2">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="Title_Copy7" Content="Treble Toolkit" VerticalContentAlignment="Center" Height="35" VerticalAlignment="Top" Margin="90,20,20,0" Grid.ColumnSpan="2" Style="{DynamicResource TitleTheme22.5}">
         </Label>
-        <Label x:Name="VersionCheck" Content="Developed by YAG-dev" Margin="90,55,20,0" VerticalAlignment="Top" Height="35" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.ColumnSpan="2">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="VersionCheck" Content="Developed by YAG-dev" Margin="90,55,20,0" VerticalAlignment="Top" Height="35" VerticalContentAlignment="Center" Grid.ColumnSpan="2" Style="{DynamicResource SubtitleTheme22.5}">
         </Label>
         <Image Margin="20,20,0,0" Source="3c5973_c1cf50e6089f443ba92025a6531f0a6f_mv2.png" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70"/>
         <Rectangle Height="90" Margin="10,102,10,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" Grid.ColumnSpan="2" Style="{DynamicResource Rectangle22.4Style1}">
-            <Rectangle.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Rectangle.Effect>
         </Rectangle>
-        <Label x:Name="Title_Copy" Content="Find Me" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="35" VerticalAlignment="Top" Margin="90,112,20,0" Grid.ColumnSpan="2">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="Title_Copy" Content="Find Me" VerticalContentAlignment="Center" Height="35" VerticalAlignment="Top" Margin="90,112,20,0" Grid.ColumnSpan="2" Style="{DynamicResource TitleTheme22.5}">
         </Label>
-        <Label x:Name="PT_Version" Content="Here are some places where you can find my projects." Margin="90,147,20,0" VerticalAlignment="Top" Height="35" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.ColumnSpan="2">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="PT_Version" Content="Here are some places where you can find my projects." Margin="90,147,20,0" VerticalAlignment="Top" Height="35" VerticalContentAlignment="Center" Grid.ColumnSpan="2" Style="{DynamicResource SubtitleTheme22.5}">
         </Label>
-        <Button x:Name="DeviceSpecificFeatures_Copy3" Content="Open Website" Margin="1,0,10,10" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="UpdateAbout_Click" Grid.Column="1" Grid.Row="1">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="DeviceSpecificFeatures_Copy3" Content="Open Website" Margin="1,0,10,10" VerticalAlignment="Bottom" Height="50" Style="{DynamicResource Button21.8.1Rev4}" Click="UpdateAbout_Click" Grid.Column="1" Grid.Row="1">
         </Button>
-        <Button x:Name="DeviceSpecificFeatures_Copy4" Content="Open GitHub" Margin="10,0,1,62" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="DiscoverAbout_Click" Grid.Row="1">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="DeviceSpecificFeatures_Copy4" Content="Open GitHub" Margin="10,0,1,62" VerticalAlignment="Bottom" Height="50" Style="{DynamicResource Button21.8.1Rev4}" Click="DiscoverAbout_Click" Grid.Row="1">
         </Button>
-        <Button x:Name="DeviceSpecificFeatures_Copy6" Content="Open Twitter" Margin="10,0,1,114" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="DeviceSpecificFeatures_Copy4_Click" Grid.Row="1">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="DeviceSpecificFeatures_Copy6" Content="Open Twitter" Margin="10,0,1,114" VerticalAlignment="Bottom" Height="50" Style="{DynamicResource Button21.8.1Rev4}" Click="DeviceSpecificFeatures_Copy4_Click" Grid.Row="1">
         </Button>
-        <Button x:Name="Platform_tools_log" Content="Open TikTok" Margin="1,0,10,114" VerticalAlignment="Bottom" Height="50" Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="LogViewADB" Grid.Column="1" Grid.Row="1">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="Platform_tools_log" Content="Open TikTok" Margin="1,0,10,114" VerticalAlignment="Bottom" Height="50" Style="{DynamicResource Button21.8.1Rev4}" Click="LogViewADB" Grid.Column="1" Grid.Row="1">
         </Button>
-        <Button x:Name="DeviceSpecificFeatures_Copy"  Content="Back" Margin="10,0,1,10" VerticalAlignment="Bottom" Height="50"  Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="BackAbout_Click" Grid.Row="1">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="DeviceSpecificFeatures_Copy"  Content="Back" Margin="10,0,1,10" VerticalAlignment="Bottom" Height="50" Style="{DynamicResource Button21.8.1Rev4}" Click="BackAbout_Click" Grid.Row="1">
         </Button>
-        <Button x:Name="DeviceSpecificFeatures_Copy1"  Content="Open XDA" Margin="0,0,11,62" VerticalAlignment="Bottom" Height="50"  Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="Settings_Click" Grid.Column="1" Grid.Row="1">
-            <Button.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Button.Effect>
+        <Button x:Name="DeviceSpecificFeatures_Copy1"  Content="Open XDA" Margin="0,0,11,62" VerticalAlignment="Bottom" Height="50" Style="{DynamicResource Button21.8.1Rev4}" Click="Settings_Click" Grid.Column="1" Grid.Row="1">
         </Button>
         <Image x:Name="DeviceInfoImg_Copy2" Margin="20,0,0,124" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Row="1"/>
         <Image x:Name="DeviceInfoImg_Copy3" Margin="20,0,0,72" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Row="1"/>
@@ -260,190 +156,46 @@
         <Image x:Name="DeviceInfoImg_Copy6" Margin="11,0,0,72" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Column="1" Grid.Row="1"/>
         <Image x:Name="DeviceInfoImg_Copy7" Margin="11,0,0,20" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Column="1" Grid.Row="1"/>
         <Image x:Name="DeviceInfoImg_Copy8" Margin="20,112,0,0" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70"/>
-        <Rectangle  Height="90" Margin="10,194,1,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" Style="{DynamicResource Rectangle22.4Style1}">
-            <Rectangle.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Rectangle.Effect>
+        <Rectangle  Height="90" Margin="10,194,1,0" VerticalAlignment="Top" Style="{DynamicResource Rectangle22.4Style1}">
         </Rectangle>
-        <Label x:Name="SN_Copy" Content="@YourAvgGamerYT" Margin="90,238,11,0" VerticalAlignment="Top" Height="36" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="SN_Copy" Content="@YourAvgGamerYT" Margin="90,238,11,0" VerticalAlignment="Top" Height="36" VerticalContentAlignment="Center" Style="{DynamicResource SubtitleTheme22.5}">
         </Label>
-        <Rectangle  Height="90" Margin="1,194,10,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" Style="{DynamicResource Rectangle22.4Style1}" Grid.Column="1">
-            <Rectangle.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Rectangle.Effect>
+        <Rectangle  Height="90" Margin="1,194,10,0" VerticalAlignment="Top" Style="{DynamicResource Rectangle22.4Style1}" Grid.Column="1">
         </Rectangle>
-        <Label x:Name="SN_Copy1" Content="@youraveragegamer22" Margin="81,238,20,0" VerticalAlignment="Top" Height="36" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.Column="1">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="SN_Copy1" Content="@youraveragegamer22" Margin="81,238,20,0" VerticalAlignment="Top" Height="36" VerticalContentAlignment="Center" Grid.Column="1" Style="{DynamicResource SubtitleTheme22.5}">
         </Label>
-        <Label x:Name="Title_Copy1" Content="Twitter" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="34" VerticalAlignment="Top" Margin="90,204,11,0">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="Title_Copy1" Content="Twitter" VerticalContentAlignment="Center" Height="34" VerticalAlignment="Top" Margin="90,204,11,0" Style="{DynamicResource TitleTheme22.5}">
         </Label>
-        <Label x:Name="Title_Copy2" Content="TikTok" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="34" VerticalAlignment="Top" Margin="81,204,20,0" Grid.Column="1">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="Title_Copy2" Content="TikTok" VerticalContentAlignment="Center" Height="34" VerticalAlignment="Top" Margin="81,204,20,0" Grid.Column="1" Style="{DynamicResource TitleTheme22.5}">
         </Label>
         <Image x:Name="DeviceInfoImg" Margin="20,204,0,0" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70"/>
         <Image x:Name="DeviceInfoImg_Copy" Margin="11,204,0,0" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70" Grid.Column="1"/>
-        <Rectangle  Height="90" Margin="10,286,1,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" Style="{DynamicResource Rectangle22.4Style1}">
-            <Rectangle.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Rectangle.Effect>
+        <Rectangle  Height="90" Margin="10,286,1,0" VerticalAlignment="Top" Style="{DynamicResource Rectangle22.4Style1}">
         </Rectangle>
-        <Label x:Name="SN_Copy2" Content="/yagdev" Margin="90,330,11,0" VerticalAlignment="Top" Height="36" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="SN_Copy2" Content="/yagdev" Margin="90,330,11,0" VerticalAlignment="Top" Height="36" VerticalContentAlignment="Center" Style="{DynamicResource SubtitleTheme22.5}">
         </Label>
-        <Rectangle  Height="90" Margin="1,286,10,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" Style="{DynamicResource Rectangle22.4Style1}" Grid.Column="1">
-            <Rectangle.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Rectangle.Effect>
+        <Rectangle  Height="90" Margin="1,286,10,0" VerticalAlignment="Top" Style="{DynamicResource Rectangle22.4Style1}" Grid.Column="1">
         </Rectangle>
-        <Label x:Name="SN_Copy3" Content="stevegsames" Margin="81,330,20,0" VerticalAlignment="Top" Height="36" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.Column="1">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="SN_Copy3" Content="stevegsames" Margin="81,330,20,0" VerticalAlignment="Top" Height="36"  VerticalContentAlignment="Center" Grid.Column="1" Style="{DynamicResource SubtitleTheme22.5}">
         </Label>
-        <Label x:Name="Title_Copy3" Content="GitHub" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="34" VerticalAlignment="Top" Margin="90,296,11,0">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="Title_Copy3" Content="GitHub" VerticalContentAlignment="Center" Height="34" VerticalAlignment="Top" Margin="90,296,11,0" Style="{DynamicResource TitleTheme22.5}">
         </Label>
-        <Label x:Name="Title_Copy4" Content="XDA" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="34" VerticalAlignment="Top" Margin="81,296,20,0" Grid.Column="1">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="Title_Copy4" Content="XDA" VerticalContentAlignment="Center" Height="34" VerticalAlignment="Top" Margin="81,296,20,0" Grid.Column="1" Style="{DynamicResource TitleTheme22.5}">
         </Label>
         <Image x:Name="DeviceInfoImg_Copy1" Margin="20,296,0,0" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70"/>
         <Image x:Name="DeviceInfoImg_Copy9" Margin="11,296,0,0" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70" Grid.Column="1"/>
-        <Rectangle  Height="90" Margin="10,378,10,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" Style="{DynamicResource Rectangle22.4Style1}" Grid.ColumnSpan="2">
-            <Rectangle.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Rectangle.Effect>
+        <Rectangle  Height="90" Margin="10,378,10,0" VerticalAlignment="Top" Style="{DynamicResource Rectangle22.4Style1}" Grid.ColumnSpan="2">
         </Rectangle>
-        <Label x:Name="SN_Copy4" Content="https://youraveragegamer.wixsite.com/yag-dev" Margin="90,422,20,0" VerticalAlignment="Top" Height="36" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.ColumnSpan="2">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="SN_Copy4" Content="https://youraveragegamer.wixsite.com/yag-dev" Margin="90,422,20,0" VerticalAlignment="Top" Height="36" VerticalContentAlignment="Center" Grid.ColumnSpan="2" Style="{DynamicResource SubtitleTheme22.5}">
         </Label>
-        <Label x:Name="Title_Copy5" Content="Website" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="34" VerticalAlignment="Top" Margin="90,388,20,0" Grid.ColumnSpan="2">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="Title_Copy5" Content="Website" VerticalContentAlignment="Center" Height="34" VerticalAlignment="Top" Margin="90,388,20,0" Grid.ColumnSpan="2" Style="{DynamicResource TitleTheme22.5}">
         </Label>
         <Image x:Name="DeviceInfoImg_Copy10" Margin="20,388,0,0" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70"/>
-        <Rectangle  Height="90" Margin="10,470,10,0" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Top" Style="{DynamicResource Rectangle22.4Style1}" Grid.ColumnSpan="2">
-            <Rectangle.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemBaseHighColor}"
-                    Opacity="0.5"
-                    BlurRadius="8"/>
-            </Rectangle.Effect>
+        <Rectangle  Height="90" Margin="10,470,10,0" VerticalAlignment="Top" Style="{DynamicResource Rectangle22.4Style1}" Grid.ColumnSpan="2">
         </Rectangle>
-        <Label x:Name="SN_Copy5" Content="Also, check out OpenInstaller, my other project!" Margin="90,514,20,0" VerticalAlignment="Top" Height="36" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Bold" FontSize="14" Grid.ColumnSpan="2">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="SN_Copy5" Content="Also, check out OpenInstaller, my other project!" Margin="90,514,20,0" VerticalAlignment="Top" Height="36" VerticalContentAlignment="Center" Grid.ColumnSpan="2" Style="{DynamicResource SubtitleTheme22.5}">
         </Label>
-        <Label x:Name="Title_Copy6" Content="Thank you for using Treble Toolkit" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="34" VerticalAlignment="Top" Margin="90,480,20,0" Grid.ColumnSpan="2">
-            <Label.Effect>
-                <DropShadowEffect
-                    ShadowDepth="0"
-                    Direction="0"
-                    Color="{DynamicResource SystemAltHighColor}"
-                    Opacity="0.8"
-                    BlurRadius="2"/>
-            </Label.Effect>
+        <Label x:Name="Title_Copy6" Content="Thank you for using Treble Toolkit" VerticalContentAlignment="Center" Height="34" VerticalAlignment="Top" Margin="90,480,20,0" Grid.ColumnSpan="2" Style="{DynamicResource TitleTheme22.5}">
         </Label>
         <Image x:Name="DeviceInfoImg_Copy11" Margin="20,480,0,0" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70"/>
 

@@ -1,3 +1,6 @@
-Version 31.0.3 (August 2021)
-· Added support for flashing vbmeta_vendor.img for fastboot flashall / update using fastboot
-· Fixed version number (Treble Toolkit Package)
+Version 33.0.1 (March 2022)
+· Fixes Windows mdns crashes. (ADB)
+· Fixes enable-verity/disable-verity on old devices. (ADB)
+· Fixes "install multiple" on old devices (ADB)
+· Improves the help output to include all supported compression methods. (ADB)
+· Removed. Use Studio Profiler/gpuinspector.dev/Perfetto instead. (Systrace)

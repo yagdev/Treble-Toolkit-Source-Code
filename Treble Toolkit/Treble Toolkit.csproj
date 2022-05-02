@@ -285,6 +285,9 @@
     <Compile Include="Animations.xaml.cs">
       <DependentUpon>Animations.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AnniversaryThemes.xaml.cs">
+      <DependentUpon>AnniversaryThemes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BTULHW.xaml.cs">
       <DependentUpon>BTULHW.xaml</DependentUpon>
     </Compile>
@@ -354,6 +357,9 @@
     <Compile Include="HuaweiMate10Lite.xaml.cs">
       <DependentUpon>HuaweiMate10Lite.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HuaweiMate20Lite.xaml.cs">
+      <DependentUpon>HuaweiMate20Lite.xaml</DependentUpon>
+    </Compile>
     <Compile Include="HuaweiP20Lite.xaml.cs">
       <DependentUpon>HuaweiP20Lite.xaml</DependentUpon>
     </Compile>
@@ -362,6 +368,9 @@
     </Compile>
     <Compile Include="MainWindow3.xaml.cs">
       <DependentUpon>MainWindow3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Mate20LDSF.xaml.cs">
+      <DependentUpon>Mate20LDSF.xaml</DependentUpon>
     </Compile>
     <Compile Include="More.xaml.cs">
       <DependentUpon>More.xaml</DependentUpon>
@@ -410,6 +419,9 @@
     </Compile>
     <Compile Include="ResetAll.xaml.cs">
       <DependentUpon>ResetAll.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RestoreInstall.xaml.cs">
+      <DependentUpon>RestoreInstall.xaml</DependentUpon>
     </Compile>
     <Compile Include="Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
@@ -534,6 +546,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AnniversaryThemes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="BTULHW.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -654,6 +670,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="HuaweiMate20Lite.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="HuaweiP20Lite.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -699,6 +719,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Mate20LDSF.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -763,6 +787,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ResetAll.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RestoreInstall.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1399,6 +1427,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="tt-ty-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="mate20lite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-confetti-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tt-confetti-dark.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

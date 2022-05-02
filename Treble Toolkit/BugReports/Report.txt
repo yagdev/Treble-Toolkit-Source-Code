@@ -1,3 +1,67 @@
 ©2021-2022 YAG-dev
 Bug Report Description
 System.Windows.Controls.TextBox: Please describe your issue here
+Phone Info
+©2021-2022 YAG-dev
+Deleting instance \\DESKTOP\ROOT\CIMV2:Win32_Process.Handle="13448"
+Instance deletion successful.
+
+PC Info
+©2021-2022 YAG-dev
+
+Host Name:                 DESKTOP
+OS Name:                   Microsoft Windows 11 Pro
+OS Version:                10.0.22581 N/A Build 22581
+OS Manufacturer:           Microsoft Corporation
+OS Configuration:          Standalone Workstation
+OS Build Type:             Multiprocessor Free
+Registered Owner:          dinisp25@gmail.com
+Registered Organization:   
+Product ID:                00330-71290-00002-AAOEM
+Original Install Date:     06/04/2022, 17:18:07
+System Boot Time:          14/04/2022, 15:01:07
+System Manufacturer:       Acidanthera
+System Model:              MacPro7,1
+System Type:               x64-based PC
+Processor(s):              1 Processor(s) Installed.
+                           [01]: AMD64 Family 25 Model 33 Stepping 0 AuthenticAMD ~3701 Mhz
+BIOS Version:              Acidanthera 1715.81.2.0.0, 06/01/2022
+Windows Directory:         C:\WINDOWS
+System Directory:          C:\WINDOWS\system32
+Boot Device:               \Device\HarddiskVolume2
+System Locale:             en-us;Inglˆs (Estados Unidos)
+Input Locale:              pt;Portuguˆs (Portugal)
+Time Zone:                 (UTC+00:00) Dublin, Edimburgo, Lisboa, Londres
+Total Physical Memory:     16ÿ312 MB
+Available Physical Memory: 7ÿ601 MB
+Virtual Memory: Max Size:  22ÿ712 MB
+Virtual Memory: Available: 8ÿ079 MB
+Virtual Memory: In Use:    14ÿ633 MB
+Page File Location(s):     C:\pagefile.sys
+Domain:                    WORKGROUP
+Logon Server:              \\DESKTOP
+Hotfix(s):                 3 Hotfix(s) Installed.
+                           [01]: KB5013284
+                           [02]: KB5013296
+                           [03]: KB5013287
+Network Card(s):           3 NIC(s) Installed.
+                           [01]: Realtek PCIe GbE Family Controller
+                                 Connection Name: Ethernet
+                                 DHCP Enabled:    Yes
+                                 DHCP Server:     192.168.1.254
+                                 IP address(es)
+                                 [01]: 192.168.1.109
+                                 [02]: fe80::d402:c1fd:52c9:567d
+                                 [03]: 2001:8a0:6132:8401:9469:3547:91f3:147e
+                                 [04]: 2001:8a0:6132:8401:d402:c1fd:52c9:567d
+                           [02]: Bluetooth Device (Personal Area Network)
+                                 Connection Name: Bluetooth Network Connection
+                                 Status:          Media disconnected
+                           [03]: D-Link DWA-140 Wireless N USB Adapter(rev.B3)
+                                 Connection Name: Wi-Fi
+                                 Status:          Media disconnected
+Hyper-V Requirements:      VM Monitor Mode Extensions: Yes
+                           Virtualization Enabled In Firmware: No
+                           Second Level Address Translation: Yes
+                           Data Execution Prevention Available: Yes
+

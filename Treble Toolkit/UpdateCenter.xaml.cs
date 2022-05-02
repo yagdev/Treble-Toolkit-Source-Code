@@ -219,7 +219,7 @@ namespace Treble_Toolkit
                 string launch_exe = "TrebleToolkitLauncher.exe";
                 this.Dispatcher.Invoke(() =>
                 {
-                    Change1b_Copy.Content = "Preparating..";
+                    Change1b_Copy.Content = "Preparing..";
                 });
                 var update = Updater.Init(url, update_path, application_path, launch_exe);
                 if (UpdateManager.CheckForUpdate(version_key, local_version_path, remote_version_url))
@@ -233,14 +233,14 @@ namespace Treble_Toolkit
 
                     this.Dispatcher.Invoke(() =>
                     {
-                        Change1b_Copy.Content = "Decompressing...";
+                        Change1b_Copy.Content = "Extracting...";
                     });
 
                     update.Unzip();
 
                     this.Dispatcher.Invoke(() =>
                     {
-                        Change1b_Copy.Content = "Cleaning Up...";
+                        Change1b_Copy.Content = "Optimizing...";
                     });
 
                     update.CleanUp();
@@ -276,8 +276,8 @@ namespace Treble_Toolkit
                     }
                     this.Dispatcher.Invoke(() =>
                     {
-                        Change1b_Copy.Content = "Update Finished";
-                        ADBStatus_Copy.Content = "Update Finished";
+                        Change1b_Copy.Content = "Up to date";
+                        ADBStatus_Copy.Content = "Up to date";
                         Change1b_Copy.IsEnabled = false;
                         if (ADBStatus.Content == "No Updates Available")
                         {

@@ -491,11 +491,30 @@ namespace Treble_Toolkit
                 string IntensityFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Intensity.txt");
                 string SlipsideFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Slipside.txt");
                 string JoyFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Joy.txt");
+                string Anniversary1_0File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary1.0.txt");
+                string Anniversary1_2File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary1.2.txt");
+                string Anniversary1_3File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary1.3.txt");
+                string Anniversary1_5_0_3File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary1.5.0.3.txt");
+                string Anniversary2_0File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary2.0.txt");
+                string Anniversary3_1File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary3.1.txt");
+                string Anniversary3_2File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary3.2.txt");
+                string Anniversary5_4File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary5.4.txt");
+                string Anniversary5_6File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary5.6.txt");
+                string Anniversary5_7File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary5.7.txt");
+                string Anniversary5_9File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary5.9.txt");
+                string Anniversary21_2_1File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary21.2.1.txt");
+                string Anniversary21_7_1File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary21.7.1.txt");
+                string Anniversary21_8_1File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary21.8.1.txt");
+                string Anniversary22_1File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary22.1.txt");
+                string Anniversary22_2File = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "Settings", "Anniversary22.2.txt");
                 if (File.Exists(SlipsideFile))
                 {
                     Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["22.4Alt2"];
                     Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["Rectangle22.4Style2"];
                     Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["ImageButton22.4Alt1"];
+                    Application.Current.Resources["TitleTheme22.5"] = Application.Current.Resources["TitleTheme22.5Default"];
+                    Application.Current.Resources["SubtitleTheme22.5"] = Application.Current.Resources["SubtitleTheme22.5Default"];
+                    Application.Current.Resources["TextBlockTheme22.5"] = Application.Current.Resources["TextBlockTheme22.5Default"];
                 }
                 else
                 {
@@ -504,6 +523,9 @@ namespace Treble_Toolkit
                         Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["22.4Alt1"];
                         Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["Rectangle22.4Style2"];
                         Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["ImageButton22.4Alt2"];
+                        Application.Current.Resources["TitleTheme22.5"] = Application.Current.Resources["TitleTheme22.5Default"];
+                        Application.Current.Resources["SubtitleTheme22.5"] = Application.Current.Resources["SubtitleTheme22.5Default"];
+                        Application.Current.Resources["TextBlockTheme22.5"] = Application.Current.Resources["TextBlockTheme22.5Default"];
                     }
                     else
                     {
@@ -512,12 +534,210 @@ namespace Treble_Toolkit
                             Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["22.4Alt3"];
                             Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["Rectangle22.4Style3"];
                             Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["ImageButton22.4Alt3"];
+                            Application.Current.Resources["TitleTheme22.5"] = Application.Current.Resources["TitleTheme22.5Default"];
+                            Application.Current.Resources["SubtitleTheme22.5"] = Application.Current.Resources["SubtitleTheme22.5Default"];
+                            Application.Current.Resources["TextBlockTheme22.5"] = Application.Current.Resources["TextBlockTheme22.5Default"];
                         }
                         else
                         {
-                            Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["22.4Alt2"];
-                            Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["Rectangle22.4StyleDefault"];
-                            Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["ImageButton22.4Alt1"];
+                            if (File.Exists(Anniversary1_0File))
+                            {
+                                Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["AnniversaryButton1.0"];
+                                Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["AnniversaryRectangle1.0"];
+                                Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["AnniversaryImageButton1.0"];
+                                Application.Current.Resources["TitleTheme22.5"] = Application.Current.Resources["TitleThemeAnniversary1.0"];
+                                Application.Current.Resources["SubtitleTheme22.5"] = Application.Current.Resources["SubtitleThemeAnniversary1.0"];
+                                Application.Current.Resources["TextBlockTheme22.5"] = Application.Current.Resources["TextBlockThemeAnniversary1.0"];
+                            }
+                            else
+                            {
+                                if (File.Exists(Anniversary1_2File))
+                                {
+                                    Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["AnniversaryButton1.2"];
+                                    Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["AnniversaryRectangle1.2"];
+                                    Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["AnniversaryImageButton1.2"];
+                                    Application.Current.Resources["TitleTheme22.5"] = Application.Current.Resources["TitleThemeAnniversary1.0"];
+                                    Application.Current.Resources["SubtitleTheme22.5"] = Application.Current.Resources["SubtitleThemeAnniversary1.0"];
+                                    Application.Current.Resources["TextBlockTheme22.5"] = Application.Current.Resources["TextBlockThemeAnniversary1.0"];
+                                }
+                                else
+                                {
+                                    if (File.Exists(Anniversary1_3File))
+                                    {
+                                        Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["AnniversaryButton1.3"];
+                                        Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["AnniversaryRectangle1.3"];
+                                        Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["AnniversaryImageButton1.3"];
+                                        Application.Current.Resources["TitleTheme22.5"] = Application.Current.Resources["TitleThemeAnniversary1.0"];
+                                        Application.Current.Resources["SubtitleTheme22.5"] = Application.Current.Resources["SubtitleThemeAnniversary1.0"];
+                                        Application.Current.Resources["TextBlockTheme22.5"] = Application.Current.Resources["TextBlockThemeAnniversary1.0"];
+                                    }
+                                    else
+                                    {
+                                        if (File.Exists(Anniversary1_5_0_3File))
+                                        {
+                                            Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["AnniversaryButton1.5.0.3"];
+                                            Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["AnniversaryRectangle1.5.0.3"];
+                                            Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["AnniversaryImageButton1.5.0.3"];
+                                            Application.Current.Resources["TitleTheme22.5"] = Application.Current.Resources["TitleThemeAnniversary1.5.0.3"];
+                                            Application.Current.Resources["SubtitleTheme22.5"] = Application.Current.Resources["SubtitleThemeAnniversary1.5.0.3"];
+                                            Application.Current.Resources["TextBlockTheme22.5"] = Application.Current.Resources["TextBlockThemeAnniversary1.5.0.3"];
+                                        }
+                                        else
+                                        {
+                                            if (File.Exists(Anniversary2_0File))
+                                            {
+                                                Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["AnniversaryButton2.0"];
+                                                Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["AnniversaryRectangle2.0"];
+                                                Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["AnniversaryImageButton2.0"];
+                                                Application.Current.Resources["TitleTheme22.5"] = Application.Current.Resources["TitleThemeAnniversary1.5.0.3"];
+                                                Application.Current.Resources["SubtitleTheme22.5"] = Application.Current.Resources["SubtitleThemeAnniversary1.5.0.3"];
+                                                Application.Current.Resources["TextBlockTheme22.5"] = Application.Current.Resources["TextBlockThemeAnniversary1.5.0.3"];
+                                            }
+                                            else
+                                            {
+                                                if (File.Exists(Anniversary3_1File))
+                                                {
+                                                    Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["AnniversaryButton3.1"];
+                                                    Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["AnniversaryRectangle3.1"];
+                                                    Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["AnniversaryImageButton3.1"];
+                                                    Application.Current.Resources["TitleTheme22.5"] = Application.Current.Resources["TitleThemeAnniversary3.1"];
+                                                    Application.Current.Resources["SubtitleTheme22.5"] = Application.Current.Resources["SubtitleThemeAnniversary3.1"];
+                                                    Application.Current.Resources["TextBlockTheme22.5"] = Application.Current.Resources["TextBlockThemeAnniversary3.1"];
+                                                }
+                                                else
+                                                {
+                                                    if (File.Exists(Anniversary3_2File))
+                                                    {
+                                                        Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["AnniversaryButton3.2"];
+                                                        Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["AnniversaryRectangle3.2"];
+                                                        Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["AnniversaryImageButton3.2"];
+                                                        Application.Current.Resources["TitleTheme22.5"] = Application.Current.Resources["TitleThemeAnniversary3.2"];
+                                                        Application.Current.Resources["SubtitleTheme22.5"] = Application.Current.Resources["SubtitleThemeAnniversary3.2"];
+                                                        Application.Current.Resources["TextBlockTheme22.5"] = Application.Current.Resources["TextBlockThemeAnniversary3.2"];
+                                                    }
+                                                    else
+                                                    {
+                                                        if (File.Exists(Anniversary5_4File))
+                                                        {
+                                                            Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["AnniversaryButton5.4"];
+                                                            Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["AnniversaryRectangle5.4"];
+                                                            Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["AnniversaryImageButton5.4"];
+                                                            Application.Current.Resources["TitleTheme22.5"] = Application.Current.Resources["TitleThemeAnniversary3.3"];
+                                                            Application.Current.Resources["SubtitleTheme22.5"] = Application.Current.Resources["SubtitleThemeAnniversary3.3"];
+                                                            Application.Current.Resources["TextBlockTheme22.5"] = Application.Current.Resources["TextBlockThemeAnniversary3.3"];
+                                                        }
+                                                        else
+                                                        {
+                                                            if (File.Exists(Anniversary5_6File))
+                                                            {
+                                                                Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["AnniversaryButton5.6"];
+                                                                Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["AnniversaryRectangle5.6"];
+                                                                Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["AnniversaryImageButton5.6"];
+                                                                Application.Current.Resources["TitleTheme22.5"] = Application.Current.Resources["TitleThemeAnniversary5.6"];
+                                                                Application.Current.Resources["SubtitleTheme22.5"] = Application.Current.Resources["SubtitleThemeAnniversary5.6"];
+                                                                Application.Current.Resources["TextBlockTheme22.5"] = Application.Current.Resources["TextBlockThemeAnniversary5.6"];
+                                                            }
+                                                            else
+                                                            {
+                                                                if (File.Exists(Anniversary5_7File))
+                                                                {
+                                                                    Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["AnniversaryButton5.7"];
+                                                                    Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["AnniversaryRectangle5.7"];
+                                                                    Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["AnniversaryImageButton5.7"];
+                                                                    Application.Current.Resources["TitleTheme22.5"] = Application.Current.Resources["TitleThemeAnniversary5.6"];
+                                                                    Application.Current.Resources["SubtitleTheme22.5"] = Application.Current.Resources["SubtitleThemeAnniversary5.6"];
+                                                                    Application.Current.Resources["TextBlockTheme22.5"] = Application.Current.Resources["TextBlockThemeAnniversary5.6"];
+                                                                }
+                                                                else
+                                                                {
+                                                                    if (File.Exists(Anniversary5_9File))
+                                                                    {
+                                                                        Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["AnniversaryButton5.9"];
+                                                                        Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["AnniversaryRectangle5.9"];
+                                                                        Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["AnniversaryImageButton5.9"];
+                                                                        Application.Current.Resources["TitleTheme22.5"] = Application.Current.Resources["TitleThemeAnniversary5.6"];
+                                                                        Application.Current.Resources["SubtitleTheme22.5"] = Application.Current.Resources["SubtitleThemeAnniversary5.6"];
+                                                                        Application.Current.Resources["TextBlockTheme22.5"] = Application.Current.Resources["TextBlockThemeAnniversary5.6"];
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        if (File.Exists(Anniversary21_2_1File))
+                                                                        {
+                                                                            Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["AnniversaryButton21.2"];
+                                                                            Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["AnniversaryRectangle21.2"];
+                                                                            Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["AnniversaryImageButton21.2"];
+                                                                            Application.Current.Resources["TitleTheme22.5"] = Application.Current.Resources["TitleThemeAnniversary5.6"];
+                                                                            Application.Current.Resources["SubtitleTheme22.5"] = Application.Current.Resources["SubtitleThemeAnniversary5.6"];
+                                                                            Application.Current.Resources["TextBlockTheme22.5"] = Application.Current.Resources["TextBlockThemeAnniversary5.6"];
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            if (File.Exists(Anniversary21_7_1File))
+                                                                            {
+                                                                                Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["AnniversaryButton21.7"];
+                                                                                Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["AnniversaryRectangle21.7"];
+                                                                                Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["AnniversaryImageButton21.7"];
+                                                                                Application.Current.Resources["TitleTheme22.5"] = Application.Current.Resources["TitleThemeAnniversary5.6"];
+                                                                                Application.Current.Resources["SubtitleTheme22.5"] = Application.Current.Resources["SubtitleThemeAnniversary5.6"];
+                                                                                Application.Current.Resources["TextBlockTheme22.5"] = Application.Current.Resources["TextBlockThemeAnniversary5.6"];
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                if (File.Exists(Anniversary21_8_1File))
+                                                                                {
+                                                                                    Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["AnniversaryButton21.8"];
+                                                                                    Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["AnniversaryRectangle21.8"];
+                                                                                    Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["AnniversaryImageButton21.8"];
+                                                                                    Application.Current.Resources["TitleTheme22.5"] = Application.Current.Resources["TitleThemeAnniversary5.6"];
+                                                                                    Application.Current.Resources["SubtitleTheme22.5"] = Application.Current.Resources["SubtitleThemeAnniversary5.6"];
+                                                                                    Application.Current.Resources["TextBlockTheme22.5"] = Application.Current.Resources["TextBlockThemeAnniversary5.6"];
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    if (File.Exists(Anniversary22_1File))
+                                                                                    {
+                                                                                        Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["AnniversaryButton22.1"];
+                                                                                        Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["Rectangle22.4Style2"];
+                                                                                        Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["ImageButton22.4Alt1"];
+                                                                                        Application.Current.Resources["TitleTheme22.5"] = Application.Current.Resources["TitleTheme22.5Default"];
+                                                                                        Application.Current.Resources["SubtitleTheme22.5"] = Application.Current.Resources["SubtitleTheme22.5Default"];
+                                                                                        Application.Current.Resources["TextBlockTheme22.5"] = Application.Current.Resources["TextBlockTheme22.5Default"];
+                                                                                    }
+                                                                                    else
+                                                                                    {
+                                                                                        if (File.Exists(Anniversary22_2File))
+                                                                                        {
+                                                                                            Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["AnniversaryButton22.2"];
+                                                                                            Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["Rectangle22.4Style2"];
+                                                                                            Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["ImageButton22.4Alt1"];
+                                                                                            Application.Current.Resources["TitleTheme22.5"] = Application.Current.Resources["TitleTheme22.5Default"];
+                                                                                            Application.Current.Resources["SubtitleTheme22.5"] = Application.Current.Resources["SubtitleTheme22.5Default"];
+                                                                                            Application.Current.Resources["TextBlockTheme22.5"] = Application.Current.Resources["TextBlockTheme22.5Default"];
+                                                                                        }
+                                                                                        else
+                                                                                        {
+                                                                                            Application.Current.Resources["Button21.8.1Rev4"] = Application.Current.Resources["22.4Alt2"];
+                                                                                            Application.Current.Resources["Rectangle22.4Style1"] = Application.Current.Resources["Rectangle22.4StyleDefault"];
+                                                                                            Application.Current.Resources["ImageButton22.4Default"] = Application.Current.Resources["ImageButton22.4Alt1"];
+                                                                                            Application.Current.Resources["TitleTheme22.5"] = Application.Current.Resources["TitleTheme22.5Default"];
+                                                                                            Application.Current.Resources["SubtitleTheme22.5"] = Application.Current.Resources["SubtitleTheme22.5Default"];
+                                                                                            Application.Current.Resources["TextBlockTheme22.5"] = Application.Current.Resources["TextBlockTheme22.5Default"];
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -526,10 +746,12 @@ namespace Treble_Toolkit
                     if (Widgets.Width == new System.Windows.GridLength(70))
                     {
                         DeviceInfoImg_Copy5.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-expand-dark.png"));
+                        BackAbout_Copy10.Content = "";
                     }
                     else
                     {
                         DeviceInfoImg_Copy5.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-shrink-dark.png"));
+                        BackAbout_Copy10.Content = "Setup";
                     }
                     DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-phone-dark.png"));
                     DeviceInfoImg_Copy.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-gsi-dark.png"));
@@ -611,6 +833,7 @@ namespace Treble_Toolkit
                     DeviceInfoImg_Copy2.Visibility = Visibility.Hidden;
                     DeviceSpecificFeatures_Copy.Visibility = Visibility.Hidden;
                     DeviceInfoImg_Copy3.Visibility = Visibility.Hidden;
+                    BackAbout_Copy10.Content = "";
                 });
             }
             else
@@ -644,6 +867,7 @@ namespace Treble_Toolkit
                     DeviceInfoImg_Copy2.Visibility = Visibility.Visible;
                     DeviceSpecificFeatures_Copy.Visibility = Visibility.Visible;
                     DeviceInfoImg_Copy3.Visibility = Visibility.Visible;
+                    BackAbout_Copy10.Content = "Setup";
                 });
             }
             Thread thread1 = new Thread(UpdateUI);

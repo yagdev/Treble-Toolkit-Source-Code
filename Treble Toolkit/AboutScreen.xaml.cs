@@ -304,6 +304,11 @@ namespace Treble_Toolkit
                     DeviceInfoImg_Copy8.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-freecmd-light.png"));
                     DeviceInfoImg_Copy9.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-info-light.png"));
                 }
+                string beta_path = System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\", "UpdateInfo", "BetaProgram", "BetaProgram.txt");
+                if (File.Exists(beta_path))
+                {
+                    VersionCheck.Content = VersionCheck.Content + " (Beta)";
+                }
             });
         }
     }

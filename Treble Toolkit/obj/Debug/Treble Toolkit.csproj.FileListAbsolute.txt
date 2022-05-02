@@ -756,3 +756,433 @@ D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\De
 D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\ResetAll.baml
 D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\DiscoverMore.g.cs
 D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\DiscoverMore.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\bin\Debug\gui.exe.config
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\bin\Debug\gui.exe
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\bin\Debug\gui.pdb
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\bin\Debug\CLConfiguration.xml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\bin\Debug\CLUpdate.xml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\bin\Debug\System.Buffers.xml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\bin\Debug\System.Memory.xml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\bin\Debug\System.Numerics.Vectors.xml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\bin\Debug\System.Reactive.xml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Treble Toolkit.csproj.AssemblyReference.cache
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\AboutScreen.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Alcatel1.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Animations.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\AnniversaryThemes.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\BTULHW.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\BugReports.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\CMDInfo.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\CompatibilityCheck.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\CompatibilitySettings.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\CompatibleDevices.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\DebugInfo.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\DeviceTester.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\DiscoverMore.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FixConnectionPhoneStep1.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FixConnectionPhoneStep2.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FixConnectionPhoneStep3.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FlashGSI.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FlashingGSITUT.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FlashingVendorTUT.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FlashMethod.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FlashVendorFinished.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FormatPartitions.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FreeCMD.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIABFlash.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIABPickAFile.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIAFlash.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIAPickAFile.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIFlashA.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIFlashAB.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIFlashTerminated.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIFlashTerminatedAB.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\HM10LDSF.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\HomeScreen.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\HuaweiMate10Lite.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\HuaweiMate20Lite.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\HuaweiP20Lite.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\MainWindow.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\MainWindow2.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\MainWindow3.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\More.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\OnePlus6.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\OnePlus6DSF.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\OnePlus8.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\OnePlus8DSF.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\P20LDSF.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\PlatformToolsChangelog.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\PMFinished.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\PMFlash.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\PMTUT.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\PrivacyAndDataManagement.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\QSG.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\QuickStartGuide.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\ReportBug.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\ReportBugStep2.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\ResetAll.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Settings.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Setup.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Setup2.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Setup3.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Sideloader.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\SideloaderPickFile.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\SideloadFinished.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\SonyXperia1.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\SonyXperia5.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\SonyXperiaXZ2.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\SXXZ2DSF.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\ThemeSelect.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TransparencyAndEffects.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TransparencySlider.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRP.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRPBoot.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRPBootFinished.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRPBootPickFile.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRPFlash.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRPFlashFinished.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRPFlashPickFile.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRPShits.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\UnlockBootloader.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\UnlockBootloaderTut.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\UnlockedBootloader.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\UpdateCenter.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\VendorFinished.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\VendorFlash.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\VendorPickFile.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Widgets.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\WidgetSetupGuide.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Windows7Warning.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\WindowsOutdatedMoreInfo.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\WindowsStupidDriverFix.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\XP1DSF.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\XP5DSF.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\ZipSideloaderTUT.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\App.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\gui_MarkupCompile.cache
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\gui_MarkupCompile.lref
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\App.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\AboutScreen.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Alcatel1.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Animations.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\AnniversaryThemes.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\BTULHW.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\BugReports.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\CMDInfo.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\CompatibilityCheck.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\CompatibilitySettings.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\CompatibleDevices.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\DebugInfo.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\DeviceTester.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\DiscoverMore.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FixConnectionPhoneStep1.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FixConnectionPhoneStep2.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FixConnectionPhoneStep3.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FlashGSI.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FlashingGSITUT.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FlashingVendorTUT.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FlashMethod.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FlashVendorFinished.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FormatPartitions.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FreeCMD.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIABFlash.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIABPickAFile.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIAFlash.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIAPickAFile.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIFlashA.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIFlashAB.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIFlashTerminated.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIFlashTerminatedAB.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\HM10LDSF.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\HomeScreen.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\HuaweiMate10Lite.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\HuaweiP20Lite.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\MainWindow.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\MainWindow2.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\MainWindow3.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\More.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\OnePlus6.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\OnePlus6DSF.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\OnePlus8.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\OnePlus8DSF.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\P20LDSF.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\PlatformToolsChangelog.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\PMFinished.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\PMFlash.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\PMTUT.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\PrivacyAndDataManagement.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\QSG.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\QuickStartGuide.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\ReportBug.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\ReportBugStep2.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\ResetAll.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Settings.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Setup.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Setup2.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Setup3.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Sideloader.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\SideloaderPickFile.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\SideloadFinished.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\SonyXperia1.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\SonyXperia5.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\SonyXperiaXZ2.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\SXXZ2DSF.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\ThemeSelect.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TransparencyAndEffects.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TransparencySlider.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRP.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRPBoot.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRPBootFinished.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRPBootPickFile.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRPFlash.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRPFlashFinished.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRPFlashPickFile.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRPShits.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\UnlockBootloader.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\UnlockBootloaderTut.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\UnlockedBootloader.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\UpdateCenter.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\VendorFinished.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\VendorFlash.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\VendorPickFile.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Widgets.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\WidgetSetupGuide.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Windows7Warning.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\WindowsOutdatedMoreInfo.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\WindowsStupidDriverFix.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\XP1DSF.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\XP5DSF.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\ZipSideloaderTUT.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\HuaweiMate20Lite.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\gui.g.resources
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Treble_Toolkit.Properties.Resources.resources
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Treble Toolkit.csproj.GenerateResource.cache
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Treble Toolkit.csproj.CoreCompileInputs.cache
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Treble Toolkit.sourcelink.json
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Treble Toolkit.csproj.Fody.CopyLocal.cache
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Treble Toolkit.csproj.CopyComplete
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\gui.exe
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\gui.pdb
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Mate20LDSF.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Mate20LDSF.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\RestoreInstall.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\RestoreInstall.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\bin\Debug\gui.exe.config
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\bin\Debug\gui.exe
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\bin\Debug\gui.pdb
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\bin\Debug\CLConfiguration.xml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\bin\Debug\CLUpdate.xml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\bin\Debug\System.Buffers.xml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\bin\Debug\System.Memory.xml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\bin\Debug\System.Reactive.xml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Treble Toolkit.csproj.AssemblyReference.cache
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\AboutScreen.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Alcatel1.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Animations.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\AnniversaryThemes.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\BTULHW.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\BugReports.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\CMDInfo.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\CompatibilityCheck.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\CompatibilitySettings.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\CompatibleDevices.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\DebugInfo.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\DeviceTester.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\DiscoverMore.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FixConnectionPhoneStep1.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FixConnectionPhoneStep2.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FixConnectionPhoneStep3.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FlashGSI.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FlashingGSITUT.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FlashingVendorTUT.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FlashMethod.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FlashVendorFinished.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FormatPartitions.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FreeCMD.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIABFlash.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIABPickAFile.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIAFlash.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIAPickAFile.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIFlashA.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIFlashAB.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIFlashTerminated.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIFlashTerminatedAB.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\HM10LDSF.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\HomeScreen.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\HuaweiMate10Lite.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\HuaweiMate20Lite.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\HuaweiP20Lite.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\MainWindow.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\MainWindow2.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\MainWindow3.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Mate20LDSF.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\More.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\OnePlus6.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\OnePlus6DSF.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\OnePlus8.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\OnePlus8DSF.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\P20LDSF.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\PlatformToolsChangelog.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\PMFinished.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\PMFlash.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\PMTUT.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\PrivacyAndDataManagement.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\QSG.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\QuickStartGuide.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\ReportBug.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\ReportBugStep2.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\ResetAll.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\RestoreInstall.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Settings.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Setup.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Setup2.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Setup3.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Sideloader.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\SideloaderPickFile.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\SideloadFinished.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\SonyXperia1.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\SonyXperia5.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\SonyXperiaXZ2.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\SXXZ2DSF.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\ThemeSelect.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TransparencyAndEffects.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TransparencySlider.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRP.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRPBoot.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRPBootFinished.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRPBootPickFile.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRPFlash.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRPFlashFinished.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRPFlashPickFile.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRPShits.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\UnlockBootloader.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\UnlockBootloaderTut.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\UnlockedBootloader.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\UpdateCenter.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\VendorFinished.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\VendorFlash.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\VendorPickFile.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Widgets.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\WidgetSetupGuide.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Windows7Warning.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\WindowsOutdatedMoreInfo.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\WindowsStupidDriverFix.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\XP1DSF.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\XP5DSF.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\ZipSideloaderTUT.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\App.g.cs
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\gui_MarkupCompile.cache
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\gui_MarkupCompile.lref
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\App.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\AboutScreen.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Alcatel1.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Animations.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\AnniversaryThemes.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\BTULHW.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\BugReports.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\CMDInfo.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\CompatibilityCheck.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\CompatibilitySettings.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\CompatibleDevices.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\DebugInfo.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\DeviceTester.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\DiscoverMore.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FixConnectionPhoneStep1.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FixConnectionPhoneStep2.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FixConnectionPhoneStep3.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FlashGSI.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FlashingGSITUT.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FlashingVendorTUT.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FlashMethod.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FlashVendorFinished.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FormatPartitions.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\FreeCMD.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIABFlash.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIABPickAFile.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIAFlash.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIAPickAFile.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIFlashA.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIFlashAB.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIFlashTerminated.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\GSIFlashTerminatedAB.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\HM10LDSF.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\HomeScreen.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\HuaweiMate10Lite.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\HuaweiMate20Lite.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\HuaweiP20Lite.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\MainWindow.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\MainWindow2.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\MainWindow3.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Mate20LDSF.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\More.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\OnePlus6.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\OnePlus6DSF.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\OnePlus8.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\OnePlus8DSF.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\P20LDSF.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\PlatformToolsChangelog.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\PMFinished.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\PMFlash.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\PMTUT.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\PrivacyAndDataManagement.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\QSG.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\QuickStartGuide.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\ReportBug.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\ReportBugStep2.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\ResetAll.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\RestoreInstall.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Settings.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Setup.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Setup2.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Setup3.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Sideloader.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\SideloaderPickFile.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\SideloadFinished.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\SonyXperia1.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\SonyXperia5.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\SonyXperiaXZ2.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\SXXZ2DSF.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\ThemeSelect.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TransparencyAndEffects.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TransparencySlider.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRP.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRPBoot.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRPBootFinished.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRPBootPickFile.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRPFlash.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRPFlashFinished.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRPFlashPickFile.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\TWRPShits.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\UnlockBootloader.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\UnlockBootloaderTut.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\UnlockedBootloader.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\UpdateCenter.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\VendorFinished.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\VendorFlash.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\VendorPickFile.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Widgets.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\WidgetSetupGuide.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Windows7Warning.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\WindowsOutdatedMoreInfo.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\WindowsStupidDriverFix.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\XP1DSF.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\XP5DSF.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\ZipSideloaderTUT.baml
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\gui.g.resources
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Treble_Toolkit.Properties.Resources.resources
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Treble Toolkit.csproj.GenerateResource.cache
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Treble Toolkit.csproj.CoreCompileInputs.cache
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Treble Toolkit.sourcelink.json
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Treble Toolkit.csproj.Fody.CopyLocal.cache
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\Treble Toolkit.csproj.CopyComplete
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\gui.exe
+C:\Users\dinis\Documents\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\Debug\gui.pdb
