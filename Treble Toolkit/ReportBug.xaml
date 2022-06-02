@@ -197,8 +197,6 @@
         </CheckBox>
         <CheckBox x:Name="PCInfo" Content="Include Computer Information" Margin="20,115,20,0" VerticalAlignment="Top" Style="{DynamicResource Checkbox21.7.1}" Height="25" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="14" Foreground="{DynamicResource SystemBaseHighColorBrush}" IsChecked="True" Grid.ColumnSpan="2">
         </CheckBox>
-        <Image x:Name="DeviceInfoImg_Copy" Margin="20,0,0,20" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30"/>
-        <Image x:Name="DeviceInfoImg_Copy1" Margin="11,0,0,20" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Column="1"/>
 
     </Grid>
 </Page>

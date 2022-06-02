@@ -209,9 +209,6 @@
                     BlurRadius="8"/>
             </Button.Effect>
         </Button>
-        <Image x:Name="DeviceInfoImg_Copy2" Margin="10,0,0,20" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Column="1"/>
-        <Image x:Name="DeviceInfoImg_Copy1" Margin="11,0,0,20" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Column="2"/>
-        <Image x:Name="DeviceInfoImg_Copy3" Margin="10,0,0,92" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Column="1"/>
 
     </Grid>
 </Page>

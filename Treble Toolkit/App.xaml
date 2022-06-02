@@ -71,7 +71,10 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Margin="0,0,0,0" Background="{TemplateBinding Background}">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Width="30" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">
@@ -135,7 +138,10 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Background="{DynamicResource SystemAltMediumHighColorBrush}" Margin="0,0,0,0">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Width="30" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">
@@ -178,7 +184,10 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Background="{DynamicResource SystemAltMediumHighColorBrush}" Margin="0,0,0,0">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Width="30" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">
@@ -217,7 +226,10 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" BorderThickness="2" Background="{DynamicResource SystemBaseLowColorBrush}" SnapsToDevicePixels="true" CornerRadius="9.5">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Width="30" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">
@@ -250,7 +262,10 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" BorderThickness="2" Background="{DynamicResource SystemBaseLowColorBrush}" SnapsToDevicePixels="true" CornerRadius="23.5">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Width="30" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">
@@ -283,7 +298,10 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" BorderBrush="#FF0063B1" BorderThickness="2" Background="{DynamicResource SystemBaseLowColorBrush}" SnapsToDevicePixels="true" CornerRadius="23.5">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Width="30" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">
@@ -316,7 +334,10 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" BorderBrush="#FF298ACC" BorderThickness="3" Background="{DynamicResource SystemChromeMediumLowColorBrush}" SnapsToDevicePixels="true" CornerRadius="23.5">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Width="30" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">
@@ -349,7 +370,10 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" BorderBrush="#FF402EA4" BorderThickness="3" Background="{DynamicResource SystemChromeMediumLowColorBrush}" SnapsToDevicePixels="true" CornerRadius="23.5">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Width="30" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">
@@ -382,7 +406,10 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" BorderBrush="Red" BorderThickness="2" Background="{DynamicResource SystemChromeMediumLowColorBrush}" SnapsToDevicePixels="true" CornerRadius="3.5">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Width="30" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">
@@ -415,7 +442,10 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" BorderBrush="Red" BorderThickness="1" Background="{DynamicResource SystemChromeMediumLowColorBrush}" SnapsToDevicePixels="true" CornerRadius="3.5">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Width="30" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">
@@ -448,7 +478,10 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" BorderBrush="Red" BorderThickness="1" Background="{DynamicResource SystemChromeMediumLowColorBrush}" SnapsToDevicePixels="true" CornerRadius="3.5">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Width="30" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">
@@ -481,7 +514,10 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" Background="{DynamicResource SystemChromeLowColorBrush}" SnapsToDevicePixels="true">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Width="30" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">
@@ -514,7 +550,10 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" Background="{DynamicResource SystemBaseLowColorBrush}" SnapsToDevicePixels="true">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Width="30" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">
@@ -547,7 +586,10 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" Background="{DynamicResource SystemChromeMediumLowColorBrush}" SnapsToDevicePixels="true">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Width="30" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">
@@ -580,7 +622,10 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" BorderBrush="{DynamicResource SystemBaseMediumLowColorBrush}" BorderThickness="1" Background="{DynamicResource SystemBaseLowColorBrush}" SnapsToDevicePixels="true">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Width="30" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">
@@ -613,7 +658,10 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" BorderBrush="Black" BorderThickness="1" Background="{DynamicResource SystemBaseLowColorBrush}" SnapsToDevicePixels="true">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Width="30" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">
@@ -632,275 +680,6 @@
                 </Setter>
             </Style>
             <Style TargetType="{x:Type Button}" x:Key="Button21.8.1Rev4">
-                <Setter Property="Button.Effect">
-                    <Setter.Value>
-                        <DropShadowEffect Color="{DynamicResource SystemBaseHighColor}" Direction="0" ShadowDepth="0" BlurRadius="8" Opacity="0.5" />
-                    </Setter.Value>
-                </Setter>
-                <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-                <Setter Property="Background">
-                    <Setter.Value>
-                        <SolidColorBrush Color="{DynamicResource SystemAltMediumHighColor}"/>
-                    </Setter.Value>
-                </Setter>
-                <Setter Property="Foreground" Value="{DynamicResource SystemBaseHighColorBrush}"/>
-                <Setter Property="BorderThickness" Value="1"/>
-                <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                <Setter Property="VerticalContentAlignment" Value="Center"/>
-                <Setter Property="Padding" Value="1"/>
-                <Setter Property="FontFamily" Value="/gui;component/Fonts/#Bahnschrift Semibold"/>
-                <Setter Property="FontSize" Value="16"/>
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type Button}">
-                            <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Margin="0,0,0,0" Background="{TemplateBinding Background}">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="50,16,0,16" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                            </Border>
-                            <ControlTemplate.Triggers>
-                                <Trigger Property="IsDefaulted" Value="true">
-                                    <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-                                </Trigger>
-                                <Trigger Property="IsMouseOver" Value="true"/>
-                                <Trigger Property="IsPressed" Value="true">
-                                    <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource SystemAltHighColorBrush}"/>
-                                </Trigger>
-                                <Trigger Property="IsEnabled" Value="false"/>
-                                <EventTrigger RoutedEvent="UIElement.MouseEnter">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation From="{StaticResource SystemAltMediumHighColor}" To="{StaticResource SystemAltMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                                <EventTrigger RoutedEvent="UIElement.MouseLeave">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation From="{StaticResource SystemAltMediumColor}" To="{StaticResource SystemAltMediumHighColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                                <EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonDown">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation From="{StaticResource SystemAltMediumColor}" To="{StaticResource SystemBaseMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                                <EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonUp">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation From="{StaticResource SystemBaseMediumColor}" To="{StaticResource SystemAltMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                            </ControlTemplate.Triggers>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-            <Style x:Key="22.4Alt1" TargetType="{x:Type Button}">
-                <Setter Property="Button.Effect">
-                    <Setter.Value>
-                        <DropShadowEffect Color="{DynamicResource SystemBaseHighColor}" Direction="0" ShadowDepth="0" BlurRadius="8" Opacity="0.5" />
-                    </Setter.Value>
-                </Setter>
-                <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-                <Setter Property="Background">
-                    <Setter.Value>
-                        <SolidColorBrush Color="{DynamicResource SystemAltHighColor}"/>
-                    </Setter.Value>
-                </Setter>
-                <Setter Property="FontFamily" Value="/gui;component/Fonts/#Bahnschrift Semibold"/>
-                <Setter Property="FontSize" Value="16"/>
-                <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
-                <Setter Property="Foreground" Value="{DynamicResource SystemBaseHighColorBrush}"/>
-                <Setter Property="BorderThickness" Value="1"/>
-                <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                <Setter Property="VerticalContentAlignment" Value="Center"/>
-                <Setter Property="Padding" Value="1"/>
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type Button}">
-                            <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Margin="0,0,0,0" Background="{TemplateBinding Background}">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="50,16,0,16" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                            </Border>
-                            <ControlTemplate.Triggers>
-                                <Trigger Property="IsDefaulted" Value="true">
-                                    <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-                                </Trigger>
-                                <Trigger Property="IsMouseOver" Value="true"/>
-                                <Trigger Property="IsPressed" Value="true">
-                                    <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource SystemAltHighColorBrush}"/>
-                                </Trigger>
-                                <Trigger Property="IsEnabled" Value="false"/>
-                                <EventTrigger RoutedEvent="UIElement.MouseEnter">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation From="{StaticResource SystemAltHighColor}" To="{StaticResource SystemAltMediumHighColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                                <EventTrigger RoutedEvent="UIElement.MouseLeave">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation From="{StaticResource SystemAltMediumHighColor}" To="{StaticResource SystemAltHighColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                                <EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonDown">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation From="{StaticResource SystemAltMediumColor}" To="{StaticResource SystemBaseMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                                <EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonUp">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation From="{StaticResource SystemBaseMediumColor}" To="{StaticResource SystemAltMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                            </ControlTemplate.Triggers>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-            <Style TargetType="{x:Type Button}" x:Key="22.4Alt2">
-                <Setter Property="Button.Effect">
-                    <Setter.Value>
-                        <DropShadowEffect Color="{DynamicResource SystemBaseHighColor}" Direction="0" ShadowDepth="0" BlurRadius="8" Opacity="0.5" />
-                    </Setter.Value>
-                </Setter>
-                <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-                <Setter Property="Background">
-                    <Setter.Value>
-                        <SolidColorBrush Color="{DynamicResource SystemAltMediumHighColor}"/>
-                    </Setter.Value>
-                </Setter>
-                <Setter Property="FontFamily" Value="/gui;component/Fonts/#Bahnschrift Semibold"/>
-                <Setter Property="FontSize" Value="16"/>
-                <Setter Property="Foreground" Value="{DynamicResource SystemBaseHighColorBrush}"/>
-                <Setter Property="BorderThickness" Value="1"/>
-                <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                <Setter Property="VerticalContentAlignment" Value="Center"/>
-                <Setter Property="Padding" Value="1"/>
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type Button}">
-                            <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Margin="0,0,0,0" Background="{TemplateBinding Background}">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="50,16,0,16" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                            </Border>
-                            <ControlTemplate.Triggers>
-                                <Trigger Property="IsDefaulted" Value="true">
-                                    <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-                                </Trigger>
-                                <Trigger Property="IsMouseOver" Value="true"/>
-                                <Trigger Property="IsPressed" Value="true">
-                                    <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource SystemAltHighColorBrush}"/>
-                                </Trigger>
-                                <Trigger Property="IsEnabled" Value="false"/>
-                                <EventTrigger RoutedEvent="UIElement.MouseEnter">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation From="{StaticResource SystemAltMediumHighColor}" To="{StaticResource SystemAltMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                                <EventTrigger RoutedEvent="UIElement.MouseLeave">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation From="{StaticResource SystemAltMediumColor}" To="{StaticResource SystemAltMediumHighColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                                <EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonDown">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation From="{StaticResource SystemAltMediumColor}" To="{StaticResource SystemBaseMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                                <EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonUp">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation From="{StaticResource SystemBaseMediumColor}" To="{StaticResource SystemAltMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                            </ControlTemplate.Triggers>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-            <Style TargetType="{x:Type Button}" x:Key="22.4Alt3">
-                <Setter Property="Button.Effect">
-                    <Setter.Value>
-                        <DropShadowEffect Color="{DynamicResource SystemBaseHighColor}" Direction="0" ShadowDepth="0" BlurRadius="8" Opacity="0.5" />
-                    </Setter.Value>
-                </Setter>
-                <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-                <Setter Property="Background">
-                    <Setter.Value>
-                        <SolidColorBrush Color="{x:Static fw:AccentColors.ImmersiveSystemAccentDark1}"/>
-                    </Setter.Value>
-                </Setter>
-                <Setter Property="FontFamily" Value="/gui;component/Fonts/#Bahnschrift Semibold"/>
-                <Setter Property="FontSize" Value="16"/>
-                <Setter Property="Foreground" Value="{DynamicResource SystemBaseHighColorBrush}"/>
-                <Setter Property="BorderThickness" Value="1"/>
-                <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                <Setter Property="VerticalContentAlignment" Value="Center"/>
-                <Setter Property="Padding" Value="1"/>
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type Button}">
-                            <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Margin="0,0,0,0" Background="{TemplateBinding Background}">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="50,16,0,16" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                            </Border>
-                            <ControlTemplate.Triggers>
-                                <Trigger Property="IsDefaulted" Value="true">
-                                    <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-                                </Trigger>
-                                <Trigger Property="IsMouseOver" Value="true"/>
-                                <Trigger Property="IsPressed" Value="true">
-                                    <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource SystemAltHighColorBrush}"/>
-                                </Trigger>
-                                <Trigger Property="IsEnabled" Value="false"/>
-                                <EventTrigger RoutedEvent="UIElement.MouseEnter">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation From="{x:Static fw:AccentColors.ImmersiveSystemAccentDark1}" To="{x:Static fw:AccentColors.ImmersiveSystemAccentDark2}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                                <EventTrigger RoutedEvent="UIElement.MouseLeave">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation From="{x:Static fw:AccentColors.ImmersiveSystemAccentDark2}" To="{x:Static fw:AccentColors.ImmersiveSystemAccentDark1}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                                <EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonDown">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation From="{x:Static fw:AccentColors.ImmersiveSystemAccentDark1}" To="{x:Static fw:AccentColors.ImmersiveSystemAccentLight2}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                                <EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonUp">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation From="{x:Static fw:AccentColors.ImmersiveSystemAccentLight2}" To="{x:Static fw:AccentColors.ImmersiveSystemAccentDark1}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                            </ControlTemplate.Triggers>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-            <Style TargetType="{x:Type Button}" x:Key="Button22.6Experimental">
                 <Setter Property="RenderTransformOrigin" Value="0.5, 0.5"/>
                 <Setter x:Name="MyAnimatedScaleTransform" Property="RenderTransform">
                     <Setter.Value>
@@ -980,17 +759,22 @@
                     </Setter.Value>
                 </Setter>
             </Style>
-            <!--Big Button Themes-->
-            <Style x:Key="ImageButton22.4Alt1" TargetType="{x:Type Button}">
+            <Style x:Key="22.4Alt1" TargetType="{x:Type Button}">
                 <Setter Property="Button.Effect">
                     <Setter.Value>
                         <DropShadowEffect Color="{DynamicResource SystemBaseHighColor}" Direction="0" ShadowDepth="0" BlurRadius="8" Opacity="0.5" />
                     </Setter.Value>
                 </Setter>
+                <Setter Property="RenderTransformOrigin" Value="0.5, 0.5"/>
+                <Setter x:Name="MyAnimatedScaleTransform" Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                    </Setter.Value>
+                </Setter>
                 <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
                 <Setter Property="Background">
                     <Setter.Value>
-                        <SolidColorBrush Color="{DynamicResource SystemAltMediumHighColor}"/>
+                        <SolidColorBrush Color="{DynamicResource SystemAltHighColor}"/>
                     </Setter.Value>
                 </Setter>
                 <Setter Property="FontFamily" Value="/gui;component/Fonts/#Bahnschrift Semibold"/>
@@ -1004,23 +788,96 @@
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
-                            <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Background="{TemplateBinding Background}" Margin="0,0,0,0">
+                            <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Margin="0,0,0,0" Background="{TemplateBinding Background}">
                                 <Grid>
-                                    <Label x:Name="PhoneStatus" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="Auto" VerticalAlignment="Stretch" Margin="80,10,10,10" Grid.ColumnSpan="1">
-                                        <Label.Effect>
-                                            <DropShadowEffect
-                                                ShadowDepth="0"
-                                                Direction="0"
-                                                Color="{DynamicResource SystemAltHighColor}"
-                                                Opacity="0.8"
-                                                BlurRadius="2"/>
-                                        </Label.Effect>
-                                        <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="0" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                                    </Label>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="50,16,0,16" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Width="30" Grid.Row="0" Grid.Column="0"/>
                                 </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
-                                <Trigger Property="IsDefaulted" Value="true"/>
+                                <Trigger Property="IsDefaulted" Value="true">
+                                    <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="true"/>
+                                <Trigger Property="IsPressed" Value="true">
+                                    <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource SystemAltHighColorBrush}"/>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="false"/>
+                                <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation From="{StaticResource SystemAltHighColor}" To="{StaticResource SystemAltMediumHighColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation From="{StaticResource SystemAltMediumHighColor}" To="{StaticResource SystemAltHighColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonDown">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation From="{StaticResource SystemAltMediumColor}" To="{StaticResource SystemBaseMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="0.99" SpeedRatio="20" AutoReverse="False" />
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="0.99" SpeedRatio="20" AutoReverse="False"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonUp">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation From="{StaticResource SystemBaseMediumColor}" To="{StaticResource SystemAltMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1" SpeedRatio="20" AutoReverse="False" />
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1" SpeedRatio="20" AutoReverse="False"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style TargetType="{x:Type Button}" x:Key="22.4Alt2">
+                <Setter Property="RenderTransformOrigin" Value="0.5, 0.5"/>
+                <Setter x:Name="MyAnimatedScaleTransform" Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect Color="{DynamicResource SystemBaseHighColor}" Direction="0" ShadowDepth="0" BlurRadius="8" Opacity="0.5" />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <SolidColorBrush Color="{DynamicResource SystemAltMediumHighColor}"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Foreground" Value="{DynamicResource SystemBaseHighColorBrush}"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="Padding" Value="1"/>
+                <Setter Property="FontFamily" Value="Bahnschrift Semibold"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Margin="0,0,0,0" Background="{TemplateBinding Background}">
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="50,16,0,16" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Width="30" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsDefaulted" Value="true">
+                                    <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                                </Trigger>
                                 <Trigger Property="IsMouseOver" Value="true"/>
                                 <Trigger Property="IsPressed" Value="true">
                                     <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource SystemAltHighColorBrush}"/>
@@ -1044,6 +901,8 @@
                                     <BeginStoryboard>
                                         <Storyboard>
                                             <ColorAnimation From="{StaticResource SystemAltMediumColor}" To="{StaticResource SystemBaseMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="0.99" SpeedRatio="20" AutoReverse="False" />
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="0.99" SpeedRatio="20" AutoReverse="False"/>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </EventTrigger>
@@ -1051,6 +910,169 @@
                                     <BeginStoryboard>
                                         <Storyboard>
                                             <ColorAnimation From="{StaticResource SystemBaseMediumColor}" To="{StaticResource SystemAltMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1" SpeedRatio="20" AutoReverse="False" />
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1" SpeedRatio="20" AutoReverse="False"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style TargetType="{x:Type Button}" x:Key="22.4Alt3">
+                <Setter Property="Button.Effect">
+                    <Setter.Value>
+                        <DropShadowEffect Color="{DynamicResource SystemBaseHighColor}" Direction="0" ShadowDepth="0" BlurRadius="8" Opacity="0.5" />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="RenderTransformOrigin" Value="0.5, 0.5"/>
+                <Setter x:Name="MyAnimatedScaleTransform" Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <SolidColorBrush Color="{x:Static fw:AccentColors.ImmersiveSystemAccentDark1}"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="FontFamily" Value="/gui;component/Fonts/#Bahnschrift Semibold"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="Foreground" Value="{DynamicResource SystemBaseHighColorBrush}"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="Padding" Value="1"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Margin="0,0,0,0" Background="{TemplateBinding Background}">
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="50,16,0,16" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Width="30" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsDefaulted" Value="true">
+                                    <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="true"/>
+                                <Trigger Property="IsPressed" Value="true">
+                                    <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource SystemAltHighColorBrush}"/>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="false"/>
+                                <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation From="{x:Static fw:AccentColors.ImmersiveSystemAccentDark1}" To="{x:Static fw:AccentColors.ImmersiveSystemAccentDark2}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation From="{x:Static fw:AccentColors.ImmersiveSystemAccentDark2}" To="{x:Static fw:AccentColors.ImmersiveSystemAccentDark1}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonDown">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation From="{x:Static fw:AccentColors.ImmersiveSystemAccentDark1}" To="{x:Static fw:AccentColors.ImmersiveSystemAccentLight2}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="0.99" SpeedRatio="20" AutoReverse="False" />
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="0.99" SpeedRatio="20" AutoReverse="False"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonUp">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation From="{x:Static fw:AccentColors.ImmersiveSystemAccentLight2}" To="{x:Static fw:AccentColors.ImmersiveSystemAccentDark1}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1" SpeedRatio="20" AutoReverse="False" />
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1" SpeedRatio="20" AutoReverse="False"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <!--Big Button Themes-->
+            <Style TargetType="{x:Type Button}" x:Key="ImageButton22.4Alt1">
+                <Setter Property="RenderTransformOrigin" Value="0.5, 0.5"/>
+                <Setter x:Name="MyAnimatedScaleTransform" Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect Color="{DynamicResource SystemBaseHighColor}" Direction="0" ShadowDepth="0" BlurRadius="8" Opacity="0.5" />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <SolidColorBrush Color="{DynamicResource SystemAltMediumHighColor}"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Foreground" Value="{DynamicResource SystemBaseHighColorBrush}"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="Padding" Value="1"/>
+                <Setter Property="FontFamily" Value="Bahnschrift Semibold"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Margin="0,0,0,0" Background="{TemplateBinding Background}">
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="85,33,0,33" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Height="24" />
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsDefaulted" Value="true">
+                                    <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="true"/>
+                                <Trigger Property="IsPressed" Value="true">
+                                    <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource SystemAltHighColorBrush}"/>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="false"/>
+                                <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation From="{StaticResource SystemAltMediumHighColor}" To="{StaticResource SystemAltMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation From="{StaticResource SystemAltMediumColor}" To="{StaticResource SystemAltMediumHighColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonDown">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation From="{StaticResource SystemAltMediumColor}" To="{StaticResource SystemBaseMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="0.99" SpeedRatio="20" AutoReverse="False" />
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="0.99" SpeedRatio="20" AutoReverse="False"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonUp">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation From="{StaticResource SystemBaseMediumColor}" To="{StaticResource SystemAltMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1" SpeedRatio="20" AutoReverse="False" />
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1" SpeedRatio="20" AutoReverse="False"/>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </EventTrigger>
@@ -1063,6 +1085,12 @@
                 <Setter Property="Button.Effect">
                     <Setter.Value>
                         <DropShadowEffect Color="{DynamicResource SystemBaseHighColor}" Direction="0" ShadowDepth="0" BlurRadius="8" Opacity="0.5" />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="RenderTransformOrigin" Value="0.5, 0.5"/>
+                <Setter x:Name="MyAnimatedScaleTransform" Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
                     </Setter.Value>
                 </Setter>
                 <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
@@ -1082,19 +1110,10 @@
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
-                            <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Background="{TemplateBinding Background}" Margin="0,0,0,0">
+                            <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Margin="0,0,0,0" Background="{TemplateBinding Background}">
                                 <Grid>
-                                    <Label x:Name="PhoneStatus" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="Auto" VerticalAlignment="Stretch" Margin="80,10,10,10" Grid.ColumnSpan="1">
-                                        <Label.Effect>
-                                            <DropShadowEffect
-                                                ShadowDepth="0"
-                                                Direction="0"
-                                                Color="{DynamicResource SystemAltHighColor}"
-                                                Opacity="0.8"
-                                                BlurRadius="2"/>
-                                        </Label.Effect>
-                                        <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="0" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                                    </Label>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="85,33,0,33" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Height="24" />
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Row="0" Grid.Column="0"/>
                                 </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
@@ -1122,6 +1141,8 @@
                                     <BeginStoryboard>
                                         <Storyboard>
                                             <ColorAnimation From="{StaticResource SystemAltMediumColor}" To="{StaticResource SystemBaseMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="0.99" SpeedRatio="20" AutoReverse="False" />
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="0.99" SpeedRatio="20" AutoReverse="False"/>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </EventTrigger>
@@ -1129,6 +1150,8 @@
                                     <BeginStoryboard>
                                         <Storyboard>
                                             <ColorAnimation From="{StaticResource SystemBaseMediumColor}" To="{StaticResource SystemAltMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1" SpeedRatio="20" AutoReverse="False" />
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1" SpeedRatio="20" AutoReverse="False"/>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </EventTrigger>
@@ -1138,6 +1161,12 @@
                 </Setter>
             </Style>
             <Style x:Key="ImageButton22.4Alt3" TargetType="{x:Type Button}">
+                <Setter Property="RenderTransformOrigin" Value="0.5, 0.5"/>
+                <Setter x:Name="MyAnimatedScaleTransform" Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                    </Setter.Value>
+                </Setter>
                 <Setter Property="Button.Effect">
                     <Setter.Value>
                         <DropShadowEffect Color="{DynamicResource SystemBaseHighColor}" Direction="0" ShadowDepth="0" BlurRadius="8" Opacity="0.5" />
@@ -1160,19 +1189,10 @@
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
-                            <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Background="{TemplateBinding Background}" Margin="0,0,0,0">
+                            <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Margin="0,0,0,0" Background="{TemplateBinding Background}">
                                 <Grid>
-                                    <Label x:Name="PhoneStatus" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="Auto" VerticalAlignment="Stretch" Margin="80,10,10,10" Grid.ColumnSpan="1">
-                                        <Label.Effect>
-                                            <DropShadowEffect
-                                                ShadowDepth="0"
-                                                Direction="0"
-                                                Color="{DynamicResource SystemAltHighColor}"
-                                                Opacity="0.8"
-                                                BlurRadius="2"/>
-                                        </Label.Effect>
-                                        <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="0" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                                    </Label>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="85,33,0,33" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Height="24" />
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Row="0" Grid.Column="0"/>
                                 </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
@@ -1200,6 +1220,8 @@
                                     <BeginStoryboard>
                                         <Storyboard>
                                             <ColorAnimation From="{x:Static fw:AccentColors.ImmersiveSystemAccentDark1}" To="{x:Static fw:AccentColors.ImmersiveSystemAccentLight2}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="0.99" SpeedRatio="20" AutoReverse="False" />
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="0.99" SpeedRatio="20" AutoReverse="False"/>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </EventTrigger>
@@ -1207,6 +1229,8 @@
                                     <BeginStoryboard>
                                         <Storyboard>
                                             <ColorAnimation From="{x:Static fw:AccentColors.ImmersiveSystemAccentLight2}" To="{x:Static fw:AccentColors.ImmersiveSystemAccentDark1}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1" SpeedRatio="20" AutoReverse="False" />
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1" SpeedRatio="20" AutoReverse="False"/>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </EventTrigger>
@@ -1215,8 +1239,14 @@
                     </Setter.Value>
                 </Setter>
             </Style>
-            <Style x:Key="ImageButton22.4Default" TargetType="{x:Type Button}">
-                <Setter Property="Button.Effect">
+            <Style TargetType="{x:Type Button}" x:Key="ImageButton22.4Default">
+                <Setter Property="RenderTransformOrigin" Value="0.5, 0.5"/>
+                <Setter x:Name="MyAnimatedScaleTransform" Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Effect">
                     <Setter.Value>
                         <DropShadowEffect Color="{DynamicResource SystemBaseHighColor}" Direction="0" ShadowDepth="0" BlurRadius="8" Opacity="0.5" />
                     </Setter.Value>
@@ -1227,34 +1257,26 @@
                         <SolidColorBrush Color="{DynamicResource SystemAltMediumHighColor}"/>
                     </Setter.Value>
                 </Setter>
-                <Setter Property="FontFamily" Value="/gui;component/Fonts/#Bahnschrift Semibold"/>
-                <Setter Property="FontSize" Value="16"/>
-                <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
                 <Setter Property="Foreground" Value="{DynamicResource SystemBaseHighColorBrush}"/>
                 <Setter Property="BorderThickness" Value="1"/>
                 <Setter Property="HorizontalContentAlignment" Value="Center"/>
                 <Setter Property="VerticalContentAlignment" Value="Center"/>
                 <Setter Property="Padding" Value="1"/>
+                <Setter Property="FontFamily" Value="Bahnschrift Semibold"/>
+                <Setter Property="FontSize" Value="20"/>
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
-                            <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Background="{TemplateBinding Background}" Margin="0,0,0,0">
+                            <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Margin="0,0,0,0" Background="{TemplateBinding Background}">
                                 <Grid>
-                                    <Label x:Name="PhoneStatus" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="Auto" VerticalAlignment="Stretch" Margin="80,10,10,10" Grid.ColumnSpan="1">
-                                        <Label.Effect>
-                                            <DropShadowEffect
-                                                ShadowDepth="0"
-                                                Direction="0"
-                                                Color="{DynamicResource SystemAltHighColor}"
-                                                Opacity="0.8"
-                                                BlurRadius="2"/>
-                                        </Label.Effect>
-                                        <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="0" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Height="24"/>
-                                    </Label>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="85,33,0,33" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Height="24" />
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Row="0" Grid.Column="0"/>
                                 </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
-                                <Trigger Property="IsDefaulted" Value="true"/>
+                                <Trigger Property="IsDefaulted" Value="true">
+                                    <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                                </Trigger>
                                 <Trigger Property="IsMouseOver" Value="true"/>
                                 <Trigger Property="IsPressed" Value="true">
                                     <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource SystemAltHighColorBrush}"/>
@@ -1278,6 +1300,8 @@
                                     <BeginStoryboard>
                                         <Storyboard>
                                             <ColorAnimation From="{StaticResource SystemAltMediumColor}" To="{StaticResource SystemBaseMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="0.99" SpeedRatio="20" AutoReverse="False" />
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="0.99" SpeedRatio="20" AutoReverse="False"/>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </EventTrigger>
@@ -1285,6 +1309,8 @@
                                     <BeginStoryboard>
                                         <Storyboard>
                                             <ColorAnimation From="{StaticResource SystemBaseMediumColor}" To="{StaticResource SystemAltMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1" SpeedRatio="20" AutoReverse="False" />
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1" SpeedRatio="20" AutoReverse="False"/>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </EventTrigger>
@@ -1313,7 +1339,10 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Background="{DynamicResource SystemAltMediumHighColorBrush}" Margin="0,0,0,0">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="98,41,17,41" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="85,33,0,33" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Height="24" />
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">
@@ -1351,7 +1380,10 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" BorderThickness="2" Background="{DynamicResource SystemBaseLowColorBrush}" SnapsToDevicePixels="true" CornerRadius="9.5">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="98,41,17,41" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="85,33,0,33" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Height="24" />
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">
@@ -1384,7 +1416,10 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" BorderBrush="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" BorderThickness="2" Background="{DynamicResource SystemBaseLowColorBrush}" SnapsToDevicePixels="true" CornerRadius="23.5">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="98,41,17,41" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="85,33,0,33" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Height="24" />
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">
@@ -1417,7 +1452,10 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" BorderBrush="#FF0063B1" BorderThickness="2" Background="{DynamicResource SystemBaseLowColorBrush}" SnapsToDevicePixels="true" CornerRadius="23.5">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="98,41,17,41" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="85,33,0,33" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Height="24" />
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">
@@ -1450,7 +1488,10 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" BorderBrush="#FF298ACC" BorderThickness="3" Background="{DynamicResource SystemChromeMediumLowColorBrush}" SnapsToDevicePixels="true" CornerRadius="23.5">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="98,41,17,41" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="85,33,0,33" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Height="24" />
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">
@@ -1483,7 +1524,10 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" BorderBrush="#FF402EA4" BorderThickness="3" Background="{DynamicResource SystemChromeMediumLowColorBrush}" SnapsToDevicePixels="true" CornerRadius="23.5">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="98,41,17,41" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="85,33,0,33" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Height="24" />
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">
@@ -1516,7 +1560,10 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" BorderBrush="Red" BorderThickness="2" Background="{DynamicResource SystemChromeMediumLowColorBrush}" SnapsToDevicePixels="true" CornerRadius="3.5">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="98,41,17,41" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="85,33,0,33" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Height="24" />
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">
@@ -1549,7 +1596,10 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" BorderBrush="Red" BorderThickness="1" Background="{DynamicResource SystemChromeMediumLowColorBrush}" SnapsToDevicePixels="true" CornerRadius="3.5">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="98,41,17,41" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="85,33,0,33" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Height="24" />
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">
@@ -1582,7 +1632,10 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" BorderBrush="Red" BorderThickness="1" Background="{DynamicResource SystemChromeMediumLowColorBrush}" SnapsToDevicePixels="true" CornerRadius="3.5">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="98,41,17,41" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="85,33,0,33" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Height="24" />
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">
@@ -1615,7 +1668,10 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" Background="{DynamicResource SystemChromeLowColorBrush}" SnapsToDevicePixels="true">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="98,41,17,41" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="85,33,0,33" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Height="24" />
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">
@@ -1648,7 +1704,10 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" Background="{DynamicResource SystemBaseLowColorBrush}" SnapsToDevicePixels="true">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="98,41,17,41" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="85,33,0,33" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Height="24" />
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">
@@ -1681,7 +1740,10 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" Background="{DynamicResource SystemChromeMediumLowColorBrush}" SnapsToDevicePixels="true">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="98,41,17,41" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="85,33,0,33" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Height="24" />
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">
@@ -1714,7 +1776,10 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" BorderBrush="{DynamicResource SystemBaseMediumLowColorBrush}" BorderThickness="1" Background="{DynamicResource SystemBaseLowColorBrush}" SnapsToDevicePixels="true">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="98,41,17,41" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="85,33,0,33" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Height="24" />
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">
@@ -1747,7 +1812,10 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" BorderBrush="Black" BorderThickness="1" Background="{DynamicResource SystemBaseLowColorBrush}" SnapsToDevicePixels="true">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="98,41,17,41" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="85,33,0,33" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Height="24" />
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">

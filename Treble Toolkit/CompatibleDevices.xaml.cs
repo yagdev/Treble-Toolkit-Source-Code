@@ -69,15 +69,30 @@ namespace Treble_Toolkit
             Uri uri = new Uri("HuaweiMate10Lite.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);
         }
+        private void HP20L_Click(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("HuaweiP20Lite.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
+        private void HM20L_Click(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("HuaweiMate20Lite.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
 
+        private void HPS2018_Click(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("PSmart.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
         private void BACK_Click(object sender, RoutedEventArgs e)
         {
             Uri uri = new Uri("More.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);
         }
-        private void HP20L_Click(object sender, RoutedEventArgs e)
+        private void XiaomiPad5_Click(object sender, RoutedEventArgs e)
         {
-            Uri uri = new Uri("HuaweiP20Lite.xaml", UriKind.Relative);
+            Uri uri = new Uri("XiaomiPad5.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);
         }
         //Threading starts here -- 5/11/2021@22:07, YAG-dev, 21.12+
@@ -107,20 +122,14 @@ namespace Treble_Toolkit
                 if (SourceChord.FluentWPF.ResourceDictionaryEx.GlobalTheme == SourceChord.FluentWPF.ElementTheme.Dark)
                 {
                     DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-phone-dark.png"));
-                    DeviceInfoImg_Copy1.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-restart-dark.png"));
+                    DeviceSpecificFeatures_Copy.Tag = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-restart-dark.png"));
                 }
                 else
                 {
                     DeviceInfoImg.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-phone-light.png"));
-                    DeviceInfoImg_Copy1.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-restart-light.png"));
+                    DeviceSpecificFeatures_Copy.Tag = (ImageSource)new ImageSourceConverter().ConvertFrom(new Uri(@"pack://application:,,,/gui;Component/tt-restart-light.png"));
                 }
             });
-        }
-
-        private void HM20L_Click(object sender, RoutedEventArgs e)
-        {
-            Uri uri = new Uri("HuaweiMate20Lite.xaml", UriKind.Relative);
-            this.NavigationService.Navigate(uri);
         }
     }
 }

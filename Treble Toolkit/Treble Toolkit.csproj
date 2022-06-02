@@ -405,6 +405,12 @@
     <Compile Include="PrivacyAndDataManagement.xaml.cs">
       <DependentUpon>PrivacyAndDataManagement.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PSmart.xaml.cs">
+      <DependentUpon>PSmart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PSmart_DSF.xaml.cs">
+      <DependentUpon>PSmart_DSF.xaml</DependentUpon>
+    </Compile>
     <Compile Include="QSG.xaml.cs">
       <DependentUpon>QSG.xaml</DependentUpon>
     </Compile>
@@ -524,6 +530,12 @@
     </Compile>
     <Compile Include="WindowsStupidDriverFix.xaml.cs">
       <DependentUpon>WindowsStupidDriverFix.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XiaomiPad5.xaml.cs">
+      <DependentUpon>XiaomiPad5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XiaomiPad5DSF.xaml.cs">
+      <DependentUpon>XiaomiPad5DSF.xaml</DependentUpon>
     </Compile>
     <Compile Include="XP1DSF.xaml.cs">
       <DependentUpon>XP1DSF.xaml</DependentUpon>
@@ -770,6 +782,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="PSmart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PSmart_DSF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="QSG.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -927,6 +947,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="WindowsStupidDriverFix.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XiaomiPad5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XiaomiPad5DSF.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1436,6 +1464,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="tt-confetti-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="psmart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="xiaomipad5.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

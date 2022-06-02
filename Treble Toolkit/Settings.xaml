@@ -84,16 +84,9 @@
         <Image x:Name="DeviceInfoImg" Margin="10,20,0,0" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70" Grid.Column="1"/>
         <Button x:Name="Privacy_Copy" Content="Compatibility" Margin="0,0,0,218" VerticalAlignment="Bottom" Height="50" Style="{DynamicResource Button21.8.1Rev4}" Click="Compatibility" Grid.Column="1" Grid.ColumnSpan="2">
         </Button>
-        <Image x:Name="DeviceInfoImg_Copy" Margin="10,0,0,20" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Column="1"/>
-        <Image x:Name="DeviceInfoImg_Copy1" Margin="10,0,0,72" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Column="1"/>
-        <Image x:Name="DeviceInfoImg_Copy2" Margin="10,0,0,124" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Column="1"/>
-        <Image x:Name="DeviceInfoImg_Copy3" Margin="10,0,0,176" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Column="1"/>
-        <Image x:Name="DeviceInfoImg_Copy4" Margin="10,0,0,228" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Column="1"/>
         <Button x:Name="Privacy_Copy1" Content="Reset Defaults" Margin="0,0,0,322" VerticalAlignment="Bottom" Height="50" Style="{DynamicResource Button21.8.1Rev4}" Click="ResetAll" Grid.Column="1" Grid.ColumnSpan="2">
         </Button>
-        <Image x:Name="DeviceInfoImg_Copy5" Margin="10,0,0,332" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Column="1"/>
         <Button x:Name="Privacy_Copy2" Content="Restore Install" Margin="0,0,0,270" VerticalAlignment="Bottom" Height="50" Style="{DynamicResource Button21.8.1Rev4}" Click="RestoreInstall" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <Image x:Name="DeviceInfoImg_Copy6" Margin="10,0,0,280" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Column="1"/>
 
     </Grid>
 </Page>

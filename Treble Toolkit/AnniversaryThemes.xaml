@@ -235,9 +235,8 @@
         <Rectangle  Height="372" VerticalAlignment="Bottom" Opacity="0.5" Grid.ColumnSpan="3" RadiusY="0" RadiusX="0" Style="{DynamicResource Rectangle22.4Style1}" >
             
         </Rectangle>
-        <Button x:Name="DeviceSpecificFeatures_Copy" Content="Back" VerticalAlignment="Bottom" Height="50"  Foreground="{DynamicResource SystemBaseHighColorBrush}" FontFamily="/gui;component/Fonts/#Bahnschrift Semibold" FontSize="16" Style="{DynamicResource Button21.8.1Rev4}" Click="BACK_Click" Margin="10,0,10,10" Grid.ColumnSpan="3">
+        <Button x:Name="DeviceSpecificFeatures_Copy" Content="Back" VerticalAlignment="Bottom" Height="50" Style="{DynamicResource Button21.8.1Rev4}" Click="BACK_Click" Margin="10,0,10,10" Grid.ColumnSpan="3">
         </Button>
-        <Image x:Name="DeviceInfoImg_Copy2" Margin="20,0,0,20" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30"/>
         <Rectangle  Height="300" Stroke="{x:Static FluentWPF:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Bottom" RadiusY="0" RadiusX="0" Style="{DynamicResource Rectangle22.4Style1}" Opacity="0.5" Margin="10,0,10,62" Grid.ColumnSpan="3">
             <Rectangle.Effect>
                 <DropShadowEffect

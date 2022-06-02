@@ -156,11 +156,6 @@
         </Button>
         <Button x:Name="ReportBug" Content="Report Bug" Margin="1,0,10,63" VerticalAlignment="Bottom" Height="50" Style="{DynamicResource Button21.8.1Rev4}" Click="InstallDrivers" Grid.Column="1">
         </Button>
-        <Image x:Name="DeviceInfoImg_Copy1" Margin="20,0,0,72" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30"/>
-        <Image x:Name="DeviceInfoImg_Copy" Margin="20,0,0,20" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30"/>
-        <Image x:Name="DeviceInfoImg_Copy2" Margin="20,0,0,124" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30"/>
-        <Image x:Name="DeviceInfoImg_Copy3" Margin="11,0,0,72" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Column="1"/>
-        <Image x:Name="DeviceInfoImg_Copy4" Margin="11,0,0,20" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Column="1"/>
 
     </Grid>
 </Page>

@@ -141,3 +141,32 @@ E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher
 E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\x64\Debug\TrebleToolkitLauncher.csproj.CopyComplete
 E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\x64\Debug\TrebleToolkitLauncher.exe
 E:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\TrebleToolkitLauncher\obj\x64\Debug\TrebleToolkitLauncher.pdb
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\TrebleToolkitLauncher\bin\x64\Debug\TrebleToolkitLauncher.exe.config
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\TrebleToolkitLauncher\bin\x64\Debug\TrebleToolkitLauncher.exe
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\TrebleToolkitLauncher\bin\x64\Debug\TrebleToolkitLauncher.pdb
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\TrebleToolkitLauncher\bin\x64\Debug\CLConfiguration.xml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\TrebleToolkitLauncher\bin\x64\Debug\CLUpdate.xml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\TrebleToolkitLauncher\bin\x64\Debug\System.Diagnostics.DiagnosticSource.xml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\TrebleToolkitLauncher\obj\x64\Debug\TrebleToolkitLauncher.csproj.AssemblyReference.cache
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\TrebleToolkitLauncher\obj\x64\Debug\HomePage.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\TrebleToolkitLauncher\obj\x64\Debug\MainWindow.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\TrebleToolkitLauncher\obj\x64\Debug\Reinstall.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\TrebleToolkitLauncher\obj\x64\Debug\Settings.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\TrebleToolkitLauncher\obj\x64\Debug\UpdateAvailable.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\TrebleToolkitLauncher\obj\x64\Debug\App.g.cs
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\TrebleToolkitLauncher\obj\x64\Debug\TrebleToolkitLauncher_MarkupCompile.cache
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\TrebleToolkitLauncher\obj\x64\Debug\TrebleToolkitLauncher_MarkupCompile.lref
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\TrebleToolkitLauncher\obj\x64\Debug\App.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\TrebleToolkitLauncher\obj\x64\Debug\HomePage.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\TrebleToolkitLauncher\obj\x64\Debug\MainWindow.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\TrebleToolkitLauncher\obj\x64\Debug\Reinstall.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\TrebleToolkitLauncher\obj\x64\Debug\Settings.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\TrebleToolkitLauncher\obj\x64\Debug\UpdateAvailable.baml
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\TrebleToolkitLauncher\obj\x64\Debug\TrebleToolkitLauncher.g.resources
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\TrebleToolkitLauncher\obj\x64\Debug\TrebleToolkitLauncher.Properties.Resources.resources
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\TrebleToolkitLauncher\obj\x64\Debug\TrebleToolkitLauncher.csproj.GenerateResource.cache
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\TrebleToolkitLauncher\obj\x64\Debug\TrebleToolkitLauncher.csproj.CoreCompileInputs.cache
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\TrebleToolkitLauncher\obj\x64\Debug\TrebleToolkitLauncher.csproj.Fody.CopyLocal.cache
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\TrebleToolkitLauncher\obj\x64\Debug\TrebleToolkitLauncher.csproj.CopyComplete
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\TrebleToolkitLauncher\obj\x64\Debug\TrebleToolkitLauncher.exe
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\TrebleToolkitLauncher\obj\x64\Debug\TrebleToolkitLauncher.pdb

@@ -98,7 +98,6 @@
                     BlurRadius="8"/>
             </Button.Effect>
         </Button>
-        <Image x:Name="DeviceInfoImg_Copy2" Margin="20,0,0,20" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30"/>
         <Rectangle  Height="100" Stroke="{x:Static FluentWPF:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" VerticalAlignment="Bottom" RadiusY="0" RadiusX="0" Style="{DynamicResource Rectangle22.4Style1}" Opacity="0.5" Margin="10,0,10,114" Grid.ColumnSpan="4">
             <Rectangle.Effect>
                 <DropShadowEffect
@@ -151,7 +150,6 @@
         </Button>
         <Button x:Name="DeviceSpecificFeatures_Copy8" Content="Anniversary Themes" VerticalAlignment="Bottom" Height="50" Style="{DynamicResource Button21.8.1Rev4}" Click="Anniversary_Click" Margin="10,0,10,216" Grid.ColumnSpan="4">
         </Button>
-        <Image x:Name="DeviceInfoImg_Copy" Margin="20,0,0,226" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30"/>
 
     </Grid>
 </Page>

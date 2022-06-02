@@ -10,84 +10,13 @@
                 <ResourceDictionary Source="pack://application:,,,/FluentWPF;component/Styles/Controls.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <Style x:Key="ImageButton22.4Alt1" TargetType="{x:Type Button}">
-                <Setter Property="Button.Effect">
+                <Setter Property="RenderTransformOrigin" Value="0.5, 0.5"/>
+                <Setter x:Name="MyAnimatedScaleTransform" Property="RenderTransform">
                     <Setter.Value>
-                        <DropShadowEffect Color="{DynamicResource SystemBaseHighColor}" Direction="0" ShadowDepth="0" BlurRadius="8" Opacity="0.5" />
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
                     </Setter.Value>
                 </Setter>
-                <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-                <Setter Property="Background">
-                    <Setter.Value>
-                        <SolidColorBrush Color="{DynamicResource SystemAltMediumHighColor}"/>
-                    </Setter.Value>
-                </Setter>
-                <Setter Property="FontFamily" Value="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold"/>
-                <Setter Property="FontSize" Value="16"/>
-                <Setter Property="Foreground" Value="{DynamicResource SystemBaseHighColorBrush}"/>
-                <Setter Property="BorderThickness" Value="1"/>
-                <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                <Setter Property="VerticalContentAlignment" Value="Center"/>
-                <Setter Property="Padding" Value="1"/>
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type Button}">
-                            <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Background="{TemplateBinding Background}" Margin="0,0,0,0">
-                                <Grid>
-                                    <Label x:Name="PhoneStatus" Foreground="{DynamicResource SystemBaseHighColorBrush}" VerticalContentAlignment="Center" FontFamily="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold" FontSize="20" Height="Auto" VerticalAlignment="Stretch" Margin="80,10,10,10" Grid.ColumnSpan="1">
-                                        <Label.Effect>
-                                            <DropShadowEffect
-                                                ShadowDepth="0"
-                                                Direction="0"
-                                                Color="{DynamicResource SystemAltHighColor}"
-                                                Opacity="0.8"
-                                                BlurRadius="2"/>
-                                        </Label.Effect>
-                                        <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="0" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                                    </Label>
-                                </Grid>
-                            </Border>
-                            <ControlTemplate.Triggers>
-                                <Trigger Property="IsDefaulted" Value="true"/>
-                                <Trigger Property="IsMouseOver" Value="true"/>
-                                <Trigger Property="IsPressed" Value="true">
-                                    <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource SystemAltHighColorBrush}"/>
-                                </Trigger>
-                                <Trigger Property="IsEnabled" Value="false"/>
-                                <EventTrigger RoutedEvent="UIElement.MouseEnter">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation From="{StaticResource SystemAltMediumHighColor}" To="{StaticResource SystemAltMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                                <EventTrigger RoutedEvent="UIElement.MouseLeave">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation From="{StaticResource SystemAltMediumColor}" To="{StaticResource SystemAltMediumHighColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                                <EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonDown">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation From="{StaticResource SystemAltMediumColor}" To="{StaticResource SystemBaseMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                                <EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonUp">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation From="{StaticResource SystemBaseMediumColor}" To="{StaticResource SystemAltMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                            </ControlTemplate.Triggers>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-            <Style TargetType="{x:Type Button}" x:Key="Button21.8.1Rev4">
-                <Setter Property="Button.Effect">
+                <Setter Property="Effect">
                     <Setter.Value>
                         <DropShadowEffect Color="{DynamicResource SystemBaseHighColor}" Direction="0" ShadowDepth="0" BlurRadius="8" Opacity="0.5" />
                     </Setter.Value>
@@ -103,13 +32,16 @@
                 <Setter Property="HorizontalContentAlignment" Value="Center"/>
                 <Setter Property="VerticalContentAlignment" Value="Center"/>
                 <Setter Property="Padding" Value="1"/>
-                <Setter Property="FontFamily" Value="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold"/>
-                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="FontFamily" Value="Bahnschrift Semibold"/>
+                <Setter Property="FontSize" Value="20"/>
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Margin="0,0,0,0" Background="{TemplateBinding Background}">
-                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="50,16,0,16" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="85,33,0,33" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Height="24" />
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsDefaulted" Value="true">
@@ -138,6 +70,8 @@
                                     <BeginStoryboard>
                                         <Storyboard>
                                             <ColorAnimation From="{StaticResource SystemAltMediumColor}" To="{StaticResource SystemBaseMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="0.99" SpeedRatio="20" AutoReverse="False" />
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="0.99" SpeedRatio="20" AutoReverse="False"/>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </EventTrigger>
@@ -145,6 +79,88 @@
                                     <BeginStoryboard>
                                         <Storyboard>
                                             <ColorAnimation From="{StaticResource SystemBaseMediumColor}" To="{StaticResource SystemAltMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1" SpeedRatio="20" AutoReverse="False" />
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1" SpeedRatio="20" AutoReverse="False"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style TargetType="{x:Type Button}" x:Key="Button21.8.1Rev4">
+                <Setter Property="RenderTransformOrigin" Value="0.5, 0.5"/>
+                <Setter x:Name="MyAnimatedScaleTransform" Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect Color="{DynamicResource SystemBaseHighColor}" Direction="0" ShadowDepth="0" BlurRadius="8" Opacity="0.5" />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <SolidColorBrush Color="{DynamicResource SystemAltMediumHighColor}"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Foreground" Value="{DynamicResource SystemBaseHighColorBrush}"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="Padding" Value="1"/>
+                <Setter Property="FontFamily" Value="Bahnschrift Semibold"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border x:Name="border" SnapsToDevicePixels="true" CornerRadius="8" Margin="0,0,0,0" Background="{TemplateBinding Background}">
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Left" Margin="50,16,0,16" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                    <Image Margin="10,10,0,10" Source="{TemplateBinding Tag}"  IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Width="30" Grid.Row="0" Grid.Column="0"/>
+                                </Grid>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsDefaulted" Value="true">
+                                    <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="true"/>
+                                <Trigger Property="IsPressed" Value="true">
+                                    <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource SystemAltHighColorBrush}"/>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="false"/>
+                                <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation From="{StaticResource SystemAltMediumHighColor}" To="{StaticResource SystemAltMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation From="{StaticResource SystemAltMediumColor}" To="{StaticResource SystemAltMediumHighColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonDown">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation From="{StaticResource SystemAltMediumColor}" To="{StaticResource SystemBaseMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="0.99" SpeedRatio="20" AutoReverse="False" />
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="0.99" SpeedRatio="20" AutoReverse="False"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonUp">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation From="{StaticResource SystemBaseMediumColor}" To="{StaticResource SystemAltMediumColor}" SpeedRatio="10" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1" SpeedRatio="20" AutoReverse="False" />
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1" SpeedRatio="20" AutoReverse="False"/>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </EventTrigger>
@@ -166,7 +182,7 @@
             <Style x:Key="SubtitleTheme22.5" TargetType="{x:Type Label}">
                 <Setter Property="Foreground" Value="{DynamicResource SystemBaseHighColorBrush}"/>
                 <Setter Property="VerticalContentAlignment" Value="Center"/>
-                <Setter Property="FontFamily" Value="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold"/>
+                <Setter Property="FontFamily" Value="Bahnschrift Semibold"/>
                 <Setter Property="FontSize" Value="14"/>
                 <Setter Property="Effect">
                     <Setter.Value>
@@ -182,7 +198,7 @@
             <Style x:Key="TitleTheme22.5" TargetType="{x:Type Label}">
                 <Setter Property="Foreground" Value="{DynamicResource SystemBaseHighColorBrush}"/>
                 <Setter Property="VerticalContentAlignment" Value="Center"/>
-                <Setter Property="FontFamily" Value="/TrebleToolkitLauncher;component/Fonts/#Bahnschrift Semibold"/>
+                <Setter Property="FontFamily" Value="Bahnschrift Semibold"/>
                 <Setter Property="FontSize" Value="20"/>
                 <Setter Property="Effect">
                     <Setter.Value>

@@ -89,12 +89,6 @@
         <Label x:Name="PhoneStatus2" Content="Additional Features of Treble Toolkit" Margin="80,55,10,0" VerticalAlignment="Top" Height="35" FontSize="14" Grid.Column="1" Grid.ColumnSpan="2" Style="{DynamicResource SubtitleTheme22.5}">
         </Label>
         <Image x:Name="DeviceInfoImg" Margin="10,20,0,0" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70" Grid.Column="1"/>
-        <Image x:Name="DeviceInfoImg_Copy6" Margin="10,0,0,10" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Column="1"/>
-        <Image x:Name="DeviceInfoImg_Copy" Margin="10,0,0,62" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Column="1"/>
-        <Image x:Name="DeviceInfoImg_Copy1" Margin="10,0,0,114" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Column="1"/>
-        <Image x:Name="DeviceInfoImg_Copy2" Margin="10,0,0,166" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Column="1"/>
-        <Image x:Name="DeviceInfoImg_Copy3" Margin="10,0,0,218" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Column="1"/>
-        <Image x:Name="DeviceInfoImg_Copy4" Margin="10,0,0,270" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Column="1"/>
 
     </Grid>
 </Page>

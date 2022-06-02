@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\obj\x64\Debug\
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\Treble Toolkit\obj\x64\Debug\
 Treble_Toolkit
 none
 false
 ;HARPY
-D:\Treble Toolkit\Treble-Toolkit-Source-Code-master - Next\Treble Toolkit\App.xaml
-89-1975480200
+E:\Treble Toolkit\Treble-Toolkit-Source-Code-22-6\Treble Toolkit\App.xaml
+981707879262
 
-94-593995671
-1421774212302
-AboutScreen.xaml;Alcatel1.xaml;Animations.xaml;BTULHW.xaml;BugReports.xaml;CMDInfo.xaml;CompatibilityCheck.xaml;CompatibilitySettings.xaml;CompatibleDevices.xaml;DebugInfo.xaml;DeviceTester.xaml;FixConnectionPhoneStep1.xaml;FixConnectionPhoneStep2.xaml;FixConnectionPhoneStep3.xaml;FlashGSI.xaml;FlashingGSITUT.xaml;FlashingVendorTUT.xaml;FlashMethod.xaml;FlashVendorFinished.xaml;FormatPartitions.xaml;FreeCMD.xaml;GSIABFlash.xaml;GSIABPickAFile.xaml;GSIAFlash.xaml;GSIAPickAFile.xaml;GSIFlashA.xaml;GSIFlashAB.xaml;GSIFlashTerminated.xaml;GSIFlashTerminatedAB.xaml;HM10LDSF.xaml;HomeScreen.xaml;HuaweiMate10Lite.xaml;HuaweiP20Lite.xaml;MainWindow.xaml;MainWindow2.xaml;MainWindow3.xaml;More.xaml;OnePlus6.xaml;OnePlus6DSF.xaml;OnePlus8.xaml;OnePlus8DSF.xaml;P20LDSF.xaml;PlatformToolsChangelog.xaml;PMFinished.xaml;PMFlash.xaml;PMTUT.xaml;PrivacyAndDataManagement.xaml;QSG.xaml;QuickStartGuide.xaml;ReportBug.xaml;ReportBugStep2.xaml;ResetAll.xaml;Settings.xaml;Setup.xaml;Setup2.xaml;Setup3.xaml;Sideloader.xaml;SideloaderPickFile.xaml;SideloadFinished.xaml;SonyXperia1.xaml;SonyXperia5.xaml;SonyXperiaXZ2.xaml;SXXZ2DSF.xaml;ThemeSelect.xaml;TransparencyAndEffects.xaml;TransparencySlider.xaml;TWRP.xaml;TWRPBoot.xaml;TWRPBootFinished.xaml;TWRPBootPickFile.xaml;TWRPFlash.xaml;TWRPFlashFinished.xaml;TWRPFlashPickFile.xaml;TWRPShits.xaml;UnlockBootloader.xaml;UnlockBootloaderTut.xaml;UnlockedBootloader.xaml;UpdateCenter.xaml;VendorFinished.xaml;VendorFlash.xaml;VendorPickFile.xaml;Widgets.xaml;WidgetSetupGuide.xaml;Windows7Warning.xaml;WindowsOutdatedMoreInfo.xaml;WindowsStupidDriverFix.xaml;XP1DSF.xaml;XP5DSF.xaml;ZipSideloaderTUT.xaml;
+103511000041
+142-929218858
+AboutScreen.xaml;Alcatel1.xaml;Animations.xaml;AnniversaryThemes.xaml;BTULHW.xaml;BugReports.xaml;CMDInfo.xaml;CompatibilityCheck.xaml;CompatibilitySettings.xaml;CompatibleDevices.xaml;DebugInfo.xaml;DeviceTester.xaml;DiscoverMore.xaml;FixConnectionPhoneStep1.xaml;FixConnectionPhoneStep2.xaml;FixConnectionPhoneStep3.xaml;FlashGSI.xaml;FlashingGSITUT.xaml;FlashingVendorTUT.xaml;FlashMethod.xaml;FlashVendorFinished.xaml;FormatPartitions.xaml;FreeCMD.xaml;GSIABFlash.xaml;GSIABPickAFile.xaml;GSIAFlash.xaml;GSIAPickAFile.xaml;GSIFlashA.xaml;GSIFlashAB.xaml;GSIFlashTerminated.xaml;GSIFlashTerminatedAB.xaml;HM10LDSF.xaml;HomeScreen.xaml;HuaweiMate10Lite.xaml;HuaweiMate20Lite.xaml;HuaweiP20Lite.xaml;MainWindow.xaml;MainWindow2.xaml;MainWindow3.xaml;Mate20LDSF.xaml;More.xaml;OnePlus6.xaml;OnePlus6DSF.xaml;OnePlus8.xaml;OnePlus8DSF.xaml;P20LDSF.xaml;PlatformToolsChangelog.xaml;PMFinished.xaml;PMFlash.xaml;PMTUT.xaml;PrivacyAndDataManagement.xaml;PSmart.xaml;PSmart_DSF.xaml;QSG.xaml;QuickStartGuide.xaml;ReportBug.xaml;ReportBugStep2.xaml;ResetAll.xaml;RestoreInstall.xaml;Settings.xaml;Setup.xaml;Setup2.xaml;Setup3.xaml;Sideloader.xaml;SideloaderPickFile.xaml;SideloadFinished.xaml;SonyXperia1.xaml;SonyXperia5.xaml;SonyXperiaXZ2.xaml;SXXZ2DSF.xaml;ThemeSelect.xaml;TransparencyAndEffects.xaml;TransparencySlider.xaml;TWRP.xaml;TWRPBoot.xaml;TWRPBootFinished.xaml;TWRPBootPickFile.xaml;TWRPFlash.xaml;TWRPFlashFinished.xaml;TWRPFlashPickFile.xaml;TWRPShits.xaml;UnlockBootloader.xaml;UnlockBootloaderTut.xaml;UnlockedBootloader.xaml;UpdateCenter.xaml;VendorFinished.xaml;VendorFlash.xaml;VendorPickFile.xaml;Widgets.xaml;WidgetSetupGuide.xaml;Windows7Warning.xaml;WindowsOutdatedMoreInfo.xaml;WindowsStupidDriverFix.xaml;XiaomiPad5.xaml;XiaomiPad5DSF.xaml;XP1DSF.xaml;XP5DSF.xaml;ZipSideloaderTUT.xaml;
 
-False
+True
 

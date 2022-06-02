@@ -133,19 +133,14 @@
         <Image Margin="10,10,0,10" Source="TT21.9.1Logo.png" Stretch="Fill" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Width="30" Grid.Column="1" Grid.Row="1"/>
         <Button x:Name="DeviceSpecificFeatures_Copy3" Content="Launch" Margin="0,0,1,0" Style="{DynamicResource ImageButton22.4Alt1}" Click="BackButton_Click" Grid.Column="1" Grid.Row="3" Grid.RowSpan="2" >
         </Button>
-        <Image x:Name="BtnImg" Margin="10,10,0,10" Source="tt-launch-dark.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="3" Grid.Column="1"/>
         <Button x:Name="UpdateLauncher_Btn" Content="Update Launcher" Margin="1,0,0,0" Style="{DynamicResource ImageButton22.4Alt1}" Click="UpdateLauncher" Grid.Column="2" Grid.Row="3" Grid.RowSpan="2" >
         </Button>
-        <Image x:Name="BtnImg_Copy" Margin="11,10,0,10" Source="tt-launch-dark.png" Stretch="Fill" Height="70" IsHitTestVisible="False" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="3" Grid.Column="2"/>
         <Button x:Name="DeviceSpecificFeatures_Copy" Content="Reinstall" Margin="0,0,1,0" Style="{DynamicResource ImageButton22.4Alt1}" Click="Reinstall" Grid.Column="1" Grid.Row="6" Grid.RowSpan="2" >
         </Button>
-        <Image x:Name="BtnImg_Copy1" Margin="10,12,0,10" Source="tt-launch-dark.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="6" Grid.Column="1"/>
         <Button x:Name="BackAbout_Copy2" Content="Check Connection" Margin="1,0,0,0" Style="{DynamicResource ImageButton22.4Alt1}" Click="CheckConnection" Grid.Column="2" Grid.Row="6" Grid.RowSpan="2" >
         </Button>
-        <Image x:Name="BtnImg_Copy2" Margin="11,12,0,10" Source="tt-launch-dark.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="6" Grid.Column="2"/>
         <Button x:Name="JoinBeta" Content="Settings" Style="{DynamicResource ImageButton22.4Alt1}" Click="JoinBeta_Click" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="9" Grid.RowSpan="2" >
         </Button>
-        <Image x:Name="BtnImg_Copy3" Margin="10,9,0,10" IsHitTestVisible="False" Source="tt-launch-dark.png" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.RowSpan="2" Grid.Row="9" Grid.Column="1"/>
         <Rectangle x:Name="NetworkRectangle" Margin="12,0,10,0" Grid.Column="3" Grid.Row="3" Grid.RowSpan="2" Style="{DynamicResource Rectangle22.4Style1}">
         </Rectangle>
         <Label x:Name="Title_Copy" Content="Network Status" Margin="92,10,20,0" Grid.Column="3" Grid.Row="3" Style="{DynamicResource TitleTheme22.5}">
@@ -169,7 +164,6 @@
         <Image x:Name="CurrentVerImg" Margin="22,10,0,9" Source="tt-launch-dark.png" Stretch="Fill" Height="70" VerticalAlignment="Center" HorizontalAlignment="Left" Width="70" Grid.Column="3" Grid.Row="9" Grid.RowSpan="2"/>
         <Label VerticalContentAlignment="Center" Height="50" VerticalAlignment="Top" Content="Widgets" Grid.Column="3" Margin="67,0,9,0" Style="{DynamicResource TitleTheme22.5}" Grid.Row="1"/>
         <Button x:Name="DeviceSpecificFeatures_Copy1" Content="" Margin="12,0,0,0" Style="{DynamicResource Button21.8.1Rev4}" Click="ChangeWidgets" Grid.Column="3" HorizontalAlignment="Left" Width="50" Grid.Row="1" />
-        <Image x:Name="DeviceInfoImg_Copy5" Margin="22,10,0,10" Source="tt-launch-dark.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Width="30" Grid.Column="3" Focusable="False" Grid.Row="1"/>
 
     </Grid>
 </Page>

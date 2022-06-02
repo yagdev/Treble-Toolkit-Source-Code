@@ -131,9 +131,6 @@
         <Image x:Name="DeviceInfoImg" Margin="10,20,0,0" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70" Grid.Column="1"/>
         <Label x:Name="Title_Copy9" Content="Bootloader Code" VerticalContentAlignment="Center" Height="35" VerticalAlignment="Top" Margin="10,112,10,0" Grid.Column="1" Grid.ColumnSpan="2" Style="{DynamicResource TitleTheme22.5}">
         </Label>
-        <Image x:Name="DeviceInfoImg_Copy2" Margin="10,0,0,72" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Column="1"/>
-        <Image x:Name="DeviceInfoImg_Copy" Margin="10,0,0,20" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Column="1"/>
-        <Image x:Name="DeviceInfoImg_Copy1" Margin="11,0,0,20" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Column="2"/>
 
     </Grid>
 </Page>

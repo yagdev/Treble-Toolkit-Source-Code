@@ -121,9 +121,6 @@
         <Image x:Name="DeviceInfoImg_Copy2" Margin="11,204,0,0" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70" Grid.Column="1"/>
         <Image x:Name="DeviceInfoImg_Copy3" Margin="20,296,0,0" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70"/>
         <Image x:Name="DeviceInfoImg_Copy4" Margin="11,296,0,0" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70" Grid.Column="1"/>
-        <Image x:Name="DeviceInfoImg_Copy5" Margin="20,0,0,20" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30"/>
-        <Image x:Name="DeviceInfoImg_Copy6" Margin="11,0,0,20" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Column="1"/>
-        <Image x:Name="DeviceInfoImg_Copy7" Margin="20,0,0,72" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30"/>
         <Rectangle x:Name="GSIRectangle" Stroke="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" StrokeThickness="0" RadiusY="15" RadiusX="15" Margin="0,20,20,0" Height="30" VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Right" Width="105">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">

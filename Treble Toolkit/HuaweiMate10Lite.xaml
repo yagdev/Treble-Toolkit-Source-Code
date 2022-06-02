@@ -121,8 +121,5 @@
         <Image x:Name="DeviceInfoImg_Copy2" Margin="11,204,0,0" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70" Grid.Column="1"/>
         <Image x:Name="DeviceInfoImg_Copy3" Margin="20,296,0,0" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70"/>
         <Image x:Name="DeviceInfoImg_Copy4" Margin="11,296,0,0" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70" Grid.Column="1"/>
-        <Image x:Name="DeviceInfoImg_Copy5" Margin="20,0,0,20" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30"/>
-        <Image x:Name="DeviceInfoImg_Copy6" Margin="11,0,0,20" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" Grid.Column="1"/>
-        <Image x:Name="DeviceInfoImg_Copy7" Margin="20,0,0,72" Source="tt-phone.png" IsHitTestVisible="False" Stretch="Fill" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30"/>
     </Grid>
 </Page>
